@@ -1,0 +1,100 @@
+site_name: Hepapi Knowledge Hub
+repo_url: https://github.com/hepapi/knowledge-hub
+repo_name: hepapi/knowledge-hub
+
+nav:
+    - Home: welcome.md
+    - Linux: 
+          - 'Shell Commands': linux/shell/commands.md
+          - 'Tooling': linux/tooling.md
+          - 'Tips': linux/tips.md
+    - 'Cloud Providers': 
+        - 'AWS': 
+            - 'CLI': aws/cli.md
+            # - 'CloudFormation': aws/cloudformation.md
+            # - 'EC2': aws/ec2.md
+            # - 'ECS': aws/ecs.md
+            # - 'EKS': aws/eks.md
+            # - 'IAM': aws/iam.md
+            # - 'Lambda': aws/lambda.md
+            # - 'S3': aws/s3.md
+            # - 'SNS': aws/sns.md
+            # - 'SQS': aws/sqs.md
+            # - 'VPC': aws/vpc.md
+    - Rancher:
+        - 'RKE2 Installation': rancher/rke2-installation.md
+    # - Kubernetes:
+    #     - 'Kubectl': kubernetes/kubectl.md
+    #     - 'Kustomize': kubernetes/kustomize.md
+    #     - 'Helm': kubernetes/helm.md
+    - Jenkins:
+        - 'Home': jenkins/README.md
+        # - 'Installation': ci-cd/jenkins/installation.md
+        # - 'Pipeline': ci-cd/jenkins/pipeline.md
+    - Ansible:
+        - 'Home': ansible/README.md
+
+theme:
+  name: material
+  language: en
+  font:
+    text: Roboto Mono
+  logo: images/hepapi-logo.png
+  features:
+    - navigation.tracking
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - search.share
+  icon:
+    repo: fontawesome/brands/github
+
+  palette: 
+    # Palette toggle for light mode
+    - scheme: slate
+      media: "(prefers-color-scheme: dark)"
+      primary: black
+      accent: green
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
+      primary: black
+      accent: purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+      
+markdown_extensions:
+  - tables
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - admonition
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - def_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - attr_list
+  - md_in_html
+
+plugins:
+- search
+- mkdocstrings
+- autorefs

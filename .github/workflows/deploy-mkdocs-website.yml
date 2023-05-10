@@ -1,0 +1,22 @@
+name: Deploy MKDocs Website
+on:
+  push:
+    branches:
+      - main
+    paths:
+      # only build the docs website when
+      # there's a change on the .md files
+      - 'docs/**'
+      - 'mkdocs.yml'
+
+jobs:
+  deploy-mkdocs-docs-website:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install mkdocstrings[python]
+      - run: pip install mkdocs-material 
+      - run: mkdocs gh-deploy --force
