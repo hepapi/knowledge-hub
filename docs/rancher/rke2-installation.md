@@ -3,12 +3,12 @@ Example commands and configs are for 3 masters, 3 workers and an
 additional jump node all running Ubuntu.
 
 Example topology:  
-Master-01: 10.40.140.4
-Master-02: 10.40.140.5
-Master-03: 10.40.140.6
-Worker-01: 10.40.140.7
-Worker-02: 10.40.140.8
-Worker-03: 10.40.140.9
+Master-01: 10.40.140.4  
+Master-02: 10.40.140.5  
+Master-03: 10.40.140.6  
+Worker-01: 10.40.140.7  
+Worker-02: 10.40.140.8  
+Worker-03: 10.40.140.9  
 Jump: 10.40.140.10
 
 1.  ssh into jump machine
