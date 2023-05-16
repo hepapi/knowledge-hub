@@ -3,7 +3,7 @@ repo_url: https://github.com/hepapi/knowledge-hub
 repo_name: hepapi/knowledge-hub
 
 nav:
-    - Home: welcome.md
+    - Home: index.md
     - Linux: 
           - 'Shell Commands': linux/shell/commands.md
           - 'Tooling': linux/tooling.md
