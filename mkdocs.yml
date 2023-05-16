@@ -23,6 +23,10 @@ nav:
             # - 'VPC': aws/vpc.md
     - Rancher:
         - 'RKE2 Installation': rancher/rke2-installation.md
+    - Postgres:
+      - 'Configuration': postgres/configuration.md
+      - 'psql': postgres/psql.md
+      - 'Backup & Restore': postgres/backup-restore.md
     # - Kubernetes:
     #     - 'Kubectl': kubernetes/kubectl.md
     #     - 'Kustomize': kubernetes/kustomize.md
