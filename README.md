@@ -2,8 +2,6 @@
 
 Hello there! 👋
 
-This repository was created with the singular goal of fostering collaboration, knowledge exchange, and continuous learning among our team members.
-
 
 We recognize that knowledge is power, and in our constantly evolving field, it's crucial to keep up with the latest technologies, methodologies, and best practices.
 
@@ -29,6 +27,15 @@ This repository is a live document, and **we encourage everyone to contribute**.
 | [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) | Material theme for mkDocs |
 
 ### Steps to run it locally
+
+!!! Note About Static Files(images, pdfs, etc.)
+    Put your static assets into [github.com/hepapi/knowledge-hub-assets](https://github.com/hepapi/knowledge-hub-assets) repository. 
+    Then, you can reference them in your markdown files like this:
+    ```markdown
+    #TODO: add example
+    ```
+
+
 1. Make sure `python3` is installed
 1. Install python requirements
     ```bash
