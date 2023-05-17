@@ -4,6 +4,7 @@ repo_name: hepapi/knowledge-hub
 
 nav:
     - Home: index.md
+    - How to .md: about-writing/about-markdown.md
     - Linux: 
           - 'Shell Commands': linux/shell/commands.md
           - 'Tooling': linux/tooling.md
