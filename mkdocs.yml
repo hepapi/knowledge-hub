@@ -22,7 +22,8 @@ nav:
             # - 'SQS': aws/sqs.md
             # - 'VPC': aws/vpc.md
     - Rancher:
-        - 'RKE2 Installation': rancher/rke2-installation.md
+        - 'RKE2 Ansible Installation': rancher/rke2-installation-ansible.md
+        - 'RKE2 Binary Installation': rancher/rke2-installation.md
     - Postgres:
       - 'Configuration': postgres/configuration.md
       - 'psql': postgres/psql.md
