@@ -52,6 +52,9 @@ theme:
     - search.suggest
     - search.highlight
     - search.share
+    - content.code.copy
+    - content.tabs.link
+
   icon:
     repo: fontawesome/brands/github
 
@@ -99,6 +102,10 @@ markdown_extensions:
       alternate_style: true 
   - attr_list
   - md_in_html
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 plugins:
 - search
