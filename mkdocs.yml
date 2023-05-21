@@ -25,6 +25,11 @@ nav:
     - Rancher:
         - 'RKE2 Ansible Installation': rancher/rke2-installation-ansible.md
         - 'RKE2 Binary Installation': rancher/rke2-installation.md
+        - 'RKE2 HA (Highly Available)': 
+          - 'HA Installation': rancher/rke2-ha/rke2-highly-available-installation.md
+          - 'Automatic Upgrades': rancher/rke2-ha/rke2-system-upgrade-controller-installation.md
+          # - 'Install Rancher': rancher/rke2-ha/rke2-install-rancher.md
+          - 'How to ETCD Restore': rancher/rke2-ha/rke2-ha-etcd-restore.md
     - Postgres:
       - 'Configuration': postgres/configuration.md
       - 'psql': postgres/psql.md
