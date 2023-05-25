@@ -3,48 +3,50 @@ repo_url: https://github.com/hepapi/knowledge-hub
 repo_name: hepapi/knowledge-hub
 
 nav:
-    - Home: index.md
-    - How to .md: about-writing/about-markdown.md
-    - Linux: 
-          - 'Shell Commands': linux/shell/commands.md
-          - 'Tooling': linux/tooling.md
-          - 'Tips': linux/tips.md
-    - 'Cloud Providers': 
-        - 'AWS': 
-            - 'CLI': aws/cli.md
-            # - 'CloudFormation': aws/cloudformation.md
-            # - 'EC2': aws/ec2.md
-            # - 'ECS': aws/ecs.md
-            # - 'EKS': aws/eks.md
-            # - 'IAM': aws/iam.md
-            # - 'Lambda': aws/lambda.md
-            # - 'S3': aws/s3.md
-            # - 'SNS': aws/sns.md
-            # - 'SQS': aws/sqs.md
-            # - 'VPC': aws/vpc.md
-    - Rancher:
-        - 'RKE2 Ansible Installation': rancher/rke2-installation-ansible.md
-        - 'RKE2 Binary Installation': rancher/rke2-installation.md
-        - 'RKE2 HA (Highly Available)': 
-          - 'HA Installation': rancher/rke2-ha/rke2-highly-available-installation.md
-          - 'Automatic Upgrades': rancher/rke2-ha/rke2-system-upgrade-controller-installation.md
+  - Home: index.md
+  - How to .md: about-writing/about-markdown.md
+  - Linux:
+      - "Shell Commands":
+          - "script": linux/shell/script.md
+          - "cat": linux/shell/cat.md
+      - "Tooling": linux/tooling.md
+      - "Tips": linux/tips.md
+  - "Cloud Providers":
+      - "AWS":
+          - "CLI": aws/cli.md
+          # - 'CloudFormation': aws/cloudformation.md
+          # - 'EC2': aws/ec2.md
+          # - 'ECS': aws/ecs.md
+          # - 'EKS': aws/eks.md
+          # - 'IAM': aws/iam.md
+          # - 'Lambda': aws/lambda.md
+          # - 'S3': aws/s3.md
+          # - 'SNS': aws/sns.md
+          # - 'SQS': aws/sqs.md
+          # - 'VPC': aws/vpc.md
+  - Rancher:
+      - "RKE2 Ansible Installation": rancher/rke2-installation-ansible.md
+      - "RKE2 Binary Installation": rancher/rke2-installation.md
+      - "RKE2 HA (Highly Available)":
+          - "HA Installation": rancher/rke2-ha/rke2-highly-available-installation.md
+          - "Automatic Upgrades": rancher/rke2-ha/rke2-system-upgrade-controller-installation.md
           # - 'Install Rancher': rancher/rke2-ha/rke2-install-rancher.md
-          - 'How to ETCD Restore': rancher/rke2-ha/rke2-ha-etcd-restore.md
-    - Postgres:
-      - 'Configuration': postgres/configuration.md
-      - 'psql': postgres/psql.md
-      - 'Backup & Restore': postgres/backup-restore.md
-    # - Kubernetes:
-    #     - 'Kubectl': kubernetes/kubectl.md
-    #     - 'Kustomize': kubernetes/kustomize.md
-    #     - 'Helm': kubernetes/helm.md
-    - Jenkins:
-        - 'Jenkins Installation': jenkins/jenkins-installation.md
-        - 'Home': jenkins/README.md
-        # - 'Installation': ci-cd/jenkins/installation.md
-        # - 'Pipeline': ci-cd/jenkins/pipeline.md
-    - Ansible:
-        - 'Home': ansible/README.md
+          - "How to ETCD Restore": rancher/rke2-ha/rke2-ha-etcd-restore.md
+  - Postgres:
+      - "Configuration": postgres/configuration.md
+      - "psql": postgres/psql.md
+      - "Backup & Restore": postgres/backup-restore.md
+  # - Kubernetes:
+  #     - 'Kubectl': kubernetes/kubectl.md
+  #     - 'Kustomize': kubernetes/kustomize.md
+  #     - 'Helm': kubernetes/helm.md
+  - Jenkins:
+      - "Jenkins Installation": jenkins/jenkins-installation.md
+      - "Home": jenkins/README.md
+      # - 'Installation': ci-cd/jenkins/installation.md
+      # - 'Pipeline': ci-cd/jenkins/pipeline.md
+  - Ansible:
+      - "Home": ansible/README.md
 
 theme:
   name: material
@@ -64,7 +66,7 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
-  palette: 
+  palette:
     # Palette toggle for light mode
     - scheme: slate
       media: "(prefers-color-scheme: dark)"
@@ -83,7 +85,6 @@ theme:
         icon: material/weather-night
         name: Switch to light mode
 
-      
 markdown_extensions:
   - tables
   - pymdownx.critic
@@ -105,7 +106,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
   - attr_list
   - md_in_html
   - attr_list
@@ -114,6 +115,6 @@ markdown_extensions:
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
 plugins:
-- search
-- mkdocstrings
-- autorefs
+  - search
+  - mkdocstrings
+  - autorefs

@@ -1,6 +1,4 @@
-# Linux Commands
-
-### cat
+# cat
 
 - **Description**: Concatenate files and print on the standard output. Can be used to create a file from the standard input.
 
