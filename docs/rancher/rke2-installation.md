@@ -1,4 +1,4 @@
-# RKE2 Setup
+# RKE2 Setup :fire:
 
 ##### :information_source: RKE2 Requirements :
 

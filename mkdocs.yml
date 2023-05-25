@@ -39,6 +39,7 @@ nav:
     #     - 'Kustomize': kubernetes/kustomize.md
     #     - 'Helm': kubernetes/helm.md
     - Jenkins:
+        - 'Jenkins Installation': jenkins/jenkins-installation.md
         - 'Home': jenkins/README.md
         # - 'Installation': ci-cd/jenkins/installation.md
         # - 'Pipeline': ci-cd/jenkins/pipeline.md
