@@ -24,6 +24,8 @@ nav:
           # - 'SNS': aws/sns.md
           # - 'SQS': aws/sqs.md
           # - 'VPC': aws/vpc.md
+      - "Azure":
+          - "Agent Installation": azure/agent-installation.md
   - Rancher:
       - "RKE2 Ansible Installation": rancher/rke2-installation-ansible.md
       - "RKE2 Binary Installation": rancher/rke2-installation.md
