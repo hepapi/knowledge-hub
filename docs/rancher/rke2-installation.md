@@ -34,7 +34,7 @@ Now that we have all the nodes up to date, let's focus on `rancher1`. While this
 
 ```bash
 #rancher1
-curl -sfL https://get.rke2.io | sh -
+curl -sfL https://get.rke2.io | INSTALL_RKE2_TYPE=server sh -
 
 mkdir -p /etc/rancher/rke2/
 cat << EOF > /etc/rancher/rke2/config.yaml
@@ -67,21 +67,23 @@ Perfect! :confetti_ball: Now we can start talking Kubernetes. We need to symlink
 ```bash
 # add kubectl conf
 echo 'export PATH=$PATH:/var/lib/rancher/rke2/bin KUBECONFIG=/etc/rancher/rke2/rke2.yaml' >> ~/.bashrc
+source ~/.bashrc
+
 # check node status
 kubectl get node
 ```
 
 !!! quote
 
-    In addition these commands can be used
+    In addition these commands can be used for KUBECONFIG
 
-```bash
-# simlink all the things - kubectl
-ln -s $(find /var/lib/rancher/rke2/data/ -name kubectl) /usr/local/bin/kubectl
+    ```bash
+    # simlink all the things - kubectl
+    ln -s $(find /var/lib/rancher/rke2/data/ -name kubectl) /usr/local/bin/kubectl
 
-# add kubectl conf
-export KUBECONFIG=/etc/rancher/rke2/rke2.yaml
-```
+    # add kubectl conf
+    export KUBECONFIG=/etc/rancher/rke2/rke2.yaml
+    ```
 
 We will also need to get the token from `rancher1`.
 
@@ -96,7 +98,7 @@ The agent install is VERY similar to the server install. Except that we need an 
 
 ```bash
 # we add INSTALL_RKE2_TYPE=agent
-curl -sfL https://get.rke2.io | sh -
+curl -sfL https://get.rke2.io | INSTALL_RKE2_TYPE=agent sh -
 
 # create config file
 mkdir -p /etc/rancher/rke2/ 
@@ -142,9 +144,8 @@ kubectl get node
 
  If you are having problems with installations, make sure there are no problems with instances' accessing each other `(For Example --Ssh connection--: Permission Denied)`
 
-!!! failure "Check These Steps"
+!!! failure "Check below steps if RKE2-Server or RKE2-Agent is not working "
 
-    - [ ] Check below steps if RKE2-Server or RKE2-Agent is not working 
     - [ ] Rancher1 instances Node Token is correct ? 
     - [ ] Instances IP address is Correct ? 
     - [ ] Instance Ports is open (9345, 6443) ?
