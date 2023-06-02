@@ -34,14 +34,23 @@ Now that we have all the nodes up to date, let's focus on `rancher1`. While this
 
 ```bash
 #rancher1
-url -sfL https://get.rke2.io | sh -
+curl -sfL https://get.rke2.io | sh -
+
 mkdir -p /etc/rancher/rke2/
 cat << EOF > /etc/rancher/rke2/config.yaml
 kube-apiserver-arg: "kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname"
 EOF
+
 # enable and start
 systemctl enable --now rke2-server.service
 ```
+
+
+!!! success
+
+    Let's validate everything worked as expected. Run a `systemctl status rke2-server` and make sure it is `active`.
+
+
 
 !!! quote
 
@@ -62,6 +71,18 @@ echo 'export PATH=$PATH:/var/lib/rancher/rke2/bin KUBECONFIG=/etc/rancher/rke2/r
 kubectl get node
 ```
 
+!!! quote
+
+    In addition these commands can be used
+
+```bash
+# simlink all the things - kubectl
+ln -s $(find /var/lib/rancher/rke2/data/ -name kubectl) /usr/local/bin/kubectl
+
+# add kubectl conf
+export KUBECONFIG=/etc/rancher/rke2/rke2.yaml
+```
+
 We will also need to get the token from `rancher1`.
 
 ```bash
@@ -75,13 +96,17 @@ The agent install is VERY similar to the server install. Except that we need an 
 
 ```bash
 # we add INSTALL_RKE2_TYPE=agent
-curl -sfL https://get.rke2.io 
+curl -sfL https://get.rke2.io | sh -
+
 # create config file
 mkdir -p /etc/rancher/rke2/ 
+
 # change the ip to reflect your rancher1 ip
 echo "server: https://$RANCHER1_IP:9345" > /etc/rancher/rke2/config.yaml
+
 # change the Token to the one from rancher1 /var/lib/rancher/rke2/server/node-token 
 echo "token: $TOKEN" >> /etc/rancher/rke2/config.yaml
+
 # enable and start
 systemctl enable --now rke2-agent.service
 ```
