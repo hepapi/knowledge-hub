@@ -27,14 +27,14 @@ nav:
       - "Azure":
           - "Agent Installation": azure/agent-installation.md
   - K8S Engine Installation:
-      - "K3S Installation": rancher/k3s-installation.md
-      - "RKE2 Ansible Installation": rancher/rke2-installation-ansible.md
-      - "RKE2 Binary Installation": rancher/rke2-installation.md
+      - "K3S Installation": k8s-engine/k3s-installation.md
+      - "RKE2 Ansible Installation": k8s-engine/rke2-installation-ansible.md
+      - "RKE2 Binary Installation": k8s-engine/rke2-installation.md
       - "RKE2 HA (Highly Available)":
-          - "HA Installation": rancher/rke2-ha/rke2-highly-available-installation.md
-          - "Automatic Upgrades": rancher/rke2-ha/rke2-system-upgrade-controller-installation.md
+          - "HA Installation": k8s-engine/rke2-ha/rke2-highly-available-installation.md
+          - "Automatic Upgrades": k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation.md
           # - 'Install Rancher': rancher/rke2-ha/rke2-install-rancher.md
-          - "How to ETCD Restore": rancher/rke2-ha/rke2-ha-etcd-restore.md
+          - "How to ETCD Restore": k8s-engine/rke2-ha/rke2-ha-etcd-restore.md
   - Rancher:
       - "Rancher UI Installation": rancher/rke2-installation-ansible.md
   - Postgres:
