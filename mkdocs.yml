@@ -26,7 +26,8 @@ nav:
           # - 'VPC': aws/vpc.md
       - "Azure":
           - "Agent Installation": azure/agent-installation.md
-  - Rancher:
+  - K8S Engine Installation:
+      - "K3S Installation": rancher/k3s-installation.md
       - "RKE2 Ansible Installation": rancher/rke2-installation-ansible.md
       - "RKE2 Binary Installation": rancher/rke2-installation.md
       - "RKE2 HA (Highly Available)":
@@ -34,6 +35,8 @@ nav:
           - "Automatic Upgrades": rancher/rke2-ha/rke2-system-upgrade-controller-installation.md
           # - 'Install Rancher': rancher/rke2-ha/rke2-install-rancher.md
           - "How to ETCD Restore": rancher/rke2-ha/rke2-ha-etcd-restore.md
+  - Rancher:
+      - "Rancher UI Installation": rancher/rke2-installation-ansible.md
   - Postgres:
       - "Configuration": postgres/configuration.md
       - "psql": postgres/psql.md
@@ -58,12 +61,13 @@ theme:
   logo: images/hepapi-logo.png
   features:
     - navigation.tracking
-    - navigation.expand
+    - navigation.instant
     - search.suggest
     - search.highlight
     - search.share
     - content.code.copy
     - content.tabs.link
+    
 
   icon:
     repo: fontawesome/brands/github
