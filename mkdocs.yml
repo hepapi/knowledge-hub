@@ -36,7 +36,7 @@ nav:
           # - 'Install Rancher': rancher/rke2-ha/rke2-install-rancher.md
           - "How to ETCD Restore": k8s-engine/rke2-ha/rke2-ha-etcd-restore.md
   - Rancher:
-      - "Rancher UI Installation": rancher/rke2-installation-ansible.md
+      - "Rancher Installation": rancher/rancher-installation.md
   - Postgres:
       - "Configuration": postgres/configuration.md
       - "psql": postgres/psql.md
