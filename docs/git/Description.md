@@ -1,0 +1,5 @@
+## Version Control System (VCS)
+A Version Control System (VCS) is a software tool that helps track changes made to files and directories over time. It allows multiple people to collaborate on a project, keeping a history of changes, and providing mechanisms to manage different versions of files. VCS enables teams to work concurrently, facilitating efficient collaboration and providing features like branching, merging, and conflict resolution.
+
+## Git
+Git is a widely used distributed version control system designed for speed, flexibility, and data integrity. It is free and open-source, offering powerful features that make it popular among individuals and large organizations. Git provides a decentralized approach, allowing users to have a local copy of the entire repository, including its history, branches, and tags.
