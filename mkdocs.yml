@@ -52,6 +52,10 @@ nav:
       # - 'Pipeline': ci-cd/jenkins/pipeline.md
   - Ansible:
       - "Home": ansible/README.md
+  - Git:
+      - "Description": git/Description.md
+      - "Installation": git/installation.md
+      - "Commands": git/Commands.md
 
 theme:
   name: material
