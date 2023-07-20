@@ -13,6 +13,7 @@ This guide shows how to install Nexus to an EC2 instance and run as a container.
 
 - Min. 2 GB memory
 - Edit security group rule to allow port range from 8080 to 8082.
+- Enable Auto-assign public IP
 
 -----------------
 
