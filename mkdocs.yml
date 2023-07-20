@@ -45,6 +45,8 @@ nav:
   #     - 'Kubectl': kubernetes/kubectl.md
   #     - 'Kustomize': kubernetes/kustomize.md
   #     - 'Helm': kubernetes/helm.md
+  - Nexus:
+      - "Nexus Installation": nexus/nexus-installation.md
   - Jenkins:
       - "Jenkins Installation": jenkins/jenkins-installation.md
       - "Home": jenkins/README.md
