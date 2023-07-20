@@ -12,7 +12,7 @@ This guide shows how to install Nexus to an EC2 instance and run as a container.
 ### EC2 Configurations
 
 - Min. 2 GB memory
-- Edit security group rule to allow port range from 8080 to 8082.
+- Edit security group rules to allow port range from 8080 to 8082.
 - Enable Auto-assign public IP
 
 -----------------
@@ -44,11 +44,11 @@ sudo cat /var/lib/docker/volumes/nexus-data/_data/admin.password
 ```
 
 + After login, it is mandatory to set a new password.
-+ Go to repositories and click <b>Create repository</b>
-+ Select docker(hosted).
++ Go to repositories and click `Create repository`
++ Select `docker(hosted)`
 + Type the repository name.
 + Select HTTP as repository connector on port 8082.
-+ Finally click <b>Create repository</b> at the bottom.
++ Finally, click `Create repository` at the bottom.
 
 ----------------
 
@@ -56,21 +56,22 @@ sudo cat /var/lib/docker/volumes/nexus-data/_data/admin.password
 
 For security purposes, we should use roles and users to grant permissions for specific tasks.
 
-#### Create Role and User
+### Create Role and User
 
 * Type : Select Nexus role
-* Privileges: Add "nx-repository-admin-*-*-*". This permission will allow all actions for all artifact and repository types.
->* First and second "*" represent recipe (docker,apt,helm) 
+* Privileges: Add `nx-repository-admin-*-*-*` This permission will allow all actions for all artifact and repository types.
+>* First and second "*" represent recipe and repository type (docker hosted, docker proxy, apt hosted, apt proxy etc.) 
 >* Last one represents actions (add,browse,read,edit,delete)
 * Create a new user using the role just created.
 
 ----------------------------------------------------------------------------------------
 
-:warning: In Nexus Repository, the <b>Docker Bearer Token Realm</b> is required in order to allow anonymous pulls from Docker repositories
+:warning: In Nexus Repository, the `Docker Bearer Token Realm` is required in order to allow anonymous pulls from Docker repositories
 
 To allow anonymous pull:
-* Go to "Realms" in Secutiry, add Docker Bearer Token Realm to active category.
-* Edit the repo and click "Allow anonymous docker pull"
+
++ Go to `Realms` in Secutiry, add Docker Bearer Token Realm to active category.
++ Edit the repo and click `Allow anonymous docker pull`
 
 ----------------------------------------------------------------------------------------
 
@@ -96,7 +97,7 @@ Add this:
 }
 ```
 
-When you specify --restart always in docker run command, the container will also always start on daemon startup, regardless of the current state of the container. If docker service is not running, restart the service and start the container again:
+When you specify `--restart always` in docker run command, the container will also always start on daemon startup, regardless of the current state of the container. If docker service is not running, restart the service and start the container again:
 
 ```bash
 systemctl restart docker
@@ -104,7 +105,7 @@ docker ps -a # Get ID or name of container
 docker start <nexus-container>
 ```
 
-If access to a repository requires the user to be authenticated, Docker will check for authentication access in the ".docker/config.json" file on your local machine. If authentication is not found, you will need to perform a `docker login` command.
+If access to a repository requires the user to be authenticated, Docker will check for authentication access in the `.docker/config.json`file on your local machine. If authentication is not found, you will need to perform a `docker login` command.
 
 ```bash
 docker login -u <username> <EC2_PUBLIC_IP>:8082
