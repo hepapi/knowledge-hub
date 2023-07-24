@@ -47,6 +47,13 @@ nav:
   #     - 'Helm': kubernetes/helm.md
   - Nexus:
       - "Nexus Installation": nexus/nexus-installation.md
+      - "User And Roles": nexus/nexus-user-and-roles.md
+      - "Docker Hosted Repository": nexus/docker-hosted-repo.md
+      - "Docker Proxy Repository": nexus/docker-proxy-repo.md
+      - "Pull Images to Kubernetes": nexus/pull-to-kubernetes.md
+  # - Nomad:
+  #     - "Nomad Installation": nomad/nomad-installation.md
+  #     - "Nomad HA Installation": nomad/nomad-HA.md
   - Jenkins:
       - "Jenkins Installation": jenkins/jenkins-installation.md
       - "Home": jenkins/README.md
