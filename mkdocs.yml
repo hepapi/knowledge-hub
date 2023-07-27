@@ -51,6 +51,7 @@ nav:
       - "Docker Hosted Repository": nexus/docker-hosted-repo.md
       - "Docker Proxy Repository": nexus/docker-proxy-repo.md
       - "Pull Images to Kubernetes": nexus/pull-to-kubernetes.md
+      - "RKE2 Registry Configuration" : nexus/registry-configuration.md
   # - Nomad:
   #     - "Nomad Installation": nomad/nomad-installation.md
   #     - "Nomad HA Installation": nomad/nomad-HA.md
