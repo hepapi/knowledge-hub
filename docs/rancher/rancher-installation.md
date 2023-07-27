@@ -174,12 +174,12 @@ Before you set up your certificates, it's a good idea to test them to ensure tha
 
 Subject Alternative Name <b>must contains the same value of the CN.</b> If it does not, the certificate is not valid because the industry moves away from CN
 
-    ```bash
-    openssl x509 -noout -subject -in tls.crt
-    # subject= /CN=<example.domain.com>
-    openssl x509 -noout -in tls.crt -text | grep DNS
-    # DNS:<example.domain.com>
-    ```
+```bash
+openssl x509 -noout -subject -in tls.crt
+# subject= /CN=<example.domain.com>
+openssl x509 -noout -in tls.crt -text | grep DNS
+# DNS:<example.domain.com>
+```
 
 ------------
 
