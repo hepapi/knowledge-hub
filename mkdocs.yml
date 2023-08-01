@@ -66,6 +66,9 @@ nav:
       - "Description": git/Description.md
       - "Installation": git/installation.md
       - "Commands": git/Commands.md
+  - Falcon LogScale:
+      - "Installation With Docker": falcon-logscale/falcon-logscale-installation.md
+      - "Agent Installation (Log Collector)": falcon-logscale/agent-installation.md
   - Sumo Logic:
       - "Install a Collector on Linux": sumo/sumo-linux-collector.md
 theme:
