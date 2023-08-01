@@ -8,6 +8,7 @@ First of all, you need to create a new repo from `Repositories and View`.After c
 ### Download Collector
 
 You should follow the steps below to reach the download page, select the package suitable for your system and download it.
+
 Main Page ➡️ Fleet Management ➡️ LogScale Collector Download
 
 !!! warning annanote  "Important Installations Notes"
