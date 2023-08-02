@@ -40,12 +40,12 @@ The Sumo Logic Collector has the following system requirements:
 chmod +x SumoCollector.sh
 ```
 2. Run the script with the parameters that you want to configure 
-   ##### Examples
-   ###### 1) Using an Installation Token
+   
+#### Using an Installation Token
 
-    ```bash
-    sudo ./SumoCollector.sh -q -Vsumo.token_and_url=<installationToken> -Vsources=<absolute_filepath>
-    ```
+```bash
+sudo ./SumoCollector.sh -q -Vsumo.token_and_url=<installationToken> -Vsources=<absolute_filepath>
+```
 By default, the Collector will be installed in either `/opt/SumoCollector` or `/usr/local/SumoCollector`.
 
 ### Other parameters for the command line installer
