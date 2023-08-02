@@ -1,4 +1,4 @@
-# Install a Collector on Windows
+# Install a Sumo Logic Collector on Windows
 ## System Requirements for Windows
 
 * Windows 7, 32 or 64 bit
@@ -66,7 +66,7 @@ In Windows Host by using double backslashes, the JSON parser will interpret each
 * Backslashes are **<span style="color:red">NOT</span>** treated correctly:
  `"-Vsources=<C:\some\path\to\SumoCollector.exe>"` or `"pathExpression":"<C:\path\to\source.json>"`
 * Backslashes **<span style="color:green">ARE </span>** treated correctly: 
-  `"-Vsources=<C:\\some\path\to\SumoCollector.exe>"` or `"pathExpression":"<C:\\path\to\source.json>"`
+  `"-Vsources=<C:\\some\\path\\to\\SumoCollector.exe>"` or `"pathExpression":"<C:\\path\\to\\source.json>"`
 
 ### Uninstalling from the command line
 
