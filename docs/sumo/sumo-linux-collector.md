@@ -1,6 +1,8 @@
-# Download a Sumo Logic Collector from a Static URL
+# Install a Sumo Logic Collector on Linux
 
-Invoke a web request utility such as wget or Invoke-WebRequest. For example, if you're on a Linux 64-bit host, you can wget the Collector from the command line:
+### Download a Sumo Logic Collector from a Static URL
+
+Invoke a web request utility such as wget. For Linux 64-bit host, you can wget the Collector from the command line:
 
 ```bash
 wget "https://collectors.sumologic.com/rest/download/linux/64" -O SumoCollector.sh && chmod +x SumoCollector.sh
@@ -17,7 +19,7 @@ For other hosts choose the related one above:
 | Windows 32 | https://collectors.au.sumologic.com/rest/download/windows |
 | Windows 64 | https://collectors.au.sumologic.com/rest/download/win64 |
 
-<span style="color: red;">#### Important Note:</span>
+<span style="color: red;">Important Note:</span>
 The latest release of the Sumo Collector targets the Java 8 runtime. Java 6 and Java 7 are no longer supported as the Collector runtime, and Solaris is no longer supported. When you upgrade Collectors, JRE 8 or later is required. The Sumo Collector with a bundled JRE now ships with JRE 8.
 
 ### System Requirements
@@ -39,11 +41,11 @@ chmod +x SumoCollector.sh
 ```
 2. Run the script with the parameters that you want to configure 
    ##### Examples
-<span style="color: blue;">1) Using an Installation Token:</span>
+   ###### 1) Using an Installation Token
 
-```bash
-sudo ./SumoCollector.sh -q -Vsumo.token_and_url=<installationToken> -Vsources=<absolute_filepath>
-```
+    ```bash
+    sudo ./SumoCollector.sh -q -Vsumo.token_and_url=<installationToken> -Vsources=<absolute_filepath>
+    ```
 By default, the Collector will be installed in either `/opt/SumoCollector` or `/usr/local/SumoCollector`.
 
 ### Other parameters for the command line installer
@@ -76,18 +78,6 @@ The user.properties file can also be used to configure the following parameters:
 * **-VhostName** : Name of the host machine that the collector is installed
 * **-Vsources** : The contents of the file or files are read upon Collector registration only, it is not synchronized with the Collector's configuration on an on-going basis.
 * **-VsyncSources** : The Source definitions will be continuously monitored and synchronized with the Collector's configuration.
-
-**Source types for installed collectors**
-
-The following source types are available for installed collectors:
-
-| Parameter | Description |
-|---|---|
-| sourceType | The type of the data that the collector will collect. |
-| description | Type a description of the Source. |
-| category | Type a category of the source. |
-| cutoffTimestamp | If you have a file that contains logs with timestamps spanning an entire week and set the cutoffTimestamp to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the cutoffTimestamp |
-| pathExpression | A valid path expression (full path) of the file to collect |
 
 ### Start or Stop a Collector using Scripts
 

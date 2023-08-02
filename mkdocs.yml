@@ -68,6 +68,7 @@ nav:
       - "Commands": git/Commands.md
   - Sumo Logic:
       - "Install a Collector on Linux": sumo/sumo-linux-collector.md
+      - "Local Configuration File Management": sumo/sumo-local-file-management.md  
 theme:
   name: material
   language: en
