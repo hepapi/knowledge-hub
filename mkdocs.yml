@@ -9,6 +9,8 @@ nav:
       - "Shell Commands":
           - "script": linux/shell/script.md
           - "cat": linux/shell/cat.md
+          - "jobs, bg, fg": linux/shell/jobs-bg-fg.md
+          - "nohup, &": linux/shell/ampersand-nohup.md
       - "Tooling": linux/tooling.md
       - "Tips": linux/tips.md
   - "Cloud Providers":
