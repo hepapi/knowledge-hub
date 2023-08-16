@@ -17,8 +17,12 @@ scp -i "pam.pem" -r ubuntu@3.86.225.192:/home/ubuntu/  .
 ``scp`` provides a number of options that control every aspect of its behavior. The most widely used options are:
 
 ``-P`` - Specifies the remote host ssh port.
+
 ``-p`` - Preserves files modification and access times.
+
 ``-q`` - Use this option if you want to suppress the progress meter and non-error messages.
+
 ``-C`` - This option forces scp to compresses the data as it is sent to the destination machine.
+
 ``-r`` - This option tells scp to copy directories recursively.
 

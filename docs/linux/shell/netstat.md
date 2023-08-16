@@ -20,9 +20,13 @@ netstat -tulpn | more
 **Where netstat command options are:**
 
 ``-t`` : Select all TCP ports
+
 ``-u`` : Select all UDP ports
+
 ``-l`` : Show listening server sockets (open TCP and UDP ports in listing state)
+
 ``-p`` : Display PID/Program name for sockets. In other words, this option tells who opened the TCP or UDP port. For example, on my system, Nginx opened TCP port 80/443, so I will /usr/sbin/nginx or its PID.
+
 ``-n`` : Don’t resolve name (avoid dns lookup, this speed up the netstat on busy Linux/Unix servers)
 
 ---
@@ -36,9 +40,13 @@ sudo ss -tulwn | grep LISTEN
 ```
 
 ``-t`` : Show only TCP sockets on Linux
+
 ``-u`` : Display only UDP sockets on Linux
+
 ``-l`` : Show listening sockets. For example, TCP port 22 is opened by SSHD server.
+
 ``-p`` : List process name that opened sockets
+
 ``-n`` : Don’t resolve service names i.e. don’t use DNS
 
 # PS Command
