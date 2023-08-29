@@ -102,6 +102,8 @@ Example topology:
     workers
     ```
 
+    Host names (ex: master-01) can be changed, however they must be lowercase.
+
     Save and quit by pressing Esc, then :wq!
 
 1. Create playbook.yaml file in `~/.ansible` (check previous step for help with vi)
