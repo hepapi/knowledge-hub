@@ -77,8 +77,10 @@ nav:
       - "Agent Installation (Log Collector)": falcon-logscale/agent-installation.md
   - Sumo Logic:
       - "Install a Collector on Linux": sumo/sumo-linux-collector.md
-      - "Install a Collector on Windows": sumo/sumo-windows-collector.md 
-      - "Local Configuration File Management": sumo/sumo-local-file-management.md  
+      - "Install a Collector on Windows": sumo/sumo-windows-collector.md
+      - "Local Configuration File Management": sumo/sumo-local-file-management.md
+  - Vagrant:
+      - "Vagrant Quickstart": vagrant/vagrant-quickstart.md
 theme:
   name: material
   language: en
