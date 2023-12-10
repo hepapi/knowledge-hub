@@ -82,6 +82,8 @@ nav:
       - "Local Configuration File Management": sumo/sumo-local-file-management.md
   - Vagrant:
       - "Vagrant Quickstart": vagrant/vagrant-quickstart.md
+  - Sealed-Secrets:
+      - "Sealed-Secrets": sealed-secrets/sealed-secrets.md
 theme:
   name: material
   language: en
