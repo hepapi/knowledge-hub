@@ -84,6 +84,8 @@ nav:
       - "Vagrant Quickstart": vagrant/vagrant-quickstart.md
   - Sealed-Secrets:
       - "Sealed-Secrets": sealed-secrets/sealed-secrets.md
+  - K8S Storage:
+      - "NFS": k8s-storage/nfs-install.md
 theme:
   name: material
   language: en
