@@ -2,7 +2,7 @@
 - 1 Master Node
 - 1 Worker Node (NFS)
 ---
-First of all, we save the ip address of our NFS server in the `/etc/hosts` file on all our nodes.
+First of all, we save the ip address of our NFS server in the `/etc/hosts` file on all our nodes.(`master - nfs`)
 
 ```yaml
 /etc/hosts
@@ -11,25 +11,25 @@ First of all, we save the ip address of our NFS server in the `/etc/hosts` file 
 172.31.20.138 k8s-ankara-nfs01
 ```
 
-Then we install the necessary applications for our NFS structure.
+Then we install the necessary applications for our NFS structure.(`nfs`)
 
 ```yaml
 sudo apt-get update
 sudo apt-get install -y nfs-kernel-server
 ```
 
-Let's create a directory on our server to store files.
+Let's create a directory on our server to store files.(`nfs`)
 ```yaml
 sudo mkdir /k8s-data && sudo mkdir /k8s-data/ankara-data
 sudo chmod 1777 /k8s-data/ankara-data
 touch /k8s-data/ankara-data/ankara-cluster.txt
 ```
-We need to edit the NFS server file for the directory we just created. At this stage, we will share the directory with all our nodes.
+We need to edit the NFS server file for the directory we just created. At this stage, we will share the directory with all our nodes.(`nfs`)
 ```yaml
 sudo nano /etc/exports
 ```
 
-After opening, add the following values at the end.
+After opening, add the following values at the end.(`nfs`)
 ```yaml
 # /etc/exports: the access control list for filesystems which may be exported
 #               to NFS clients.  See exports(5).
@@ -46,25 +46,25 @@ After opening, add the following values at the end.
 ```
 
 
-Then run the following command to re-read exportfs and confirm the changes.
+Then run the following command to re-read exportfs and confirm the changes.(`nfs`)
 ```yaml
 sudo exportfs -ra
 ```
 
 
-Now we will do the following operations on all our Kubernetes nodes.
+Now we will do the following operations on all our Kubernetes nodes.(`master - nfs`)
 ```yaml
 sudo apt-get -y install nfs-common
 ```
 
 
-After the installation is finished, we check whether there is an access problem by running the following command on all our nodes.
+After the installation is finished, we check whether there is an access problem by running the following command on all our nodes.(`master`)
 ```yaml
 showmount -e k8s-ankara-nfs01
 ```
 
 
-There does not seem to be any problem. Now we can mount the folder we opened on our NFS server to our nodes.
+There does not seem to be any problem. Now we can mount the folder we opened on our NFS server to our nodes.(`master`)
 ```yaml
 sudo mount k8s-ankara-nfs01:/k8s-data/ankara-data /mnt
 ls -l /mnt
