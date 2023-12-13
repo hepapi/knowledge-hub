@@ -1,8 +1,8 @@
-# NFS Kurulumu Gereksinimler
+# NFS Setup Requirements
 - 1 Master Node
 - 1 Worker Node (NFS)
 ---
-Öncelikle bütün nodelarımızdaki `/etc/hosts` dosyasına, NFS sunucumuzun ip adresini kayıt ediyoruz.
+First of all, we save the ip address of our NFS server in the `/etc/hosts` file on all our nodes.
 
 ```yaml
 /etc/hosts
@@ -11,26 +11,25 @@
 172.31.20.138 k8s-ankara-nfs01
 ```
 
-Daha sonra NFS yapımız için gerekli uygulamaları kuruyoruz.
+Then we install the necessary applications for our NFS structure.
 
 ```yaml
 sudo apt-get update
 sudo apt-get install -y nfs-kernel-server
 ```
 
-Sunucumuzda dosyaların saklanması için bir dizin oluşturalım.
+Let's create a directory on our server to store files.
 ```yaml
 sudo mkdir /k8s-data && sudo mkdir /k8s-data/ankara-data
 sudo chmod 1777 /k8s-data/ankara-data
 touch /k8s-data/ankara-data/ankara-cluster.txt
 ```
-Yeni oluşturduğumuz dizin için NFS sunucu dosyasını düzenlememiz gerekiyor. Bu aşamada dizini bütün nodelarımızla paylaşmış olacağız.
+We need to edit the NFS server file for the directory we just created. At this stage, we will share the directory with all our nodes.
 ```yaml
 sudo nano /etc/exports
 ```
 
-
-Açtıktan sonra aşağıdaki değerleri en sona ekleyelim.
+After opening, add the following values at the end.
 ```yaml
 # /etc/exports: the access control list for filesystems which may be exported
 #               to NFS clients.  See exports(5).
@@ -47,33 +46,35 @@ Açtıktan sonra aşağıdaki değerleri en sona ekleyelim.
 ```
 
 
-Ardından aşağıdaki komutu çalıştırarak exportfs’nin yeniden okunmasını ve değişikliklerin onaylanmasını sağlayalım.
+Then run the following command to re-read exportfs and confirm the changes.
 ```yaml
 sudo exportfs -ra
 ```
 
 
-Şimdi bütün Kubernetes nodelarımızda aşağıdaki işlemleri yapacağız.
+Now we will do the following operations on all our Kubernetes nodes.
 ```yaml
 sudo apt-get -y install nfs-common
 ```
 
 
-Kurulum bittikten sonra tüm nodelarımızda aşağıdaki komutu çalıştırarak, erişim sorunu olup, olmadığını kontrol ediyoruz.
+After the installation is finished, we check whether there is an access problem by running the following command on all our nodes.
 ```yaml
 showmount -e k8s-ankara-nfs01
 ```
 
 
-Herhangi bir sorun görünmüyor. Artık NFS sunucumuzda açtığımız klasörü, nodelarımıza mount edebiliriz.
+There does not seem to be any problem. Now we can mount the folder we opened on our NFS server to our nodes.
 ```yaml
 sudo mount k8s-ankara-nfs01:/k8s-data/ankara-data /mnt
 ls -l /mnt
 ```
 
-NFS için tüm kurulum ve ayarlamaları yaptık. Sorunsuz şekilde podlarımızın verilerini saklayabiliriz.
+We have made all the setup and adjustments for NFS. We can store the data of our pods without any problems.
 
-NFS’imizi podların kullanımına sunmak için örnek Persistent Volume, Persistent Volume Claim ve Pod yaml dosyası aşağıdaki gibi olmalıdır.
+---
+
+To make our NFS available to pods, the sample Persistent Volume, Persistent Volume Claim and Pod yaml file should be as follows.
 ```yaml
 apiVersion: v1
 kind: PersistentVolume
