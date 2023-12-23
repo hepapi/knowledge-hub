@@ -53,6 +53,8 @@ Let's list ``longhorn-frontend`` with the command above. And with the command be
 kubectl port-forward -n longhorn-system service/longhorn-frontend 8080:80
 ```
 
+Now visit `localhost:8080` and enjoy ``longhorn``.
+
 We need to test the last ``Longhorn`` that we set up, right?
 
 ```yaml
@@ -66,6 +68,5 @@ kubectl get pv,pvc -n default
 kubectl get storageclass -n default
 ```
 
-Now visit `localhost:8080` and enjoy ``longhorn``.
 
 In fact, the ``Longhorn`` installation is so simple. See you on the next blog. 🎈
