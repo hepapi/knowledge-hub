@@ -86,6 +86,7 @@ nav:
       - "Sealed-Secrets": sealed-secrets/sealed-secrets.md
   - K8S Storage:
       - "NFS(Network File System)": k8s-storage/nfs-install.md
+      - "Longhorn Block Storage" : k8s-storage/longhorn.md
 theme:
   name: material
   language: en
