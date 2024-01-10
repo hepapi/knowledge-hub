@@ -73,7 +73,7 @@ nav:
       - "Ansible Inventory File": /ansible/inventory-file.md
       - "Ansible Configuration File": /ansible/config-file.md
       - "Ansible Playbooks": /ansible/playbook.md
-      - "Ansible Playbooks": /ansible/ansible-roles.md
+      - "Ansible Roles": /ansible/ansible-roles.md
   - Git:
       - "Description": git/Description.md
       - "Installation": git/installation.md

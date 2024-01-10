@@ -8,10 +8,10 @@ Ansible works by connecting to remote systems over SSH (Secure Shell) or other r
 
 Some key features and benefits of Ansible include:
 
-1-Simple and human-readable syntax: Ansible uses YAML syntax, which is easy to read and write, making it accessible to both developers and system administrators.
-2-Agentless architecture: Ansible communicates with remote systems using SSH or other protocols, eliminating the need for installing agents or daemons on the target systems.
-3-Idempotent nature: Ansible ensures that the desired state of the system is achieved regardless of the system’s current state. It only makes necessary changes, which makes it safe to run playbooks multiple times.
-4-Extensibility and flexibility: Ansible has a large number of modules that provide the ability to manage a wide range of systems and services. You can also write your own modules to extend its functionality.
-5-Orchestration and automation: Ansible allows you to define complex workflows and orchestrate multiple systems simultaneously, making it suitable for automating tasks across large-scale infrastructures.
-6-Integration with existing tools and systems: Ansible can integrate with various external tools, such as version control systems (e.g., Git), cloud platforms (e.g., AWS, Azure), and configuration management databases (e.g., Ansible Tower), allowing you to incorporate it into your existing workflows.
-7-Ansible is widely adopted and used in various industries and organizations for managing infrastructure, automating deployments, and improving operational efficiency.
+- Simple and human-readable syntax: Ansible uses YAML syntax, which is easy to read and write, making it accessible to both developers and system administrators.
+- Agentless architecture: Ansible communicates with remote systems using SSH or other protocols, eliminating the need for installing agents or daemons on the target systems.
+- Idempotent nature: Ansible ensures that the desired state of the system is achieved regardless of the system’s current state. It only makes necessary changes, which makes it safe to run playbooks multiple times.
+- Extensibility and flexibility: Ansible has a large number of modules that provide the ability to manage a wide range of systems and services. You can also write your own modules to extend its functionality.
+- Orchestration and automation: Ansible allows you to define complex workflows and orchestrate multiple systems simultaneously, making it suitable for automating tasks across large-scale infrastructures.
+- Integration with existing tools and systems: Ansible can integrate with various external tools, such as version control systems (e.g., Git), cloud platforms (e.g., AWS, Azure), and configuration management databases (e.g., Ansible Tower), allowing you to incorporate it into your existing workflows.
+- Ansible is widely adopted and used in various industries and organizations for managing infrastructure, automating deployments, and improving operational efficiency.

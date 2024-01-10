@@ -96,3 +96,4 @@ You can test that Ansible is installed correctly by checking the version:
 
 ```bash
 ansible --version
+```
