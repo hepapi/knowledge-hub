@@ -68,7 +68,12 @@ nav:
       # - 'Installation': ci-cd/jenkins/installation.md
       # - 'Pipeline': ci-cd/jenkins/pipeline.md
   - Ansible:
-      - "Home": ansible/README.md
+      - "Ansible Instalaltion": ansible/ansible-installations.md
+      - "Description": ansible/what-is-ansible.md
+      - "Ansible Inventory File": /ansible/inventory-file.md
+      - "Ansible Configuration File": /ansible/config-file.md
+      - "Ansible Playbooks": /ansible/playbook.md
+      - "Ansible Playbooks": /ansible/ansible-roles.md
   - Git:
       - "Description": git/Description.md
       - "Installation": git/installation.md
