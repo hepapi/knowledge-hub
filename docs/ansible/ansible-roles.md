@@ -10,21 +10,22 @@ Organizing our Ansible content into roles provides us with a structure that is m
 
 ## Ansible Role Structure
 Ansible checks for main.yml files, possible variations, and relevant content in each subdirectory. It’s possible to include additional YAML files in some directories. For instance, you can group your tasks in separate YAML files according to some characteristic
+
 my_role/
-|-- defaults/
-|   |-- main.yml
-|-- files/
-|-- handlers/
-|   |-- main.yml
-|-- meta/
-|   |-- main.yml
-|-- tasks/
-|   |-- main.yml
-|-- templates/
-|-- tests/
-|-- vars/
-|   |-- main.yml
-|-- README.md
+|-- defaults/     |
+|   |-- main.yml  |
+|-- files/        |
+|-- handlers/     |
+|   |-- main.yml  |
+|-- meta/         |   
+|   |-- main.yml  |
+|-- tasks/        |
+|   |-- main.yml  |
+|-- templates/    |
+|-- tests/        |
+|-- vars/         | 
+|   |-- main.yml  |
+|-- README.md     |
 
 - defaults:Includes default values for variables of the role. Here we define some sane default variables, but they have the lowest priority and are usually overridden by other methods to customize the role.
 - files:Contains static and custom files that the role uses to perform various tasks.
