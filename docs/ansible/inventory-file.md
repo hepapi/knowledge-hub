@@ -18,7 +18,7 @@ host04.hepapi.com
 
 [londra]
 host01.hepapi.com
-host03.mycompany.com
+host03.hepapi.com
 
 [istanbul]
 host02.hepapi.com
@@ -31,7 +31,7 @@ We can also create nested groups of hosts if necessary.
 ```bash
 [londra]
 host01.hepapi.com
-host03.mycompany.com
+host03.hepapi.com
 
 [istanbul]
 host02.hepapi.com
@@ -87,13 +87,17 @@ Ansible has two methods to properly track and target a dynamic set of hosts: inv
 To see a list of available inventory plugins you can leverage to build dynamic inventories, you can execute ansible-doc -t inventory -l. We will look at one of them, the amazon.aws.aws_ec2, to get hosts from Amazon Web Services EC2.
 
 Requirements
+
 The below requirements are needed on the local controller node that executes this inventory.
 - python >= 3.6
 - boto3 >= 1.26.0
 - botocore >= 1.29.0
 
 dynamic_inventory_aws_ec2.yml
-NOTE: The inventory file is a YAML configuration file and must end with aws_ec2.{yml|yaml}. Example: my_inventory.aws_ec2.yml
+
+NOTE: The inventory file is a YAML configuration file and must end with aws_ec2.{yml|yaml}. Example: 
+
+my_inventory.aws_ec2.yml
 
 ```bash
 plugin: amazon.aws.aws_ec2

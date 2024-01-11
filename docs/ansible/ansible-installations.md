@@ -15,7 +15,7 @@ pipx install ansible-core
 Alternately, you can install a specific version of ansible-core
 
 ```bash
-pipx install ansible-core
+pipx install ansible-core==2.12.3
 ```
 
 # Install Ansible with pip
@@ -86,6 +86,12 @@ Install it using the following command.
 
 ```bash
 sudo apt-get install python-software-properties
+```
+
+Lastly you can install the Ansible software with:
+
+```bash
+sudo apt install ansible -y
 ```
 
 
