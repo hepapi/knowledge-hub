@@ -69,7 +69,7 @@ Deploying KEDA on any Kubernetes cluster is easy, as it doesn’t need overwriti
 
 Note that KEDA activates or deactivates a deployment by scaling the number of replicas to zero or one. It then triggers HPA to scale the number of workloads from one to n based on the cluster resources
 
-#### Keda Deployment  :fire:
+### Keda Deployment  :fire:
 
 KEDA can be deployed in a Kubernetes cluster through Helm charts, operator hub, or YAML declarations
 
