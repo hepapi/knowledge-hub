@@ -33,6 +33,8 @@ nav:
           # - 'VPC': aws/vpc.md
       - "Azure":
           - "Agent Installation": azure/agent-installation.md
+  - Kubernetes:
+      - "keda(k8s event-driven Autoscaling)": kubernetes/keda.md 
   - K8S Engine Installation:
       - "K3S Installation": k8s-engine/k3s-installation.md
       - "RKE2 Ansible Installation": k8s-engine/rke2-installation-ansible.md
