@@ -135,13 +135,13 @@ def call(String name = 'human') {
 
 Go to the Global Pipeline Library to Jenkins. After accessing the Jenkins dashboard, navigate to Manage Jenkins >  System to find the Global Pipeline Libraries section and click on the add button to add a new library. Manage Jenkins ---> System ---> Global Pipeline Libraries ---> Click Add button
 
-Library Name: my-shared-library
-Default version: main
-Retrivial method: Modern SCM
-Source Code Management
-Project Repository: https://github.com/ersinsari13/jenkins-shared-library.git  #enter your repo name
+* Library Name: my-shared-library
+* Default version: main
+* Retrivial method: Modern SCM
+* Source Code Management
+* Project Repository: https://github.com/ersinsari13/jenkins-shared-library.git  #enter your repo name
 
-We can leave other parameters as default and save the configuration.
+* We can leave other parameters as default and save the configuration.
 
 ### Step-2 Creating jenkinsfile
 
@@ -190,10 +190,10 @@ pipeline {
 - Enter "docker-build-push" as a name and select pipeline and click Ok
 - Under Pipeline Section:
 
-Definition: Pipeline script from SCM
-SCM: Git
-Repository URL: https://github.com/ersinsari13/docker-build-push.git  #enter your repository name
-Branch: main
+* Definition: Pipeline script from SCM
+* SCM: Git
+* Repository URL: https://github.com/ersinsari13/docker-build-push.git  #enter your repository name
+* Branch: main
 
 Since the Jenkinsfile in the repo is not under any folder, it will be sufficient to just specify its name. For example, if my Jenkinsfile file was located under a folder named build; I should have written build/Jenkinsfile in the Script Path section.
 
@@ -210,11 +210,11 @@ In order for the images we created in Pipeline to be pushed to the registry, we 
 - Select Global
 - Click Add Credentials button:
 
-Kind: Username with password
-username: enter your dockerhub registry username
-password: enter your dockerhub registry password
-id: dockerhub-registry-credentials
-description: dockerhub-registry-credentials
+* Kind: Username with password
+* username: enter your dockerhub registry username
+* password: enter your dockerhub registry password
+* id: dockerhub-registry-credentials
+* description: dockerhub-registry-credentials
 
 - Save credentials configuration
 
