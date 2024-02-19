@@ -96,7 +96,7 @@ https://www.jenkins.io/doc/book/installing/
 ```
 
 
-### Step-1
+### Step-1 Creating Shared library
 
 Let's first create the groovy scripts of the Jenkins shared library and push them to git. We have two simple scripts for this example. We will perform docker build and docker push operations using these scripts.
 
