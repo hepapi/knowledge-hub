@@ -66,6 +66,7 @@ nav:
   #     - "Nomad HA Installation": nomad/nomad-HA.md
   - Jenkins:
       - "Jenkins Installation": jenkins/jenkins-installation.md
+      - "Jenkins Shared Library": jenkins/shared-library.md
       - "Home": jenkins/README.md
       # - 'Installation': ci-cd/jenkins/installation.md
       # - 'Pipeline': ci-cd/jenkins/pipeline.md
