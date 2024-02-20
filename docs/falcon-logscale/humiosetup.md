@@ -1,40 +1,43 @@
-### Humio Single Node Installation
+# Humio Single Node Installation Guide :fire:
 
-- Requirements for Single Node ;
+### LogScale installers are available for several Linux distributions.
 
-```
-16 GB Memory
-8 CPU
-100 GB Storage (Minimum)
-```
+- Debian/Ubuntu
+- Red Hat
 
-- OS:
-```
-Ubuntu LTS Server 20.04
-```
+### Prerequisites ;
+##### :information_source: Minimum hardware requirements:
 
-- Access:
-The machine to be installed must have access to the following addresses.
-```
-http://humio.com
-https://archive.apache.org/dist/zookeeper/zookeeper-3.7.1/apache-zookeeper-3.7.1-bin.tar.gz
-https://downloads.apache.org/kafka/3.5.1/kafka_2.13-3.5.1.tgz [downloads.apache.org]
-hkp://keyserver.ubuntu.com:80
-http://repos.azulsystems.com/ubuntu [repos.azulsystems.com]
-https://repo.humio.com/repository/maven-releases/com/humio/server/1.117.0/server-1.117.0.tar.gz
-```
+| Resources      | Limits                                                       |
+| -----------    | ------------------------------------                         |
+| `16GB`        | :fontawesome-solid-memory: MEMORY                          |
+| `8CPU`        | :octicons-cpu-16: CPU                                      |
+| `100GB`          | :material-database:     STORAGE                               |
 
-- Ports:
-```
+
+
+!!! quote "Access Permissions"
+    > The machine to be installed must have access to the following addresses.
+    
+    http://humio.com
+    https://archive.apache.org/dist/zookeeper/zookeeper-3.7.1/apache-zookeeper-3.7.1-bin.tar.gz
+    https://downloads.apache.org/kafka/3.5.1/kafka_2.13-3.5.1.tgz [downloads.apache.org]
+    hkp://keyserver.ubuntu.com:80
+    http://repos.azulsystems.com/ubuntu [repos.azulsystems.com]
+    https://repo.humio.com/repository/maven-releases/com/humio/server/1.117.0/server-1.117.0.tar.gz
+    
+
+The following ports must be open;
+```yaml
 80,443,8080,1514
 ```
 
-- You must follow the sequence below to install Falcon LogScale.
+You must follow the sequence below to install Falcon LogScale.
 
-- [Java Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/javainstallation.md)
-- [Zookeeper Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/zookeeperinstallation.md)
-- [Kafka Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/kafkainstallation.md)
-- [LogScale Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/humioinstallation.md)
+- [Java Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/javainstallation)
+- [Zookeeper Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/zookeeperinstallation)
+- [Kafka Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/kafkainstallation)
+- [LogScale Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/humioinstallation)
 
 
 
