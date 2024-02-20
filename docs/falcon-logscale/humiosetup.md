@@ -31,10 +31,10 @@ https://repo.humio.com/repository/maven-releases/com/humio/server/1.117.0/server
 
 - You must follow the sequence below to install Falcon LogScale.
 
-[Java Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/javainstallation.md)
-[Zookeeper Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/zookeeperinstallation.md)
-[Kafka Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/kafkainstallation.md)
-[LogScale Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/humioinstallation.md)
+- [Java Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/javainstallation.md)
+- [Zookeeper Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/zookeeperinstallation.md)
+- [Kafka Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/kafkainstallation.md)
+- [LogScale Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/humioinstallation.md)
 
 
 
