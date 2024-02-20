@@ -20,10 +20,15 @@
     > The machine to be installed must have access to the following addresses.
     
     http://humio.com
-    https://archive.apache.org/dist/zookeeper/zookeeper-3.7.1/apache-zookeeper-3.7.1-bin.tar.gz
+
+    https://archive.apache.org/dist/zookeeper/zookeeper-3.7.1/apache-zookeeper-3.7.1-bin.tar.gz 
+
     https://downloads.apache.org/kafka/3.5.1/kafka_2.13-3.5.1.tgz [downloads.apache.org]
+    
     hkp://keyserver.ubuntu.com:80
+    
     http://repos.azulsystems.com/ubuntu [repos.azulsystems.com]
+    
     https://repo.humio.com/repository/maven-releases/com/humio/server/1.117.0/server-1.117.0.tar.gz
     
 
