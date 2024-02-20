@@ -86,11 +86,11 @@ nav:
           - "Docker Container Installation": falcon-logscale/falcon-logscale-installation-docker.md
           - "Agent Installation (Log Collector)": falcon-logscale/agent-installation.md
       - "Single Node Installation":
-          - "Falcon LogScale Installation Guide": falcon-logscale/humioinstallation.md
+          - "Falcon LogScale Installation Guide": falcon-logscale/humiosetup.md
           - "Java Installation": falcon-logscale/javainstallation.md
           - "Zookeeper Installation": falcon-logscale/zookeeperinstallation.md
           - "Kafka Installation": falcon-logscale/kafkainstallation.md
-          - "LogScale Installation": falcon-logscale/humiosetup.md
+          - "LogScale Installation": falcon-logscale/humioinstallation.md
   - Sumo Logic:
       - "Install a Collector on Linux": sumo/sumo-linux-collector.md
       - "Install a Collector on Windows": sumo/sumo-windows-collector.md
