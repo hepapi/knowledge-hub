@@ -24,6 +24,6 @@ jobs:
       - run: pip install mkdocs-material 
 
       - name: credits page generation
-        run: bash git-contributors-per-file.sh > ../../docs/repo-credit.md
+        run: bash git-contributors-per-file.sh > docs/repo-credit.md
 
       - run: mkdocs gh-deploy --force
