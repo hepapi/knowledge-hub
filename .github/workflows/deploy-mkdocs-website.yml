@@ -25,13 +25,17 @@ jobs:
 
       - name: credits page generation
         run: | 
-          bash << 'EOF' > docs/repo-credit.md
+
+          bash << 'EOF'
           echo "| File | Contributors |"
           echo "|------|--------------|"
           git ls-tree -r --name-only main ./ | while read file ; do
-              echo "file: $file" 
+              git log --follow --pretty=format:%an -- "$file"
+              echo "-----------"              
+              git log --follow --pretty=format:%an -- "$file" | sort | uniq
+              echo "-----------"              
               contributors=$(git log --follow --pretty=format:%an -- "$file" | sort | uniq)
-              echo "contributors: $contributors"
+              
               joined_contributor_names="${contributors//$'\n'/,}"
               # Remove leading/trailing +
               joined_contributor_names="${joined_contributor_names#,}"
