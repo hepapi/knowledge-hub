@@ -14,6 +14,6 @@
 
 
 ### tldr (:star::star::star::star:)
-
+    
 - **Website**: https://tldr.sh/
 - **Description**: _Too Long Didn't Read_. Use it to learn about a command and its most useful options. `tldr <any command>` (e.g. `tldr curl`).   
