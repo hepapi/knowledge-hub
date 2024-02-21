@@ -24,6 +24,19 @@ jobs:
       - run: pip install mkdocs-material 
 
       - name: credits page generation
-        run: bash git-contributors-per-file.sh > docs/repo-credit.md
-
+        run: | 
+          bash << 'EOF' > docs/repo-credit.md
+          echo "| File | Contributors |"
+          echo "|------|--------------|"
+          git ls-tree -r --name-only main ./ | while read file ; do
+              contributors=$(git log --follow --pretty=format:%an -- "$file" | sort | uniq)
+              joined_contributor_names="${contributors//$'\n'/,}"
+              # Remove leading/trailing +
+              joined_contributor_names="${joined_contributor_names#,}"
+              joined_contributor_names="${joined_contributor_names%,}"
+              file_without_docs="${file#docs/}"
+              echo "| $file_without_docs | $joined_contributor_names |"
+          done
+          EOF
+          
       - run: mkdocs gh-deploy --force
