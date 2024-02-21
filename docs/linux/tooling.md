@@ -7,7 +7,7 @@
 - **Description**: AAAAAAAAAAAAA    
 -->
 
-### FZF - Fuzzy Finder (:star::star::star::star::star:)
+### FZF - Fuzzy Finder (:star::star::star::star::star:). 
 
 - **Github**: https://github.com/junegunn/fzf
 - **Description**: A command-line fuzzy finder. Use `<C-r>` to search through your command history, `<C-t>` to search through your files.
