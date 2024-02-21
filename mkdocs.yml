@@ -95,6 +95,7 @@ nav:
   - K8S Storage:
       - "NFS(Network File System)": k8s-storage/nfs-install.md
       - "Longhorn Block Storage" : k8s-storage/longhorn.md
+  - Credits: repo-credit.md
 theme:
   name: material
   language: en
