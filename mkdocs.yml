@@ -4,7 +4,9 @@ repo_name: hepapi/knowledge-hub
 
 nav:
   - Home: index.md
-  - How to .md: about-writing/about-markdown.md
+  - How to Contribute:
+    - creating new mkdocs pages: how-to-contribute/about-mkdocs.md
+    - writing markdown files: how-to-contribute/about-markdown.md
   - Linux:
       - "Shell Commands":
           - "script": linux/shell/script.md
@@ -107,7 +109,7 @@ theme:
   name: material
   language: en
   font:
-    text: Roboto Mono
+    text: Montserrat
   logo: images/hepapi-logo.png
   features:
     - navigation.tracking
@@ -117,7 +119,7 @@ theme:
     - search.share
     - content.code.copy
     - content.tabs.link
-    
+    # - header.autohide
 
   icon:
     repo: fontawesome/brands/github
@@ -140,6 +142,8 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to light mode
+
+
 
 markdown_extensions:
   - tables
