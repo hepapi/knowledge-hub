@@ -16,7 +16,7 @@ nav:
           - "nohup, &": linux/shell/ampersand-nohup.md
           - "nslookup": linux/shell/nslookup.md
           - "nmap": linux/shell/nmap.md
-          - "netstat": linux/shell/netstat.md
+          - "netstat, ss, ps": linux/shell/netstat.md
           - "scp": linux/shell/scp.md
       - "Tooling": linux/tooling.md
       - "Tips": linux/tips.md
