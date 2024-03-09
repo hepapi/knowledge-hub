@@ -2605,25 +2605,25 @@
 <p>https://www.postgresql.org/docs/current/app-pgdump.html</p>
 <h2 id="opsec">OPSEC</h2>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Make sure to use the same version on <strong>all postgres tooling</strong>. Do this OPSEC every time!</p>
+<p class="admonition-title">About the versions</p>
 </div>
+<p>Make sure to use the same version on <strong>all postgres tooling</strong>. Do this OPSEC every time!</p>
 <ul>
 <li>Check the postgres config, including the <strong>version number on the last line</strong>:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pg_config
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pg_config
 </code></pre></div></li>
 <li>Check the <code>pg_dump</code> version:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pg_dump<span class="w"> </span>--version
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pg_dump<span class="w"> </span>--version
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pg_dumpall<span class="w"> </span>--version
 </code></pre></div></li>
 <li>Check the <code>psql</code> version:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>psql<span class="w"> </span>--version
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>psql<span class="w"> </span>--version
 </code></pre></div></li>
 <li>Check the <code>pg_restore</code> version:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pg_restore<span class="w"> </span>--version
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pg_restore<span class="w"> </span>--version
 </code></pre></div></li>
 </ul>
-<p>Make sure <strong>all the versions match</strong>. Otherwise you might run into issues when restoring the backup. </p>
+<p>Make sure <strong>all the versions match</strong>. Otherwise you might run into issues when restoring the backup.</p>
 <hr />
 <h2 id="choosing-the-right-backup-tool">Choosing the right backup tool</h2>
 <table>
@@ -2661,14 +2661,12 @@
 <p>Used for logical backups, creating a script that contains SQL commands to recreate the database objects and data.</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>
-</code></pre></div>
 <h3 id="pg_basebackup">pg_basebackup</h3>
 <ul>
 <li>Primarily used for <strong>creating physical backups of the entire PostgreSQL database cluster</strong>, including all databases, tablespaces, and configuration files.</li>
 </ul>
 <h3 id="pg_restore">pg_restore</h3>
-<!-- TODO: -->
+<p>TODO: add pg_restore docs</p>
 
 
 
