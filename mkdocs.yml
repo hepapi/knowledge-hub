@@ -42,7 +42,7 @@ nav:
       - "RKE2 Binary Installation": k8s-engine/rke2-installation.md
       - "RKE2 HA (Highly Available)":
           - "HA Installation": k8s-engine/rke2-ha/rke2-highly-available-installation.md
-          - "Automatic Upgrades": k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation.md
+          - "Automatic Upgrades(rancher/system-upgrade-controller)": k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation.md
           # - 'Install Rancher': rancher/rke2-ha/rke2-install-rancher.md
           - "How to ETCD Restore": k8s-engine/rke2-ha/rke2-ha-etcd-restore.md
   - Rancher:
