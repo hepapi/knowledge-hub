@@ -5,8 +5,8 @@ repo_name: hepapi/knowledge-hub
 nav:
   - Home: index.md
   - How to Contribute:
-    - creating new mkdocs pages: how-to-contribute/about-mkdocs.md
-    - writing markdown files: how-to-contribute/about-markdown.md
+      - creating new mkdocs pages: how-to-contribute/about-mkdocs.md
+      - writing markdown files: how-to-contribute/about-markdown.md
   - Linux:
       - "Shell Commands":
           - "script": linux/shell/script.md
@@ -20,24 +20,23 @@ nav:
           - "scp": linux/shell/scp.md
       - "Tooling": linux/tooling.md
       - "Tips": linux/tips.md
-  - "Cloud Providers":
-      - "AWS":
-          - "CLI": aws/cli.md
-          # - 'CloudFormation': aws/cloudformation.md
-          # - 'EC2': aws/ec2.md
-          # - 'ECS': aws/ecs.md
-          # - 'EKS': aws/eks.md
-          # - 'IAM': aws/iam.md
-          # - 'Lambda': aws/lambda.md
-          # - 'S3': aws/s3.md
-          # - 'SNS': aws/sns.md
-          # - 'SQS': aws/sqs.md
-          # - 'VPC': aws/vpc.md
-      - "Azure":
-          - "Agent Installation": azure/agent-installation.md
+  - "AWS":
+      - "CLI": aws/cli.md
+      # - 'CloudFormation': aws/cloudformation.md
+      # - 'EC2': aws/ec2.md
+      # - 'ECS': aws/ecs.md
+      # - 'EKS': aws/eks.md
+      # - 'IAM': aws/iam.md
+      # - 'Lambda': aws/lambda.md
+      # - 'S3': aws/s3.md
+      # - 'SNS': aws/sns.md
+      # - 'SQS': aws/sqs.md
+      # - 'VPC': aws/vpc.md
+  - "Azure":
+      - "Agent Installation": azure/agent-installation.md
   - Kubernetes:
       - "keda(k8s event-driven Autoscaling)": kubernetes/keda/keda.md
-  - K8S Engine Installation:
+  - K8S Cluster Installation:
       - "K3S Installation": k8s-engine/k3s-installation.md
       - "RKE2 Ansible Installation": k8s-engine/rke2-installation-ansible.md
       - "RKE2 Binary Installation": k8s-engine/rke2-installation.md
@@ -62,7 +61,7 @@ nav:
       - "Docker Hosted Repository": nexus/docker-hosted-repo.md
       - "Docker Proxy Repository": nexus/docker-proxy-repo.md
       - "Pull Images to Kubernetes": nexus/pull-to-kubernetes.md
-      - "RKE2 Registry Configuration" : nexus/registry-configuration.md
+      - "RKE2 Registry Configuration": nexus/registry-configuration.md
   # - Nomad:
   #     - "Nomad Installation": nomad/nomad-installation.md
   #     - "Nomad HA Installation": nomad/nomad-HA.md
@@ -73,12 +72,12 @@ nav:
       # - 'Installation': ci-cd/jenkins/installation.md
       # - 'Pipeline': ci-cd/jenkins/pipeline.md
   - Ansible:
-      - "Ansible Instalaltion": ansible/ansible-installations.md
-      - "Description": ansible/what-is-ansible.md
-      - "Ansible Inventory File": ansible/inventory-file.md
-      - "Ansible Configuration File": ansible/config-file.md
-      - "Ansible Playbooks": ansible/playbook.md
-      - "Ansible Roles": ansible/ansible-roles.md
+      - "Ansible Installation": ansible/ansible-installations.md
+      - "About Ansible": ansible/what-is-ansible.md
+      - "Inventory File": ansible/inventory-file.md
+      - "Configuration File": ansible/config-file.md
+      - "Playbooks": ansible/playbook.md
+      - "Roles": ansible/ansible-roles.md
   - Git:
       - "Description": git/Description.md
       - "Installation": git/installation.md
@@ -103,8 +102,9 @@ nav:
       - "Sealed-Secrets": sealed-secrets/sealed-secrets.md
   - K8S Storage:
       - "NFS(Network File System)": k8s-storage/nfs-install.md
-      - "Longhorn Block Storage" : k8s-storage/longhorn.md
+      - "Longhorn Block Storage": k8s-storage/longhorn.md
   - Credits: repo-credit.md
+
 theme:
   name: material
   language: en
@@ -142,8 +142,6 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to light mode
-
-
 
 markdown_extensions:
   - tables
