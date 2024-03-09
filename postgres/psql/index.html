@@ -1263,9 +1263,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
+  <a href="#psql-commands" class="md-nav__link">
     <span class="md-ellipsis">
-      Options
+      psql commands
     </span>
   </a>
   
@@ -2509,9 +2509,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
+  <a href="#psql-commands" class="md-nav__link">
     <span class="md-ellipsis">
-      Options
+      psql commands
     </span>
   </a>
   
@@ -2537,24 +2537,30 @@
 
 <h1 id="psql-cli">psql CLI</h1>
 <h2 id="installation">Installation</h2>
-<p>!!! Warning Make sure to use the appropriate version of the client for the server.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>postgresql-client
-</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Make sure to use the appropriate version of the client for the server</p>
+</div>
+<p><code>bash
+    sudo apt install postgresql-client-&lt;version-number&gt;</code></p>
+<p>Go to official <a href="https://www.postgresql.org/download/">Download Page</a></p>
 <h2 id="running-commands">Running commands</h2>
 <p><strong>Accessing with the OS user</strong></p>
-<p>Run your commands as the <code>postgres</code> user. This is the default user created by the postgres image. </p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># sudo -u postgres:: will run the command as the postgres user</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>psql<span class="w"> </span>&lt;database-name&gt;
+<p>Run your commands as the <code>postgres</code> user. This is the default user created by the postgres image.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># sudo -u postgres:: will run the command as the postgres user</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>psql<span class="w"> </span>&lt;database-name&gt;
 </code></pre></div>
-The <code>postgres</code> user is the only user that can connect to the database without a password, create other users and databases. </p>
+<p>The <code>postgres</code> user is the only user that can connect to the database without a password, create other users and databases.</p>
 <p><strong>Using the credentials</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>psql<span class="w"> </span>--host<span class="w"> </span><span class="o">[</span>your-servers-dns-or-ip<span class="o">]</span><span class="w"> </span>--username<span class="w"> </span><span class="o">[</span>postgres<span class="o">]</span><span class="w"> </span>--password<span class="w"> </span>--dbname<span class="w"> </span><span class="o">[</span>template1<span class="o">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>psql<span class="w"> </span>--host<span class="w"> </span>&lt;your-servers-dns-or-ip&gt;<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span>--username<span class="w"> </span>postgres<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span>--password<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span>--dbname<span class="w"> </span>template1
 </code></pre></div>
-<h2 id="options">Options</h2>
+<h2 id="psql-commands">psql commands</h2>
 <table>
 <thead>
 <tr>
-<th>Option</th>
+<th>Command</th>
 <th>Description</th>
 </tr>
 </thead>
