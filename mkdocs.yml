@@ -1,6 +1,7 @@
 site_name: Hepapi Knowledge Hub
 repo_url: https://github.com/hepapi/knowledge-hub
 repo_name: hepapi/knowledge-hub
+edit_uri: edit/main/docs/
 
 nav:
   - Home: index.md
@@ -120,9 +121,12 @@ theme:
     - content.code.copy
     - content.tabs.link
     # - header.autohide
+    - content.action.edit
 
   icon:
     repo: fontawesome/brands/github
+    edit: material/pencil 
+    view: material/eye
 
   palette:
     # Palette toggle for light mode
