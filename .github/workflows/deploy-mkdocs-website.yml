@@ -6,6 +6,7 @@ on:
     paths:
       # only build the docs website when
       # there's a change on the .md files
+      - 'docs/'
       - 'docs/**'
       - 'mkdocs.yml'
 
