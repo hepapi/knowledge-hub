@@ -9,7 +9,7 @@ During this process, the cluster will be unavailable.
 
 
 ## Restoring RKE2 Cluster ETCD on Existing Nodes
-
+ 
 This process will restore the ETCD on the existing nodes. 
 
 If you're adding new nodes to the cluster, you should follow the [Restoring RKE2 Cluster ETCD on New Nodes](#restoring-rke2-cluster-etcd-on-new-nodes) section.
