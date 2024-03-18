@@ -13,7 +13,7 @@ find ./docs -maxdepth 1 -type d | while read -r dir_path; do
         continue # skip directories starting with .
     fi
 
-    printf "\n**%s**\n" "$dir_name"
+    printf "\n**%s**\n\n" "$dir_name"
 
     # find all markdown files in the directory and iterate over them
     find "./docs/$dir_name" -type f -name "*.md" | while read -r filepath; do 
