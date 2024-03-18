@@ -18,7 +18,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          # 'fetch-depth: 0' is required to fetch all the commits
+          # otherwise the git history will not be available for the
+          #   'git log' command which is used in the credits page generation
+          fetch-depth: 0 
 
       - uses: actions/setup-python@v4
         with:
@@ -30,7 +33,7 @@ jobs:
 
       - name: credits page generation
         run: | 
-          bash << 'EOF' > docs/repo-credit.md
+          bash << 'EOF' | tee docs/repo-credit.md
           echo "| File | Contributors |"
           echo "|------|--------------|"
           git ls-tree -r --name-only main ./ | while read file ; do
@@ -52,7 +55,7 @@ jobs:
           #!/bin/bash
 
           export KH_SITE_URL="https://hepapi.github.io/knowledge-hub/"
-          printf "## Table of Contents\n\n"
+          printf "## Compendium\n\n"
 
           # find all directories in the docs folder and iterate over them
           find ./docs -maxdepth 1 -type d | while read -r dir_path; do 
