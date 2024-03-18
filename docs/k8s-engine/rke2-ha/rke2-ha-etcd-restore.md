@@ -1,6 +1,6 @@
 # Restoring RKE2 Clusters
 
-During this process, the cluster will be unavailable.
+During this process, the cluster will be unavailable. 
 
 - ETCD should be restored on the **first master node that was created** in the cluster.
 - ETCD restoration process starts by disabling all rke2 services on all nodes.
@@ -9,7 +9,7 @@ During this process, the cluster will be unavailable.
 
 
 ## Restoring RKE2 Cluster ETCD on Existing Nodes
- 
+  
 This process will restore the ETCD on the existing nodes. 
 
 If you're adding new nodes to the cluster, you should follow the [Restoring RKE2 Cluster ETCD on New Nodes](#restoring-rke2-cluster-etcd-on-new-nodes) section.
