@@ -169,7 +169,7 @@ extra:
   generator: false
   social:
     - icon: fontawesome/brands/linkedin
-      link: https://tr.linkedin.com/company/hepapi
+      link: https://linkedin.com/company/hepapi
       name: Linkedin
     - icon: fontawesome/brands/github
       link: https://github.com/hepapi
