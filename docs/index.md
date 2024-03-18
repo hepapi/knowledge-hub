@@ -8,8 +8,8 @@ We recognize that knowledge is power, and in our constantly evolving field, it's
 
 This repository is a live document, and **we encourage everyone to contribute**. If you have something valuable to share, don't hesitate to make a contribution. Remember, what may be obvious to you could be new to someone else.
 
-[:fontawesome-brands-linkedin: Follow us on Linkedin ](https://linkedin.com/company/hepapi){ .md-button }
-[:fontawesome-solid-globe: hepapi.com ](https://hepapi.com/){ .md-button .md-button--primary }
+[:fontawesome-brands-linkedin: Follow us on Linkedin ](https://linkedin.com/company/hepapi){ .md-button .md-button--primary }
+[:fontawesome-solid-globe: hepapi.com ](https://hepapi.com/){ .md-button }
 
 
 ### Help us improve
