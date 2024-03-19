@@ -4,87 +4,95 @@ repo_name: hepapi/knowledge-hub
 edit_uri: edit/main/docs/
 
 nav:
-  - Home: index.md
-  - How to Contribute:
-      - Mkdocs & Material Theme Features: how-to-contribute/mkdocs-features.md
-      - creating new mkdocs pages: how-to-contribute/about-mkdocs.md
-      - writing markdown files: how-to-contribute/about-markdown.md
-  - Linux:
-      - "Shell Commands":
-          - "script": linux/shell/script.md
-          - "cat": linux/shell/cat.md
-          - "cht.sh": linux/shell/chtsh.md
-          - "jobs, bg, fg": linux/shell/jobs-bg-fg.md
-          - "nohup, &": linux/shell/ampersand-nohup.md
-          - "nslookup": linux/shell/nslookup.md
-          - "nmap": linux/shell/nmap.md
-          - "netstat, ss, ps": linux/shell/netstat.md
-          - "scp": linux/shell/scp.md
-      - "Tooling": linux/tooling.md
-      - "Tips": linux/tips.md
-  - "AWS":
-      - "AWS CLIv2 Installation": aws/cli.md
-  - Azure:
-      - "Agent Installation": azure/agent-installation.md
-  - Kubernetes:
-      - "keda(k8s event-driven Autoscaling)": kubernetes/keda/keda.md
-      - "K3S Installation": k8s-engine/k3s-installation.md
-  - RKE2:
-      - "RKE2 Ansible Installation": k8s-engine/rke2-installation-ansible.md
-      - "RKE2 Binary Installation": k8s-engine/rke2-installation.md
-      - "RKE2 HA (Highly Available)":
-          - "HA Installation": k8s-engine/rke2-ha/rke2-highly-available-installation.md
-          - "Automatic Upgrades(rancher/system-upgrade-controller)": k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation.md
-          # - 'Install Rancher': rancher/rke2-ha/rke2-install-rancher.md
-          - "How to ETCD Restore": k8s-engine/rke2-ha/rke2-ha-etcd-restore.md
-  - Rancher:
-      - "Rancher Installation": rancher/rancher-installation.md
-  - Postgres:
-      - "Configuration": postgres/configuration.md
-      - "psql": postgres/psql.md
-      - "Backup & Restore": postgres/backup-restore.md
-  - Nexus:
-      - "Nexus Installation": nexus/nexus-installation.md
-      - "User And Roles": nexus/nexus-user-and-roles.md
-      - "Docker Hosted Repository": nexus/docker-hosted-repo.md
-      - "Docker Proxy Repository": nexus/docker-proxy-repo.md
-      - "Pull Images to Kubernetes": nexus/pull-to-kubernetes.md
-      - "RKE2 Registry Configuration": nexus/registry-configuration.md
-  - Jenkins:
-      - "Jenkins Installation": jenkins/jenkins-installation.md
-      - "Jenkins Shared Library": jenkins/shared-library.md
-  - Ansible:
-      - "Ansible Installation": ansible/ansible-installations.md
-      - "About Ansible": ansible/what-is-ansible.md
-      - "Inventory File": ansible/inventory-file.md
-      - "Configuration File": ansible/config-file.md
-      - "Playbooks": ansible/playbook.md
-      - "Roles": ansible/ansible-roles.md
-  - Git:
-      - "Description": git/Description.md
-      - "Installation": git/installation.md
-      - "Commands": git/Commands.md
-  - Falcon LogScale:
-      - "Installation With Docker":
-          - "Docker Container Installation": falcon-logscale/falcon-logscale-installation-docker.md
-          - "Agent Installation (Log Collector)": falcon-logscale/agent-installation.md
-      - "Single Node Installation":
-          - "Falcon LogScale Installation Guide": falcon-logscale/humiosetup.md
-          - "Java Installation": falcon-logscale/javainstallation.md
-          - "Zookeeper Installation": falcon-logscale/zookeeperinstallation.md
-          - "Kafka Installation": falcon-logscale/kafkainstallation.md
-          - "LogScale Installation": falcon-logscale/humioinstallation.md
-  - Sumo Logic:
-      - "Install a Collector on Linux": sumo/sumo-linux-collector.md
-      - "Install a Collector on Windows": sumo/sumo-windows-collector.md
-      - "Local Configuration File Management": sumo/sumo-local-file-management.md
-  - Vagrant:
-      - "Vagrant Quickstart": vagrant/vagrant-quickstart.md
-  - Sealed-Secrets:
-      - "Sealed-Secrets": sealed-secrets/sealed-secrets.md
-  - K8S Storage:
-      - "NFS(Network File System)": k8s-storage/nfs-install.md
-      - "Longhorn Block Storage": k8s-storage/longhorn.md
+  - DevOps:
+    - Home: index.md
+    - Linux:
+        - "Shell Commands":
+            - "script": devops/linux/shell/script.md
+            - "cat": devops/linux/shell/cat.md
+            - "cht.sh": devops/linux/shell/chtsh.md
+            - "jobs, bg, fg": devops/linux/shell/jobs-bg-fg.md
+            - "nohup, &": devops/linux/shell/ampersand-nohup.md
+            - "nslookup": devops/linux/shell/nslookup.md
+            - "nmap": devops/linux/shell/nmap.md
+            - "netstat, ss, ps": devops/linux/shell/netstat.md
+            - "scp": devops/linux/shell/scp.md
+        - "Tooling": devops/linux/tooling.md
+        - "Tips": devops/linux/tips.md
+    - "AWS":
+        - "AWS CLIv2 Installation": devops/aws/cli.md
+    - Azure:
+        - "Agent Installation": devops/azure/agent-installation.md
+    - Kubernetes:
+        - "keda(k8s event-driven Autoscaling)": devops/kubernetes/keda/keda.md
+        - "K3S Installation": devops/k8s-engine/k3s-installation.md
+    - RKE2:
+        - "RKE2 Ansible Installation": devops/k8s-engine/rke2-installation-ansible.md
+        - "RKE2 Binary Installation": devops/k8s-engine/rke2-installation.md
+        - "RKE2 HA (Highly Available)":
+            - "HA Installation": devops/k8s-engine/rke2-ha/rke2-highly-available-installation.md
+            - "Automatic Upgrades(rancher/system-upgrade-controller)": devops/k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation.md
+            # - 'Install Rancher': devops/rancher/rke2-ha/rke2-install-rancher.md
+            - "How to ETCD Restore": devops/k8s-engine/rke2-ha/rke2-ha-etcd-restore.md
+    - Rancher:
+        - "Rancher Installation": devops/rancher/rancher-installation.md
+    - Postgres:
+        - "Configuration": devops/postgres/configuration.md
+        - "psql": devops/postgres/psql.md
+        - "Backup & Restore": devops/postgres/backup-restore.md
+    - Nexus:
+        - "Nexus Installation": devops/nexus/nexus-installation.md
+        - "User And Roles": devops/nexus/nexus-user-and-roles.md
+        - "Docker Hosted Repository": devops/nexus/docker-hosted-repo.md
+        - "Docker Proxy Repository": devops/nexus/docker-proxy-repo.md
+        - "Pull Images to Kubernetes": devops/nexus/pull-to-kubernetes.md
+        - "RKE2 Registry Configuration": devops/nexus/registry-configuration.md
+    - Jenkins:
+        - "Jenkins Installation": devops/jenkins/jenkins-installation.md
+        - "Jenkins Shared Library": devops/jenkins/shared-library.md
+    - Ansible:
+        - "Ansible Installation": devops/ansible/ansible-installations.md
+        - "About Ansible": devops/ansible/what-is-ansible.md
+        - "Inventory File": devops/ansible/inventory-file.md
+        - "Configuration File": devops/ansible/config-file.md
+        - "Playbooks": devops/ansible/playbook.md
+        - "Roles": devops/ansible/ansible-roles.md
+    - Git:
+        - "Description": devops/git/Description.md
+        - "Installation": devops/git/installation.md
+        - "Commands": devops/git/Commands.md
+    - Falcon LogScale:
+        - "Installation With Docker":
+            - "Docker Container Installation": devops/falcon-logscale/falcon-logscale-installation-docker.md
+            - "Agent Installation (Log Collector)": devops/falcon-logscale/agent-installation.md
+        - "Single Node Installation":
+            - "Falcon LogScale Installation Guide": devops/falcon-logscale/humiosetup.md
+            - "Java Installation": devops/falcon-logscale/javainstallation.md
+            - "Zookeeper Installation": devops/falcon-logscale/zookeeperinstallation.md
+            - "Kafka Installation": devops/falcon-logscale/kafkainstallation.md
+            - "LogScale Installation": devops/falcon-logscale/humioinstallation.md
+    - Sumo Logic:
+        - "Install a Collector on Linux": devops/sumo/sumo-linux-collector.md
+        - "Install a Collector on Windows": devops/sumo/sumo-windows-collector.md
+        - "Local Configuration File Management": devops/sumo/sumo-local-file-management.md
+    - Vagrant:
+        - "Vagrant Quickstart": devops/vagrant/vagrant-quickstart.md
+    - Sealed-Secrets:
+        - "Sealed-Secrets": devops/sealed-secrets/sealed-secrets.md
+    - K8S Storage:
+        - "NFS(Network File System)": devops/k8s-storage/nfs-install.md
+        - "Longhorn Block Storage": devops/k8s-storage/longhorn.md
+
+  - QA:
+    - Home: qa/index.md
+    - PlaceHolder:
+      - "test": qa/placeholder.md
+
+  - Misc:
+    - How to Contribute:
+      - Mkdocs & Material Theme Features: misc/how-to-contribute/mkdocs-features.md
+      - creating new mkdocs pages: misc/how-to-contribute/about-mkdocs.md
+      - writing markdown files: misc/how-to-contribute/about-markdown.md
   - Credits: repo-credit.md
 
 theme:
@@ -94,6 +102,7 @@ theme:
     text: Montserrat
   logo: images/hepapi-logo.png
   features:
+    - navigation.tabs
     - navigation.tracking
     - navigation.instant
     - search.suggest

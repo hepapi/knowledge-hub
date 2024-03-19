@@ -39,10 +39,10 @@ The following ports must be open;
 
 You must follow the sequence below to install Falcon LogScale.
 
-- [Java Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/javainstallation)
-- [Zookeeper Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/zookeeperinstallation)
-- [Kafka Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/kafkainstallation)
-- [LogScale Installation Page](https://hepapi.github.io/knowledge-hub/falcon-logscale/humioinstallation)
+- [Java Installation Page](./javainstallation.md)
+- [Zookeeper Installation Page](./zookeeperinstallation.md)
+- [Kafka Installation Page](./kafkainstallation.md)
+- [LogScale Installation Page](./humioinstallation.md)
 
 
 
