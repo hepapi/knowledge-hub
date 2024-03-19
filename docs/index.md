@@ -18,3 +18,5 @@ We are always looking for ways to improve our documentation. If you have any sug
 
 Follow the docs on: [How to contribute](./misc/how-to-contribute/about-mkdocs.md)
 
+<!-- IMPORTANT: LEAVE 2 EMPTY LINES AT THE END OF THIS DOCUMENT. CI Pipeline will append compendium to it. -->
+

@@ -5,7 +5,7 @@ edit_uri: edit/main/docs/
 
 nav:
   - DevOps:
-    - Home: index.md
+    - index.md
     - Linux:
         - "Shell Commands":
             - "script": devops/linux/shell/script.md
@@ -119,23 +119,23 @@ theme:
     view: material/eye
 
   palette:
-    # Palette toggle for light mode
+    # Palette toggle for dark mode
     - scheme: slate
       media: "(prefers-color-scheme: dark)"
       primary: black
       accent: white
       toggle:
         icon: material/weather-sunny
-        name: Switch to dark mode
+        name: Switch to light mode
 
-    # Palette toggle for dark mode
+    # Palette toggle for light mode
     - scheme: default
       media: "(prefers-color-scheme: light)"
       primary: black
       accent: white
       toggle:
         icon: material/weather-night
-        name: Switch to light mode
+        name: Switch to dark mode
 
 
 markdown_extensions:
