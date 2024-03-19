@@ -84,7 +84,7 @@ nav:
         - "Longhorn Block Storage": devops/k8s-storage/longhorn.md
 
   - QA:
-    - Home: qa/index.md
+    - qa/index.md
     - PlaceHolder:
       - "test": qa/placeholder.md
 
