@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../jenkins-installation/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../../ansible/ansible-installations/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14">
     
     
       
-        <title>Hepapi Knowledge Hub</title>
+        <title>Jenkins Shared Library - Hepapi Knowledge Hub</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.10ba22f1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.10ba22f1.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="/assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#jenkins-shared-library" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -79,9 +88,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../.." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="/images/hepapi-logo.png" alt="logo">
+  <img src="../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -98,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Jenkins Shared Library
             
           </span>
         </div>
@@ -210,11 +219,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/." class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../.." class="md-tabs__link">
           
   
   DevOps
@@ -232,7 +243,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/qa/" class="md-tabs__link">
+        <a href="../../../qa/" class="md-tabs__link">
           
   
   QA
@@ -256,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
+        <a href="../../../misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
           
   
   Misc
@@ -275,7 +286,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/repo-credit/" class="md-tabs__link">
+      <a href="../../../repo-credit/" class="md-tabs__link">
         
   
     
@@ -309,9 +320,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../.." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="/images/hepapi-logo.png" alt="logo">
+  <img src="../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     Hepapi Knowledge Hub
@@ -335,23 +346,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -362,7 +378,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             DevOps
@@ -376,7 +392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -473,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/script/" class="md-nav__link">
+      <a href="../../linux/shell/script/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -494,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/cat/" class="md-nav__link">
+      <a href="../../linux/shell/cat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -515,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/chtsh/" class="md-nav__link">
+      <a href="../../linux/shell/chtsh/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -536,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/jobs-bg-fg/" class="md-nav__link">
+      <a href="../../linux/shell/jobs-bg-fg/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -557,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/ampersand-nohup/" class="md-nav__link">
+      <a href="../../linux/shell/ampersand-nohup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -578,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/nslookup/" class="md-nav__link">
+      <a href="../../linux/shell/nslookup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -599,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/nmap/" class="md-nav__link">
+      <a href="../../linux/shell/nmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -620,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/netstat/" class="md-nav__link">
+      <a href="../../linux/shell/netstat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -641,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/scp/" class="md-nav__link">
+      <a href="../../linux/shell/scp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -670,7 +686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/tooling/" class="md-nav__link">
+      <a href="../../linux/tooling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -691,7 +707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/tips/" class="md-nav__link">
+      <a href="../../linux/tips/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -758,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/aws/cli/" class="md-nav__link">
+      <a href="../../aws/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -825,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/azure/agent-installation/" class="md-nav__link">
+      <a href="../../azure/agent-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -892,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/kubernetes/keda/keda/" class="md-nav__link">
+      <a href="../../kubernetes/keda/keda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -913,7 +929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/k3s-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/k3s-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -980,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-installation-ansible/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-installation-ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1001,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1060,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1081,7 +1097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1102,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1177,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/rancher/rancher-installation/" class="md-nav__link">
+      <a href="../../rancher/rancher-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1244,7 +1260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/configuration/" class="md-nav__link">
+      <a href="../../postgres/configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1265,7 +1281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/psql/" class="md-nav__link">
+      <a href="../../postgres/psql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1286,7 +1302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/backup-restore/" class="md-nav__link">
+      <a href="../../postgres/backup-restore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1353,7 +1369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/nexus-installation/" class="md-nav__link">
+      <a href="../../nexus/nexus-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1374,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/nexus-user-and-roles/" class="md-nav__link">
+      <a href="../../nexus/nexus-user-and-roles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1395,7 +1411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/docker-hosted-repo/" class="md-nav__link">
+      <a href="../../nexus/docker-hosted-repo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1416,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/docker-proxy-repo/" class="md-nav__link">
+      <a href="../../nexus/docker-proxy-repo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1437,7 +1453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/pull-to-kubernetes/" class="md-nav__link">
+      <a href="../../nexus/pull-to-kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1458,7 +1474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/registry-configuration/" class="md-nav__link">
+      <a href="../../nexus/registry-configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1484,6 +1500,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1493,11 +1511,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_10" checked>
         
           
           <label class="md-nav__link" for="__nav_1_10" id="__nav_1_10_label" tabindex="0">
@@ -1511,7 +1529,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_10_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_10_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_10">
             <span class="md-nav__icon md-icon"></span>
             Jenkins
@@ -1525,7 +1543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/jenkins/jenkins-installation/" class="md-nav__link">
+      <a href="../jenkins-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1543,10 +1561,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/devops/jenkins/shared-library/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Jenkins Shared Library
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1555,6 +1593,140 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#folder-structure-of-shared-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folder Structure of Shared Library
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-shared-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Shared Libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folder-level-shared-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folder-level Shared Libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-shared-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Shared Libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-libraries-dynamically" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading libraries dynamically
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      DEMO
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DEMO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-creating-shared-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-1 Creating Shared library
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-creating-jenkinsfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-2 Creating jenkinsfile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-creating-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-3 Creating Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-credential-for-dockerhub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-4 Credential for Dockerhub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-build-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-5 Build Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1613,7 +1785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/ansible-installations/" class="md-nav__link">
+      <a href="../../ansible/ansible-installations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1634,7 +1806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/what-is-ansible/" class="md-nav__link">
+      <a href="../../ansible/what-is-ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1655,7 +1827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/inventory-file/" class="md-nav__link">
+      <a href="../../ansible/inventory-file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1676,7 +1848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/config-file/" class="md-nav__link">
+      <a href="../../ansible/config-file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1697,7 +1869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/playbook/" class="md-nav__link">
+      <a href="../../ansible/playbook/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1718,7 +1890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/ansible-roles/" class="md-nav__link">
+      <a href="../../ansible/ansible-roles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1785,7 +1957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/Description/" class="md-nav__link">
+      <a href="../../git/Description/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1806,7 +1978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/installation/" class="md-nav__link">
+      <a href="../../git/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1827,7 +1999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/Commands/" class="md-nav__link">
+      <a href="../../git/Commands/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1932,7 +2104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
+      <a href="../../falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1953,7 +2125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/agent-installation/" class="md-nav__link">
+      <a href="../../falcon-logscale/agent-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2020,7 +2192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/humiosetup/" class="md-nav__link">
+      <a href="../../falcon-logscale/humiosetup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2041,7 +2213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/javainstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/javainstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2062,7 +2234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/zookeeperinstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/zookeeperinstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2083,7 +2255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/kafkainstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/kafkainstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2104,7 +2276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/humioinstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/humioinstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2179,7 +2351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-linux-collector/" class="md-nav__link">
+      <a href="../../sumo/sumo-linux-collector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2200,7 +2372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-windows-collector/" class="md-nav__link">
+      <a href="../../sumo/sumo-windows-collector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2221,7 +2393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-local-file-management/" class="md-nav__link">
+      <a href="../../sumo/sumo-local-file-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2288,7 +2460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/vagrant/vagrant-quickstart/" class="md-nav__link">
+      <a href="../../vagrant/vagrant-quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2355,7 +2527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sealed-secrets/sealed-secrets/" class="md-nav__link">
+      <a href="../../sealed-secrets/sealed-secrets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2422,7 +2594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-storage/nfs-install/" class="md-nav__link">
+      <a href="../../k8s-storage/nfs-install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2443,7 +2615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-storage/longhorn/" class="md-nav__link">
+      <a href="../../k8s-storage/longhorn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2517,7 +2689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/qa/" class="md-nav__link">
+      <a href="../../../qa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2576,7 +2748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/qa/placeholder.md" class="md-nav__link">
+      <a href="../../../qa/placeholder.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2688,7 +2860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2709,7 +2881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2730,7 +2902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/about-markdown/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/about-markdown/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2766,7 +2938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/repo-credit/" class="md-nav__link">
+      <a href="../../../repo-credit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2796,6 +2968,130 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#folder-structure-of-shared-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folder Structure of Shared Library
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-shared-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Shared Libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folder-level-shared-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folder-level Shared Libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-shared-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Shared Libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-libraries-dynamically" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading libraries dynamically
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      DEMO
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DEMO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-creating-shared-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-1 Creating Shared library
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-creating-jenkinsfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-2 Creating jenkinsfile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-creating-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-3 Creating Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-credential-for-dockerhub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-4 Credential for Dockerhub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-build-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-5 Build Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2807,8 +3103,231 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/jenkins/shared-library.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="jenkins-shared-library">Jenkins Shared Library <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f525.svg" title=":fire:" /></h1>
+<p>Hello everybody from Hepapi.We will talk about Jenkins Shared Library.Lets start. We are in a period where modern applications are generally divided into small components and run on a microservice architecture. Compared to a monolithic application, there are many extra pipelines in an application with microservice architecture. Therefore, it is very important to ensure modularity and reusability of the created pipelines. Thanks to Jenkins Shared Library, we can get rid of the code complexity in the pipeline and comply with the DRY (Don't Repeat Yourself) principle.</p>
+<p>Example: You can perform the docker build process that you perform jointly for more than one service by simply sending the docker image information to a single function for all services.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>//<span class="w"> </span>var/dockerBuild.groovy
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#!/usr/bin/env groovy</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>def<span class="w"> </span>call<span class="o">(</span>String<span class="w"> </span>REPOSITORY<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>String<span class="w"> </span><span class="nv">REGISTRY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ersinsari&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>sh<span class="w"> </span><span class="s2">&quot;docker build -t </span><span class="si">${</span><span class="nv">REGISTRY</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">REPOSITORY</span><span class="si">}</span><span class="s2">:latest .&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="o">}</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>//<span class="w"> </span>Jenkinsfile
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>@Library<span class="o">(</span><span class="s1">&#39;mylibrary&#39;</span><span class="o">)</span><span class="w"> </span>_
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>pipeline<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span>stages<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span>stage<span class="o">(</span><span class="s1">&#39;Docker Build&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span>dockerBuild<span class="w"> </span><span class="s2">&quot;nodejs-helloworld&quot;</span><span class="w">    </span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="o">}</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="o">}</span>
+</code></pre></div>
+<h2 id="folder-structure-of-shared-library">Folder Structure of Shared Library</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>└── jenkins-shared
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    ├── src
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    │   ├── main
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    │       └── groovy
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    |           └── *.groovy
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    ├── vars           
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    |   ├── *.groovy
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    └── resources
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        ├── config.properties
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        └── template.xml
+</code></pre></div>
+<ul>
+<li>
+<p>The src directory is structured like a standard Java project. This means that you can use the import statement to import classes from other directories in the src directory.</p>
+</li>
+<li>
+<p>The vars directory is a special directory that contains global variables that are defined in the shared library. These variables can be accessed from any Jenkins job that imports the shared library.</p>
+</li>
+<li>
+<p>The resources directory is a regular directory that can contain any type of file. However, it is typically used to store static resources that are used by the shared library.</p>
+</li>
+</ul>
+<h2 id="global-shared-libraries">Global Shared Libraries</h2>
+<p>There are several places where Shared Libraries can be defined, depending on the use-case</p>
+<ul>
+<li>Manage Jenkins » System » Global Pipeline Libraries as many libraries as necessary can be configured</li>
+</ul>
+<p>These libraries are considered "trusted:" they can run any methods in Java, Groovy, Jenkins internal APIs, Jenkins plugins, or third-party libraries. This allows you to define libraries which encapsulate individually unsafe APIs in a higher-level wrapper safe for use from any Pipeline. Beware that anyone able to push commits to this SCM repository could obtain unlimited access to Jenkins. You need the Overall/RunScripts permission to configure these libraries (normally this will be granted to Jenkins administrators).</p>
+<h2 id="folder-level-shared-libraries">Folder-level Shared Libraries</h2>
+<p>Any Folder created can have Shared Libraries associated with it. This mechanism allows scoping of specific libraries to all the Pipelines inside of the folder or subfolder.Folder-based libraries are not considered "trusted:" they run in the Groovy sandbox just like typical Pipelines.</p>
+<h2 id="automatic-shared-libraries">Automatic Shared Libraries</h2>
+<p>Other plugins may add ways of defining libraries on the fly. For example, the Pipeline: GitHub Groovy Libraries plugin allows a script to use an untrusted library named like github.com/someorg/somerepo without any additional configuration. In this case, the specified GitHub repository would be loaded, from the master branch, using an anonymous checkout.</p>
+<h2 id="using-libraries">Using Libraries</h2>
+<p>Shared Libraries marked Load implicitly allows Pipelines to immediately use classes or global variables defined by any such libraries. To access other shared libraries, the Jenkinsfile needs to use the @Library annotation, specifying the library’s name:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>@Library<span class="o">(</span><span class="s1">&#39;my-shared-library&#39;</span><span class="o">)</span><span class="w"> </span>_
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>/*<span class="w"> </span>Using<span class="w"> </span>a<span class="w"> </span>version<span class="w"> </span>specifier,<span class="w"> </span>such<span class="w"> </span>as<span class="w"> </span>branch,<span class="w"> </span>tag,<span class="w"> </span>etc<span class="w"> </span>*/
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>@Library<span class="o">(</span><span class="s1">&#39;my-shared-library@1.0&#39;</span><span class="o">)</span><span class="w"> </span>_
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>/*<span class="w"> </span>Accessing<span class="w"> </span>multiple<span class="w"> </span>libraries<span class="w"> </span>with<span class="w"> </span>one<span class="w"> </span>statement<span class="w"> </span>*/
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>@Library<span class="o">([</span><span class="s1">&#39;my-shared-library&#39;</span>,<span class="w"> </span><span class="s1">&#39;otherlib@abc1234&#39;</span><span class="o">])</span><span class="w"> </span>_
+</code></pre></div>
+<h2 id="loading-libraries-dynamically">Loading libraries dynamically</h2>
+<p>As of version 2.7 of the Pipeline: Shared Groovy Libraries plugin, there is a new option for loading (non-implicit) libraries in a script: a library step that loads a library dynamically, at any time during the build.</p>
+<p>If you are only interested in using global variables/functions (from the vars/ directory), the syntax is quite simple:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>library<span class="w"> </span><span class="s1">&#39;my-shared-library&#39;</span>
+</code></pre></div>
+<p>Thereafter, any global variables from that library will be accessible to the script.</p>
+<p>Using classes from the src/ directory is also possible, but trickier. Whereas the @Library annotation prepares the “classpath” of the script prior to compilation, by the time a library step is encountered the script has already been compiled. Therefore you cannot import or otherwise “statically” refer to types from the library.</p>
+<h2 id="demo">DEMO</h2>
+<p>First of all we need jenkins server for this demo.There are some options to deploy jenkins-server</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://www.jenkins.io/doc/book/installing/
+</code></pre></div>
+<h3 id="step-1-creating-shared-library">Step-1 Creating Shared library</h3>
+<p>Let's first create the groovy scripts of the Jenkins shared library and push them to git. We have two simple scripts for this example. We will perform docker build and docker push operations using these scripts.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>//<span class="w"> </span>vars/dockerBuild.groovy
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1">#!/usr/bin/env groovy</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>def<span class="w"> </span>call<span class="o">(</span>String<span class="w"> </span>APP_IMAGE_REGISTRY,<span class="w"> </span>String<span class="w"> </span>APP_IMAGE_REPOSITORY<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span>dir<span class="o">(</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">WORKSPACE</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span>sh<span class="w"> </span><span class="s2">&quot;docker build -t </span><span class="si">${</span><span class="nv">APP_IMAGE_REGISTRY</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">APP_IMAGE_REPOSITORY</span><span class="si">}</span><span class="s2">:</span><span class="k">$(</span>BUILD_NUMBER<span class="k">)</span><span class="s2"> .&quot;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="o">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>//<span class="w"> </span>vars/dockerPush.groovy
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">#!/usr/bin/env groovy</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>def<span class="w"> </span>call<span class="o">(</span>String<span class="w"> </span>APP_IMAGE_REGISTRY,<span class="w"> </span>String<span class="w"> </span>APP_IMAGE_REPOSITORY<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span>dir<span class="o">(</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">WORKSPACE</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span>sh<span class="w"> </span><span class="s2">&quot;echo </span><span class="nv">$DOCKERHUB_CRED_PSW</span><span class="s2"> | docker login -u </span><span class="nv">$DOCKERHUB_CRED_USR</span><span class="s2"> --password-stdin&quot;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">        </span>sh<span class="w"> </span><span class="s2">&quot;docker push </span><span class="si">${</span><span class="nv">APP_IMAGE_REGISTRY</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">APP_IMAGE_REPOSITORY</span><span class="si">}</span><span class="s2">:</span><span class="k">$(</span>BUILD_NUMBER<span class="k">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="o">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>//<span class="w"> </span>vars/sayHello.groovy
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1">#!/usr/bin/env groovy</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>def<span class="w"> </span>call<span class="o">(</span>String<span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;human&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello, </span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">.&quot;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="o">}</span>
+</code></pre></div>
+<p>Go to the Global Pipeline Library to Jenkins. After accessing the Jenkins dashboard, navigate to Manage Jenkins &gt;  System to find the Global Pipeline Libraries section and click on the add button to add a new library. Manage Jenkins ---&gt; System ---&gt; Global Pipeline Libraries ---&gt; Click Add button</p>
+<ul>
+<li>Library Name: my-shared-library</li>
+<li>Default version: main</li>
+<li>Retrivial method: Modern SCM</li>
+<li>Source Code Management</li>
+<li>
+<p>Project Repository: https://github.com/ersinsari13/jenkins-shared-library.git  #enter your repo name</p>
+</li>
+<li>
+<p>We can leave other parameters as default and save the configuration.</p>
+</li>
+</ul>
+<h3 id="step-2-creating-jenkinsfile">Step-2 Creating jenkinsfile</h3>
+<p>Let's first create github repo named docker-build-push then create the Jenkinsfile and push them to git.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>@Library<span class="o">(</span><span class="s1">&#39;my-shared-library&#39;</span><span class="o">)</span><span class="w"> </span>_
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>pipeline<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span>agent<span class="w"> </span>any
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span>environment<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">        </span><span class="nv">DOCKERHUB_CRED</span><span class="o">=</span>credentials<span class="o">(</span><span class="s1">&#39;docker-hub-credential&#39;</span><span class="o">)</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span>stages<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">        </span>stage<span class="o">(</span><span class="s1">&#39;Set Environment&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">            </span>steps<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">                </span>script<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">                    </span><span class="nv">REGISTRY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ersinsari&quot;</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">                    </span><span class="nv">REPOSITORY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;docker-build-push&quot;</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">                </span><span class="o">}</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">            </span><span class="o">}</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">        </span><span class="o">}</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">        </span>stage<span class="o">(</span><span class="s1">&#39;Hello&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">            </span>steps<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">                </span>sayHello<span class="w"> </span><span class="s2">&quot;hepapi&quot;</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">            </span><span class="o">}</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">        </span><span class="o">}</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">        </span>stage<span class="o">(</span><span class="s1">&#39;Build&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">            </span>steps<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">                </span>dockerBuild<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">REGISTRY</span><span class="si">}</span><span class="s2">&quot;</span>,<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">REPOSITORY</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">            </span><span class="o">}</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">        </span><span class="o">}</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="w">        </span>stage<span class="o">(</span><span class="s1">&#39;Push&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">            </span>steps<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="w">                </span>dockerPush<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">REGISTRY</span><span class="si">}</span><span class="s2">&quot;</span>,<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">REPOSITORY</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="w">            </span><span class="o">}</span>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="w">        </span><span class="o">}</span>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a><span class="o">}</span>
+</code></pre></div>
+<h3 id="step-3-creating-pipeline">Step-3 Creating Pipeline</h3>
+<ul>
+<li>Go to Jenkins Server Dashboard</li>
+<li>Click New Item</li>
+<li>Enter "docker-build-push" as a name and select pipeline and click Ok</li>
+<li>
+<p>Under Pipeline Section:</p>
+</li>
+<li>
+<p>Definition: Pipeline script from SCM</p>
+</li>
+<li>SCM: Git</li>
+<li>Repository URL: https://github.com/ersinsari13/docker-build-push.git  #enter your repository name</li>
+<li>Branch: main</li>
+</ul>
+<p>Since the Jenkinsfile in the repo is not under any folder, it will be sufficient to just specify its name. For example, if my Jenkinsfile file was located under a folder named build; I should have written build/Jenkinsfile in the Script Path section.</p>
+<ul>
+<li>Save the pipeline configuration</li>
+</ul>
+<h3 id="step-4-credential-for-dockerhub">Step-4 Credential for Dockerhub</h3>
+<p>In order for the images we created in Pipeline to be pushed to the registry, we need to provide registry credential information to the Jenkins server.</p>
+<ul>
+<li>Go to Jenkins Dashboard</li>
+<li>Select Manage Jenkins</li>
+<li>Click Credentials</li>
+<li>Select Global</li>
+<li>
+<p>Click Add Credentials button:</p>
+</li>
+<li>
+<p>Kind: Username with password</p>
+</li>
+<li>username: enter your dockerhub registry username</li>
+<li>password: enter your dockerhub registry password</li>
+<li>id: dockerhub-registry-credentials</li>
+<li>
+<p>description: dockerhub-registry-credentials</p>
+</li>
+<li>
+<p>Save credentials configuration</p>
+</li>
+</ul>
+<h3 id="step-5-build-pipeline">Step-5 Build Pipeline</h3>
+<p>After all the steps, the pipeline we created is now ready to be tested.</p>
+<ul>
+<li>Go to Jenkins Server Dashboard</li>
+<li>Select Pipeline was created</li>
+<li>Click Build Now</li>
+<li>You should see the pipeline result success</li>
+<li>You can check your new image on the Dockerhub registry</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2861,10 +3380,10 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "/assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.bd41221c.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.bd41221c.min.js"></script>
       
     
   </body>

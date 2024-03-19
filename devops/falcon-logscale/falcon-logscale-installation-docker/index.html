@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../../git/Commands/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../agent-installation/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14">
     
     
       
-        <title>Hepapi Knowledge Hub</title>
+        <title>Docker Container Installation - Hepapi Knowledge Hub</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.10ba22f1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.10ba22f1.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="/assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#falcon-logscale-setup-with-docker" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -79,9 +88,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../.." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="/images/hepapi-logo.png" alt="logo">
+  <img src="../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -98,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Docker Container Installation
             
           </span>
         </div>
@@ -210,11 +219,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/." class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../.." class="md-tabs__link">
           
   
   DevOps
@@ -232,7 +243,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/qa/" class="md-tabs__link">
+        <a href="../../../qa/" class="md-tabs__link">
           
   
   QA
@@ -256,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
+        <a href="../../../misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
           
   
   Misc
@@ -275,7 +286,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/repo-credit/" class="md-tabs__link">
+      <a href="../../../repo-credit/" class="md-tabs__link">
         
   
     
@@ -309,9 +320,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../.." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="/images/hepapi-logo.png" alt="logo">
+  <img src="../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     Hepapi Knowledge Hub
@@ -335,23 +346,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -362,7 +378,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             DevOps
@@ -376,7 +392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -473,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/script/" class="md-nav__link">
+      <a href="../../linux/shell/script/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -494,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/cat/" class="md-nav__link">
+      <a href="../../linux/shell/cat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -515,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/chtsh/" class="md-nav__link">
+      <a href="../../linux/shell/chtsh/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -536,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/jobs-bg-fg/" class="md-nav__link">
+      <a href="../../linux/shell/jobs-bg-fg/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -557,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/ampersand-nohup/" class="md-nav__link">
+      <a href="../../linux/shell/ampersand-nohup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -578,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/nslookup/" class="md-nav__link">
+      <a href="../../linux/shell/nslookup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -599,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/nmap/" class="md-nav__link">
+      <a href="../../linux/shell/nmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -620,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/netstat/" class="md-nav__link">
+      <a href="../../linux/shell/netstat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -641,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/scp/" class="md-nav__link">
+      <a href="../../linux/shell/scp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -670,7 +686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/tooling/" class="md-nav__link">
+      <a href="../../linux/tooling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -691,7 +707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/tips/" class="md-nav__link">
+      <a href="../../linux/tips/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -758,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/aws/cli/" class="md-nav__link">
+      <a href="../../aws/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -825,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/azure/agent-installation/" class="md-nav__link">
+      <a href="../../azure/agent-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -892,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/kubernetes/keda/keda/" class="md-nav__link">
+      <a href="../../kubernetes/keda/keda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -913,7 +929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/k3s-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/k3s-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -980,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-installation-ansible/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-installation-ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1001,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1060,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1081,7 +1097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1102,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1177,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/rancher/rancher-installation/" class="md-nav__link">
+      <a href="../../rancher/rancher-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1244,7 +1260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/configuration/" class="md-nav__link">
+      <a href="../../postgres/configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1265,7 +1281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/psql/" class="md-nav__link">
+      <a href="../../postgres/psql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1286,7 +1302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/backup-restore/" class="md-nav__link">
+      <a href="../../postgres/backup-restore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1353,7 +1369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/nexus-installation/" class="md-nav__link">
+      <a href="../../nexus/nexus-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1374,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/nexus-user-and-roles/" class="md-nav__link">
+      <a href="../../nexus/nexus-user-and-roles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1395,7 +1411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/docker-hosted-repo/" class="md-nav__link">
+      <a href="../../nexus/docker-hosted-repo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1416,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/docker-proxy-repo/" class="md-nav__link">
+      <a href="../../nexus/docker-proxy-repo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1437,7 +1453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/pull-to-kubernetes/" class="md-nav__link">
+      <a href="../../nexus/pull-to-kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1458,7 +1474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/registry-configuration/" class="md-nav__link">
+      <a href="../../nexus/registry-configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1525,7 +1541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/jenkins/jenkins-installation/" class="md-nav__link">
+      <a href="../../jenkins/jenkins-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1546,7 +1562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/jenkins/shared-library/" class="md-nav__link">
+      <a href="../../jenkins/shared-library/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1613,7 +1629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/ansible-installations/" class="md-nav__link">
+      <a href="../../ansible/ansible-installations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1634,7 +1650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/what-is-ansible/" class="md-nav__link">
+      <a href="../../ansible/what-is-ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1655,7 +1671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/inventory-file/" class="md-nav__link">
+      <a href="../../ansible/inventory-file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1676,7 +1692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/config-file/" class="md-nav__link">
+      <a href="../../ansible/config-file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1697,7 +1713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/playbook/" class="md-nav__link">
+      <a href="../../ansible/playbook/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1718,7 +1734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/ansible-roles/" class="md-nav__link">
+      <a href="../../ansible/ansible-roles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1785,7 +1801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/Description/" class="md-nav__link">
+      <a href="../../git/Description/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1806,7 +1822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/installation/" class="md-nav__link">
+      <a href="../../git/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1827,7 +1843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/Commands/" class="md-nav__link">
+      <a href="../../git/Commands/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1853,6 +1869,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1862,11 +1880,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_13" checked>
         
           
           <label class="md-nav__link" for="__nav_1_13" id="__nav_1_13_label" tabindex="0">
@@ -1880,7 +1898,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_13_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_13_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_13">
             <span class="md-nav__icon md-icon"></span>
             Falcon LogScale
@@ -1891,6 +1909,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1900,11 +1920,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_13_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_13_1" checked>
         
           
           <label class="md-nav__link" for="__nav_1_13_1" id="__nav_1_13_1_label" tabindex="0">
@@ -1918,7 +1938,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_13_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_13_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_13_1">
             <span class="md-nav__icon md-icon"></span>
             Installation With Docker
@@ -1929,10 +1949,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Docker Container Installation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1941,6 +1981,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#falcon-logscale-setup-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Falcon LogScale Setup Requirements :
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1953,7 +2022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/agent-installation/" class="md-nav__link">
+      <a href="../agent-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2020,7 +2089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/humiosetup/" class="md-nav__link">
+      <a href="../humiosetup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2041,7 +2110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/javainstallation/" class="md-nav__link">
+      <a href="../javainstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2062,7 +2131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/zookeeperinstallation/" class="md-nav__link">
+      <a href="../zookeeperinstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2083,7 +2152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/kafkainstallation/" class="md-nav__link">
+      <a href="../kafkainstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2104,7 +2173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/humioinstallation/" class="md-nav__link">
+      <a href="../humioinstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2179,7 +2248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-linux-collector/" class="md-nav__link">
+      <a href="../../sumo/sumo-linux-collector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2200,7 +2269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-windows-collector/" class="md-nav__link">
+      <a href="../../sumo/sumo-windows-collector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2221,7 +2290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-local-file-management/" class="md-nav__link">
+      <a href="../../sumo/sumo-local-file-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2288,7 +2357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/vagrant/vagrant-quickstart/" class="md-nav__link">
+      <a href="../../vagrant/vagrant-quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2355,7 +2424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sealed-secrets/sealed-secrets/" class="md-nav__link">
+      <a href="../../sealed-secrets/sealed-secrets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2422,7 +2491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-storage/nfs-install/" class="md-nav__link">
+      <a href="../../k8s-storage/nfs-install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2443,7 +2512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-storage/longhorn/" class="md-nav__link">
+      <a href="../../k8s-storage/longhorn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2517,7 +2586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/qa/" class="md-nav__link">
+      <a href="../../../qa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2576,7 +2645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/qa/placeholder.md" class="md-nav__link">
+      <a href="../../../qa/placeholder.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2688,7 +2757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2709,7 +2778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2730,7 +2799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/about-markdown/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/about-markdown/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2766,7 +2835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/repo-credit/" class="md-nav__link">
+      <a href="../../../repo-credit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2796,6 +2865,25 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#falcon-logscale-setup-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Falcon LogScale Setup Requirements :
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2807,8 +2895,106 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/falcon-logscale/falcon-logscale-installation-docker.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="falcon-logscale-setup-with-docker">Falcon LogScale Setup With Docker <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.119a.185.185 0 0 0-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 0 0 .186-.186V3.574a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 0 0 .186-.186V6.29a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 0 0 .184-.186V6.29a.185.185 0 0 0-.185-.185H8.1a.185.185 0 0 0-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 0 0 .185-.186V6.29a.185.185 0 0 0-.185-.185H5.136a.186.186 0 0 0-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 0 0 .185-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.186.186 0 0 0-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 0 0-.75.748 11.376 11.376 0 0 0 .692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137a15.74 15.74 0 0 0 2.93-.266 12.248 12.248 0 0 0 3.823-1.389 10.51 10.51 0 0 0 2.61-2.136c1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></svg></span></h1>
+<h5 id="falcon-logscale-setup-requirements"><img alt="ℹ" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2139.svg" title=":information_source:" /> Falcon LogScale Setup Requirements :</h5>
+<table>
+<thead>
+<tr>
+<th>Resources</th>
+<th>Limits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>4GB</code></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 64C28.7 64 0 92.7 0 128v7.4c0 6.8 4.4 12.6 10.1 16.3C23.3 160.3 32 175.1 32 192s-8.7 31.7-21.9 40.3C4.4 236 0 241.8 0 248.6V320h576v-71.4c0-6.8-4.4-12.6-10.1-16.3-13.2-8.6-21.9-23.4-21.9-40.3s8.7-31.7 21.9-40.3c5.7-3.7 10.1-9.5 10.1-16.3V128c0-35.3-28.7-64-64-64H64zm512 288H0v64c0 17.7 14.3 32 32 32h48v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32h96v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32h96v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32h96v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32h48c17.7 0 32-14.3 32-32v-64zM192 160v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64c0-17.7 14.3-32 32-32s32 14.3 32 32zm128 0v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64c0-17.7 14.3-32 32-32s32 14.3 32 32zm128 0v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64c0-17.7 14.3-32 32-32s32 14.3 32 32z"/></svg></span> MEMORY</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.5.75V2h3V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75V5h1.25a.75.75 0 0 1 0 1.5H14v3h1.25a.75.75 0 0 1 0 1.5H14v1.25A1.75 1.75 0 0 1 12.25 14H11v1.25a.75.75 0 0 1-1.5 0V14h-3v1.25a.75.75 0 0 1-1.5 0V14H3.75A1.75 1.75 0 0 1 2 12.25V11H.75a.75.75 0 0 1 0-1.5H2v-3H.75a.75.75 0 0 1 0-1.5H2V3.75C2 2.784 2.784 2 3.75 2H5V.75a.75.75 0 0 1 1.5 0Zm5.75 11.75a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25ZM5.75 5h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-4.5A.75.75 0 0 1 5.75 5Zm.75 4.5h3v-3h-3Z"/></svg></span> CPU</td>
+</tr>
+<tr>
+<td><code>30GB</code></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4M4 9v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9c0 2.21-3.58 4-8 4s-8-1.79-8-4m0 5v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3c0 2.21-3.58 4-8 4s-8-1.79-8-4Z"/></svg></span>     STORAGE</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/26a0.svg" title=":warning:" /> The first step to install LogScale using <code>Docker</code> is to <code>install Docker</code> on the machine where you want to run <code>Docker</code> with LogScale. You can <a href="https://docs.docker.com/engine/install/ubuntu/">Download Docker</a> from their site or by using a package installation program like yum or apt-get.</p>
+<p><strong>Or You Can Use These Command For Ubuntu</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span>-y
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade<span class="w"> </span>-y
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>docker.io
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>systemctl<span class="w"> </span>start<span class="w"> </span>docker
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>docker<span class="w"> </span>--version
+</code></pre></div>
+<blockquote>
+<p>Now let's run a container on port 8080 using the following commands and watch it with <code>docker ps</code></p>
+</blockquote>
+<div class="admonition warning annanote">
+<p class="admonition-title">Important Installations Notes</p>
+<p>If your machine is not open to port 8080, make it open</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">HOST_DATA_DIR</span><span class="o">=</span>/home/ubuntu/mounts/data
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">HOST_KAFKA_DATA_DIR</span><span class="o">=</span>/home/ubuntu/mounts/kafka-data
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH_TO_READONLY_FILES</span><span class="o">=</span>/home/ubuntu/mounts/readonly
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">HOST_ENV_FILE</span><span class="o">=</span>/home/ubuntu/mounts/
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$PATH_TO_READONLY_FILES</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOST_KAFKA_DATA_DIR</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOST_DATA_DIR</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>touch<span class="w"> </span><span class="nv">$HOST_ENV_FILE</span>.env
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span><span class="nv">$HOST_DATA_DIR</span>:/data<span class="w">  </span><span class="se">\</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">   </span>-v<span class="w"> </span><span class="nv">$HOST_KAFKA_DATA_DIR</span>:/data/kafka-data<span class="w">  </span><span class="se">\</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">   </span>-v<span class="w"> </span><span class="nv">$PATH_TO_READONLY_FILES</span>:/etc/humio:ro<span class="w">  </span><span class="se">\</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">   </span>-e<span class="w"> </span><span class="nv">AUTHENTICATION_METHOD</span><span class="o">=</span>single-user<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">   </span>-e<span class="w"> </span><span class="nv">SINGLE_USER_USERNAME</span><span class="o">=</span>hepapi<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">   </span>-e<span class="w"> </span><span class="nv">SINGLE_USER_PASSWORD</span><span class="o">=</span><span class="m">123456</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">   </span>--net<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">   </span>--name<span class="o">=</span>humio<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">   </span>--ulimit<span class="o">=</span><span class="s2">&quot;nofile=8192:8192&quot;</span><span class="w">  </span><span class="se">\</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">   </span>--stop-timeout<span class="w"> </span><span class="m">300</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">   </span>--env-file<span class="o">=</span><span class="nv">$HOST_ENV_FILE</span><span class="w">  </span><span class="se">\</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">   </span>-d<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">   </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">   </span>humio/humio
+</code></pre></div>
+<div class="highlight"><span class="filename">'HOST_DATA_DIR, HOST_KAFKA_DATA_DIR, HOST_ENV_FILE, PATH_TO_READONLY_FILES'</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>We<span class="w"> </span><span class="nb">bind</span><span class="w"> </span>these<span class="w"> </span>exported<span class="w"> </span>variables<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>downloaded<span class="w"> </span>HUMIO<span class="w"> </span>container.
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>SINGLE_USER_USERNAME= Your Username for login </p>
+<p>SINGLE_USER_PASSWORD= Your Password for login</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Let's go your http://ip-address:8080 and enter activation key and enter your <code>SINGLE_USER_USERNAME</code> and <code>SINGLE_USER_PASSWORD</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2861,10 +3047,10 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "/assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.bd41221c.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.bd41221c.min.js"></script>
       
     
   </body>

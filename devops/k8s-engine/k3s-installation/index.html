@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../../kubernetes/keda/keda/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../rke2-installation-ansible/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14">
     
     
       
-        <title>Hepapi Knowledge Hub</title>
+        <title>K3S Installation - Hepapi Knowledge Hub</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.10ba22f1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.10ba22f1.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="/assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#k3s-setup" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -79,9 +88,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../.." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="/images/hepapi-logo.png" alt="logo">
+  <img src="../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -98,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              K3S Installation
             
           </span>
         </div>
@@ -210,11 +219,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/." class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../.." class="md-tabs__link">
           
   
   DevOps
@@ -232,7 +243,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/qa/" class="md-tabs__link">
+        <a href="../../../qa/" class="md-tabs__link">
           
   
   QA
@@ -256,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
+        <a href="../../../misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
           
   
   Misc
@@ -275,7 +286,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/repo-credit/" class="md-tabs__link">
+      <a href="../../../repo-credit/" class="md-tabs__link">
         
   
     
@@ -309,9 +320,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../.." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="/images/hepapi-logo.png" alt="logo">
+  <img src="../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     Hepapi Knowledge Hub
@@ -335,23 +346,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -362,7 +378,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             DevOps
@@ -376,7 +392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -473,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/script/" class="md-nav__link">
+      <a href="../../linux/shell/script/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -494,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/cat/" class="md-nav__link">
+      <a href="../../linux/shell/cat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -515,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/chtsh/" class="md-nav__link">
+      <a href="../../linux/shell/chtsh/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -536,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/jobs-bg-fg/" class="md-nav__link">
+      <a href="../../linux/shell/jobs-bg-fg/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -557,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/ampersand-nohup/" class="md-nav__link">
+      <a href="../../linux/shell/ampersand-nohup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -578,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/nslookup/" class="md-nav__link">
+      <a href="../../linux/shell/nslookup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -599,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/nmap/" class="md-nav__link">
+      <a href="../../linux/shell/nmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -620,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/netstat/" class="md-nav__link">
+      <a href="../../linux/shell/netstat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -641,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/scp/" class="md-nav__link">
+      <a href="../../linux/shell/scp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -670,7 +686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/tooling/" class="md-nav__link">
+      <a href="../../linux/tooling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -691,7 +707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/tips/" class="md-nav__link">
+      <a href="../../linux/tips/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -758,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/aws/cli/" class="md-nav__link">
+      <a href="../../aws/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -825,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/azure/agent-installation/" class="md-nav__link">
+      <a href="../../azure/agent-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -851,6 +867,8 @@
                 
   
   
+    
+  
   
   
     
@@ -860,11 +878,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" checked>
         
           
           <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
@@ -878,7 +896,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_5">
             <span class="md-nav__icon md-icon"></span>
             Kubernetes
@@ -892,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/kubernetes/keda/keda/" class="md-nav__link">
+      <a href="../../kubernetes/keda/keda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -910,10 +928,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/devops/k8s-engine/k3s-installation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    K3S Installation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -922,6 +960,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#k3s-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      K3S Requirements :
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -980,7 +1047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-installation-ansible/" class="md-nav__link">
+      <a href="../rke2-installation-ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1001,7 +1068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-installation/" class="md-nav__link">
+      <a href="../rke2-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1060,7 +1127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
+      <a href="../rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1081,7 +1148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
+      <a href="../rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1102,7 +1169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
+      <a href="../rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1177,7 +1244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/rancher/rancher-installation/" class="md-nav__link">
+      <a href="../../rancher/rancher-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1244,7 +1311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/configuration/" class="md-nav__link">
+      <a href="../../postgres/configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1265,7 +1332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/psql/" class="md-nav__link">
+      <a href="../../postgres/psql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1286,7 +1353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/backup-restore/" class="md-nav__link">
+      <a href="../../postgres/backup-restore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1353,7 +1420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/nexus-installation/" class="md-nav__link">
+      <a href="../../nexus/nexus-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1374,7 +1441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/nexus-user-and-roles/" class="md-nav__link">
+      <a href="../../nexus/nexus-user-and-roles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1395,7 +1462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/docker-hosted-repo/" class="md-nav__link">
+      <a href="../../nexus/docker-hosted-repo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1416,7 +1483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/docker-proxy-repo/" class="md-nav__link">
+      <a href="../../nexus/docker-proxy-repo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1437,7 +1504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/pull-to-kubernetes/" class="md-nav__link">
+      <a href="../../nexus/pull-to-kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1458,7 +1525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/registry-configuration/" class="md-nav__link">
+      <a href="../../nexus/registry-configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1525,7 +1592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/jenkins/jenkins-installation/" class="md-nav__link">
+      <a href="../../jenkins/jenkins-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1546,7 +1613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/jenkins/shared-library/" class="md-nav__link">
+      <a href="../../jenkins/shared-library/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1613,7 +1680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/ansible-installations/" class="md-nav__link">
+      <a href="../../ansible/ansible-installations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1634,7 +1701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/what-is-ansible/" class="md-nav__link">
+      <a href="../../ansible/what-is-ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1655,7 +1722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/inventory-file/" class="md-nav__link">
+      <a href="../../ansible/inventory-file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1676,7 +1743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/config-file/" class="md-nav__link">
+      <a href="../../ansible/config-file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1697,7 +1764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/playbook/" class="md-nav__link">
+      <a href="../../ansible/playbook/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1718,7 +1785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/ansible-roles/" class="md-nav__link">
+      <a href="../../ansible/ansible-roles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1785,7 +1852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/Description/" class="md-nav__link">
+      <a href="../../git/Description/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1806,7 +1873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/installation/" class="md-nav__link">
+      <a href="../../git/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1827,7 +1894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/Commands/" class="md-nav__link">
+      <a href="../../git/Commands/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1932,7 +1999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
+      <a href="../../falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1953,7 +2020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/agent-installation/" class="md-nav__link">
+      <a href="../../falcon-logscale/agent-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2020,7 +2087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/humiosetup/" class="md-nav__link">
+      <a href="../../falcon-logscale/humiosetup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2041,7 +2108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/javainstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/javainstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2062,7 +2129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/zookeeperinstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/zookeeperinstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2083,7 +2150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/kafkainstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/kafkainstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2104,7 +2171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/humioinstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/humioinstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2179,7 +2246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-linux-collector/" class="md-nav__link">
+      <a href="../../sumo/sumo-linux-collector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2200,7 +2267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-windows-collector/" class="md-nav__link">
+      <a href="../../sumo/sumo-windows-collector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2221,7 +2288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-local-file-management/" class="md-nav__link">
+      <a href="../../sumo/sumo-local-file-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2288,7 +2355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/vagrant/vagrant-quickstart/" class="md-nav__link">
+      <a href="../../vagrant/vagrant-quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2355,7 +2422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sealed-secrets/sealed-secrets/" class="md-nav__link">
+      <a href="../../sealed-secrets/sealed-secrets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2422,7 +2489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-storage/nfs-install/" class="md-nav__link">
+      <a href="../../k8s-storage/nfs-install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2443,7 +2510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-storage/longhorn/" class="md-nav__link">
+      <a href="../../k8s-storage/longhorn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2517,7 +2584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/qa/" class="md-nav__link">
+      <a href="../../../qa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2576,7 +2643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/qa/placeholder.md" class="md-nav__link">
+      <a href="../../../qa/placeholder.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2688,7 +2755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2709,7 +2776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2730,7 +2797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/about-markdown/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/about-markdown/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2766,7 +2833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/repo-credit/" class="md-nav__link">
+      <a href="../../../repo-credit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2796,6 +2863,25 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#k3s-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      K3S Requirements :
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2807,8 +2893,230 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/k8s-engine/k3s-installation.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="k3s-setup">K3S Setup <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f525.svg" title=":fire:" /></h1>
+<h5 id="k3s-requirements"><img alt="ℹ" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2139.svg" title=":information_source:" /> K3S Requirements :</h5>
+<table>
+<thead>
+<tr>
+<th>Resources</th>
+<th>Limits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>512MB</code></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 64C28.7 64 0 92.7 0 128v7.4c0 6.8 4.4 12.6 10.1 16.3C23.3 160.3 32 175.1 32 192s-8.7 31.7-21.9 40.3C4.4 236 0 241.8 0 248.6V320h576v-71.4c0-6.8-4.4-12.6-10.1-16.3-13.2-8.6-21.9-23.4-21.9-40.3s8.7-31.7 21.9-40.3c5.7-3.7 10.1-9.5 10.1-16.3V128c0-35.3-28.7-64-64-64H64zm512 288H0v64c0 17.7 14.3 32 32 32h48v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32h96v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32h96v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32h96v-32c0-8.8 7.2-16 16-16s16 7.2 16 16v32h48c17.7 0 32-14.3 32-32v-64zM192 160v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64c0-17.7 14.3-32 32-32s32 14.3 32 32zm128 0v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64c0-17.7 14.3-32 32-32s32 14.3 32 32zm128 0v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64c0-17.7 14.3-32 32-32s32 14.3 32 32z"/></svg></span> MEMORY (we recommend at least 1GB)</td>
+</tr>
+<tr>
+<td><code>1CPU</code></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.5.75V2h3V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75V5h1.25a.75.75 0 0 1 0 1.5H14v3h1.25a.75.75 0 0 1 0 1.5H14v1.25A1.75 1.75 0 0 1 12.25 14H11v1.25a.75.75 0 0 1-1.5 0V14h-3v1.25a.75.75 0 0 1-1.5 0V14H3.75A1.75 1.75 0 0 1 2 12.25V11H.75a.75.75 0 0 1 0-1.5H2v-3H.75a.75.75 0 0 1 0-1.5H2V3.75C2 2.784 2.784 2 3.75 2H5V.75a.75.75 0 0 1 1.5 0Zm5.75 11.75a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25ZM5.75 5h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-4.5A.75.75 0 0 1 5.75 5Zm.75 4.5h3v-3h-3Z"/></svg></span> CPU (we recommend at least 2CPU)</td>
+</tr>
+<tr>
+<td><code>20GB</code></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4M4 9v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9c0 2.21-3.58 4-8 4s-8-1.79-8-4m0 5v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3c0 2.21-3.58 4-8 4s-8-1.79-8-4Z"/></svg></span>     STORAGE</td>
+</tr>
+</tbody>
+</table>
+<h1 id="cpu-and-memory">CPU and Memory</h1>
+<p>The following are the minimum CPU and memory requirements for nodes in a high-availability K3S server</p>
+<table>
+<thead>
+<tr>
+<th>Deployment Size</th>
+<th>Nodes</th>
+<th>VCPUS</th>
+<th>RAM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Small</td>
+<td>Up to 10</td>
+<td>2</td>
+<td>4 GB</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>Up to 100</td>
+<td>4</td>
+<td>8 GB</td>
+</tr>
+<tr>
+<td>Large</td>
+<td>Up to 250</td>
+<td>8</td>
+<td>16 GB</td>
+</tr>
+<tr>
+<td>X-Large</td>
+<td>Up to 500</td>
+<td>16</td>
+<td>32 GB</td>
+</tr>
+<tr>
+<td>XX-Large</td>
+<td>500+</td>
+<td>32</td>
+<td>64 GB</td>
+</tr>
+</tbody>
+</table>
+<h3 id="disks">Disks</h3>
+<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/26a0.svg" title=":warning:" /> The cluster performance depends on database performance. To ensure optimal speed, we recommend always using SSD disks to back your K3S cluster. On cloud providers, you will also want to use the minimum size that allows the maximum IOPS.</p>
+<h1 id="database">Database</h1>
+<p>K3S supports different databases including MySQL, PostgreSQL, MariaDB, and etcd, the following is a sizing guide for the database resources you need to run large clusters:</p>
+<table>
+<thead>
+<tr>
+<th>Deployment Size</th>
+<th>Nodes</th>
+<th>VCPUS</th>
+<th>RAM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Small</td>
+<td>Up to 10</td>
+<td>1</td>
+<td>2 GB</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>Up to 100</td>
+<td>2</td>
+<td>8 GB</td>
+</tr>
+<tr>
+<td>Large</td>
+<td>Up to 250</td>
+<td>4</td>
+<td>16 GB</td>
+</tr>
+<tr>
+<td>X-Large</td>
+<td>Up to 500</td>
+<td>8</td>
+<td>32 GB</td>
+</tr>
+<tr>
+<td>XX-Large</td>
+<td>500+</td>
+<td>16</td>
+<td>64 GB</td>
+</tr>
+</tbody>
+</table>
+<h1 id="single-master-node-k3s-install">Single Master Node K3S Install</h1>
+<p>A single-node server installation is a fully-functional Kubernetes cluster, including all the datastore, control-plane, kubelet, and container runtime components necessary to host workload pods. It is not necessary to add additional server or agents nodes, but you may want to do so to add additional capacity or redundancy to your cluster.</p>
+<p><code>Run this command :</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-sfL<span class="w"> </span>https://get.k3s.io<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh<span class="w"> </span>-
+</code></pre></div></p>
+<h1 id="high-available-k3s-install">High Available K3S Install</h1>
+<p>To run K3S in this mode, you must have an odd number of server nodes. We recommend starting with three nodes.</p>
+<p>To get started, first launch a server node with the <code>cluster-init</code> flag to enable clustering and a token that will be used as a shared secret to join additional servers to the cluster.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>-sfL<span class="w"> </span>https://get.k3s.io<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nv">K3S_TOKEN</span><span class="o">=</span>SECRET<span class="w"> </span>sh<span class="w"> </span>-s<span class="w"> </span>-<span class="w"> </span>server<span class="w"> </span>--cluster-init
+</code></pre></div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Let's validate everything worked as expected. Run a <code>systemctl status k3s.service</code> and make sure it is <code>active</code>.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>●<span class="w"> </span>k3s.service<span class="w"> </span>-<span class="w"> </span>Lightweight<span class="w"> </span>Kubernetes
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w"> </span>Loaded:<span class="w"> </span>loaded<span class="w"> </span><span class="o">(</span>/etc/systemd/system/k3s.service<span class="p">;</span><span class="w"> </span>enabled<span class="p">;</span><span class="w"> </span>vendor<span class="w"> </span>preset:<span class="w"> </span>enabled<span class="o">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w"> </span>Active:<span class="w"> </span><ins class="critic">active</ins><span class="w"> </span><span class="o">(</span>running<span class="o">)</span><span class="w"> </span>since<span class="w"> </span>Tue<span class="w"> </span><span class="m">2023</span>-06-06<span class="w"> </span><span class="m">13</span>:54:17<span class="w"> </span>UTC<span class="p">;</span><span class="w"> </span>37min<span class="w"> </span>ago
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">   </span>Docs:<span class="w"> </span>https://k3s.io
+</code></pre></div></p>
+</div>
+<p>After launching the first server, join the second and third servers to the cluster using the shared secret:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>-sfL<span class="w"> </span>https://get.k3s.io<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nv">K3S_TOKEN</span><span class="o">=</span>SECRET<span class="w"> </span>sh<span class="w"> </span>-s<span class="w"> </span>-<span class="w"> </span>server<span class="w"> </span>--server<span class="w"> </span>https://&lt;ip<span class="w"> </span>or<span class="w"> </span>hostname<span class="w"> </span>of<span class="w"> </span>server1&gt;:6443
+</code></pre></div></p>
+<h4 id="cluster-access">Cluster Access</h4>
+<p>The kubeconfig file stored at <code>/etc/rancher/k3s/k3s.yaml</code> is used to configure access to the Kubernetes cluster. If you have installed upstream Kubernetes command line tools such as kubectl or helm you will need to configure them with the correct kubeconfig path.This can be done by either exporting the <code>KUBECONFIG</code> environment variable or by invoking the <code>--kubeconfig</code> command line flag. Refer to the examples below for details.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">KUBECONFIG</span><span class="o">=</span>/etc/rancher/k3s/k3s.yaml
+</code></pre></div>
+<p>Check to see that the second and third servers are now part of the cluster:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ kubectl get nodes
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>NAME        STATUS   ROLES                       AGE   VERSION
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>server1     Ready    control-plane,etcd,master   28m   vX.Y.Z
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>server2     Ready    control-plane,etcd,master   13m   vX.Y.Z
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>server3     Ready    control-plane,etcd,master   10m   vX.Y.Z
+</code></pre></div></p>
+<h1 id="k3s-agent-install">K3S Agent Install</h1>
+<p>To install additional agent nodes and add them to the cluster, run the installation script with the <code>K3S_URL</code> and <code>K3S_TOKEN</code> environment variables. Here is an example showing how to join an agent:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>curl<span class="w"> </span>-sfL<span class="w"> </span>https://get.k3s.io<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nv">K3S_URL</span><span class="o">=</span>https://myserver:6443<span class="w"> </span><span class="nv">K3S_TOKEN</span><span class="o">=</span>mynodetoken<span class="w"> </span>sh<span class="w"> </span>-
+</code></pre></div></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Let's validate everything worked as expected. Run a <code>systemctl status k3s-agent</code> and make sure it is <code>active</code>.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>●<span class="w"> </span>k3s-agent.service<span class="w"> </span>-<span class="w"> </span>Lightweight<span class="w"> </span>Kubernetes
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w"> </span>Loaded:<span class="w"> </span>loaded<span class="w"> </span><span class="o">(</span>/etc/systemd/system/k3s-agent.service<span class="p">;</span><span class="w"> </span>enabled<span class="p">;</span><span class="w"> </span>vendor<span class="w"> </span>preset:<span class="w"> </span>enabled<span class="o">)</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w"> </span>Active:<span class="w"> </span><ins class="critic">active</ins><span class="w"> </span><span class="o">(</span>running<span class="o">)</span><span class="w"> </span>since<span class="w"> </span>Tue<span class="w"> </span><span class="m">2023</span>-06-06<span class="w"> </span><span class="m">14</span>:24:53<span class="w"> </span>UTC<span class="p">;</span><span class="w"> </span>7min<span class="w"> </span>ago
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">   </span>Docs:<span class="w"> </span>https://k3s.io
+</code></pre></div></p>
+</div>
+<p>Setting the <code>K3S_URL</code> parameter causes the installer to configure K3S as an agent, instead of a server. The K3S agent will register with the K3S server listening at the supplied URL. if you have not set a stable token the value to use for <code>K3S_TOKEN</code> is stored at <code>/var/lib/rancher/k3s/server/node-token</code> on your server node.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Leverage the KUBECONFIG environment variable:</label><label for="__tabbed_1_2">Or specify the location of the kubeconfig file in the command:</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">KUBECONFIG</span><span class="o">=</span>/etc/rancher/k3s/k3s.yaml
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>--all-namespaces
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>helm<span class="w"> </span>ls<span class="w"> </span>--all-namespaces
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>kubectl<span class="w"> </span>--kubeconfig<span class="w"> </span>/etc/rancher/k3s/k3s.yaml<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>--all-namespaces
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>helm<span class="w"> </span>--kubeconfig<span class="w"> </span>/etc/rancher/k3s/k3s.yaml<span class="w"> </span>ls<span class="w"> </span>--all-namespaces
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h1 id="uninstalling-k3s">Uninstalling K3S</h1>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Uninstalling Servers:</label><label for="__tabbed_2_2">Uninstalling Agents:</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>/usr/local/bin/k3s-uninstall.sh
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>/usr/local/bin/k3s-agent-uninstall.sh
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition danger annanote">
+<p class="admonition-title"><a href="https://docs.k3s.io/installation/requirements#inbound-rules-for-k3s-server-nodes">Make sure all required port numbers are open</a></p>
+</div>
+<p><a href="https://docs.k3s.io/">For More Details</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2861,10 +3169,10 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "/assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.bd41221c.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.bd41221c.min.js"></script>
       
     
   </body>

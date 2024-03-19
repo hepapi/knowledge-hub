@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../../vagrant/vagrant-quickstart/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../../k8s-storage/nfs-install/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14">
     
     
       
-        <title>Hepapi Knowledge Hub</title>
+        <title>Sealed-Secrets - Hepapi Knowledge Hub</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.10ba22f1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.10ba22f1.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="/assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#understanding-sealed-secrets-solving-the-challenge-of-securely-managing-kubernetes-secrets" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -79,9 +88,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../.." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="/images/hepapi-logo.png" alt="logo">
+  <img src="../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -98,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Sealed-Secrets
             
           </span>
         </div>
@@ -210,11 +219,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/." class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../.." class="md-tabs__link">
           
   
   DevOps
@@ -232,7 +243,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/qa/" class="md-tabs__link">
+        <a href="../../../qa/" class="md-tabs__link">
           
   
   QA
@@ -256,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
+        <a href="../../../misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
           
   
   Misc
@@ -275,7 +286,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/repo-credit/" class="md-tabs__link">
+      <a href="../../../repo-credit/" class="md-tabs__link">
         
   
     
@@ -309,9 +320,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../.." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="/images/hepapi-logo.png" alt="logo">
+  <img src="../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     Hepapi Knowledge Hub
@@ -335,23 +346,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -362,7 +378,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             DevOps
@@ -376,7 +392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -473,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/script/" class="md-nav__link">
+      <a href="../../linux/shell/script/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -494,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/cat/" class="md-nav__link">
+      <a href="../../linux/shell/cat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -515,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/chtsh/" class="md-nav__link">
+      <a href="../../linux/shell/chtsh/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -536,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/jobs-bg-fg/" class="md-nav__link">
+      <a href="../../linux/shell/jobs-bg-fg/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -557,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/ampersand-nohup/" class="md-nav__link">
+      <a href="../../linux/shell/ampersand-nohup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -578,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/nslookup/" class="md-nav__link">
+      <a href="../../linux/shell/nslookup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -599,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/nmap/" class="md-nav__link">
+      <a href="../../linux/shell/nmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -620,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/netstat/" class="md-nav__link">
+      <a href="../../linux/shell/netstat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -641,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/scp/" class="md-nav__link">
+      <a href="../../linux/shell/scp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -670,7 +686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/tooling/" class="md-nav__link">
+      <a href="../../linux/tooling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -691,7 +707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/tips/" class="md-nav__link">
+      <a href="../../linux/tips/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -758,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/aws/cli/" class="md-nav__link">
+      <a href="../../aws/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -825,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/azure/agent-installation/" class="md-nav__link">
+      <a href="../../azure/agent-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -892,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/kubernetes/keda/keda/" class="md-nav__link">
+      <a href="../../kubernetes/keda/keda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -913,7 +929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/k3s-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/k3s-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -980,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-installation-ansible/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-installation-ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1001,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1060,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1081,7 +1097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1102,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1177,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/rancher/rancher-installation/" class="md-nav__link">
+      <a href="../../rancher/rancher-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1244,7 +1260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/configuration/" class="md-nav__link">
+      <a href="../../postgres/configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1265,7 +1281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/psql/" class="md-nav__link">
+      <a href="../../postgres/psql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1286,7 +1302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/backup-restore/" class="md-nav__link">
+      <a href="../../postgres/backup-restore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1353,7 +1369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/nexus-installation/" class="md-nav__link">
+      <a href="../../nexus/nexus-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1374,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/nexus-user-and-roles/" class="md-nav__link">
+      <a href="../../nexus/nexus-user-and-roles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1395,7 +1411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/docker-hosted-repo/" class="md-nav__link">
+      <a href="../../nexus/docker-hosted-repo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1416,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/docker-proxy-repo/" class="md-nav__link">
+      <a href="../../nexus/docker-proxy-repo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1437,7 +1453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/pull-to-kubernetes/" class="md-nav__link">
+      <a href="../../nexus/pull-to-kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1458,7 +1474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/registry-configuration/" class="md-nav__link">
+      <a href="../../nexus/registry-configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1525,7 +1541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/jenkins/jenkins-installation/" class="md-nav__link">
+      <a href="../../jenkins/jenkins-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1546,7 +1562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/jenkins/shared-library/" class="md-nav__link">
+      <a href="../../jenkins/shared-library/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1613,7 +1629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/ansible-installations/" class="md-nav__link">
+      <a href="../../ansible/ansible-installations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1634,7 +1650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/what-is-ansible/" class="md-nav__link">
+      <a href="../../ansible/what-is-ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1655,7 +1671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/inventory-file/" class="md-nav__link">
+      <a href="../../ansible/inventory-file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1676,7 +1692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/config-file/" class="md-nav__link">
+      <a href="../../ansible/config-file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1697,7 +1713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/playbook/" class="md-nav__link">
+      <a href="../../ansible/playbook/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1718,7 +1734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/ansible-roles/" class="md-nav__link">
+      <a href="../../ansible/ansible-roles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1785,7 +1801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/Description/" class="md-nav__link">
+      <a href="../../git/Description/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1806,7 +1822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/installation/" class="md-nav__link">
+      <a href="../../git/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1827,7 +1843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/Commands/" class="md-nav__link">
+      <a href="../../git/Commands/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1932,7 +1948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
+      <a href="../../falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1953,7 +1969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/agent-installation/" class="md-nav__link">
+      <a href="../../falcon-logscale/agent-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2020,7 +2036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/humiosetup/" class="md-nav__link">
+      <a href="../../falcon-logscale/humiosetup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2041,7 +2057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/javainstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/javainstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2062,7 +2078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/zookeeperinstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/zookeeperinstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2083,7 +2099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/kafkainstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/kafkainstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2104,7 +2120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/humioinstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/humioinstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2179,7 +2195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-linux-collector/" class="md-nav__link">
+      <a href="../../sumo/sumo-linux-collector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2200,7 +2216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-windows-collector/" class="md-nav__link">
+      <a href="../../sumo/sumo-windows-collector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2221,7 +2237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-local-file-management/" class="md-nav__link">
+      <a href="../../sumo/sumo-local-file-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2288,7 +2304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/vagrant/vagrant-quickstart/" class="md-nav__link">
+      <a href="../../vagrant/vagrant-quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2314,6 +2330,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2323,11 +2341,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_16" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_16" checked>
         
           
           <label class="md-nav__link" for="__nav_1_16" id="__nav_1_16_label" tabindex="0">
@@ -2341,7 +2359,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_16_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_16_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_16">
             <span class="md-nav__icon md-icon"></span>
             Sealed-Secrets
@@ -2352,10 +2370,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/devops/sealed-secrets/sealed-secrets/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sealed-Secrets
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2364,6 +2402,101 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sealed-secret-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sealed Secret Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#helm-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helm Chart
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubeseal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubeseal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kubeseal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-mac-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Mac (Homebrew)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Linux
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2422,7 +2555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-storage/nfs-install/" class="md-nav__link">
+      <a href="../../k8s-storage/nfs-install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2443,7 +2576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-storage/longhorn/" class="md-nav__link">
+      <a href="../../k8s-storage/longhorn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2517,7 +2650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/qa/" class="md-nav__link">
+      <a href="../../../qa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2576,7 +2709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/qa/placeholder.md" class="md-nav__link">
+      <a href="../../../qa/placeholder.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2688,7 +2821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2709,7 +2842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2730,7 +2863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/about-markdown/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/about-markdown/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2766,7 +2899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/repo-credit/" class="md-nav__link">
+      <a href="../../../repo-credit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2796,6 +2929,91 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sealed-secret-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sealed Secret Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#helm-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helm Chart
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubeseal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubeseal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kubeseal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-mac-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Mac (Homebrew)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Linux
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2807,8 +3025,117 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/sealed-secrets/sealed-secrets.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="understanding-sealed-secrets-solving-the-challenge-of-securely-managing-kubernetes-secrets">Understanding Sealed Secrets: Solving the Challenge of Securely Managing Kubernetes Secrets</h1>
+<p>Let's start by defining Sealed Secrets and addressing the problem it aims to solve.</p>
+<p>When working with Kubernetes manifests, we often store them in Git version control systems alongside our application code. However, a challenge arises when dealing with Kubernetes Secret manifests, as they contain data that needs to be hidden but is stored in base64 format, which can be easily decrypted.</p>
+<p>This is where Sealed Secrets comes to the rescue. It allows us to encrypt our Secrets into SealedSecrets, making them safe to store, even in public repositories. The decryption of SealedSecrets is only possible by the controller running in the target cluster, ensuring that not even the original author can obtain the original Secret from the SealedSecret.</p>
+<p>To achieve this, two components are required: <strong>kubeseal</strong>, which we install locally, and the <strong>controller</strong> running in Kubernetes. With kubeseal, we encrypt our Secret manifests before pushing them to the Git repository. The Kubernetes controller is responsible for decrypting these encrypted Secret objects.</p>
+<h2 id="sealed-secret-example">Sealed Secret Example</h2>
+<p>These encrypted secrets are encoded in a SealedSecret resource, which you can see as a recipe for creating a secret. Here is how it looks:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami.com/v1alpha1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SealedSecret</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysecret</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mynamespace</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">encryptedData</span><span class="p">:</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgBy3i4OJSWK+PiTySYZZA9rO43cGDEq.....</span>
+</code></pre></div>
+Once unsealed, this produces a Secret equivalent to the following:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysecret</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mynamespace</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">data</span><span class="p">:</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YmFy</span><span class="w">  </span><span class="c1"># &lt;- base64 encoded &quot;bar&quot;</span>
+</code></pre></div>
+Having explored how a Secret is securely stored in a Git repository, let's proceed to the usage.</p>
+<hr />
+<h2 id="installation">Installation</h2>
+<p>Firstly, let's set up the Sealed Secrets controller in Kubernetes. I'll perform this task using Helm.</p>
+<h4 id="helm-chart">Helm Chart</h4>
+<p>The Sealed Secrets helm chart is now officially supported and hosted in this GitHub repo.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>sealed-secrets<span class="w"> </span>https://bitnami-labs.github.io/sealed-secrets
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>helm<span class="w"> </span>install<span class="w"> </span>sealed-secrets<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span>sealed-secrets/sealed-secrets
+</code></pre></div></p>
+<p>When the controller in the cluster up-and-running, it will generate a key. We will perform the encryption process with kubeseal, which we will install locally. You can find the kubeseal installation below for Mac and linux.</p>
+<h3 id="kubeseal">Kubeseal</h3>
+<h4 id="for-mac-homebrew">For Mac (Homebrew)</h4>
+<p>The <code>kubeseal</code> client is also available on <a href="https://formulae.brew.sh/formula/kubeseal">homebrew</a>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>brew<span class="w"> </span>install<span class="w"> </span>kubeseal
+</code></pre></div>
+<h4 id="for-linux">For Linux</h4>
+<p>The <code>kubeseal</code> client can be installed on Linux, using the below commands:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">KUBESEAL_VERSION</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="c1"># Set this to, for example, KUBESEAL_VERSION=&#39;0.23.0&#39;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>wget<span class="w"> </span><span class="s2">&quot;https://github.com/bitnami-labs/sealed-secrets/releases/download/v</span><span class="si">${</span><span class="nv">KUBESEAL_VERSION</span><span class="p">:?</span><span class="si">}</span><span class="s2">/kubeseal-</span><span class="si">${</span><span class="nv">KUBESEAL_VERSION</span><span class="p">:?</span><span class="si">}</span><span class="s2">-linux-amd64.tar.gz&quot;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>tar<span class="w"> </span>-xvzf<span class="w"> </span>kubeseal-<span class="si">${</span><span class="nv">KUBESEAL_VERSION</span><span class="p">:?</span><span class="si">}</span>-linux-amd64.tar.gz<span class="w"> </span>kubeseal
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>sudo<span class="w"> </span>install<span class="w"> </span>-m<span class="w"> </span><span class="m">755</span><span class="w"> </span>kubeseal<span class="w"> </span>/usr/local/bin/kubeseal
+</code></pre></div>
+If you have <code>curl</code> and <code>jq</code> installed on your machine, you can get the version dynamically this way. This can be useful for environments used in automation and such.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a># Fetch the latest sealed-secrets version using GitHub API
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>KUBESEAL_VERSION=$(curl -s https://api.github.com/repos/bitnami-labs/sealed-secrets/tags | jq -r &#39;.[0].name&#39; | cut -c 2-)
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a># Check if the version was fetched successfully
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>if [ -z &quot;$KUBESEAL_VERSION&quot; ]; then
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    echo &quot;Failed to fetch the latest KUBESEAL_VERSION&quot;
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    exit 1
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>fi
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>wget &quot;https://github.com/bitnami-labs/sealed-secrets/releases/download/v${KUBESEAL_VERSION}/kubeseal-${KUBESEAL_VERSION}-linux-amd64.tar.gz&quot;
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>tar -xvzf kubeseal-${KUBESEAL_VERSION}-linux-amd64.tar.gz kubeseal
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>sudo install -m 755 kubeseal /usr/local/bin/kubeseal
+</code></pre></div>
+With the tools in place, both the cluster-side controller/operator and the client-side utility kubeseal are ready.</p>
+<hr />
+<h2 id="usage">Usage</h2>
+<p>Assuming we have a Kubernetes Secret manifest file named <code>mysecret.yaml</code> as follows:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>apiVersion: v1
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>kind: Secret
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>metadata:
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  name: mysecret
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>  namespace: mynamespace
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>data:
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>  foo: YmFy  # &lt;- base64 encoded &quot;bar&quot;
+</code></pre></div>
+We can encrypt the Kubernetes Secret file using the following command:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>kubeseal --controller-name sealed-secrets -o yaml -n kube-system &lt; mysecrets.yaml &gt; encrypted-mysecret.yaml
+</code></pre></div>
+Subsequently, we can apply the <code>encrypted-mysecret.yaml</code> file:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>kubectl apply -f encrypted-mysecret.yaml
+</code></pre></div>
+To summarize the process:</p>
+<ul>
+<li>The Sealed Secrets controller, installed with Helm, generated public and private keys.</li>
+<li>We encrypted the decrypted mysecret.yaml file locally using the kubeseal command.</li>
+<li>When deploying the encrypted-mysecret.yaml file into Kubernetes, the controller decrypted it with the private key, converting it into a Kubernetes Secret.</li>
+</ul>
+<p>Now, with peace of mind, we can store our Secret manifests in Git repositories, especially if you are using GitOps, where you can automate your work by planning the file directory containing your encrypted manifests as an ArgoCD application.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2861,10 +3188,10 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "/assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.bd41221c.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.bd41221c.min.js"></script>
       
     
   </body>

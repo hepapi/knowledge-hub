@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../rke2-highly-available-installation/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../rke2-ha-etcd-restore/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14">
     
     
       
-        <title>Hepapi Knowledge Hub</title>
+        <title>Automatic Upgrades(rancher/system-upgrade-controller) - Hepapi Knowledge Hub</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.10ba22f1.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.10ba22f1.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="/assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#system-upgrade-controller" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -79,9 +88,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../../.." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="/images/hepapi-logo.png" alt="logo">
+  <img src="../../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -98,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Automatic Upgrades(rancher/system-upgrade-controller)
             
           </span>
         </div>
@@ -210,11 +219,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/." class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../.." class="md-tabs__link">
           
   
   DevOps
@@ -232,7 +243,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/qa/" class="md-tabs__link">
+        <a href="../../../../qa/" class="md-tabs__link">
           
   
   QA
@@ -256,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
+        <a href="../../../../misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
           
   
   Misc
@@ -275,7 +286,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/repo-credit/" class="md-tabs__link">
+      <a href="../../../../repo-credit/" class="md-tabs__link">
         
   
     
@@ -309,9 +320,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../../.." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="/images/hepapi-logo.png" alt="logo">
+  <img src="../../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     Hepapi Knowledge Hub
@@ -335,23 +346,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -362,7 +378,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             DevOps
@@ -376,7 +392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -473,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/script/" class="md-nav__link">
+      <a href="../../../linux/shell/script/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -494,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/cat/" class="md-nav__link">
+      <a href="../../../linux/shell/cat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -515,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/chtsh/" class="md-nav__link">
+      <a href="../../../linux/shell/chtsh/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -536,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/jobs-bg-fg/" class="md-nav__link">
+      <a href="../../../linux/shell/jobs-bg-fg/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -557,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/ampersand-nohup/" class="md-nav__link">
+      <a href="../../../linux/shell/ampersand-nohup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -578,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/nslookup/" class="md-nav__link">
+      <a href="../../../linux/shell/nslookup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -599,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/nmap/" class="md-nav__link">
+      <a href="../../../linux/shell/nmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -620,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/netstat/" class="md-nav__link">
+      <a href="../../../linux/shell/netstat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -641,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/scp/" class="md-nav__link">
+      <a href="../../../linux/shell/scp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -670,7 +686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/tooling/" class="md-nav__link">
+      <a href="../../../linux/tooling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -691,7 +707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/tips/" class="md-nav__link">
+      <a href="../../../linux/tips/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -758,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/aws/cli/" class="md-nav__link">
+      <a href="../../../aws/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -825,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/azure/agent-installation/" class="md-nav__link">
+      <a href="../../../azure/agent-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -892,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/kubernetes/keda/keda/" class="md-nav__link">
+      <a href="../../../kubernetes/keda/keda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -913,7 +929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/k3s-installation/" class="md-nav__link">
+      <a href="../../k3s-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -939,6 +955,8 @@
                 
   
   
+    
+  
   
   
     
@@ -948,11 +966,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" checked>
         
           
           <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
@@ -966,7 +984,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_6">
             <span class="md-nav__icon md-icon"></span>
             RKE2
@@ -980,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-installation-ansible/" class="md-nav__link">
+      <a href="../../rke2-installation-ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1001,7 +1019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-installation/" class="md-nav__link">
+      <a href="../../rke2-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1019,6 +1037,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1028,11 +1048,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6_3" checked>
         
           
           <label class="md-nav__link" for="__nav_1_6_3" id="__nav_1_6_3_label" tabindex="0">
@@ -1046,7 +1066,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_6_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_6_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_6_3">
             <span class="md-nav__icon md-icon"></span>
             RKE2 HA (Highly Available)
@@ -1060,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
+      <a href="../rke2-highly-available-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1078,10 +1098,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Automatic Upgrades(rancher/system-upgrade-controller)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1090,6 +1130,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-master-nodes-1-by-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrading Master Nodes 1-by-1
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1102,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
+      <a href="../rke2-ha-etcd-restore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1177,7 +1255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/rancher/rancher-installation/" class="md-nav__link">
+      <a href="../../../rancher/rancher-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1244,7 +1322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/configuration/" class="md-nav__link">
+      <a href="../../../postgres/configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1265,7 +1343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/psql/" class="md-nav__link">
+      <a href="../../../postgres/psql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1286,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/backup-restore/" class="md-nav__link">
+      <a href="../../../postgres/backup-restore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1353,7 +1431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/nexus-installation/" class="md-nav__link">
+      <a href="../../../nexus/nexus-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1374,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/nexus-user-and-roles/" class="md-nav__link">
+      <a href="../../../nexus/nexus-user-and-roles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1395,7 +1473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/docker-hosted-repo/" class="md-nav__link">
+      <a href="../../../nexus/docker-hosted-repo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1416,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/docker-proxy-repo/" class="md-nav__link">
+      <a href="../../../nexus/docker-proxy-repo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1437,7 +1515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/pull-to-kubernetes/" class="md-nav__link">
+      <a href="../../../nexus/pull-to-kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1458,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/registry-configuration/" class="md-nav__link">
+      <a href="../../../nexus/registry-configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1525,7 +1603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/jenkins/jenkins-installation/" class="md-nav__link">
+      <a href="../../../jenkins/jenkins-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1546,7 +1624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/jenkins/shared-library/" class="md-nav__link">
+      <a href="../../../jenkins/shared-library/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1613,7 +1691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/ansible-installations/" class="md-nav__link">
+      <a href="../../../ansible/ansible-installations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1634,7 +1712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/what-is-ansible/" class="md-nav__link">
+      <a href="../../../ansible/what-is-ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1655,7 +1733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/inventory-file/" class="md-nav__link">
+      <a href="../../../ansible/inventory-file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1676,7 +1754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/config-file/" class="md-nav__link">
+      <a href="../../../ansible/config-file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1697,7 +1775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/playbook/" class="md-nav__link">
+      <a href="../../../ansible/playbook/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1718,7 +1796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/ansible-roles/" class="md-nav__link">
+      <a href="../../../ansible/ansible-roles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1785,7 +1863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/Description/" class="md-nav__link">
+      <a href="../../../git/Description/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1806,7 +1884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/installation/" class="md-nav__link">
+      <a href="../../../git/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1827,7 +1905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/Commands/" class="md-nav__link">
+      <a href="../../../git/Commands/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1932,7 +2010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
+      <a href="../../../falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1953,7 +2031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/agent-installation/" class="md-nav__link">
+      <a href="../../../falcon-logscale/agent-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2020,7 +2098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/humiosetup/" class="md-nav__link">
+      <a href="../../../falcon-logscale/humiosetup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2041,7 +2119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/javainstallation/" class="md-nav__link">
+      <a href="../../../falcon-logscale/javainstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2062,7 +2140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/zookeeperinstallation/" class="md-nav__link">
+      <a href="../../../falcon-logscale/zookeeperinstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2083,7 +2161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/kafkainstallation/" class="md-nav__link">
+      <a href="../../../falcon-logscale/kafkainstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2104,7 +2182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/humioinstallation/" class="md-nav__link">
+      <a href="../../../falcon-logscale/humioinstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2179,7 +2257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-linux-collector/" class="md-nav__link">
+      <a href="../../../sumo/sumo-linux-collector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2200,7 +2278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-windows-collector/" class="md-nav__link">
+      <a href="../../../sumo/sumo-windows-collector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2221,7 +2299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-local-file-management/" class="md-nav__link">
+      <a href="../../../sumo/sumo-local-file-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2288,7 +2366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/vagrant/vagrant-quickstart/" class="md-nav__link">
+      <a href="../../../vagrant/vagrant-quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2355,7 +2433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sealed-secrets/sealed-secrets/" class="md-nav__link">
+      <a href="../../../sealed-secrets/sealed-secrets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2422,7 +2500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-storage/nfs-install/" class="md-nav__link">
+      <a href="../../../k8s-storage/nfs-install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2443,7 +2521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-storage/longhorn/" class="md-nav__link">
+      <a href="../../../k8s-storage/longhorn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2517,7 +2595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/qa/" class="md-nav__link">
+      <a href="../../../../qa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2576,7 +2654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/qa/placeholder.md" class="md-nav__link">
+      <a href="../../../../qa/placeholder.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2688,7 +2766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
+      <a href="../../../../misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2709,7 +2787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
+      <a href="../../../../misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2730,7 +2808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/about-markdown/" class="md-nav__link">
+      <a href="../../../../misc/how-to-contribute/about-markdown/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2766,7 +2844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/repo-credit/" class="md-nav__link">
+      <a href="../../../../repo-credit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2796,6 +2874,34 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-master-nodes-1-by-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrading Master Nodes 1-by-1
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2807,8 +2913,118 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="system-upgrade-controller">System Upgrade Controller</h1>
+<p><a href="https://github.com/rancher/system-upgrade-controller">rancher/system-upgrade-controller</a></p>
+<p><a href="https://docs.rke2.io/upgrade/automated_upgrade">RKE2 Docs: Automatic Upgrades</a></p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Highly Available RKE2 Cluster</li>
+<li>Install the <code>system-upgrade-controller</code> on the cluster</li>
+</ul>
+<p>Visit for the latest installation instructions: <a href="https://docs.rke2.io/upgrade/automated_upgrade#install-the-system-upgrade-controller">RKE2 Docs: Install the system-upgrade-controller</a></p>
+<p>For now, the command is: (<strong>the version might change, better to follow the docs</strong>)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://github.com/rancher/system-upgrade-controller/releases/download/v0.9.1/system-upgrade-controller.yaml
+</code></pre></div></p>
+<h2 id="upgrading-master-nodes-1-by-1">Upgrading Master Nodes 1-by-1</h2>
+<p><strong>1)</strong> <strong>[ATTENTION]</strong> Decide on which version of RKE2 to upgrade to.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Kubernetes Label: remove &#39;+&#39; and replace with &#39;-&#39; or it doesnt work</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># TODO: SET THIS TO A RELEASE NUMBER or `latest` or `stable` works as well</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">RKE2_UPGRADE_VERSION</span><span class="o">=</span><span class="s2">&quot;v1.21.14+rke2r1&quot;</span><span class="w"> </span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">RKE2_UPGRADE_VERSION_SAFE_STRING</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="nv">$RKE2_UPGRADE_VERSION</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;+&#39;</span><span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="k">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># &quot;v1.21.14+rke2r1&quot; --becomes--&gt; &quot;v1.21.14-rke2r1&quot;</span>
+</code></pre></div></p>
+<p><strong>2)</strong> <strong>[ATTENTION]</strong> Create Master Node Upgrade Plan yaml file.</p>
+<p>This command will create a file named <code>rke2-master-upgrade-plan-$RKE2_UPGRADE_VERSION_SAFE_STRING.yaml</code></p>
+<p>This plan can only be applied to master nodes that have the labels:</p>
+<ul>
+<li><code>rke2-upgrade</code>: <code>enabled</code></li>
+<li><code>rke2-upgrade-to</code>: $RKE2_UPGRADE_VERSION_SAFE_STRING</li>
+</ul>
+<p>You can also add the label <code>rke2-upgrade: disabled</code> to a master node to prevent it from being upgraded.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># create the upgrade-plan for it </span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; rke2-master-upgrade-plan-$RKE2_UPGRADE_VERSION_SAFE_STRING.yaml</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="s">apiVersion: upgrade.cattle.io/v1</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="s">kind: Plan</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="s">metadata:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="s">  name: server-plan-for-$RKE2_UPGRADE_VERSION_SAFE_STRING</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="s">  namespace: system-upgrade</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="s">  labels:</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="s">    rke2-upgrade: server</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="s">spec:</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="s">  concurrency: 1</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="s">  nodeSelector:</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="s">    matchExpressions:</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="s">      - {key: node-role.kubernetes.io/control-plane, operator: In, values: [&quot;true&quot;]}</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="s">      - {key: rke2-upgrade, operator: Exists}</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="s">      - {key: rke2-upgrade, operator: NotIn, values: [&quot;disabled&quot;, &quot;false&quot;]}</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="s">      - {key: rke2-upgrade-to, operator: In, values: [&quot;$RKE2_UPGRADE_VERSION_SAFE_STRING&quot;]}</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="s">  serviceAccountName: system-upgrade</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="s">  cordon: true</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="s">  drain:</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="s">    force: true</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="s">  upgrade:</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="s">    image: rancher/rke2-upgrade</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="s">  version: &quot;$RKE2_UPGRADE_VERSION&quot;</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="s">EOF</span>
+</code></pre></div></p>
+<p><strong>3)</strong> Apply the <code>Plan</code> to the cluster</p>
+<p>This will not upgrade the nodes. That'll happen when we label the nodes correctly.</p>
+<p><code>Plan</code> will create <code>Job</code>s for each master node that has the labels:</p>
+<ul>
+<li><code>rke2-upgrade</code>: <code>enabled</code></li>
+<li><code>rke2-upgrade-to</code>: $RKE2_UPGRADE_VERSION_SAFE_STRING</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># apply the plan and check it</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>rke2-master-upgrade-plan-<span class="nv">$RKE2_UPGRADE_VERSION_SAFE_K8S_LABEL</span>.yaml
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># check the plan and jobs</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>system-upgrade<span class="w"> </span>get<span class="w"> </span>plans,jobs
+</code></pre></div>
+<strong>4)</strong> <strong>[OPTIONAL]</strong> Disable a node from upgrading
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>label<span class="w"> </span>nodes<span class="w"> </span>&lt;node-name&gt;<span class="w"> </span>rke2-upgrade<span class="o">=</span>disabled<span class="w"> </span>--overwrite
+</code></pre></div></p>
+<p><strong>5)</strong> <strong>[ATTENTION]</strong> Labeling &amp; Upgrading the master nodes 1-by-1</p>
+<p>This step should be done for each master node <strong>one after other</strong>.</p>
+<p>Labeling the master nodes will trigger an automatic upgrade.</p>
+<p><strong>Do this step for all master nodes one after other.</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;RKE2_UPGRADE_VERSION=</span><span class="nv">$RKE2_UPGRADE_VERSION</span><span class="s2">&quot;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;RKE2_UPGRADE_VERSION_SAFE_K8S_LABEL=</span><span class="nv">$RKE2_UPGRADE_VERSION_SAFE_K8S_LABEL</span><span class="s2">&quot;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># label the a master node to upgrade</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>kubectl<span class="w"> </span>label<span class="w"> </span>nodes<span class="w"> </span>&lt;node-name&gt;<span class="w"> </span>rke2-upgrade<span class="o">=</span>enabled<span class="w"> </span>--overwrite
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>kubectl<span class="w"> </span>label<span class="w"> </span>nodes<span class="w"> </span>&lt;node-name&gt;<span class="w"> </span>rke2-upgrade-to<span class="o">=</span><span class="nv">$RKE2_UPGRADE_VERSION_SAFE_STRING</span><span class="w"> </span>--overwrite
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1"># check if a job is created for the upgrade of the node</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>system-upgrade<span class="w"> </span>get<span class="w"> </span>jobs,plans
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1"># watch as the node is upgraded</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span>--watch
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2861,10 +3077,10 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "/assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.bd41221c.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.bd41221c.min.js"></script>
       
     
   </body>

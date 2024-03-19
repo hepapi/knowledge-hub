@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../nmap/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../scp/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14">
     
     
       
-        <title>Hepapi Knowledge Hub</title>
+        <title>netstat, ss, ps - Hepapi Knowledge Hub</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.10ba22f1.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.10ba22f1.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="/assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#netstat-ss-command" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -79,9 +88,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../../.." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="/images/hepapi-logo.png" alt="logo">
+  <img src="../../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -98,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              netstat, ss, ps
             
           </span>
         </div>
@@ -210,11 +219,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/." class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../.." class="md-tabs__link">
           
   
   DevOps
@@ -232,7 +243,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/qa/" class="md-tabs__link">
+        <a href="../../../../qa/" class="md-tabs__link">
           
   
   QA
@@ -256,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
+        <a href="../../../../misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
           
   
   Misc
@@ -275,7 +286,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/repo-credit/" class="md-tabs__link">
+      <a href="../../../../repo-credit/" class="md-tabs__link">
         
   
     
@@ -309,9 +320,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../../.." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="/images/hepapi-logo.png" alt="logo">
+  <img src="../../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     Hepapi Knowledge Hub
@@ -335,23 +346,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -362,7 +378,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             DevOps
@@ -376,7 +392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -394,6 +410,8 @@
                 
   
   
+    
+  
   
   
     
@@ -403,11 +421,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
         
           
           <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
@@ -421,7 +439,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_2">
             <span class="md-nav__icon md-icon"></span>
             Linux
@@ -432,6 +450,8 @@
                 
   
   
+    
+  
   
   
     
@@ -441,11 +461,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_1_2_1" id="__nav_1_2_1_label" tabindex="0">
@@ -459,7 +479,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_2_1">
             <span class="md-nav__icon md-icon"></span>
             Shell Commands
@@ -473,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/script/" class="md-nav__link">
+      <a href="../script/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -494,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/cat/" class="md-nav__link">
+      <a href="../cat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -515,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/chtsh/" class="md-nav__link">
+      <a href="../chtsh/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -536,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/jobs-bg-fg/" class="md-nav__link">
+      <a href="../jobs-bg-fg/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -557,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/ampersand-nohup/" class="md-nav__link">
+      <a href="../ampersand-nohup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -578,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/nslookup/" class="md-nav__link">
+      <a href="../nslookup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -599,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/nmap/" class="md-nav__link">
+      <a href="../nmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -617,10 +637,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/devops/linux/shell/netstat/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -629,6 +658,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -641,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/shell/scp/" class="md-nav__link">
+      <a href="../scp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -670,7 +700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/tooling/" class="md-nav__link">
+      <a href="../../tooling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -691,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/linux/tips/" class="md-nav__link">
+      <a href="../../tips/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -758,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/aws/cli/" class="md-nav__link">
+      <a href="../../../aws/cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -825,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/azure/agent-installation/" class="md-nav__link">
+      <a href="../../../azure/agent-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -892,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/kubernetes/keda/keda/" class="md-nav__link">
+      <a href="../../../kubernetes/keda/keda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -913,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/k3s-installation/" class="md-nav__link">
+      <a href="../../../k8s-engine/k3s-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -980,7 +1010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-installation-ansible/" class="md-nav__link">
+      <a href="../../../k8s-engine/rke2-installation-ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1001,7 +1031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-installation/" class="md-nav__link">
+      <a href="../../../k8s-engine/rke2-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1060,7 +1090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
+      <a href="../../../k8s-engine/rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1081,7 +1111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
+      <a href="../../../k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1102,7 +1132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-engine/rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
+      <a href="../../../k8s-engine/rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1177,7 +1207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/rancher/rancher-installation/" class="md-nav__link">
+      <a href="../../../rancher/rancher-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1244,7 +1274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/configuration/" class="md-nav__link">
+      <a href="../../../postgres/configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1265,7 +1295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/psql/" class="md-nav__link">
+      <a href="../../../postgres/psql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1286,7 +1316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/postgres/backup-restore/" class="md-nav__link">
+      <a href="../../../postgres/backup-restore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1353,7 +1383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/nexus-installation/" class="md-nav__link">
+      <a href="../../../nexus/nexus-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1374,7 +1404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/nexus-user-and-roles/" class="md-nav__link">
+      <a href="../../../nexus/nexus-user-and-roles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1395,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/docker-hosted-repo/" class="md-nav__link">
+      <a href="../../../nexus/docker-hosted-repo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1416,7 +1446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/docker-proxy-repo/" class="md-nav__link">
+      <a href="../../../nexus/docker-proxy-repo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1437,7 +1467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/pull-to-kubernetes/" class="md-nav__link">
+      <a href="../../../nexus/pull-to-kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1458,7 +1488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/nexus/registry-configuration/" class="md-nav__link">
+      <a href="../../../nexus/registry-configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1525,7 +1555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/jenkins/jenkins-installation/" class="md-nav__link">
+      <a href="../../../jenkins/jenkins-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1546,7 +1576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/jenkins/shared-library/" class="md-nav__link">
+      <a href="../../../jenkins/shared-library/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1613,7 +1643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/ansible-installations/" class="md-nav__link">
+      <a href="../../../ansible/ansible-installations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1634,7 +1664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/what-is-ansible/" class="md-nav__link">
+      <a href="../../../ansible/what-is-ansible/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1655,7 +1685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/inventory-file/" class="md-nav__link">
+      <a href="../../../ansible/inventory-file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1676,7 +1706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/config-file/" class="md-nav__link">
+      <a href="../../../ansible/config-file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1697,7 +1727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/playbook/" class="md-nav__link">
+      <a href="../../../ansible/playbook/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1718,7 +1748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/ansible/ansible-roles/" class="md-nav__link">
+      <a href="../../../ansible/ansible-roles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1785,7 +1815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/Description/" class="md-nav__link">
+      <a href="../../../git/Description/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1806,7 +1836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/installation/" class="md-nav__link">
+      <a href="../../../git/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1827,7 +1857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/git/Commands/" class="md-nav__link">
+      <a href="../../../git/Commands/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1932,7 +1962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
+      <a href="../../../falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1953,7 +1983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/agent-installation/" class="md-nav__link">
+      <a href="../../../falcon-logscale/agent-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2020,7 +2050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/humiosetup/" class="md-nav__link">
+      <a href="../../../falcon-logscale/humiosetup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2041,7 +2071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/javainstallation/" class="md-nav__link">
+      <a href="../../../falcon-logscale/javainstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2062,7 +2092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/zookeeperinstallation/" class="md-nav__link">
+      <a href="../../../falcon-logscale/zookeeperinstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2083,7 +2113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/kafkainstallation/" class="md-nav__link">
+      <a href="../../../falcon-logscale/kafkainstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2104,7 +2134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/falcon-logscale/humioinstallation/" class="md-nav__link">
+      <a href="../../../falcon-logscale/humioinstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2179,7 +2209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-linux-collector/" class="md-nav__link">
+      <a href="../../../sumo/sumo-linux-collector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2200,7 +2230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-windows-collector/" class="md-nav__link">
+      <a href="../../../sumo/sumo-windows-collector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2221,7 +2251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sumo/sumo-local-file-management/" class="md-nav__link">
+      <a href="../../../sumo/sumo-local-file-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2288,7 +2318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/vagrant/vagrant-quickstart/" class="md-nav__link">
+      <a href="../../../vagrant/vagrant-quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2355,7 +2385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/sealed-secrets/sealed-secrets/" class="md-nav__link">
+      <a href="../../../sealed-secrets/sealed-secrets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2422,7 +2452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-storage/nfs-install/" class="md-nav__link">
+      <a href="../../../k8s-storage/nfs-install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2443,7 +2473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/devops/k8s-storage/longhorn/" class="md-nav__link">
+      <a href="../../../k8s-storage/longhorn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2517,7 +2547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/qa/" class="md-nav__link">
+      <a href="../../../../qa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2576,7 +2606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/qa/placeholder.md" class="md-nav__link">
+      <a href="../../../../qa/placeholder.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2688,7 +2718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
+      <a href="../../../../misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2709,7 +2739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
+      <a href="../../../../misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2730,7 +2760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/how-to-contribute/about-markdown/" class="md-nav__link">
+      <a href="../../../../misc/how-to-contribute/about-markdown/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2766,7 +2796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/repo-credit/" class="md-nav__link">
+      <a href="../../../../repo-credit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2796,6 +2826,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2807,8 +2839,98 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/linux/shell/netstat.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="netstat-ss-command">Netstat &amp; SS Command</h1>
+<p>You can check the listening ports and applications with netstat as follows.</p>
+<blockquote>
+<p><strong>Prerequisite</strong>
+By default, netstat command may not be installed on your system. Hence, use the apk command on Alpine Linux, dnf command/yum command on RHEL &amp; co, apt command/apt-get command on Debian, Ubuntu &amp; co, zypper command on SUSE/OpenSUSE, pacman command on Arch Linux to install the netstat.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>net-tools
+</code></pre></div>
+<p>Run the netstat command along with grep command to filter out port in LISTEN state:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>netstat<span class="w"> </span>-tulpn<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>LISTEN
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>netstat<span class="w"> </span>-tulpn<span class="w"> </span><span class="p">|</span><span class="w"> </span>more
+</code></pre></div>
+<p><strong>Where netstat command options are:</strong></p>
+<p><code>-t</code> : Select all TCP ports</p>
+<p><code>-u</code> : Select all UDP ports</p>
+<p><code>-l</code> : Show listening server sockets (open TCP and UDP ports in listing state)</p>
+<p><code>-p</code> : Display PID/Program name for sockets. In other words, this option tells who opened the TCP or UDP port. For example, on my system, Nginx opened TCP port 80/443, so I will /usr/sbin/nginx or its PID.</p>
+<p><code>-n</code> : Don’t resolve name (avoid dns lookup, this speed up the netstat on busy Linux/Unix servers)</p>
+<hr />
+<blockquote>
+<p>The netstat command <code>deprecated</code> for some time on Linux. Therefore, you need to use the ss command as follows:</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>ss<span class="w"> </span>-tulw
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo<span class="w"> </span>ss<span class="w"> </span>-tulwn
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sudo<span class="w"> </span>ss<span class="w"> </span>-tulwn<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>LISTEN
+</code></pre></div>
+<p><code>-t</code> : Show only TCP sockets on Linux</p>
+<p><code>-u</code> : Display only UDP sockets on Linux</p>
+<p><code>-l</code> : Show listening sockets. For example, TCP port 22 is opened by SSHD server.</p>
+<p><code>-p</code> : List process name that opened sockets</p>
+<p><code>-n</code> : Don’t resolve service names i.e. don’t use DNS</p>
+<h1 id="ps-command">PS Command</h1>
+<p>The ps command without any options displays information about processes that are bound by the controlling terminal.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="l l-Scalar l-Scalar-Plain">ps</span>
+</code></pre></div>
+The command returns a similar output:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>PID<span class="w"> </span>TTY<span class="w">      </span>TIME<span class="w">     </span>CMD
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="m">285</span><span class="w"> </span>pts/2<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>zsh
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="m">334</span><span class="w"> </span>pts/2<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>ps
+</code></pre></div></p>
+<p>The default output of the ps command contains four columns that provide the following information:</p>
+<p><code>PID</code>: The process ID is your system’s tracking number for the process. The PID is useful when you need to use a command like kill or nice, which take a PID as their input.</p>
+<p><code>TTY</code>: The controlling terminal associated with the process. Processes that do not originate from a controlling terminal and were initiated by the system at boot are displayed with a question mark.</p>
+<p><code>TIME</code>: The CPU usage of the process. Displays the amount of CPU time used by the process. This value is not the run time of the process.</p>
+<p><code>CMD</code>: The name of the command or executable that is running. The output only includes the name of the command or executable and does not display any options that were passed in.</p>
+<h3 id="the-aux-shortcut">The <code>aux</code> shortcut</h3>
+<p>Now that you understand the basics of the <code>ps</code> command, this section covers the benefits to the <code>ps</code> <code>aux</code> command. The <code>ps</code> <code>aux</code> displays the most amount of information a user usually needs to understand the current state of their system’s running processes. Take a look at the following example:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ps<span class="w"> </span>aux
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>USER<span class="w">       </span>PID<span class="w"> </span>%CPU<span class="w"> </span>%MEM<span class="w">    </span>VSZ<span class="w">   </span>RSS<span class="w"> </span>TTY<span class="w">      </span>STAT<span class="w"> </span>START<span class="w">   </span>TIME<span class="w"> </span>COMMAND
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>root<span class="w">         </span><span class="m">1</span><span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">0</span>.0<span class="w">    </span><span class="m">892</span><span class="w">   </span><span class="m">572</span><span class="w"> </span>?<span class="w">        </span>Sl<span class="w">   </span>Nov28<span class="w">   </span><span class="m">0</span>:00<span class="w"> </span>/init
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>root<span class="w">       </span><span class="m">227</span><span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">0</span>.0<span class="w">    </span><span class="m">900</span><span class="w">    </span><span class="m">80</span><span class="w"> </span>?<span class="w">        </span>Ss<span class="w">   </span>Nov28<span class="w">   </span><span class="m">0</span>:00<span class="w"> </span>/init
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>root<span class="w">       </span><span class="m">228</span><span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">0</span>.0<span class="w">    </span><span class="m">900</span><span class="w">    </span><span class="m">88</span><span class="w"> </span>?<span class="w">        </span>S<span class="w">    </span>Nov28<span class="w">   </span><span class="m">0</span>:00<span class="w"> </span>/init
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>zaphod<span class="w">     </span><span class="m">229</span><span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">0</span>.1<span class="w"> </span><span class="m">749596</span><span class="w"> </span><span class="m">31000</span><span class="w"> </span>pts/0<span class="w">    </span>Ssl+<span class="w"> </span>Nov28<span class="w">   </span><span class="m">0</span>:15<span class="w"> </span>docker
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>root<span class="w">       </span><span class="m">240</span><span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">0</span>.0<span class="w">      </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w"> </span>?<span class="w">        </span>Z<span class="w">    </span>Nov28<span class="w">   </span><span class="m">0</span>:00<span class="w"> </span><span class="o">[</span>init<span class="o">]</span><span class="w"> </span>&lt;defunct&gt;
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>root<span class="w">       </span><span class="m">247</span><span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">0</span>.0<span class="w">    </span><span class="m">900</span><span class="w">    </span><span class="m">88</span><span class="w"> </span>?<span class="w">        </span>S<span class="w">    </span>Nov28<span class="w">   </span><span class="m">0</span>:00<span class="w"> </span>/init
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>root<span class="w">       </span><span class="m">248</span><span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">0</span>.1<span class="w"> </span><span class="m">1758276</span><span class="w"> </span><span class="m">31408</span><span class="w"> </span>pts/1<span class="w">   </span>Ssl+<span class="w"> </span>Nov28<span class="w">   </span><span class="m">0</span>:10<span class="w"> </span>/mnt/wsl/docker-desktop/docker-desktop-proxy
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>root<span class="w">       </span><span class="m">283</span><span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">0</span>.0<span class="w">    </span><span class="m">892</span><span class="w">    </span><span class="m">80</span><span class="w"> </span>?<span class="w">        </span>Ss<span class="w">   </span>Dec01<span class="w">   </span><span class="m">0</span>:00<span class="w"> </span>/init
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>root<span class="w">       </span><span class="m">284</span><span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">0</span>.0<span class="w">    </span><span class="m">892</span><span class="w">    </span><span class="m">80</span><span class="w"> </span>?<span class="w">        </span>R<span class="w">    </span>Dec01<span class="w">   </span><span class="m">0</span>:00<span class="w"> </span>/init
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>zaphod<span class="w">     </span><span class="m">285</span><span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">11964</span><span class="w">  </span><span class="m">5764</span><span class="w"> </span>pts/2<span class="w">    </span>Ss<span class="w">   </span>Dec01<span class="w">   </span><span class="m">0</span>:00<span class="w"> </span>-zsh
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>zaphod<span class="w">     </span><span class="m">343</span><span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">23764</span><span class="w">  </span><span class="m">9836</span><span class="w"> </span>pts/2<span class="w">    </span>T<span class="w">    </span><span class="m">17</span>:44<span class="w">   </span><span class="m">0</span>:00<span class="w"> </span>vi<span class="w"> </span>foo
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>root<span class="w">       </span><span class="m">349</span><span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">0</span>.0<span class="w">    </span><span class="m">892</span><span class="w">    </span><span class="m">80</span><span class="w"> </span>?<span class="w">        </span>Ss<span class="w">   </span><span class="m">17</span>:45<span class="w">   </span><span class="m">0</span>:00<span class="w"> </span>/init
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>root<span class="w">       </span><span class="m">350</span><span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">0</span>.0<span class="w">    </span><span class="m">892</span><span class="w">    </span><span class="m">80</span><span class="w"> </span>?<span class="w">        </span>S<span class="w">    </span><span class="m">17</span>:45<span class="w">   </span><span class="m">0</span>:00<span class="w"> </span>/init
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>zaphod<span class="w">     </span><span class="m">351</span><span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">11964</span><span class="w">  </span><span class="m">5764</span><span class="w"> </span>pts/3<span class="w">    </span>Ss+<span class="w">  </span><span class="m">17</span>:45<span class="w">   </span><span class="m">0</span>:00<span class="w"> </span>-zsh
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>zaphod<span class="w">     </span><span class="m">601</span><span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">10612</span><span class="w">  </span><span class="m">3236</span><span class="w"> </span>pts/2<span class="w">    </span>R+<span class="w">   </span><span class="m">18</span>:24<span class="w">   </span><span class="m">0</span>:00<span class="w"> </span>ps<span class="w"> </span>aux
+</code></pre></div></p>
+<p>The <code>ps aux</code> command displays more useful information than other similar options. For example, the <code>UID</code> column is replaced with a human-readable <code>username</code> column. <code>ps aux</code> also displays statistics about your Linux system, like the percent of CPU and memory that the process is using. The <code>VSZ</code> column displays amount of virtual memory being consumed by the process. <code>RSS</code> is the actual physical wired-in memory that is being used. The <code>START</code> column shows the date or time for when the process was started. This is different from the CPU time reported by the <code>TIME</code> column.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2861,10 +2983,10 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "/assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.bd41221c.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.bd41221c.min.js"></script>
       
     
   </body>
