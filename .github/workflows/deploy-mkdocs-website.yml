@@ -70,7 +70,7 @@ jobs:
               # find all markdown files in the directory and iterate over them
               find "./docs/devops/$dir_name" -type f -name "*.md" | while read -r filepath; do 
                   file=${filepath#./docs/devops/} # remove ./docs/devops/ from the beginning of the filepath
-                  file_url="${file%.md}/" # remove .md from the end of the filepath and add a trailing slash
+                  file_url="devops/${file%.md}/" # remove .md from the end of the filepath and add a trailing slash
                   md_header=$(grep -m 1 -E '^#+ ' "$filepath") # read the first header line in each md file
                   md_header=$(echo "$md_header" | sed 's/^#*//') # removing hashtags from the beginning of the variable
                   title="${md_header#"${md_header%%[![:space:]]*}"}"
@@ -102,7 +102,7 @@ jobs:
               # find all markdown files in the directory and iterate over them
               find "./docs/qa/$dir_name" -type f -name "*.md" | while read -r filepath; do 
                   file=${filepath#./docs/qa/} # remove ./docs/qa/ from the beginning of the filepath
-                  file_url="${file%.md}/" # remove .md from the end of the filepath and add a trailing slash
+                  file_url="qa/${file%.md}/" # remove .md from the end of the filepath and add a trailing slash
                   md_header=$(grep -m 1 -E '^#+ ' "$filepath") # read the first header line in each md file
                   md_header=$(echo "$md_header" | sed 's/^#*//') # removing hashtags from the beginning of the variable
                   title="${md_header#"${md_header%%[![:space:]]*}"}"
