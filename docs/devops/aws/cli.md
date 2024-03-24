@@ -10,6 +10,10 @@ Install the dependencies:
 ```bash
 apt install glibc groff less -y
 ```
+!!! success "Install the dependencies:" 
+   ```bash
+      apt install glibc groff less -y
+   ```
 
 Follow the official guide as the `curl`ed .zip link there updates frequently.
 
