@@ -1,0 +1,4184 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../ansible/ansible-roles/">
+      
+      
+        <link rel="next" href="../../git/Description/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    
+    
+      
+        <title>ELK Stack - Hepapi Knowledge Hub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Montserrat";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="white">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#elk-stack-with-filebeat" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+      
+  <img src="../../../images/hepapi-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hepapi Knowledge Hub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ELK Stack
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="white"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="white"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/hepapi/knowledge-hub" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hepapi/knowledge-hub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  DevOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../qa/" class="md-tabs__link">
+          
+  
+  QA
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
+          
+  
+  Misc
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../repo-credit/" class="md-tabs__link">
+        
+  
+    
+  
+  Credits
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+      
+  <img src="../../../images/hepapi-logo.png" alt="logo">
+
+    </a>
+    Hepapi Knowledge Hub
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/hepapi/knowledge-hub" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hepapi/knowledge-hub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    DevOps
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to Hepapi Knowledge Hub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_1" id="__nav_1_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Shell Commands
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Shell Commands
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shell/script/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    script
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shell/cat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shell/chtsh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cht.sh
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shell/jobs-bg-fg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    jobs, bg, fg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shell/ampersand-nohup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nohup, &
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shell/nslookup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nslookup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shell/nmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nmap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shell/netstat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    netstat, ss, ps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/shell/scp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/tooling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tooling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/tips/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tips
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    AWS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            AWS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS CLIv2 Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Azure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Azure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../azure/agent-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agent Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Kubernetes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Kubernetes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kubernetes/keda/keda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    keda(k8s event-driven Autoscaling)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../k8s-engine/k3s-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    K3S Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RKE2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            RKE2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../k8s-engine/rke2-installation-ansible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RKE2 Ansible Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../k8s-engine/rke2-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RKE2 Binary Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_6_3" id="__nav_1_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RKE2 HA (Highly Available)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            RKE2 HA (Highly Available)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../k8s-engine/rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HA Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automatic Upgrades(rancher/system-upgrade-controller)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../k8s-engine/rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to ETCD Restore
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rancher
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_7">
+            <span class="md-nav__icon md-icon"></span>
+            Rancher
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rancher/rancher-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rancher Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_8" id="__nav_1_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Postgres
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_8">
+            <span class="md-nav__icon md-icon"></span>
+            Postgres
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../postgres/configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../postgres/psql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    psql
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../postgres/backup-restore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backup & Restore
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_9" id="__nav_1_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Nexus
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_9">
+            <span class="md-nav__icon md-icon"></span>
+            Nexus
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus/nexus-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nexus Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus/nexus-user-and-roles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User And Roles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus/docker-hosted-repo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Hosted Repository
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus/docker-proxy-repo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Proxy Repository
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus/pull-to-kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pull Images to Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus/registry-configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RKE2 Registry Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_10" id="__nav_1_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Jenkins
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_10">
+            <span class="md-nav__icon md-icon"></span>
+            Jenkins
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jenkins/jenkins-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jenkins Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jenkins/shared-library/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jenkins Shared Library
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_11" id="__nav_1_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ansible
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_11">
+            <span class="md-nav__icon md-icon"></span>
+            Ansible
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansible-installations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/what-is-ansible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/inventory-file/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inventory File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/config-file/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration File
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/playbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Playbooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ansible/ansible-roles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_12" id="__nav_1_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Logging and Monitoring
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_12">
+            <span class="md-nav__icon md-icon"></span>
+            Logging and Monitoring
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ELK Stack
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    ELK Stack
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#elasticsearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elasticsearch
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Elasticsearch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-use-elasticsearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why use Elasticsearch?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logstash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logstash
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filebeat" class="md-nav__link">
+    <span class="md-ellipsis">
+      FileBeat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kibana" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kibana
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Demo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Demo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-aks-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create AKS Cluster
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-to-the-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connect to the cluster
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-elk-stack-in-aks-cluster-using-helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install ELK stack in AKS cluster using Helm:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elk-stack-elasticsearch-filebeat-logstashkibana-installation-and-configuration-in-aks-cluster-with-helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      ELK Stack (Elasticsearch, Filebeat, Logstash,Kibana) installation and configuration in AKS cluster with Helm:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-and-configuration-of-kibana-via-helm-into-aks-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation and configuration of Kibana via Helm into AKS Cluster:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-and-configuration-of-logstash-via-helm-into-aks-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation and configuration of logstash via Helm into AKS Cluster:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-and-configuration-of-filebeat-via-helm-into-aks-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation and configuration of Filebeat via Helm into AKS Cluster:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-of-sample-applications-into-aks-kubernetes-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment of sample applications into AKS kubernetes environment:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-5-kibana-dashboard-configuration-and-sample-app-log-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part-5 Kibana Dashboard configuration and sample app log monitoring:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part-5 Kibana Dashboard configuration and sample app log monitoring:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dashboard-configuration-and-index-pattern-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dashboard configuration and index pattern creation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_13" id="__nav_1_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_13">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/Description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/Commands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_14" id="__nav_1_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Falcon LogScale
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_14">
+            <span class="md-nav__icon md-icon"></span>
+            Falcon LogScale
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_14_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_14_1" id="__nav_1_14_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Installation With Docker
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_14_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_14_1">
+            <span class="md-nav__icon md-icon"></span>
+            Installation With Docker
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Container Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../falcon-logscale/agent-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agent Installation (Log Collector)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_14_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_14_2" id="__nav_1_14_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Single Node Installation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_14_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_14_2">
+            <span class="md-nav__icon md-icon"></span>
+            Single Node Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../falcon-logscale/humiosetup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Falcon LogScale Installation Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../falcon-logscale/javainstallation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../falcon-logscale/zookeeperinstallation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zookeeper Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../falcon-logscale/kafkainstallation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kafka Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../falcon-logscale/humioinstallation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LogScale Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_15" id="__nav_1_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sumo Logic
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_15">
+            <span class="md-nav__icon md-icon"></span>
+            Sumo Logic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sumo/sumo-linux-collector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install a Collector on Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sumo/sumo-windows-collector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install a Collector on Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sumo/sumo-local-file-management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Local Configuration File Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_16" id="__nav_1_16_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vagrant
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_16">
+            <span class="md-nav__icon md-icon"></span>
+            Vagrant
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vagrant/vagrant-quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vagrant Quickstart
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_17" id="__nav_1_17_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sealed-Secrets
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_17">
+            <span class="md-nav__icon md-icon"></span>
+            Sealed-Secrets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sealed-secrets/sealed-secrets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sealed-Secrets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_18" id="__nav_1_18_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    K8S Storage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_18">
+            <span class="md-nav__icon md-icon"></span>
+            K8S Storage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../k8s-storage/nfs-install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NFS(Network File System)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../k8s-storage/longhorn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Longhorn Block Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    QA
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            QA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to QA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PlaceHolder
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            PlaceHolder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/placeholder-subject/placeholder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Misc
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Misc
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    How to Contribute
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            How to Contribute
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mkdocs & Material Theme Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    creating new mkdocs pages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/how-to-contribute/about-markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    writing markdown files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../repo-credit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Credits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#elasticsearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elasticsearch
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Elasticsearch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-use-elasticsearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why use Elasticsearch?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logstash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logstash
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filebeat" class="md-nav__link">
+    <span class="md-ellipsis">
+      FileBeat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kibana" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kibana
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Demo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Demo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-aks-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create AKS Cluster
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-to-the-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connect to the cluster
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-elk-stack-in-aks-cluster-using-helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install ELK stack in AKS cluster using Helm:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elk-stack-elasticsearch-filebeat-logstashkibana-installation-and-configuration-in-aks-cluster-with-helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      ELK Stack (Elasticsearch, Filebeat, Logstash,Kibana) installation and configuration in AKS cluster with Helm:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-and-configuration-of-kibana-via-helm-into-aks-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation and configuration of Kibana via Helm into AKS Cluster:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-and-configuration-of-logstash-via-helm-into-aks-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation and configuration of logstash via Helm into AKS Cluster:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-and-configuration-of-filebeat-via-helm-into-aks-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation and configuration of Filebeat via Helm into AKS Cluster:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-of-sample-applications-into-aks-kubernetes-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment of sample applications into AKS kubernetes environment:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-5-kibana-dashboard-configuration-and-sample-app-log-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part-5 Kibana Dashboard configuration and sample app log monitoring:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part-5 Kibana Dashboard configuration and sample app log monitoring:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dashboard-configuration-and-index-pattern-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dashboard configuration and index pattern creation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/logging/ELK-stack-with-FileBeat.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="elk-stack-with-filebeat">ELK Stack with FileBeat</h1>
+<p>The ELK Stack (Elasticsearch, Logstash, and Kibana) is the world’s most popular open-source log analysis platform. ELK is quickly overtaking existing proprietary solutions and becoming companies’ top choice for log analysis and management solutions.
+There is one more component — Beats — which collects the data and sends it to Logstash. This led Elastic to rename ELK as the Elastic Stack.</p>
+<p><img alt="ELK" src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*JsjQGWzOoen5kpc4.png" /></p>
+<h2 id="elasticsearch">Elasticsearch</h2>
+<p>Elasticsearch is a NoSQL database. It is based on Lucene search engine, and it is built with RESTful APIS.
+Elasticsearch offers simple deployment, maximum reliability, and easy management. It also offers advanced queries to perform detail analysis and stores all the data centrally. It is helpful for executing a quick search of the documents.
+Elasticsearch also allows you to store, search and analyze big volume of data. Modern web and mobile applications have adopted it in search engine platforms.</p>
+<h3 id="why-use-elasticsearch">Why use Elasticsearch?</h3>
+<ul>
+<li>
+<p>Search: The main advantage of using Elasticsearch is it’s rapid and accurate search functionality. For large datasets, relational databases takes a lot more time for search queries because of the number of joins the query has to go through.</p>
+</li>
+<li>
+<p>Scaling: Distributed architecture of Elasticsearch allows you to scale a lot of servers and data. We can scale the clusters to hundreds of nodes and also we can replicate data to prevent data loss in case of a node failure.</p>
+</li>
+<li>
+<p>Analytical engine: Elasticsearch analytical use case has become more popular than the search use case. Elasticsearch is specifically used for log analysis</p>
+</li>
+</ul>
+<h2 id="logstash">Logstash</h2>
+<p>Logstash is a  open-source powerful tool for obtaining, filtering, and normalizing log files. A wide range of plugins for input, output and filtering specifications gives the user a great opportunity to easily configure Logstash to collect, process and channel logs data in many different architectures.</p>
+<p>Working with log files is divided into one or more pipelines. In each configured pipeline, one or more input plugins retrieve or gather data that is then placed on an internal queue. Process handling threads read queued data in small data series and process these batches via specified filter plugins in sequence.</p>
+<p><img alt="logstash" src="https://dytvr9ot2sszz.cloudfront.net/wp-content/uploads/2017/06/shippers-diagram.jpg" /></p>
+<p>After finishing data processing, threads send the data to the related output plugins which in turn are responsible for formatting and sending data to Elasticsearch or any other corresponding engine.</p>
+<h2 id="filebeat">FileBeat</h2>
+<p>Filebeat is a lightweight shipper for forwarding and centralizing log data. Installed as an agent on your servers, Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.</p>
+<p>How Filebeat works: When you start Filebeat, it starts one or more inputs that look in the locations you’ve specified for log data. For each log that Filebeat locates, Filebeat starts a harvester. Each harvester reads a single log for new content and sends the new log data to libbeat, which aggregates the events and sends the aggregated data to the output that you’ve configured for Filebeat.</p>
+<p><img alt="filebeat" src="https://www.elastic.co/guide/en/beats/filebeat/current/images/filebeat.png" /></p>
+<h2 id="kibana">Kibana</h2>
+<p>Kibana is a data visualization which completes the ELK stack. This tool is used for visualizing the Elasticsearch documents and helps developers to have a quick insight into it. Kibana dashboard offers various interactive diagrams, geospatial data, and graphs to visualize complex queries.</p>
+<p>It is used to search, view, and interact with data stored in Elasticsearch directories and helps you to perform advanced data analysis and visualize your data in a variety of tables, charts, and maps.</p>
+<h2 id="demo">Demo</h2>
+<h3 id="create-aks-cluster">Create AKS Cluster</h3>
+<p>To create an AKS cluster, use the az aks create command. The following example creates a cluster named myAKSCluster with one node and enables a system-assigned managed identity.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>az<span class="w"> </span>group<span class="w"> </span>create<span class="w"> </span>-l<span class="w"> </span>westus<span class="w"> </span>-n<span class="w"> </span>MyResourceGroup
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>az<span class="w"> </span>aks<span class="w"> </span>create<span class="w"> </span>--resource-group<span class="w"> </span>myResourceGroup<span class="w"> </span>--name<span class="w"> </span>myAKSCluster<span class="w"> </span>--enable-managed-identity<span class="w"> </span>--node-count<span class="w"> </span><span class="m">3</span><span class="w"> </span>-l<span class="w"> </span>westus
+</code></pre></div>
+<h3 id="connect-to-the-cluster">Connect to the cluster</h3>
+<p>Configure kubectl to connect to your Kubernetes cluster using the az aks get-credentials command. This command downloads credentials and configures the Kubernetes CLI to use them.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>az<span class="w"> </span>aks<span class="w"> </span>get-credentials<span class="w"> </span>--resource-group<span class="w"> </span>myResourceGroup<span class="w"> </span>--name<span class="w"> </span>myAKSCluster<span class="w"> </span>--overwrite-existing
+</code></pre></div>
+<p>Verify the connection to your cluster using the kubectl get command. This command returns a list of the cluster nodes.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
+</code></pre></div>
+<h3 id="install-elk-stack-in-aks-cluster-using-helm">Install ELK stack in AKS cluster using Helm:</h3>
+<ul>
+<li>Create  namespace with the name of elk.</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>ns<span class="w"> </span>elk
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>ns
+</code></pre></div>
+- Install ELK Stack helm repo into your local repo with helm command.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>elastic<span class="w"> </span>https://helm.elastic.co
+</code></pre></div>
+- Update your repo after installation.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>update
+</code></pre></div>
+- Liste your repo packages.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>ls
+</code></pre></div>
+<ul>
+<li>List your helm chart and manifest files.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>helm<span class="w"> </span>search<span class="w"> </span>repo<span class="w"> </span>elastic
+</code></pre></div>
+<h3 id="elk-stack-elasticsearch-filebeat-logstashkibana-installation-and-configuration-in-aks-cluster-with-helm">ELK Stack (Elasticsearch, Filebeat, Logstash,Kibana) installation and configuration in AKS cluster with Helm:</h3>
+<ul>
+<li>Save your elastic/elasticsearch values and save it as elasticsearch.values file in order to make some configuration.</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>elastic/elasticsearch<span class="w"> </span>&gt;&gt;<span class="w"> </span>elasticsearch.values
+</code></pre></div>
+elasticsearch.values</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>---
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>clusterName:<span class="w"> </span><span class="s2">&quot;elasticsearch&quot;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>nodeGroup:<span class="w"> </span><span class="s2">&quot;master&quot;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>masterService:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>roles:
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span>-<span class="w"> </span>master
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">  </span>-<span class="w"> </span>data
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">  </span>-<span class="w"> </span>data_content
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">  </span>-<span class="w"> </span>data_hot
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">  </span>-<span class="w"> </span>data_warm
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">  </span>-<span class="w"> </span>data_cold
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">  </span>-<span class="w"> </span>ingest
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">  </span>-<span class="w"> </span>ml
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">  </span>-<span class="w"> </span>remote_cluster_client
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">  </span>-<span class="w"> </span>transform
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>replicas:<span class="w"> </span><span class="m">2</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>minimumMasterNodes:<span class="w"> </span><span class="m">2</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>esMajorVersion:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>createCert:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>secret:
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="w">  </span>enabled:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="w">  </span>password:<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>image:<span class="w"> </span><span class="s2">&quot;docker.elastic.co/elasticsearch/elasticsearch&quot;</span>
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>imageTag:<span class="w"> </span><span class="s2">&quot;8.5.1&quot;</span>
+<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>imagePullPolicy:<span class="w"> </span><span class="s2">&quot;IfNotPresent&quot;</span>
+<a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>
+<a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>
+<a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a>
+<a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>resources:
+<a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a><span class="w">  </span>requests:
+<a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">&quot;1000m&quot;</span>
+<a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">&quot;2Gi&quot;</span>
+<a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a><span class="w">  </span>limits:
+<a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">&quot;1000m&quot;</span>
+<a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">&quot;2Gi&quot;</span>
+<a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a>
+<a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a>
+<a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a>networkHost:<span class="w"> </span><span class="s2">&quot;0.0.0.0&quot;</span>
+<a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a>
+<a id="__codelineno-10-50" name="__codelineno-10-50" href="#__codelineno-10-50"></a>volumeClaimTemplate:
+<a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a><span class="w">  </span>accessModes:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;ReadWriteOnce&quot;</span><span class="o">]</span>
+<a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a><span class="w">  </span>resources:
+<a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a><span class="w">    </span>requests:
+<a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a><span class="w">      </span>storage:<span class="w"> </span>30Gi
+<a id="__codelineno-10-55" name="__codelineno-10-55" href="#__codelineno-10-55"></a>
+<a id="__codelineno-10-56" name="__codelineno-10-56" href="#__codelineno-10-56"></a>rbac:
+<a id="__codelineno-10-57" name="__codelineno-10-57" href="#__codelineno-10-57"></a><span class="w">  </span>create:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-10-58" name="__codelineno-10-58" href="#__codelineno-10-58"></a><span class="w">  </span>serviceAccountAnnotations:<span class="w"> </span><span class="o">{}</span>
+<a id="__codelineno-10-59" name="__codelineno-10-59" href="#__codelineno-10-59"></a><span class="w">  </span>serviceAccountName:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-10-60" name="__codelineno-10-60" href="#__codelineno-10-60"></a><span class="w">  </span>automountToken:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-10-61" name="__codelineno-10-61" href="#__codelineno-10-61"></a>
+<a id="__codelineno-10-62" name="__codelineno-10-62" href="#__codelineno-10-62"></a>podSecurityPolicy:
+<a id="__codelineno-10-63" name="__codelineno-10-63" href="#__codelineno-10-63"></a><span class="w">  </span>create:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-10-64" name="__codelineno-10-64" href="#__codelineno-10-64"></a><span class="w">  </span>name:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-10-65" name="__codelineno-10-65" href="#__codelineno-10-65"></a><span class="w">  </span>spec:
+<a id="__codelineno-10-66" name="__codelineno-10-66" href="#__codelineno-10-66"></a><span class="w">    </span>privileged:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-10-67" name="__codelineno-10-67" href="#__codelineno-10-67"></a><span class="w">    </span>fsGroup:
+<a id="__codelineno-10-68" name="__codelineno-10-68" href="#__codelineno-10-68"></a><span class="w">      </span>rule:<span class="w"> </span>RunAsAny
+<a id="__codelineno-10-69" name="__codelineno-10-69" href="#__codelineno-10-69"></a><span class="w">    </span>runAsUser:
+<a id="__codelineno-10-70" name="__codelineno-10-70" href="#__codelineno-10-70"></a><span class="w">      </span>rule:<span class="w"> </span>RunAsAny
+<a id="__codelineno-10-71" name="__codelineno-10-71" href="#__codelineno-10-71"></a><span class="w">    </span>seLinux:
+<a id="__codelineno-10-72" name="__codelineno-10-72" href="#__codelineno-10-72"></a><span class="w">      </span>rule:<span class="w"> </span>RunAsAny
+<a id="__codelineno-10-73" name="__codelineno-10-73" href="#__codelineno-10-73"></a><span class="w">    </span>supplementalGroups:
+<a id="__codelineno-10-74" name="__codelineno-10-74" href="#__codelineno-10-74"></a><span class="w">      </span>rule:<span class="w"> </span>RunAsAny
+<a id="__codelineno-10-75" name="__codelineno-10-75" href="#__codelineno-10-75"></a><span class="w">    </span>volumes:
+<a id="__codelineno-10-76" name="__codelineno-10-76" href="#__codelineno-10-76"></a><span class="w">      </span>-<span class="w"> </span>secret
+<a id="__codelineno-10-77" name="__codelineno-10-77" href="#__codelineno-10-77"></a><span class="w">      </span>-<span class="w"> </span>configMap
+<a id="__codelineno-10-78" name="__codelineno-10-78" href="#__codelineno-10-78"></a><span class="w">      </span>-<span class="w"> </span>persistentVolumeClaim
+<a id="__codelineno-10-79" name="__codelineno-10-79" href="#__codelineno-10-79"></a><span class="w">      </span>-<span class="w"> </span>emptyDir
+<a id="__codelineno-10-80" name="__codelineno-10-80" href="#__codelineno-10-80"></a>
+<a id="__codelineno-10-81" name="__codelineno-10-81" href="#__codelineno-10-81"></a>persistence:
+<a id="__codelineno-10-82" name="__codelineno-10-82" href="#__codelineno-10-82"></a><span class="w">  </span>enabled:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-10-83" name="__codelineno-10-83" href="#__codelineno-10-83"></a><span class="w">  </span>labels:
+<a id="__codelineno-10-84" name="__codelineno-10-84" href="#__codelineno-10-84"></a><span class="w">    </span>enabled:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-10-85" name="__codelineno-10-85" href="#__codelineno-10-85"></a><span class="w">  </span>annotations:<span class="w"> </span><span class="o">{}</span>
+<a id="__codelineno-10-86" name="__codelineno-10-86" href="#__codelineno-10-86"></a>
+<a id="__codelineno-10-87" name="__codelineno-10-87" href="#__codelineno-10-87"></a>
+<a id="__codelineno-10-88" name="__codelineno-10-88" href="#__codelineno-10-88"></a>priorityClassName:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-10-89" name="__codelineno-10-89" href="#__codelineno-10-89"></a>
+<a id="__codelineno-10-90" name="__codelineno-10-90" href="#__codelineno-10-90"></a>antiAffinityTopologyKey:<span class="w"> </span><span class="s2">&quot;kubernetes.io/hostname&quot;</span>
+<a id="__codelineno-10-91" name="__codelineno-10-91" href="#__codelineno-10-91"></a>
+<a id="__codelineno-10-92" name="__codelineno-10-92" href="#__codelineno-10-92"></a>antiAffinity:<span class="w"> </span><span class="s2">&quot;hard&quot;</span>
+<a id="__codelineno-10-93" name="__codelineno-10-93" href="#__codelineno-10-93"></a>
+<a id="__codelineno-10-94" name="__codelineno-10-94" href="#__codelineno-10-94"></a>podManagementPolicy:<span class="w"> </span><span class="s2">&quot;Parallel&quot;</span>
+<a id="__codelineno-10-95" name="__codelineno-10-95" href="#__codelineno-10-95"></a>
+<a id="__codelineno-10-96" name="__codelineno-10-96" href="#__codelineno-10-96"></a>enableServiceLinks:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-10-97" name="__codelineno-10-97" href="#__codelineno-10-97"></a>
+<a id="__codelineno-10-98" name="__codelineno-10-98" href="#__codelineno-10-98"></a>protocol:<span class="w"> </span>https
+<a id="__codelineno-10-99" name="__codelineno-10-99" href="#__codelineno-10-99"></a>httpPort:<span class="w"> </span><span class="m">9200</span>
+<a id="__codelineno-10-100" name="__codelineno-10-100" href="#__codelineno-10-100"></a>transportPort:<span class="w"> </span><span class="m">9300</span>
+<a id="__codelineno-10-101" name="__codelineno-10-101" href="#__codelineno-10-101"></a>
+<a id="__codelineno-10-102" name="__codelineno-10-102" href="#__codelineno-10-102"></a>service:
+<a id="__codelineno-10-103" name="__codelineno-10-103" href="#__codelineno-10-103"></a><span class="w">  </span>enabled:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-10-104" name="__codelineno-10-104" href="#__codelineno-10-104"></a><span class="w">  </span>labels:<span class="w"> </span><span class="o">{}</span>
+<a id="__codelineno-10-105" name="__codelineno-10-105" href="#__codelineno-10-105"></a><span class="w">  </span>labelsHeadless:<span class="w"> </span><span class="o">{}</span>
+<a id="__codelineno-10-106" name="__codelineno-10-106" href="#__codelineno-10-106"></a><span class="w">  </span>type:<span class="w"> </span>ClusterIP
+<a id="__codelineno-10-107" name="__codelineno-10-107" href="#__codelineno-10-107"></a><span class="w">  </span>publishNotReadyAddresses:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-10-108" name="__codelineno-10-108" href="#__codelineno-10-108"></a><span class="w">  </span>nodePort:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-10-109" name="__codelineno-10-109" href="#__codelineno-10-109"></a><span class="w">  </span>annotations:<span class="w"> </span><span class="o">{}</span>
+<a id="__codelineno-10-110" name="__codelineno-10-110" href="#__codelineno-10-110"></a><span class="w">  </span>httpPortName:<span class="w"> </span>http
+<a id="__codelineno-10-111" name="__codelineno-10-111" href="#__codelineno-10-111"></a><span class="w">  </span>transportPortName:<span class="w"> </span>transport
+<a id="__codelineno-10-112" name="__codelineno-10-112" href="#__codelineno-10-112"></a><span class="w">  </span>loadBalancerIP:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-10-113" name="__codelineno-10-113" href="#__codelineno-10-113"></a><span class="w">  </span>loadBalancerSourceRanges:<span class="w"> </span><span class="o">[]</span>
+<a id="__codelineno-10-114" name="__codelineno-10-114" href="#__codelineno-10-114"></a><span class="w">  </span>externalTrafficPolicy:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-10-115" name="__codelineno-10-115" href="#__codelineno-10-115"></a>
+<a id="__codelineno-10-116" name="__codelineno-10-116" href="#__codelineno-10-116"></a>updateStrategy:<span class="w"> </span>RollingUpdate
+<a id="__codelineno-10-117" name="__codelineno-10-117" href="#__codelineno-10-117"></a>
+<a id="__codelineno-10-118" name="__codelineno-10-118" href="#__codelineno-10-118"></a>maxUnavailable:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-10-119" name="__codelineno-10-119" href="#__codelineno-10-119"></a>
+<a id="__codelineno-10-120" name="__codelineno-10-120" href="#__codelineno-10-120"></a>podSecurityContext:
+<a id="__codelineno-10-121" name="__codelineno-10-121" href="#__codelineno-10-121"></a><span class="w">  </span>fsGroup:<span class="w"> </span><span class="m">1000</span>
+<a id="__codelineno-10-122" name="__codelineno-10-122" href="#__codelineno-10-122"></a><span class="w">  </span>runAsUser:<span class="w"> </span><span class="m">1000</span>
+<a id="__codelineno-10-123" name="__codelineno-10-123" href="#__codelineno-10-123"></a>
+<a id="__codelineno-10-124" name="__codelineno-10-124" href="#__codelineno-10-124"></a>securityContext:
+<a id="__codelineno-10-125" name="__codelineno-10-125" href="#__codelineno-10-125"></a><span class="w">  </span>capabilities:
+<a id="__codelineno-10-126" name="__codelineno-10-126" href="#__codelineno-10-126"></a><span class="w">    </span>drop:
+<a id="__codelineno-10-127" name="__codelineno-10-127" href="#__codelineno-10-127"></a><span class="w">      </span>-<span class="w"> </span>ALL
+<a id="__codelineno-10-128" name="__codelineno-10-128" href="#__codelineno-10-128"></a><span class="w">  </span>runAsNonRoot:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-10-129" name="__codelineno-10-129" href="#__codelineno-10-129"></a><span class="w">  </span>runAsUser:<span class="w"> </span><span class="m">1000</span>
+<a id="__codelineno-10-130" name="__codelineno-10-130" href="#__codelineno-10-130"></a>terminationGracePeriod:<span class="w"> </span><span class="m">120</span>
+<a id="__codelineno-10-131" name="__codelineno-10-131" href="#__codelineno-10-131"></a>
+<a id="__codelineno-10-132" name="__codelineno-10-132" href="#__codelineno-10-132"></a>sysctlVmMaxMapCount:<span class="w"> </span><span class="m">262144</span>
+<a id="__codelineno-10-133" name="__codelineno-10-133" href="#__codelineno-10-133"></a>
+<a id="__codelineno-10-134" name="__codelineno-10-134" href="#__codelineno-10-134"></a>readinessProbe:
+<a id="__codelineno-10-135" name="__codelineno-10-135" href="#__codelineno-10-135"></a><span class="w">  </span>failureThreshold:<span class="w"> </span><span class="m">3</span>
+<a id="__codelineno-10-136" name="__codelineno-10-136" href="#__codelineno-10-136"></a><span class="w">  </span>initialDelaySeconds:<span class="w"> </span><span class="m">10</span>
+<a id="__codelineno-10-137" name="__codelineno-10-137" href="#__codelineno-10-137"></a><span class="w">  </span>periodSeconds:<span class="w"> </span><span class="m">10</span>
+<a id="__codelineno-10-138" name="__codelineno-10-138" href="#__codelineno-10-138"></a><span class="w">  </span>successThreshold:<span class="w"> </span><span class="m">3</span>
+<a id="__codelineno-10-139" name="__codelineno-10-139" href="#__codelineno-10-139"></a><span class="w">  </span>timeoutSeconds:<span class="w"> </span><span class="m">5</span>
+<a id="__codelineno-10-140" name="__codelineno-10-140" href="#__codelineno-10-140"></a>
+<a id="__codelineno-10-141" name="__codelineno-10-141" href="#__codelineno-10-141"></a>clusterHealthCheckParams:<span class="w"> </span><span class="s2">&quot;wait_for_status=green&amp;timeout=1s&quot;</span>
+<a id="__codelineno-10-142" name="__codelineno-10-142" href="#__codelineno-10-142"></a>
+<a id="__codelineno-10-143" name="__codelineno-10-143" href="#__codelineno-10-143"></a>schedulerName:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-10-144" name="__codelineno-10-144" href="#__codelineno-10-144"></a>
+<a id="__codelineno-10-145" name="__codelineno-10-145" href="#__codelineno-10-145"></a>imagePullSecrets:<span class="w"> </span><span class="o">[]</span>
+<a id="__codelineno-10-146" name="__codelineno-10-146" href="#__codelineno-10-146"></a>nodeSelector:<span class="w"> </span><span class="o">{}</span>
+<a id="__codelineno-10-147" name="__codelineno-10-147" href="#__codelineno-10-147"></a>tolerations:<span class="w"> </span><span class="o">[]</span>
+<a id="__codelineno-10-148" name="__codelineno-10-148" href="#__codelineno-10-148"></a>
+<a id="__codelineno-10-149" name="__codelineno-10-149" href="#__codelineno-10-149"></a>
+<a id="__codelineno-10-150" name="__codelineno-10-150" href="#__codelineno-10-150"></a>ingress:
+<a id="__codelineno-10-151" name="__codelineno-10-151" href="#__codelineno-10-151"></a><span class="w">  </span>enabled:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-10-152" name="__codelineno-10-152" href="#__codelineno-10-152"></a><span class="w">  </span>annotations:<span class="w"> </span><span class="o">{}</span>
+<a id="__codelineno-10-153" name="__codelineno-10-153" href="#__codelineno-10-153"></a><span class="w">  </span>className:<span class="w"> </span><span class="s2">&quot;nginx&quot;</span>
+<a id="__codelineno-10-154" name="__codelineno-10-154" href="#__codelineno-10-154"></a><span class="w">  </span>pathtype:<span class="w"> </span>ImplementationSpecific
+<a id="__codelineno-10-155" name="__codelineno-10-155" href="#__codelineno-10-155"></a><span class="w">  </span>hosts:
+<a id="__codelineno-10-156" name="__codelineno-10-156" href="#__codelineno-10-156"></a><span class="w">    </span>-<span class="w"> </span>host:<span class="w"> </span>chart-example.local
+<a id="__codelineno-10-157" name="__codelineno-10-157" href="#__codelineno-10-157"></a><span class="w">      </span>paths:
+<a id="__codelineno-10-158" name="__codelineno-10-158" href="#__codelineno-10-158"></a><span class="w">        </span>-<span class="w"> </span>path:<span class="w"> </span>/
+<a id="__codelineno-10-159" name="__codelineno-10-159" href="#__codelineno-10-159"></a><span class="w">  </span>tls:<span class="w"> </span><span class="o">[]</span>
+<a id="__codelineno-10-160" name="__codelineno-10-160" href="#__codelineno-10-160"></a>
+<a id="__codelineno-10-161" name="__codelineno-10-161" href="#__codelineno-10-161"></a>nameOverride:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-10-162" name="__codelineno-10-162" href="#__codelineno-10-162"></a>fullnameOverride:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-10-163" name="__codelineno-10-163" href="#__codelineno-10-163"></a>healthNameOverride:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-10-164" name="__codelineno-10-164" href="#__codelineno-10-164"></a>
+<a id="__codelineno-10-165" name="__codelineno-10-165" href="#__codelineno-10-165"></a>
+<a id="__codelineno-10-166" name="__codelineno-10-166" href="#__codelineno-10-166"></a>sysctlInitContainer:
+<a id="__codelineno-10-167" name="__codelineno-10-167" href="#__codelineno-10-167"></a><span class="w">  </span>enabled:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-10-168" name="__codelineno-10-168" href="#__codelineno-10-168"></a><span class="w">  </span>http:
+<a id="__codelineno-10-169" name="__codelineno-10-169" href="#__codelineno-10-169"></a><span class="w">    </span>enabled:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-10-170" name="__codelineno-10-170" href="#__codelineno-10-170"></a><span class="w">  </span>transport:
+<a id="__codelineno-10-171" name="__codelineno-10-171" href="#__codelineno-10-171"></a><span class="w">    </span>enabled:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-10-172" name="__codelineno-10-172" href="#__codelineno-10-172"></a>
+<a id="__codelineno-10-173" name="__codelineno-10-173" href="#__codelineno-10-173"></a>tests:
+<a id="__codelineno-10-174" name="__codelineno-10-174" href="#__codelineno-10-174"></a><span class="w">  </span>enabled:<span class="w"> </span><span class="nb">true</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>helm<span class="w"> </span>install<span class="w"> </span>elasticsearch<span class="w"> </span>elastic/elasticsearch<span class="w"> </span>-f<span class="w"> </span>elasticsearch.values<span class="w"> </span>-n<span class="w"> </span>elk
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>helm<span class="w"> </span>ls<span class="w"> </span>-n<span class="w"> </span>elk
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>all<span class="w"> </span>-n<span class="w"> </span>elk
+</code></pre></div>
+<h3 id="installation-and-configuration-of-kibana-via-helm-into-aks-cluster">Installation and configuration of Kibana via Helm into AKS Cluster:</h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>elastic/kibana<span class="w"> </span>&gt;&gt;<span class="w"> </span>kibana.values
+</code></pre></div>
+- Change the values configuration with LoadBalancer.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>---
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>elasticsearchHosts:<span class="w"> </span><span class="s2">&quot;https://elasticsearch-master:9200&quot;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>replicas:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>extraEnvs:
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">  </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">&quot;NODE_OPTIONS&quot;</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span>value:<span class="w"> </span><span class="s2">&quot;--max-old-space-size=1800&quot;</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>image:<span class="w"> </span><span class="s2">&quot;docker.elastic.co/kibana/kibana&quot;</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>imageTag:<span class="w"> </span><span class="s2">&quot;8.5.1&quot;</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>imagePullPolicy:<span class="w"> </span><span class="s2">&quot;IfNotPresent&quot;</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>resources:
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">  </span>requests:
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">&quot;1000m&quot;</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">&quot;2Gi&quot;</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">  </span>limits:
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">&quot;1000m&quot;</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">&quot;2Gi&quot;</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>protocol:<span class="w"> </span>http
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>serverHost:<span class="w"> </span><span class="s2">&quot;0.0.0.0&quot;</span>
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>healthCheckPath:<span class="w"> </span><span class="s2">&quot;/app/kibana&quot;</span>
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>podSecurityContext:
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a><span class="w">  </span>fsGroup:<span class="w"> </span><span class="m">1000</span>
+<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>
+<a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a>securityContext:
+<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a><span class="w">  </span>capabilities:
+<a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a><span class="w">    </span>drop:
+<a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a><span class="w">      </span>-<span class="w"> </span>ALL
+<a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a><span class="w">  </span>runAsNonRoot:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a><span class="w">  </span>runAsUser:<span class="w"> </span><span class="m">1000</span>
+<a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a>
+<a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a>automountToken:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-15-40" name="__codelineno-15-40" href="#__codelineno-15-40"></a>
+<a id="__codelineno-15-41" name="__codelineno-15-41" href="#__codelineno-15-41"></a>priorityClassName:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-15-42" name="__codelineno-15-42" href="#__codelineno-15-42"></a>
+<a id="__codelineno-15-43" name="__codelineno-15-43" href="#__codelineno-15-43"></a>httpPort:<span class="w"> </span><span class="m">5601</span>
+<a id="__codelineno-15-44" name="__codelineno-15-44" href="#__codelineno-15-44"></a>
+<a id="__codelineno-15-45" name="__codelineno-15-45" href="#__codelineno-15-45"></a>
+<a id="__codelineno-15-46" name="__codelineno-15-46" href="#__codelineno-15-46"></a>updateStrategy:
+<a id="__codelineno-15-47" name="__codelineno-15-47" href="#__codelineno-15-47"></a><span class="w">  </span>type:<span class="w"> </span><span class="s2">&quot;Recreate&quot;</span>
+<a id="__codelineno-15-48" name="__codelineno-15-48" href="#__codelineno-15-48"></a>
+<a id="__codelineno-15-49" name="__codelineno-15-49" href="#__codelineno-15-49"></a>service:
+<a id="__codelineno-15-50" name="__codelineno-15-50" href="#__codelineno-15-50"></a><span class="w">  </span>type:<span class="w"> </span>LoadBalancer
+<a id="__codelineno-15-51" name="__codelineno-15-51" href="#__codelineno-15-51"></a><span class="w">  </span>loadBalancerIP:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-15-52" name="__codelineno-15-52" href="#__codelineno-15-52"></a><span class="w">  </span>port:<span class="w"> </span><span class="m">5601</span>
+<a id="__codelineno-15-53" name="__codelineno-15-53" href="#__codelineno-15-53"></a><span class="w">  </span>nodePort:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-15-54" name="__codelineno-15-54" href="#__codelineno-15-54"></a><span class="w">  </span>labels:<span class="w"> </span><span class="o">{}</span>
+<a id="__codelineno-15-55" name="__codelineno-15-55" href="#__codelineno-15-55"></a><span class="w">  </span>annotations:<span class="w"> </span><span class="o">{}</span>
+<a id="__codelineno-15-56" name="__codelineno-15-56" href="#__codelineno-15-56"></a><span class="w">  </span>loadBalancerSourceRanges:<span class="w"> </span><span class="o">[]</span>
+<a id="__codelineno-15-57" name="__codelineno-15-57" href="#__codelineno-15-57"></a><span class="w">  </span>httpPortName:<span class="w"> </span>http
+<a id="__codelineno-15-58" name="__codelineno-15-58" href="#__codelineno-15-58"></a>
+<a id="__codelineno-15-59" name="__codelineno-15-59" href="#__codelineno-15-59"></a>ingress:
+<a id="__codelineno-15-60" name="__codelineno-15-60" href="#__codelineno-15-60"></a><span class="w">  </span>enabled:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-15-61" name="__codelineno-15-61" href="#__codelineno-15-61"></a><span class="w">  </span>className:<span class="w"> </span><span class="s2">&quot;nginx&quot;</span>
+<a id="__codelineno-15-62" name="__codelineno-15-62" href="#__codelineno-15-62"></a><span class="w">  </span>pathtype:<span class="w"> </span>ImplementationSpecific
+<a id="__codelineno-15-63" name="__codelineno-15-63" href="#__codelineno-15-63"></a><span class="w">  </span>annotations:<span class="w"> </span><span class="o">{}</span>
+<a id="__codelineno-15-64" name="__codelineno-15-64" href="#__codelineno-15-64"></a><span class="w">  </span>hosts:
+<a id="__codelineno-15-65" name="__codelineno-15-65" href="#__codelineno-15-65"></a><span class="w">    </span>-<span class="w"> </span>host:<span class="w"> </span>kibana-example.local
+<a id="__codelineno-15-66" name="__codelineno-15-66" href="#__codelineno-15-66"></a><span class="w">      </span>paths:
+<a id="__codelineno-15-67" name="__codelineno-15-67" href="#__codelineno-15-67"></a><span class="w">        </span>-<span class="w"> </span>path:<span class="w"> </span>/
+<a id="__codelineno-15-68" name="__codelineno-15-68" href="#__codelineno-15-68"></a>
+<a id="__codelineno-15-69" name="__codelineno-15-69" href="#__codelineno-15-69"></a>readinessProbe:
+<a id="__codelineno-15-70" name="__codelineno-15-70" href="#__codelineno-15-70"></a><span class="w">  </span>failureThreshold:<span class="w"> </span><span class="m">3</span>
+<a id="__codelineno-15-71" name="__codelineno-15-71" href="#__codelineno-15-71"></a><span class="w">  </span>initialDelaySeconds:<span class="w"> </span><span class="m">10</span>
+<a id="__codelineno-15-72" name="__codelineno-15-72" href="#__codelineno-15-72"></a><span class="w">  </span>periodSeconds:<span class="w"> </span><span class="m">10</span>
+<a id="__codelineno-15-73" name="__codelineno-15-73" href="#__codelineno-15-73"></a><span class="w">  </span>successThreshold:<span class="w"> </span><span class="m">3</span>
+<a id="__codelineno-15-74" name="__codelineno-15-74" href="#__codelineno-15-74"></a><span class="w">  </span>timeoutSeconds:<span class="w"> </span><span class="m">5</span>
+<a id="__codelineno-15-75" name="__codelineno-15-75" href="#__codelineno-15-75"></a>
+<a id="__codelineno-15-76" name="__codelineno-15-76" href="#__codelineno-15-76"></a>
+<a id="__codelineno-15-77" name="__codelineno-15-77" href="#__codelineno-15-77"></a>nameOverride:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-15-78" name="__codelineno-15-78" href="#__codelineno-15-78"></a>fullnameOverride:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>helm<span class="w"> </span>install<span class="w"> </span>kibana<span class="w"> </span>elastic/kibana<span class="w"> </span>-f<span class="w"> </span>kibana.values<span class="w"> </span>-n<span class="w"> </span>elk
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>all<span class="w"> </span>-n<span class="w"> </span>elk
+</code></pre></div>
+<h3 id="installation-and-configuration-of-logstash-via-helm-into-aks-cluster">Installation and configuration of logstash via Helm into AKS Cluster:</h3>
+<ul>
+<li>Installation of logstash via Helm.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>elastic/logstash<span class="w"> </span>&gt;&gt;<span class="w"> </span>logstash.values
+</code></pre></div>
+<ul>
+<li>logstash.values ---&gt; !!! update elasticsearch password you can access alestichsearcg password this command: </li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secrets<span class="w"> </span>-n<span class="w"> </span>elk<span class="w"> </span>elasticsearch-master-credentials<span class="w"> </span>-ojsonpath<span class="o">=</span><span class="s1">&#39;{.data.password}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>--decode
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>---
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>replicas:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>logstashConfig:
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">  </span>logstash.yml:<span class="w"> </span><span class="p">|</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span>http.host:<span class="w"> </span><span class="m">0</span>.0.0.0
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span>xpack.monitoring.enabled:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>logstashPipeline:
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">  </span>logstash.conf:<span class="w"> </span><span class="p">|</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">    </span>input<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">      </span>beats<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">        </span><span class="nv">port</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="m">5044</span>
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">      </span><span class="o">}</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="w">    </span>output<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="w">      </span>elasticsearch<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="w">        </span><span class="nv">hosts</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;https://elasticsearch-master:9200&quot;</span><span class="w"> </span><span class="o">]</span>
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="w">        </span><span class="nv">ssl</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="w">        </span><span class="nv">manage_template</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a><span class="w">        </span><span class="nv">ssl_certificate_verification</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="w">        </span><span class="nv">index</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;%logstash-%{+YYYY.MM.dd}&quot;</span>
+<a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="w">        </span><span class="nv">document_type</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;%{[@metadata][type]}&quot;</span>
+<a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="w">        </span><span class="nv">user</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;elastic&quot;</span>
+<a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a><span class="w">        </span><span class="nv">password</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;huw7eJ1prAxz0afX&quot;</span><span class="w">  </span><span class="c1">#update password</span>
+<a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a><span class="w">      </span><span class="o">}</span>
+<a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a>
+<a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a>logstashPatternDir:<span class="w"> </span><span class="s2">&quot;/usr/share/logstash/patterns/&quot;</span>
+<a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a>
+<a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a>
+<a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a>image:<span class="w"> </span><span class="s2">&quot;docker.elastic.co/logstash/logstash&quot;</span>
+<a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a>imageTag:<span class="w"> </span><span class="s2">&quot;8.5.1&quot;</span>
+<a id="__codelineno-20-34" name="__codelineno-20-34" href="#__codelineno-20-34"></a>imagePullPolicy:<span class="w"> </span><span class="s2">&quot;IfNotPresent&quot;</span>
+<a id="__codelineno-20-35" name="__codelineno-20-35" href="#__codelineno-20-35"></a>
+<a id="__codelineno-20-36" name="__codelineno-20-36" href="#__codelineno-20-36"></a>
+<a id="__codelineno-20-37" name="__codelineno-20-37" href="#__codelineno-20-37"></a>logstashJavaOpts:<span class="w"> </span><span class="s2">&quot;-Xmx1g -Xms1g&quot;</span>
+<a id="__codelineno-20-38" name="__codelineno-20-38" href="#__codelineno-20-38"></a>
+<a id="__codelineno-20-39" name="__codelineno-20-39" href="#__codelineno-20-39"></a>resources:
+<a id="__codelineno-20-40" name="__codelineno-20-40" href="#__codelineno-20-40"></a><span class="w">  </span>requests:
+<a id="__codelineno-20-41" name="__codelineno-20-41" href="#__codelineno-20-41"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">&quot;100m&quot;</span>
+<a id="__codelineno-20-42" name="__codelineno-20-42" href="#__codelineno-20-42"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">&quot;1536Mi&quot;</span>
+<a id="__codelineno-20-43" name="__codelineno-20-43" href="#__codelineno-20-43"></a><span class="w">  </span>limits:
+<a id="__codelineno-20-44" name="__codelineno-20-44" href="#__codelineno-20-44"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">&quot;1000m&quot;</span>
+<a id="__codelineno-20-45" name="__codelineno-20-45" href="#__codelineno-20-45"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">&quot;1536Mi&quot;</span>
+<a id="__codelineno-20-46" name="__codelineno-20-46" href="#__codelineno-20-46"></a>
+<a id="__codelineno-20-47" name="__codelineno-20-47" href="#__codelineno-20-47"></a>volumeClaimTemplate:
+<a id="__codelineno-20-48" name="__codelineno-20-48" href="#__codelineno-20-48"></a><span class="w">  </span>accessModes:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;ReadWriteOnce&quot;</span><span class="o">]</span>
+<a id="__codelineno-20-49" name="__codelineno-20-49" href="#__codelineno-20-49"></a><span class="w">  </span>resources:
+<a id="__codelineno-20-50" name="__codelineno-20-50" href="#__codelineno-20-50"></a><span class="w">    </span>requests:
+<a id="__codelineno-20-51" name="__codelineno-20-51" href="#__codelineno-20-51"></a><span class="w">      </span>storage:<span class="w"> </span>1Gi
+<a id="__codelineno-20-52" name="__codelineno-20-52" href="#__codelineno-20-52"></a>
+<a id="__codelineno-20-53" name="__codelineno-20-53" href="#__codelineno-20-53"></a>rbac:
+<a id="__codelineno-20-54" name="__codelineno-20-54" href="#__codelineno-20-54"></a><span class="w">  </span>create:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-20-55" name="__codelineno-20-55" href="#__codelineno-20-55"></a><span class="w">  </span>serviceAccountAnnotations:<span class="w"> </span><span class="o">{}</span>
+<a id="__codelineno-20-56" name="__codelineno-20-56" href="#__codelineno-20-56"></a><span class="w">  </span>serviceAccountName:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-20-57" name="__codelineno-20-57" href="#__codelineno-20-57"></a>
+<a id="__codelineno-20-58" name="__codelineno-20-58" href="#__codelineno-20-58"></a>
+<a id="__codelineno-20-59" name="__codelineno-20-59" href="#__codelineno-20-59"></a>podSecurityPolicy:
+<a id="__codelineno-20-60" name="__codelineno-20-60" href="#__codelineno-20-60"></a><span class="w">  </span>create:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-20-61" name="__codelineno-20-61" href="#__codelineno-20-61"></a><span class="w">  </span>name:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-20-62" name="__codelineno-20-62" href="#__codelineno-20-62"></a><span class="w">  </span>spec:
+<a id="__codelineno-20-63" name="__codelineno-20-63" href="#__codelineno-20-63"></a><span class="w">    </span>privileged:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-20-64" name="__codelineno-20-64" href="#__codelineno-20-64"></a><span class="w">    </span>fsGroup:
+<a id="__codelineno-20-65" name="__codelineno-20-65" href="#__codelineno-20-65"></a><span class="w">      </span>rule:<span class="w"> </span>RunAsAny
+<a id="__codelineno-20-66" name="__codelineno-20-66" href="#__codelineno-20-66"></a><span class="w">    </span>runAsUser:
+<a id="__codelineno-20-67" name="__codelineno-20-67" href="#__codelineno-20-67"></a><span class="w">      </span>rule:<span class="w"> </span>RunAsAny
+<a id="__codelineno-20-68" name="__codelineno-20-68" href="#__codelineno-20-68"></a><span class="w">    </span>seLinux:
+<a id="__codelineno-20-69" name="__codelineno-20-69" href="#__codelineno-20-69"></a><span class="w">      </span>rule:<span class="w"> </span>RunAsAny
+<a id="__codelineno-20-70" name="__codelineno-20-70" href="#__codelineno-20-70"></a><span class="w">    </span>supplementalGroups:
+<a id="__codelineno-20-71" name="__codelineno-20-71" href="#__codelineno-20-71"></a><span class="w">      </span>rule:<span class="w"> </span>RunAsAny
+<a id="__codelineno-20-72" name="__codelineno-20-72" href="#__codelineno-20-72"></a><span class="w">    </span>volumes:
+<a id="__codelineno-20-73" name="__codelineno-20-73" href="#__codelineno-20-73"></a><span class="w">      </span>-<span class="w"> </span>secret
+<a id="__codelineno-20-74" name="__codelineno-20-74" href="#__codelineno-20-74"></a><span class="w">      </span>-<span class="w"> </span>configMap
+<a id="__codelineno-20-75" name="__codelineno-20-75" href="#__codelineno-20-75"></a><span class="w">      </span>-<span class="w"> </span>persistentVolumeClaim
+<a id="__codelineno-20-76" name="__codelineno-20-76" href="#__codelineno-20-76"></a>
+<a id="__codelineno-20-77" name="__codelineno-20-77" href="#__codelineno-20-77"></a>persistence:
+<a id="__codelineno-20-78" name="__codelineno-20-78" href="#__codelineno-20-78"></a><span class="w">  </span>enabled:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-20-79" name="__codelineno-20-79" href="#__codelineno-20-79"></a>
+<a id="__codelineno-20-80" name="__codelineno-20-80" href="#__codelineno-20-80"></a>antiAffinityTopologyKey:<span class="w"> </span><span class="s2">&quot;kubernetes.io/hostname&quot;</span>
+<a id="__codelineno-20-81" name="__codelineno-20-81" href="#__codelineno-20-81"></a>
+<a id="__codelineno-20-82" name="__codelineno-20-82" href="#__codelineno-20-82"></a>antiAffinity:<span class="w"> </span><span class="s2">&quot;hard&quot;</span>
+<a id="__codelineno-20-83" name="__codelineno-20-83" href="#__codelineno-20-83"></a>
+<a id="__codelineno-20-84" name="__codelineno-20-84" href="#__codelineno-20-84"></a>podManagementPolicy:<span class="w"> </span><span class="s2">&quot;Parallel&quot;</span>
+<a id="__codelineno-20-85" name="__codelineno-20-85" href="#__codelineno-20-85"></a>
+<a id="__codelineno-20-86" name="__codelineno-20-86" href="#__codelineno-20-86"></a>httpPort:<span class="w"> </span><span class="m">9600</span>
+<a id="__codelineno-20-87" name="__codelineno-20-87" href="#__codelineno-20-87"></a>
+<a id="__codelineno-20-88" name="__codelineno-20-88" href="#__codelineno-20-88"></a>
+<a id="__codelineno-20-89" name="__codelineno-20-89" href="#__codelineno-20-89"></a>updateStrategy:<span class="w"> </span>RollingUpdate
+<a id="__codelineno-20-90" name="__codelineno-20-90" href="#__codelineno-20-90"></a>
+<a id="__codelineno-20-91" name="__codelineno-20-91" href="#__codelineno-20-91"></a>maxUnavailable:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-20-92" name="__codelineno-20-92" href="#__codelineno-20-92"></a>
+<a id="__codelineno-20-93" name="__codelineno-20-93" href="#__codelineno-20-93"></a>podSecurityContext:
+<a id="__codelineno-20-94" name="__codelineno-20-94" href="#__codelineno-20-94"></a><span class="w">  </span>fsGroup:<span class="w"> </span><span class="m">1000</span>
+<a id="__codelineno-20-95" name="__codelineno-20-95" href="#__codelineno-20-95"></a><span class="w">  </span>runAsUser:<span class="w"> </span><span class="m">1000</span>
+<a id="__codelineno-20-96" name="__codelineno-20-96" href="#__codelineno-20-96"></a>
+<a id="__codelineno-20-97" name="__codelineno-20-97" href="#__codelineno-20-97"></a>securityContext:
+<a id="__codelineno-20-98" name="__codelineno-20-98" href="#__codelineno-20-98"></a><span class="w">  </span>capabilities:
+<a id="__codelineno-20-99" name="__codelineno-20-99" href="#__codelineno-20-99"></a><span class="w">    </span>drop:
+<a id="__codelineno-20-100" name="__codelineno-20-100" href="#__codelineno-20-100"></a><span class="w">      </span>-<span class="w"> </span>ALL
+<a id="__codelineno-20-101" name="__codelineno-20-101" href="#__codelineno-20-101"></a><span class="w">  </span>runAsNonRoot:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-20-102" name="__codelineno-20-102" href="#__codelineno-20-102"></a><span class="w">  </span>runAsUser:<span class="w"> </span><span class="m">1000</span>
+<a id="__codelineno-20-103" name="__codelineno-20-103" href="#__codelineno-20-103"></a>
+<a id="__codelineno-20-104" name="__codelineno-20-104" href="#__codelineno-20-104"></a>terminationGracePeriod:<span class="w"> </span><span class="m">120</span>
+<a id="__codelineno-20-105" name="__codelineno-20-105" href="#__codelineno-20-105"></a>
+<a id="__codelineno-20-106" name="__codelineno-20-106" href="#__codelineno-20-106"></a>
+<a id="__codelineno-20-107" name="__codelineno-20-107" href="#__codelineno-20-107"></a>livenessProbe:
+<a id="__codelineno-20-108" name="__codelineno-20-108" href="#__codelineno-20-108"></a><span class="w">  </span>httpGet:
+<a id="__codelineno-20-109" name="__codelineno-20-109" href="#__codelineno-20-109"></a><span class="w">    </span>path:<span class="w"> </span>/
+<a id="__codelineno-20-110" name="__codelineno-20-110" href="#__codelineno-20-110"></a><span class="w">    </span>port:<span class="w"> </span>http
+<a id="__codelineno-20-111" name="__codelineno-20-111" href="#__codelineno-20-111"></a><span class="w">  </span>initialDelaySeconds:<span class="w"> </span><span class="m">300</span>
+<a id="__codelineno-20-112" name="__codelineno-20-112" href="#__codelineno-20-112"></a><span class="w">  </span>periodSeconds:<span class="w"> </span><span class="m">10</span>
+<a id="__codelineno-20-113" name="__codelineno-20-113" href="#__codelineno-20-113"></a><span class="w">  </span>timeoutSeconds:<span class="w"> </span><span class="m">5</span>
+<a id="__codelineno-20-114" name="__codelineno-20-114" href="#__codelineno-20-114"></a><span class="w">  </span>failureThreshold:<span class="w"> </span><span class="m">3</span>
+<a id="__codelineno-20-115" name="__codelineno-20-115" href="#__codelineno-20-115"></a><span class="w">  </span>successThreshold:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-20-116" name="__codelineno-20-116" href="#__codelineno-20-116"></a>
+<a id="__codelineno-20-117" name="__codelineno-20-117" href="#__codelineno-20-117"></a>readinessProbe:
+<a id="__codelineno-20-118" name="__codelineno-20-118" href="#__codelineno-20-118"></a><span class="w">  </span>httpGet:
+<a id="__codelineno-20-119" name="__codelineno-20-119" href="#__codelineno-20-119"></a><span class="w">    </span>path:<span class="w"> </span>/
+<a id="__codelineno-20-120" name="__codelineno-20-120" href="#__codelineno-20-120"></a><span class="w">    </span>port:<span class="w"> </span>http
+<a id="__codelineno-20-121" name="__codelineno-20-121" href="#__codelineno-20-121"></a><span class="w">  </span>initialDelaySeconds:<span class="w"> </span><span class="m">60</span>
+<a id="__codelineno-20-122" name="__codelineno-20-122" href="#__codelineno-20-122"></a><span class="w">  </span>periodSeconds:<span class="w"> </span><span class="m">10</span>
+<a id="__codelineno-20-123" name="__codelineno-20-123" href="#__codelineno-20-123"></a><span class="w">  </span>timeoutSeconds:<span class="w"> </span><span class="m">5</span>
+<a id="__codelineno-20-124" name="__codelineno-20-124" href="#__codelineno-20-124"></a><span class="w">  </span>failureThreshold:<span class="w"> </span><span class="m">3</span>
+<a id="__codelineno-20-125" name="__codelineno-20-125" href="#__codelineno-20-125"></a><span class="w">  </span>successThreshold:<span class="w"> </span><span class="m">3</span>
+<a id="__codelineno-20-126" name="__codelineno-20-126" href="#__codelineno-20-126"></a>
+<a id="__codelineno-20-127" name="__codelineno-20-127" href="#__codelineno-20-127"></a>
+<a id="__codelineno-20-128" name="__codelineno-20-128" href="#__codelineno-20-128"></a>service:
+<a id="__codelineno-20-129" name="__codelineno-20-129" href="#__codelineno-20-129"></a><span class="w">  </span>annotations:<span class="w"> </span><span class="o">{}</span>
+<a id="__codelineno-20-130" name="__codelineno-20-130" href="#__codelineno-20-130"></a><span class="w">  </span>type:<span class="w"> </span>ClusterIP
+<a id="__codelineno-20-131" name="__codelineno-20-131" href="#__codelineno-20-131"></a><span class="w">  </span>loadBalancerIP:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-20-132" name="__codelineno-20-132" href="#__codelineno-20-132"></a><span class="w">  </span>ports:
+<a id="__codelineno-20-133" name="__codelineno-20-133" href="#__codelineno-20-133"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span>beats
+<a id="__codelineno-20-134" name="__codelineno-20-134" href="#__codelineno-20-134"></a><span class="w">      </span>port:<span class="w"> </span><span class="m">5044</span>
+<a id="__codelineno-20-135" name="__codelineno-20-135" href="#__codelineno-20-135"></a><span class="w">      </span>protocol:<span class="w"> </span>TCP
+<a id="__codelineno-20-136" name="__codelineno-20-136" href="#__codelineno-20-136"></a><span class="w">      </span>targetPort:<span class="w"> </span><span class="m">5044</span>
+<a id="__codelineno-20-137" name="__codelineno-20-137" href="#__codelineno-20-137"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span>http
+<a id="__codelineno-20-138" name="__codelineno-20-138" href="#__codelineno-20-138"></a><span class="w">      </span>port:<span class="w"> </span><span class="m">8080</span>
+<a id="__codelineno-20-139" name="__codelineno-20-139" href="#__codelineno-20-139"></a><span class="w">      </span>protocol:<span class="w"> </span>TCP
+<a id="__codelineno-20-140" name="__codelineno-20-140" href="#__codelineno-20-140"></a><span class="w">      </span>targetPort:<span class="w"> </span><span class="m">8080</span>
+<a id="__codelineno-20-141" name="__codelineno-20-141" href="#__codelineno-20-141"></a>
+<a id="__codelineno-20-142" name="__codelineno-20-142" href="#__codelineno-20-142"></a>ingress:
+<a id="__codelineno-20-143" name="__codelineno-20-143" href="#__codelineno-20-143"></a><span class="w">  </span>enabled:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-20-144" name="__codelineno-20-144" href="#__codelineno-20-144"></a><span class="w">  </span>className:<span class="w"> </span><span class="s2">&quot;nginx&quot;</span>
+<a id="__codelineno-20-145" name="__codelineno-20-145" href="#__codelineno-20-145"></a><span class="w">  </span>pathtype:<span class="w"> </span>ImplementationSpecific
+<a id="__codelineno-20-146" name="__codelineno-20-146" href="#__codelineno-20-146"></a><span class="w">  </span>hosts:
+<a id="__codelineno-20-147" name="__codelineno-20-147" href="#__codelineno-20-147"></a><span class="w">    </span>-<span class="w"> </span>host:<span class="w"> </span>logstash-example.local
+<a id="__codelineno-20-148" name="__codelineno-20-148" href="#__codelineno-20-148"></a><span class="w">      </span>paths:
+<a id="__codelineno-20-149" name="__codelineno-20-149" href="#__codelineno-20-149"></a><span class="w">        </span>-<span class="w"> </span>path:<span class="w"> </span>/beats
+<a id="__codelineno-20-150" name="__codelineno-20-150" href="#__codelineno-20-150"></a><span class="w">          </span>servicePort:<span class="w"> </span><span class="m">5044</span>
+<a id="__codelineno-20-151" name="__codelineno-20-151" href="#__codelineno-20-151"></a><span class="w">        </span>-<span class="w"> </span>path:<span class="w"> </span>/http
+<a id="__codelineno-20-152" name="__codelineno-20-152" href="#__codelineno-20-152"></a><span class="w">          </span>servicePort:<span class="w"> </span><span class="m">8080</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>helm<span class="w"> </span>install<span class="w"> </span>logstash<span class="w"> </span>elastic/logstash<span class="w"> </span>-f<span class="w"> </span>logstash.values<span class="w"> </span>-n<span class="w"> </span>elk
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>all<span class="w"> </span>-n<span class="w"> </span>elk
+</code></pre></div>
+<h3 id="installation-and-configuration-of-filebeat-via-helm-into-aks-cluster">Installation and configuration of Filebeat via Helm into AKS Cluster:</h3>
+<ul>
+<li>Installation of Filebeat via Helm.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>elastic/filebeat<span class="w"> </span>&gt;&gt;<span class="w"> </span>filebeat.values
+</code></pre></div>
+<ul>
+<li>filebeat.values</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>---
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>daemonset:
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">  </span>enabled:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">  </span>extraEnvs:
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">&quot;ELASTICSEARCH_USERNAME&quot;</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">      </span>valueFrom:
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">        </span>secretKeyRef:
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">          </span>name:<span class="w"> </span>elasticsearch-master-credentials
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">          </span>key:<span class="w"> </span>username
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">&quot;ELASTICSEARCH_PASSWORD&quot;</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="w">      </span>valueFrom:
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="w">        </span>secretKeyRef:
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="w">          </span>name:<span class="w"> </span>elasticsearch-master-credentials
+<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="w">          </span>key:<span class="w"> </span>password
+<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>
+<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="w">  </span>filebeatConfig:
+<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="w">    </span>filebeat.yml:<span class="w"> </span><span class="p">|</span>
+<a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a><span class="w">      </span>filebeat.inputs:
+<a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a><span class="w">      </span>-<span class="w"> </span>type:<span class="w"> </span>container
+<a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a><span class="w">        </span>paths:
+<a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a><span class="w">          </span>-<span class="w"> </span>/var/log/containers/*.log
+<a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a><span class="w">        </span>processors:
+<a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a><span class="w">        </span>-<span class="w"> </span>add_kubernetes_metadata:
+<a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a><span class="w">            </span>host:<span class="w"> </span><span class="si">${</span><span class="nv">NODE_NAME</span><span class="si">}</span>
+<a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a><span class="w">            </span>matchers:
+<a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a><span class="w">            </span>-<span class="w"> </span>logs_path:
+<a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a><span class="w">                </span>logs_path:<span class="w"> </span><span class="s2">&quot;/var/log/containers/&quot;</span>
+<a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a>
+<a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a><span class="w">      </span>output.logstash:
+<a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a><span class="w">        </span>hosts:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;logstash-logstash:5044&quot;</span><span class="o">]</span>
+<a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a>
+<a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a><span class="w">  </span>maxUnavailable:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a>
+<a id="__codelineno-24-34" name="__codelineno-24-34" href="#__codelineno-24-34"></a><span class="w">  </span>secretMounts:
+<a id="__codelineno-24-35" name="__codelineno-24-35" href="#__codelineno-24-35"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span>elasticsearch-master-certs
+<a id="__codelineno-24-36" name="__codelineno-24-36" href="#__codelineno-24-36"></a><span class="w">      </span>secretName:<span class="w"> </span>elasticsearch-master-certs
+<a id="__codelineno-24-37" name="__codelineno-24-37" href="#__codelineno-24-37"></a><span class="w">      </span>path:<span class="w"> </span>/usr/share/filebeat/certs/
+<a id="__codelineno-24-38" name="__codelineno-24-38" href="#__codelineno-24-38"></a>
+<a id="__codelineno-24-39" name="__codelineno-24-39" href="#__codelineno-24-39"></a><span class="w">  </span>securityContext:
+<a id="__codelineno-24-40" name="__codelineno-24-40" href="#__codelineno-24-40"></a><span class="w">    </span>runAsUser:<span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-24-41" name="__codelineno-24-41" href="#__codelineno-24-41"></a><span class="w">    </span>privileged:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-24-42" name="__codelineno-24-42" href="#__codelineno-24-42"></a><span class="w">  </span>resources:
+<a id="__codelineno-24-43" name="__codelineno-24-43" href="#__codelineno-24-43"></a><span class="w">    </span>requests:
+<a id="__codelineno-24-44" name="__codelineno-24-44" href="#__codelineno-24-44"></a><span class="w">      </span>cpu:<span class="w"> </span><span class="s2">&quot;100m&quot;</span>
+<a id="__codelineno-24-45" name="__codelineno-24-45" href="#__codelineno-24-45"></a><span class="w">      </span>memory:<span class="w"> </span><span class="s2">&quot;100Mi&quot;</span>
+<a id="__codelineno-24-46" name="__codelineno-24-46" href="#__codelineno-24-46"></a><span class="w">    </span>limits:
+<a id="__codelineno-24-47" name="__codelineno-24-47" href="#__codelineno-24-47"></a><span class="w">      </span>cpu:<span class="w"> </span><span class="s2">&quot;1000m&quot;</span>
+<a id="__codelineno-24-48" name="__codelineno-24-48" href="#__codelineno-24-48"></a><span class="w">      </span>memory:<span class="w"> </span><span class="s2">&quot;200Mi&quot;</span>
+<a id="__codelineno-24-49" name="__codelineno-24-49" href="#__codelineno-24-49"></a>
+<a id="__codelineno-24-50" name="__codelineno-24-50" href="#__codelineno-24-50"></a>
+<a id="__codelineno-24-51" name="__codelineno-24-51" href="#__codelineno-24-51"></a>deployment:
+<a id="__codelineno-24-52" name="__codelineno-24-52" href="#__codelineno-24-52"></a>
+<a id="__codelineno-24-53" name="__codelineno-24-53" href="#__codelineno-24-53"></a><span class="w">  </span>enabled:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-24-54" name="__codelineno-24-54" href="#__codelineno-24-54"></a><span class="w">  </span>extraEnvs:
+<a id="__codelineno-24-55" name="__codelineno-24-55" href="#__codelineno-24-55"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">&quot;ELASTICSEARCH_USERNAME&quot;</span>
+<a id="__codelineno-24-56" name="__codelineno-24-56" href="#__codelineno-24-56"></a><span class="w">      </span>valueFrom:
+<a id="__codelineno-24-57" name="__codelineno-24-57" href="#__codelineno-24-57"></a><span class="w">        </span>secretKeyRef:
+<a id="__codelineno-24-58" name="__codelineno-24-58" href="#__codelineno-24-58"></a><span class="w">          </span>name:<span class="w"> </span>elasticsearch-master-credentials
+<a id="__codelineno-24-59" name="__codelineno-24-59" href="#__codelineno-24-59"></a><span class="w">          </span>key:<span class="w"> </span>username
+<a id="__codelineno-24-60" name="__codelineno-24-60" href="#__codelineno-24-60"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">&quot;ELASTICSEARCH_PASSWORD&quot;</span>
+<a id="__codelineno-24-61" name="__codelineno-24-61" href="#__codelineno-24-61"></a><span class="w">      </span>valueFrom:
+<a id="__codelineno-24-62" name="__codelineno-24-62" href="#__codelineno-24-62"></a><span class="w">        </span>secretKeyRef:
+<a id="__codelineno-24-63" name="__codelineno-24-63" href="#__codelineno-24-63"></a><span class="w">          </span>name:<span class="w"> </span>elasticsearch-master-credentials
+<a id="__codelineno-24-64" name="__codelineno-24-64" href="#__codelineno-24-64"></a><span class="w">          </span>key:<span class="w"> </span>password
+<a id="__codelineno-24-65" name="__codelineno-24-65" href="#__codelineno-24-65"></a>
+<a id="__codelineno-24-66" name="__codelineno-24-66" href="#__codelineno-24-66"></a><span class="w">  </span>filebeatConfig:
+<a id="__codelineno-24-67" name="__codelineno-24-67" href="#__codelineno-24-67"></a><span class="w">    </span>filebeat.yml:<span class="w"> </span><span class="p">|</span>
+<a id="__codelineno-24-68" name="__codelineno-24-68" href="#__codelineno-24-68"></a><span class="w">      </span>filebeat.inputs:
+<a id="__codelineno-24-69" name="__codelineno-24-69" href="#__codelineno-24-69"></a><span class="w">        </span>-<span class="w"> </span>type:<span class="w"> </span>log
+<a id="__codelineno-24-70" name="__codelineno-24-70" href="#__codelineno-24-70"></a><span class="w">          </span>paths:
+<a id="__codelineno-24-71" name="__codelineno-24-71" href="#__codelineno-24-71"></a><span class="w">            </span>-<span class="w"> </span>/usr/share/filebeat/logs/filebeat
+<a id="__codelineno-24-72" name="__codelineno-24-72" href="#__codelineno-24-72"></a>
+<a id="__codelineno-24-73" name="__codelineno-24-73" href="#__codelineno-24-73"></a><span class="w">      </span>output.elasticsearch:
+<a id="__codelineno-24-74" name="__codelineno-24-74" href="#__codelineno-24-74"></a><span class="w">        </span>host:<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NODE_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-24-75" name="__codelineno-24-75" href="#__codelineno-24-75"></a><span class="w">        </span>hosts:<span class="w"> </span><span class="s1">&#39;[&quot;https://${ELASTICSEARCH_HOSTS:elasticsearch-master:9200}&quot;]&#39;</span>
+<a id="__codelineno-24-76" name="__codelineno-24-76" href="#__codelineno-24-76"></a><span class="w">        </span>username:<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ELASTICSEARCH_USERNAME</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-24-77" name="__codelineno-24-77" href="#__codelineno-24-77"></a><span class="w">        </span>password:<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ELASTICSEARCH_PASSWORD</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-24-78" name="__codelineno-24-78" href="#__codelineno-24-78"></a><span class="w">        </span>protocol:<span class="w"> </span>https
+<a id="__codelineno-24-79" name="__codelineno-24-79" href="#__codelineno-24-79"></a><span class="w">        </span>ssl.certificate_authorities:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/usr/share/filebeat/certs/ca.crt&quot;</span><span class="o">]</span>
+<a id="__codelineno-24-80" name="__codelineno-24-80" href="#__codelineno-24-80"></a>
+<a id="__codelineno-24-81" name="__codelineno-24-81" href="#__codelineno-24-81"></a>
+<a id="__codelineno-24-82" name="__codelineno-24-82" href="#__codelineno-24-82"></a><span class="w">  </span>secretMounts:
+<a id="__codelineno-24-83" name="__codelineno-24-83" href="#__codelineno-24-83"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span>elasticsearch-master-certs
+<a id="__codelineno-24-84" name="__codelineno-24-84" href="#__codelineno-24-84"></a><span class="w">      </span>secretName:<span class="w"> </span>elasticsearch-master-certs
+<a id="__codelineno-24-85" name="__codelineno-24-85" href="#__codelineno-24-85"></a><span class="w">      </span>path:<span class="w"> </span>/usr/share/filebeat/certs/
+<a id="__codelineno-24-86" name="__codelineno-24-86" href="#__codelineno-24-86"></a>
+<a id="__codelineno-24-87" name="__codelineno-24-87" href="#__codelineno-24-87"></a><span class="w">  </span>securityContext:
+<a id="__codelineno-24-88" name="__codelineno-24-88" href="#__codelineno-24-88"></a><span class="w">    </span>runAsUser:<span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-24-89" name="__codelineno-24-89" href="#__codelineno-24-89"></a><span class="w">    </span>privileged:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-24-90" name="__codelineno-24-90" href="#__codelineno-24-90"></a><span class="w">  </span>resources:
+<a id="__codelineno-24-91" name="__codelineno-24-91" href="#__codelineno-24-91"></a><span class="w">    </span>requests:
+<a id="__codelineno-24-92" name="__codelineno-24-92" href="#__codelineno-24-92"></a><span class="w">      </span>cpu:<span class="w"> </span><span class="s2">&quot;100m&quot;</span>
+<a id="__codelineno-24-93" name="__codelineno-24-93" href="#__codelineno-24-93"></a><span class="w">      </span>memory:<span class="w"> </span><span class="s2">&quot;100Mi&quot;</span>
+<a id="__codelineno-24-94" name="__codelineno-24-94" href="#__codelineno-24-94"></a><span class="w">    </span>limits:
+<a id="__codelineno-24-95" name="__codelineno-24-95" href="#__codelineno-24-95"></a><span class="w">      </span>cpu:<span class="w"> </span><span class="s2">&quot;1000m&quot;</span>
+<a id="__codelineno-24-96" name="__codelineno-24-96" href="#__codelineno-24-96"></a><span class="w">      </span>memory:<span class="w"> </span><span class="s2">&quot;200Mi&quot;</span>
+<a id="__codelineno-24-97" name="__codelineno-24-97" href="#__codelineno-24-97"></a>
+<a id="__codelineno-24-98" name="__codelineno-24-98" href="#__codelineno-24-98"></a>replicas:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-24-99" name="__codelineno-24-99" href="#__codelineno-24-99"></a>
+<a id="__codelineno-24-100" name="__codelineno-24-100" href="#__codelineno-24-100"></a>hostPathRoot:<span class="w"> </span>/var/lib
+<a id="__codelineno-24-101" name="__codelineno-24-101" href="#__codelineno-24-101"></a>
+<a id="__codelineno-24-102" name="__codelineno-24-102" href="#__codelineno-24-102"></a>image:<span class="w"> </span><span class="s2">&quot;docker.elastic.co/beats/filebeat&quot;</span>
+<a id="__codelineno-24-103" name="__codelineno-24-103" href="#__codelineno-24-103"></a>imageTag:<span class="w"> </span><span class="s2">&quot;8.5.1&quot;</span>
+<a id="__codelineno-24-104" name="__codelineno-24-104" href="#__codelineno-24-104"></a>imagePullPolicy:<span class="w"> </span><span class="s2">&quot;IfNotPresent&quot;</span>
+<a id="__codelineno-24-105" name="__codelineno-24-105" href="#__codelineno-24-105"></a>imagePullSecrets:<span class="w"> </span><span class="o">[]</span>
+<a id="__codelineno-24-106" name="__codelineno-24-106" href="#__codelineno-24-106"></a>
+<a id="__codelineno-24-107" name="__codelineno-24-107" href="#__codelineno-24-107"></a>livenessProbe:
+<a id="__codelineno-24-108" name="__codelineno-24-108" href="#__codelineno-24-108"></a><span class="w">  </span>exec:
+<a id="__codelineno-24-109" name="__codelineno-24-109" href="#__codelineno-24-109"></a><span class="w">    </span>command:
+<a id="__codelineno-24-110" name="__codelineno-24-110" href="#__codelineno-24-110"></a><span class="w">      </span>-<span class="w"> </span>sh
+<a id="__codelineno-24-111" name="__codelineno-24-111" href="#__codelineno-24-111"></a><span class="w">      </span>-<span class="w"> </span>-c
+<a id="__codelineno-24-112" name="__codelineno-24-112" href="#__codelineno-24-112"></a><span class="w">      </span>-<span class="w"> </span><span class="p">|</span>
+<a id="__codelineno-24-113" name="__codelineno-24-113" href="#__codelineno-24-113"></a><span class="w">        </span><span class="c1">#!/usr/bin/env bash -e</span>
+<a id="__codelineno-24-114" name="__codelineno-24-114" href="#__codelineno-24-114"></a><span class="w">        </span>curl<span class="w"> </span>--fail<span class="w"> </span><span class="m">127</span>.0.0.1:5066
+<a id="__codelineno-24-115" name="__codelineno-24-115" href="#__codelineno-24-115"></a><span class="w">  </span>failureThreshold:<span class="w"> </span><span class="m">3</span>
+<a id="__codelineno-24-116" name="__codelineno-24-116" href="#__codelineno-24-116"></a><span class="w">  </span>initialDelaySeconds:<span class="w"> </span><span class="m">10</span>
+<a id="__codelineno-24-117" name="__codelineno-24-117" href="#__codelineno-24-117"></a><span class="w">  </span>periodSeconds:<span class="w"> </span><span class="m">10</span>
+<a id="__codelineno-24-118" name="__codelineno-24-118" href="#__codelineno-24-118"></a><span class="w">  </span>timeoutSeconds:<span class="w"> </span><span class="m">5</span>
+<a id="__codelineno-24-119" name="__codelineno-24-119" href="#__codelineno-24-119"></a>
+<a id="__codelineno-24-120" name="__codelineno-24-120" href="#__codelineno-24-120"></a>readinessProbe:
+<a id="__codelineno-24-121" name="__codelineno-24-121" href="#__codelineno-24-121"></a><span class="w">  </span>exec:
+<a id="__codelineno-24-122" name="__codelineno-24-122" href="#__codelineno-24-122"></a><span class="w">    </span>command:
+<a id="__codelineno-24-123" name="__codelineno-24-123" href="#__codelineno-24-123"></a><span class="w">      </span>-<span class="w"> </span>sh
+<a id="__codelineno-24-124" name="__codelineno-24-124" href="#__codelineno-24-124"></a><span class="w">      </span>-<span class="w"> </span>-c
+<a id="__codelineno-24-125" name="__codelineno-24-125" href="#__codelineno-24-125"></a><span class="w">      </span>-<span class="w"> </span><span class="p">|</span>
+<a id="__codelineno-24-126" name="__codelineno-24-126" href="#__codelineno-24-126"></a><span class="w">        </span><span class="c1">#!/usr/bin/env bash -e</span>
+<a id="__codelineno-24-127" name="__codelineno-24-127" href="#__codelineno-24-127"></a><span class="w">        </span>filebeat<span class="w"> </span><span class="nb">test</span><span class="w"> </span>output
+<a id="__codelineno-24-128" name="__codelineno-24-128" href="#__codelineno-24-128"></a><span class="w">  </span>failureThreshold:<span class="w"> </span><span class="m">3</span>
+<a id="__codelineno-24-129" name="__codelineno-24-129" href="#__codelineno-24-129"></a><span class="w">  </span>initialDelaySeconds:<span class="w"> </span><span class="m">10</span>
+<a id="__codelineno-24-130" name="__codelineno-24-130" href="#__codelineno-24-130"></a><span class="w">  </span>periodSeconds:<span class="w"> </span><span class="m">10</span>
+<a id="__codelineno-24-131" name="__codelineno-24-131" href="#__codelineno-24-131"></a><span class="w">  </span>timeoutSeconds:<span class="w"> </span><span class="m">5</span>
+<a id="__codelineno-24-132" name="__codelineno-24-132" href="#__codelineno-24-132"></a>
+<a id="__codelineno-24-133" name="__codelineno-24-133" href="#__codelineno-24-133"></a>managedServiceAccount:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-24-134" name="__codelineno-24-134" href="#__codelineno-24-134"></a>
+<a id="__codelineno-24-135" name="__codelineno-24-135" href="#__codelineno-24-135"></a>clusterRoleRules:
+<a id="__codelineno-24-136" name="__codelineno-24-136" href="#__codelineno-24-136"></a><span class="w">  </span>-<span class="w"> </span>apiGroups:
+<a id="__codelineno-24-137" name="__codelineno-24-137" href="#__codelineno-24-137"></a><span class="w">      </span>-<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-24-138" name="__codelineno-24-138" href="#__codelineno-24-138"></a><span class="w">    </span>resources:
+<a id="__codelineno-24-139" name="__codelineno-24-139" href="#__codelineno-24-139"></a><span class="w">      </span>-<span class="w"> </span>namespaces
+<a id="__codelineno-24-140" name="__codelineno-24-140" href="#__codelineno-24-140"></a><span class="w">      </span>-<span class="w"> </span>nodes
+<a id="__codelineno-24-141" name="__codelineno-24-141" href="#__codelineno-24-141"></a><span class="w">      </span>-<span class="w"> </span>pods
+<a id="__codelineno-24-142" name="__codelineno-24-142" href="#__codelineno-24-142"></a><span class="w">    </span>verbs:
+<a id="__codelineno-24-143" name="__codelineno-24-143" href="#__codelineno-24-143"></a><span class="w">      </span>-<span class="w"> </span>get
+<a id="__codelineno-24-144" name="__codelineno-24-144" href="#__codelineno-24-144"></a><span class="w">      </span>-<span class="w"> </span>list
+<a id="__codelineno-24-145" name="__codelineno-24-145" href="#__codelineno-24-145"></a><span class="w">      </span>-<span class="w"> </span>watch
+<a id="__codelineno-24-146" name="__codelineno-24-146" href="#__codelineno-24-146"></a><span class="w">  </span>-<span class="w"> </span>apiGroups:
+<a id="__codelineno-24-147" name="__codelineno-24-147" href="#__codelineno-24-147"></a><span class="w">      </span>-<span class="w"> </span><span class="s2">&quot;apps&quot;</span>
+<a id="__codelineno-24-148" name="__codelineno-24-148" href="#__codelineno-24-148"></a><span class="w">    </span>resources:
+<a id="__codelineno-24-149" name="__codelineno-24-149" href="#__codelineno-24-149"></a><span class="w">      </span>-<span class="w"> </span>replicasets
+<a id="__codelineno-24-150" name="__codelineno-24-150" href="#__codelineno-24-150"></a><span class="w">    </span>verbs:
+<a id="__codelineno-24-151" name="__codelineno-24-151" href="#__codelineno-24-151"></a><span class="w">      </span>-<span class="w"> </span>get
+<a id="__codelineno-24-152" name="__codelineno-24-152" href="#__codelineno-24-152"></a><span class="w">      </span>-<span class="w"> </span>list
+<a id="__codelineno-24-153" name="__codelineno-24-153" href="#__codelineno-24-153"></a><span class="w">      </span>-<span class="w"> </span>watch
+<a id="__codelineno-24-154" name="__codelineno-24-154" href="#__codelineno-24-154"></a>
+<a id="__codelineno-24-155" name="__codelineno-24-155" href="#__codelineno-24-155"></a>updateStrategy:<span class="w"> </span>RollingUpdate
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>helm<span class="w"> </span>install<span class="w"> </span>filebeat<span class="w"> </span>elastic/filebeat<span class="w"> </span>-f<span class="w"> </span>filebeat.values<span class="w"> </span>-n<span class="w"> </span>elk
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>all<span class="w"> </span>-n<span class="w"> </span>elk
+</code></pre></div>
+<h3 id="deployment-of-sample-applications-into-aks-kubernetes-environment">Deployment of sample applications into AKS kubernetes environment:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>apiVersion:<span class="w"> </span>v1
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>kind:<span class="w"> </span>PersistentVolume
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>metadata:
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">  </span>name:<span class="w"> </span>db-pv-vol
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">  </span>labels:
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span>type:<span class="w"> </span><span class="nb">local</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>spec:
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">  </span>storageClassName:<span class="w"> </span>manual
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="w">  </span>capacity:
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="w">    </span>storage:<span class="w"> </span>5Gi
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="w">  </span>accessModes:
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="w">    </span>-<span class="w"> </span>ReadWriteOnce
+<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="w">  </span>hostPath:
+<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="w">    </span>path:<span class="w"> </span><span class="s2">&quot;/home/ubuntu/pv-data&quot;</span>
+<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>---
+<a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a>apiVersion:<span class="w"> </span>v1
+<a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a>kind:<span class="w"> </span>PersistentVolumeClaim
+<a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a>metadata:
+<a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="w">  </span>name:<span class="w"> </span>database-persistent-volume-claim
+<a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a>spec:
+<a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a><span class="w">  </span>accessModes:
+<a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="w">    </span>-<span class="w"> </span>ReadWriteOnce
+<a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a><span class="w">  </span>storageClassName:<span class="w"> </span>manual
+<a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a><span class="w">  </span>resources:
+<a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a><span class="w">    </span>requests:
+<a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a><span class="w">      </span>storage:<span class="w"> </span>1Gi
+<a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a>---
+<a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a>apiVersion:<span class="w"> </span>apps/v1
+<a id="__codelineno-27-29" name="__codelineno-27-29" href="#__codelineno-27-29"></a>kind:<span class="w"> </span>Deployment
+<a id="__codelineno-27-30" name="__codelineno-27-30" href="#__codelineno-27-30"></a>metadata:
+<a id="__codelineno-27-31" name="__codelineno-27-31" href="#__codelineno-27-31"></a><span class="w">  </span>name:<span class="w"> </span>db-deployment
+<a id="__codelineno-27-32" name="__codelineno-27-32" href="#__codelineno-27-32"></a>spec:
+<a id="__codelineno-27-33" name="__codelineno-27-33" href="#__codelineno-27-33"></a><span class="w">  </span>replicas:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-27-34" name="__codelineno-27-34" href="#__codelineno-27-34"></a><span class="w">  </span>selector:
+<a id="__codelineno-27-35" name="__codelineno-27-35" href="#__codelineno-27-35"></a><span class="w">    </span>matchLabels:
+<a id="__codelineno-27-36" name="__codelineno-27-36" href="#__codelineno-27-36"></a><span class="w">      </span>name:<span class="w"> </span>mongo
+<a id="__codelineno-27-37" name="__codelineno-27-37" href="#__codelineno-27-37"></a><span class="w">  </span>template:
+<a id="__codelineno-27-38" name="__codelineno-27-38" href="#__codelineno-27-38"></a><span class="w">    </span>metadata:
+<a id="__codelineno-27-39" name="__codelineno-27-39" href="#__codelineno-27-39"></a><span class="w">      </span>labels:
+<a id="__codelineno-27-40" name="__codelineno-27-40" href="#__codelineno-27-40"></a><span class="w">        </span>name:<span class="w"> </span>mongo
+<a id="__codelineno-27-41" name="__codelineno-27-41" href="#__codelineno-27-41"></a><span class="w">        </span>app:<span class="w"> </span>todoapp
+<a id="__codelineno-27-42" name="__codelineno-27-42" href="#__codelineno-27-42"></a><span class="w">    </span>spec:
+<a id="__codelineno-27-43" name="__codelineno-27-43" href="#__codelineno-27-43"></a><span class="w">      </span>containers:
+<a id="__codelineno-27-44" name="__codelineno-27-44" href="#__codelineno-27-44"></a><span class="w">      </span>-<span class="w"> </span>image:<span class="w"> </span>mongo:5.0
+<a id="__codelineno-27-45" name="__codelineno-27-45" href="#__codelineno-27-45"></a><span class="w">        </span>name:<span class="w"> </span>mongo
+<a id="__codelineno-27-46" name="__codelineno-27-46" href="#__codelineno-27-46"></a><span class="w">        </span>ports:
+<a id="__codelineno-27-47" name="__codelineno-27-47" href="#__codelineno-27-47"></a><span class="w">        </span>-<span class="w"> </span>containerPort:<span class="w"> </span><span class="m">27017</span>
+<a id="__codelineno-27-48" name="__codelineno-27-48" href="#__codelineno-27-48"></a><span class="w">        </span>volumeMounts:
+<a id="__codelineno-27-49" name="__codelineno-27-49" href="#__codelineno-27-49"></a><span class="w">          </span>-<span class="w"> </span>name:<span class="w"> </span>mongo-storage
+<a id="__codelineno-27-50" name="__codelineno-27-50" href="#__codelineno-27-50"></a><span class="w">            </span>mountPath:<span class="w"> </span>/data/db
+<a id="__codelineno-27-51" name="__codelineno-27-51" href="#__codelineno-27-51"></a><span class="w">      </span>volumes:
+<a id="__codelineno-27-52" name="__codelineno-27-52" href="#__codelineno-27-52"></a><span class="w">        </span><span class="c1">#- name: mongo-storage</span>
+<a id="__codelineno-27-53" name="__codelineno-27-53" href="#__codelineno-27-53"></a><span class="w">        </span><span class="c1">#  hostPath:</span>
+<a id="__codelineno-27-54" name="__codelineno-27-54" href="#__codelineno-27-54"></a><span class="w">        </span><span class="c1">#    path: /home/ubuntu/pv-data</span>
+<a id="__codelineno-27-55" name="__codelineno-27-55" href="#__codelineno-27-55"></a><span class="w">        </span>-<span class="w"> </span>name:<span class="w"> </span>mongo-storage
+<a id="__codelineno-27-56" name="__codelineno-27-56" href="#__codelineno-27-56"></a><span class="w">          </span>persistentVolumeClaim:
+<a id="__codelineno-27-57" name="__codelineno-27-57" href="#__codelineno-27-57"></a><span class="w">            </span>claimName:<span class="w"> </span>database-persistent-volume-claim
+<a id="__codelineno-27-58" name="__codelineno-27-58" href="#__codelineno-27-58"></a>---
+<a id="__codelineno-27-59" name="__codelineno-27-59" href="#__codelineno-27-59"></a>apiVersion:<span class="w"> </span>v1
+<a id="__codelineno-27-60" name="__codelineno-27-60" href="#__codelineno-27-60"></a>kind:<span class="w"> </span>Service
+<a id="__codelineno-27-61" name="__codelineno-27-61" href="#__codelineno-27-61"></a>metadata:
+<a id="__codelineno-27-62" name="__codelineno-27-62" href="#__codelineno-27-62"></a><span class="w">  </span>name:<span class="w"> </span>db-service
+<a id="__codelineno-27-63" name="__codelineno-27-63" href="#__codelineno-27-63"></a><span class="w">  </span>labels:
+<a id="__codelineno-27-64" name="__codelineno-27-64" href="#__codelineno-27-64"></a><span class="w">    </span>name:<span class="w"> </span>mongo
+<a id="__codelineno-27-65" name="__codelineno-27-65" href="#__codelineno-27-65"></a><span class="w">    </span>app:<span class="w"> </span>todoapp
+<a id="__codelineno-27-66" name="__codelineno-27-66" href="#__codelineno-27-66"></a>spec:
+<a id="__codelineno-27-67" name="__codelineno-27-67" href="#__codelineno-27-67"></a><span class="w">  </span>selector:
+<a id="__codelineno-27-68" name="__codelineno-27-68" href="#__codelineno-27-68"></a><span class="w">    </span>name:<span class="w"> </span>mongo
+<a id="__codelineno-27-69" name="__codelineno-27-69" href="#__codelineno-27-69"></a><span class="w">  </span>type:<span class="w"> </span>ClusterIP
+<a id="__codelineno-27-70" name="__codelineno-27-70" href="#__codelineno-27-70"></a><span class="w">  </span>ports:
+<a id="__codelineno-27-71" name="__codelineno-27-71" href="#__codelineno-27-71"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span>db
+<a id="__codelineno-27-72" name="__codelineno-27-72" href="#__codelineno-27-72"></a><span class="w">      </span>port:<span class="w"> </span><span class="m">27017</span>
+<a id="__codelineno-27-73" name="__codelineno-27-73" href="#__codelineno-27-73"></a><span class="w">      </span>targetPort:<span class="w"> </span><span class="m">27017</span>
+<a id="__codelineno-27-74" name="__codelineno-27-74" href="#__codelineno-27-74"></a>---
+<a id="__codelineno-27-75" name="__codelineno-27-75" href="#__codelineno-27-75"></a>apiVersion:<span class="w"> </span>apps/v1
+<a id="__codelineno-27-76" name="__codelineno-27-76" href="#__codelineno-27-76"></a>kind:<span class="w"> </span>Deployment
+<a id="__codelineno-27-77" name="__codelineno-27-77" href="#__codelineno-27-77"></a>metadata:
+<a id="__codelineno-27-78" name="__codelineno-27-78" href="#__codelineno-27-78"></a><span class="w">  </span>name:<span class="w"> </span>web-deployment
+<a id="__codelineno-27-79" name="__codelineno-27-79" href="#__codelineno-27-79"></a>spec:
+<a id="__codelineno-27-80" name="__codelineno-27-80" href="#__codelineno-27-80"></a><span class="w">  </span>replicas:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-27-81" name="__codelineno-27-81" href="#__codelineno-27-81"></a><span class="w">  </span>selector:
+<a id="__codelineno-27-82" name="__codelineno-27-82" href="#__codelineno-27-82"></a><span class="w">    </span>matchLabels:
+<a id="__codelineno-27-83" name="__codelineno-27-83" href="#__codelineno-27-83"></a><span class="w">      </span>name:<span class="w"> </span>web
+<a id="__codelineno-27-84" name="__codelineno-27-84" href="#__codelineno-27-84"></a><span class="w">  </span>template:
+<a id="__codelineno-27-85" name="__codelineno-27-85" href="#__codelineno-27-85"></a><span class="w">    </span>metadata:
+<a id="__codelineno-27-86" name="__codelineno-27-86" href="#__codelineno-27-86"></a><span class="w">      </span>labels:
+<a id="__codelineno-27-87" name="__codelineno-27-87" href="#__codelineno-27-87"></a><span class="w">        </span>name:<span class="w"> </span>web
+<a id="__codelineno-27-88" name="__codelineno-27-88" href="#__codelineno-27-88"></a><span class="w">        </span>app:<span class="w"> </span>todoapp
+<a id="__codelineno-27-89" name="__codelineno-27-89" href="#__codelineno-27-89"></a><span class="w">    </span>spec:
+<a id="__codelineno-27-90" name="__codelineno-27-90" href="#__codelineno-27-90"></a><span class="w">      </span>containers:<span class="w"> </span>
+<a id="__codelineno-27-91" name="__codelineno-27-91" href="#__codelineno-27-91"></a><span class="w">        </span>-<span class="w"> </span>image:<span class="w"> </span>ersinsari/todo
+<a id="__codelineno-27-92" name="__codelineno-27-92" href="#__codelineno-27-92"></a><span class="w">          </span>imagePullPolicy:<span class="w"> </span>Always
+<a id="__codelineno-27-93" name="__codelineno-27-93" href="#__codelineno-27-93"></a><span class="w">          </span>name:<span class="w"> </span>myweb
+<a id="__codelineno-27-94" name="__codelineno-27-94" href="#__codelineno-27-94"></a><span class="w">          </span>ports:<span class="w"> </span>
+<a id="__codelineno-27-95" name="__codelineno-27-95" href="#__codelineno-27-95"></a><span class="w">            </span>-<span class="w"> </span>containerPort:<span class="w"> </span><span class="m">3000</span>
+<a id="__codelineno-27-96" name="__codelineno-27-96" href="#__codelineno-27-96"></a><span class="w">          </span>env:
+<a id="__codelineno-27-97" name="__codelineno-27-97" href="#__codelineno-27-97"></a><span class="w">            </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">&quot;DBHOST&quot;</span>
+<a id="__codelineno-27-98" name="__codelineno-27-98" href="#__codelineno-27-98"></a><span class="w">              </span>value:<span class="w"> </span>db-service
+<a id="__codelineno-27-99" name="__codelineno-27-99" href="#__codelineno-27-99"></a><span class="w">          </span>resources:
+<a id="__codelineno-27-100" name="__codelineno-27-100" href="#__codelineno-27-100"></a><span class="w">            </span>limits:
+<a id="__codelineno-27-101" name="__codelineno-27-101" href="#__codelineno-27-101"></a><span class="w">              </span>memory:<span class="w"> </span>500Mi
+<a id="__codelineno-27-102" name="__codelineno-27-102" href="#__codelineno-27-102"></a><span class="w">              </span>cpu:<span class="w"> </span>100m
+<a id="__codelineno-27-103" name="__codelineno-27-103" href="#__codelineno-27-103"></a><span class="w">            </span>requests:
+<a id="__codelineno-27-104" name="__codelineno-27-104" href="#__codelineno-27-104"></a><span class="w">              </span>memory:<span class="w"> </span>250Mi
+<a id="__codelineno-27-105" name="__codelineno-27-105" href="#__codelineno-27-105"></a><span class="w">              </span>cpu:<span class="w"> </span>80m<span class="w">  </span>
+<a id="__codelineno-27-106" name="__codelineno-27-106" href="#__codelineno-27-106"></a>---
+<a id="__codelineno-27-107" name="__codelineno-27-107" href="#__codelineno-27-107"></a>apiVersion:<span class="w"> </span>v1
+<a id="__codelineno-27-108" name="__codelineno-27-108" href="#__codelineno-27-108"></a>kind:<span class="w"> </span>Service
+<a id="__codelineno-27-109" name="__codelineno-27-109" href="#__codelineno-27-109"></a>metadata:
+<a id="__codelineno-27-110" name="__codelineno-27-110" href="#__codelineno-27-110"></a><span class="w">  </span>name:<span class="w"> </span>web-service
+<a id="__codelineno-27-111" name="__codelineno-27-111" href="#__codelineno-27-111"></a><span class="w">  </span>labels:
+<a id="__codelineno-27-112" name="__codelineno-27-112" href="#__codelineno-27-112"></a><span class="w">    </span>name:<span class="w"> </span>web
+<a id="__codelineno-27-113" name="__codelineno-27-113" href="#__codelineno-27-113"></a><span class="w">    </span>app:<span class="w"> </span>todoapp
+<a id="__codelineno-27-114" name="__codelineno-27-114" href="#__codelineno-27-114"></a>spec:
+<a id="__codelineno-27-115" name="__codelineno-27-115" href="#__codelineno-27-115"></a><span class="w">  </span>selector:
+<a id="__codelineno-27-116" name="__codelineno-27-116" href="#__codelineno-27-116"></a><span class="w">    </span>name:<span class="w"> </span>web<span class="w"> </span>
+<a id="__codelineno-27-117" name="__codelineno-27-117" href="#__codelineno-27-117"></a><span class="w">  </span>type:<span class="w"> </span>LoadBalancer
+<a id="__codelineno-27-118" name="__codelineno-27-118" href="#__codelineno-27-118"></a><span class="w">  </span>ports:
+<a id="__codelineno-27-119" name="__codelineno-27-119" href="#__codelineno-27-119"></a><span class="w">   </span>-<span class="w"> </span>name:<span class="w"> </span>http
+<a id="__codelineno-27-120" name="__codelineno-27-120" href="#__codelineno-27-120"></a><span class="w">     </span>port:<span class="w"> </span><span class="m">3000</span>
+<a id="__codelineno-27-121" name="__codelineno-27-121" href="#__codelineno-27-121"></a><span class="w">     </span>targetPort:<span class="w"> </span><span class="m">3000</span>
+<a id="__codelineno-27-122" name="__codelineno-27-122" href="#__codelineno-27-122"></a><span class="w">     </span>protocol:<span class="w"> </span>TCP
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>to_do.yaml
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>all
+</code></pre></div>
+<h3 id="part-5-kibana-dashboard-configuration-and-sample-app-log-monitoring">Part-5 Kibana Dashboard configuration and sample app log monitoring:</h3>
+<h4 id="dashboard-configuration-and-index-pattern-creation">Dashboard configuration and index pattern creation:</h4>
+<ul>
+<li>Go to http://loadbalancer-ip:5601</li>
+</ul>
+<p>username: elastic
+password: $(kubectl get secrets -n elk elasticsearch-master-credentials -ojsonpath='{.data.password}' | base64 --decode)</p>
+<ul>
+<li>
+<p>Discover: create an index pattern</p>
+</li>
+<li>
+<p>logstash-*</p>
+</li>
+<li>
+<p>select @timestamp</p>
+</li>
+<li>
+<p>create an index pattern.</p>
+</li>
+<li>
+<p>filter your data using KQL syntax : kubernetes.deployment.name web-deployment</p>
+</li>
+<li>You can explore logs info</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://linkedin.com/company/hepapi" target="_blank" rel="noopener" title="Linkedin" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/hepapi" target="_blank" rel="noopener" title="Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+    
+  </body>
+</html>
