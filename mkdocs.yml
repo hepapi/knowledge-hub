@@ -57,8 +57,8 @@ nav:
         - "Configuration File": devops/ansible/config-file.md
         - "Playbooks": devops/ansible/playbook.md
         - "Roles": devops/ansible/ansible-roles.md
-    - Logging and Monitoring:
-        - "ELK Stack": devops/logging/ELK-stack-with-FileBeat.md
+    - Logging-Monitoring:
+        - "ELK Stack": devops/logging-monitoring/ELK-stack-with-FileBeat.md
 
     - Git:
         - "Description": devops/git/Description.md
