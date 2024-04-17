@@ -16,7 +16,7 @@
     
     
       
-        <title>PoC - Hepapi Knowledge Hub</title>
+        <title>Elasticsearch Index Lifecycle Management - Hepapi Knowledge Hub</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#poc" class="md-skip">
+        <a href="#elasticsearch-index-lifecycle-management" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PoC
+              Elasticsearch Index Lifecycle Management
             
           </span>
         </div>
@@ -1249,7 +1249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../configuration/" class="md-nav__link">
+      <a href="../../postgres/configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1270,7 +1270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../psql/" class="md-nav__link">
+      <a href="../../postgres/psql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1291,7 +1291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../backup-restore/" class="md-nav__link">
+      <a href="../../postgres/backup-restore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1790,7 +1790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging-monitoring/ELK-stack-with-FileBeat/" class="md-nav__link">
+      <a href="../ELK-stack-with-FileBeat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2878,110 +2878,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
+  <a href="#index-ekleme" class="md-nav__link">
     <span class="md-ellipsis">
-      Setup
+      Index ekleme:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#backup" class="md-nav__link">
+  <a href="#repository-olusturma" class="md-nav__link">
     <span class="md-ellipsis">
-      Backup
+      Repository oluşturma:
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Backup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Steps
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Steps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-go-to-a-directory-where-the-postgres-user-has-write-access" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Go to a directory where the postgres user has write access
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-create-a-backup-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Create a Backup file
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#upload-the-backup-file-to-a-remote-storage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Upload the backup file to a remote storage
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#restore" class="md-nav__link">
+  <a href="#index-template" class="md-nav__link">
     <span class="md-ellipsis">
-      Restore
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Restore">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#restore-a-single-db" class="md-nav__link">
-    <span class="md-ellipsis">
-      Restore a Single DB
+      Index Template:
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#restore-a-entire-db-server" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#index-lifecycle-policy" class="md-nav__link">
     <span class="md-ellipsis">
-      Restore a Entire DB Server
+      Index Lifecycle Policy:
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#check-the-restoration" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#snapshot-policy" class="md-nav__link">
     <span class="md-ellipsis">
-      Check the Restoration
+      Snapshot Policy:
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#snapshotlarn-restore-edilmesi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Snapshotların Restore edilmesi:
+    </span>
+  </a>
   
 </li>
       
@@ -3000,7 +2946,7 @@
                   
 
   
-    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/postgres/poc-backup-restore.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/logging-monitoring/Index-Lifecycle-Management.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
     </a>
@@ -3008,85 +2954,48 @@
   
 
 
-<h1 id="poc">PoC</h1>
-<h2 id="setup">Setup</h2>
-<ul>
-<li>create an Ubuntu VM</li>
-<li>install postgres</li>
-</ul>
-<!-- - TODO: continue -->
-
-<h2 id="backup">Backup</h2>
-<ul>
-<li>Assumes you have a shell access running postgres instance.<ul>
-<li>If you're trying to do this over a network, you'll need to figure out other options for the commands run (e.g. host, port, etc.)</li>
-</ul>
-</li>
-</ul>
-<h3 id="steps">Steps</h3>
-<h4 id="1-go-to-a-directory-where-the-postgres-user-has-write-access">1. Go to a directory where the <code>postgres</code> user has write access</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>/tmp
+<h1 id="elasticsearch-index-lifecycle-management">Elasticsearch Index Lifecycle Management</h1>
+<h2 id="index-ekleme">Index ekleme:</h2>
+<p>Logstash üzerinde tanımlanan indexname e göre oluşan indexlerin Kibana üzerinde görülmesi için create edilmesi gerekmektedir. Bunun için sol menüde Stack management altında Index Pattern bölümünden Create Index Pattern tıklanarak belirlenmiş olan pattern yazılıp oluşturulur. </p>
+<h2 id="repository-olusturma">Repository oluşturma:</h2>
+<p>Alınancak snapshotların tutulması için bir repo oluşturulmalı ve register edilmelidir.</p>
+<p><strong>/Stack management/Snapshot and Restore/Repositories</strong></p>
+<p>Burada repo elasticsearch kurulu sunucuda olabileceği gibi ayrı bir sunucuda da olabilir. Önemli olan elasticsearch konfigürasyon dosyası içinde (elasticsearch.yaml, values.yaml) bu dizin belirtilmelidir. Başka sunucuda da olacaksa mount edilmelidir.</p>
+<p>Örneğin NFS server olarak kullanılacak ayrı bir sunucu için Elasticsearch sunucusunda çalıştırılan komutlar:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="l l-Scalar l-Scalar-Plain">sudo apt install nfs-common</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="l l-Scalar l-Scalar-Plain">sudo apt install cifs-utils</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="l l-Scalar l-Scalar-Plain">sudo  mount.nfs &lt;destination-ip&gt;:/mnt/disk2/elasticmount /mnt/elasticmount</span><span class="w"> </span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="l l-Scalar l-Scalar-Plain">chown -R elasticsearch:elasticsearch elasticmount</span><span class="w"> </span>
 </code></pre></div>
-<h4 id="2-create-a-backup-file">2. Create a Backup file</h4>
-<p>!!! Note If you're not certain on which tool to use, try to use the <code>pg_dumpall</code>.</p>
-<p><strong>2.A. Using <code>pg_dump</code></strong></p>
-<p>Only dumps a single database named <code>postgres</code>. </p>
+<h2 id="index-template">Index Template:</h2>
+<p>Create edilen Indexlerin yönetilebilmesi ve bir lifecycle policy tanımlanabilmesi için bir template oluşturulmalıdır.</p>
+<p><strong>/Stack management/Index Management/Index Templates</strong></p>
+<p>Bölümünden create template tıklanarak belli patterne ait template oluşturulur.</p>
+<p><strong>Index settings:</strong></p>
+<p>{ "index": { "lifecycle": { "name": "kubernetes-pod-policy" } } }</p>
+<h2 id="index-lifecycle-policy">Index Lifecycle Policy:</h2>
+<p>Belirlenen patterne ait index lerin lifecyle içinde ne yapılacağına yönelik policy oluşturulur. Bunun için </p>
+<p><strong>/Stack management/ Index Lifecycle Policies</strong></p>
+<p>altında Create Policy ile yeni bir policy oluşturulur.</p>
+<p>Burada hangi fazda ne kadar süre duracağı ve bu sürede ne yapılacağı belirtilir. </p>
+<p>Örneğin şekilde verilen pod-loglarına ait policy de warm phase de 1 saatlik ömre sahip index lerin replica sayılarının 0 a çekilmesi (yer tutmaması için) sonrasında da delete phase de 7 günlük yaşam döngüsüne sahip indexlerin snapshot policysi çalıştıktan sonra silinmesine yönelik bir policy oluşturulmuştur.</p>
+<h2 id="snapshot-policy">Snapshot Policy:</h2>
+<p>Belirlenen indexlerin yer tutmaması için belli aralıklarla snapshotı alınarak silinebilir. Gerektiğinde de bu snapshotlardan restore edilebilmektedir. Bu snapshotların alınması için bir policy tanımlanır.</p>
+<p><strong>/Stack management/Snapshot and Restore/Policies</strong></p>
+<p>Örneğin, şekildeki kubernetes-pod-daily-snapshot policy si oluşturulurken;</p>
 <ul>
-<li>Option 1: Write to SQL file
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>--<span class="w"> </span>pg_dump<span class="w"> </span>-U<span class="w"> </span>postgres<span class="w"> </span>-d<span class="w"> </span>postgres<span class="w"> </span>-f<span class="w"> </span>db_backup-<span class="k">$(</span>date<span class="w"> </span>+%d-%m-%Y_%H-%M<span class="k">)</span>.sql
-</code></pre></div></li>
-<li>Option 2: Write to .dump file
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>--<span class="w"> </span>pg_dump<span class="w"> </span>-Fc<span class="w"> </span>-U<span class="w"> </span>postgres<span class="w"> </span>postgres<span class="w"> </span>&gt;<span class="w"> </span>db_backup-<span class="k">$(</span>date<span class="w"> </span>+%d-%m-%Y_%H-%M<span class="k">)</span>.dump
-</code></pre></div></li>
+<li>Alınacak snapshot ismi <kubernetes-pod-{now/d}> şeklinde tanımlanarak gün bazlı oluşturulmuş,</li>
+<li>Alınacak snapshotun hangi repository de tutulacağı belirtilmiş, günün hangi saati alınacağı schedule ile tanımlanmış,</li>
+<li>hangi pattern e sahip index lerin alınacağı belirtilmiş,</li>
+<li>Bu snapshotun geçerlilik süresi (Expiration-hangi süreden sonra silme izni verildiği) belirtilmiş</li>
+<li>Bu policy de min ve max tutulacak snapshot sayısı belirtilmiştir.</li>
 </ul>
-<p><strong>2.B. Using <code>pg_dumpall</code></strong></p>
-<ul>
-<li>Option 1: Write to SQL file
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>--<span class="w"> </span>pg_dumpall<span class="w"> </span>--clean<span class="w"> </span>-f<span class="w"> </span>db_full_backup-<span class="k">$(</span>date<span class="w"> </span>+%d-%m-%Y_%H-%M<span class="k">)</span>.sql
-</code></pre></div></li>
-<li>Option 2: Write to .dump file
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>--<span class="w"> </span>pg_dumpall<span class="w"> </span>--clean<span class="w"> </span>-f<span class="w"> </span>db_full_backup-<span class="k">$(</span>date<span class="w"> </span>+%d-%m-%Y_%H-%M<span class="k">)</span>.dump
-</code></pre></div></li>
-</ul>
-<h4 id="upload-the-backup-file-to-a-remote-storage">Upload the backup file to a remote storage</h4>
-<ul>
-<li>Create a script that will upload the backup file to a remote storage (e.g. AWS S3, Azure Blob Storage, etc.)</li>
-</ul>
-<h2 id="restore">Restore</h2>
-<h3 id="restore-a-single-db">Restore a Single DB</h3>
-<p>We are now working on the host machine that'll be backed up to.</p>
-<p><strong>[IA] Delete the existing DB from the server</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>--<span class="w"> </span>dropdb<span class="w"> </span>existing-db-name
-</code></pre></div></p>
-<p><strong>[IA] Create a new DB to restore to</strong></p>
-<p>Create a new DB named <code>new-db-name</code> from the <code>template0</code> template.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>--<span class="w"> </span>createdb<span class="w"> </span>-T<span class="w"> </span>template0<span class="w"> </span>new-db-name
-</code></pre></div></p>
-<p><strong>Restore a single DB from .sql file</strong></p>
-<p>SQL files are restored with <code>psql</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>--<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span>postgres<span class="w"> </span>-f<span class="w"> </span>db_backup.sql<span class="w"> </span>new-db-name<span class="w"> </span>
-</code></pre></div>
-<h3 id="restore-a-entire-db-server">Restore a Entire DB Server</h3>
-<!-- TODO: -->
-
-<h3 id="check-the-restoration">Check the Restoration</h3>
-<p>Enter the psql shell to verify the restore was successful.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>--<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span>postgres
-</code></pre></div>
-Run psql commands:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">-- list databases </span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="err">\</span><span class="n">l</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1">-- connect to the new db</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="err">\</span><span class="k">c</span><span class="w"> </span><span class="k">new</span><span class="o">-</span><span class="n">db</span><span class="o">-</span><span class="n">name</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1">-- list tables</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="err">\</span><span class="n">dt</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1">-- list rows in a table</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c1">-- list users</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="err">\</span><span class="n">du</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="c1">-- list groups</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="err">\</span><span class="n">dg</span>
-</code></pre></div></p>
+<h2 id="snapshotlarn-restore-edilmesi">Snapshotların Restore edilmesi:</h2>
+<p>Belli bir güne ait alınmış snapshotların restore eilmesi için</p>
+<p><strong>Stack management/Snapshot and Restore/snapshot</strong></p>
+<p>altında ilgili güne ait snapshot tıklanır. Açılan ekranda restore düğmesi tıklanır. </p>
+<p>Burada snapshotlar bir den fazla güne ait olacaktır. Bununla birlikte incremental olarak alındığıda unutulmamalıdır.</p>
+<p>Bir güne ait snapshot restore edilmesi için <strong>Data streams and indices</strong> deki tik kaldırılır ve aşağıda bulunan <strong>deselect all</strong> kısmı tıklanır. Sonrasında istenilen güne ait index tıklanarak restore işlemi yapılır.</p>
 
 
 
