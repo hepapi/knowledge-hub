@@ -59,7 +59,7 @@ nav:
         - "Roles": devops/ansible/ansible-roles.md
     - Logging-Monitoring:
         - "ELK Stack": devops/logging-monitoring/ELK-stack-with-FileBeat.md
-
+        - "ELK Index Lifecycle Management": devops/logging-monitoring/Index-Lifecycle-Management.md
     - Git:
         - "Description": devops/git/Description.md
         - "Installation": devops/git/installation.md
