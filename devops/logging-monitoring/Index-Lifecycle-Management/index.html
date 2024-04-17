@@ -1870,18 +1870,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#index-ekleme" class="md-nav__link">
+  <a href="#indexing" class="md-nav__link">
     <span class="md-ellipsis">
-      Index ekleme:
+      Indexing:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#repository-olusturma" class="md-nav__link">
+  <a href="#create-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      Repository oluşturma:
+      Create Repository:
     </span>
   </a>
   
@@ -1915,9 +1915,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#snapshotlarn-restore-edilmesi" class="md-nav__link">
+  <a href="#restore-snapshots" class="md-nav__link">
     <span class="md-ellipsis">
-      Snapshotların Restore edilmesi:
+      Restore snapshots:
     </span>
   </a>
   
@@ -3006,18 +3006,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#index-ekleme" class="md-nav__link">
+  <a href="#indexing" class="md-nav__link">
     <span class="md-ellipsis">
-      Index ekleme:
+      Indexing:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#repository-olusturma" class="md-nav__link">
+  <a href="#create-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      Repository oluşturma:
+      Create Repository:
     </span>
   </a>
   
@@ -3051,9 +3051,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#snapshotlarn-restore-edilmesi" class="md-nav__link">
+  <a href="#restore-snapshots" class="md-nav__link">
     <span class="md-ellipsis">
-      Snapshotların Restore edilmesi:
+      Restore snapshots:
     </span>
   </a>
   
@@ -3083,47 +3083,71 @@
 
 
 <h1 id="elasticsearch-index-lifecycle-management">Elasticsearch Index Lifecycle Management</h1>
-<h2 id="index-ekleme">Index ekleme:</h2>
-<p>Logstash üzerinde tanımlanan indexname e göre oluşan indexlerin Kibana üzerinde görülmesi için create edilmesi gerekmektedir. Bunun için sol menüde Stack management altında Index Pattern bölümünden Create Index Pattern tıklanarak belirlenmiş olan pattern yazılıp oluşturulur. </p>
-<h2 id="repository-olusturma">Repository oluşturma:</h2>
-<p>Alınancak snapshotların tutulması için bir repo oluşturulmalı ve register edilmelidir.</p>
+<h2 id="indexing">Indexing:</h2>
+<p>Indices based on the indexname defined on Logstash need to be created to be visible on Kibana. To do this, the pattern specified in the left menu is written and created by clicking on the Create Index Pattern section under Stack management. </p>
+<p><img alt="indexing" src="../images/1.png" /></p>
+<h2 id="create-repository">Create Repository:</h2>
+<p>However, a repo must be created and registered to keep snapshots.</p>
 <p><strong>/Stack management/Snapshot and Restore/Repositories</strong></p>
-<p>Burada repo elasticsearch kurulu sunucuda olabileceği gibi ayrı bir sunucuda da olabilir. Önemli olan elasticsearch konfigürasyon dosyası içinde (elasticsearch.yaml, values.yaml) bu dizin belirtilmelidir. Başka sunucuda da olacaksa mount edilmelidir.</p>
-<p>Örneğin NFS server olarak kullanılacak ayrı bir sunucu için Elasticsearch sunucusunda çalıştırılan komutlar:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="l l-Scalar l-Scalar-Plain">sudo apt install nfs-common</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="l l-Scalar l-Scalar-Plain">sudo apt install cifs-utils</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="l l-Scalar l-Scalar-Plain">sudo  mount.nfs &lt;destination-ip&gt;:/mnt/disk2/elasticmount /mnt/elasticmount</span><span class="w"> </span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="l l-Scalar l-Scalar-Plain">chown -R elasticsearch:elasticsearch elasticmount</span><span class="w"> </span>
+<p>Here repo elasticsearch can be on a separate server as it could be on the built-in server. Importantly, this directory should be specified in the elasticsearch configuration file (elasticSearch.yaml, values.jaml). If it will be on another server, it should be mounted.</p>
+<p><img alt="Create Repository" src="../images/2.png" /></p>
+<p>For example, commands executed on the Elasticsearch server for a separate server to be used as an NFS server:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nfs-common
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>cifs-utils
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>sudo<span class="w"> </span>mount.nfs<span class="w"> </span>&lt;path<span class="w"> </span>on<span class="w"> </span>nfs<span class="w"> </span>server&gt;<span class="w"> </span>&lt;path<span class="w"> </span>on<span class="w"> </span>elasticserach<span class="w"> </span>server&gt;
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>sudo<span class="w">  </span>mount.nfs<span class="w"> </span>:/mnt/disk2/elasticmount<span class="w"> </span>/mnt/elasticmount<span class="w"> </span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>chown<span class="w"> </span>-R<span class="w"> </span>elasticsearch:elasticsearch<span class="w"> </span>elasticmount<span class="w"> </span>
 </code></pre></div>
 <h2 id="index-template">Index Template:</h2>
-<p>Create edilen Indexlerin yönetilebilmesi ve bir lifecycle policy tanımlanabilmesi için bir template oluşturulmalıdır.</p>
-<p><strong>/Stack management/Index Management/Index Templates</strong></p>
-<p>Bölümünden create template tıklanarak belli patterne ait template oluşturulur.</p>
+<p>A template should be created to manage the created indexes and define a lifecycle policy.</p>
+<p><strong>/Stack management/ Index Management/Index Templates</strong></p>
+<p>Here, click create template to create a template that belongs to a particular pattern.</p>
+<p><img alt="Index Template1" src="../images/3.png" /></p>
+<p><img alt="Index Template2" src="../images/4.png" /></p>
 <p><strong>Index settings:</strong></p>
-<p>{ "index": { "lifecycle": { "name": "kubernetes-pod-policy" } } }</p>
+<p>{ "index": {"lifecycle": { "name": "kubernetes-pod-policy" } } }</p>
 <h2 id="index-lifecycle-policy">Index Lifecycle Policy:</h2>
-<p>Belirlenen patterne ait index lerin lifecyle içinde ne yapılacağına yönelik policy oluşturulur. Bunun için </p>
-<p><strong>/Stack management/ Index Lifecycle Policies</strong></p>
-<p>altında Create Policy ile yeni bir policy oluşturulur.</p>
-<p>Burada hangi fazda ne kadar süre duracağı ve bu sürede ne yapılacağı belirtilir. </p>
-<p>Örneğin şekilde verilen pod-loglarına ait policy de warm phase de 1 saatlik ömre sahip index lerin replica sayılarının 0 a çekilmesi (yer tutmaması için) sonrasında da delete phase de 7 günlük yaşam döngüsüne sahip indexlerin snapshot policysi çalıştıktan sonra silinmesine yönelik bir policy oluşturulmuştur.</p>
+<p>A policy is created for what to do with the indexes of the specified pattern. </p>
+<p>For this;</p>
+<p>Click <strong>/Stack management/ Index Lifecycle Policies</strong></p>
+<p>Here a new policy is created with create Policy.</p>
+<p><img alt="ILM" src="../images/5.png" /></p>
+<p>This section specifies how long it will last in which phase and what to do during that time. </p>
+<p>For example, the policy of given pod-logs is to remove indexes with a one-hour lifetime in the warm phase after the replica numbers are drawn to 0 (to avoid holding space), and the policy is to delete indexes that have a seven-day lifecycle in the delete phase when the snapshot policy is applied.</p>
 <h2 id="snapshot-policy">Snapshot Policy:</h2>
-<p>Belirlenen indexlerin yer tutmaması için belli aralıklarla snapshotı alınarak silinebilir. Gerektiğinde de bu snapshotlardan restore edilebilmektedir. Bu snapshotların alınması için bir policy tanımlanır.</p>
+<p>It can be deleted by taking a snapshot at certain intervals so that the specified indexes do not hold their place. If necessary, it can be restored from these snapshots. </p>
+<p>A policy is defined for taking these snapshots.</p>
 <p><strong>/Stack management/Snapshot and Restore/Policies</strong></p>
-<p>Örneğin, şekildeki kubernetes-pod-daily-snapshot policy si oluşturulurken;</p>
+<p><img alt="Snapshot Policy" src="../images/6.png" /></p>
+<p>For example, when creating a kubernetes-pod-daily-snapshot policy in the form;</p>
 <ul>
-<li>Alınacak snapshot ismi <kubernetes-pod-{now/d}> şeklinde tanımlanarak gün bazlı oluşturulmuş,</li>
-<li>Alınacak snapshotun hangi repository de tutulacağı belirtilmiş, günün hangi saati alınacağı schedule ile tanımlanmış,</li>
-<li>hangi pattern e sahip index lerin alınacağı belirtilmiş,</li>
-<li>Bu snapshotun geçerlilik süresi (Expiration-hangi süreden sonra silme izni verildiği) belirtilmiş</li>
-<li>Bu policy de min ve max tutulacak snapshot sayısı belirtilmiştir.</li>
+<li>
+<p>The snapshot to be taken is created on a day-based basis, defined as <kubernetes-pod-{now/d}>,</p>
+</li>
+<li>
+<p>specified in which repository the snapshot to be taken will be held, defined by the schedule of the time of the day,</p>
+</li>
+<li>
+<p>specified which pattern index is to be taken,</p>
+</li>
+<li>
+<p>The validity period of this snapshot is specified (expiration - after which time deletion permission is given),</p>
+</li>
+<li>
+<p>This policy specifies the number of snapshots to hold min and max.</p>
+</li>
 </ul>
-<h2 id="snapshotlarn-restore-edilmesi">Snapshotların Restore edilmesi:</h2>
-<p>Belli bir güne ait alınmış snapshotların restore eilmesi için</p>
+<h2 id="restore-snapshots">Restore snapshots:</h2>
+<p>To restore snapshots taken on a specific date</p>
 <p><strong>Stack management/Snapshot and Restore/snapshot</strong></p>
-<p>altında ilgili güne ait snapshot tıklanır. Açılan ekranda restore düğmesi tıklanır. </p>
-<p>Burada snapshotlar bir den fazla güne ait olacaktır. Bununla birlikte incremental olarak alındığıda unutulmamalıdır.</p>
-<p>Bir güne ait snapshot restore edilmesi için <strong>Data streams and indices</strong> deki tik kaldırılır ve aşağıda bulunan <strong>deselect all</strong> kısmı tıklanır. Sonrasında istenilen güne ait index tıklanarak restore işlemi yapılır.</p>
+<p><img alt="Restore snapshots" src="../images/7.png" /></p>
+<p>Here you click the snapshot of the day. The restore button will be clicked on the screen that opens. </p>
+<p>Here the snapshots will belong to more than a day. However, it should not be forgotten that it is taken incrementally.</p>
+<p>To restore a day's snapshot, untick <strong>Data streams and indices</strong> and click <strong>deselect all</strong> below. The restore is then done by clicking on the index of the desired day.</p>
 
 
 
