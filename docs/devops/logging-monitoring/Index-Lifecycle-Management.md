@@ -1,70 +1,104 @@
 # Elasticsearch Index Lifecycle Management
-## Index ekleme:
-Logstash üzerinde tanımlanan indexname e göre oluşan indexlerin Kibana üzerinde görülmesi için create edilmesi gerekmektedir. Bunun için sol menüde Stack management altında Index Pattern bölümünden Create Index Pattern tıklanarak belirlenmiş olan pattern yazılıp oluşturulur. 
+
+## Indexing:
+
+Indices based on the indexname defined on Logstash need to be created to be visible on Kibana. To do this, the pattern specified in the left menu is written and created by clicking on the Create Index Pattern section under Stack management. 
+
+![indexing](./images/1.png)
  
-## Repository oluşturma:
-Alınancak snapshotların tutulması için bir repo oluşturulmalı ve register edilmelidir.
+## Create Repository:
+
+However, a repo must be created and registered to keep snapshots.
 
 **/Stack management/Snapshot and Restore/Repositories**
 
-Burada repo elasticsearch kurulu sunucuda olabileceği gibi ayrı bir sunucuda da olabilir. Önemli olan elasticsearch konfigürasyon dosyası içinde (elasticsearch.yaml, values.yaml) bu dizin belirtilmelidir. Başka sunucuda da olacaksa mount edilmelidir.
+Here repo elasticsearch can be on a separate server as it could be on the built-in server. Importantly, this directory should be specified in the elasticsearch configuration file (elasticSearch.yaml, values.jaml). If it will be on another server, it should be mounted.
 
-Örneğin NFS server olarak kullanılacak ayrı bir sunucu için Elasticsearch sunucusunda çalıştırılan komutlar:
+![Create Repository](./images/2.png)
 
-```yaml
+For example, commands executed on the Elasticsearch server for a separate server to be used as an NFS server:
+
+```bash
 sudo apt install nfs-common
+
 sudo apt install cifs-utils
-sudo  mount.nfs <destination-ip>:/mnt/disk2/elasticmount /mnt/elasticmount 
+
+sudo mount.nfs <path on nfs server> <path on elasticserach server>
+
+sudo  mount.nfs :/mnt/disk2/elasticmount /mnt/elasticmount 
+
 chown -R elasticsearch:elasticsearch elasticmount 
 ```
+
 ## Index Template:
 
-Create edilen Indexlerin yönetilebilmesi ve bir lifecycle policy tanımlanabilmesi için bir template oluşturulmalıdır.
+A template should be created to manage the created indexes and define a lifecycle policy.
 
-**/Stack management/Index Management/Index Templates**
+**/Stack management/ Index Management/Index Templates**
 
-Bölümünden create template tıklanarak belli patterne ait template oluşturulur.
+Here, click create template to create a template that belongs to a particular pattern.
 
- 
+![Index Template1](./images/3.png)
+
+![Index Template2](./images/4.png)
+
 **Index settings:**
 
-{ "index": { "lifecycle": { "name": "kubernetes-pod-policy" } } }
+{ "index": {"lifecycle": { "name": "kubernetes-pod-policy" } } }
 
 
 ## Index Lifecycle Policy:
 
-Belirlenen patterne ait index lerin lifecyle içinde ne yapılacağına yönelik policy oluşturulur. Bunun için 
+A policy is created for what to do with the indexes of the specified pattern. 
 
-**/Stack management/ Index Lifecycle Policies**
 
-altında Create Policy ile yeni bir policy oluşturulur.
+For this;
 
-Burada hangi fazda ne kadar süre duracağı ve bu sürede ne yapılacağı belirtilir. 
+Click **/Stack management/ Index Lifecycle Policies**
 
-Örneğin şekilde verilen pod-loglarına ait policy de warm phase de 1 saatlik ömre sahip index lerin replica sayılarının 0 a çekilmesi (yer tutmaması için) sonrasında da delete phase de 7 günlük yaşam döngüsüne sahip indexlerin snapshot policysi çalıştıktan sonra silinmesine yönelik bir policy oluşturulmuştur.
+Here a new policy is created with create Policy.
+
+![ILM](./images/5.png)
+
+This section specifies how long it will last in which phase and what to do during that time. 
+
+For example, the policy of given pod-logs is to remove indexes with a one-hour lifetime in the warm phase after the replica numbers are drawn to 0 (to avoid holding space), and the policy is to delete indexes that have a seven-day lifecycle in the delete phase when the snapshot policy is applied.
 
 ## Snapshot Policy:
 
-Belirlenen indexlerin yer tutmaması için belli aralıklarla snapshotı alınarak silinebilir. Gerektiğinde de bu snapshotlardan restore edilebilmektedir. Bu snapshotların alınması için bir policy tanımlanır.
+It can be deleted by taking a snapshot at certain intervals so that the specified indexes do not hold their place. If necessary, it can be restored from these snapshots. 
+
+
+A policy is defined for taking these snapshots.
 
 **/Stack management/Snapshot and Restore/Policies**
 
-Örneğin, şekildeki kubernetes-pod-daily-snapshot policy si oluşturulurken;
+![Snapshot Policy](./images/6.png)
 
-- Alınacak snapshot ismi <kubernetes-pod-{now/d}> şeklinde tanımlanarak gün bazlı oluşturulmuş,
-- Alınacak snapshotun hangi repository de tutulacağı belirtilmiş, günün hangi saati alınacağı schedule ile tanımlanmış,
-- hangi pattern e sahip index lerin alınacağı belirtilmiş,
-- Bu snapshotun geçerlilik süresi (Expiration-hangi süreden sonra silme izni verildiği) belirtilmiş
-- Bu policy de min ve max tutulacak snapshot sayısı belirtilmiştir.
+For example, when creating a kubernetes-pod-daily-snapshot policy in the form;
 
-## Snapshotların Restore edilmesi:
-Belli bir güne ait alınmış snapshotların restore eilmesi için
+- The snapshot to be taken is created on a day-based basis, defined as <kubernetes-pod-{now/d}>,
+
+- specified in which repository the snapshot to be taken will be held, defined by the schedule of the time of the day,
+
+- specified which pattern index is to be taken,
+
+- The validity period of this snapshot is specified (expiration - after which time deletion permission is given),
+
+- This policy specifies the number of snapshots to hold min and max.
+
+## Restore snapshots:
+
+To restore snapshots taken on a specific date
 
 **Stack management/Snapshot and Restore/snapshot**
 
-altında ilgili güne ait snapshot tıklanır. Açılan ekranda restore düğmesi tıklanır. 
+![Restore snapshots](./images/7.png)
 
-Burada snapshotlar bir den fazla güne ait olacaktır. Bununla birlikte incremental olarak alındığıda unutulmamalıdır.
 
-Bir güne ait snapshot restore edilmesi için **Data streams and indices** deki tik kaldırılır ve aşağıda bulunan **deselect all** kısmı tıklanır. Sonrasında istenilen güne ait index tıklanarak restore işlemi yapılır.
+Here you click the snapshot of the day. The restore button will be clicked on the screen that opens. 
+
+Here the snapshots will belong to more than a day. However, it should not be forgotten that it is taken incrementally.
+
+To restore a day's snapshot, untick **Data streams and indices** and click **deselect all** below. The restore is then done by clicking on the index of the desired day.
 
