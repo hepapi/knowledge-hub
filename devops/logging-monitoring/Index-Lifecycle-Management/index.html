@@ -3090,7 +3090,7 @@
 <p>However, a repo must be created and registered to keep snapshots.</p>
 <p><strong>/Stack management/Snapshot and Restore/Repositories</strong></p>
 <p>Here repo elasticsearch can be on a separate server as it could be on the built-in server. Importantly, this directory should be specified in the elasticsearch configuration file (elasticSearch.yaml, values.jaml). If it will be on another server, it should be mounted.</p>
-<p><img alt="Create Repository" src="../images/2.png" /></p>
+<p><img src="./images/2.png" alt="Create Repository" width="400" height="300"></p>
 <p>For example, commands executed on the Elasticsearch server for a separate server to be used as an NFS server:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nfs-common
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -3106,9 +3106,9 @@
 <p>A template should be created to manage the created indexes and define a lifecycle policy.</p>
 <p><strong>/Stack management/ Index Management/Index Templates</strong></p>
 <p>Here, click create template to create a template that belongs to a particular pattern.</p>
-<p><img alt="Index Template1" src="../images/3.png" /></p>
-<p><img alt="Index Template2" src="../images/4.png" /></p>
-<p><strong>Index settings:</strong></p>
+<p><img src="./images/3.png" alt="Create Repository" width="600" height="400"></p>
+<p><strong>Under Index settings section:</strong></p>
+<p>Add:</p>
 <p>{ "index": {"lifecycle": { "name": "kubernetes-pod-policy" } } }</p>
 <h2 id="index-lifecycle-policy">Index Lifecycle Policy:</h2>
 <p>A policy is created for what to do with the indexes of the specified pattern. </p>
@@ -3122,7 +3122,7 @@
 <p>It can be deleted by taking a snapshot at certain intervals so that the specified indexes do not hold their place. If necessary, it can be restored from these snapshots. </p>
 <p>A policy is defined for taking these snapshots.</p>
 <p><strong>/Stack management/Snapshot and Restore/Policies</strong></p>
-<p><img alt="Snapshot Policy" src="../images/6.png" /></p>
+<p><img src="./images/6.png" alt="Create Repository" width="400" height="300"></p>
 <p>For example, when creating a kubernetes-pod-daily-snapshot policy in the form;</p>
 <ul>
 <li>
@@ -3144,7 +3144,7 @@
 <h2 id="restore-snapshots">Restore snapshots:</h2>
 <p>To restore snapshots taken on a specific date</p>
 <p><strong>Stack management/Snapshot and Restore/snapshot</strong></p>
-<p><img alt="Restore snapshots" src="../images/7.png" /></p>
+<p><img src="./images/7.png" alt="Create Repository" width="600" height="400"></p>
 <p>Here you click the snapshot of the day. The restore button will be clicked on the screen that opens. </p>
 <p>Here the snapshots will belong to more than a day. However, it should not be forgotten that it is taken incrementally.</p>
 <p>To restore a day's snapshot, untick <strong>Data streams and indices</strong> and click <strong>deselect all</strong> below. The restore is then done by clicking on the index of the desired day.</p>
