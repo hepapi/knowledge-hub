@@ -14,7 +14,8 @@ However, a repo must be created and registered to keep snapshots.
 
 Here repo elasticsearch can be on a separate server as it could be on the built-in server. Importantly, this directory should be specified in the elasticsearch configuration file (elasticSearch.yaml, values.jaml). If it will be on another server, it should be mounted.
 
-<img src="./images/2.png" alt="Create Repository" width="400" height="300">
+<!-- <img src="./images/2.png" alt="Create Repository" width="400" height="300"> -->
+![Create Repository](./images/2.png)
 
 For example, commands executed on the Elasticsearch server for a separate server to be used as an NFS server:
 
@@ -38,10 +39,12 @@ A template should be created to manage the created indexes and define a lifecycl
 
 Here, click create template to create a template that belongs to a particular pattern.
 
-<img src="./images/3.png" alt="Create Repository" width="600" height="400">
+<!-- <img src="./images/3.png" alt="Create Repository" width="600" height="400"> -->
+![Create Repository](./images/3.png)
 
 **Under Index settings section:**
 
+<!-- ![test](./images/4.png) -->
 Add:
 
  { "index": {"lifecycle": { "name": "kubernetes-pod-policy" } } }
@@ -73,8 +76,8 @@ A policy is defined for taking these snapshots.
 
 **/Stack management/Snapshot and Restore/Policies**
 
-<img src="./images/6.png" alt="Create Repository" width="400" height="300">
 
+![Snapshot Policy](./images/6.png)
 
 For example, when creating a kubernetes-pod-daily-snapshot policy in the form;
 
@@ -94,7 +97,7 @@ To restore snapshots taken on a specific date
 
 **Stack management/Snapshot and Restore/snapshot**
 
-<img src="./images/7.png" alt="Create Repository" width="600" height="400">
+![Restore snapshots](./images/7.png)
 
 
 Here you click the snapshot of the day. The restore button will be clicked on the screen that opens. 
