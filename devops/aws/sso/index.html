@@ -3118,25 +3118,27 @@
 <p>Using SSO to streamline user logins benefits users and organizations in several ways.</p>
 <p><img alt="architecture" src="../images/SSO-Important.png" /></p>
 <ol>
-<li>Strengthen password security </li>
-</ol>
+<li>
+<p>Strengthen password security </p>
 <p>When people don’t use SSO, they must remember multiple passwords for different websites. This might lead to non-recommended security practices, such as using simple or repetitive passwords for different accounts. Besides, users might forget or mistype their credentials when logging in to a service. SSO prevents password fatigue and encourages users to create a strong password that can be used for multiple websites.</p>
-<ol>
-<li>Improve productivity </li>
-</ol>
+</li>
+<li>
+<p>Improve productivity </p>
 <p>Employees often use more than one enterprise application that requires separate authentication. Manually entering the username and password for every application is time-consuming and unproductive. SSO streamlines the user validation process for enterprise applications and makes it easier to access protected resources.</p>
-<ol>
-<li>Reduce costs </li>
-</ol>
+</li>
+<li>
+<p>Reduce costs </p>
 <p>In their attempt to remember numerous passwords, enterprise users may forget their login credentials. This results in frequent requests to retrieve or reset their passwords, which increases workload for the in-house IT teams. Implementing SSO reduces occurrences of forgotten passwords and thus minimizes the support resources in handling requests for password resets.</p>
-<ol>
-<li>Improve security posture</li>
-</ol>
+</li>
+<li>
+<p>Improve security posture</p>
 <p>By minimizing the number of passwords per user, SSO facilitates user access auditing and provides robust access control to all types of data. This reduces the risk of security events that target passwords, while helping organizations comply with data security regulations.</p>
-<ol>
-<li>Provide a better customer experience </li>
-</ol>
+</li>
+<li>
+<p>Provide a better customer experience </p>
 <p>Cloud application vendors use SSO to provide end-users with a seamless login experience and credential management. Users manage fewer passwords and can still securely access the information and apps they need to complete their day-to-day jobs.</p>
+</li>
+</ol>
 <h4 id="is-sso-secure">Is SSO secure?</h4>
 <p>Yes, SSO is an advanced and desirable identity access management solution. When deployed, a single sign-on solution helps organizations with user access management for enterprise applications and resources. An SSO solution makes setting and remembering strong passwords easier for application users. In addition, the IT team can use the SSO tool to monitor user behavior, improve system resilience, and reduce security risks. </p>
 <h4 id="how-can-aws-help-with-sso">How can AWS help with SSO?</h4>
@@ -3155,31 +3157,33 @@
 <h4 id="sso-setup-aws-console">SSO Setup AWS Console</h4>
 <p><img alt="setup" src="../images/SSO-Architecture.png" /></p>
 <ol>
-<li>In order to use SSO, you must first enable the AWS Single Sign-On service. AWS Organizations supports IAM Identity Center (Single Sign-On) in only one AWS Region at a time. AWS Single Sign-On service works as a single service only in one region. Once activated, accounts in AWS Organization appear in the SSO service and each account in the organization creates an SSO role. Every account that is included or leave in the organization automatically update on SSO.</li>
-</ol>
+<li>
+<p>In order to use SSO, you must first enable the AWS Single Sign-On service. AWS Organizations supports IAM Identity Center (Single Sign-On) in only one AWS Region at a time. AWS Single Sign-On service works as a single service only in one region. Once activated, accounts in AWS Organization appear in the SSO service and each account in the organization creates an SSO role. Every account that is included or leave in the organization automatically update on SSO.</p>
 <p><img alt="enable" src="../images/SSO-Enable.png" /> </p>
-<ol>
-<li>By creating users and groups within the SSO service, access can be given to all accounts within the organization or to a specific account. An e-mail is sent to the people whose users have been created, and the users are verified via e-mail and directed to the relevant link.</li>
-</ol>
+</li>
+<li>
+<p>By creating users and groups within the SSO service, access can be given to all accounts within the organization or to a specific account. An e-mail is sent to the people whose users have been created, and the users are verified via e-mail and directed to the relevant link.</p>
 <p><img alt="verify" src="../images/SSO-Mail-Verify.png" /> </p>
-<ol>
-<li>After completing the password process, MFA authenticator must be installed and logged in with SSO.</li>
-</ol>
+</li>
+<li>
+<p>After completing the password process, MFA authenticator must be installed and logged in with SSO.</p>
 <p><img alt="mfa" src="../images/SSO-MFA.png" /></p>
-<ol>
-<li>Then, permission is set and the user or group is given authority on the account. For example, AdministratorAccess, Billing etc. Additionally, this permission can be limited to session duration, such as 1 hour, 2 hours.</li>
-</ol>
+</li>
+<li>
+<p>Then, permission is set and the user or group is given authority on the account. For example, AdministratorAccess, Billing etc. Additionally, this permission can be limited to session duration, such as 1 hour, 2 hours.</p>
 <p><img alt="permission" src="../images/SSO-Permission-Set.png" /></p>
-<ol>
-<li>Access permission for the desired account is attached to the user or group with the permission set by going to the AWS accounts section within the SSO service. Now, the desired authority has been given to the desired user or group to access the desired account.</li>
-</ol>
+</li>
+<li>
+<p>Access permission for the desired account is attached to the user or group with the permission set by going to the AWS accounts section within the SSO service. Now, the desired authority has been given to the desired user or group to access the desired account.</p>
 <p><img alt="attach" src="../images/SSO-Attach-Account.png" /></p>
-<ol>
-<li>Access is provided via the link on SSO or the invitation email sent to users. The authorized account within the organization is entered. While performing the redirection process, it allows both through the AWS manenmagent console and provides transaction permissions through the AWS CLI. It presents the relevant credentials for AWS CLI to the user during access.</li>
-</ol>
+</li>
+<li>
+<p>Access is provided via the link on SSO or the invitation email sent to users. The authorized account within the organization is entered. While performing the redirection process, it allows both through the AWS manenmagent console and provides transaction permissions through the AWS CLI. It presents the relevant credentials for AWS CLI to the user during access.</p>
 <p><img alt="linked" src="../images/SSO-Linked.png" /></p>
-<ol>
-<li>For accounts to which access is not desired, no user or permission assignment should be made.</li>
+</li>
+<li>
+<p>For accounts to which access is not desired, no user or permission assignment should be made.</p>
+</li>
 </ol>
 <h3 id="references">References</h3>
 <p><a href="https://aws.amazon.com/what-is/sso/">What is SSO (Single-Sign-On)?</a></p>
