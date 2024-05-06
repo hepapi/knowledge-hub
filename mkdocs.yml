@@ -21,6 +21,7 @@ nav:
         - "Tips": devops/linux/tips.md
     - "AWS":
         - "AWS CLIv2 Installation": devops/aws/cli.md
+        - "AWS IAM Identity Center (successor to AWS Single Sign-On), What is SSO?" : devops/aws/sso.md
     - Azure:
         - "Agent Installation": devops/azure/agent-installation.md
     - Kubernetes:

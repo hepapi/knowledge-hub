@@ -1,4 +1,4 @@
-#### IAM Identity Center (successor to AWS Single Sign-On), What is SSO?
+#### AWS IAM Identity Center (successor to AWS Single Sign-On), What is SSO?
 
 IAM Identity Center (successor to AWS Single Sign-On)
 
@@ -14,23 +14,23 @@ Using SSO to streamline user logins benefits users and organizations in several 
 
 1. Strengthen password security 
 
-       When people don’t use SSO, they must remember multiple passwords for different websites. This might lead to non-recommended security practices, such as using simple or repetitive passwords for different accounts. Besides, users might forget or mistype their credentials when logging in to a service. SSO prevents password fatigue and encourages users to create a strong password that can be used for multiple websites.
+When people don’t use SSO, they must remember multiple passwords for different websites. This might lead to non-recommended security practices, such as using simple or repetitive passwords for different accounts. Besides, users might forget or mistype their credentials when logging in to a service. SSO prevents password fatigue and encourages users to create a strong password that can be used for multiple websites.
 
 2. Improve productivity 
 
-       Employees often use more than one enterprise application that requires separate authentication. Manually entering the username and password for every application is time-consuming and unproductive. SSO streamlines the user validation process for enterprise applications and makes it easier to access protected resources.
+Employees often use more than one enterprise application that requires separate authentication. Manually entering the username and password for every application is time-consuming and unproductive. SSO streamlines the user validation process for enterprise applications and makes it easier to access protected resources.
 
 3. Reduce costs 
 
-       In their attempt to remember numerous passwords, enterprise users may forget their login credentials. This results in frequent requests to retrieve or reset their passwords, which increases workload for the in-house IT teams. Implementing SSO reduces occurrences of forgotten passwords and thus minimizes the support resources in handling requests for password resets.
+In their attempt to remember numerous passwords, enterprise users may forget their login credentials. This results in frequent requests to retrieve or reset their passwords, which increases workload for the in-house IT teams. Implementing SSO reduces occurrences of forgotten passwords and thus minimizes the support resources in handling requests for password resets.
 
 4. Improve security posture
  
-       By minimizing the number of passwords per user, SSO facilitates user access auditing and provides robust access control to all types of data. This reduces the risk of security events that target passwords, while helping organizations comply with data security regulations.
+By minimizing the number of passwords per user, SSO facilitates user access auditing and provides robust access control to all types of data. This reduces the risk of security events that target passwords, while helping organizations comply with data security regulations.
 
 5. Provide a better customer experience 
 
-       Cloud application vendors use SSO to provide end-users with a seamless login experience and credential management. Users manage fewer passwords and can still securely access the information and apps they need to complete their day-to-day jobs.
+Cloud application vendors use SSO to provide end-users with a seamless login experience and credential management. Users manage fewer passwords and can still securely access the information and apps they need to complete their day-to-day jobs.
 
 
 #### Is SSO secure?
