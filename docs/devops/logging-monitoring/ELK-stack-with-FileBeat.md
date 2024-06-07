@@ -119,8 +119,6 @@ elasticsearch.values
 clusterName: "elasticsearch"
 nodeGroup: "master"
 
-masterService: ""
-
 roles:
   - master
   - data
@@ -135,24 +133,9 @@ roles:
 
 replicas: 2
 minimumMasterNodes: 2
-
-esMajorVersion: ""
-
-
-createCert: true
-
-
-secret:
-  enabled: true
-  password: "" 
-
-
 image: "docker.elastic.co/elasticsearch/elasticsearch"
 imageTag: "8.5.1"
 imagePullPolicy: "IfNotPresent"
-
-
-
 resources:
   requests:
     cpu: "1000m"
@@ -160,55 +143,18 @@ resources:
   limits:
     cpu: "1000m"
     memory: "2Gi"
-
-
 networkHost: "0.0.0.0"
-
 volumeClaimTemplate:
   accessModes: ["ReadWriteOnce"]
   resources:
     requests:
       storage: 30Gi
 
-rbac:
-  create: false
-  serviceAccountAnnotations: {}
-  serviceAccountName: ""
-  automountToken: true
-
-podSecurityPolicy:
-  create: false
-  name: ""
-  spec:
-    privileged: true
-    fsGroup:
-      rule: RunAsAny
-    runAsUser:
-      rule: RunAsAny
-    seLinux:
-      rule: RunAsAny
-    supplementalGroups:
-      rule: RunAsAny
-    volumes:
-      - secret
-      - configMap
-      - persistentVolumeClaim
-      - emptyDir
-
 persistence:
   enabled: true
   labels:
     enabled: false
   annotations: {}
-
-
-priorityClassName: ""
-
-antiAffinityTopologyKey: "kubernetes.io/hostname"
-
-antiAffinity: "hard"
-
-podManagementPolicy: "Parallel"
 
 enableServiceLinks: true
 
@@ -230,22 +176,7 @@ service:
   loadBalancerSourceRanges: []
   externalTrafficPolicy: ""
 
-updateStrategy: RollingUpdate
-
 maxUnavailable: 1
-
-podSecurityContext:
-  fsGroup: 1000
-  runAsUser: 1000
-
-securityContext:
-  capabilities:
-    drop:
-      - ALL
-  runAsNonRoot: true
-  runAsUser: 1000
-terminationGracePeriod: 120
-
 sysctlVmMaxMapCount: 262144
 
 readinessProbe:
@@ -255,37 +186,6 @@ readinessProbe:
   successThreshold: 3
   timeoutSeconds: 5
 
-clusterHealthCheckParams: "wait_for_status=green&timeout=1s"
-
-schedulerName: ""
-
-imagePullSecrets: []
-nodeSelector: {}
-tolerations: []
-
-
-ingress:
-  enabled: false
-  annotations: {}
-  className: "nginx"
-  pathtype: ImplementationSpecific
-  hosts:
-    - host: chart-example.local
-      paths:
-        - path: /
-  tls: []
-
-nameOverride: ""
-fullnameOverride: ""
-healthNameOverride: ""
-
-
-sysctlInitContainer:
-  enabled: true
-  http:
-    enabled: false
-  transport:
-    enabled: false
 
 tests:
   enabled: true
@@ -317,9 +217,6 @@ elasticsearchHosts: "https://elasticsearch-master:9200"
 
 replicas: 1
 
-extraEnvs:
-  - name: "NODE_OPTIONS"
-    value: "--max-old-space-size=1800"
 
 image: "docker.elastic.co/kibana/kibana"
 imageTag: "8.5.1"
@@ -339,26 +236,9 @@ serverHost: "0.0.0.0"
 
 healthCheckPath: "/app/kibana"
 
-
-podSecurityContext:
-  fsGroup: 1000
-
-securityContext:
-  capabilities:
-    drop:
-      - ALL
-  runAsNonRoot: true
-  runAsUser: 1000
-
 automountToken: true
 
-priorityClassName: ""
-
 httpPort: 5601
-
-
-updateStrategy:
-  type: "Recreate"
 
 service:
   type: LoadBalancer
@@ -370,26 +250,12 @@ service:
   loadBalancerSourceRanges: []
   httpPortName: http
 
-ingress:
-  enabled: false
-  className: "nginx"
-  pathtype: ImplementationSpecific
-  annotations: {}
-  hosts:
-    - host: kibana-example.local
-      paths:
-        - path: /
-
 readinessProbe:
   failureThreshold: 3
   initialDelaySeconds: 10
   periodSeconds: 10
   successThreshold: 3
   timeoutSeconds: 5
-
-
-nameOverride: ""
-fullnameOverride: ""
 ```
 
 ```bash
@@ -421,7 +287,8 @@ replicas: 1
 logstashConfig:
   logstash.yml: |
     http.host: 0.0.0.0
-    xpack.monitoring.enabled: false
+    # xpack.monitoring.enabled: false
+
 
 logstashPipeline:
   logstash.conf: |
@@ -435,20 +302,37 @@ logstashPipeline:
         hosts => [ "https://elasticsearch-master:9200" ]
         ssl => true
         manage_template => false
-        ssl_certificate_verification => false
-        index => "%logstash-%{+YYYY.MM.dd}"
+        ssl_certificate_verification => true
+        index => "ulaq-%{+YYYY.MM.dd}"
         document_type => "%{[@metadata][type]}"
-        user => "elastic"
-        password => "huw7eJ1prAxz0afX"  #update password
+        cacert => "/usr/share/logstash/certs/ca.crt"
+        user => "${ELASTICSEARCH_USERNAME}"
+        password => "${ELASTICSEARCH_PASSWORD}"  #update password
       }
     }
-
-logstashPatternDir: "/usr/share/logstash/patterns/"
 
 
 image: "docker.elastic.co/logstash/logstash"
 imageTag: "8.5.1"
 imagePullPolicy: "IfNotPresent"
+
+extraEnvs:
+  - name: "ELASTICSEARCH_USERNAME"
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: username
+  - name: "ELASTICSEARCH_PASSWORD"
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: password
+
+
+secretMounts:
+  - name: elasticsearch-master-certs
+    secretName: elasticsearch-master-certs
+    path: /usr/share/logstash/certs/
 
 
 logstashJavaOpts: "-Xmx1g -Xms1g"
@@ -467,59 +351,10 @@ volumeClaimTemplate:
     requests:
       storage: 1Gi
 
-rbac:
-  create: false
-  serviceAccountAnnotations: {}
-  serviceAccountName: ""
-
-
-podSecurityPolicy:
-  create: false
-  name: ""
-  spec:
-    privileged: false
-    fsGroup:
-      rule: RunAsAny
-    runAsUser:
-      rule: RunAsAny
-    seLinux:
-      rule: RunAsAny
-    supplementalGroups:
-      rule: RunAsAny
-    volumes:
-      - secret
-      - configMap
-      - persistentVolumeClaim
-
-persistence:
-  enabled: false
-
-antiAffinityTopologyKey: "kubernetes.io/hostname"
-
-antiAffinity: "hard"
-
-podManagementPolicy: "Parallel"
 
 httpPort: 9600
 
-
-updateStrategy: RollingUpdate
-
 maxUnavailable: 1
-
-podSecurityContext:
-  fsGroup: 1000
-  runAsUser: 1000
-
-securityContext:
-  capabilities:
-    drop:
-      - ALL
-  runAsNonRoot: true
-  runAsUser: 1000
-
-terminationGracePeriod: 120
-
 
 livenessProbe:
   httpGet:
@@ -541,7 +376,6 @@ readinessProbe:
   failureThreshold: 3
   successThreshold: 3
 
-
 service:
   annotations: {}
   type: ClusterIP
@@ -556,17 +390,6 @@ service:
       protocol: TCP
       targetPort: 8080
 
-ingress:
-  enabled: false
-  className: "nginx"
-  pathtype: ImplementationSpecific
-  hosts:
-    - host: logstash-example.local
-      paths:
-        - path: /beats
-          servicePort: 5044
-        - path: /http
-          servicePort: 8080
 ```
 
 ```bash
@@ -625,17 +448,6 @@ daemonset:
     - name: elasticsearch-master-certs
       secretName: elasticsearch-master-certs
       path: /usr/share/filebeat/certs/
-
-  securityContext:
-    runAsUser: 0
-    privileged: false
-  resources:
-    requests:
-      cpu: "100m"
-      memory: "100Mi"
-    limits:
-      cpu: "1000m"
-      memory: "200Mi"
 
 
 deployment:
@@ -742,7 +554,6 @@ clusterRoleRules:
       - list
       - watch
 
-updateStrategy: RollingUpdate
 ```
 
 ```bash
