@@ -83,6 +83,8 @@ nav:
         - "Vagrant Quickstart": devops/vagrant/vagrant-quickstart.md
     - Sealed-Secrets:
         - "Sealed-Secrets": devops/sealed-secrets/sealed-secrets.md
+    - Sonarqube:
+        - "Sonarqube": devops/sonarqube/advanced-installation.md
     - K8S Storage:
         - "NFS(Network File System)": devops/k8s-storage/nfs-install.md
         - "Longhorn Block Storage": devops/k8s-storage/longhorn.md
