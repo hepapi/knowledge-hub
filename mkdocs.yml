@@ -75,6 +75,10 @@ nav:
             - "Zookeeper Installation": devops/falcon-logscale/zookeeperinstallation.md
             - "Kafka Installation": devops/falcon-logscale/kafkainstallation.md
             - "LogScale Installation": devops/falcon-logscale/humioinstallation.md
+        - "Cluster Node Installation (bash)":
+            - "Kafka Install": devops/falcon-logscale/kafka.md
+            - "Humio Install": devops/falcon-logscale/humio.md
+            - "Readme": devops/falcon-logscale/readme.md
     - Sumo Logic:
         - "Install a Collector on Linux": devops/sumo/sumo-linux-collector.md
         - "Install a Collector on Windows": devops/sumo/sumo-windows-collector.md
