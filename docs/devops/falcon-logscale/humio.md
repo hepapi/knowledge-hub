@@ -1,3 +1,4 @@
+```
 #!/bin/bash
 
 KAFKA_HOST_1="172.31.18.173"    # Change here with ip of kafka1 node
@@ -123,5 +124,5 @@ sleep 2
 
 chown -R humio:humio /data/log/humio /data/humio/data
 
-
+```
 

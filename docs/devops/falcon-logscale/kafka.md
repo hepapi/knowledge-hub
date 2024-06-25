@@ -1,3 +1,4 @@
+```
 #!/bin/bash
 
 KAFKA_HOST_1="172.31.18.173"     # Change here with ip of kafka1 node
@@ -180,3 +181,4 @@ chown -R kafka:kafka /data/log/kafka /data/log/zookeeper /data/kafka/zookeeper /
 
 
 
+```
