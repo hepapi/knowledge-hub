@@ -73,11 +73,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#binbash" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -2306,19 +2301,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Kafka Install
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2329,97 +2311,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#apt-package-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      Apt package update
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#java-install" class="md-nav__link">
-    <span class="md-ellipsis">
-      Java Install
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-ip-addresses-to-hosts-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add IP Addresses to hosts file
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kafka-user-access" class="md-nav__link">
-    <span class="md-ellipsis">
-      Kafka user access
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kafka-targz-package-download-or-move" class="md-nav__link">
-    <span class="md-ellipsis">
-      Kafka tar.gz package download or move
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kafka-folders-create-and-access" class="md-nav__link">
-    <span class="md-ellipsis">
-      Kafka folders create and access
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#link-for-kafka" class="md-nav__link">
-    <span class="md-ellipsis">
-      Link for kafka
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#server-properties-config" class="md-nav__link">
-    <span class="md-ellipsis">
-      Server properties config
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -3213,88 +3104,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#apt-package-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      Apt package update
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#java-install" class="md-nav__link">
-    <span class="md-ellipsis">
-      Java Install
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-ip-addresses-to-hosts-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add IP Addresses to hosts file
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kafka-user-access" class="md-nav__link">
-    <span class="md-ellipsis">
-      Kafka user access
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kafka-targz-package-download-or-move" class="md-nav__link">
-    <span class="md-ellipsis">
-      Kafka tar.gz package download or move
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kafka-folders-create-and-access" class="md-nav__link">
-    <span class="md-ellipsis">
-      Kafka folders create and access
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#link-for-kafka" class="md-nav__link">
-    <span class="md-ellipsis">
-      Link for kafka
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#server-properties-config" class="md-nav__link">
-    <span class="md-ellipsis">
-      Server properties config
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -3317,150 +3126,188 @@
   
 
 
-<h1 id="binbash">!/bin/bash</h1>
-<p>KAFKA_HOST_1="172.31.18.173"     # Change here with ip of kafka1 node
-KAFKA_HOST_2="172.31.23.248"     # Change here with ip of kafka2 node
-KAFKA_HOST_3="172.31.25.184"     # Change here with ip of kafka3 node</p>
-<p>KAFKA_NODE_NUMBER=1             # Change here with id of kafka1 node</p>
-<p>KAFKA_PACKAGE_PATH=""           # If you'll use here change here with path of kafka package
-KAFKA_DOWNLOAD_LINK="https://downloads.apache.org/kafka/3.7.0/kafka_2.13-3.7.0.tgz"  # If you'll use here change here with path of kafka package</p>
-<h4 id="apt-package-update">Apt package update</h4>
-<p>apt-get update -y &amp;&amp; apt-get upgrade -y
-sleep 10</p>
-<h4 id="java-install">Java Install</h4>
-<p>apt-get install openjdk-21-jdk -y
-java --version
-sleep 10</p>
-<h4 id="add-ip-addresses-to-hosts-file">Add IP Addresses to hosts file</h4>
-<p>echo "$KAFKA_HOST_1 kafka1" &gt;&gt; /etc/hosts
-echo "$KAFKA_HOST_2 kafka2" &gt;&gt; /etc/hosts
-echo "$KAFKA_HOST_3 kafka3" &gt;&gt; /etc/hosts</p>
-<h4 id="kafka-user-access">Kafka user access</h4>
-<p>adduser kafka --shell=/bin/false --no-create-home --system --group
-sleep 2</p>
-<h4 id="kafka-targz-package-download-or-move">Kafka tar.gz package download or move</h4>
-<p>if [ -n "$KAFKA_DOWNLOAD_LINK" ]; then</p>
-<div class="highlight"><pre><span></span><code>cd /opt &amp;&amp; wget $KAFKA_DOWNLOAD_LINK
-tar zxf &quot;$(basename $KAFKA_DOWNLOAD_LINK)&quot;
+  <h1>Kafka Install</h1>
 
-# Get list of output files
-EXTRACTED_FILES=$(ls)
-
-# Print the resulting files to the screen
-echo &quot;Get list of output files:&quot;
-echo &quot;$EXTRACTED_FILES&quot;
-
-# Assign the name of the first file to a variable
-KAFKA_PACKAGE_FILE=$(echo &quot;$EXTRACTED_FILES&quot; | head -n 1)
-ln -s /opt/$KAFKA_PACKAGE_FILE /opt/kafka
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>#!/bin/bash
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>KAFKA_HOST_1=&quot;172.31.18.173&quot;     # Change here with ip of kafka1 node
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>KAFKA_HOST_2=&quot;172.31.23.248&quot;     # Change here with ip of kafka2 node
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>KAFKA_HOST_3=&quot;172.31.25.184&quot;     # Change here with ip of kafka3 node
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>KAFKA_NODE_NUMBER=1             # Change here with id of kafka1 node
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>KAFKA_PACKAGE_PATH=&quot;&quot;           # If you&#39;ll use here change here with path of kafka package
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>KAFKA_DOWNLOAD_LINK=&quot;https://downloads.apache.org/kafka/3.7.0/kafka_2.13-3.7.0.tgz&quot;  # If you&#39;ll use here change here with path of kafka package
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>#### Apt package update ####
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>apt-get update -y &amp;&amp; apt-get upgrade -y
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>sleep 10
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>#### Java Install ####
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>apt-get install openjdk-21-jdk -y
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>java --version
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>sleep 10
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>#### Add IP Addresses to hosts file
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>echo &quot;$KAFKA_HOST_1 kafka1&quot; &gt;&gt; /etc/hosts
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>echo &quot;$KAFKA_HOST_2 kafka2&quot; &gt;&gt; /etc/hosts
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>echo &quot;$KAFKA_HOST_3 kafka3&quot; &gt;&gt; /etc/hosts
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>#### Kafka user access ####
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>adduser kafka --shell=/bin/false --no-create-home --system --group
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>sleep 2
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>#### Kafka tar.gz package download or move ####
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>if [ -n &quot;$KAFKA_DOWNLOAD_LINK&quot; ]; then
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>    cd /opt &amp;&amp; wget $KAFKA_DOWNLOAD_LINK
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>    tar zxf &quot;$(basename $KAFKA_DOWNLOAD_LINK)&quot;
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>    # Get list of output files
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>    EXTRACTED_FILES=$(ls)
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>    # Print the resulting files to the screen
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>    echo &quot;Get list of output files:&quot;
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>    echo &quot;$EXTRACTED_FILES&quot;
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>    # Assign the name of the first file to a variable
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>    KAFKA_PACKAGE_FILE=$(echo &quot;$EXTRACTED_FILES&quot; | head -n 1)
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>    ln -s /opt/$KAFKA_PACKAGE_FILE /opt/kafka
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>else 
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>    cd /opt &amp;&amp; cp -R $KAFKA_PACKAGE_PATH .
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>    tar zxf $KAFKA_PACKAGE_PATH
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>    # Get list of output files
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>    EXTRACTED_FILES=$(ls)
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>    # Print the resulting files to the screen
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>    echo &quot;Get list of output files:&quot;
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>    echo &quot;$EXTRACTED_FILES&quot;
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>    # Assign the name of the first file to a variable
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>    KAFKA_PACKAGE_FILE=$(echo &quot;$EXTRACTED_FILES&quot; | head -n 1)
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>    ln -s /opt/$KAFKA_PACKAGE_FILE /opt/kafka
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>
+<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>fi
+<a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>sleep 2
+<a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>
+<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>
+<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>#### Kafka folders create and access ####
+<a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>mkdir -p /data/log/kafka
+<a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>mkdir -p /data/log/zookeeper
+<a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>mkdir -p /data/kafka/kafka
+<a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>mkdir -p /data/kafka/zookeeper
+<a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a>chown -R kafka:kafka /data/log/kafka /data/log/zookeeper /data/kafka/zookeeper /data/kafka/kafka
+<a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a>sleep 2
+<a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a>
+<a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>
+<a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a>#### Link for kafka ####
+<a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>ln -s &quot;/opt/$KAFKA_PACKAGE_FILE&quot; /opt/kafka
+<a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>sleep 2
+<a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a>
+<a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a>
+<a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a>#### Server properties config ####
+<a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a>cd /opt/kafka/config
+<a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a>FILE=&quot;server.properties&quot;
+<a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a>
+<a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a># New variables
+<a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a>BROKER_ID=&quot;broker.id=$KAFKA_NODE_NUMBER&quot;
+<a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a>NEW_LOG_DIRS=&quot;log.dirs=/data/kafka/kafka&quot;
+<a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a>sleep 2
+<a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a>
+<a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a>
+<a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a># Update specific values 
+<a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a>sed -i &quot;s/^broker.id=.*/$BROKER_ID/&quot; &quot;$FILE&quot;
+<a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a>sed -i &quot;s|^log.dirs=.*|$NEW_LOG_DIRS|&quot; &quot;$FILE&quot;
+<a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a>echo &quot;delete.topic.enable = true&quot; &gt;&gt; &quot;$FILE&quot;
+<a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a>sleep 2
+<a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a>
+<a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a>
+<a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a>#### Kafka user chown ####
+<a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a>chown -R kafka:kafka /opt/kafka
+<a id="__codelineno-0-102" name="__codelineno-0-102" href="#__codelineno-0-102"></a>sleep 2
+<a id="__codelineno-0-103" name="__codelineno-0-103" href="#__codelineno-0-103"></a>
+<a id="__codelineno-0-104" name="__codelineno-0-104" href="#__codelineno-0-104"></a>
+<a id="__codelineno-0-105" name="__codelineno-0-105" href="#__codelineno-0-105"></a>#### Zookeper Config ####
+<a id="__codelineno-0-106" name="__codelineno-0-106" href="#__codelineno-0-106"></a>cd /opt/kafka/config
+<a id="__codelineno-0-107" name="__codelineno-0-107" href="#__codelineno-0-107"></a>rm -rf zookeeper.properties
+<a id="__codelineno-0-108" name="__codelineno-0-108" href="#__codelineno-0-108"></a>cat &lt;&lt;EOF &gt;&gt; zookeeper.properties
+<a id="__codelineno-0-109" name="__codelineno-0-109" href="#__codelineno-0-109"></a>dataDir=/data/kafka/zookeeper
+<a id="__codelineno-0-110" name="__codelineno-0-110" href="#__codelineno-0-110"></a>clientPort=2181
+<a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a>maxClientCnxns=0
+<a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a>admin.enableServer=false
+<a id="__codelineno-0-113" name="__codelineno-0-113" href="#__codelineno-0-113"></a>server.1=kafka1:2888:3888
+<a id="__codelineno-0-114" name="__codelineno-0-114" href="#__codelineno-0-114"></a>server.2=kafka2:2888:3888
+<a id="__codelineno-0-115" name="__codelineno-0-115" href="#__codelineno-0-115"></a>server.3=kafka3:2888:3888
+<a id="__codelineno-0-116" name="__codelineno-0-116" href="#__codelineno-0-116"></a>4lw.commands.whitelist=*
+<a id="__codelineno-0-117" name="__codelineno-0-117" href="#__codelineno-0-117"></a>tickTime=2000
+<a id="__codelineno-0-118" name="__codelineno-0-118" href="#__codelineno-0-118"></a>initLimit=5
+<a id="__codelineno-0-119" name="__codelineno-0-119" href="#__codelineno-0-119"></a>syncLimit=2
+<a id="__codelineno-0-120" name="__codelineno-0-120" href="#__codelineno-0-120"></a>EOF
+<a id="__codelineno-0-121" name="__codelineno-0-121" href="#__codelineno-0-121"></a>sleep 2
+<a id="__codelineno-0-122" name="__codelineno-0-122" href="#__codelineno-0-122"></a>
+<a id="__codelineno-0-123" name="__codelineno-0-123" href="#__codelineno-0-123"></a>
+<a id="__codelineno-0-124" name="__codelineno-0-124" href="#__codelineno-0-124"></a>#### Zookeper chown ####
+<a id="__codelineno-0-125" name="__codelineno-0-125" href="#__codelineno-0-125"></a>echo $KAFKA_NODE_NUMBER &gt;/data/kafka/zookeeper/myid
+<a id="__codelineno-0-126" name="__codelineno-0-126" href="#__codelineno-0-126"></a>chown -R kafka:kafka /data/kafka/zookeeper
+<a id="__codelineno-0-127" name="__codelineno-0-127" href="#__codelineno-0-127"></a>sleep 2
+<a id="__codelineno-0-128" name="__codelineno-0-128" href="#__codelineno-0-128"></a>
+<a id="__codelineno-0-129" name="__codelineno-0-129" href="#__codelineno-0-129"></a>
+<a id="__codelineno-0-130" name="__codelineno-0-130" href="#__codelineno-0-130"></a>#### Zookeeper service config ####
+<a id="__codelineno-0-131" name="__codelineno-0-131" href="#__codelineno-0-131"></a>cd /etc/systemd/system
+<a id="__codelineno-0-132" name="__codelineno-0-132" href="#__codelineno-0-132"></a>rm -rf zookeeper.service
+<a id="__codelineno-0-133" name="__codelineno-0-133" href="#__codelineno-0-133"></a>cat &lt;&lt;EOF &gt;&gt; zookeeper.service
+<a id="__codelineno-0-134" name="__codelineno-0-134" href="#__codelineno-0-134"></a>[Unit]
+<a id="__codelineno-0-135" name="__codelineno-0-135" href="#__codelineno-0-135"></a>
+<a id="__codelineno-0-136" name="__codelineno-0-136" href="#__codelineno-0-136"></a>[Service]
+<a id="__codelineno-0-137" name="__codelineno-0-137" href="#__codelineno-0-137"></a>Type=simple
+<a id="__codelineno-0-138" name="__codelineno-0-138" href="#__codelineno-0-138"></a>User=kafka
+<a id="__codelineno-0-139" name="__codelineno-0-139" href="#__codelineno-0-139"></a>LimitNOFILE=800000
+<a id="__codelineno-0-140" name="__codelineno-0-140" href="#__codelineno-0-140"></a>Environment=&quot;LOG_DIR=/data/log/zookeeper&quot;
+<a id="__codelineno-0-141" name="__codelineno-0-141" href="#__codelineno-0-141"></a>Environment=&quot;GC_LOG_ENABLED=true&quot;
+<a id="__codelineno-0-142" name="__codelineno-0-142" href="#__codelineno-0-142"></a>Environment=&quot;KAFKA_HEAP_OPTS=-Xms512M -Xmx4G&quot;
+<a id="__codelineno-0-143" name="__codelineno-0-143" href="#__codelineno-0-143"></a>ExecStart=/opt/kafka/bin/zookeeper-server-start.sh /opt/kafka/config/zookeeper.properties
+<a id="__codelineno-0-144" name="__codelineno-0-144" href="#__codelineno-0-144"></a>Restart=on-failure
+<a id="__codelineno-0-145" name="__codelineno-0-145" href="#__codelineno-0-145"></a>TimeoutSec=900
+<a id="__codelineno-0-146" name="__codelineno-0-146" href="#__codelineno-0-146"></a>[Install]
+<a id="__codelineno-0-147" name="__codelineno-0-147" href="#__codelineno-0-147"></a>WantedBy=multi-user.target
+<a id="__codelineno-0-148" name="__codelineno-0-148" href="#__codelineno-0-148"></a>EOF
+<a id="__codelineno-0-149" name="__codelineno-0-149" href="#__codelineno-0-149"></a>sleep 2
+<a id="__codelineno-0-150" name="__codelineno-0-150" href="#__codelineno-0-150"></a>
+<a id="__codelineno-0-151" name="__codelineno-0-151" href="#__codelineno-0-151"></a>#### Zookeeper service start ####
+<a id="__codelineno-0-152" name="__codelineno-0-152" href="#__codelineno-0-152"></a>chown -R kafka:kafka /data/kafka/zookeeper
+<a id="__codelineno-0-153" name="__codelineno-0-153" href="#__codelineno-0-153"></a>sleep 2
+<a id="__codelineno-0-154" name="__codelineno-0-154" href="#__codelineno-0-154"></a>
+<a id="__codelineno-0-155" name="__codelineno-0-155" href="#__codelineno-0-155"></a>#### Kafka service config ####
+<a id="__codelineno-0-156" name="__codelineno-0-156" href="#__codelineno-0-156"></a>cd /etc/systemd/system
+<a id="__codelineno-0-157" name="__codelineno-0-157" href="#__codelineno-0-157"></a>rm -rf kafka.service
+<a id="__codelineno-0-158" name="__codelineno-0-158" href="#__codelineno-0-158"></a>cat &lt;&lt;EOF &gt;&gt; kafka.service
+<a id="__codelineno-0-159" name="__codelineno-0-159" href="#__codelineno-0-159"></a>[Unit]
+<a id="__codelineno-0-160" name="__codelineno-0-160" href="#__codelineno-0-160"></a>
+<a id="__codelineno-0-161" name="__codelineno-0-161" href="#__codelineno-0-161"></a>Requires=zookeeper.service
+<a id="__codelineno-0-162" name="__codelineno-0-162" href="#__codelineno-0-162"></a>After=zookeeper.service
+<a id="__codelineno-0-163" name="__codelineno-0-163" href="#__codelineno-0-163"></a>
+<a id="__codelineno-0-164" name="__codelineno-0-164" href="#__codelineno-0-164"></a>[Service]
+<a id="__codelineno-0-165" name="__codelineno-0-165" href="#__codelineno-0-165"></a>Type=simple
+<a id="__codelineno-0-166" name="__codelineno-0-166" href="#__codelineno-0-166"></a>User=kafka
+<a id="__codelineno-0-167" name="__codelineno-0-167" href="#__codelineno-0-167"></a>LimitNOFILE=800000
+<a id="__codelineno-0-168" name="__codelineno-0-168" href="#__codelineno-0-168"></a>Environment=&quot;LOG_DIR=/data/log/kafka&quot;
+<a id="__codelineno-0-169" name="__codelineno-0-169" href="#__codelineno-0-169"></a>Environment=&quot;GC_LOG_ENABLED=true&quot;
+<a id="__codelineno-0-170" name="__codelineno-0-170" href="#__codelineno-0-170"></a>Environment=&quot;KAFKA_HEAP_OPTS=-Xms512M -Xmx4G&quot;
+<a id="__codelineno-0-171" name="__codelineno-0-171" href="#__codelineno-0-171"></a>ExecStart=/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
+<a id="__codelineno-0-172" name="__codelineno-0-172" href="#__codelineno-0-172"></a>Restart=on-failure
+<a id="__codelineno-0-173" name="__codelineno-0-173" href="#__codelineno-0-173"></a>TimeoutSec=900
+<a id="__codelineno-0-174" name="__codelineno-0-174" href="#__codelineno-0-174"></a>[Install]
+<a id="__codelineno-0-175" name="__codelineno-0-175" href="#__codelineno-0-175"></a>WantedBy=multi-user.target
+<a id="__codelineno-0-176" name="__codelineno-0-176" href="#__codelineno-0-176"></a>EOF
+<a id="__codelineno-0-177" name="__codelineno-0-177" href="#__codelineno-0-177"></a>
+<a id="__codelineno-0-178" name="__codelineno-0-178" href="#__codelineno-0-178"></a>sleep 2
+<a id="__codelineno-0-179" name="__codelineno-0-179" href="#__codelineno-0-179"></a>chown -R kafka:kafka /data/log/kafka /data/log/zookeeper /data/kafka/zookeeper /data/kafka/kafka /opt/kafka
 </code></pre></div>
-<p>else </p>
-<div class="highlight"><pre><span></span><code>cd /opt &amp;&amp; cp -R $KAFKA_PACKAGE_PATH .
-tar zxf $KAFKA_PACKAGE_PATH
-
-# Get list of output files
-EXTRACTED_FILES=$(ls)
-
-# Print the resulting files to the screen
-echo &quot;Get list of output files:&quot;
-echo &quot;$EXTRACTED_FILES&quot;
-
-# Assign the name of the first file to a variable
-KAFKA_PACKAGE_FILE=$(echo &quot;$EXTRACTED_FILES&quot; | head -n 1)
-ln -s /opt/$KAFKA_PACKAGE_FILE /opt/kafka
-</code></pre></div>
-<p>fi
-sleep 2</p>
-<h4 id="kafka-folders-create-and-access">Kafka folders create and access</h4>
-<p>mkdir -p /data/log/kafka
-mkdir -p /data/log/zookeeper
-mkdir -p /data/kafka/kafka
-mkdir -p /data/kafka/zookeeper
-chown -R kafka:kafka /data/log/kafka /data/log/zookeeper /data/kafka/zookeeper /data/kafka/kafka
-sleep 2</p>
-<h4 id="link-for-kafka">Link for kafka</h4>
-<p>ln -s "/opt/$KAFKA_PACKAGE_FILE" /opt/kafka
-sleep 2</p>
-<h4 id="server-properties-config">Server properties config</h4>
-<p>cd /opt/kafka/config
-FILE="server.properties"</p>
-<h1 id="new-variables">New variables</h1>
-<p>BROKER_ID="broker.id=$KAFKA_NODE_NUMBER"
-NEW_LOG_DIRS="log.dirs=/data/kafka/kafka"
-sleep 2</p>
-<h1 id="update-specific-values">Update specific values</h1>
-<p>sed -i "s/^broker.id=.<em>/$BROKER_ID/" "$FILE"
-sed -i "s|^log.dirs=.</em>|$NEW_LOG_DIRS|" "$FILE"
-echo "delete.topic.enable = true" &gt;&gt; "$FILE"
-sleep 2</p>
-<h4 id="kafka-user-chown">Kafka user chown</h4>
-<p>chown -R kafka:kafka /opt/kafka
-sleep 2</p>
-<h4 id="zookeper-config">Zookeper Config</h4>
-<p>cd /opt/kafka/config
-rm -rf zookeeper.properties
-cat &lt;<EOF >&gt; zookeeper.properties
-dataDir=/data/kafka/zookeeper
-clientPort=2181
-maxClientCnxns=0
-admin.enableServer=false
-server.1=kafka1:2888:3888
-server.2=kafka2:2888:3888
-server.3=kafka3:2888:3888
-4lw.commands.whitelist=*
-tickTime=2000
-initLimit=5
-syncLimit=2
-EOF
-sleep 2</p>
-<h4 id="zookeper-chown">Zookeper chown</h4>
-<p>echo $KAFKA_NODE_NUMBER &gt;/data/kafka/zookeeper/myid
-chown -R kafka:kafka /data/kafka/zookeeper
-sleep 2</p>
-<h4 id="zookeeper-service-config">Zookeeper service config</h4>
-<p>cd /etc/systemd/system
-rm -rf zookeeper.service
-cat &lt;<EOF >&gt; zookeeper.service
-[Unit]</p>
-<p>[Service]
-Type=simple
-User=kafka
-LimitNOFILE=800000
-Environment="LOG_DIR=/data/log/zookeeper"
-Environment="GC_LOG_ENABLED=true"
-Environment="KAFKA_HEAP_OPTS=-Xms512M -Xmx4G"
-ExecStart=/opt/kafka/bin/zookeeper-server-start.sh /opt/kafka/config/zookeeper.properties
-Restart=on-failure
-TimeoutSec=900
-[Install]
-WantedBy=multi-user.target
-EOF
-sleep 2</p>
-<h4 id="zookeeper-service-start">Zookeeper service start</h4>
-<p>chown -R kafka:kafka /data/kafka/zookeeper
-sleep 2</p>
-<h4 id="kafka-service-config">Kafka service config</h4>
-<p>cd /etc/systemd/system
-rm -rf kafka.service
-cat &lt;<EOF >&gt; kafka.service
-[Unit]</p>
-<p>Requires=zookeeper.service
-After=zookeeper.service</p>
-<p>[Service]
-Type=simple
-User=kafka
-LimitNOFILE=800000
-Environment="LOG_DIR=/data/log/kafka"
-Environment="GC_LOG_ENABLED=true"
-Environment="KAFKA_HEAP_OPTS=-Xms512M -Xmx4G"
-ExecStart=/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
-Restart=on-failure
-TimeoutSec=900
-[Install]
-WantedBy=multi-user.target
-EOF</p>
-<p>sleep 2
-chown -R kafka:kafka /data/log/kafka /data/log/zookeeper /data/kafka/zookeeper /data/kafka/kafka /opt/kafka</p>
 
 
 
