@@ -48,6 +48,8 @@ nav:
         - "Docker Proxy Repository": devops/nexus/docker-proxy-repo.md
         - "Pull Images to Kubernetes": devops/nexus/pull-to-kubernetes.md
         - "RKE2 Registry Configuration": devops/nexus/registry-configuration.md
+    - DevSecOps:
+        - "DevSecOps with SonarQube, OWASP Dependency-Check, Conftest and Trivy": devops/devsecops/DevSecOps-SonarQube-OWASP-Conftest-Trvy.md
     - Jenkins:
         - "Jenkins Installation": devops/jenkins/jenkins-installation.md
         - "Jenkins Shared Library": devops/jenkins/shared-library.md
