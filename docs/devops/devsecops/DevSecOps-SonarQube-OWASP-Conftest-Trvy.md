@@ -35,7 +35,9 @@ Conftest leverages the Open Policy Agent (OPA) to evaluate policies written in R
 - Terraform files: Validating that Terraform plans and configurations adhere to organizational policies.
 - Dockerfiles: Checking that Docker images are built securely and according to best practices.
 
-## What is Trivy?
+## Trivy
+
+### What is Trivy?
 Trivy is a vulnerability scanner that is open-source and has been specifically developed for containers. This program is efficient and user-friendly, helping in the detection of vulnerabilities in container images and filesystems. Trivy's primary objective is to conduct scans on container images to identify any known vulnerabilities present in the installed packages and libraries.
 
 ### Some key features of Trivy include:
@@ -45,9 +47,11 @@ Trivy is a vulnerability scanner that is open-source and has been specifically d
 - Multiple output formats
 - Continuous updates
 
+## Hands-On
+
 Let's include the devsecops tools we briefly mentioned above into the pipeline and do some hands-on. Let's get started.
 
-## Step-1 Launch EC2 Instance
+### Step-1 Launch EC2 Instance
 Launch an AWS t2-large Instance. Use the image as Amazon Linux. You can create a new key pair or use an existing one. 
 - Enable 80, 443, 8080 and 9000 port settings in the Security Group.
 - You can add the userdata below for jenkins,docker,trivy installation.
@@ -84,7 +88,7 @@ systemctl restart jenkins
 rpm -ivh https://github.com/aquasecurity/trivy/releases/download/v0.31.3/trivy_0.31.3_Linux-64bit.rpm
 ```
 
-## Step-2 Configure Jenkins-Server
+### Step-2 Configure Jenkins-Server
 
 - After instance state running, we can configure the jenkins server.Now, grab your Public IP Address
 
@@ -102,7 +106,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ![image](./image/jenkins-user.png)
 
 
-## Step-3 Install Sonarqube as a docker container
+### Step-3 Install Sonarqube as a docker container
 
 - Go to Instance terminal and enter below code to install sonarqube
 
@@ -119,7 +123,7 @@ password: admin
 ![image](./image/sonar-login.png)
 ![image](./image/sonar-dash.png)
 
-## Step-4 Install Plugins
+### Step-4 Install Plugins
 
 - Go to Jenkins WebUI Manage Jenkins --> Plugins --> Available Plugins Install below plugins
 
@@ -133,7 +137,7 @@ password: admin
 
 ![image](./image/jenkins-plugin.png)
 
-## Step-5 Configure Java, Maven in Global Tool Configuration
+### Step-5 Configure Java, Maven in Global Tool Configuration
 
 - Go to Jenkins WebUI Manage Jenkins --> Tools --> Install JDK, Maven and SonarQube Scanner -->Click on Apply and Save
 
@@ -144,7 +148,7 @@ password: admin
 ![image](./image/maven-tool.png)
 
 
-## Step-5 Configure Sonarqube in Manage Jenkins
+### Step-5 Configure Sonarqube in Manage Jenkins
 
 ```bash
 <EC2 Public IP Address:9000>
@@ -169,7 +173,7 @@ password: admin
 
 ![image](./image/jenkins-plug.png)
 
-## Step-6 WebHook Configuration on Sonarqube
+### Step-6 WebHook Configuration on Sonarqube
 
 - Go to SonarQube WebUI --> Administration –> Configuration –> webhooks
 
@@ -177,7 +181,7 @@ password: admin
 ![image](./image/quality-2.png)
 ![image](./image/webhook.png)
 
-## Step-7 Create a pipeline
+### Step-7 Create a pipeline
 
 - Go to Jenkins WebUI -->New item-->Pipeline
 
@@ -316,7 +320,7 @@ pipeline {
 
 - The reason for this is that if you check the GitHub repository we included in the pipeline, you will see a file named dockerfile-conftest.rego. Conftest performs the Dockerfile scan based on the conditions in this file. We received a failure because the Dockerfile we want to use does not meet the necessary requirements specified. We will correct this.
 
-## Step-8 Sonarqube inspection and add Custom Quality Gate
+### Step-8 Sonarqube inspection and add Custom Quality Gate
 
 - But first, let's discuss the pipeline output and then talk a bit about the SonarQube interface and quality gates.
 
@@ -338,7 +342,7 @@ pipeline {
 
 ![image](./image/gate-4.png)
 
-## Step-9 Dependency-Check inspection
+### Step-9 Dependency-Check inspection
 
 - You can inspect your source code dependency-check score by clicking Dependency-Check section
 
@@ -348,7 +352,7 @@ pipeline {
 
 ![image](./image/check-3.png)
 
-## Step-10 Improving Dockerfile security
+### Step-10 Improving Dockerfile security
 
 Now it's time to improve the Dockerfile security based on the Conftest results.
 
@@ -370,7 +374,7 @@ After this change, you should be able to successfully pass the Dockerfile scanni
 
 ![image](./image/trivy-1.png)
 
-## Step-11 Docker Image Scan via Trivy
+### Step-11 Docker Image Scan via Trivy
 
 Lastly, the pipeline will fail at the image scanning stage with Trivy. If we look at the Jenkinsfile, it is designed to fail if a critical vulnerability is found during the image scan with Trivy. At this stage, the critical vulnerabilities in the image need to be resolved before proceeding. The pipeline output includes recommendations on how to resolve the vulnerabilities.
 
