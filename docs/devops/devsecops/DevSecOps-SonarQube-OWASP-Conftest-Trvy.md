@@ -1,5 +1,7 @@
 # DevSecOps End to End Pipeline with SonarQube,OWASP Dependency-Check,Conftest and Trivy
 
+Since DevOps entered our lives, it has been loved and widely adopted, and it seems it will continue to spread rapidly. While automating and speeding up delivery processes with DevOps, we cannot overlook the security aspect, which brings the DevSecOps methodology into focus. In this article, I discussed examples of how to fully implement DevSecOps in CI by checking code quality with SonarQube, scanning code dependencies with OWASP Dependency-Check, validating your Kubernetes, Terraform, and Dockerfile files with Conftest, and scanning Docker images with Trivy. Enjoy your learning!
+
 ## SonarQube
 
 ### What is Vulnerability ?
@@ -27,15 +29,13 @@ Dependency-check has a command line interface, a Maven plugin, an Ant task, and 
 
 ## Conftest
 
-### What is Conftest?
+## What is Conftest?
 Conftest leverages the Open Policy Agent (OPA) to evaluate policies written in Rego language against configuration files. It's commonly used for:
 - Kubernetes configurations: Ensuring that Kubernetes manifests meet security and compliance requirements.
 - Terraform files: Validating that Terraform plans and configurations adhere to organizational policies.
 - Dockerfiles: Checking that Docker images are built securely and according to best practices.
 
-## Trivy
-
-### What is Trivy?
+## What is Trivy?
 Trivy is a vulnerability scanner that is open-source and has been specifically developed for containers. This program is efficient and user-friendly, helping in the detection of vulnerabilities in container images and filesystems. Trivy's primary objective is to conduct scans on container images to identify any known vulnerabilities present in the installed packages and libraries.
 
 ### Some key features of Trivy include:
@@ -282,7 +282,6 @@ pipeline {
     }
 }
 ```
-
 - Tools: Specifies the tools needed for the pipeline, in this case, JDK and Maven.
 
 - Git Checkout: Check out the code from the specified Git repository.
