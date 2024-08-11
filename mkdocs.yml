@@ -50,6 +50,7 @@ nav:
         - "RKE2 Registry Configuration": devops/nexus/registry-configuration.md
     - DevSecOps:
         - "DevSecOps with SonarQube, OWASP Dependency-Check, Conftest and Trivy": devops/devsecops/DevSecOps-SonarQube-OWASP-Conftest-Trvy.md
+        - "External Secret Operator via Minikube and AWS Secret Manager": devops/devsecops/external-secret-operator.md
     - Jenkins:
         - "Jenkins Installation": devops/jenkins/jenkins-installation.md
         - "Jenkins Shared Library": devops/jenkins/shared-library.md
