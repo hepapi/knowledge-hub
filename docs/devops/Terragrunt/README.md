@@ -123,7 +123,7 @@ Other blocks you can configure in your `terraform.hcl` file include:
 You will need `dev` and `prod` accounts. You can create them using your main account. Then, you should create an IAM user account for logging in
 multiple accounts, namely SSO. In our example, our account is the "Management Account" which controls the other accounts. Similarly, `dev` and `prod` accounts are the "Environment Accounts" on which the resources are created. The IAM user account should be able to login to all account using "Access Portal".
 
-Before starting, make sure that AWS CLI is installed and configured on your desktop. If not, refer to [download page of AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html). After successful download, configure the CLI with IAM credentials of "Management Account".
+Before starting, make sure that AWS CLI is installed and configured on your desktop. If not, refer to [download page of AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html). After successful download, configure the CLI with IAM credentials of created IAM user. If you don't have, you can get credentials under IAM service.
 
 ```bash
 aws configure
