@@ -54,6 +54,8 @@ nav:
     - Jenkins:
         - "Jenkins Installation": devops/jenkins/jenkins-installation.md
         - "Jenkins Shared Library": devops/jenkins/shared-library.md
+    - Terraform:
+        - "What is Terragrunt?": devops/Terragrunt/README.md
     - Ansible:
         - "Ansible Installation": devops/ansible/ansible-installations.md
         - "About Ansible": devops/ansible/what-is-ansible.md
