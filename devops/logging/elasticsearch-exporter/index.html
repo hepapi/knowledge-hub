@@ -9,18 +9,18 @@
       
       
       
-        <link rel="prev" href="../ELK-stack-with-FileBeat/">
+        <link rel="prev" href="../Index-Lifecycle-Management/">
       
       
-        <link rel="next" href="../elasticsearch-exporter/">
+        <link rel="next" href="../loki/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
     
     
       
-        <title>ELK Index Lifecycle Management - Hepapi Knowledge Hub</title>
+        <title>Elasticsearch-Exporter for Prometheus-Grafana - Hepapi Knowledge Hub</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#elasticsearch-index-lifecycle-management" class="md-skip">
+        <a href="#elasticsearch-exporter" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ELK Index Lifecycle Management
+              Elasticsearch-Exporter for Prometheus-Grafana
             
           </span>
         </div>
@@ -1958,7 +1958,7 @@
             
   
   <span class="md-ellipsis">
-    Logging-Monitoring
+    Logging
   </span>
   
 
@@ -1968,7 +1968,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_14_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_14">
             <span class="md-nav__icon md-icon"></span>
-            Logging-Monitoring
+            Logging
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1984,6 +1984,27 @@
   
   <span class="md-ellipsis">
     ELK Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Index-Lifecycle-Management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ELK Index Lifecycle Management
   </span>
   
 
@@ -2013,7 +2034,7 @@
           
   
   <span class="md-ellipsis">
-    ELK Index Lifecycle Management
+    Elasticsearch-Exporter for Prometheus-Grafana
   </span>
   
 
@@ -2024,7 +2045,7 @@
         
   
   <span class="md-ellipsis">
-    ELK Index Lifecycle Management
+    Elasticsearch-Exporter for Prometheus-Grafana
   </span>
   
 
@@ -2046,56 +2067,116 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#indexing" class="md-nav__link">
+  <a href="#step-by-step-guide-to-configure-elasticsearch-exporter" class="md-nav__link">
     <span class="md-ellipsis">
-      Indexing:
+      Step-by-step guide to configure Elasticsearch Exporter
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-step guide to configure Elasticsearch Exporter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-system-user-for-elasticsearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a system user for Elasticsearch
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#create-repository" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#download-elasticsearch-exporter" class="md-nav__link">
     <span class="md-ellipsis">
-      Create Repository:
+      Download Elasticsearch Exporter
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#index-template" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#extract-the-targz-file" class="md-nav__link">
     <span class="md-ellipsis">
-      Index Template:
+      Extract the tar.gz file
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#index-lifecycle-policy" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#move-to-the-extracted-directory" class="md-nav__link">
     <span class="md-ellipsis">
-      Index Lifecycle Policy:
+      Move to the extracted directory
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#snapshot-policy" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#copy-the-exporter-binary-to-usrlocalbin" class="md-nav__link">
     <span class="md-ellipsis">
-      Snapshot Policy:
+      Copy the exporter binary to /usr/local/bin/
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#restore-snapshots" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#change-ownership-of-the-exporter-binary" class="md-nav__link">
     <span class="md-ellipsis">
-      Restore snapshots:
+      Change ownership of the exporter binary
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-systemd-service-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a systemd service file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-the-elasticsearch-exporter-service-and-enable-the-service-to-start-on-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start the Elasticsearch Exporter service and enable the service to start on boot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-prometheusyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Prometheus.yml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-grafana-dashboard-for-elasticsearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add Grafana Dashboard for Elasticsearch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-alert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add alert
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2115,11 +2196,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../elasticsearch-exporter/" class="md-nav__link">
+      <a href="../loki/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Elasticsearch-Exporter for Prometheus-Grafana
+    Grafana Loki
   </span>
   
 
@@ -3446,56 +3527,116 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#indexing" class="md-nav__link">
+  <a href="#step-by-step-guide-to-configure-elasticsearch-exporter" class="md-nav__link">
     <span class="md-ellipsis">
-      Indexing:
+      Step-by-step guide to configure Elasticsearch Exporter
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-step guide to configure Elasticsearch Exporter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-system-user-for-elasticsearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a system user for Elasticsearch
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#create-repository" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#download-elasticsearch-exporter" class="md-nav__link">
     <span class="md-ellipsis">
-      Create Repository:
+      Download Elasticsearch Exporter
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#index-template" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#extract-the-targz-file" class="md-nav__link">
     <span class="md-ellipsis">
-      Index Template:
+      Extract the tar.gz file
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#index-lifecycle-policy" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#move-to-the-extracted-directory" class="md-nav__link">
     <span class="md-ellipsis">
-      Index Lifecycle Policy:
+      Move to the extracted directory
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#snapshot-policy" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#copy-the-exporter-binary-to-usrlocalbin" class="md-nav__link">
     <span class="md-ellipsis">
-      Snapshot Policy:
+      Copy the exporter binary to /usr/local/bin/
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#restore-snapshots" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#change-ownership-of-the-exporter-binary" class="md-nav__link">
     <span class="md-ellipsis">
-      Restore snapshots:
+      Change ownership of the exporter binary
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-systemd-service-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a systemd service file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-the-elasticsearch-exporter-service-and-enable-the-service-to-start-on-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start the Elasticsearch Exporter service and enable the service to start on boot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-prometheusyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Prometheus.yml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-grafana-dashboard-for-elasticsearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add Grafana Dashboard for Elasticsearch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-alert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add alert
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3514,7 +3655,7 @@
                   
 
   
-    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/logging-monitoring/Index-Lifecycle-Management.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/logging/elasticsearch-exporter.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -3522,75 +3663,115 @@
   
 
 
-<h1 id="elasticsearch-index-lifecycle-management">Elasticsearch Index Lifecycle Management</h1>
-<h2 id="indexing">Indexing:</h2>
-<p>Indices based on the indexname defined on Logstash need to be created to be visible on Kibana. To do this, the pattern specified in the left menu is written and created by clicking on the Create Index Pattern section under Stack management. </p>
-<p><img alt="indexing" src="../images/1.png" /></p>
-<h2 id="create-repository">Create Repository:</h2>
-<p>However, a repo must be created and registered to keep snapshots.</p>
-<p><strong>/Stack management/Snapshot and Restore/Repositories</strong></p>
-<p>Here repo elasticsearch can be on a separate server as it could be on the built-in server. Importantly, this directory should be specified in the elasticsearch configuration file (elasticSearch.yaml, values.jaml). If it will be on another server, it should be mounted.</p>
-<!-- <img src="./images/2.png" alt="Create Repository" width="400" height="300"> -->
-<p><img alt="Create Repository" src="../images/2.png" /></p>
-<p>For example, commands executed on the Elasticsearch server for a separate server to be used as an NFS server:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nfs-common
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>cifs-utils
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>sudo<span class="w"> </span>mount.nfs<span class="w"> </span>&lt;path<span class="w"> </span>on<span class="w"> </span>nfs<span class="w"> </span>server&gt;<span class="w"> </span>&lt;path<span class="w"> </span>on<span class="w"> </span>elasticserach<span class="w"> </span>server&gt;
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>sudo<span class="w">  </span>mount.nfs<span class="w"> </span>:/mnt/disk2/elasticmount<span class="w"> </span>/mnt/elasticmount<span class="w"> </span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>chown<span class="w"> </span>-R<span class="w"> </span>elasticsearch:elasticsearch<span class="w"> </span>elasticmount<span class="w"> </span>
+<h1 id="elasticsearch-exporter">Elasticsearch-Exporter</h1>
+<p>https://github.com/prometheus-community/elasticsearch_exporter</p>
+<p>The Elasticsearch Exporter is a tool that may be utilized to check the performance and health of Elasticsearch. This application gathers metrics and information from Elasticsearch and makes them available to Prometheus, a widely used open-source monitoring system. The Elasticsearch Exporter enables you to monitor a range of metrics, including cluster, node, and index-level information. These metrics encompass CPU utilization, memory usage, indexing rate, search rate, and other relevant data.</p>
+<h2 id="step-by-step-guide-to-configure-elasticsearch-exporter">Step-by-step guide to configure Elasticsearch Exporter</h2>
+<h3 id="create-a-system-user-for-elasticsearch">Create a system user for Elasticsearch</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>useradd<span class="w"> </span>elastic_search
 </code></pre></div>
-<h2 id="index-template">Index Template:</h2>
-<p>A template should be created to manage the created indexes and define a lifecycle policy.</p>
-<p><strong>/Stack management/ Index Management/Index Templates</strong></p>
-<p>Here, click create template to create a template that belongs to a particular pattern.</p>
-<!-- <img src="./images/3.png" alt="Create Repository" width="600" height="400"> -->
-<p><img alt="Create Repository" src="../images/3.png" /></p>
-<p><strong>Under Index settings section:</strong></p>
-<!-- ![test](./images/4.png) -->
-<p>Add:</p>
-<p>{ "index": {"lifecycle": { "name": "kubernetes-pod-policy" } } }</p>
-<h2 id="index-lifecycle-policy">Index Lifecycle Policy:</h2>
-<p>A policy is created for what to do with the indexes of the specified pattern. </p>
-<p>For this;</p>
-<p>Click <strong>/Stack management/ Index Lifecycle Policies</strong></p>
-<p>Here a new policy is created with create Policy.</p>
-<p><img alt="ILM" src="../images/5.png" /></p>
-<p>This section specifies how long it will last in which phase and what to do during that time. </p>
-<p>For example, the policy of given pod-logs is to remove indexes with a one-hour lifetime in the warm phase after the replica numbers are drawn to 0 (to avoid holding space), and the policy is to delete indexes that have a seven-day lifecycle in the delete phase when the snapshot policy is applied.</p>
-<h2 id="snapshot-policy">Snapshot Policy:</h2>
-<p>It can be deleted by taking a snapshot at certain intervals so that the specified indexes do not hold their place. If necessary, it can be restored from these snapshots. </p>
-<p>A policy is defined for taking these snapshots.</p>
-<p><strong>/Stack management/Snapshot and Restore/Policies</strong></p>
-<p><img alt="Snapshot Policy" src="../images/6.png" /></p>
-<p>For example, when creating a kubernetes-pod-daily-snapshot policy in the form;</p>
-<ul>
-<li>
-<p>The snapshot to be taken is created on a day-based basis, defined as <kubernetes-pod-{now/d}>,</p>
-</li>
-<li>
-<p>specified in which repository the snapshot to be taken will be held, defined by the schedule of the time of the day,</p>
-</li>
-<li>
-<p>specified which pattern index is to be taken,</p>
-</li>
-<li>
-<p>The validity period of this snapshot is specified (expiration - after which time deletion permission is given),</p>
-</li>
-<li>
-<p>This policy specifies the number of snapshots to hold min and max.</p>
-</li>
-</ul>
-<h2 id="restore-snapshots">Restore snapshots:</h2>
-<p>To restore snapshots taken on a specific date</p>
-<p><strong>Stack management/Snapshot and Restore/snapshot</strong></p>
-<p><img alt="Restore snapshots" src="../images/7.png" /></p>
-<p>Here you click the snapshot of the day. The restore button will be clicked on the screen that opens. </p>
-<p>Here the snapshots will belong to more than a day. However, it should not be forgotten that it is taken incrementally.</p>
-<p>To restore a day's snapshot, untick <strong>Data streams and indices</strong> and click <strong>deselect all</strong> below. The restore is then done by clicking on the index of the desired day.</p>
+<h3 id="download-elasticsearch-exporter">Download Elasticsearch Exporter</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>wget<span class="w"> </span>https://github.com/prometheus-community/elasticsearch_exporter/releases/download/v1.7.0/elasticsearch_exporter-1.7.0.linux-amd64.tar.gz
+</code></pre></div>
+<h3 id="extract-the-targz-file">Extract the tar.gz file</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>tar<span class="w"> </span>-xvzf<span class="w"> </span>elasticsearch_exporter-1.7.0.linux-amd64.tar.gz
+</code></pre></div>
+<h3 id="move-to-the-extracted-directory">Move to the extracted directory</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>elasticsearch_exporter-1.7.0.linux-amd64/
+</code></pre></div>
+<h3 id="copy-the-exporter-binary-to-usrlocalbin">Copy the exporter binary to /usr/local/bin/</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>cp<span class="w"> </span>elasticsearch_exporter<span class="w"> </span>/usr/local/bin/
+</code></pre></div>
+<h3 id="change-ownership-of-the-exporter-binary">Change ownership of the exporter binary</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>elastic_search:elastic_search<span class="w"> </span>/usr/local/bin/elasticsearch_exporter
+</code></pre></div>
+<h3 id="create-a-systemd-service-file">Create a systemd service file</h3>
+<p>Copy the /etc/elasticsearch/certs/http_ca.crt file to the /home/elastic_search directory and set the necessary permissions with the chown elastic_search:elasticsearch /home/elastic_search/http_ca.crt command.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/systemd/system/elasticsearch_exporter.service
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>-----------------------------------------------------------
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="o">[</span>Unit<span class="o">]</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nv">Description</span><span class="o">=</span>Prometheus<span class="w"> </span>ES_exporter
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nv">After</span><span class="o">=</span>local-fs.target<span class="w"> </span>network-online.target<span class="w"> </span>network.target
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nv">Wants</span><span class="o">=</span>local-fs.target<span class="w"> </span>network-online.target<span class="w"> </span>network.target
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="o">[</span>Service<span class="o">]</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nv">User</span><span class="o">=</span>elastic_search
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nv">Nice</span><span class="o">=</span><span class="m">10</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nv">ExecStart</span><span class="o">=</span>/usr/local/bin/elasticsearch_exporter<span class="w"> </span>--es.uri<span class="o">=</span>https://elastic:password@localhost:9200<span class="w"> </span>--es.ca<span class="w"> </span>/home/elastic_search/http_ca.crt<span class="w">  </span>--es.all<span class="w"> </span>--es.indices<span class="w"> </span>--es.timeout<span class="w"> </span>20s
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="nv">ExecStop</span><span class="o">=</span>/usr/bin/killall<span class="w"> </span>elasticsearch_exporter
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="o">[</span>Install<span class="o">]</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="nv">WantedBy</span><span class="o">=</span>default.target
+</code></pre></div>
+! Note: Update your user and password for elasticsearch</p>
+<h3 id="start-the-elasticsearch-exporter-service-and-enable-the-service-to-start-on-boot">Start the Elasticsearch Exporter service and enable the service to start on boot</h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>elasticsearch_exporter.service
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>elasticsearch_exporter.service
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch_exporter.service
+</code></pre></div>
+!Note: Elastic search exporter uses port 9114, therefore expose it within the VPC in the security group.</p>
+<h3 id="configure-prometheusyml">Configure Prometheus.yml</h3>
+<p>To pull data from the elasticsearch-exporter into Prometheus and Grafana, you should update the prometheus.yml file with the following code, replacing the Elasticsearch node IP addresses as needed</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">    </span>additionalScrapeConfigs:
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span>-<span class="w"> </span>job_name:<span class="w"> </span><span class="s1">&#39;elasticsearch-exporter&#39;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">      </span>static_configs:
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">        </span>-<span class="w"> </span>targets:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;&lt;elasticsearch-node-ip-1&gt;:9114&#39;</span>,<span class="w"> </span><span class="s1">&#39;&lt;elasticsearch-node-ip-2&gt;:9114&#39;</span>,<span class="w"> </span><span class="s1">&#39;&lt;elasticsearch-node-ip-3&gt;:9114&#39;</span><span class="o">]</span>
+</code></pre></div>
+<h3 id="add-grafana-dashboard-for-elasticsearch">Add Grafana Dashboard for Elasticsearch</h3>
+<p>Go to Grafana WebUI Click Dashboard --&gt; New --&gt; New Dashboard --&gt; Import --&gt; Add 266 --&gt; load</p>
+<p><img alt="image" src="../images/dash-1.png" /></p>
+<p><img alt="image" src="../images/dash-2.png" /></p>
+<p><img alt="image" src="../images/dash-3.png" /></p>
+<p><img alt="image" src="../images/dash-4.png" /></p>
+<p><img alt="image" src="../images/dash-5.png" /></p>
+<p><img alt="image" src="../images/dash-6.png" /></p>
+<h3 id="add-alert">Add alert</h3>
+<p>You can use Alertmanager or Grafana Alert section.</p>
+<p>elasticsearch.rules.yml</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>groups:
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span>-<span class="w"> </span>name:<span class="w"> </span>elasticsearch
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span>rules:
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">      </span>-<span class="w"> </span>record:<span class="w"> </span>elasticsearch_filesystem_data_used_percent
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">        </span>expr:<span class="w"> </span><span class="m">100</span><span class="w"> </span>*<span class="w"> </span><span class="o">(</span>elasticsearch_filesystem_data_size_bytes<span class="w"> </span>-<span class="w"> </span>elasticsearch_filesystem_data_free_bytes<span class="o">)</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">          </span>/<span class="w"> </span>elasticsearch_filesystem_data_size_bytes
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">      </span>-<span class="w"> </span>record:<span class="w"> </span>elasticsearch_filesystem_data_free_percent
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">        </span>expr:<span class="w"> </span><span class="m">100</span><span class="w"> </span>-<span class="w"> </span>elasticsearch_filesystem_data_used_percent
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">      </span>-<span class="w"> </span>alert:<span class="w"> </span>ElasticsearchTooFewNodesRunning
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">        </span>expr:<span class="w"> </span>elasticsearch_cluster_health_number_of_nodes<span class="w"> </span>&lt;<span class="w"> </span><span class="m">3</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">        </span><span class="k">for</span>:<span class="w"> </span>5m
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">        </span>labels:
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">          </span>severity:<span class="w"> </span>critical
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">        </span>annotations:
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">          </span>description:<span class="w"> </span>There<span class="w"> </span>are<span class="w"> </span>only<span class="w"> </span><span class="o">{{</span><span class="nv">$value</span><span class="o">}}</span><span class="w"> </span>&lt;<span class="w"> </span><span class="m">3</span><span class="w"> </span>Elasticsearch<span class="w"> </span>nodes<span class="w"> </span>running
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">          </span>summary:<span class="w"> </span>Elasticsearch<span class="w"> </span>running<span class="w"> </span>on<span class="w"> </span>less<span class="w"> </span>than<span class="w"> </span><span class="m">3</span><span class="w"> </span>nodes
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">      </span>-<span class="w"> </span>alert:<span class="w"> </span>ElasticsearchHeapTooHigh
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">        </span>expr:<span class="w"> </span>elasticsearch_jvm_memory_used_bytes<span class="o">{</span><span class="nv">area</span><span class="o">=</span><span class="s2">&quot;heap&quot;</span><span class="o">}</span><span class="w"> </span>/<span class="w"> </span>elasticsearch_jvm_memory_max_bytes<span class="o">{</span><span class="nv">area</span><span class="o">=</span><span class="s2">&quot;heap&quot;</span><span class="o">}</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">          </span>&gt;<span class="w"> </span><span class="m">0</span>.9
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">        </span><span class="k">for</span>:<span class="w"> </span>15m
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">        </span>labels:
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">          </span>severity:<span class="w"> </span>critical
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="w">        </span>annotations:
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="w">          </span>description:<span class="w"> </span>The<span class="w"> </span>heap<span class="w"> </span>usage<span class="w"> </span>is<span class="w"> </span>over<span class="w"> </span><span class="m">90</span>%<span class="w"> </span><span class="k">for</span><span class="w"> </span>15m
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="w">          </span>summary:<span class="w"> </span>Elasticsearch<span class="w"> </span>node<span class="w"> </span><span class="o">{{</span><span class="nv">$labels</span>.node<span class="o">}}</span><span class="w"> </span>heap<span class="w"> </span>usage<span class="w"> </span>is<span class="w"> </span>high
+</code></pre></div>
+<p>elasticsearch.rules</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># calculate filesystem used and free percent</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">elasticsearch_filesystem_data_used_percent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="w"> </span>*<span class="w"> </span><span class="o">(</span>elasticsearch_filesystem_data_size_bytes<span class="w"> </span>-<span class="w"> </span>elasticsearch_filesystem_data_free_bytes<span class="o">)</span><span class="w"> </span>/<span class="w"> </span>elasticsearch_filesystem_data_size_bytes
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nv">elasticsearch_filesystem_data_free_percent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="w"> </span>-<span class="w"> </span>elasticsearch_filesystem_data_used_percent
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1"># alert if too few nodes are running</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>ALERT<span class="w"> </span>ElasticsearchTooFewNodesRunning
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span>IF<span class="w"> </span>elasticsearch_cluster_health_number_of_nodes<span class="w"> </span>&lt;<span class="w"> </span><span class="m">3</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span>FOR<span class="w"> </span>5m
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">  </span>LABELS<span class="w"> </span><span class="o">{</span><span class="nv">severity</span><span class="o">=</span><span class="s2">&quot;critical&quot;</span><span class="o">}</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">  </span>ANNOTATIONS<span class="w"> </span><span class="o">{</span><span class="nv">description</span><span class="o">=</span><span class="s2">&quot;There are only {{</span><span class="nv">$value</span><span class="s2">}} &lt; 3 Elasticsearch nodes running&quot;</span>,<span class="w"> </span><span class="nv">summary</span><span class="o">=</span><span class="s2">&quot;Elasticsearch running on less than 3 nodes&quot;</span><span class="o">}</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="c1"># alert if heap usage is over 90%</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>ALERT<span class="w"> </span>ElasticsearchHeapTooHigh
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">  </span>IF<span class="w"> </span>elasticsearch_jvm_memory_used_bytes<span class="o">{</span><span class="nv">area</span><span class="o">=</span><span class="s2">&quot;heap&quot;</span><span class="o">}</span><span class="w"> </span>/<span class="w"> </span>elasticsearch_jvm_memory_max_bytes<span class="o">{</span><span class="nv">area</span><span class="o">=</span><span class="s2">&quot;heap&quot;</span><span class="o">}</span><span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span>.9
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">  </span>FOR<span class="w"> </span>15m
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">  </span>LABELS<span class="w"> </span><span class="o">{</span><span class="nv">severity</span><span class="o">=</span><span class="s2">&quot;critical&quot;</span><span class="o">}</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">  </span>ANNOTATIONS<span class="w"> </span><span class="o">{</span><span class="nv">description</span><span class="o">=</span><span class="s2">&quot;The heap usage is over 90% for 15m&quot;</span>,<span class="w"> </span><span class="nv">summary</span><span class="o">=</span><span class="s2">&quot;Elasticsearch node {{</span><span class="nv">$labels</span><span class="s2">.node}} heap usage is high&quot;</span><span class="o">}</span>
+</code></pre></div>
+<p>You can add slack,email or another connector for alert mechanism.</p>
 
 
 
