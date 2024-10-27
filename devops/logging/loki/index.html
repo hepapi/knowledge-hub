@@ -2151,9 +2151,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-dashboard-grafana-to-logs" class="md-nav__link">
+  <a href="#add-dashboard-grafana-to-loki-for-checking-logs" class="md-nav__link">
     <span class="md-ellipsis">
-      Add Dashboard Grafana to logs
+      Add Dashboard Grafana to loki for checking logs
     </span>
   </a>
   
@@ -3548,9 +3548,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-dashboard-grafana-to-logs" class="md-nav__link">
+  <a href="#add-dashboard-grafana-to-loki-for-checking-logs" class="md-nav__link">
     <span class="md-ellipsis">
-      Add Dashboard Grafana to logs
+      Add Dashboard Grafana to loki for checking logs
     </span>
   </a>
   
@@ -3667,24 +3667,25 @@ Promtail agent on every node of the Kubernetes cluster.</p>
 </code></pre></div>
 <img alt="loki" src="../image/image-2.png" /></p>
 <ul>
-<li>Port-forward grafana services and go to grafana Uİ</li>
+<li>Port-forward grafana services and go to grafana ui</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>kubectl<span class="w"> </span>port-forward<span class="w"> </span>service/loki-grafana<span class="w"> </span><span class="m">3000</span>:80
 </code></pre></div>
 <ul>
-<li>You can get grafana admin-password below command</li>
+<li>You can get grafana admin-password via below command</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>loki-grafana<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.data.admin-password}&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>--decode
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin-password</span><span class="w"> </span><span class="c1"># add your password</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="l l-Scalar l-Scalar-Plain">http://localhost:3000</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="l l-Scalar l-Scalar-Plain">username</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin-password</span><span class="w"> </span><span class="c1"># add your password</span>
 </code></pre></div>
 <ul>
-<li>Thanks to grafana/loki-stack heml-chart you can see Loki has been configured In Data sources  as shown below</li>
+<li>Thanks to grafana/loki-stack helm-chart you can see Loki has been configured In Data sources  as shown below</li>
 </ul>
 <p><img alt="loki" src="../image/image-3.png" /></p>
 <ul>
-<li>We can check all pod logs grafana explore section.</li>
+<li>We can check all pods logs grafana explore section.</li>
 </ul>
 <p><img alt="loki" src="../image/image-5.png" />
 <img alt="loki" src="../image/image-4.png" /></p>
@@ -3732,9 +3733,10 @@ Promtail agent on every node of the Kubernetes cluster.</p>
 <ul>
 <li>We can add labels for spesific pod or app by manipulating promtail-config</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>loki-promtail<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.data.promtail\.yaml}&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>--decode<span class="w"> </span>&gt;<span class="w"> </span>promtail-config.yaml
 </code></pre></div>
+promtail-config.yaml
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">server</span><span class="p">:</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">log_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">log_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">logfmt</span>
@@ -3822,11 +3824,8 @@ Promtail agent on every node of the Kubernetes cluster.</p>
 <a id="__codelineno-12-85" name="__codelineno-12-85" href="#__codelineno-12-85"></a><span class="nt">limits_config</span><span class="p">:</span>
 <a id="__codelineno-12-86" name="__codelineno-12-86" href="#__codelineno-12-86"></a><span class="nt">tracing</span><span class="p">:</span>
 <a id="__codelineno-12-87" name="__codelineno-12-87" href="#__codelineno-12-87"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</code></pre></div>
+</code></pre></div></p>
 <ul>
-<li>
-<p>Add below code into promtail-config.yaml</p>
-</li>
 <li>
 <p>our logs format :
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="m">2024</span>-10-26<span class="w"> </span><span class="m">14</span>:19:06.065<span class="w"> </span>
@@ -3835,6 +3834,9 @@ Promtail agent on every node of the Kubernetes cluster.</p>
 </li>
 <li>
 <p>We want to add 'time' and 'stream' section as a labels.</p>
+</li>
+<li>
+<p>Add below code-block into promtail-config.yaml</p>
 </li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">match</span><span class="p">:</span>
@@ -3851,7 +3853,7 @@ Promtail agent on every node of the Kubernetes cluster.</p>
 <ul>
 <li>new promtail-config.yaml as below.</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">server</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">server</span><span class="p">:</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">log_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="nt">log_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">logfmt</span>
 <a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">  </span><span class="nt">http_listen_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3101</span>
@@ -3950,12 +3952,135 @@ Promtail agent on every node of the Kubernetes cluster.</p>
 <a id="__codelineno-15-97" name="__codelineno-15-97" href="#__codelineno-15-97"></a><span class="nt">tracing</span><span class="p">:</span>
 <a id="__codelineno-15-98" name="__codelineno-15-98" href="#__codelineno-15-98"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
-- We can see time and stream as a label in log </p>
+<ul>
+<li>To apply the new Promtail configuration, the Loki secret needs to be deleted and recreated with the new configuration.</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>kubectl<span class="w"> </span>delete<span class="w"> </span>secret<span class="w"> </span>loki-promtail
+</code></pre></div>
+- Create secret by using new promtail-config</p>
+<p>loki-secret.yaml</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">loki-promtail</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">logging</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">promtail</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="nt">stringData</span><span class="p">:</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">  </span><span class="nt">promtail.yaml</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">    </span><span class="no">server:</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">      </span><span class="no">log_level: info</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">      </span><span class="no">log_format: logfmt</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">      </span><span class="no">http_listen_port: 3101</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">    </span><span class="no">clients:</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">      </span><span class="no">- url: http://loki:3100/loki/api/v1/push</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="w">    </span><span class="no">positions:</span>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="w">      </span><span class="no">filename: /run/promtail/positions.yaml</span>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="w">    </span><span class="no">scrape_configs:</span>
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a><span class="w">      </span><span class="no">- job_name: kubernetes-pods</span>
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a><span class="w">        </span><span class="no">pipeline_stages:</span>
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a><span class="w">          </span><span class="no">- cri: {}</span>
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a><span class="w">          </span><span class="no">- match:</span>
+<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a><span class="w">              </span><span class="no">selector: &#39;{app=&quot;log-generator&quot;}&#39;</span>
+<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a><span class="w">              </span><span class="no">stages:</span>
+<a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a><span class="w">                </span><span class="no">- json:</span>
+<a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a><span class="w">                    </span><span class="no">expressions:</span>
+<a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a><span class="w">                      </span><span class="no">stream: stream</span>
+<a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a><span class="w">                      </span><span class="no">time: time</span>
+<a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a><span class="w">                </span><span class="no">- labels:</span>
+<a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a><span class="w">                    </span><span class="no">stream:</span>
+<a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a><span class="w">                    </span><span class="no">time:</span>
+<a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a><span class="w">        </span><span class="no">kubernetes_sd_configs:</span>
+<a id="__codelineno-17-37" name="__codelineno-17-37" href="#__codelineno-17-37"></a><span class="w">          </span><span class="no">- role: pod</span>
+<a id="__codelineno-17-38" name="__codelineno-17-38" href="#__codelineno-17-38"></a><span class="w">        </span><span class="no">relabel_configs:</span>
+<a id="__codelineno-17-39" name="__codelineno-17-39" href="#__codelineno-17-39"></a><span class="w">          </span><span class="no">- source_labels:</span>
+<a id="__codelineno-17-40" name="__codelineno-17-40" href="#__codelineno-17-40"></a><span class="w">              </span><span class="no">- __meta_kubernetes_pod_controller_name</span>
+<a id="__codelineno-17-41" name="__codelineno-17-41" href="#__codelineno-17-41"></a><span class="w">            </span><span class="no">regex: ([0-9a-z-.]+?)(-[0-9a-f]{8,10})?</span>
+<a id="__codelineno-17-42" name="__codelineno-17-42" href="#__codelineno-17-42"></a><span class="w">            </span><span class="no">action: replace</span>
+<a id="__codelineno-17-43" name="__codelineno-17-43" href="#__codelineno-17-43"></a><span class="w">            </span><span class="no">target_label: __tmp_controller_name</span>
+<a id="__codelineno-17-44" name="__codelineno-17-44" href="#__codelineno-17-44"></a><span class="w">          </span><span class="no">- source_labels:</span>
+<a id="__codelineno-17-45" name="__codelineno-17-45" href="#__codelineno-17-45"></a><span class="w">              </span><span class="no">- __meta_kubernetes_pod_label_app_kubernetes_io_name</span>
+<a id="__codelineno-17-46" name="__codelineno-17-46" href="#__codelineno-17-46"></a><span class="w">              </span><span class="no">- __meta_kubernetes_pod_label_app</span>
+<a id="__codelineno-17-47" name="__codelineno-17-47" href="#__codelineno-17-47"></a><span class="w">              </span><span class="no">- __tmp_controller_name</span>
+<a id="__codelineno-17-48" name="__codelineno-17-48" href="#__codelineno-17-48"></a><span class="w">              </span><span class="no">- __meta_kubernetes_pod_name</span>
+<a id="__codelineno-17-49" name="__codelineno-17-49" href="#__codelineno-17-49"></a><span class="w">            </span><span class="no">regex: ^;*([^;]+)(;.*)?$</span>
+<a id="__codelineno-17-50" name="__codelineno-17-50" href="#__codelineno-17-50"></a><span class="w">            </span><span class="no">action: replace</span>
+<a id="__codelineno-17-51" name="__codelineno-17-51" href="#__codelineno-17-51"></a><span class="w">            </span><span class="no">target_label: app</span>
+<a id="__codelineno-17-52" name="__codelineno-17-52" href="#__codelineno-17-52"></a><span class="w">          </span><span class="no">- source_labels:</span>
+<a id="__codelineno-17-53" name="__codelineno-17-53" href="#__codelineno-17-53"></a><span class="w">              </span><span class="no">- __meta_kubernetes_pod_label_app_kubernetes_io_instance</span>
+<a id="__codelineno-17-54" name="__codelineno-17-54" href="#__codelineno-17-54"></a><span class="w">              </span><span class="no">- __meta_kubernetes_pod_label_instance</span>
+<a id="__codelineno-17-55" name="__codelineno-17-55" href="#__codelineno-17-55"></a><span class="w">            </span><span class="no">regex: ^;*([^;]+)(;.*)?$</span>
+<a id="__codelineno-17-56" name="__codelineno-17-56" href="#__codelineno-17-56"></a><span class="w">            </span><span class="no">action: replace</span>
+<a id="__codelineno-17-57" name="__codelineno-17-57" href="#__codelineno-17-57"></a><span class="w">            </span><span class="no">target_label: instance</span>
+<a id="__codelineno-17-58" name="__codelineno-17-58" href="#__codelineno-17-58"></a><span class="w">          </span><span class="no">- source_labels:</span>
+<a id="__codelineno-17-59" name="__codelineno-17-59" href="#__codelineno-17-59"></a><span class="w">              </span><span class="no">- __meta_kubernetes_pod_label_app_kubernetes_io_component</span>
+<a id="__codelineno-17-60" name="__codelineno-17-60" href="#__codelineno-17-60"></a><span class="w">              </span><span class="no">- __meta_kubernetes_pod_label_component</span>
+<a id="__codelineno-17-61" name="__codelineno-17-61" href="#__codelineno-17-61"></a><span class="w">            </span><span class="no">regex: ^;*([^;]+)(;.*)?$</span>
+<a id="__codelineno-17-62" name="__codelineno-17-62" href="#__codelineno-17-62"></a><span class="w">            </span><span class="no">action: replace</span>
+<a id="__codelineno-17-63" name="__codelineno-17-63" href="#__codelineno-17-63"></a><span class="w">            </span><span class="no">target_label: component</span>
+<a id="__codelineno-17-64" name="__codelineno-17-64" href="#__codelineno-17-64"></a><span class="w">          </span><span class="no">- action: replace</span>
+<a id="__codelineno-17-65" name="__codelineno-17-65" href="#__codelineno-17-65"></a><span class="w">            </span><span class="no">source_labels:</span>
+<a id="__codelineno-17-66" name="__codelineno-17-66" href="#__codelineno-17-66"></a><span class="w">            </span><span class="no">- __meta_kubernetes_pod_node_name</span>
+<a id="__codelineno-17-67" name="__codelineno-17-67" href="#__codelineno-17-67"></a><span class="w">            </span><span class="no">target_label: node_name</span>
+<a id="__codelineno-17-68" name="__codelineno-17-68" href="#__codelineno-17-68"></a><span class="w">          </span><span class="no">- action: replace</span>
+<a id="__codelineno-17-69" name="__codelineno-17-69" href="#__codelineno-17-69"></a><span class="w">            </span><span class="no">source_labels:</span>
+<a id="__codelineno-17-70" name="__codelineno-17-70" href="#__codelineno-17-70"></a><span class="w">            </span><span class="no">- __meta_kubernetes_namespace</span>
+<a id="__codelineno-17-71" name="__codelineno-17-71" href="#__codelineno-17-71"></a><span class="w">            </span><span class="no">target_label: namespace</span>
+<a id="__codelineno-17-72" name="__codelineno-17-72" href="#__codelineno-17-72"></a><span class="w">          </span><span class="no">- action: replace</span>
+<a id="__codelineno-17-73" name="__codelineno-17-73" href="#__codelineno-17-73"></a><span class="w">            </span><span class="no">replacement: $1</span>
+<a id="__codelineno-17-74" name="__codelineno-17-74" href="#__codelineno-17-74"></a><span class="w">            </span><span class="no">separator: /</span>
+<a id="__codelineno-17-75" name="__codelineno-17-75" href="#__codelineno-17-75"></a><span class="w">            </span><span class="no">source_labels:</span>
+<a id="__codelineno-17-76" name="__codelineno-17-76" href="#__codelineno-17-76"></a><span class="w">            </span><span class="no">- namespace</span>
+<a id="__codelineno-17-77" name="__codelineno-17-77" href="#__codelineno-17-77"></a><span class="w">            </span><span class="no">- app</span>
+<a id="__codelineno-17-78" name="__codelineno-17-78" href="#__codelineno-17-78"></a><span class="w">            </span><span class="no">target_label: job</span>
+<a id="__codelineno-17-79" name="__codelineno-17-79" href="#__codelineno-17-79"></a><span class="w">          </span><span class="no">- action: replace</span>
+<a id="__codelineno-17-80" name="__codelineno-17-80" href="#__codelineno-17-80"></a><span class="w">            </span><span class="no">source_labels:</span>
+<a id="__codelineno-17-81" name="__codelineno-17-81" href="#__codelineno-17-81"></a><span class="w">            </span><span class="no">- __meta_kubernetes_pod_name</span>
+<a id="__codelineno-17-82" name="__codelineno-17-82" href="#__codelineno-17-82"></a><span class="w">            </span><span class="no">target_label: pod</span>
+<a id="__codelineno-17-83" name="__codelineno-17-83" href="#__codelineno-17-83"></a><span class="w">          </span><span class="no">- action: replace</span>
+<a id="__codelineno-17-84" name="__codelineno-17-84" href="#__codelineno-17-84"></a><span class="w">            </span><span class="no">source_labels:</span>
+<a id="__codelineno-17-85" name="__codelineno-17-85" href="#__codelineno-17-85"></a><span class="w">            </span><span class="no">- __meta_kubernetes_pod_container_name</span>
+<a id="__codelineno-17-86" name="__codelineno-17-86" href="#__codelineno-17-86"></a><span class="w">            </span><span class="no">target_label: container</span>
+<a id="__codelineno-17-87" name="__codelineno-17-87" href="#__codelineno-17-87"></a><span class="w">          </span><span class="no">- action: replace</span>
+<a id="__codelineno-17-88" name="__codelineno-17-88" href="#__codelineno-17-88"></a><span class="w">            </span><span class="no">replacement: /var/log/pods/*$1/*.log</span>
+<a id="__codelineno-17-89" name="__codelineno-17-89" href="#__codelineno-17-89"></a><span class="w">            </span><span class="no">separator: /</span>
+<a id="__codelineno-17-90" name="__codelineno-17-90" href="#__codelineno-17-90"></a><span class="w">            </span><span class="no">source_labels:</span>
+<a id="__codelineno-17-91" name="__codelineno-17-91" href="#__codelineno-17-91"></a><span class="w">            </span><span class="no">- __meta_kubernetes_pod_uid</span>
+<a id="__codelineno-17-92" name="__codelineno-17-92" href="#__codelineno-17-92"></a><span class="w">            </span><span class="no">- __meta_kubernetes_pod_container_name</span>
+<a id="__codelineno-17-93" name="__codelineno-17-93" href="#__codelineno-17-93"></a><span class="w">            </span><span class="no">target_label: __path__</span>
+<a id="__codelineno-17-94" name="__codelineno-17-94" href="#__codelineno-17-94"></a><span class="w">          </span><span class="no">- action: replace</span>
+<a id="__codelineno-17-95" name="__codelineno-17-95" href="#__codelineno-17-95"></a><span class="w">            </span><span class="no">regex: true/(.*)</span>
+<a id="__codelineno-17-96" name="__codelineno-17-96" href="#__codelineno-17-96"></a><span class="w">            </span><span class="no">replacement: /var/log/pods/*$1/*.log</span>
+<a id="__codelineno-17-97" name="__codelineno-17-97" href="#__codelineno-17-97"></a><span class="w">            </span><span class="no">separator: /</span>
+<a id="__codelineno-17-98" name="__codelineno-17-98" href="#__codelineno-17-98"></a><span class="w">            </span><span class="no">source_labels:</span>
+<a id="__codelineno-17-99" name="__codelineno-17-99" href="#__codelineno-17-99"></a><span class="w">            </span><span class="no">- __meta_kubernetes_pod_annotationpresent_kubernetes_io_config_hash</span>
+<a id="__codelineno-17-100" name="__codelineno-17-100" href="#__codelineno-17-100"></a><span class="w">            </span><span class="no">- __meta_kubernetes_pod_annotation_kubernetes_io_config_hash</span>
+<a id="__codelineno-17-101" name="__codelineno-17-101" href="#__codelineno-17-101"></a><span class="w">            </span><span class="no">- __meta_kubernetes_pod_container_name</span>
+<a id="__codelineno-17-102" name="__codelineno-17-102" href="#__codelineno-17-102"></a><span class="w">            </span><span class="no">target_label: __path__</span>
+<a id="__codelineno-17-103" name="__codelineno-17-103" href="#__codelineno-17-103"></a>
+<a id="__codelineno-17-104" name="__codelineno-17-104" href="#__codelineno-17-104"></a><span class="w">    </span><span class="no">limits_config:</span>
+<a id="__codelineno-17-105" name="__codelineno-17-105" href="#__codelineno-17-105"></a>
+<a id="__codelineno-17-106" name="__codelineno-17-106" href="#__codelineno-17-106"></a><span class="w">    </span><span class="no">tracing:</span>
+<a id="__codelineno-17-107" name="__codelineno-17-107" href="#__codelineno-17-107"></a><span class="w">      </span><span class="no">enabled: false</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>loki-secret.yaml
+</code></pre></div>
+- To allow the Promtail pod to use the new configuration file, we need to restart the pod.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>kubectl<span class="w"> </span>delete<span class="w"> </span>pod<span class="w"> </span>&lt;loki-promtail-pod-name&gt;
+</code></pre></div>
+- Wait until the new pod is up and running.</p>
+<ul>
+<li>Now we can see time and stream as a label in log </li>
+</ul>
 <p><img alt="loki" src="../image/image-8.png" /></p>
-<h2 id="add-dashboard-grafana-to-logs">Add Dashboard Grafana to logs</h2>
+<h2 id="add-dashboard-grafana-to-loki-for-checking-logs">Add Dashboard Grafana to loki for checking logs</h2>
 <ul>
 <li>Go to grafana webui and select dashboard left-hand-menu and click new and import</li>
-<li>Paste the template ID  --&gt; 15141  and click load</li>
+<li>Enter the template ID  --&gt; 15141  and click load</li>
 <li>Select Loki as a data source</li>
 </ul>
 <p><img alt="loki" src="../image/image-9.png" />
