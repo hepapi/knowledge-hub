@@ -105,28 +105,29 @@ helm upgrade --install loki -f loki-values.yaml -n logging --create-namespace gr
 ```
 ![loki](./image/image-2.png)
 
-- Port-forward grafana services and go to grafana Uİ
+- Port-forward grafana services and go to grafana ui
 
 ```bash
 kubectl port-forward service/loki-grafana 3000:80
 ```
 
-- You can get grafana admin-password below command
+- You can get grafana admin-password via below command
 
 ```bash
 kubectl get secret loki-grafana -o jsonpath="{.data.admin-password}" | base64 --decode
 ```
 
 ```yaml
+http://localhost:3000
 username: admin
 password: admin-password # add your password
 ```
 
-- Thanks to grafana/loki-stack heml-chart you can see Loki has been configured In Data sources  as shown below
+- Thanks to grafana/loki-stack helm-chart you can see Loki has been configured In Data sources  as shown below
 
 ![loki](./image/image-3.png)
 
-- We can check all pod logs grafana explore section.
+- We can check all pods logs grafana explore section.
 
 ![loki](./image/image-5.png)
 ![loki](./image/image-4.png)
@@ -183,8 +184,7 @@ kubectl apply -f deployment.yaml -n app
 kubectl get secret 
 kubectl get secret loki-promtail -o jsonpath="{.data.promtail\.yaml}" | base64 --decode > promtail-config.yaml
 ```
-
-
+promtail-config.yaml
 ```yaml
 server:
   log_level: info
@@ -277,8 +277,6 @@ tracing:
 ```
 
 
-- Add below code into promtail-config.yaml
-
 - our logs format :
 ```bash
 2024-10-26 14:19:06.065	
@@ -287,6 +285,7 @@ tracing:
 
 - We want to add 'time' and 'stream' section as a labels.
 
+- Add below code-block into promtail-config.yaml
 
 ```yaml
       - match:
@@ -404,14 +403,143 @@ limits_config:
 tracing:
   enabled: false
 ```
-- We can see time and stream as a label in log 
+
+- To apply the new Promtail configuration, the Loki secret needs to be deleted and recreated with the new configuration.
+
+```bash
+kubectl delete secret loki-promtail
+```
+- Create secret by using new promtail-config
+
+loki-secret.yaml
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: loki-promtail
+  namespace: logging
+  labels:
+    app: promtail
+type: Opaque
+stringData:
+  promtail.yaml: |
+    server:
+      log_level: info
+      log_format: logfmt
+      http_listen_port: 3101
+
+    clients:
+      - url: http://loki:3100/loki/api/v1/push
+
+    positions:
+      filename: /run/promtail/positions.yaml
+
+    scrape_configs:
+      - job_name: kubernetes-pods
+        pipeline_stages:
+          - cri: {}
+          - match:
+              selector: '{app="log-generator"}'
+              stages:
+                - json:
+                    expressions:
+                      stream: stream
+                      time: time
+                - labels:
+                    stream:
+                    time:
+        kubernetes_sd_configs:
+          - role: pod
+        relabel_configs:
+          - source_labels:
+              - __meta_kubernetes_pod_controller_name
+            regex: ([0-9a-z-.]+?)(-[0-9a-f]{8,10})?
+            action: replace
+            target_label: __tmp_controller_name
+          - source_labels:
+              - __meta_kubernetes_pod_label_app_kubernetes_io_name
+              - __meta_kubernetes_pod_label_app
+              - __tmp_controller_name
+              - __meta_kubernetes_pod_name
+            regex: ^;*([^;]+)(;.*)?$
+            action: replace
+            target_label: app
+          - source_labels:
+              - __meta_kubernetes_pod_label_app_kubernetes_io_instance
+              - __meta_kubernetes_pod_label_instance
+            regex: ^;*([^;]+)(;.*)?$
+            action: replace
+            target_label: instance
+          - source_labels:
+              - __meta_kubernetes_pod_label_app_kubernetes_io_component
+              - __meta_kubernetes_pod_label_component
+            regex: ^;*([^;]+)(;.*)?$
+            action: replace
+            target_label: component
+          - action: replace
+            source_labels:
+            - __meta_kubernetes_pod_node_name
+            target_label: node_name
+          - action: replace
+            source_labels:
+            - __meta_kubernetes_namespace
+            target_label: namespace
+          - action: replace
+            replacement: $1
+            separator: /
+            source_labels:
+            - namespace
+            - app
+            target_label: job
+          - action: replace
+            source_labels:
+            - __meta_kubernetes_pod_name
+            target_label: pod
+          - action: replace
+            source_labels:
+            - __meta_kubernetes_pod_container_name
+            target_label: container
+          - action: replace
+            replacement: /var/log/pods/*$1/*.log
+            separator: /
+            source_labels:
+            - __meta_kubernetes_pod_uid
+            - __meta_kubernetes_pod_container_name
+            target_label: __path__
+          - action: replace
+            regex: true/(.*)
+            replacement: /var/log/pods/*$1/*.log
+            separator: /
+            source_labels:
+            - __meta_kubernetes_pod_annotationpresent_kubernetes_io_config_hash
+            - __meta_kubernetes_pod_annotation_kubernetes_io_config_hash
+            - __meta_kubernetes_pod_container_name
+            target_label: __path__
+
+    limits_config:
+
+    tracing:
+      enabled: false
+```
+```bash
+kubectl apply -f loki-secret.yaml
+```
+- To allow the Promtail pod to use the new configuration file, we need to restart the pod.
+
+```bash
+kubectl delete pod <loki-promtail-pod-name>
+```
+- Wait until the new pod is up and running.
+
+- Now we can see time and stream as a label in log 
 
 ![loki](./image/image-8.png)
 
-## Add Dashboard Grafana to logs
+## Add Dashboard Grafana to loki for checking logs
 
 - Go to grafana webui and select dashboard left-hand-menu and click new and import
-- Paste the template ID  --> 15141  and click load
+- Enter the template ID  --> 15141  and click load
 - Select Loki as a data source
 
 ![loki](./image/image-9.png)
