@@ -303,7 +303,7 @@ logstashPipeline:
         ssl => true
         manage_template => false
         ssl_certificate_verification => true
-        index => "test-%{+YYYY.MM.dd}"
+        index => "logstash-%{+YYYY.MM.dd}"
         document_type => "%{[@metadata][type]}"
         cacert => "/usr/share/logstash/certs/ca.crt"
         user => "${ELASTICSEARCH_USERNAME}"
