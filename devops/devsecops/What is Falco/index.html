@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../../rancher/rancher-installation/">
-      
-      
-        <link rel="next" href="../psql/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Configuration - Hepapi Knowledge Hub</title>
+        <title>Deep Dive into Security Monitoring in Kubernetes Environments: An Introduction to Falco - Hepapi Knowledge Hub</title>
       
     
     
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#postgres-configuration" class="md-skip">
+        <a href="#deep-dive-into-security-monitoring-in-kubernetes-environments-an-introduction-to-falco" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Configuration
+              Deep Dive into Security Monitoring in Kubernetes Environments: An Introduction to Falco
             
           </span>
         </div>
@@ -219,12 +215,10 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../../.." class="md-tabs__link">
           
   
@@ -346,28 +340,23 @@
       
   
   
-    
   
   
-  
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -378,7 +367,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             DevOps
@@ -1240,8 +1229,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1251,11 +1238,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_8" >
         
           
           <label class="md-nav__link" for="__nav_1_8" id="__nav_1_8_label" tabindex="0">
@@ -1269,7 +1256,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_8">
             <span class="md-nav__icon md-icon"></span>
             Postgres
@@ -1280,30 +1267,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Configuration
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../postgres/configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1312,95 +1279,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#helpers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Helpers
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuration-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration Files
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuration Files">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pg_identconf-os-user-identification" class="md-nav__link">
-    <span class="md-ellipsis">
-      pg_ident.conf (OS User Identification)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#postgresqlconf-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      postgresql.conf (Configuration)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pg_hbaconf-host-based-authentication" class="md-nav__link">
-    <span class="md-ellipsis">
-      pg_hba.conf (Host Based Authentication)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pg_statconf-statistics" class="md-nav__link">
-    <span class="md-ellipsis">
-      pg_stat.conf (Statistics)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1413,7 +1291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../psql/" class="md-nav__link">
+      <a href="../../postgres/psql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1434,7 +1312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../backup-restore/" class="md-nav__link">
+      <a href="../../postgres/backup-restore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1673,7 +1551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devsecops/DevSecOps-SonarQube-OWASP-Conftest-Trvy/" class="md-nav__link">
+      <a href="../DevSecOps-SonarQube-OWASP-Conftest-Trvy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1694,7 +1572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devsecops/external-secret-operator/" class="md-nav__link">
+      <a href="../external-secret-operator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3482,64 +3360,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#helpers" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Helpers
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#what-is-falco" class="md-nav__link">
     <span class="md-ellipsis">
-      Notes
+      What is Falco?
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuration-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration Files
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuration Files">
+    <nav class="md-nav" aria-label="What is Falco?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pg_identconf-os-user-identification" class="md-nav__link">
+  <a href="#key-use-cases" class="md-nav__link">
     <span class="md-ellipsis">
-      pg_ident.conf (OS User Identification)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#postgresqlconf-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      postgresql.conf (Configuration)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pg_hbaconf-host-based-authentication" class="md-nav__link">
-    <span class="md-ellipsis">
-      pg_hba.conf (Host Based Authentication)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pg_statconf-statistics" class="md-nav__link">
-    <span class="md-ellipsis">
-      pg_stat.conf (Statistics)
+      Key Use Cases
     </span>
   </a>
   
@@ -3547,6 +3389,207 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-falco-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Falco Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-features-of-falco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Features of Falco
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-falco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Falco
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing Falco">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-falco-in-a-kubernetes-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Falco in a Kubernetes Environment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-rules-in-falco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Rules in Falco
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Rules in Falco">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-rule-unauthorized-bash-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Rule: Unauthorized Bash Access
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Rule: Unauthorized Bash Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-using-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of Using Lists
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-rules-with-macros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defining Rules with Macros
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-using-macros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of Using Macros
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log-management-in-falco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Management in Falco
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Log Management in Falco">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-saving-falco-logs-to-a-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Saving Falco Logs to a File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-saving-falco-logs-in-json-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Saving Falco Logs in JSON Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-program-output-for-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Program Output for Notifications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-setting-the-log-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Setting the Log Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-rule-file-loading-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Rule File Loading Order
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Rule File Loading Order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-falcoyaml-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example falco.yaml Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important Note:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
   
 </li>
       
@@ -3565,7 +3608,7 @@
                   
 
   
-    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/postgres/configuration.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/devsecops/What is Falco.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -3573,85 +3616,258 @@
   
 
 
-<h1 id="postgres-configuration">Postgres Configuration</h1>
-<h2 id="helpers">Helpers</h2>
-<ul>
-<li><strong><a href="https://postgresqlco.nf/">postgresqlco.nf/ Documentation</a></strong> for explanations of all the configuration options.<ul>
-<li>You can upload your <code>postgresql.conf</code> file and it will give you recommendations on how to improve it.</li>
-</ul>
-</li>
-<li><strong><a href="https://pgtune.leopard.in.ua/#/">pgtune.leopard.in.ua/#/</a></strong> for generating a <code>postgresql.conf</code> file based on your hardware and database usage.</li>
-</ul>
-<h2 id="notes">Notes</h2>
+<h1 id="deep-dive-into-security-monitoring-in-kubernetes-environments-an-introduction-to-falco">Deep Dive into Security Monitoring in Kubernetes Environments: An Introduction to Falco</h1>
+<h2 id="introduction">Introduction</h2>
+<p>With the rise of container-based and cloud-native applications, security risks have become increasingly complex. <strong>Falco</strong>, an open-source tool developed by Sysdig and supported by CNCF (Cloud Native Computing Foundation), offers real-time security monitoring for Kubernetes and container environments. Falco monitors system calls to detect suspicious activities and notifies users immediately about these events. By using Falco, you can respond quickly to security breaches.</p>
+<h2 id="what-is-falco">What is Falco?</h2>
+<p>Falco monitors security in container environments by tracking system calls at the kernel level. It analyzes these system calls against defined rules to detect anomalies. For example, if an unauthorized bash session is opened within a container or an unexpected process is executed, Falco logs this and alerts the user.</p>
+<p><img alt="Falco" src="../images/image.png" /></p>
+<h3 id="key-use-cases">Key Use Cases</h3>
 <ul>
 <li>
-<p>Always set the <code>PGDATA</code> environment variable to the path of the data directory. As the default directory used by the postgres image could change in the future.</p>
+<p>Real-time security monitoring</p>
 </li>
 <li>
-<p>Always set the <code>POSTGRES_PASSWORD</code> environment variable. If not set, a random password will be generated and printed in the logs. </p>
-</li>
-<li>Always manage the password externally, for example by using a <a href="https://kubernetes.io/docs/concepts/configuration/secret/">Kubernetes Secret</a>.</li>
-</ul>
-<p><strong>Status of postgres process</strong></p>
-<ul>
-<li>Check the status
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>postgresql.service
-</code></pre></div></li>
-<li>[If Applicable] Enable the service to start on boot 
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>postgresql.service
-</code></pre></div></li>
-</ul>
-<h2 id="configuration-files">Configuration Files</h2>
-<ul>
-<li>
-<p>Located at: <code>/etc/postgresql/&lt;version&gt;/main/*</code></p>
+<p>Preventing potential security breaches in containers</p>
 </li>
 <li>
-<p>After changing configuration, you must apply it with 
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>postgresql.service
-</code></pre></div></p>
+<p>Monitoring network activities and detecting suspicious connections</p>
+</li>
+<li>
+<p>Logging configuration changes made inside containers</p>
 </li>
 </ul>
-<h3 id="pg_identconf-os-user-identification">pg_ident.conf (OS User Identification)</h3>
+<h2 id="how-falco-works">How Falco Works</h2>
+<p>Falco is a security monitoring solution that observes and analyzes system calls at the kernel level. Specifically, it tracks process activities in the system and compares them against predefined rules. These rules determine what is considered normal or abnormal based on security policies. Suspicious operations are then reported to users through specified channels.</p>
+<p><img alt="Falco" src="../images/image-1.png" /></p>
+<p>Falco uses sysdig libraries to analyze system calls in the user space. These events are filtered through Falco's policy engine based on predefined rules. If an event is deemed suspicious, it is reported through various output channels, such as:</p>
 <ul>
-<li>This file is used for <strong>Operation System User -&gt; Database User</strong> mapping in PostgreSQL. </li>
-<li>It allows you to define mappings between a local operating system user and a PostgreSQL database user. </li>
-</ul>
-<h3 id="postgresqlconf-configuration">postgresql.conf (Configuration)</h3>
-<ul>
-<li>This is the <strong>primary configuration file</strong> for PostgreSQL. </li>
-<li>It contains a wide range of settings that control the behavior of the database server. </li>
-<li>These settings include parameters such as: <ul>
-<li>database connection settings, </li>
-<li>memory allocation, </li>
-<li>logging options, </li>
-<li>security configurations,</li>
-<li>and performance-related settings.</li>
-</ul>
+<li>
+<p>Log files</p>
+</li>
+<li>
+<p>Standard output</p>
+</li>
+<li>
+<p>Alert mechanisms like Slack or email notifications</p>
 </li>
 </ul>
-<h3 id="pg_hbaconf-host-based-authentication">pg_hba.conf (Host Based Authentication)</h3>
-<ul>
-<li>This file controls client authentication in PostgreSQL. </li>
-<li>It specifies the rules for allowing or denying client connections based on various authentication methods such as: <ul>
-<li>password authentication, </li>
-<li>certificate-based authentication, </li>
-<li>or IP address-based authentication. </li>
-</ul>
+<h2 id="core-features-of-falco">Core Features of Falco</h2>
+<ol>
+<li>
+<p><strong>Real-Time Monitoring</strong>: Falco detects security events in real-time that require immediate attention.</p>
 </li>
-<li>It is responsible for defining who can connect to the database and how they are authenticated.</li>
-</ul>
-<h3 id="pg_statconf-statistics">pg_stat.conf (Statistics)</h3>
-<ul>
-<li>This file is related to the statistics collection in PostgreSQL. </li>
-<li>It defines which statistics are collected and how they are stored. </li>
-<li>By configuring this file, you can control the collection of various statistics such as: <ul>
-<li>the number of tuples read or written, </li>
-<li>index usage, </li>
-<li>query execution time, and more. 
-These statistics help in monitoring and performance tuning of the database.</li>
-</ul>
+<li>
+<p><strong>Customizable Rule Sets</strong>: Falco offers default security rules, but users can add their own in the <strong>falco_rules.local.yaml</strong> file.</p>
 </li>
+<li>
+<p><strong>Hierarchical Severity Levels</strong>: Falco classifies detected events into different levels of importance. Below is a brief explanation of the log levels:</p>
+</li>
+<li>
+<p><strong>emergency</strong>: System is unusable. Used for very serious system errors.</p>
+</li>
+<li>
+<p><strong>alert</strong>: Immediate action required. Suitable for critical system failures or security breaches.</p>
+</li>
+<li>
+<p><strong>critical</strong>: Critical conditions. Used for errors that could cause system or application crashes.</p>
+</li>
+<li>
+<p><strong>error</strong>: Error conditions. Logs system or application errors.</p>
+</li>
+<li>
+<p><strong>warning</strong>: Warning conditions. Indicates potential issues.</p>
+</li>
+<li>
+<p><strong>notice</strong>: Normal but significant conditions. Highlights situations that aren't errors or warnings but still noteworthy.</p>
+</li>
+<li>
+<p><strong>info</strong>: Informational messages. Provides general information about system and application status (e.g., successful starts, configuration loads).</p>
+</li>
+<li>
+<p><strong>debug</strong>: Debug-level messages. Includes detailed information for troubleshooting and debugging (e.g., variable values, workflow steps).</p>
+<p>These log levels allow Falco users to track events based on their severity.</p>
+</li>
+<li>
+<p><strong>Kernel-Level System Call Monitoring</strong>: Tracks events at the kernel level, offering deep insights into container activities.</p>
+</li>
+</ol>
+<h2 id="installing-falco">Installing Falco</h2>
+<h3 id="running-falco-in-a-kubernetes-environment">Running Falco in a Kubernetes Environment</h3>
+<p>There are two main ways to deploy Falco in a Kubernetes environment:</p>
+<ol>
+<li><strong>As a Standalone Service</strong>: This method installs Falco as a system service independent of Kubernetes.</li>
+</ol>
+<p><a href="https://falco.org/docs/setup/packages/">📄 Standalone Falco Installation Guide</a></p>
+<ol>
+<li><strong>As a DaemonSet</strong>: This option deploys Falco as a pod on each Kubernetes node.</li>
+</ol>
+<p><a href="https://falco.org/docs/setup/kubernetes/">📄 Installing Falco on Kubernetes</a></p>
+<p>After installation, Falco-related files can be found in the <strong>/etc/falco</strong> directory.</p>
+<h2 id="managing-rules-in-falco">Managing Rules in Falco</h2>
+<p>One of Falco's strongest features is its configurable rule system, allowing users to define custom rules. Default rules are stored in the <strong>falco_rules.yaml</strong> file, which is updated during upgrades. User-defined rules go into the <strong>falco_rules.local.yaml</strong> file, which is not affected by updates. This setup enables users to tailor Falco to their specific security needs.</p>
+<h3 id="example-rule-unauthorized-bash-access">Example Rule: Unauthorized Bash Access</h3>
+<p>In this example, only <code>bash</code> processes running within a container environment are tracked. If a bash shell is opened, Falco detects this activity and generates an alert:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unauthorized Shell in Container</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect when a bash shell is opened in a container</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">container.id != host and proc.name = bash</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Unauthorized</span><span class="nv"> </span><span class="s">shell</span><span class="nv"> </span><span class="s">detected</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">container</span><span class="nv"> </span><span class="s">(command=%proc.cmdline</span><span class="nv"> </span><span class="s">container_name=%container.name)&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warning</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="err">```</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1">#### Explanation of the Rule</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">**condition**</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The `container.id != host` condition ensures that the rule applies only in the container environment. This means the rule will not trigger when `bash` is executed on the host. The `proc.name = bash` part specifies that the process being monitored must be `bash`.</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">**output**</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This defines the alert message that will be triggered when the event occurs. In this example, the alert includes the container name and the executed command.</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">**priority**</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Defines the severity of the event, which is set to `warning` in this case.</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1">#### Using References When Creating Rules</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="l l-Scalar l-Scalar-Plain">This rule was created using Falco&#39;s extensive rule-writing reference. To see all the fields supported by Falco and how to use them, you can consult the official documentation</span><span class="p p-Indicator">:</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p p-Indicator">[</span><span class="nv">📄 Falco Supported Fields for Conditions and Outputs</span><span class="p p-Indicator">]</span><span class="l l-Scalar l-Scalar-Plain">(https://falco.org/docs/reference/rules/supported-fields/)</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="l l-Scalar l-Scalar-Plain">This page lists all the fields available for conditions and outputs. For instance, `proc.name` tracks the process name, while `container.id` identifies the container ID. When writing your own rules or customizing existing ones, this reference document helps you choose the correct fields and formats.</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="l l-Scalar l-Scalar-Plain">This approach makes rule writing both more accurate and comprehensive, allowing you to easily detect any anomalies in your system.</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="c1">#### Using Lists in Falco</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="l l-Scalar l-Scalar-Plain">If you want to monitor other shell types besides `bash`, you can specify them in a **list**. For instance, to track `bash`, `sh`, and `zsh`, you can write a rule like this</span><span class="p p-Indicator">:</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="err">```</span><span class="l l-Scalar l-Scalar-Plain">yaml</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux_shells</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">  </span><span class="nt">items</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">bash</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">sh</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">zsh</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect Shell inside a Container</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">  </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Alert if a shell such as bash is open inside the container</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">container.id != host and proc.name in (linux_shells)</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">  </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Shell</span><span class="nv"> </span><span class="s">Opened</span><span class="nv"> </span><span class="s">(user=%user.name</span><span class="nv"> </span><span class="s">container=%container.id)&quot;</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">  </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WARNING</span>
+</code></pre></div>
+<p>By doing so, different types of shell processes in the container environment can be monitored, addressing potential security risks more comprehensively.</p>
+<h4 id="advantages-of-using-lists">Advantages of Using Lists</h4>
+<ul>
+<li>
+<p><strong>Readability</strong>: Instead of writing long conditions to check multiple values, a list provides a cleaner structure.</p>
+</li>
+<li>
+<p><strong>Reusability</strong>: The same list can be reused across multiple rules, simplifying management.</p>
+</li>
+<li>
+<p><strong>Ease of Updates</strong>: Adding or modifying items only requires changes to the list.</p>
+</li>
+</ul>
+<p>This structure is particularly useful for monitoring different types of shell processes or other similar events.</p>
+<h4 id="defining-rules-with-macros">Defining Rules with Macros</h4>
+<p>In Falco, you can use <strong>macros</strong> to define frequently used conditions. Macros can be reused within rules, making the rules more readable and easier to manage.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">macro</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unauthorized_shells</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">proc.name in (bash, sh, zsh)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unauthorized Shell in Container</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect unauthorized shell in a container</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">container.id != host and unauthorized_shells</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Unauthorized</span><span class="nv"> </span><span class="s">shell</span><span class="nv"> </span><span class="s">detected</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">container</span><span class="nv"> </span><span class="s">(command=%proc.cmdline</span><span class="nv"> </span><span class="s">container_name=%container.name)&quot;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warning</span>
+</code></pre></div>
+<h4 id="advantages-of-using-macros">Advantages of Using Macros</h4>
+<ul>
+<li>
+<p><strong>Reduced Code Duplication</strong>: Macros allow you to define a condition once and reuse it across multiple rules, reducing repetition.</p>
+</li>
+<li>
+<p><strong>Improved Readability</strong>: Using macros makes rules more understandable and easier to manage.</p>
+</li>
+</ul>
+<p>These features make Falco’s security monitoring rules more flexible and manageable in container environments.</p>
+<h2 id="log-management-in-falco">Log Management in Falco</h2>
+<p>Falco offers flexibility in storing and managing logs in various formats and destinations. Below, you will find several configuration options and how to use them.</p>
+<h3 id="1-saving-falco-logs-to-a-file">1. Saving Falco Logs to a File</h3>
+<p>To save Falco logs to a specific file, update the <strong>/etc/falco/falco.yaml</strong> file with the following settings:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">file_output</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">keep_alive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">filename</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./falco_events.txt</span>
+</code></pre></div>
+<ul>
+<li>
+<p><strong>enabled</strong>: When set to <code>true</code>, file output is enabled, and logs are written to the specified file.</p>
+</li>
+<li>
+<p><strong>keep_alive</strong>:</p>
+</li>
+<li><code>true</code>: Keeps the file open for continuous writing, which can improve performance since the file doesn’t reopen for each event.</li>
+<li>
+<p><code>false</code>: Opens, writes, and closes the file for each event.</p>
+</li>
+<li>
+<p><strong>filename</strong>: Specifies the path where logs will be saved. In this example, logs will be saved to <code>/var/log/falco_events.txt</code>.</p>
+</li>
+</ul>
+<h3 id="2-saving-falco-logs-in-json-format">2. Saving Falco Logs in JSON Format</h3>
+<p>To save Falco events in JSON format, use the following configuration:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">json_output</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>By default, this setting is <code>enabled:false</code>, which saves logs in text format. To enable JSON logging, set the value to <code>enabled:true</code>.</p>
+<h3 id="3-program-output-for-notifications">3. Program Output for Notifications</h3>
+<p>To process logs through a program or send notifications, use the following configuration:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">program_output</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">program</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mail -s &quot;Falco Alert&quot; admin@example.com</span>
+</code></pre></div>
+<ul>
+<li><strong>program</strong>: Falco sends detected events through this program. In this example, events are sent as an email.</li>
+</ul>
+<h3 id="4-setting-the-log-level">4. Setting the Log Level</h3>
+<p>You can define the minimum log level that Falco will record using <code>log_level</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">log_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span>
+</code></pre></div>
+<p>Events with a severity level of <code>info</code> and above will be recorded.</p>
+<ul>
+<li>
+<p><strong>Log level descriptions</strong>:</p>
+</li>
+<li>
+<p><code>debug</code>: Records all log levels.</p>
+</li>
+<li>
+<p><code>info</code>: Provides general information about system status.</p>
+</li>
+<li>
+<p><code>warning</code>, <code>error</code>, <code>critical</code>, <code>alert</code>, and <code>emergency</code>: Indicate progressively higher levels of severity.</p>
+</li>
+</ul>
+<h3 id="5-rule-file-loading-order">5. Rule File Loading Order</h3>
+<p>Falco loads rule files in the order specified in the configuration. <strong>Order matters</strong>, because:</p>
+<ul>
+<li>
+<p>If a rule defined in the <strong>falco_rules.yaml</strong> file is redefined in the <strong>falco_rules.local.yaml</strong> file, the rule in <strong>falco_rules.local.yaml</strong> will take precedence.</p>
+</li>
+<li>
+<p>This approach allows users to customize and override default rules.</p>
+</li>
+</ul>
+<h4 id="example-falcoyaml-configuration">Example falco.yaml Configuration</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">rules_file</span><span class="p">:</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/falco/falco_rules.yaml</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/falco/falco_rules.local.yaml</span>
+</code></pre></div>
+<p>This configuration indicates that the default rules will be loaded first, followed by user-customized rules.</p>
+<p>In summary, the rule defined in the last file will always take precedence (overwrite).</p>
+<h4 id="important-note">Important Note:</h4>
+<p>After modifying Falco's configuration file, you need to restart the Falco service for the changes to take effect:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>falco
+</code></pre></div>
+<h2 id="conclusion">Conclusion</h2>
+<p>Falco is a powerful and flexible tool for security monitoring in Kubernetes and container environments. With its easily customizable rule system and real-time monitoring capabilities, it helps you identify security vulnerabilities efficiently. If you’re looking to enhance the security of your Kubernetes infrastructure, Falco is definitely worth considering.</p>
+<h2 id="references">References</h2>
+<p>This document was prepared using the following resources:</p>
+<ul>
+<li><a href="https://falco.org/docs/">Official Falco Documentation</a></li>
+<li><a href="https://learn.kodekloud.com/user/courses/certified-kubernetes-security-specialist-cks">Certified Kubernetes Security Specialist (CKS) Course - KodeKloud</a></li>
 </ul>
 
 

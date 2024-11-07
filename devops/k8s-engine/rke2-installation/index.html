@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -3519,8 +3519,8 @@
   
 
 
-<h1 id="rke2-setup">RKE2 Setup <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f525.svg" title=":fire:" /></h1>
-<h5 id="rke2-requirements"><img alt="ℹ" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/2139.svg" title=":information_source:" /> RKE2 Requirements :</h5>
+<h1 id="rke2-setup">RKE2 Setup <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /></h1>
+<h5 id="rke2-requirements"><img alt="ℹ" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2139.svg" title=":information_source:" /> RKE2 Requirements :</h5>
 <table>
 <thead>
 <tr>
@@ -3543,7 +3543,7 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/26a0.svg" title=":warning:" /> We turn off the firewall to avoid problems in the future. We update the packages and clean up any files left over from previous installations.</p>
+<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> We turn off the firewall to avoid problems in the future. We update the packages and clean up any files left over from previous installations.</p>
 <p><strong>Ubuntu</strong>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Ubuntu instructions </span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># stop the software firewall</span>
@@ -3578,7 +3578,7 @@
 </div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>-sfL<span class="w"> </span>https://get.rke2.io<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nv">INSTALL_RKE2_CHANNEL</span><span class="o">=</span>v1.24<span class="w"> </span><span class="nv">INSTALL_RKE2_TYPE</span><span class="o">=</span>server<span class="w"> </span>sh<span class="w"> </span>-
 </code></pre></div>
-<p>Perfect! <img alt="🎊" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f38a.svg" title=":confetti_ball:" /> Now we can start talking Kubernetes. We need to symlink the <code>kubectl</code> cli on <code>rancher1</code> that gets installed from RKE2.</p>
+<p>Perfect! <img alt="🎊" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f38a.svg" title=":confetti_ball:" /> Now we can start talking Kubernetes. We need to symlink the <code>kubectl</code> cli on <code>rancher1</code> that gets installed from RKE2.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># add kubectl conf</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PATH=$PATH:/var/lib/rancher/rke2/bin KUBECONFIG=/etc/rancher/rke2/rke2.yaml&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">source</span><span class="w"> </span>~/.bashrc
@@ -3636,7 +3636,7 @@
 </div>
 </div>
 <p>Rinse and repeat. Run the same install commands on <code>rancher2</code>, <code>rancher3</code>. Next we can validate all the nodes are playing nice by running kubectl get node -o wide on rancher1. </p>
-<h4 id="run-this-code">Run this code ! <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f525.svg" title=":fire:" /></h4>
+<h4 id="run-this-code">Run this code ! <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /></h4>
 <div class="highlight"><span class="filename">'To check that Kubernetes is running'</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>node
 </code></pre></div>
 <hr />
