@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../external-secret-operator/">
+      
+      
+        <link rel="next" href="../../jenkins/jenkins-installation/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>Deep Dive into Security Monitoring in Kubernetes Environments: An Introduction to Falco - Hepapi Knowledge Hub</title>
+        <title>What is Falco? - Hepapi Knowledge Hub</title>
       
     
     
@@ -103,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deep Dive into Security Monitoring in Kubernetes Environments: An Introduction to Falco
+              What is Falco?
             
           </span>
         </div>
@@ -215,10 +219,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../.." class="md-tabs__link">
           
   
@@ -340,23 +346,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -367,7 +378,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             DevOps
@@ -1510,6 +1521,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1519,11 +1532,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_10" checked>
         
           
           <label class="md-nav__link" for="__nav_1_10" id="__nav_1_10_label" tabindex="0">
@@ -1537,7 +1550,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_10_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_10_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_10">
             <span class="md-nav__icon md-icon"></span>
             DevSecOps
@@ -1581,6 +1594,301 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    What is Falco?
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    What is Falco?
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-falco" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Falco?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is Falco?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Use Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-falco-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Falco Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-features-of-falco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Features of Falco
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-falco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Falco
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing Falco">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-falco-in-a-kubernetes-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Falco in a Kubernetes Environment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-rules-in-falco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Rules in Falco
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Rules in Falco">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-rule-unauthorized-bash-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Rule: Unauthorized Bash Access
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Rule: Unauthorized Bash Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-using-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of Using Lists
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-rules-with-macros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defining Rules with Macros
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-using-macros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of Using Macros
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log-management-in-falco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Management in Falco
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Log Management in Falco">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-saving-falco-logs-to-a-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Saving Falco Logs to a File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-saving-falco-logs-in-json-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Saving Falco Logs in JSON Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-program-output-for-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Program Output for Notifications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-setting-the-log-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Setting the Log Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-rule-file-loading-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Rule File Loading Order
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Rule File Loading Order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-falcoyaml-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example falco.yaml Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important Note:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
