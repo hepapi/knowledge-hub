@@ -51,6 +51,7 @@ nav:
     - DevSecOps:
         - "DevSecOps with SonarQube, OWASP Dependency-Check, Conftest and Trivy": devops/devsecops/DevSecOps-SonarQube-OWASP-Conftest-Trvy.md
         - "External Secret Operator via Minikube and AWS Secret Manager": devops/devsecops/external-secret-operator.md
+        - "What is Falco?": devops/devsecops/What is Falco.md
     - Jenkins:
         - "Jenkins Installation": devops/jenkins/jenkins-installation.md
         - "Jenkins Shared Library": devops/jenkins/shared-library.md
