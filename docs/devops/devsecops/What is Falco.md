@@ -92,7 +92,7 @@ In this example, only `bash` processes running within a container environment ar
   condition: container.id != host and proc.name = bash
   output: "Unauthorized shell detected in container (command=%proc.cmdline container_name=%container.name)"
   priority: warning
-  ```
+```
 
 #### Explanation of the Rule
 
