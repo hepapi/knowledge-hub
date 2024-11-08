@@ -1747,6 +1747,33 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#explanation-of-the-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation of the Rule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-references-when-creating-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using References When Creating Rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-lists-in-falco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Lists in Falco
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#advantages-of-using-lists" class="md-nav__link">
     <span class="md-ellipsis">
       Advantages of Using Lists
@@ -3763,6 +3790,33 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#explanation-of-the-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation of the Rule
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-references-when-creating-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using References When Creating Rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-lists-in-falco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Lists in Falco
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#advantages-of-using-lists" class="md-nav__link">
     <span class="md-ellipsis">
       Advantages of Using Lists
@@ -4021,39 +4075,34 @@
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">container.id != host and proc.name = bash</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Unauthorized</span><span class="nv"> </span><span class="s">shell</span><span class="nv"> </span><span class="s">detected</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">container</span><span class="nv"> </span><span class="s">(command=%proc.cmdline</span><span class="nv"> </span><span class="s">container_name=%container.name)&quot;</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warning</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="err">```</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1">#### Explanation of the Rule</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">**condition**</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The `container.id != host` condition ensures that the rule applies only in the container environment. This means the rule will not trigger when `bash` is executed on the host. The `proc.name = bash` part specifies that the process being monitored must be `bash`.</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">**output**</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This defines the alert message that will be triggered when the event occurs. In this example, the alert includes the container name and the executed command.</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">**priority**</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Defines the severity of the event, which is set to `warning` in this case.</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1">#### Using References When Creating Rules</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="l l-Scalar l-Scalar-Plain">This rule was created using Falco&#39;s extensive rule-writing reference. To see all the fields supported by Falco and how to use them, you can consult the official documentation</span><span class="p p-Indicator">:</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p p-Indicator">[</span><span class="nv">📄 Falco Supported Fields for Conditions and Outputs</span><span class="p p-Indicator">]</span><span class="l l-Scalar l-Scalar-Plain">(https://falco.org/docs/reference/rules/supported-fields/)</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="l l-Scalar l-Scalar-Plain">This page lists all the fields available for conditions and outputs. For instance, `proc.name` tracks the process name, while `container.id` identifies the container ID. When writing your own rules or customizing existing ones, this reference document helps you choose the correct fields and formats.</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="l l-Scalar l-Scalar-Plain">This approach makes rule writing both more accurate and comprehensive, allowing you to easily detect any anomalies in your system.</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="c1">#### Using Lists in Falco</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="l l-Scalar l-Scalar-Plain">If you want to monitor other shell types besides `bash`, you can specify them in a **list**. For instance, to track `bash`, `sh`, and `zsh`, you can write a rule like this</span><span class="p p-Indicator">:</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="err">```</span><span class="l l-Scalar l-Scalar-Plain">yaml</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux_shells</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">  </span><span class="nt">items</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">bash</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">sh</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">zsh</span><span class="p p-Indicator">]</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect Shell inside a Container</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">  </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Alert if a shell such as bash is open inside the container</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">container.id != host and proc.name in (linux_shells)</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">  </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Shell</span><span class="nv"> </span><span class="s">Opened</span><span class="nv"> </span><span class="s">(user=%user.name</span><span class="nv"> </span><span class="s">container=%container.id)&quot;</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">  </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WARNING</span>
+</code></pre></div>
+<h4 id="explanation-of-the-rule">Explanation of the Rule</h4>
+<ul>
+<li>
+<p><strong>condition</strong>: The <code>container.id != host</code> condition ensures that the rule applies only in the container environment. This means the rule will not trigger when <code>bash</code> is executed on the host. The <code>proc.name = bash</code> part specifies that the process being monitored must be <code>bash</code>.</p>
+</li>
+<li>
+<p><strong>output</strong>: This defines the alert message that will be triggered when the event occurs. In this example, the alert includes the container name and the executed command.</p>
+</li>
+<li>
+<p><strong>priority</strong>: Defines the severity of the event, which is set to <code>warning</code> in this case.</p>
+</li>
+</ul>
+<h4 id="using-references-when-creating-rules">Using References When Creating Rules</h4>
+<p>This rule was created using Falco's extensive rule-writing reference. To see all the fields supported by Falco and how to use them, you can consult the official documentation:</p>
+<p><a href="https://falco.org/docs/reference/rules/supported-fields/">📄 Falco Supported Fields for Conditions and Outputs</a></p>
+<p>This page lists all the fields available for conditions and outputs. For instance, <code>proc.name</code> tracks the process name, while <code>container.id</code> identifies the container ID. When writing your own rules or customizing existing ones, this reference document helps you choose the correct fields and formats.</p>
+<p>This approach makes rule writing both more accurate and comprehensive, allowing you to easily detect any anomalies in your system.</p>
+<h4 id="using-lists-in-falco">Using Lists in Falco</h4>
+<p>If you want to monitor other shell types besides <code>bash</code>, you can specify them in a <strong>list</strong>. For instance, to track <code>bash</code>, <code>sh</code>, and <code>zsh</code>, you can write a rule like this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux_shells</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">items</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">bash</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">sh</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">zsh</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect Shell inside a Container</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Alert if a shell such as bash is open inside the container</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">container.id != host and proc.name in (linux_shells)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Shell</span><span class="nv"> </span><span class="s">Opened</span><span class="nv"> </span><span class="s">(user=%user.name</span><span class="nv"> </span><span class="s">container=%container.id)&quot;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WARNING</span>
 </code></pre></div>
 <p>By doing so, different types of shell processes in the container environment can be monitored, addressing potential security risks more comprehensively.</p>
 <h4 id="advantages-of-using-lists">Advantages of Using Lists</h4>
@@ -4071,14 +4120,14 @@
 <p>This structure is particularly useful for monitoring different types of shell processes or other similar events.</p>
 <h4 id="defining-rules-with-macros">Defining Rules with Macros</h4>
 <p>In Falco, you can use <strong>macros</strong> to define frequently used conditions. Macros can be reused within rules, making the rules more readable and easier to manage.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">macro</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unauthorized_shells</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">proc.name in (bash, sh, zsh)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unauthorized Shell in Container</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect unauthorized shell in a container</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">container.id != host and unauthorized_shells</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Unauthorized</span><span class="nv"> </span><span class="s">shell</span><span class="nv"> </span><span class="s">detected</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">container</span><span class="nv"> </span><span class="s">(command=%proc.cmdline</span><span class="nv"> </span><span class="s">container_name=%container.name)&quot;</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warning</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">macro</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unauthorized_shells</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">proc.name in (bash, sh, zsh)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unauthorized Shell in Container</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect unauthorized shell in a container</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">container.id != host and unauthorized_shells</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Unauthorized</span><span class="nv"> </span><span class="s">shell</span><span class="nv"> </span><span class="s">detected</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">container</span><span class="nv"> </span><span class="s">(command=%proc.cmdline</span><span class="nv"> </span><span class="s">container_name=%container.name)&quot;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warning</span>
 </code></pre></div>
 <h4 id="advantages-of-using-macros">Advantages of Using Macros</h4>
 <ul>
@@ -4094,10 +4143,10 @@
 <p>Falco offers flexibility in storing and managing logs in various formats and destinations. Below, you will find several configuration options and how to use them.</p>
 <h3 id="1-saving-falco-logs-to-a-file">1. Saving Falco Logs to a File</h3>
 <p>To save Falco logs to a specific file, update the <strong>/etc/falco/falco.yaml</strong> file with the following settings:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">file_output</span><span class="p">:</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">keep_alive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">filename</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./falco_events.txt</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">file_output</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">keep_alive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">filename</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./falco_events.txt</span>
 </code></pre></div>
 <ul>
 <li>
@@ -4116,22 +4165,22 @@
 </ul>
 <h3 id="2-saving-falco-logs-in-json-format">2. Saving Falco Logs in JSON Format</h3>
 <p>To save Falco events in JSON format, use the following configuration:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">json_output</span><span class="p">:</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">json_output</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 <p>By default, this setting is <code>enabled:false</code>, which saves logs in text format. To enable JSON logging, set the value to <code>enabled:true</code>.</p>
 <h3 id="3-program-output-for-notifications">3. Program Output for Notifications</h3>
 <p>To process logs through a program or send notifications, use the following configuration:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">program_output</span><span class="p">:</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">program</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mail -s &quot;Falco Alert&quot; admin@example.com</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">program_output</span><span class="p">:</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">program</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mail -s &quot;Falco Alert&quot; admin@example.com</span>
 </code></pre></div>
 <ul>
 <li><strong>program</strong>: Falco sends detected events through this program. In this example, events are sent as an email.</li>
 </ul>
 <h3 id="4-setting-the-log-level">4. Setting the Log Level</h3>
 <p>You can define the minimum log level that Falco will record using <code>log_level</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">log_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">log_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span>
 </code></pre></div>
 <p>Events with a severity level of <code>info</code> and above will be recorded.</p>
 <ul>
@@ -4159,15 +4208,15 @@
 </li>
 </ul>
 <h4 id="example-falcoyaml-configuration">Example falco.yaml Configuration</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">rules_file</span><span class="p">:</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/falco/falco_rules.yaml</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/falco/falco_rules.local.yaml</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">rules_file</span><span class="p">:</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/falco/falco_rules.yaml</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/falco/falco_rules.local.yaml</span>
 </code></pre></div>
 <p>This configuration indicates that the default rules will be loaded first, followed by user-customized rules.</p>
 <p>In summary, the rule defined in the last file will always take precedence (overwrite).</p>
 <h4 id="important-note">Important Note:</h4>
 <p>After modifying Falco's configuration file, you need to restart the Falco service for the changes to take effect:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>falco
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>falco
 </code></pre></div>
 <h2 id="conclusion">Conclusion</h2>
 <p>Falco is a powerful and flexible tool for security monitoring in Kubernetes and container environments. With its easily customizable rule system and real-time monitoring capabilities, it helps you identify security vulnerabilities efficiently. If you’re looking to enhance the security of your Kubernetes infrastructure, Falco is definitely worth considering.</p>
