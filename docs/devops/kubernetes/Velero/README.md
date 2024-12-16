@@ -96,8 +96,8 @@ Leave the rest as default.
 				"s3:ListBucket"
 			],
 			"Resource": [
-				"arn:aws:s3:::<YOUR_BUCKET_NAME>",
-				"arn:aws:s3:::<YOUR_BUCKET_NAME>/*"
+				"arn:aws:s3:::velero-backup-mehmet",
+				"arn:aws:s3:::velero-backup-mehmet/*"
 			]
 		},
 		{
@@ -177,6 +177,12 @@ velero install \
     --secret-file ./credentials.txt \
     --pod-annotations iam.amazonaws.com/role=arn:aws:iam::123456789123:user/mehmet \
     --use-volume-snapshots=false
+```
+
+- Run the following command to see the backup location.
+
+```text
+velero backup-location get
 ```
 
 - The expected output will be: 
@@ -274,6 +280,12 @@ velero get backup
 ```
 
 ![velero-schedule](pics/velero-schedule.png)
+
+- Delete the scheduled backups.
+
+```text
+velero delete schedule my-first-schedule  
+```
 
 - Delete the backups.
 
