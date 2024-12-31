@@ -1,7 +1,7 @@
 
 # Fundamental Testing Process
 
-## 1 Test Planning and Defining Strategy
+## 1.Test Planning and Defining Strategy
 Testing begins with planning, aligning procedures with project objectives.
 
 ### Key Steps:
@@ -15,7 +15,7 @@ Testing begins with planning, aligning procedures with project objectives.
 - Specify tools (e.g., Selenium, Postman).
 - Clarify test success criteria.
 
-## 2 Writing Test Scenarios and Test Cases
+## 2.Writing Test Scenarios and Test Cases
 - **Test Scenarios:** High-level user flows.
   - Example: "The user should access their profile page after logging in."
 - **Test Cases:** Detailed steps.
@@ -29,14 +29,14 @@ Testing begins with planning, aligning procedures with project objectives.
 - High-risk areas (e.g., payment processes) need rigorous testing.
 - Less used modules have lower priority.
 
-## 3 Bug Reporting
+## 3.Bug Reporting
 A good bug report includes:
 - **Category:** Performance, UI, security.
 - **Severity:** Impact level (e.g., login failure vs. button misalignment).
 - **Reproduction Steps:** Detailed actions to replicate the bug.
 - **Supporting Materials:** Screenshots, error logs, etc.
 
-## 4 Test Tracking and Reporting
+## 4.Test Tracking and Reporting
 Use tools like Jira or TestRail to manage test statuses and open bugs.
 
 ### Reporting:
@@ -46,7 +46,7 @@ Use tools like Jira or TestRail to manage test statuses and open bugs.
 - Resolved bugs ratio.
 - Remaining workload.
 
-## 5 Preparing Test Environments
+## 5.Preparing Test Environments
 Ensure a realistic and reliable test environment.
 - **Accurate Data:** Use dummy data.
 - **Accessibility:** Seamless team access.

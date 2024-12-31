@@ -1,7 +1,7 @@
 
 # Bug Management
 
-## 1 What is a Bug?
+## 1.What is a Bug?
 A bug is a mismatch between the expected behavior and the actual behavior of a system. Bugs can be categorized as follows:
 
 - **Coding Bugs:** Issues originating from developer errors.
@@ -9,7 +9,7 @@ A bug is a mismatch between the expected behavior and the actual behavior of a s
 - **UI Bugs:** Design and usability issues in the user interface.
 - **Performance Bugs:** System slowdowns or crashes under high load.
 
-## 2 Types of Bugs
+## 2.Types of Bugs
 Proper classification of bugs is crucial for determining resolution priorities.
 
 - **Critical:** Bugs that cause system crashes or prevent main functions from working. Example: Payment system not operational.
@@ -17,7 +17,7 @@ Proper classification of bugs is crucial for determining resolution priorities.
 - **Minor:** Bugs that affect user experience but do not break the system. Example: Misaligned button.
 - **Trivial:** Low-priority bugs, often cosmetic. Example: Typo in text.
 
-## 3 Bug Tracking Tools
+## 3.Bug Tracking Tools
 Bug tracking tools like Jira allow teams to:
 - Create and assign bugs to specific members.
 - Track the bug resolution process (open, in progress, resolved).

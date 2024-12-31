@@ -30,18 +30,18 @@ DevOps is an approach and culture that combines software development and IT oper
 
 #### QA's Role in CI/CD Processes
 
-- **Continuous Integration (CI):** Developers frequently merge their code into a shared repository and run automated tests to detect issues early.
-- **Continuous Delivery (CD):** Code is delivered quickly and reliably to production after passing through CI processes.
+- Continuous Integration (CI): Developers frequently merge their code into a shared repository and run automated tests to detect issues early.
+- Continuous Delivery (CD): Code is delivered quickly and reliably to production after passing through CI processes.
 
 QA ensures that the software maintains functional and technical quality through practices like Shift-Left Testing, Test Automation, and Pre-Deployment Validation.
 
 ### Key Practices
 
-1. **Shift-Left Testing:** Early detection of errors by starting QA activities at the beginning of the development lifecycle.
-2. **Test Automation:** Utilizing automation tools for repetitive tasks, such as Unit, Integration, and Regression Tests.
-3. **Pipeline Integration:** Automated tests run after every code update in the CI/CD pipeline.
-4. **Rapid Feedback:** Sharing test results promptly for quick issue resolution.
-5. **Pre-Deployment Validation:** Conducting User Acceptance Testing (UAT) and Release Testing.
+1. Shift-Left Testing: Early detection of errors by starting QA activities at the beginning of the development lifecycle.
+2. Test Automation: Utilizing automation tools for repetitive tasks, such as Unit, Integration, and Regression Tests.
+3. Pipeline Integration: Automated tests run after every code update in the CI/CD pipeline.
+4. Rapid Feedback: Sharing test results promptly for quick issue resolution.
+5. Pre-Deployment Validation: Conducting User Acceptance Testing (UAT) and Release Testing.
 
 ### Conclusion
 
