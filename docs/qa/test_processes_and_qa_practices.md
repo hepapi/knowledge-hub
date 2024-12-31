@@ -1,4 +1,3 @@
-
 # Test Processes and QA Practices
 
 ## Agile and QA

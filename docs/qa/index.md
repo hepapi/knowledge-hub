@@ -10,6 +10,10 @@ QA, as one of the cornerstones of delivering high-quality software, does not onl
 - Best Practices: Tips for more effective and efficient testing processes.
 -FAQs and Guides: Solutions to frequently asked questions and helpful documentation.
 
+[:fontawesome-brands-linkedin: Follow us on Linkedin ](https://linkedin.com/company/hepapi){ .md-button .md-button--primary }
+[:fontawesome-solid-globe: hepapi.com ](https://hepapi.com/){ .md-button }
+
+
 
 This knowledge hub is a living, evolving resource. As part of Hepapi’s dynamic QA team, we continue to learn and share. If you have valuable insights or suggestions to share, don’t hesitate to contribute! Remember, what might seem obvious to you could be a new discovery for someone else.
 

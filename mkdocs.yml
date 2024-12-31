@@ -105,7 +105,7 @@ nav:
         - "Longhorn Block Storage": devops/k8s-storage/longhorn.md
 
   - QA:
-    - index.md
+    - qa/index.md
     - Fundamentals of QA: qa/Fundamentals_of_QA.md
     - Test Approaches in QA: qa/test_approaches_in_quality_assurance.md
     - Type of Test: qa/types_of_tests.md

@@ -1,14 +1,14 @@
-## TYPES OF TESTS
+# TYPES OF TESTS
 
 Software testing is the process of evaluating software applications, systems, or components to ensure they meet specified requirements and function as expected. It is categorized into two main types: functional testing and non-functional testing.
 
 
 
-### 1. Functional Testing
+## 1. Functional Testing
 
 Functional testing focuses on verifying that the software operates according to its intended functionality, based on specified requirements.
 
-#### Types of Functional Testing
+### Types of Functional Testing
 
 Unit Testing
 Unit testing verifies the smallest testable parts of the software, such as functions or methods, in isolation. It is typically performed by developers during the coding phase and ensures that each unit of the software works as intended.
