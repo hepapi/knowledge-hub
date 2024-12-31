@@ -3,28 +3,28 @@
 
 Automation testing is an integral part of modern software development processes. It is utilized to ensure software quality, deliver faster releases, and minimize errors that could arise in manual testing. Below is an overview of the key steps of automation testing and how these should be implemented.
 
-#### 7.1 Automation Test Planning
+#### 1.Automation Test Planning
 
 Effective planning is critical to the success of automation testing. Automation test planning should be carried out as follows:
 - **Defining Test Objectives:** Evaluating which areas are suitable for automation.
 - **Selecting Test Environment and Tools:** Choosing tools such as Java, Ruby, Python, or UiPath that fit the project requirements.
 - **Determining Test Scope:** Identifying test scenarios to be automated and defining areas integrated with manual testing.
 
-#### 7.2 Identifying Test Scenarios
+#### 2.Identifying Test Scenarios
 
 The following principles should be followed when detailing test scenarios:
 - **Prioritizing Test Cases:** Starting with functionalities of critical importance.
 - **Reusability:** Creating templates that can be reused in future projects.
 - **Writing with Gherkin Language:** Especially when using the BDD approach, scenarios should be written in a format understandable by business units.
 
-#### 7.3 Code Structure and Modularity
+#### 3.Code Structure and Modularity
 
 Structuring code in modular forms is a crucial factor in testing processes. Each test step should be designed as independent functions or classes. Key considerations include:
 - **Ease of Maintenance:** Ensuring the code can adapt to changes.
 - **Reducing Redundancy:** Writing each test function only once and reusing it across multiple tests if necessary.
 - **OOP Principles:** Adhering to object-oriented programming structures in Java and Python projects.
 
-#### 7.4 Automation Frameworks
+#### 4.Automation Frameworks
 
 Different frameworks should be employed to create tailored solutions for specific projects. The frameworks and approaches include:
 
@@ -41,7 +41,7 @@ BDD facilitates better communication between business units and developers. BDD 
 - Scenarios are written in the “Given-When-Then” format.
 - Tools like Cucumber with Ruby or JBehave with Java are used to support the Gherkin language.
 
-#### 7.5 Best Practices for Automation Testing
+#### 5.Best Practices for Automation Testing
 
 The following best practices should be observed in the testing process:
 - **Parallel Test Execution:** Running tests quickly using Playwright or Selenium Grid.

@@ -5,7 +5,7 @@ Software testing is the process of checking whether the functionality, quality, 
 
 ---
 
-## 6.1 Manual Testing Tools
+## 1 Manual Testing Tools
 
 Manual testing tools simplify the testing process of software systems, playing a crucial role in identifying defects, ensuring functionality, and evaluating performance.
 
@@ -25,7 +25,7 @@ Manual testing tools simplify the testing process of software systems, playing a
 
 ---
 
-## 6.2 Automation Testing Tools
+## 2 Automation Testing Tools
 
 Automation testing tools conduct tests automatically without manual intervention, improving efficiency for frequent or complex test scenarios.
 
@@ -58,7 +58,7 @@ Automation testing tools conduct tests automatically without manual intervention
 
 ---
 
-## 6.3 API Testing Tools
+## 3 API Testing Tools
 
 API testing tools ensure proper communication between software systems by testing functions like validation, security, and performance.
 
@@ -77,7 +77,7 @@ API testing tools ensure proper communication between software systems by testin
 
 ---
 
-## 6.4 Performance and Security Testing Tools
+## 4 Performance and Security Testing Tools
 
 These tools test software speed, resilience under load, and vulnerabilities.
 
