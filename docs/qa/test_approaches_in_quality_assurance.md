@@ -1,4 +1,4 @@
-#Test Approaches in Quality Assurance
+# Test Approaches in Quality Assurance
 
 A test approach is the backbone of any successful quality assurance (QA) strategy, defining how testing will be conducted based on project needs, constraints, and objectives. Unlike specific testing types, test approaches focus on high-level strategies for planning and execution. Below are some widely used test approaches, their characteristics, and when to apply them.
 
