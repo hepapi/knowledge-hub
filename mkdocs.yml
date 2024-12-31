@@ -106,16 +106,14 @@ nav:
 
   - QA:
     - qa/index.md
-    - PlaceHolder:
-      - "test": qa/placeholder-subject/placeholder.md
-    - Automation Testing and Best Practices: qa/automation_testing_and_best_practices.md
     - Fundamentals of QA: qa/Fundamentals_of_QA.md
-    - QA Bug Reporting: qa/QA_Bug_Reporting.md
-    - Software Testing Tools: qa/Software_Testing_Tools.md
-    - SSH Config: qa/SSH_Config.md
     - Test Approaches in QA: qa/test_approaches_in_quality_assurance.md
     - Test Processes and QA Practices: qa/test_processes_and_qa_practices.md
     - Type of Test: qa/types_of_tests.md
+    - Software Testing Tools: qa/Software_Testing_Tools.md
+    - Automation Testing and Best Practices: qa/automation_testing_and_best_practices.md
+    - QA Bug Reporting: qa/QA_Bug_Reporting.md
+    - SSH Config: qa/SSH_Config.md
 
   - Misc:
     - How to Contribute:
