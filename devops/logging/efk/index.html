@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../humiosetup/">
+        <link rel="prev" href="../loki/">
       
       
-        <link rel="next" href="../zookeeperinstallation/">
+        <link rel="next" href="../../sre/k8sgpt/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Java Installation - Hepapi Knowledge Hub</title>
+        <title>EFK (EFK Stack (Elasticsearch, Fluentbit, Kibana) - Hepapi Knowledge Hub</title>
       
     
     
@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#efk-stack-elasticsearch-fluentbit-kibana-via-minikube" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -102,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Java Installation
+              EFK (EFK Stack (Elasticsearch, Fluentbit, Kibana)
             
           </span>
         </div>
@@ -1973,6 +1978,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1982,11 +1989,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_14" checked>
         
           
           <label class="md-nav__link" for="__nav_1_14" id="__nav_1_14_label" tabindex="0">
@@ -2000,7 +2007,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_14_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_14_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_14">
             <span class="md-nav__icon md-icon"></span>
             Logging
@@ -2014,7 +2021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/ELK-stack-with-FileBeat/" class="md-nav__link">
+      <a href="../ELK-stack-with-FileBeat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2035,7 +2042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/Index-Lifecycle-Management/" class="md-nav__link">
+      <a href="../Index-Lifecycle-Management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2056,7 +2063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/elasticsearch-exporter/" class="md-nav__link">
+      <a href="../elasticsearch-exporter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2077,7 +2084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/loki/" class="md-nav__link">
+      <a href="../loki/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2095,10 +2102,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../logging/efk/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    EFK (EFK Stack (Elasticsearch, Fluentbit, Kibana)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2107,6 +2134,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-setup-on-minikube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-Step Setup on minikube
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Setup on minikube">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create cluster
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-namespace-for-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Namespace for Logging
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-the-app-and-generate-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access the App and generate log
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2300,8 +2389,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2311,11 +2398,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_17" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_17" >
         
           
           <label class="md-nav__link" for="__nav_1_17" id="__nav_1_17_label" tabindex="0">
@@ -2329,7 +2416,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_17_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_17_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_17">
             <span class="md-nav__icon md-icon"></span>
             Falcon LogScale
@@ -2381,7 +2468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../falcon-logscale-installation-docker/" class="md-nav__link">
+      <a href="../../falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2402,7 +2489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent-installation/" class="md-nav__link">
+      <a href="../../falcon-logscale/agent-installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2428,8 +2515,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2439,11 +2524,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_17_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_17_2" >
         
           
           <label class="md-nav__link" for="__nav_1_17_2" id="__nav_1_17_2_label" tabindex="0">
@@ -2457,7 +2542,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_17_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_17_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_17_2">
             <span class="md-nav__icon md-icon"></span>
             Single Node Installation
@@ -2471,7 +2556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../humiosetup/" class="md-nav__link">
+      <a href="../../falcon-logscale/humiosetup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2489,17 +2574,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../falcon-logscale/javainstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2508,7 +2586,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -2521,7 +2598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zookeeperinstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/zookeeperinstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2542,7 +2619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../kafkainstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/kafkainstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2563,7 +2640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../humioinstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/humioinstallation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2630,7 +2707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../kafka/" class="md-nav__link">
+      <a href="../../falcon-logscale/kafka/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2651,7 +2728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../humio/" class="md-nav__link">
+      <a href="../../falcon-logscale/humio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2672,7 +2749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../readme/" class="md-nav__link">
+      <a href="../../falcon-logscale/readme/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3553,6 +3630,58 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-setup-on-minikube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-Step Setup on minikube
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Setup on minikube">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create cluster
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-namespace-for-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Namespace for Logging
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-the-app-and-generate-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access the App and generate log
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3567,7 +3696,7 @@
                   
 
   
-    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/falcon-logscale/javainstallation.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/logging/efk.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -3575,25 +3704,305 @@
   
 
 
-  <h1>Java Installation</h1>
-
-<p>Install at least java version 17 in the following order</p>
-<p>Download java package
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="l l-Scalar l-Scalar-Plain">https://cdn.azul.com/zulu/bin/zulu17.48.15-ca-jdk17.0.10-linux_amd64.deb</span>
-</code></pre></div></p>
-<p>Import Azul’s public key:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="l l-Scalar l-Scalar-Plain">sudo apt install gnupg ca-certificates curl</span>
+<h1 id="efk-stack-elasticsearch-fluentbit-kibana-via-minikube">EFK Stack (Elasticsearch, Fluentbit, Kibana) via Minikube</h1>
+<p>EFK is a popular logging stack used to collect, store, and analyze logs in Kubernetes.
+Elasticsearch: Stores and indexes log data for easy retrieval.
+Fluentbit: A lightweight log forwarder that collects logs from different sources and sends them to Elasticsearch.
+Kibana: A visualization tool that allows users to explore and analyze logs stored in Elasticsearch.</p>
+<p><img alt="efk" src="../efk-image/efk-0.png" /></p>
+<h2 id="step-by-step-setup-on-minikube">Step-by-Step Setup on minikube</h2>
+<h3 id="create-cluster">Create cluster</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>minikube<span class="w"> </span>start
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="l l-Scalar l-Scalar-Plain">curl -s https://repos.azul.com/azul-repo.key | sudo gpg --dearmor -o /usr/share/keyrings/azul.gpg</span>
+<h3 id="create-namespace-for-logging">Create Namespace for Logging</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>logging
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w"> </span><span class="sb">```</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">### Install Elasticsearch on K8s</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="sb">```</span>bash
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>elastic<span class="w"> </span>https://helm.elastic.co
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>helm<span class="w"> </span>install<span class="w"> </span>elasticsearch<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w"> </span>--set<span class="w"> </span><span class="nv">replicas</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w"> </span>--set<span class="w"> </span>persistence.enabled<span class="o">=</span><span class="nb">false</span><span class="w"> </span>elastic/elasticsearch<span class="w"> </span>-n<span class="w"> </span>logging
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w"> </span><span class="sb">```</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w"> </span><span class="c1">### Install Kibana</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="sb">```</span>bash
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>helm<span class="w"> </span>install<span class="w"> </span>kibana<span class="w">  </span>elastic/kibana<span class="w"> </span>-n<span class="w"> </span>logging
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>kubectl<span class="w"> </span>port-forward<span class="w"> </span>svc/kibana-kibana<span class="w"> </span><span class="m">5601</span>:5601<span class="w"> </span>-n<span class="w"> </span>logging
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w"> </span><span class="sb">```</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>-<span class="w"> </span>Go<span class="w"> </span>to<span class="w"> </span>localhost:5601<span class="w"> </span>and<span class="w"> </span>login<span class="w"> </span>Kibana
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="c1">### Retrieve Elasticsearch Username &amp; Password</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="sb">```</span>bash
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="c1"># for username</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secrets<span class="w"> </span>--namespace<span class="o">=</span>logging<span class="w"> </span>elasticsearch-master-credentials<span class="w"> </span>-ojsonpath<span class="o">=</span><span class="s1">&#39;{.data.username}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="c1"># for password</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secrets<span class="w"> </span>--namespace<span class="o">=</span>logging<span class="w"> </span>elasticsearch-master-credentials<span class="w"> </span>-ojsonpath<span class="o">=</span><span class="s1">&#39;{.data.password}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w"> </span><span class="sb">```</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="c1">### Install Fluentbit with Custom Values/Configurations</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>👉<span class="w"> </span>Note:<span class="w"> </span>Please<span class="w"> </span>update<span class="w"> </span>the<span class="w"> </span>HTTP_Passwd<span class="w"> </span>field<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>fluentbit-values.yml<span class="w"> </span>file<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>password<span class="w"> </span>retrieved<span class="w"> </span>earlier<span class="w"> </span><span class="k">in</span><span class="w"> </span>step<span class="w"> </span><span class="m">6</span>:<span class="w"> </span><span class="o">(</span>i.e<span class="w"> </span>NJyO47UqeYBsoaEU<span class="o">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="s2">fluentbit-values.yaml</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="s2">```yaml</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="s2">kind: DaemonSet</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="s2">replicaCount: 1</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="s2">image:</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="s2">  repository: cr.fluentbit.io/fluent/fluent-bit</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="s2">service:</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="s2">  type: ClusterIP</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="s2">  port: 2020</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="s2">luaScripts: {}</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="s2">## https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/classic-mode/configuration-file</span>
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="s2">config:</span>
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a><span class="s2">  service: |</span>
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a><span class="s2">    [SERVICE]</span>
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a><span class="s2">        Daemon Off</span>
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a><span class="s2">        Flush {{ .Values.flush }}</span>
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a><span class="s2">        Log_Level info</span>
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a><span class="s2">        Parsers_File /fluent-bit/etc/parsers.conf</span>
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a><span class="s2">        Parsers_File /fluent-bit/etc/conf/custom_parsers.conf</span>
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a><span class="s2">        HTTP_Server On</span>
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a><span class="s2">        HTTP_Listen 0.0.0.0</span>
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a><span class="s2">        HTTP_Port {{ .Values.metricsPort }}</span>
+<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a><span class="s2">        Health_Check On</span>
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>
+<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a><span class="s2">  ## https://docs.fluentbit.io/manual/pipeline/inputs</span>
+<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a><span class="s2">  inputs: |</span>
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a><span class="s2">    [INPUT]</span>
+<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a><span class="s2">        Name tail</span>
+<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a><span class="s2">        Path /var/log/containers/webapp-deployment*.log</span>
+<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a><span class="s2">        multiline.parser docker, cri</span>
+<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a><span class="s2">        Tag kube.*</span>
+<a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a><span class="s2">        Mem_Buf_Limit 5MB</span>
+<a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a><span class="s2">        Skip_Long_Lines On</span>
+<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a>
+<a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a>
+<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>
+<a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a><span class="s2">  ## https://docs.fluentbit.io/manual/pipeline/filters</span>
+<a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a><span class="s2">  filters: |</span>
+<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a><span class="s2">    [FILTER]</span>
+<a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a><span class="s2">        Name kubernetes</span>
+<a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a><span class="s2">        Match kube.*</span>
+<a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a><span class="s2">        Merge_Log On</span>
+<a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a><span class="s2">        Keep_Log Off</span>
+<a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a><span class="s2">        K8S-Logging.Parser On</span>
+<a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a><span class="s2">        K8S-Logging.Exclude On</span>
+<a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a>
+<a id="__codelineno-1-91" name="__codelineno-1-91" href="#__codelineno-1-91"></a><span class="s2">  # https://docs.fluentbit.io/manual/pipeline/outputs</span>
+<a id="__codelineno-1-92" name="__codelineno-1-92" href="#__codelineno-1-92"></a><span class="s2">  outputs: |</span>
+<a id="__codelineno-1-93" name="__codelineno-1-93" href="#__codelineno-1-93"></a><span class="s2">    [OUTPUT]</span>
+<a id="__codelineno-1-94" name="__codelineno-1-94" href="#__codelineno-1-94"></a><span class="s2">        Name es</span>
+<a id="__codelineno-1-95" name="__codelineno-1-95" href="#__codelineno-1-95"></a><span class="s2">        Match kube.*</span>
+<a id="__codelineno-1-96" name="__codelineno-1-96" href="#__codelineno-1-96"></a><span class="s2">        Type  _doc</span>
+<a id="__codelineno-1-97" name="__codelineno-1-97" href="#__codelineno-1-97"></a><span class="s2">        Host elasticsearch-master</span>
+<a id="__codelineno-1-98" name="__codelineno-1-98" href="#__codelineno-1-98"></a><span class="s2">        Port 9200</span>
+<a id="__codelineno-1-99" name="__codelineno-1-99" href="#__codelineno-1-99"></a><span class="s2">        HTTP_User elastic</span>
+<a id="__codelineno-1-100" name="__codelineno-1-100" href="#__codelineno-1-100"></a><span class="s2">        HTTP_Passwd xB7UdQgmGkgRaCrH</span>
+<a id="__codelineno-1-101" name="__codelineno-1-101" href="#__codelineno-1-101"></a><span class="s2">        tls On</span>
+<a id="__codelineno-1-102" name="__codelineno-1-102" href="#__codelineno-1-102"></a><span class="s2">        tls.verify Off</span>
+<a id="__codelineno-1-103" name="__codelineno-1-103" href="#__codelineno-1-103"></a><span class="s2">        Logstash_Format On</span>
+<a id="__codelineno-1-104" name="__codelineno-1-104" href="#__codelineno-1-104"></a><span class="s2">        Logstash_Prefix ersin-fluntbit</span>
+<a id="__codelineno-1-105" name="__codelineno-1-105" href="#__codelineno-1-105"></a><span class="s2">        Retry_Limit False</span>
+<a id="__codelineno-1-106" name="__codelineno-1-106" href="#__codelineno-1-106"></a><span class="s2">        Suppress_Type_Name On</span>
+<a id="__codelineno-1-107" name="__codelineno-1-107" href="#__codelineno-1-107"></a>
+<a id="__codelineno-1-108" name="__codelineno-1-108" href="#__codelineno-1-108"></a>
+<a id="__codelineno-1-109" name="__codelineno-1-109" href="#__codelineno-1-109"></a><span class="s2">  ## https://docs.fluentbit.io/manual/pipeline/parsers</span>
+<a id="__codelineno-1-110" name="__codelineno-1-110" href="#__codelineno-1-110"></a><span class="s2">  customParsers: |</span>
+<a id="__codelineno-1-111" name="__codelineno-1-111" href="#__codelineno-1-111"></a><span class="s2">    [PARSER]</span>
+<a id="__codelineno-1-112" name="__codelineno-1-112" href="#__codelineno-1-112"></a><span class="s2">        Name docker_no_time</span>
+<a id="__codelineno-1-113" name="__codelineno-1-113" href="#__codelineno-1-113"></a><span class="s2">        Format json</span>
+<a id="__codelineno-1-114" name="__codelineno-1-114" href="#__codelineno-1-114"></a><span class="s2">        Time_Keep Off</span>
+<a id="__codelineno-1-115" name="__codelineno-1-115" href="#__codelineno-1-115"></a><span class="s2">        Time_Key time</span>
+<a id="__codelineno-1-116" name="__codelineno-1-116" href="#__codelineno-1-116"></a><span class="s2">        Time_Format %Y-%m-%dT%H:%M:%S.%L</span>
+<a id="__codelineno-1-117" name="__codelineno-1-117" href="#__codelineno-1-117"></a>
+<a id="__codelineno-1-118" name="__codelineno-1-118" href="#__codelineno-1-118"></a>
+<a id="__codelineno-1-119" name="__codelineno-1-119" href="#__codelineno-1-119"></a><span class="s2">volumeMounts:</span>
+<a id="__codelineno-1-120" name="__codelineno-1-120" href="#__codelineno-1-120"></a><span class="s2">  - name: config</span>
+<a id="__codelineno-1-121" name="__codelineno-1-121" href="#__codelineno-1-121"></a><span class="s2">    mountPath: /fluent-bit/etc/conf</span>
+<a id="__codelineno-1-122" name="__codelineno-1-122" href="#__codelineno-1-122"></a>
+<a id="__codelineno-1-123" name="__codelineno-1-123" href="#__codelineno-1-123"></a><span class="s2">daemonSetVolumes:</span>
+<a id="__codelineno-1-124" name="__codelineno-1-124" href="#__codelineno-1-124"></a><span class="s2">  - name: varlog</span>
+<a id="__codelineno-1-125" name="__codelineno-1-125" href="#__codelineno-1-125"></a><span class="s2">    hostPath:</span>
+<a id="__codelineno-1-126" name="__codelineno-1-126" href="#__codelineno-1-126"></a><span class="s2">      path: /var/log</span>
+<a id="__codelineno-1-127" name="__codelineno-1-127" href="#__codelineno-1-127"></a><span class="s2">  - name: varlibdockercontainers</span>
+<a id="__codelineno-1-128" name="__codelineno-1-128" href="#__codelineno-1-128"></a><span class="s2">    hostPath:</span>
+<a id="__codelineno-1-129" name="__codelineno-1-129" href="#__codelineno-1-129"></a><span class="s2">      path: /var/lib/docker/containers</span>
+<a id="__codelineno-1-130" name="__codelineno-1-130" href="#__codelineno-1-130"></a><span class="s2">  - name: etcmachineid</span>
+<a id="__codelineno-1-131" name="__codelineno-1-131" href="#__codelineno-1-131"></a><span class="s2">    hostPath:</span>
+<a id="__codelineno-1-132" name="__codelineno-1-132" href="#__codelineno-1-132"></a><span class="s2">      path: /etc/machine-id</span>
+<a id="__codelineno-1-133" name="__codelineno-1-133" href="#__codelineno-1-133"></a><span class="s2">      type: File</span>
+<a id="__codelineno-1-134" name="__codelineno-1-134" href="#__codelineno-1-134"></a>
+<a id="__codelineno-1-135" name="__codelineno-1-135" href="#__codelineno-1-135"></a><span class="s2">daemonSetVolumeMounts:</span>
+<a id="__codelineno-1-136" name="__codelineno-1-136" href="#__codelineno-1-136"></a><span class="s2">  - name: varlog</span>
+<a id="__codelineno-1-137" name="__codelineno-1-137" href="#__codelineno-1-137"></a><span class="s2">    mountPath: /var/log</span>
+<a id="__codelineno-1-138" name="__codelineno-1-138" href="#__codelineno-1-138"></a><span class="s2">  - name: varlibdockercontainers</span>
+<a id="__codelineno-1-139" name="__codelineno-1-139" href="#__codelineno-1-139"></a><span class="s2">    mountPath: /var/lib/docker/containers</span>
+<a id="__codelineno-1-140" name="__codelineno-1-140" href="#__codelineno-1-140"></a><span class="s2">    readOnly: true</span>
+<a id="__codelineno-1-141" name="__codelineno-1-141" href="#__codelineno-1-141"></a><span class="s2">  - name: etcmachineid</span>
+<a id="__codelineno-1-142" name="__codelineno-1-142" href="#__codelineno-1-142"></a><span class="s2">    mountPath: /etc/machine-id</span>
+<a id="__codelineno-1-143" name="__codelineno-1-143" href="#__codelineno-1-143"></a><span class="s2">    readOnly: true</span>
+<a id="__codelineno-1-144" name="__codelineno-1-144" href="#__codelineno-1-144"></a>
+<a id="__codelineno-1-145" name="__codelineno-1-145" href="#__codelineno-1-145"></a><span class="s2">command:</span>
+<a id="__codelineno-1-146" name="__codelineno-1-146" href="#__codelineno-1-146"></a><span class="s2">  - /fluent-bit/bin/fluent-bit</span>
+<a id="__codelineno-1-147" name="__codelineno-1-147" href="#__codelineno-1-147"></a>
+<a id="__codelineno-1-148" name="__codelineno-1-148" href="#__codelineno-1-148"></a><span class="s2">args:</span>
+<a id="__codelineno-1-149" name="__codelineno-1-149" href="#__codelineno-1-149"></a><span class="s2">  - --workdir=/fluent-bit/etc</span>
+<a id="__codelineno-1-150" name="__codelineno-1-150" href="#__codelineno-1-150"></a><span class="s2">  - --config=/fluent-bit/etc/conf/fluent-bit.conf</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="l l-Scalar l-Scalar-Plain">echo &quot;deb [signed-by=/usr/share/keyrings/azul.gpg] https://repos.azul.com/zulu/deb stable main&quot; | sudo tee /etc/apt/sources.list.d/zulu.list</span>
-</code></pre></div></p>
-<p>Install the required Azul Zulu package:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="l l-Scalar l-Scalar-Plain">sudo apt install zulu17-jdk</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>fluent<span class="w"> </span>https://fluent.github.io/helm-charts
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>--install<span class="w"> </span>fluent-bit<span class="w"> </span>fluent/fluent-bit<span class="w"> </span>-f<span class="w"> </span>fluentbit-values.yaml<span class="w"> </span>-n<span class="w"> </span>logging
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w"> </span><span class="sb">```</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Service<span class="w"> </span>Section
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Defines<span class="w"> </span>global<span class="w"> </span>configuration<span class="w"> </span>settings<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>Fluent<span class="w"> </span>Bit<span class="w"> </span>service.
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Daemon<span class="w"> </span>Off:<span class="w"> </span>Runs<span class="w"> </span>Fluent<span class="w"> </span>Bit<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>foreground.
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Flush<span class="w"> </span><span class="o">{{</span><span class="w"> </span>.Values.flush<span class="w"> </span><span class="o">}}</span>:<span class="w"> </span>Sets<span class="w"> </span>the<span class="w"> </span>flush<span class="w"> </span>interval<span class="w"> </span><span class="k">for</span><span class="w"> </span>sending<span class="w"> </span>data,<span class="w"> </span>using<span class="w"> </span>a<span class="w"> </span>configurable<span class="w"> </span>Helm<span class="w"> </span>value.
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>Log_Level<span class="w"> </span>info:<span class="w"> </span>Sets<span class="w"> </span>the<span class="w"> </span>logging<span class="w"> </span>level<span class="w"> </span>to<span class="w"> </span>info.
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Parsers_File:<span class="w"> </span>Specifies<span class="w"> </span>parser<span class="w"> </span>configuration<span class="w"> </span>files.
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>HTTP_Server<span class="w"> </span>On:<span class="w"> </span>Enables<span class="w"> </span>the<span class="w"> </span>built-in<span class="w"> </span>HTTP<span class="w"> </span>server<span class="w"> </span><span class="k">for</span><span class="w"> </span>metrics<span class="w"> </span>and<span class="w"> </span>health<span class="w"> </span>checks.
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>HTTP_Listen<span class="w"> </span><span class="m">0</span>.0.0.0:<span class="w"> </span>Sets<span class="w"> </span>the<span class="w"> </span>HTTP<span class="w"> </span>server<span class="w"> </span>to<span class="w"> </span>listen<span class="w"> </span>on<span class="w"> </span>all<span class="w"> </span>network<span class="w"> </span>interfaces.
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>HTTP_Port<span class="w"> </span><span class="o">{{</span><span class="w"> </span>.Values.metricsPort<span class="w"> </span><span class="o">}}</span>:<span class="w"> </span>Sets<span class="w"> </span>the<span class="w"> </span>HTTP<span class="w"> </span>server<span class="w"> </span>port<span class="w"> </span><span class="k">for</span><span class="w"> </span>metrics,<span class="w"> </span>using<span class="w"> </span>a<span class="w"> </span>Helm<span class="w"> </span>value.
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>Inputs<span class="w"> </span>Section
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>Defines<span class="w"> </span>where<span class="w"> </span>Fluent<span class="w"> </span>Bit<span class="w"> </span>collects<span class="w"> </span>logs<span class="w"> </span>from.
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="o">[</span>INPUT<span class="o">]</span><span class="w"> </span>Name<span class="w"> </span>tail:<span class="w"> </span>Specifies<span class="w"> </span>the<span class="w"> </span>input<span class="w"> </span>plugin<span class="w"> </span>tail<span class="w"> </span>to<span class="w"> </span><span class="nb">read</span><span class="w"> </span>log<span class="w"> </span>files.
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>Path<span class="w"> </span>/var/log/containers/webapp-deployment.log*:<span class="w"> </span>Specifies<span class="w"> </span>the<span class="w"> </span>log<span class="w"> </span>file<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>monitor.
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>multiline.parser<span class="w"> </span>docker,<span class="w"> </span>cri:<span class="w"> </span>Enables<span class="w"> </span>multi-line<span class="w"> </span>log<span class="w"> </span>parsing<span class="w"> </span>using<span class="w"> </span>Docker<span class="w"> </span>and<span class="w"> </span>CRI<span class="w"> </span>parsers.
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>Tag<span class="w"> </span>kube.*:<span class="w"> </span>Tags<span class="w"> </span>logs<span class="w"> </span>with<span class="w"> </span>a<span class="w"> </span>kube.*<span class="w"> </span>prefix<span class="w"> </span><span class="k">for</span><span class="w"> </span>filtering.
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>Mem_Buf_Limit<span class="w"> </span>5MB:<span class="w"> </span>Sets<span class="w"> </span>the<span class="w"> </span>memory<span class="w"> </span>buffer<span class="w"> </span>limit<span class="w"> </span>to<span class="w"> </span>5MB.
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>Skip_Long_Lines<span class="w"> </span>On:<span class="w"> </span>Skips<span class="w"> </span>lines<span class="w"> </span>longer<span class="w"> </span>than<span class="w"> </span>the<span class="w"> </span>buffer<span class="w"> </span>limit.
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>Filters<span class="w"> </span>Section
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>Processes<span class="w"> </span>and<span class="w"> </span>enriches<span class="w"> </span>logs<span class="w"> </span>before<span class="w"> </span>output.
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="o">[</span>FILTER<span class="o">]</span><span class="w"> </span>Name<span class="w"> </span>kubernetes:<span class="w"> </span>Uses<span class="w"> </span>the<span class="w"> </span>kubernetes<span class="w"> </span>filter<span class="w"> </span>plugin<span class="w"> </span><span class="k">for</span><span class="w"> </span>Kubernetes<span class="w"> </span>metadata<span class="w"> </span>enrichment.
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>Match<span class="w"> </span>kube.*:<span class="w"> </span>Filters<span class="w"> </span>logs<span class="w"> </span>with<span class="w"> </span>tags<span class="w"> </span>matching<span class="w"> </span>kube.*.
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>Merge_Log<span class="w"> </span>On:<span class="w"> </span>Combines<span class="w"> </span>partial<span class="w"> </span>log<span class="w"> </span>lines<span class="w"> </span>into<span class="w"> </span>a<span class="w"> </span>single<span class="w"> </span>entry.
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>Keep_Log<span class="w"> </span>Off:<span class="w"> </span>Drops<span class="w"> </span>the<span class="w"> </span>original<span class="w"> </span>unparsed<span class="w"> </span>log<span class="w"> </span>after<span class="w"> </span>merging.
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>K8S-Logging.Parser<span class="w"> </span>On:<span class="w"> </span>Uses<span class="w"> </span>parsers<span class="w"> </span><span class="k">for</span><span class="w"> </span>logs<span class="w"> </span>based<span class="w"> </span>on<span class="w"> </span>Kubernetes<span class="w"> </span>metadata.
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>K8S-Logging.Exclude<span class="w"> </span>On:<span class="w"> </span>Excludes<span class="w"> </span>logs<span class="w"> </span>that<span class="w"> </span>don<span class="err">&#39;</span>t<span class="w"> </span>match<span class="w"> </span>certain<span class="w"> </span>Kubernetes<span class="w"> </span>metadata.
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>Output<span class="w"> </span>Section
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="o">[</span>OUTPUT<span class="o">]</span><span class="w"> </span>Name<span class="w"> </span>es:<span class="w"> </span>Specifies<span class="w"> </span>the<span class="w"> </span>Elasticsearch<span class="w"> </span>output<span class="w"> </span>plugin.
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>Match<span class="w"> </span>kube.*:<span class="w"> </span>Sends<span class="w"> </span>logs<span class="w"> </span>with<span class="w"> </span>tags<span class="w"> </span>matching<span class="w"> </span>kube.*.
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>Type<span class="w"> </span>_doc:<span class="w"> </span>Specifies<span class="w"> </span>the<span class="w"> </span>document<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="o">(</span>deprecated<span class="w"> </span><span class="k">in</span><span class="w"> </span>modern<span class="w"> </span>Elasticsearch<span class="w"> </span>versions<span class="o">)</span>.
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>Host<span class="w"> </span>elasticsearch-master,<span class="w"> </span>Port<span class="w"> </span><span class="m">9200</span>:<span class="w"> </span>Sets<span class="w"> </span>the<span class="w"> </span>Elasticsearch<span class="w"> </span>host<span class="w"> </span>and<span class="w"> </span>port.
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>HTTP_User,<span class="w"> </span>HTTP_Passwd:<span class="w"> </span>Provides<span class="w"> </span>authentication<span class="w"> </span>credentials<span class="w"> </span><span class="k">for</span><span class="w"> </span>Elasticsearch.
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>tls<span class="w"> </span>On:<span class="w"> </span>Enables<span class="w"> </span>TLS<span class="w"> </span><span class="k">for</span><span class="w"> </span>secure<span class="w"> </span>communication.
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>tls.verify<span class="w"> </span>Off:<span class="w"> </span>Disables<span class="w"> </span>certificate<span class="w"> </span>verification<span class="w"> </span><span class="o">(</span>not<span class="w"> </span>recommended<span class="w"> </span><span class="k">in</span><span class="w"> </span>production<span class="o">)</span>.
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>Logstash_Format<span class="w"> </span>On:<span class="w"> </span>Formats<span class="w"> </span>logs<span class="w"> </span><span class="k">in</span><span class="w"> </span>Logstash-compatible<span class="w"> </span>JSON.
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>Logstash_Prefix<span class="w"> </span>ersin-fluntbit:<span class="w"> </span>Sets<span class="w"> </span>the<span class="w"> </span>prefix<span class="w"> </span><span class="k">for</span><span class="w"> </span>Elasticsearch<span class="w"> </span>index<span class="w"> </span>names.
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>Retry_Limit<span class="w"> </span>False:<span class="w"> </span>Disables<span class="w"> </span>retrying<span class="w"> </span>on<span class="w"> </span>output<span class="w"> </span>failures.
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>Custom<span class="w"> </span>Parsers<span class="w"> </span>Section
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>Defines<span class="w"> </span>custom<span class="w"> </span>log<span class="w"> </span>parsing<span class="w"> </span>rules.
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a><span class="o">[</span>PARSER<span class="o">]</span><span class="w"> </span>Name<span class="w"> </span>docker_no_time:<span class="w"> </span>Names<span class="w"> </span>the<span class="w"> </span>parser<span class="w"> </span>docker_no_time.
+<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a>Format<span class="w"> </span>json:<span class="w"> </span>Specifies<span class="w"> </span>that<span class="w"> </span>the<span class="w"> </span>log<span class="w"> </span>format<span class="w"> </span>is<span class="w"> </span>JSON.
+<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>Time_Keep<span class="w"> </span>Off:<span class="w"> </span>Ignores<span class="w"> </span>the<span class="w"> </span>timestamp<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>original<span class="w"> </span>log.
+<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a>Time_Key<span class="w"> </span>time:<span class="w"> </span>Specifies<span class="w"> </span>the<span class="w"> </span>JSON<span class="w"> </span>key<span class="w"> </span><span class="k">for</span><span class="w"> </span>extracting<span class="w"> </span>timestamps.
+<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a>Time_Format<span class="w"> </span>%Y-%m-%dT%H:%M:%S.%L:<span class="w"> </span>Defines<span class="w"> </span>the<span class="w"> </span>timestamp<span class="w"> </span>format<span class="w"> </span>with<span class="w"> </span>milliseconds.
+<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a>
+<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a>
+<a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a><span class="c1">## Deploy App for log</span>
+<a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a>
+<a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a>python-app-service.yaml
+<a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a>
+<a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a><span class="sb">```</span>yaml
+<a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a>apiVersion:<span class="w"> </span>v1
+<a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a>kind:<span class="w"> </span>Service
+<a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a>metadata:
+<a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a><span class="w">  </span>name:<span class="w"> </span>webapp-service
+<a id="__codelineno-2-71" name="__codelineno-2-71" href="#__codelineno-2-71"></a><span class="w">  </span>namespace:<span class="w"> </span>app
+<a id="__codelineno-2-72" name="__codelineno-2-72" href="#__codelineno-2-72"></a><span class="w">  </span>labels:
+<a id="__codelineno-2-73" name="__codelineno-2-73" href="#__codelineno-2-73"></a><span class="w">    </span>app:<span class="w"> </span>webapp
+<a id="__codelineno-2-74" name="__codelineno-2-74" href="#__codelineno-2-74"></a>spec:
+<a id="__codelineno-2-75" name="__codelineno-2-75" href="#__codelineno-2-75"></a><span class="w">  </span>selector:
+<a id="__codelineno-2-76" name="__codelineno-2-76" href="#__codelineno-2-76"></a><span class="w">    </span>app:<span class="w"> </span>webapp
+<a id="__codelineno-2-77" name="__codelineno-2-77" href="#__codelineno-2-77"></a><span class="w">  </span>ports:
+<a id="__codelineno-2-78" name="__codelineno-2-78" href="#__codelineno-2-78"></a><span class="w">  </span>-<span class="w"> </span>port:<span class="w"> </span><span class="m">80</span>
+<a id="__codelineno-2-79" name="__codelineno-2-79" href="#__codelineno-2-79"></a><span class="w">    </span>targetPort:<span class="w"> </span><span class="m">5005</span>
 </code></pre></div>
-Check java version
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="l l-Scalar l-Scalar-Plain">java -version</span>
+<p>python-app-deployment.yaml
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">webapp-deployment</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">webapp</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">webapp</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">webapp</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">webapp</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ersinsari/fluentbit-python:latest</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">        </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/log</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">log-volume</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">log-volume</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">        </span><span class="nt">hostPath</span><span class="p">:</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/log/webapp</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DirectoryOrCreate</span>
 </code></pre></div></p>
+<p><code>bash
+k create ns app
+k apply -f python-app-service.yaml
+k apply -f python-app-deployment.yaml</code></p>
+<h2 id="access-the-app-and-generate-log">Access the App and generate log</h2>
+<p><code>bash
+kubectl port-forward svc/webapp-service 5001:80 -n app</code></p>
+<p>```yaml
+username: ersin
+password: password
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>If you enter username and credential right generate info log but wrong generate warn log
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Go to Kibana UI --&gt; Stack Management -- &gt; Kibana --&gt; Data View create new data view
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>```yaml
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>name: ersin-fluntbit
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>filter: ersin-fluntbit*
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Response sent with status: 200&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-20 18:59:49,375&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;logger&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;app&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/app/app.py&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;lineno&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;funcname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;log_response_info&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:5001/second_level_auth&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;remote_addr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;user_agent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36&quot;</span><span class="p">}}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WARNING&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Login failed for user: ersin&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-20 18:59:49,364&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;logger&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;app&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;pathname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/app/app.py&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;lineno&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;funcname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;login&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:5001/login&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;remote_addr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;user_agent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36&quot;</span><span class="p">}}</span>
+</code></pre></div>
+<ul>
+<li>Go to Discover section and check logs</li>
+</ul>
+<p>The application logs were sent to the index in JSON format using a parser, which split the logs into fields. This allows for faster queries and makes it easier to find specific logs.</p>
+<p><img alt="efk" src="../efk-image/efk-1.png" /></p>
 
 
 
