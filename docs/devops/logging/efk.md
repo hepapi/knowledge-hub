@@ -10,6 +10,7 @@ EFK is a popular logging stack used to collect, store, and analyze logs in Kuber
 ## Step-by-Step Setup on minikube
 
 ### Create cluster
+
 ```bash
 minikube start
 ```
