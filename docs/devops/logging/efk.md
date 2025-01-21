@@ -19,7 +19,7 @@ minikube start
 
 ```bash
 kubectl create namespace logging
- ```
+```
 
 ### Install Elasticsearch on K8s
 
@@ -29,7 +29,7 @@ helm repo add elastic https://helm.elastic.co
 helm install elasticsearch \
  --set replicas=1 \
  --set persistence.enabled=false elastic/elasticsearch -n logging
- ```
+```
 
 
  ### Install Kibana
@@ -37,7 +37,7 @@ helm install elasticsearch \
 ```bash
 helm install kibana  elastic/kibana -n logging
 kubectl port-forward svc/kibana-kibana 5601:5601 -n logging
- ```
+```
 
 - Go to localhost:5601 and login Kibana
 
@@ -48,7 +48,7 @@ kubectl port-forward svc/kibana-kibana 5601:5601 -n logging
 kubectl get secrets --namespace=logging elasticsearch-master-credentials -ojsonpath='{.data.username}' | base64 -d
 # for password
 kubectl get secrets --namespace=logging elasticsearch-master-credentials -ojsonpath='{.data.password}' | base64 -d
- ```
+```
 
 
 ### Install Fluentbit with Custom Values/Configurations
@@ -173,7 +173,7 @@ args:
 ```bash
 helm repo add fluent https://fluent.github.io/helm-charts
 helm upgrade --install fluent-bit fluent/fluent-bit -f fluentbit-values.yaml -n logging
- ```
+```
 
 Service Section
 Defines global configuration settings for the Fluent Bit service.
@@ -288,13 +288,13 @@ spec:
 k create ns app
 k apply -f python-app-service.yaml
 k apply -f python-app-deployment.yaml
- ```
+```
 
 ## Access the App and generate log
 
  ```bash
 kubectl port-forward svc/webapp-service 5001:80 -n app
- ```
+```
 
 ```yaml
 username: ersin
