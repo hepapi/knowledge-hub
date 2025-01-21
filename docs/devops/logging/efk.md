@@ -1,9 +1,9 @@
 # EFK Stack (Elasticsearch, Fluentbit, Kibana) via Minikube
 
 EFK is a popular logging stack used to collect, store, and analyze logs in Kubernetes.
-Elasticsearch: Stores and indexes log data for easy retrieval.
-Fluentbit: A lightweight log forwarder that collects logs from different sources and sends them to Elasticsearch.
-Kibana: A visualization tool that allows users to explore and analyze logs stored in Elasticsearch.
+- Elasticsearch: Stores and indexes log data for easy retrieval.
+- Fluentbit: A lightweight log forwarder that collects logs from different sources and sends them to Elasticsearch.
+- Kibana: A visualization tool that allows users to explore and analyze logs stored in Elasticsearch.
 
 ![efk](./efk-image/efk-0.png)
 
