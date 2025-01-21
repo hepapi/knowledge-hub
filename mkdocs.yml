@@ -70,6 +70,7 @@ nav:
         - "ELK Index Lifecycle Management": devops/logging/Index-Lifecycle-Management.md
         - "Elasticsearch-Exporter for Prometheus-Grafana": devops/logging/elasticsearch-exporter.md
         - "Grafana Loki": devops/logging/loki.md
+        - "EFK (EFK Stack (Elasticsearch, Fluentbit, Kibana)": devops/logging/efk.md
     - SRE:
         - "K8SGPT": devops/sre/k8sgpt.md
     - Git:
