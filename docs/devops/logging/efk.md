@@ -284,15 +284,15 @@ spec:
           type: DirectoryOrCreate
 ```
 
- ```bash
-k create ns app
-k apply -f python-app-service.yaml
-k apply -f python-app-deployment.yaml
+```bash
+kubectl create ns app
+kubectl apply -f python-app-service.yaml
+kubectl apply -f python-app-deployment.yaml
 ```
 
 ## Access the App and generate log
 
- ```bash
+```bash
 kubectl port-forward svc/webapp-service 5001:80 -n app
 ```
 
