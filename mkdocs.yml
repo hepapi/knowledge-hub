@@ -71,6 +71,7 @@ nav:
         - "Elasticsearch-Exporter for Prometheus-Grafana": devops/logging/elasticsearch-exporter.md
         - "Grafana Loki": devops/logging/loki.md
         - "EFK (EFK Stack (Elasticsearch, Fluentbit, Kibana)": devops/logging/efk.md
+        - "Elastalert2": devops/logging/elastalert2.md
     - SRE:
         - "K8SGPT": devops/sre/k8sgpt.md
     - Git:
@@ -104,6 +105,7 @@ nav:
     - K8S Storage:
         - "NFS(Network File System)": devops/k8s-storage/nfs-install.md
         - "Longhorn Block Storage": devops/k8s-storage/longhorn.md
+        - "Rook-Ceph Storage" : devops/k8s-storage/rook-ceph.md
 
   - QA:
     - qa/index.md
