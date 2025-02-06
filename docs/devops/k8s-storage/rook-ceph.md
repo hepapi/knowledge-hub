@@ -127,13 +127,13 @@ If you have a cluster with an nginx Ingress Controller and a Certificate Manager
 - install cert-managet to cluster
 
 ```bash
-kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.14.5/cert-manager.yaml
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.15.1/cert-manager.yaml
 
 #check cert pods is running
 kubectl get po --namespace cert-manager
 ```
 
-- create ClusterIssuer
+- create ClusterIssuer as issuer.yaml
 
 ```yaml
 apiVersion: cert-manager.io/v1
@@ -153,12 +153,13 @@ spec:
 ```
 
 ```bash
-kubectt get ClusterIssuer
+kubectl apply -f issuer.yaml
+kubectl get ClusterIssuer
 
 **True**
 ```
 
-- then create ingress
+- then create ingress as ingress.yaml
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -167,7 +168,9 @@ metadata:
   name: rook-ceph-mgr-dashboard
   namespace: rook-ceph
   annotations:
+    kubernetes.io/tls-acme: "true"
     cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   ingressClassName: "nginx"
   tls:
@@ -184,10 +187,11 @@ spec:
           service:
             name: rook-ceph-mgr-dashboard
             port:
-              name: https-dashboard
+              number: 8443
 ```
 
 ```bash
+kubectl apply -f ingress.yaml
 kubectl get ingress
 ```
 
@@ -209,7 +213,7 @@ kubectl get secret rook-ceph-dashboard-password -o jsonpath="{['data']['password
 
 ## Create/build RBD storage 
 
-cd /rook/deploy/examples/csi/rbd
+ cd rook/deploy/examples/csi/rbd/
 
 ```bash
 
@@ -228,7 +232,7 @@ rook-ceph-block   rook-ceph.rbd.csi.ceph.com   Delete          Immediate        
 - Use this volume type in deployment. run wordpress app
 
 ```bash
-cd /rook/deploy/examples/
+cd rook/deploy/examples/
 kubectl create -f mysql.yaml
 kubectl create -f wordpress.yaml
 
@@ -242,7 +246,7 @@ kubectl get pvc,pv
 - Verify persistent volume
 
 ```bash
-kubectl exec -it <pod-name> -- /bin/bash
+kubectl exec -it <wordpress-pod-name> -- /bin/bash
 
 cd /var/www/html
 
@@ -254,7 +258,7 @@ or
 kubectl get pv
 #get pv name
 
-kubetcl describe pv <wordpress-pv-name>
+kubectl describe pv <wordpress-pv-name>
 #get volumename
 
 
