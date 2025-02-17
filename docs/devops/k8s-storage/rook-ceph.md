@@ -76,8 +76,11 @@ kubectl get pod -n rook-ceph -l "app=rook-ceph-tools"
 kubectl exec -it rook-ceph-tools-7b67b65bd-kqjb6 -n rook-ceph -- bash
 ceph status
 ceph osd status
+ceph osd ls
+ceph osd crush rule dump
 ceph df
 rados df
+ceph mon stat    
 ```
 ![alt text](images/ceph-status.png)
 
@@ -127,7 +130,7 @@ If you have a cluster with an nginx Ingress Controller and a Certificate Manager
 - install cert-managet to cluster
 
 ```bash
-kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.15.1/cert-manager.yaml
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.14.5/cert-manager.yaml
 
 #check cert pods is running
 kubectl get po --namespace cert-manager
@@ -213,7 +216,7 @@ kubectl get secret rook-ceph-dashboard-password -o jsonpath="{['data']['password
 
 ## Create/build RBD storage 
 
- cd rook/deploy/examples/csi/rbd/
+cd ~/rook/deploy/examples/csi/rbd
 
 ```bash
 
@@ -232,7 +235,7 @@ rook-ceph-block   rook-ceph.rbd.csi.ceph.com   Delete          Immediate        
 - Use this volume type in deployment. run wordpress app
 
 ```bash
-cd rook/deploy/examples/
+cd ~/rook/deploy/examples/
 kubectl create -f mysql.yaml
 kubectl create -f wordpress.yaml
 
@@ -245,6 +248,16 @@ kubectl get pvc,pv
 
 - Verify persistent volume
 
+```bash
+nodeport to service
+
+connect to website
+http://ip:port
+
+publish new page
+
+kubectl rollout restart deploy wordpress
+```
 ```bash
 kubectl exec -it <wordpress-pod-name> -- /bin/bash
 
@@ -285,10 +298,23 @@ kubectl exec -it <pod-name> -- cat /var/www/html/test.txt
 
 **hello**
 ```
+clean the sc
+```bash
+kubectl delete -f mysql.yaml
+kubectl delete -f wordpress.yaml
+
+
+cd ~/rook/deploy/examples/csi/rbd
+
+kubectl delete -f storageclass.yaml
+k get sc
+ ceph ui pools
+
+```
 
 ## Create/build CEPHFS storage
 
-cd /rook/deploy/examples
+cd ~/rook/deploy/examples
 
 ```bash
 
@@ -296,7 +322,7 @@ kubectl create -f filesystem.yaml
 ## this also create replicapool (ceph fs) with 3 replicas
 
 # crete cephfs storageclass
-cd /rook/deploy/examples/csi/cephfs
+cd ~/rook/deploy/examples/csi/cephfs
 
 kubectl create -f storageclass.yaml
 
@@ -313,29 +339,42 @@ rook-cephfs       rook-ceph.cephfs.csi.ceph.com   Delete          Immediate     
 - Use this volume type in kube-registry deployment, replica:3 in kube-system namespace
 
 ```bash
+cd ~/rook/deploy/examples/csi/cephfs
+
 kubectl create -f kube-registry.yaml
 
 # pod mount path : /var/lib/registry
 
 #create new file on mounth path
-kubectl exec -it <pod-replica-1> -n <namespace> -- echo "test1" > /var/lib/registry/test.txt
+kubectl exec -it <pod-replica-1> -n <namespace> -- sh
+echo "test1" > /var/lib/registry/test.txt
 
 #verify the file exist on other pod 
 kubectl exec -it <pod-replica-2> -n <namespace> -- ls /var/lib/registry/
-kubectl exec -it <pod-replica-2> -n <namespace> -- cat /var/lib/registry/test.txt
+
+kubectl exec -it <pod-replica-2>  -- sh
+echo "test2" >> /var/lib/registry/test.txt
+
+kubectl exec -it <pod-replica-3> -n <namespace> -- cat /var/lib/registry/test.txt
 
 
 # veirfy volume is persistenet?
-kubectl rollout restart deploment kube-registry -n <namespace>
+kubectl rollout restart deployment kube-registry -n <namespace>
 
 kubectl exec -it <pod-replica-2> -n <namespace> -- cat /var/lib/registry/test.txt
+# check volume path
 
+findmnt | grep ceph
+
+sudo -i
+cd <mount path>
+ls
 ```
 
 ## Create/build OBJECT_STORAGE
 
 ```bash
-cd rook/deploy/examples
+cd ~/rook/deploy/examples
 
 kubectl create -f object.yaml
 ```
@@ -399,18 +438,19 @@ This section will guide you through testing the connection to the CephObjectStor
 #To test the CephObjectStore, set the object store credentials in the toolbox pod that contains the s5cmd tool
 #The default toolbox.yaml does not contain the s5cmd. The toolbox must be started with the rook operator image (toolbox-operator-image), which does contain s5cmd.
 
-kubectl create -f rook/deploy/examples/toolbox-operator-image.yaml
+kubectl create -f ~/rook/deploy/examples/toolbox-operator-image.yaml
 kubectl exec -it <pod-name> -n rook-ceph -- bash
 
 mkdir ~/.aws
 cat > ~/.aws/credentials << EOF
 [default]
-aws_access_key_id = 8AQH5P0IIH21FW30RJAI
-aws_secret_access_key = 2XAPLcqDNyAf6JgbACyFDj2ddcC0Irb04ADxMkyr
+aws_access_key_id = <acceskey>
+aws_secret_access_key = <secretkey>
 EOF
 
 #Upload a file to the newly created bucket
 echo "Hello Rook" > /tmp/rookObj
+
 s5cmd --endpoint-url http://$AWS_HOST:$PORT cp /tmp/rookObj s3://$BUCKET_NAME
 
 #list bucket
@@ -432,6 +472,33 @@ cat /tmp/rookObj-download
 
 - pre-requirements
 
+  - all nodes
+
+```bash
+sudo hostnamectl set-hostname ceph1
+
+sudo nano /etc/hosts
+<node1-ip>  ceph1
+<node2-ip>  ceph2
+<node3-ip>  ceph3
+```
+  - on master ceph node
+```bash
+ssh-keygen
+cat .ssh/id_rsa.pub >> .ssh/authorized_keys 
+cat .ssh/id_rsa.pub
+
+ssh ceph2
+sudo hostnamectl set-hostname ceph2
+nano .ssh/authorized_keys 
+* paste id_rsa.pub
+
+ssh ceph3
+sudo hostnamectl set-hostname ceph3
+nano .ssh/authorized_keys
+* paste id_rsa.pub
+```
+
 ### install ansible 
 ```bash
 sudo apt update
@@ -450,11 +517,15 @@ cd cephadm-ansible
 
 # modified hosts
 nano hosts
----
+[ceph_servers]
 ceph1
 ceph2
 ceph3
----
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_ssh_private_key_file=/root/.ssh/id_rsa.pub
+ansible_user=ubuntu
 # verify all node is reachable
 ansible all -i hosts -m ping
 
@@ -529,7 +600,7 @@ ceph osd pool ls detail
 ```bash
 exm: ceph osd pool create {pool-name} [{pg-num} [{pgp-num}]] [replicated] [crush-rule-name] [expected-num-objects]
 
-ceph osd pool create rbd-pool [100 100] replicated
+ceph osd pool create rbd-pool replicated
 
 ```
 - Associating a Pool with an Application
@@ -610,13 +681,17 @@ on ceph dashboard: services--> create mds : 2 or cli: ceph fs volume create ceph
 
 - Cluster export - import process
 
-- Run on ceph cluster
+- Run on master ceph node
 
 ```bash
-cd rook/deploy/examples/external
+git clone --single-branch --branch v1.15.5 https://github.com/rook/rook.git
+
+cd ~/rook/deploy/examples/external
 
 python3 create-external-cluster-resources.py --rbd-data-pool-name <pool_name> --cephfs-filesystem-name <filesystem-name> --rgw-endpoint  <rgw-endpoint> --namespace <namespace> --format bash
 
+sudo -i
+cd ~/home/ubuntu/rook/deploy/examples/external
 Exm: python3 create-external-cluster-resources.py --cephfs-filesystem-name cephfs-hepapi --cephfs-data-pool-name cephfs_data --cephfs-metadata-pool-name cephfs_metadata --rbd-data-pool-name hepapi-ceph-replica --namespace rook-ceph --config-file config.ini --format bash
 ````
 
