@@ -78,6 +78,9 @@ nav:
         - "Description": devops/git/Description.md
         - "Installation": devops/git/installation.md
         - "Commands": devops/git/Commands.md
+    - "Gitlab":
+        - "Gitlab Self Hosted Kubernetes Installation": devops/gitlab/gitlab-self-hosted-installation.md
+        - "Gitlab Runner Kubernetes Installation" : devops/gitlab/gitlab-runner-installation.md
     - Falcon LogScale:
         - "Installation With Docker":
             - "Docker Container Installation": devops/falcon-logscale/falcon-logscale-installation-docker.md
