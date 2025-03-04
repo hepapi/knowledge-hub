@@ -28,6 +28,7 @@ nav:
         - "keda(k8s event-driven Autoscaling)": devops/kubernetes/keda/keda.md
         - "K3S Installation": devops/k8s-engine/k3s-installation.md
         - "Cluster Backup with Velero": devops/kubernetes/Velero/README.md
+        - "KEDA (Kubernetes Event-driven Autoscaling) WITH CRON": devops/kubernetes/keda/keda-with-cron.md
     - RKE2:
         - "RKE2 Ansible Installation": devops/k8s-engine/rke2-installation-ansible.md
         - "RKE2 Binary Installation": devops/k8s-engine/rke2-installation.md
