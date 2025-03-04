@@ -155,7 +155,6 @@ spec:
       # Desired number of pods during this time range
       desiredReplicas: "20"
 ```
-```
 Apply the ScaledObject:
 
 ```bash
