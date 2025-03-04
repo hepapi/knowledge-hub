@@ -1,0 +1,152 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: AWSManagamentTerraformInitialConfigs
+Parameters:
+  Serial:
+    Type: Number
+    Description: This value is specific to CloudFormation and can only be incremented. Incrementing this value notifies CloudFormation that you want to rotate your access key. When you update your stack, CloudFormation will replace the existing access key with a new key.
+    Default: "1"
+  IaCUserName:
+    Type: String
+    Default: terraform
+  TerraformStateBucketPrefix:
+    Type: String
+    Default: terraform-state
+    Description: A prefix for S3 bucket name, account id will be added to ensure global uniqueness
+  TerraformStateLockTableName:
+    Type: String
+    Default: terraform-state-locks
+Resources:
+  IaCUser:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: !Ref IaCUserName
+      Path: /
+      Tags:
+        - Key: Provisioner
+          Value: CloudFormation
+        - Key: Project
+          Value: Management
+        - Key: Environment
+          Value: default
+        - Key: CloudFormationStackName
+          Value: !Ref 'AWS::StackName'
+        - Key: CloudFormationStackId
+          Value: !Ref 'AWS::StackId'
+  IaCUserPolicy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: IaCUserPolicy
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Action:
+              - "s3:ListBucket"
+              - "s3:GetBucketVersioning"
+              - "s3:GetBucketAcl"
+              - "s3:GetBucketLogging"
+              - "s3:CreateBucket"
+              - "s3:PutBucketPublicAccessBlock"
+              - "s3:PutBucketTagging"
+              - "s3:PutBucketPolicy"
+              - "s3:PutBucketVersioning"
+              - "s3:PutEncryptionConfiguration"
+              - "s3:PutBucketAcl"
+              - "s3:PutBucketLogging"
+              - "s3:GetEncryptionConfiguration"
+              - "s3:GetBucketPolicy"
+              - "s3:GetBucketPublicAccessBlock"
+              - "s3:PutLifecycleConfiguration"
+              - "s3:PutBucketOwnershipControls"
+            Resource: !Sub "arn:aws:s3:::${TerraformStateS3Bucket}"
+          - Effect: Allow
+            Action:
+              - "s3:GetObject"
+              - "s3:PutObject"
+              - "s3:DeleteObject"
+            Resource: !Sub "arn:aws:s3:::${TerraformStateS3Bucket}/*"  
+          - Effect: Allow
+            Action:
+              - "dynamodb:CreateTable"
+              - "dynamodb:DescribeTable"
+              - "dynamodb:GetItem"
+              - "dynamodb:PutItem"
+              - "dynamodb:DeleteItem"
+            Resource: !Sub "arn:aws:dynamodb:*:*:table/${TerraformStateLockTableName}"    
+          - Effect: Allow
+            Action:
+              - 'sts:AssumeRole'
+              - 'sts:TagSession'
+              - 'sts:GetCallerIdentity'
+            Resource: "arn:aws:iam::*:role/TerraformExecutionRole"  
+      Users:
+        - !Ref IaCUser
+  IaCUserAccessKey:
+    Type: AWS::IAM::AccessKey
+    Properties:
+        Status: Active
+        Serial: !Ref Serial
+        UserName: !Ref IaCUser
+  IaCUserSecret:
+    Type: AWS::SecretsManager::Secret
+    Properties: 
+      Name: !Sub "iam/user/${IaCUserName}"
+      Description: !Sub "This secret contains ${IaCUserName} iam user access keys"
+      SecretString: !Join
+        - ""
+        - - '{"AccessKeyId":"'
+          - !Ref IaCUserAccessKey
+          - '","SecretAccessKey":"'
+          - !GetAtt IaCUserAccessKey.SecretAccessKey
+          - '"}'           
+  TerraformStateS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "${TerraformStateBucketPrefix}-${AWS::Region}-${AWS::AccountId}"
+      AccessControl: Private
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      VersioningConfiguration:
+        Status: Enabled
+  TerraformStateS3BucketBucketPolicy:
+    DependsOn:
+      - TerraformStateS3Bucket
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref TerraformStateS3Bucket
+      PolicyDocument:
+        Statement:
+          - Sid: DenyDeletingTerraformStateFiles
+            Effect: Deny
+            Principal: "*"
+            Action: "s3:DeleteObject"
+            Resource: !Sub "arn:aws:s3:::${TerraformStateS3Bucket}/*"
+  TerraformStateLockDynamoDBTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Ref TerraformStateLockTableName
+      AttributeDefinitions:
+        - AttributeName: LockID
+          AttributeType: S
+      KeySchema:
+        - AttributeName: LockID
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+      SSESpecification:
+        SSEEnabled: true
+      Tags:
+        # Add custom tags as CloudFormation is not able to add these unlike S3
+        - Key: Provisioner
+          Value: CloudFormation
+        - Key: aws-cloudformation-stack-id
+          Value: !Ref "AWS::StackId"
+        - Key: aws-cloudformation-stack-name
+          Value: !Ref "AWS::StackName"
+        - Key: aws-cloudformation-logical-id
+          Value: TerraformStateLockDynamoDBTable
+          

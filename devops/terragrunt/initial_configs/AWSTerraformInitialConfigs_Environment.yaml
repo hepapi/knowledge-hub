@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: AWSTargetAccountTerraformInitialConfigs
+Parameters:
+  IaCUserARN:
+    Type: String
+    Default: ARN of the IaC User
+Resources:
+  TerraformExecutionRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RoleName: TerraformExecutionRole
+      MaxSessionDuration: 14400
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS: !Ref IaCUserARN
+            Action: 
+              - sts:AssumeRole
+              - sts:TagSession
+            Condition: {}
+      ManagedPolicyArns:
+        - 'arn:aws:iam::aws:policy/AdministratorAccess'
+      Tags:
+        - Key: Provisioner
+          Value: CloudFormation
+        - Key: CloudFormationStackName
+          Value: !Ref 'AWS::StackName'
+        - Key: CloudFormationStackId
+          Value: !Ref 'AWS::StackId'
