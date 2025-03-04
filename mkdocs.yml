@@ -36,6 +36,8 @@ nav:
             - "Automatic Upgrades(rancher/system-upgrade-controller)": devops/k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation.md
             # - 'Install Rancher': devops/rancher/rke2-ha/rke2-install-rancher.md
             - "How to ETCD Restore": devops/k8s-engine/rke2-ha/rke2-ha-etcd-restore.md
+    - Docker:
+        - "Docker Management with Portainer": devops/docker/portainer/README.md
     - Rancher:
         - "Rancher Installation": devops/rancher/rancher-installation.md
     - Postgres:
