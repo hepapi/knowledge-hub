@@ -4503,8 +4503,7 @@ Pools need to be associated with an application before they can be used</li>
 <h2 id="createbuild-cephfs-storage_1">Create/build CEPHFS storage</h2>
 <ul>
 <li>
-<p>The Ceph File System, or CephFS, is a POSIX-compliant file system built on top of Ceph’s distributed object store, RADOS
-cephfs için bir data birde metada server kurulmalıdır. bunlar için öncelilkle data havuzu oluşturulmalıdır</p>
+<p>The Ceph File System, or CephFS, is a POSIX-compliant file system built on top of Ceph’s distributed object store</p>
 </li>
 <li>
 <p>check current pools
@@ -4518,7 +4517,7 @@ cephfs için bir data birde metada server kurulmalıdır. bunlar için öncelilk
 <li>
 <p>run on ceph master
 <div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>ceph<span class="w"> </span>fs<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>cephfs
-<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="c1">#creta cephfs data and metadata pool automatically</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="c1">#create cephfs data and metadata pool automatically</span>
 <a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>
 <a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="c1">#or manual</span>
 <a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>
