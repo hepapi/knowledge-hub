@@ -4347,26 +4347,30 @@ export AWS_SECRET_ACCESS_KEY=$(kubectl -n default get secret ceph-delete-bucket 
 </li>
 </ul>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>sudo<span class="w"> </span>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>ceph1
-<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
-<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/hosts
-<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>&lt;node1-ip&gt;<span class="w">  </span>ceph1
-<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>&lt;node2-ip&gt;<span class="w">  </span>ceph2
-<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>&lt;node3-ip&gt;<span class="w">  </span>ceph3
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>sudo<span class="w"> </span>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>ceph2
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>sudo<span class="w"> </span>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>ceph3
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/hosts
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>&lt;node1-ip&gt;<span class="w">  </span>ceph1
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>&lt;node2-ip&gt;<span class="w">  </span>ceph2
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>&lt;node3-ip&gt;<span class="w">  </span>ceph3
 </code></pre></div>
   - on master ceph node
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>ssh-keygen
-<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>cat<span class="w"> </span>.ssh/id_rsa.pub<span class="w"> </span>&gt;&gt;<span class="w"> </span>.ssh/authorized_keys<span class="w"> </span>
-<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>cat<span class="w"> </span>.ssh/id_rsa.pub
-<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
-<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>ssh<span class="w"> </span>ceph2
-<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>sudo<span class="w"> </span>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>ceph2
-<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>nano<span class="w"> </span>.ssh/authorized_keys<span class="w"> </span>
-<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>*<span class="w"> </span>paste<span class="w"> </span>id_rsa.pub
-<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>
-<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>ssh<span class="w"> </span>ceph3
-<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>sudo<span class="w"> </span>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>ceph3
-<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>nano<span class="w"> </span>.ssh/authorized_keys
-<a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>*<span class="w"> </span>paste<span class="w"> </span>id_rsa.pub
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>sudo<span class="w"> </span>-i
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>ssh-keygen
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>cat<span class="w"> </span>/root/.ssh/id_rsa.pub<span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.ssh/authorized_keys<span class="w"> </span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>cat<span class="w"> </span>/root/.ssh/id_rsa.pub
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>ssh<span class="w"> </span>ceph2
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>sudo<span class="w"> </span>-i
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>sudo<span class="w"> </span>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>ceph2
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>nano<span class="w"> </span>.ssh/authorized_keys<span class="w"> </span>
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>*<span class="w"> </span>paste<span class="w"> </span>id_rsa.pub
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>
+<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>ssh<span class="w"> </span>ceph3
+<a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>sudo<span class="w"> </span>-i
+<a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a>sudo<span class="w"> </span>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>ceph3
+<a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>nano<span class="w"> </span>.ssh/authorized_keys
+<a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a>*<span class="w"> </span>paste<span class="w"> </span>id_rsa.pub
 </code></pre></div></p>
 <h3 id="install-ansible">install ansible</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
@@ -4385,14 +4389,14 @@ export AWS_SECRET_ACCESS_KEY=$(kubectl -n default get secret ceph-delete-bucket 
 <a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="c1"># modified hosts</span>
 <a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>nano<span class="w"> </span>hosts
 <a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="o">[</span>ceph_servers<span class="o">]</span>
-<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>ceph1
-<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>ceph2
-<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>ceph3
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>ceph1<span class="w"> </span><span class="nv">ansible_host</span><span class="o">=</span>&lt;node1-ip&gt;<span class="w"> </span>
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>ceph2<span class="w"> </span><span class="nv">ansible_host</span><span class="o">=</span>&lt;node2-ip&gt;<span class="w"> </span>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>ceph3<span class="w"> </span><span class="nv">ansible_host</span><span class="o">=</span>&lt;node3-ip&gt;<span class="w"> </span>
 <a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>
 <a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="o">[</span>all:vars<span class="o">]</span>
 <a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a><span class="nv">ansible_python_interpreter</span><span class="o">=</span>/usr/bin/python3
-<a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a><span class="nv">ansible_ssh_private_key_file</span><span class="o">=</span>/root/.ssh/id_rsa.pub
-<a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a><span class="nv">ansible_user</span><span class="o">=</span>ubuntu
+<a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a><span class="nv">ansible_ssh_private_key_file</span><span class="o">=</span>/root/.ssh/id_rsa
+<a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a><span class="nv">ansible_user</span><span class="o">=</span>root
 <a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a><span class="c1"># verify all node is reachable</span>
 <a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a>ansible<span class="w"> </span>all<span class="w"> </span>-i<span class="w"> </span>hosts<span class="w"> </span>-m<span class="w"> </span>ping
 <a id="__codelineno-30-18" name="__codelineno-30-18" href="#__codelineno-30-18"></a>
@@ -4446,7 +4450,7 @@ export AWS_SECRET_ACCESS_KEY=$(kubectl -n default get secret ceph-delete-bucket 
 <a id="__codelineno-30-66" name="__codelineno-30-66" href="#__codelineno-30-66"></a>-<span class="w"> </span>check<span class="w"> </span>current<span class="w"> </span>infra
 <a id="__codelineno-30-67" name="__codelineno-30-67" href="#__codelineno-30-67"></a>ceph<span class="w"> </span>-s
 <a id="__codelineno-30-68" name="__codelineno-30-68" href="#__codelineno-30-68"></a>ceph<span class="w"> </span>orch<span class="w"> </span>ls
-<a id="__codelineno-30-69" name="__codelineno-30-69" href="#__codelineno-30-69"></a>ceph<span class="w"> </span>orch<span class="w"> </span>pool<span class="w"> </span>ls
+<a id="__codelineno-30-69" name="__codelineno-30-69" href="#__codelineno-30-69"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>ls
 <a id="__codelineno-30-70" name="__codelineno-30-70" href="#__codelineno-30-70"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>ls<span class="w"> </span>detail
 <a id="__codelineno-30-71" name="__codelineno-30-71" href="#__codelineno-30-71"></a>ceph<span class="w"> </span>osd<span class="w"> </span>tree<span class="w"> </span>
 <a id="__codelineno-30-72" name="__codelineno-30-72" href="#__codelineno-30-72"></a>ceph<span class="w"> </span>orch<span class="w"> </span>host<span class="w"> </span>ls
@@ -4483,16 +4487,18 @@ Pools need to be associated with an application before they can be used</li>
 </code></pre></div></li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>-<span class="w"> </span>some<span class="w"> </span>extra<span class="w"> </span>commands
-<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
-<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="c1">## Setting Pool Quotas</span>
-<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>set-quota<span class="w"> </span><span class="o">{</span>pool-name<span class="o">}</span><span class="w"> </span><span class="o">[</span>max_objects<span class="w"> </span><span class="o">{</span>obj-count<span class="o">}]</span><span class="w"> </span><span class="o">[</span>max_bytes<span class="w"> </span><span class="o">{</span>bytes<span class="o">}]</span>
-<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>
-<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="c1">## Deleting a Pool</span>
-<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>delete<span class="w"> </span><span class="o">{</span>pool-name<span class="o">}</span><span class="w"> </span><span class="o">[{</span>pool-name<span class="o">}</span><span class="w"> </span>--yes-i-really-really-mean-it<span class="o">]</span>
-<a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>
-<a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="c1">## Setting Pool Values</span>
-<a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="o">{</span>pool-name<span class="o">}</span><span class="w"> </span><span class="o">{</span>key<span class="o">}</span><span class="w"> </span><span class="o">{</span>value<span class="o">}</span>
-<a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a>size,<span class="w"> </span>pg_num,<span class="w"> </span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>ceph<span class="w"> </span>osd<span class="w"> </span>crush<span class="w"> </span>rule<span class="w"> </span>ls
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>ceph<span class="w"> </span>osd<span class="w"> </span>crush<span class="w"> </span>rule<span class="w"> </span>dump
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="c1">## Setting Pool Quotas</span>
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>set-quota<span class="w"> </span><span class="o">{</span>pool-name<span class="o">}</span><span class="w"> </span><span class="o">[</span>max_objects<span class="w"> </span><span class="o">{</span>obj-count<span class="o">}]</span><span class="w"> </span><span class="o">[</span>max_bytes<span class="w"> </span><span class="o">{</span>bytes<span class="o">}]</span>
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>
+<a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="c1">## Deleting a Pool</span>
+<a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>delete<span class="w"> </span><span class="o">{</span>pool-name<span class="o">}</span><span class="w"> </span><span class="o">[{</span>pool-name<span class="o">}</span><span class="w"> </span>--yes-i-really-really-mean-it<span class="o">]</span>
+<a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a>
+<a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a><span class="c1">## Setting Pool Values</span>
+<a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="o">{</span>pool-name<span class="o">}</span><span class="w"> </span><span class="o">{</span>key<span class="o">}</span><span class="w"> </span><span class="o">{</span>value<span class="o">}</span>
+<a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a>size,<span class="w"> </span>pg_num,<span class="w"> </span>
 </code></pre></div>
 <h2 id="createbuild-cephfs-storage_1">Create/build CEPHFS storage</h2>
 <ul>
@@ -4511,30 +4517,35 @@ cephfs için bir data birde metada server kurulmalıdır. bunlar için öncelilk
 </li>
 <li>
 <p>run on ceph master
-<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>create<span class="w"> </span>cephfs_data<span class="w"> </span><span class="m">32</span>
-<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>create<span class="w"> </span>cephfs_metadata<span class="w"> </span><span class="m">1</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>ceph<span class="w"> </span>fs<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>cephfs
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="c1">#creta cephfs data and metadata pool automatically</span>
 <a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>
-<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="c1">#check data pools</span>
-<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>ls
-<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>ls<span class="w"> </span>detail
-<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>
-<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="c1">#anable data pool</span>
-<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>application<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>cephfs_data<span class="w"> </span>cephfs
-<a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>application<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>cephfs_metadata<span class="w"> </span>cephfs
-<a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a>
-<a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>ls<span class="w"> </span>detail
-<a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a>
-<a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a><span class="c1">#make file system from this data pool</span>
-<a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a>ceph<span class="w"> </span>fs<span class="w"> </span>new<span class="w"> </span>cephfs-test<span class="w"> </span>cephfs_metadata<span class="w"> </span>cephfs_data
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="c1">#or manual</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>create<span class="w"> </span>cephfs_data<span class="w"> </span><span class="m">32</span>
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>create<span class="w"> </span>cephfs_metadata<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>
+<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="c1">#check data pools</span>
+<a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>ls
+<a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>ls<span class="w"> </span>detail
+<a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a>
+<a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a><span class="c1">#anable data pool</span>
+<a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>application<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>cephfs_data<span class="w"> </span>cephfs
+<a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>application<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>cephfs_metadata<span class="w"> </span>cephfs
 <a id="__codelineno-37-16" name="__codelineno-37-16" href="#__codelineno-37-16"></a>
-<a id="__codelineno-37-17" name="__codelineno-37-17" href="#__codelineno-37-17"></a><span class="c1">#control file system</span>
-<a id="__codelineno-37-18" name="__codelineno-37-18" href="#__codelineno-37-18"></a>ceph<span class="w"> </span>fs<span class="w"> </span>ls
-<a id="__codelineno-37-19" name="__codelineno-37-19" href="#__codelineno-37-19"></a>
-<a id="__codelineno-37-20" name="__codelineno-37-20" href="#__codelineno-37-20"></a><span class="c1">#if need, delete file system: &quot;ceph fs rm  hepapi-cephfs --yes-i-really-mean-it&quot;</span>
+<a id="__codelineno-37-17" name="__codelineno-37-17" href="#__codelineno-37-17"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>ls<span class="w"> </span>detail
+<a id="__codelineno-37-18" name="__codelineno-37-18" href="#__codelineno-37-18"></a>
+<a id="__codelineno-37-19" name="__codelineno-37-19" href="#__codelineno-37-19"></a><span class="c1">#make file system from this data pool</span>
+<a id="__codelineno-37-20" name="__codelineno-37-20" href="#__codelineno-37-20"></a>ceph<span class="w"> </span>fs<span class="w"> </span>new<span class="w"> </span>cephfs-test<span class="w"> </span>cephfs_metadata<span class="w"> </span>cephfs_data
 <a id="__codelineno-37-21" name="__codelineno-37-21" href="#__codelineno-37-21"></a>
-<a id="__codelineno-37-22" name="__codelineno-37-22" href="#__codelineno-37-22"></a><span class="c1">#create mds</span>
-<a id="__codelineno-37-23" name="__codelineno-37-23" href="#__codelineno-37-23"></a>
-<a id="__codelineno-37-24" name="__codelineno-37-24" href="#__codelineno-37-24"></a>on<span class="w"> </span>ceph<span class="w"> </span>dashboard:<span class="w"> </span>services--&gt;<span class="w"> </span>create<span class="w"> </span>mds<span class="w"> </span>:<span class="w"> </span><span class="m">2</span><span class="w"> </span>or<span class="w"> </span>cli:<span class="w"> </span>ceph<span class="w"> </span>fs<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>cephfs
+<a id="__codelineno-37-22" name="__codelineno-37-22" href="#__codelineno-37-22"></a><span class="c1">#control file system</span>
+<a id="__codelineno-37-23" name="__codelineno-37-23" href="#__codelineno-37-23"></a>ceph<span class="w"> </span>fs<span class="w"> </span>ls
+<a id="__codelineno-37-24" name="__codelineno-37-24" href="#__codelineno-37-24"></a>
+<a id="__codelineno-37-25" name="__codelineno-37-25" href="#__codelineno-37-25"></a><span class="c1">#if need, delete file system: &quot;ceph fs rm  hepapi-cephfs --yes-i-really-mean-it&quot;</span>
+<a id="__codelineno-37-26" name="__codelineno-37-26" href="#__codelineno-37-26"></a>
+<a id="__codelineno-37-27" name="__codelineno-37-27" href="#__codelineno-37-27"></a><span class="c1">#create mds</span>
+<a id="__codelineno-37-28" name="__codelineno-37-28" href="#__codelineno-37-28"></a>
+<a id="__codelineno-37-29" name="__codelineno-37-29" href="#__codelineno-37-29"></a>on<span class="w"> </span>ceph<span class="w"> </span>dashboard:<span class="w"> </span>services--&gt;<span class="w"> </span>create<span class="w"> </span>mds<span class="w"> </span>:<span class="w"> </span><span class="m">2</span><span class="w"> </span>or<span class="w"> </span>cli:<span class="w"> </span>ceph<span class="w"> </span>fs<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>cephfs
 </code></pre></div></p>
 </li>
 </ul>
@@ -4574,18 +4585,36 @@ cephfs için bir data birde metada server kurulmalıdır. bunlar için öncelilk
 <a id="__codelineno-38-25" name="__codelineno-38-25" href="#__codelineno-38-25"></a><span class="nb">export</span><span class="w"> </span><span class="nv">RGW_POOL_PREFIX</span><span class="o">=</span>default
 </code></pre></div>
 <ul>
-<li>run on k8s cluster </li>
+<li>
+<p>run on k8s cluster </p>
+</li>
+<li>
+<p>Prerequisites:
+  Rook operator is deployed</p>
+</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="nb">cd</span><span class="w"> </span>rook/deploy/examples/external
-<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>.<span class="w"> </span>import-external-cluster.sh
-<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>
-<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="c1">#verify on k8s cluster cephcluster up and running, Health is OK</span>
-<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>rook-ceph<span class="w">  </span>get<span class="w"> </span>CephCluster
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c1"># Create common-external.yaml and cluster-external.yaml</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="nb">cd</span><span class="w"> </span>~/rook/deploy/examples/
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="c1"># change namespace: rook-ceph-external in common-external.yaml and cluster-external.yaml then run</span>
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>common-external.yaml
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>cluster-external.yaml
 <a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>
-<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>NAME<span class="w">                 </span>DATADIRHOSTPATH<span class="w">   </span>MONCOUNT<span class="w">   </span>AGE<span class="w">    </span>STATE<span class="w">       </span>HEALTH
-<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a>rook-ceph-external<span class="w">   </span>/var/lib/rook<span class="w">                </span>xxx<span class="w">   </span>Connected<span class="w">   </span>HEALTH_OK
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="c1"># import external ceph cluster</span>
+<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a>firstly,<span class="w"> </span>Paste<span class="w"> </span>the<span class="w"> </span>above<span class="w"> </span>output<span class="w"> </span>from<span class="w"> </span>create-external-cluster-resources.py<span class="w"> </span>into<span class="w"> </span>your<span class="w"> </span>current<span class="w"> </span>shell<span class="w"> </span>to<span class="w"> </span>allow<span class="w"> </span>importing<span class="w"> </span>the<span class="w"> </span><span class="nb">source</span><span class="w"> </span>data.
 <a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a>
-<a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a>kubectl<span class="w"> </span>get<span class="w"> </span>sc
+<a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a><span class="c1"># then run</span>
+<a id="__codelineno-39-11" name="__codelineno-39-11" href="#__codelineno-39-11"></a><span class="nb">cd</span><span class="w"> </span>~/rook/deploy/examples/external
+<a id="__codelineno-39-12" name="__codelineno-39-12" href="#__codelineno-39-12"></a><span class="c1"># change namespace: rook-ceph-external in import-external-cluster.sh then run</span>
+<a id="__codelineno-39-13" name="__codelineno-39-13" href="#__codelineno-39-13"></a>.<span class="w"> </span>import-external-cluster.sh
+<a id="__codelineno-39-14" name="__codelineno-39-14" href="#__codelineno-39-14"></a>
+<a id="__codelineno-39-15" name="__codelineno-39-15" href="#__codelineno-39-15"></a><span class="c1">#verify on k8s cluster cephcluster up and running, Health is OK</span>
+<a id="__codelineno-39-16" name="__codelineno-39-16" href="#__codelineno-39-16"></a>kubectl<span class="w"> </span>-n<span class="w"> </span>rook-ceph<span class="w">  </span>get<span class="w"> </span>CephCluster
+<a id="__codelineno-39-17" name="__codelineno-39-17" href="#__codelineno-39-17"></a>
+<a id="__codelineno-39-18" name="__codelineno-39-18" href="#__codelineno-39-18"></a>NAME<span class="w">                 </span>DATADIRHOSTPATH<span class="w">   </span>MONCOUNT<span class="w">   </span>AGE<span class="w">    </span>STATE<span class="w">       </span>HEALTH
+<a id="__codelineno-39-19" name="__codelineno-39-19" href="#__codelineno-39-19"></a>rook-ceph-external<span class="w">   </span>/var/lib/rook<span class="w">                </span>xxx<span class="w">   </span>Connected<span class="w">   </span>HEALTH_OK
+<a id="__codelineno-39-20" name="__codelineno-39-20" href="#__codelineno-39-20"></a>
+<a id="__codelineno-39-21" name="__codelineno-39-21" href="#__codelineno-39-21"></a><span class="c1">#verify current storageclass</span>
+<a id="__codelineno-39-22" name="__codelineno-39-22" href="#__codelineno-39-22"></a>kubectl<span class="w"> </span>get<span class="w"> </span>sc
 </code></pre></div>
 <ul>
 <li>
@@ -4595,24 +4624,39 @@ cephfs için bir data birde metada server kurulmalıdır. bunlar için öncelilk
 <p>Use this volume type in kube-registry deployment, replica:3 in kube-system namespace</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="nb">cd</span><span class="w"> </span>rook/deploy/examples/csi/cephfs
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="nb">cd</span><span class="w"> </span>~/rook/deploy/examples/csi/cephfs
 <a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>
 <a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>kube-registry.yaml
 <a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>
-<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="c1"># pod mount path : /var/lib/registry</span>
-<a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a>
-<a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a><span class="c1">#create new file on mounth path</span>
-<a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;pod-replica-1&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>--<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;test1&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/var/lib/registry/test.txt
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="c1">#verify pvc and pvbound</span>
+<a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pv,pvc
+<a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a>
+<a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a><span class="c1"># pod mount path : /var/lib/registry</span>
 <a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a>
-<a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a><span class="c1">#verify the file exist on other pod </span>
-<a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;pod-replica-2&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>--<span class="w"> </span>ls<span class="w"> </span>/var/lib/registry/
-<a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;pod-replica-2&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>--<span class="w"> </span>cat<span class="w"> </span>/var/lib/registry/test.txt
+<a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a><span class="c1">#create new file on mounth path</span>
+<a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;pod-replica-1&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>--<span class="w"> </span>sh
+<a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;test1&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/var/lib/registry/test.txt
 <a id="__codelineno-40-13" name="__codelineno-40-13" href="#__codelineno-40-13"></a>
-<a id="__codelineno-40-14" name="__codelineno-40-14" href="#__codelineno-40-14"></a>
-<a id="__codelineno-40-15" name="__codelineno-40-15" href="#__codelineno-40-15"></a><span class="c1"># veirfy volume is persistent?</span>
-<a id="__codelineno-40-16" name="__codelineno-40-16" href="#__codelineno-40-16"></a>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deploment<span class="w"> </span>kube-registry<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;
-<a id="__codelineno-40-17" name="__codelineno-40-17" href="#__codelineno-40-17"></a>
-<a id="__codelineno-40-18" name="__codelineno-40-18" href="#__codelineno-40-18"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;pod-replica-2&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>--<span class="w"> </span>cat<span class="w"> </span>/var/lib/registry/test.txt
+<a id="__codelineno-40-14" name="__codelineno-40-14" href="#__codelineno-40-14"></a><span class="c1">#verify the file exist on other pod </span>
+<a id="__codelineno-40-15" name="__codelineno-40-15" href="#__codelineno-40-15"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;pod-replica-2&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>--<span class="w"> </span>ls<span class="w"> </span>/var/lib/registry/
+<a id="__codelineno-40-16" name="__codelineno-40-16" href="#__codelineno-40-16"></a>
+<a id="__codelineno-40-17" name="__codelineno-40-17" href="#__codelineno-40-17"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;pod-replica-2&gt;<span class="w">  </span>--<span class="w"> </span>sh
+<a id="__codelineno-40-18" name="__codelineno-40-18" href="#__codelineno-40-18"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;test2&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/var/lib/registry/test.txt
+<a id="__codelineno-40-19" name="__codelineno-40-19" href="#__codelineno-40-19"></a>
+<a id="__codelineno-40-20" name="__codelineno-40-20" href="#__codelineno-40-20"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;pod-replica-3&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>--<span class="w"> </span>cat<span class="w"> </span>/var/lib/registry/test.txt
+<a id="__codelineno-40-21" name="__codelineno-40-21" href="#__codelineno-40-21"></a>
+<a id="__codelineno-40-22" name="__codelineno-40-22" href="#__codelineno-40-22"></a>
+<a id="__codelineno-40-23" name="__codelineno-40-23" href="#__codelineno-40-23"></a><span class="c1"># veirfy volume is persistenet?</span>
+<a id="__codelineno-40-24" name="__codelineno-40-24" href="#__codelineno-40-24"></a>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>kube-registry<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;
+<a id="__codelineno-40-25" name="__codelineno-40-25" href="#__codelineno-40-25"></a>
+<a id="__codelineno-40-26" name="__codelineno-40-26" href="#__codelineno-40-26"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;pod-replica-2&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>--<span class="w"> </span>cat<span class="w"> </span>/var/lib/registry/test.txt
+<a id="__codelineno-40-27" name="__codelineno-40-27" href="#__codelineno-40-27"></a><span class="c1"># check volume path</span>
+<a id="__codelineno-40-28" name="__codelineno-40-28" href="#__codelineno-40-28"></a>
+<a id="__codelineno-40-29" name="__codelineno-40-29" href="#__codelineno-40-29"></a>findmnt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ceph
+<a id="__codelineno-40-30" name="__codelineno-40-30" href="#__codelineno-40-30"></a>
+<a id="__codelineno-40-31" name="__codelineno-40-31" href="#__codelineno-40-31"></a>sudo<span class="w"> </span>-i
+<a id="__codelineno-40-32" name="__codelineno-40-32" href="#__codelineno-40-32"></a><span class="nb">cd</span><span class="w"> </span>&lt;mount<span class="w"> </span>path&gt;
+<a id="__codelineno-40-33" name="__codelineno-40-33" href="#__codelineno-40-33"></a>ls
 </code></pre></div>
 
 
