@@ -644,8 +644,7 @@ size, pg_num,
 
 ## Create/build CEPHFS storage
 
-- The Ceph File System, or CephFS, is a POSIX-compliant file system built on top of Ceph’s distributed object store, RADOS
-cephfs için bir data birde metada server kurulmalıdır. bunlar için öncelilkle data havuzu oluşturulmalıdır
+- The Ceph File System, or CephFS, is a POSIX-compliant file system built on top of Ceph’s distributed object store
 
 - check current pools
 ```bash
@@ -658,7 +657,7 @@ ceph osd pool ls detail
 - run on ceph master
 ```bash
 ceph fs volume create cephfs
-#creta cephfs data and metadata pool automatically
+#create cephfs data and metadata pool automatically
 
 #or manual
 
