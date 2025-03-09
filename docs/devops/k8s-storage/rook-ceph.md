@@ -476,7 +476,8 @@ cat /tmp/rookObj-download
 
 ```bash
 sudo hostnamectl set-hostname ceph1
-
+sudo hostnamectl set-hostname ceph2
+sudo hostnamectl set-hostname ceph3
 sudo nano /etc/hosts
 <node1-ip>  ceph1
 <node2-ip>  ceph2
@@ -484,16 +485,19 @@ sudo nano /etc/hosts
 ```
   - on master ceph node
 ```bash
+sudo -i
 ssh-keygen
-cat .ssh/id_rsa.pub >> .ssh/authorized_keys 
-cat .ssh/id_rsa.pub
+cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys 
+cat /root/.ssh/id_rsa.pub
 
 ssh ceph2
+sudo -i
 sudo hostnamectl set-hostname ceph2
 nano .ssh/authorized_keys 
 * paste id_rsa.pub
 
 ssh ceph3
+sudo -i
 sudo hostnamectl set-hostname ceph3
 nano .ssh/authorized_keys
 * paste id_rsa.pub
@@ -518,14 +522,14 @@ cd cephadm-ansible
 # modified hosts
 nano hosts
 [ceph_servers]
-ceph1
-ceph2
-ceph3
+ceph1 ansible_host=<node1-ip> 
+ceph2 ansible_host=<node2-ip> 
+ceph3 ansible_host=<node3-ip> 
 
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3
-ansible_ssh_private_key_file=/root/.ssh/id_rsa.pub
-ansible_user=ubuntu
+ansible_ssh_private_key_file=/root/.ssh/id_rsa
+ansible_user=root
 # verify all node is reachable
 ansible all -i hosts -m ping
 
@@ -579,7 +583,7 @@ cephadm bootstrap --mon-ip= <ceph1-ip> --apply-spec=initial_config.yaml --initia
 - check current infra
 ceph -s
 ceph orch ls
-ceph orch pool ls
+ceph osd pool ls
 ceph osd pool ls detail
 ceph osd tree 
 ceph orch host ls
@@ -622,6 +626,8 @@ ceph osd pool ls detail
 
 ```bash
 - some extra commands
+ceph osd crush rule ls
+ceph osd crush rule dump
 
 ## Setting Pool Quotas
 ceph osd pool set-quota {pool-name} [max_objects {obj-count}] [max_bytes {bytes}]
@@ -651,6 +657,11 @@ ceph osd pool ls detail
 
 - run on ceph master
 ```bash
+ceph fs volume create cephfs
+#creta cephfs data and metadata pool automatically
+
+#or manual
+
 ceph osd pool create cephfs_data 32
 ceph osd pool create cephfs_metadata 1
 
@@ -713,8 +724,22 @@ export RGW_POOL_PREFIX=default
 
 - run on k8s cluster 
 
+  * Prerequisites:
+  Rook operator is deployed
+
 ```bash
-cd rook/deploy/examples/external
+# Create common-external.yaml and cluster-external.yaml
+cd ~/rook/deploy/examples/
+# change namespace: rook-ceph-external in common-external.yaml and cluster-external.yaml then run
+kubectl create -f common-external.yaml
+kubectl create -f cluster-external.yaml
+
+# import external ceph cluster
+firstly, Paste the above output from create-external-cluster-resources.py into your current shell to allow importing the source data.
+
+# then run
+cd ~/rook/deploy/examples/external
+# change namespace: rook-ceph-external in import-external-cluster.sh then run
 . import-external-cluster.sh
 
 #verify on k8s cluster cephcluster up and running, Health is OK
@@ -723,6 +748,7 @@ kubectl -n rook-ceph  get CephCluster
 NAME                 DATADIRHOSTPATH   MONCOUNT   AGE    STATE       HEALTH
 rook-ceph-external   /var/lib/rook                xxx   Connected   HEALTH_OK
 
+#verify current storageclass
 kubectl get sc
 ```
 
@@ -731,25 +757,38 @@ kubectl get sc
 - Use this volume type in kube-registry deployment, replica:3 in kube-system namespace
 
 ```bash
-
-cd rook/deploy/examples/csi/cephfs
+cd ~/rook/deploy/examples/csi/cephfs
 
 kubectl create -f kube-registry.yaml
+
+#verify pvc and pvbound
+kubectl get pv,pvc
 
 # pod mount path : /var/lib/registry
 
 #create new file on mounth path
-kubectl exec -it <pod-replica-1> -n <namespace> -- echo "test1" > /var/lib/registry/test.txt
+kubectl exec -it <pod-replica-1> -n <namespace> -- sh
+echo "test1" > /var/lib/registry/test.txt
 
 #verify the file exist on other pod 
 kubectl exec -it <pod-replica-2> -n <namespace> -- ls /var/lib/registry/
+
+kubectl exec -it <pod-replica-2>  -- sh
+echo "test2" >> /var/lib/registry/test.txt
+
+kubectl exec -it <pod-replica-3> -n <namespace> -- cat /var/lib/registry/test.txt
+
+
+# veirfy volume is persistenet?
+kubectl rollout restart deployment kube-registry -n <namespace>
+
 kubectl exec -it <pod-replica-2> -n <namespace> -- cat /var/lib/registry/test.txt
+# check volume path
 
+findmnt | grep ceph
 
-# veirfy volume is persistent?
-kubectl rollout restart deploment kube-registry -n <namespace>
-
-kubectl exec -it <pod-replica-2> -n <namespace> -- cat /var/lib/registry/test.txt
-
+sudo -i
+cd <mount path>
+ls
 ```
 
