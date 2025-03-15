@@ -106,6 +106,8 @@ nav:
         - "Vagrant Quickstart": devops/vagrant/vagrant-quickstart.md
     - Sealed-Secrets:
         - "Sealed-Secrets": devops/sealed-secrets/sealed-secrets.md
+    - Service-Mesh:
+        - "Istio": devops/service-mesh/istio.md
     - Sonarqube:
         - "Sonarqube": devops/sonarqube/advanced-installation.md
     - K8S Storage:
