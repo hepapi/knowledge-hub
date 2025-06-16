@@ -68,6 +68,8 @@ nav:
         - "Configuration File": devops/ansible/config-file.md
         - "Playbooks": devops/ansible/playbook.md
         - "Roles": devops/ansible/ansible-roles.md
+    - Monitoring:
+        - "RKE2 Cluster-cert-expiration": devops/monitoring/k8s-cert-monitoring.md
     - Logging:
         - "ELK Stack": devops/logging/ELK-stack-with-FileBeat.md
         - "ELK Index Lifecycle Management": devops/logging/Index-Lifecycle-Management.md
