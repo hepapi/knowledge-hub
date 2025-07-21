@@ -501,11 +501,8 @@ metadata:
 kubectl apply -f vault-sa.yaml
 ```
 
-
-
-
 ```yaml
-#define  ClusterSecretStore for eso-vault integration 
+#define ClusterSecretStore for eso-vault integration 
 
 vi vault-clusterSecretStore.yaml
 
@@ -574,7 +571,7 @@ vault write auth/kubernetes/role/eso-role \
 ```
 
 
-### for test create externalsecret
+### create externalsecret for testing get secret
 
 ```bash
 #first define a credential on vault server
@@ -583,6 +580,7 @@ vault kv put kv/data/test/db password=1234
 ```
 
 ```yaml
+# on Kubernetes
 vi externalsecret.yaml
 
 
@@ -619,13 +617,13 @@ kubectl get secret my-secret -n <namespace> -o yaml
 ### running postgres pod
 ```bash
 kubectl get secret --namespace default postgre-vault-test-postgresql -o jsonpath="{.data.postgres-password}" | base64 -d
-MQEvdzuWw6
+pass: xxxx
 
 kubectl exec -it postgre-vault-test-postgresql-0 -- bash
 
 
 psql -U vault -d postgres
-pass: vault
+pass: xxxx
 
 CREATE ROLE vault WITH LOGIN SUPERUSER PASSWORD 'vault';
 ```
