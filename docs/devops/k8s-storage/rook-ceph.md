@@ -479,9 +479,9 @@ sudo hostnamectl set-hostname ceph1
 sudo hostnamectl set-hostname ceph2
 sudo hostnamectl set-hostname ceph3
 sudo nano /etc/hosts
-<node1-ip>  ceph1
-<node2-ip>  ceph2
-<node3-ip>  ceph3
+172.18.11.55  ceph1
+172.18.11.56  ceph2
+172.18.11.57  ceph3
 ```
   - on master ceph node
 ```bash
@@ -504,6 +504,7 @@ nano .ssh/authorized_keys
 ```
 
 ### install ansible 
+
 ```bash
 sudo apt update
 sudo apt install software-properties-common
@@ -522,13 +523,13 @@ cd cephadm-ansible
 # modified hosts
 nano hosts
 [ceph_servers]
-ceph1 ansible_host=<node1-ip> 
-ceph2 ansible_host=<node2-ip> 
-ceph3 ansible_host=<node3-ip> 
+ceph1 ansible_host=172.18.11.55 
+ceph2 ansible_host=172.18.11.56 
+ceph3 ansible_host=172.18.11.57
 
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3
-ansible_ssh_private_key_file=/root/.ssh/id_rsa
+ansible_ssh_private_key_file=/root/.ssh/id_ed25519
 ansible_user=root
 # verify all node is reachable
 ansible all -i hosts -m ping
@@ -541,15 +542,15 @@ nano initial_config.yaml
 
 ---
 service_type: host
-addr: <ceph1-ip>
+addr: 172.18.11.55
 hostname: ceph1
 ---
 service_type: host
-addr: <ceph2-ip> 
+addr: 172.18.11.56 
 hostname: ceph2
 ---
 service_type: host
-addr: <ceph3-ip>
+addr: 172.18.11.57
 hostname: ceph3
 ---
 service_type: mon
@@ -575,10 +576,10 @@ placement:
     - ceph3
 data_devices:
   paths:
-    - /dev/nvme1n1 # if need, change disk name 
+    - /dev/sdb # if need, change disk name 
 ---
 
-cephadm bootstrap --mon-ip= <ceph1-ip> --apply-spec=initial_config.yaml --initial-dashboard-password=<change_me> --dashboard-password-noupdate # change mon-ip eand dashboard password
+cephadm bootstrap --mon-ip= 172.18.11.55 --apply-spec=initial_config.yaml --initial-dashboard-password=XK88Q4iPcDrJ --dashboard-password-noupdate # change mon-ip eand dashboard password
 
 - check current infra
 ceph -s
@@ -667,10 +668,11 @@ ceph osd pool create cephfs_metadata 1
 #check data pools
 ceph osd pool ls
 ceph osd pool ls detail
-
+cephfs.cephfs.meta
+cephfs.cephfs.data
 #anable data pool
 ceph osd pool application enable cephfs_data cephfs
-ceph osd pool application enable cephfs_metadata cephfs
+ceph osd pool application enable cephfs.cephfs.metacephfs
 
 ceph osd pool ls detail
 
