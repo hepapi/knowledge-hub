@@ -2030,9 +2030,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#for-test-create-externalsecret" class="md-nav__link">
+  <a href="#create-externalsecret-for-testing-get-secret" class="md-nav__link">
     <span class="md-ellipsis">
-      for test create externalsecret
+      create externalsecret for testing get secret
     </span>
   </a>
   
@@ -4578,9 +4578,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#for-test-create-externalsecret" class="md-nav__link">
+  <a href="#create-externalsecret-for-testing-get-secret" class="md-nav__link">
     <span class="md-ellipsis">
-      for test create externalsecret
+      create externalsecret for testing get secret
     </span>
   </a>
   
@@ -5111,7 +5111,7 @@
 - Create service account</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>vault-sa.yaml
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1">#define  ClusterSecretStore for eso-vault integration </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1">#define ClusterSecretStore for eso-vault integration </span>
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
 <a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="l l-Scalar l-Scalar-Plain">vi vault-clusterSecretStore.yaml</span>
 <a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
@@ -5175,32 +5175,33 @@
 <a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a><span class="w">    </span><span class="nv">policies</span><span class="o">=</span>eso-policy<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a><span class="w">    </span><span class="nv">ttl</span><span class="o">=</span>24h
 </code></pre></div>
-<h3 id="for-test-create-externalsecret">for test create externalsecret</h3>
+<h3 id="create-externalsecret-for-testing-get-secret">create externalsecret for testing get secret</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1">#first define a credential on vault server</span>
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
 <a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>vault<span class="w"> </span>kv<span class="w"> </span>put<span class="w"> </span>kv/data/test/db<span class="w"> </span><span class="nv">password</span><span class="o">=</span><span class="m">1234</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="l l-Scalar l-Scalar-Plain">vi externalsecret.yaml</span>
-<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># on Kubernetes</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="l l-Scalar l-Scalar-Plain">vi externalsecret.yaml</span>
 <a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
-<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="l l-Scalar l-Scalar-Plain">apiVersion</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1beta1</span>
-<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExternalSecret</span>
-<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="nt">metadata</span><span class="p">:</span>
-<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example-secret</span>
-<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eso</span>
-<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="nt">spec</span><span class="p">:</span>
-<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="w">  </span><span class="nt">refreshInterval</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1h&quot;</span>
-<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="w">  </span><span class="nt">secretStoreRef</span><span class="p">:</span>
-<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vault-backend</span>
-<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterSecretStore</span>
-<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="w">  </span><span class="nt">target</span><span class="p">:</span>
-<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-secret</span>
-<a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="w">    </span><span class="nt">creationPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Owner</span>
-<a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a><span class="w">  </span><span class="nt">data</span><span class="p">:</span>
-<a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretKey</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
-<a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="w">      </span><span class="nt">remoteRef</span><span class="p">:</span>
-<a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a><span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;kv/data/test/db&quot;</span>
-<a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a><span class="w">        </span><span class="nt">property</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;password&quot;</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="l l-Scalar l-Scalar-Plain">apiVersion</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1beta1</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExternalSecret</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example-secret</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eso</span>
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="w">  </span><span class="nt">refreshInterval</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1h&quot;</span>
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="w">  </span><span class="nt">secretStoreRef</span><span class="p">:</span>
+<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vault-backend</span>
+<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterSecretStore</span>
+<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="w">  </span><span class="nt">target</span><span class="p">:</span>
+<a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-secret</span>
+<a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a><span class="w">    </span><span class="nt">creationPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Owner</span>
+<a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a><span class="w">  </span><span class="nt">data</span><span class="p">:</span>
+<a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretKey</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a><span class="w">      </span><span class="nt">remoteRef</span><span class="p">:</span>
+<a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a><span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;kv/data/test/db&quot;</span>
+<a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="w">        </span><span class="nt">property</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;password&quot;</span>
 </code></pre></div>
 <ul>
 <li>verify get secret from vault</li>
@@ -5210,13 +5211,13 @@
 <h2 id="database-secret-engine">database secret engine</h2>
 <h3 id="running-postgres-pod">running postgres pod</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>--namespace<span class="w"> </span>default<span class="w"> </span>postgre-vault-test-postgresql<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.data.postgres-password}&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
-<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>MQEvdzuWw6
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>pass:<span class="w"> </span>xxxx
 <a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
 <a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>postgre-vault-test-postgresql-0<span class="w"> </span>--<span class="w"> </span>bash
 <a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>
 <a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
 <a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>psql<span class="w"> </span>-U<span class="w"> </span>vault<span class="w"> </span>-d<span class="w"> </span>postgres
-<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>pass:<span class="w"> </span>vault
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>pass:<span class="w"> </span>xxxx
 <a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>
 <a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>CREATE<span class="w"> </span>ROLE<span class="w"> </span>vault<span class="w"> </span>WITH<span class="w"> </span>LOGIN<span class="w"> </span>SUPERUSER<span class="w"> </span>PASSWORD<span class="w"> </span><span class="s1">&#39;vault&#39;</span><span class="p">;</span>
 </code></pre></div>
