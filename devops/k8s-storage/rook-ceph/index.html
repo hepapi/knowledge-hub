@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
@@ -1844,6 +1844,29 @@
   
   <span class="md-ellipsis">
     What is Falco?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devsecops/vault/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    vault in Kubernetes/VM installation
     
   </span>
   
@@ -4229,7 +4252,7 @@
 
 
   
-    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/k8s-storage/rook-ceph.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/k8s-storage/rook-ceph.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -4662,9 +4685,9 @@ export AWS_SECRET_ACCESS_KEY=$(kubectl -n default get secret ceph-delete-bucket 
 <a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>sudo<span class="w"> </span>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>ceph2
 <a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>sudo<span class="w"> </span>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>ceph3
 <a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/hosts
-<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>&lt;node1-ip&gt;<span class="w">  </span>ceph1
-<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>&lt;node2-ip&gt;<span class="w">  </span>ceph2
-<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>&lt;node3-ip&gt;<span class="w">  </span>ceph3
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="m">172</span>.18.11.55<span class="w">  </span>ceph1
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="m">172</span>.18.11.56<span class="w">  </span>ceph2
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="m">172</span>.18.11.57<span class="w">  </span>ceph3
 </code></pre></div>
   - on master ceph node
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>sudo<span class="w"> </span>-i
@@ -4701,13 +4724,13 @@ export AWS_SECRET_ACCESS_KEY=$(kubectl -n default get secret ceph-delete-bucket 
 <a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="c1"># modified hosts</span>
 <a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>nano<span class="w"> </span>hosts
 <a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="o">[</span>ceph_servers<span class="o">]</span>
-<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>ceph1<span class="w"> </span><span class="nv">ansible_host</span><span class="o">=</span>&lt;node1-ip&gt;<span class="w"> </span>
-<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>ceph2<span class="w"> </span><span class="nv">ansible_host</span><span class="o">=</span>&lt;node2-ip&gt;<span class="w"> </span>
-<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>ceph3<span class="w"> </span><span class="nv">ansible_host</span><span class="o">=</span>&lt;node3-ip&gt;<span class="w"> </span>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>ceph1<span class="w"> </span><span class="nv">ansible_host</span><span class="o">=</span><span class="m">172</span>.18.11.55<span class="w"> </span>
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>ceph2<span class="w"> </span><span class="nv">ansible_host</span><span class="o">=</span><span class="m">172</span>.18.11.56<span class="w"> </span>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>ceph3<span class="w"> </span><span class="nv">ansible_host</span><span class="o">=</span><span class="m">172</span>.18.11.57
 <a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>
 <a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="o">[</span>all:vars<span class="o">]</span>
 <a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a><span class="nv">ansible_python_interpreter</span><span class="o">=</span>/usr/bin/python3
-<a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a><span class="nv">ansible_ssh_private_key_file</span><span class="o">=</span>/root/.ssh/id_rsa
+<a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a><span class="nv">ansible_ssh_private_key_file</span><span class="o">=</span>/root/.ssh/id_ed25519
 <a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a><span class="nv">ansible_user</span><span class="o">=</span>root
 <a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a><span class="c1"># verify all node is reachable</span>
 <a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a>ansible<span class="w"> </span>all<span class="w"> </span>-i<span class="w"> </span>hosts<span class="w"> </span>-m<span class="w"> </span>ping
@@ -4720,15 +4743,15 @@ export AWS_SECRET_ACCESS_KEY=$(kubectl -n default get secret ceph-delete-bucket 
 <a id="__codelineno-30-24" name="__codelineno-30-24" href="#__codelineno-30-24"></a>
 <a id="__codelineno-30-25" name="__codelineno-30-25" href="#__codelineno-30-25"></a>---
 <a id="__codelineno-30-26" name="__codelineno-30-26" href="#__codelineno-30-26"></a>service_type:<span class="w"> </span>host
-<a id="__codelineno-30-27" name="__codelineno-30-27" href="#__codelineno-30-27"></a>addr:<span class="w"> </span>&lt;ceph1-ip&gt;
+<a id="__codelineno-30-27" name="__codelineno-30-27" href="#__codelineno-30-27"></a>addr:<span class="w"> </span><span class="m">172</span>.18.11.55
 <a id="__codelineno-30-28" name="__codelineno-30-28" href="#__codelineno-30-28"></a>hostname:<span class="w"> </span>ceph1
 <a id="__codelineno-30-29" name="__codelineno-30-29" href="#__codelineno-30-29"></a>---
 <a id="__codelineno-30-30" name="__codelineno-30-30" href="#__codelineno-30-30"></a>service_type:<span class="w"> </span>host
-<a id="__codelineno-30-31" name="__codelineno-30-31" href="#__codelineno-30-31"></a>addr:<span class="w"> </span>&lt;ceph2-ip&gt;<span class="w"> </span>
+<a id="__codelineno-30-31" name="__codelineno-30-31" href="#__codelineno-30-31"></a>addr:<span class="w"> </span><span class="m">172</span>.18.11.56<span class="w"> </span>
 <a id="__codelineno-30-32" name="__codelineno-30-32" href="#__codelineno-30-32"></a>hostname:<span class="w"> </span>ceph2
 <a id="__codelineno-30-33" name="__codelineno-30-33" href="#__codelineno-30-33"></a>---
 <a id="__codelineno-30-34" name="__codelineno-30-34" href="#__codelineno-30-34"></a>service_type:<span class="w"> </span>host
-<a id="__codelineno-30-35" name="__codelineno-30-35" href="#__codelineno-30-35"></a>addr:<span class="w"> </span>&lt;ceph3-ip&gt;
+<a id="__codelineno-30-35" name="__codelineno-30-35" href="#__codelineno-30-35"></a>addr:<span class="w"> </span><span class="m">172</span>.18.11.57
 <a id="__codelineno-30-36" name="__codelineno-30-36" href="#__codelineno-30-36"></a>hostname:<span class="w"> </span>ceph3
 <a id="__codelineno-30-37" name="__codelineno-30-37" href="#__codelineno-30-37"></a>---
 <a id="__codelineno-30-38" name="__codelineno-30-38" href="#__codelineno-30-38"></a>service_type:<span class="w"> </span>mon
@@ -4754,10 +4777,10 @@ export AWS_SECRET_ACCESS_KEY=$(kubectl -n default get secret ceph-delete-bucket 
 <a id="__codelineno-30-58" name="__codelineno-30-58" href="#__codelineno-30-58"></a><span class="w">    </span>-<span class="w"> </span>ceph3
 <a id="__codelineno-30-59" name="__codelineno-30-59" href="#__codelineno-30-59"></a>data_devices:
 <a id="__codelineno-30-60" name="__codelineno-30-60" href="#__codelineno-30-60"></a><span class="w">  </span>paths:
-<a id="__codelineno-30-61" name="__codelineno-30-61" href="#__codelineno-30-61"></a><span class="w">    </span>-<span class="w"> </span>/dev/nvme1n1<span class="w"> </span><span class="c1"># if need, change disk name </span>
+<a id="__codelineno-30-61" name="__codelineno-30-61" href="#__codelineno-30-61"></a><span class="w">    </span>-<span class="w"> </span>/dev/sdb<span class="w"> </span><span class="c1"># if need, change disk name </span>
 <a id="__codelineno-30-62" name="__codelineno-30-62" href="#__codelineno-30-62"></a>---
 <a id="__codelineno-30-63" name="__codelineno-30-63" href="#__codelineno-30-63"></a>
-<a id="__codelineno-30-64" name="__codelineno-30-64" href="#__codelineno-30-64"></a>cephadm<span class="w"> </span>bootstrap<span class="w"> </span>--mon-ip<span class="o">=</span><span class="w"> </span>&lt;ceph1-ip&gt;<span class="w"> </span>--apply-spec<span class="o">=</span>initial_config.yaml<span class="w"> </span>--initial-dashboard-password<span class="o">=</span>&lt;change_me&gt;<span class="w"> </span>--dashboard-password-noupdate<span class="w"> </span><span class="c1"># change mon-ip eand dashboard password</span>
+<a id="__codelineno-30-64" name="__codelineno-30-64" href="#__codelineno-30-64"></a>cephadm<span class="w"> </span>bootstrap<span class="w"> </span>--mon-ip<span class="o">=</span><span class="w"> </span><span class="m">172</span>.18.11.55<span class="w"> </span>--apply-spec<span class="o">=</span>initial_config.yaml<span class="w"> </span>--initial-dashboard-password<span class="o">=</span>XK88Q4iPcDrJ<span class="w"> </span>--dashboard-password-noupdate<span class="w"> </span><span class="c1"># change mon-ip eand dashboard password</span>
 <a id="__codelineno-30-65" name="__codelineno-30-65" href="#__codelineno-30-65"></a>
 <a id="__codelineno-30-66" name="__codelineno-30-66" href="#__codelineno-30-66"></a>-<span class="w"> </span>check<span class="w"> </span>current<span class="w"> </span>infra
 <a id="__codelineno-30-67" name="__codelineno-30-67" href="#__codelineno-30-67"></a>ceph<span class="w"> </span>-s
@@ -4839,24 +4862,25 @@ Pools need to be associated with an application before they can be used</li>
 <a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="c1">#check data pools</span>
 <a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>ls
 <a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>ls<span class="w"> </span>detail
-<a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a>
-<a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a><span class="c1">#anable data pool</span>
-<a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>application<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>cephfs_data<span class="w"> </span>cephfs
-<a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>application<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>cephfs_metadata<span class="w"> </span>cephfs
-<a id="__codelineno-37-16" name="__codelineno-37-16" href="#__codelineno-37-16"></a>
-<a id="__codelineno-37-17" name="__codelineno-37-17" href="#__codelineno-37-17"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>ls<span class="w"> </span>detail
-<a id="__codelineno-37-18" name="__codelineno-37-18" href="#__codelineno-37-18"></a>
-<a id="__codelineno-37-19" name="__codelineno-37-19" href="#__codelineno-37-19"></a><span class="c1">#make file system from this data pool</span>
-<a id="__codelineno-37-20" name="__codelineno-37-20" href="#__codelineno-37-20"></a>ceph<span class="w"> </span>fs<span class="w"> </span>new<span class="w"> </span>cephfs-test<span class="w"> </span>cephfs_metadata<span class="w"> </span>cephfs_data
-<a id="__codelineno-37-21" name="__codelineno-37-21" href="#__codelineno-37-21"></a>
-<a id="__codelineno-37-22" name="__codelineno-37-22" href="#__codelineno-37-22"></a><span class="c1">#control file system</span>
-<a id="__codelineno-37-23" name="__codelineno-37-23" href="#__codelineno-37-23"></a>ceph<span class="w"> </span>fs<span class="w"> </span>ls
-<a id="__codelineno-37-24" name="__codelineno-37-24" href="#__codelineno-37-24"></a>
-<a id="__codelineno-37-25" name="__codelineno-37-25" href="#__codelineno-37-25"></a><span class="c1">#if need, delete file system: &quot;ceph fs rm  hepapi-cephfs --yes-i-really-mean-it&quot;</span>
-<a id="__codelineno-37-26" name="__codelineno-37-26" href="#__codelineno-37-26"></a>
-<a id="__codelineno-37-27" name="__codelineno-37-27" href="#__codelineno-37-27"></a><span class="c1">#create mds</span>
-<a id="__codelineno-37-28" name="__codelineno-37-28" href="#__codelineno-37-28"></a>
-<a id="__codelineno-37-29" name="__codelineno-37-29" href="#__codelineno-37-29"></a>on<span class="w"> </span>ceph<span class="w"> </span>dashboard:<span class="w"> </span>services--&gt;<span class="w"> </span>create<span class="w"> </span>mds<span class="w"> </span>:<span class="w"> </span><span class="m">2</span><span class="w"> </span>or<span class="w"> </span>cli:<span class="w"> </span>ceph<span class="w"> </span>fs<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>cephfs
+<a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a>cephfs.cephfs.meta
+<a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a>cephfs.cephfs.data
+<a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a><span class="c1">#anable data pool</span>
+<a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>application<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>cephfs_data<span class="w"> </span>cephfs
+<a id="__codelineno-37-16" name="__codelineno-37-16" href="#__codelineno-37-16"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>application<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>cephfs.cephfs.metacephfs
+<a id="__codelineno-37-17" name="__codelineno-37-17" href="#__codelineno-37-17"></a>
+<a id="__codelineno-37-18" name="__codelineno-37-18" href="#__codelineno-37-18"></a>ceph<span class="w"> </span>osd<span class="w"> </span>pool<span class="w"> </span>ls<span class="w"> </span>detail
+<a id="__codelineno-37-19" name="__codelineno-37-19" href="#__codelineno-37-19"></a>
+<a id="__codelineno-37-20" name="__codelineno-37-20" href="#__codelineno-37-20"></a><span class="c1">#make file system from this data pool</span>
+<a id="__codelineno-37-21" name="__codelineno-37-21" href="#__codelineno-37-21"></a>ceph<span class="w"> </span>fs<span class="w"> </span>new<span class="w"> </span>cephfs-test<span class="w"> </span>cephfs_metadata<span class="w"> </span>cephfs_data
+<a id="__codelineno-37-22" name="__codelineno-37-22" href="#__codelineno-37-22"></a>
+<a id="__codelineno-37-23" name="__codelineno-37-23" href="#__codelineno-37-23"></a><span class="c1">#control file system</span>
+<a id="__codelineno-37-24" name="__codelineno-37-24" href="#__codelineno-37-24"></a>ceph<span class="w"> </span>fs<span class="w"> </span>ls
+<a id="__codelineno-37-25" name="__codelineno-37-25" href="#__codelineno-37-25"></a>
+<a id="__codelineno-37-26" name="__codelineno-37-26" href="#__codelineno-37-26"></a><span class="c1">#if need, delete file system: &quot;ceph fs rm  hepapi-cephfs --yes-i-really-mean-it&quot;</span>
+<a id="__codelineno-37-27" name="__codelineno-37-27" href="#__codelineno-37-27"></a>
+<a id="__codelineno-37-28" name="__codelineno-37-28" href="#__codelineno-37-28"></a><span class="c1">#create mds</span>
+<a id="__codelineno-37-29" name="__codelineno-37-29" href="#__codelineno-37-29"></a>
+<a id="__codelineno-37-30" name="__codelineno-37-30" href="#__codelineno-37-30"></a>on<span class="w"> </span>ceph<span class="w"> </span>dashboard:<span class="w"> </span>services--&gt;<span class="w"> </span>create<span class="w"> </span>mds<span class="w"> </span>:<span class="w"> </span><span class="m">2</span><span class="w"> </span>or<span class="w"> </span>cli:<span class="w"> </span>ceph<span class="w"> </span>fs<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>cephfs
 </code></pre></div></p>
 </li>
 </ul>
@@ -5039,7 +5063,7 @@ Pools need to be associated with an application before they can be used</li>
       <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
     
   </body>
