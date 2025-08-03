@@ -707,7 +707,7 @@ cd ~/home/ubuntu/rook/deploy/examples/external
 Exm: python3 create-external-cluster-resources.py --cephfs-filesystem-name cephfs-hepapi --cephfs-data-pool-name cephfs_data --cephfs-metadata-pool-name cephfs_metadata --rbd-data-pool-name hepapi-ceph-replica --namespace rook-ceph --config-file config.ini --format bash
 ````
 
-- Exmample output:
+- Example output:
 
 ```yaml
 export ROOK_EXTERNAL_FSID=797f411a-aafe-11ec-a254-fa163e1539f5
