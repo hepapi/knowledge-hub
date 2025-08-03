@@ -780,7 +780,7 @@ echo "test2" >> /var/lib/registry/test.txt
 kubectl exec -it <pod-replica-3> -n <namespace> -- cat /var/lib/registry/test.txt
 
 
-# veirfy volume is persistenet?
+# verify volume is persistenet?
 kubectl rollout restart deployment kube-registry -n <namespace>
 
 kubectl exec -it <pod-replica-2> -n <namespace> -- cat /var/lib/registry/test.txt
