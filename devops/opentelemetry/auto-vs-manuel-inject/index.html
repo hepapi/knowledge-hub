@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../../k8s-storage/rook-ceph/">
       
       
-        <link rel="next" href="../test_approaches_in_quality_assurance/">
+        <link rel="next" href="../../../qa/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
     
     
       
-        <title>Fundamentals of QA - Hepapi Knowledge Hub</title>
+        <title>Auto-vs-Manuel-Injection - Hepapi Knowledge Hub</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fundamentals-of-quality-assurance-qa" class="md-skip">
+        <a href="#opentelemetry-instrumentation-manual-vs-automatic" class="md-skip">
           Skip to content
         </a>
       
@@ -88,9 +88,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../.." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="../../images/hepapi-logo.png" alt="logo">
+  <img src="../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fundamentals of QA
+              Auto-vs-Manuel-Injection
             
           </span>
         </div>
@@ -223,11 +223,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../.." class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../.." class="md-tabs__link">
           
   
   
@@ -243,13 +245,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../qa/" class="md-tabs__link">
           
   
   
@@ -276,7 +276,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
+        <a href="../../../misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
           
   
   
@@ -297,7 +297,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../repo-credit/" class="md-tabs__link">
+      <a href="../../../repo-credit/" class="md-tabs__link">
         
   
   
@@ -332,9 +332,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../.." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="../../images/hepapi-logo.png" alt="logo">
+  <img src="../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     Hepapi Knowledge Hub
@@ -358,24 +358,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   
@@ -388,7 +393,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             DevOps
@@ -402,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -507,7 +512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/script/" class="md-nav__link">
+      <a href="../../linux/shell/script/" class="md-nav__link">
         
   
   
@@ -530,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/cat/" class="md-nav__link">
+      <a href="../../linux/shell/cat/" class="md-nav__link">
         
   
   
@@ -553,7 +558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/chtsh/" class="md-nav__link">
+      <a href="../../linux/shell/chtsh/" class="md-nav__link">
         
   
   
@@ -576,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/jobs-bg-fg/" class="md-nav__link">
+      <a href="../../linux/shell/jobs-bg-fg/" class="md-nav__link">
         
   
   
@@ -599,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/ampersand-nohup/" class="md-nav__link">
+      <a href="../../linux/shell/ampersand-nohup/" class="md-nav__link">
         
   
   
@@ -622,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/nslookup/" class="md-nav__link">
+      <a href="../../linux/shell/nslookup/" class="md-nav__link">
         
   
   
@@ -645,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/nmap/" class="md-nav__link">
+      <a href="../../linux/shell/nmap/" class="md-nav__link">
         
   
   
@@ -668,7 +673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/netstat/" class="md-nav__link">
+      <a href="../../linux/shell/netstat/" class="md-nav__link">
         
   
   
@@ -691,7 +696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/scp/" class="md-nav__link">
+      <a href="../../linux/shell/scp/" class="md-nav__link">
         
   
   
@@ -722,7 +727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/tooling/" class="md-nav__link">
+      <a href="../../linux/tooling/" class="md-nav__link">
         
   
   
@@ -745,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/tips/" class="md-nav__link">
+      <a href="../../linux/tips/" class="md-nav__link">
         
   
   
@@ -817,7 +822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/aws/cli/" class="md-nav__link">
+      <a href="../../aws/cli/" class="md-nav__link">
         
   
   
@@ -840,7 +845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/aws/sso/" class="md-nav__link">
+      <a href="../../aws/sso/" class="md-nav__link">
         
   
   
@@ -912,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/azure/agent-installation/" class="md-nav__link">
+      <a href="../../azure/agent-installation/" class="md-nav__link">
         
   
   
@@ -984,7 +989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/kubernetes/keda/keda/" class="md-nav__link">
+      <a href="../../kubernetes/keda/keda/" class="md-nav__link">
         
   
   
@@ -1007,7 +1012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-engine/k3s-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/k3s-installation/" class="md-nav__link">
         
   
   
@@ -1030,7 +1035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/kubernetes/Velero/" class="md-nav__link">
+      <a href="../../kubernetes/Velero/" class="md-nav__link">
         
   
   
@@ -1053,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/kubernetes/keda/keda-with-cron/" class="md-nav__link">
+      <a href="../../kubernetes/keda/keda-with-cron/" class="md-nav__link">
         
   
   
@@ -1125,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-engine/rke2-installation-ansible/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-installation-ansible/" class="md-nav__link">
         
   
   
@@ -1148,7 +1153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-engine/rke2-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-installation/" class="md-nav__link">
         
   
   
@@ -1212,7 +1217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-engine/rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
         
   
   
@@ -1235,7 +1240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
         
   
   
@@ -1258,7 +1263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-engine/rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
         
   
   
@@ -1338,7 +1343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/docker/portainer/" class="md-nav__link">
+      <a href="../../docker/portainer/" class="md-nav__link">
         
   
   
@@ -1410,7 +1415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/rancher/rancher-installation/" class="md-nav__link">
+      <a href="../../rancher/rancher-installation/" class="md-nav__link">
         
   
   
@@ -1482,7 +1487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/postgres/configuration/" class="md-nav__link">
+      <a href="../../postgres/configuration/" class="md-nav__link">
         
   
   
@@ -1505,7 +1510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/postgres/psql/" class="md-nav__link">
+      <a href="../../postgres/psql/" class="md-nav__link">
         
   
   
@@ -1528,7 +1533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/postgres/backup-restore/" class="md-nav__link">
+      <a href="../../postgres/backup-restore/" class="md-nav__link">
         
   
   
@@ -1600,7 +1605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/nexus/nexus-installation/" class="md-nav__link">
+      <a href="../../nexus/nexus-installation/" class="md-nav__link">
         
   
   
@@ -1623,7 +1628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/nexus/nexus-user-and-roles/" class="md-nav__link">
+      <a href="../../nexus/nexus-user-and-roles/" class="md-nav__link">
         
   
   
@@ -1646,7 +1651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/nexus/docker-hosted-repo/" class="md-nav__link">
+      <a href="../../nexus/docker-hosted-repo/" class="md-nav__link">
         
   
   
@@ -1669,7 +1674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/nexus/docker-proxy-repo/" class="md-nav__link">
+      <a href="../../nexus/docker-proxy-repo/" class="md-nav__link">
         
   
   
@@ -1692,7 +1697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/nexus/pull-to-kubernetes/" class="md-nav__link">
+      <a href="../../nexus/pull-to-kubernetes/" class="md-nav__link">
         
   
   
@@ -1715,7 +1720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/nexus/registry-configuration/" class="md-nav__link">
+      <a href="../../nexus/registry-configuration/" class="md-nav__link">
         
   
   
@@ -1787,7 +1792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/devsecops/DevSecOps-SonarQube-OWASP-Conftest-Trvy/" class="md-nav__link">
+      <a href="../../devsecops/DevSecOps-SonarQube-OWASP-Conftest-Trvy/" class="md-nav__link">
         
   
   
@@ -1810,7 +1815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/devsecops/external-secret-operator/" class="md-nav__link">
+      <a href="../../devsecops/external-secret-operator/" class="md-nav__link">
         
   
   
@@ -1833,7 +1838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/devsecops/What%20is%20Falco/" class="md-nav__link">
+      <a href="../../devsecops/What%20is%20Falco/" class="md-nav__link">
         
   
   
@@ -1856,7 +1861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/devsecops/vault/" class="md-nav__link">
+      <a href="../../devsecops/vault/" class="md-nav__link">
         
   
   
@@ -1928,7 +1933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/jenkins/jenkins-installation/" class="md-nav__link">
+      <a href="../../jenkins/jenkins-installation/" class="md-nav__link">
         
   
   
@@ -1951,7 +1956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/jenkins/shared-library/" class="md-nav__link">
+      <a href="../../jenkins/shared-library/" class="md-nav__link">
         
   
   
@@ -2023,7 +2028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/Terragrunt/README.md" class="md-nav__link">
+      <a href="../../Terragrunt/README.md" class="md-nav__link">
         
   
   
@@ -2095,7 +2100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/ansible/ansible-installations/" class="md-nav__link">
+      <a href="../../ansible/ansible-installations/" class="md-nav__link">
         
   
   
@@ -2118,7 +2123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/ansible/what-is-ansible/" class="md-nav__link">
+      <a href="../../ansible/what-is-ansible/" class="md-nav__link">
         
   
   
@@ -2141,7 +2146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/ansible/inventory-file/" class="md-nav__link">
+      <a href="../../ansible/inventory-file/" class="md-nav__link">
         
   
   
@@ -2164,7 +2169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/ansible/config-file/" class="md-nav__link">
+      <a href="../../ansible/config-file/" class="md-nav__link">
         
   
   
@@ -2187,7 +2192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/ansible/playbook/" class="md-nav__link">
+      <a href="../../ansible/playbook/" class="md-nav__link">
         
   
   
@@ -2210,7 +2215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/ansible/ansible-roles/" class="md-nav__link">
+      <a href="../../ansible/ansible-roles/" class="md-nav__link">
         
   
   
@@ -2282,7 +2287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/monitoring/Rke2-cert-expiration/Rke2-cert-monitoring/" class="md-nav__link">
+      <a href="../../monitoring/Rke2-cert-expiration/Rke2-cert-monitoring/" class="md-nav__link">
         
   
   
@@ -2354,7 +2359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/logging/ELK-stack-with-FileBeat/" class="md-nav__link">
+      <a href="../../logging/ELK-stack-with-FileBeat/" class="md-nav__link">
         
   
   
@@ -2377,7 +2382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/logging/Index-Lifecycle-Management/" class="md-nav__link">
+      <a href="../../logging/Index-Lifecycle-Management/" class="md-nav__link">
         
   
   
@@ -2400,7 +2405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/logging/elasticsearch-exporter/" class="md-nav__link">
+      <a href="../../logging/elasticsearch-exporter/" class="md-nav__link">
         
   
   
@@ -2423,7 +2428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/logging/loki/" class="md-nav__link">
+      <a href="../../logging/loki/" class="md-nav__link">
         
   
   
@@ -2446,7 +2451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/logging/efk/" class="md-nav__link">
+      <a href="../../logging/efk/" class="md-nav__link">
         
   
   
@@ -2469,7 +2474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/logging/elastalert2/" class="md-nav__link">
+      <a href="../../logging/elastalert2/" class="md-nav__link">
         
   
   
@@ -2541,7 +2546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/sre/k8sgpt/" class="md-nav__link">
+      <a href="../../sre/k8sgpt/" class="md-nav__link">
         
   
   
@@ -2613,7 +2618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/git/Description/" class="md-nav__link">
+      <a href="../../git/Description/" class="md-nav__link">
         
   
   
@@ -2636,7 +2641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/git/installation/" class="md-nav__link">
+      <a href="../../git/installation/" class="md-nav__link">
         
   
   
@@ -2659,7 +2664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/git/Commands/" class="md-nav__link">
+      <a href="../../git/Commands/" class="md-nav__link">
         
   
   
@@ -2731,7 +2736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/gitlab/gitlab-self-hosted-installation/" class="md-nav__link">
+      <a href="../../gitlab/gitlab-self-hosted-installation/" class="md-nav__link">
         
   
   
@@ -2754,7 +2759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/gitlab/gitlab-runner-installation/" class="md-nav__link">
+      <a href="../../gitlab/gitlab-runner-installation/" class="md-nav__link">
         
   
   
@@ -2867,7 +2872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
+      <a href="../../falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
         
   
   
@@ -2890,7 +2895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/agent-installation/" class="md-nav__link">
+      <a href="../../falcon-logscale/agent-installation/" class="md-nav__link">
         
   
   
@@ -2962,7 +2967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/humiosetup/" class="md-nav__link">
+      <a href="../../falcon-logscale/humiosetup/" class="md-nav__link">
         
   
   
@@ -2985,7 +2990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/javainstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/javainstallation/" class="md-nav__link">
         
   
   
@@ -3008,7 +3013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/zookeeperinstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/zookeeperinstallation/" class="md-nav__link">
         
   
   
@@ -3031,7 +3036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/kafkainstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/kafkainstallation/" class="md-nav__link">
         
   
   
@@ -3054,7 +3059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/humioinstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/humioinstallation/" class="md-nav__link">
         
   
   
@@ -3126,7 +3131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/kafka/" class="md-nav__link">
+      <a href="../../falcon-logscale/kafka/" class="md-nav__link">
         
   
   
@@ -3149,7 +3154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/humio/" class="md-nav__link">
+      <a href="../../falcon-logscale/humio/" class="md-nav__link">
         
   
   
@@ -3172,7 +3177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/readme/" class="md-nav__link">
+      <a href="../../falcon-logscale/readme/" class="md-nav__link">
         
   
   
@@ -3252,7 +3257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/sumo/sumo-linux-collector/" class="md-nav__link">
+      <a href="../../sumo/sumo-linux-collector/" class="md-nav__link">
         
   
   
@@ -3275,7 +3280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/sumo/sumo-windows-collector/" class="md-nav__link">
+      <a href="../../sumo/sumo-windows-collector/" class="md-nav__link">
         
   
   
@@ -3298,7 +3303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/sumo/sumo-local-file-management/" class="md-nav__link">
+      <a href="../../sumo/sumo-local-file-management/" class="md-nav__link">
         
   
   
@@ -3370,7 +3375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/vagrant/vagrant-quickstart/" class="md-nav__link">
+      <a href="../../vagrant/vagrant-quickstart/" class="md-nav__link">
         
   
   
@@ -3442,7 +3447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/sealed-secrets/sealed-secrets/" class="md-nav__link">
+      <a href="../../sealed-secrets/sealed-secrets/" class="md-nav__link">
         
   
   
@@ -3514,7 +3519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/service-mesh/istio/" class="md-nav__link">
+      <a href="../../service-mesh/istio/" class="md-nav__link">
         
   
   
@@ -3586,7 +3591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/sonarqube/advanced-installation/" class="md-nav__link">
+      <a href="../../sonarqube/advanced-installation/" class="md-nav__link">
         
   
   
@@ -3658,7 +3663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-storage/nfs-install/" class="md-nav__link">
+      <a href="../../k8s-storage/nfs-install/" class="md-nav__link">
         
   
   
@@ -3681,7 +3686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-storage/longhorn/" class="md-nav__link">
+      <a href="../../k8s-storage/longhorn/" class="md-nav__link">
         
   
   
@@ -3704,7 +3709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-storage/rook-ceph/" class="md-nav__link">
+      <a href="../../k8s-storage/rook-ceph/" class="md-nav__link">
         
   
   
@@ -3732,6 +3737,8 @@
                 
   
   
+    
+  
   
   
     
@@ -3742,11 +3749,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_27" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_27" checked>
         
           
           <label class="md-nav__link" for="__nav_1_27" id="__nav_1_27_label" tabindex="0">
@@ -3762,119 +3769,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_27_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_27_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_27">
             <span class="md-nav__icon md-icon"></span>
             OpenTelemtry
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../devops/opentelemetry/auto-vs-manuel-inject/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Auto-vs-Manuel-Injection
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    QA
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            QA
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Welcome to Hepapi QA Knowledge Hub
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -3897,7 +3797,7 @@
   
   
   <span class="md-ellipsis">
-    Fundamentals of QA
+    Auto-vs-Manuel-Injection
     
   </span>
   
@@ -3910,7 +3810,7 @@
   
   
   <span class="md-ellipsis">
-    Fundamentals of QA
+    Auto-vs-Manuel-Injection
     
   </span>
   
@@ -3933,55 +3833,74 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-test-planning-and-defining-strategy" class="md-nav__link">
+  <a href="#what-is-opentelemetry-instrumentation" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Test Planning and Defining Strategy
+      What Is OpenTelemetry Instrumentation?
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Test Planning and Defining Strategy">
+    <nav class="md-nav" aria-label="What Is OpenTelemetry Instrumentation?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#defining-scope" class="md-nav__link">
+  <a href="#manual-instrumentation" class="md-nav__link">
     <span class="md-ellipsis">
-      Defining Scope:
+      Manual instrumentation
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#resource-allocation" class="md-nav__link">
+  <a href="#automatic-instrumentation" class="md-nav__link">
     <span class="md-ellipsis">
-      Resource Allocation:
+      Automatic instrumentation
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#timeline-creation" class="md-nav__link">
+  <a href="#demonstration" class="md-nav__link">
     <span class="md-ellipsis">
-      Timeline Creation:
+      Demonstration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Demonstration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opentelemtry-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenTelemtry Operator
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#risk-management" class="md-nav__link">
+  <a href="#opentelemetry-collector" class="md-nav__link">
     <span class="md-ellipsis">
-      Risk Management:
+      OpenTelemetry Collector
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#defining-strategy" class="md-nav__link">
+  <a href="#opentelemetry-instrumentation" class="md-nav__link">
     <span class="md-ellipsis">
-      Defining Strategy:
+      OpenTelemetry Instrumentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-annotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Annotation
     </span>
   </a>
   
@@ -3991,145 +3910,9 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2-writing-test-scenarios-and-test-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Writing Test Scenarios and Test Cases
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Writing Test Scenarios and Test Cases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#test-scenarios" class="md-nav__link">
-    <span class="md-ellipsis">
-      Test Scenarios:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#test-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Test Cases:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#risk-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Risk Analysis:
-    </span>
-  </a>
-  
-</li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-bug-reporting" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Bug Reporting
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Bug Reporting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-well-documented-bug-report-includes" class="md-nav__link">
-    <span class="md-ellipsis">
-      A Well-Documented Bug Report Includes:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-test-tracking-and-reporting" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Test Tracking and Reporting
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Test Tracking and Reporting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#test-tracking-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Test Tracking Tools:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reporting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reporting:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Metrics:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-preparing-test-environments" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Preparing Test Environments
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Preparing Test Environments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Considerations:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusion
-    </span>
-  </a>
   
 </li>
       
@@ -4142,6 +3925,62 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    QA
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            QA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -4149,7 +3988,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../test_approaches_in_quality_assurance/" class="md-nav__link">
+      <a href="../../../qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to Hepapi QA Knowledge Hub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/Fundamentals_of_QA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fundamentals of QA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/test_approaches_in_quality_assurance/" class="md-nav__link">
         
   
   
@@ -4172,7 +4057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../types_of_tests/" class="md-nav__link">
+      <a href="../../../qa/types_of_tests/" class="md-nav__link">
         
   
   
@@ -4195,7 +4080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../QA_Testing_Process/" class="md-nav__link">
+      <a href="../../../qa/QA_Testing_Process/" class="md-nav__link">
         
   
   
@@ -4218,7 +4103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../QA_Bug_Reporting/" class="md-nav__link">
+      <a href="../../../qa/QA_Bug_Reporting/" class="md-nav__link">
         
   
   
@@ -4241,7 +4126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Software_Testing_Tools/" class="md-nav__link">
+      <a href="../../../qa/Software_Testing_Tools/" class="md-nav__link">
         
   
   
@@ -4264,7 +4149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../automation_testing_and_best_practices/" class="md-nav__link">
+      <a href="../../../qa/automation_testing_and_best_practices/" class="md-nav__link">
         
   
   
@@ -4287,7 +4172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../test_processes_and_qa_practices/" class="md-nav__link">
+      <a href="../../../qa/test_processes_and_qa_practices/" class="md-nav__link">
         
   
   
@@ -4310,7 +4195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SSH_Config/" class="md-nav__link">
+      <a href="../../../qa/SSH_Config/" class="md-nav__link">
         
   
   
@@ -4422,7 +4307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
         
   
   
@@ -4445,7 +4330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
         
   
   
@@ -4468,7 +4353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/how-to-contribute/about-markdown/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/about-markdown/" class="md-nav__link">
         
   
   
@@ -4506,7 +4391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../repo-credit/" class="md-nav__link">
+      <a href="../../../repo-credit/" class="md-nav__link">
         
   
   
@@ -4548,55 +4433,74 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-test-planning-and-defining-strategy" class="md-nav__link">
+  <a href="#what-is-opentelemetry-instrumentation" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Test Planning and Defining Strategy
+      What Is OpenTelemetry Instrumentation?
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Test Planning and Defining Strategy">
+    <nav class="md-nav" aria-label="What Is OpenTelemetry Instrumentation?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#defining-scope" class="md-nav__link">
+  <a href="#manual-instrumentation" class="md-nav__link">
     <span class="md-ellipsis">
-      Defining Scope:
+      Manual instrumentation
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#resource-allocation" class="md-nav__link">
+  <a href="#automatic-instrumentation" class="md-nav__link">
     <span class="md-ellipsis">
-      Resource Allocation:
+      Automatic instrumentation
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#timeline-creation" class="md-nav__link">
+  <a href="#demonstration" class="md-nav__link">
     <span class="md-ellipsis">
-      Timeline Creation:
+      Demonstration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Demonstration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opentelemtry-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenTelemtry Operator
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#risk-management" class="md-nav__link">
+  <a href="#opentelemetry-collector" class="md-nav__link">
     <span class="md-ellipsis">
-      Risk Management:
+      OpenTelemetry Collector
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#defining-strategy" class="md-nav__link">
+  <a href="#opentelemetry-instrumentation" class="md-nav__link">
     <span class="md-ellipsis">
-      Defining Strategy:
+      OpenTelemetry Instrumentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-annotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Annotation
     </span>
   </a>
   
@@ -4606,145 +4510,9 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2-writing-test-scenarios-and-test-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Writing Test Scenarios and Test Cases
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Writing Test Scenarios and Test Cases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#test-scenarios" class="md-nav__link">
-    <span class="md-ellipsis">
-      Test Scenarios:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#test-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Test Cases:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#risk-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Risk Analysis:
-    </span>
-  </a>
-  
-</li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-bug-reporting" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Bug Reporting
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Bug Reporting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-well-documented-bug-report-includes" class="md-nav__link">
-    <span class="md-ellipsis">
-      A Well-Documented Bug Report Includes:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-test-tracking-and-reporting" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Test Tracking and Reporting
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Test Tracking and Reporting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#test-tracking-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Test Tracking Tools:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reporting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reporting:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Metrics:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-preparing-test-environments" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Preparing Test Environments
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Preparing Test Environments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Considerations:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusion
-    </span>
-  </a>
   
 </li>
       
@@ -4764,7 +4532,7 @@
 
 
   
-    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/qa/Fundamentals_of_QA.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/opentelemetry/auto-vs-manuel-inject.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -4772,98 +4540,201 @@
   
 
 
-<h1 id="fundamentals-of-quality-assurance-qa">Fundamentals of Quality Assurance (QA)</h1>
-<p>Quality Assurance (QA) is a vital process in software development that ensures the delivery of reliable, high-performing, and user-friendly products. By systematically verifying that a product meets its design specifications, QA minimizes bugs and increases customer satisfaction. Let’s explore the fundamental components of QA to understand how it contributes to the success of any project.</p>
-<hr />
-<h2 id="1-test-planning-and-defining-strategy">1. Test Planning and Defining Strategy</h2>
-<p>The QA process begins with meticulous planning, aligning testing procedures with the project’s objectives. This phase defines the structure and scope of testing, ensuring efficiency and focus.</p>
-<h3 id="defining-scope">Defining Scope:</h3>
+<h1 id="opentelemetry-instrumentation-manual-vs-automatic">OpenTelemetry Instrumentation: Manual vs. Automatic</h1>
+<h2 id="what-is-opentelemetry-instrumentation">What Is OpenTelemetry Instrumentation?</h2>
+<p>OpenTelemetry provides a set of APIs, libraries, and agents designed to capture, process, and export telemetry data from software applications. Instrumentation refers to ensuring an application’s code generates traces, metrics, and logs that make it observable.</p>
+<h3 id="manual-instrumentation">Manual instrumentation</h3>
+<p>Involves adding specific code snippets to your application to capture and send telemetry data. It can capture custom metrics specific to your application, like items in a shopping cart or the time it takes to perform a specific database query. Manual instrumentation provides a high level of control and flexibility but takes time to implement.</p>
+<p>Advantages
+- Full Control:
+You have complete authority over what gets measured, when, and in how much detail. This allows you to focus exclusively on critical business transactions and functions, maximizing the signal-to-noise ratio.</p>
 <ul>
-<li>Identify areas to be tested and those excluded.</li>
-<li>Prevent unnecessary tests, save time, and focus on critical features.</li>
+<li>
+<p>Rich Business Context:
+You can enrich traces with valuable, domain-specific attributes that are crucial for debugging and performance analysis. For example, you can add tags like customer_id, cart_value, or subscription_tier='premium' to a trace. This helps answer complex questions like, "Why do requests slow down only for premium users with a cart value over $500?"</p>
+</li>
+<li>
+<p>Reliability &amp; Independence:
+The instrumentation code is a part of your application's source code. It is not dependent on the internal implementation details of third-party frameworks, making it more robust against framework updates that might otherwise break instrumentation.</p>
+</li>
 </ul>
-<h3 id="resource-allocation">Resource Allocation:</h3>
+<p>Disadvantages
+- Time-Consuming &amp; High-Effort:
+Writing, adding, and maintaining instrumentation code across a large codebase requires significant developer time and effort. As the application evolves or is refactored, this code must also be updated.</p>
 <ul>
-<li>Organize tools, equipment, software, and team members for a smooth QA process.</li>
+<li>Requires Expertise:
+Developers must be knowledgeable in both the application's architecture and the specific API of the observability SDK being used.</li>
 </ul>
-<h3 id="timeline-creation">Timeline Creation:</h3>
+<h3 id="automatic-instrumentation">Automatic instrumentation</h3>
+<p>Involves using pre-built libraries or agents that automatically capture and send telemetry data without requiring you to modify your application’s code. It is typically used to capture standard metrics like CPU usage, memory usage, request latency, and error rates. This is less flexible than manual instrumentation but much simpler and quicker to implement.</p>
+<p>Advantages
+- Fast &amp; Easy Setup:
+Getting started is often as simple as including an agent in the application's startup command. You can begin collecting a wide range of telemetry data within minutes.</p>
 <ul>
-<li>Establish deadlines for each phase of testing to align with the overall project schedule.</li>
+<li>
+<p>No Code Changes Required:
+The application's source code remains untouched. This is a major benefit, especially for legacy systems, applications with low test coverage, or when you don't have direct access to the code.</p>
+</li>
+<li>
+<p>Standardization:
+It enforces a consistent baseline of observability across all services and teams in an organization, ensuring that everyone gets a standard set of telemetry.</p>
+</li>
 </ul>
-<h3 id="risk-management">Risk Management:</h3>
+<p>Disadvantages
+The Version Compatibility Nightmare:</p>
 <ul>
-<li>Anticipate potential issues and develop mitigation strategies.</li>
+<li>
+<p>Framework Version: The agent must explicitly support the exact version of the framework (e.g., Spring Boot 3.1.x) your project uses. If not, it may fail to identify the framework's internal classes and methods.</p>
+</li>
+<li>
+<p>Library Version: The versions of libraries like database drivers or HTTP clients must be recognized by the agent.</p>
+</li>
+<li>
+<p>Language Runtime Version: The agent must be compatible with the Java, Python, or Node.js version you are running.</p>
+</li>
 </ul>
-<h3 id="defining-strategy">Defining Strategy:</h3>
+<h3 id="demonstration">Demonstration</h3>
+<h4 id="opentelemtry-operator">OpenTelemtry Operator</h4>
+<p>First, install the OpenTelemetry Operator into your cluster.</p>
 <ul>
-<li>Choose appropriate test types (e.g., functional, performance, security).</li>
-<li>Select tools like Selenium or Postman.</li>
-<li>Establish clear success criteria, such as thresholds for critical errors.</li>
+<li>opentelemetry-operator-values.yaml</li>
 </ul>
-<hr />
-<h2 id="2-writing-test-scenarios-and-test-cases">2. Writing Test Scenarios and Test Cases</h2>
-<p>QA professionals break down complex system operations into manageable components through test scenarios and test cases.</p>
-<h3 id="test-scenarios">Test Scenarios:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">manager</span><span class="p">:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">collectorImage</span><span class="p">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">admissionWebhooks</span><span class="p">:</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">certManager</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">autoGenerateCert</span><span class="p">:</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>open-telemetry<span class="w"> </span>https://open-telemetry.github.io/opentelemetry-helm-charts
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>helm<span class="w"> </span>repo<span class="w"> </span>update
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>--install<span class="w"> </span>opentelemetry-operator<span class="w"> </span>open-telemetry/opentelemetry-operator<span class="w"> </span>-n<span class="w"> </span>monitoring<span class="w"> </span>-f<span class="w"> </span>opentelemetry-operator-values.yaml
+</code></pre></div>
+<h4 id="opentelemetry-collector">OpenTelemetry Collector</h4>
 <ul>
-<li>High-level descriptions of user flows.</li>
-<li><strong>Example:</strong> "The user should be able to access their profile page after logging in."</li>
+<li>opentelemetry-collector-values.yaml</li>
 </ul>
-<h3 id="test-cases">Test Cases:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">config</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">exporters</span><span class="p">:</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">otlphttp/tempo</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="nt">endpoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://tempo-gateway.monitoring:80</span><span class="w"> </span><span class="c1">## add tempo service address</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">      </span><span class="nt">tls</span><span class="p">:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="nt">insecure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">prometheusremotewrite</span><span class="p">:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="nt">endpoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://prometheus-kube-prometheus-prometheus.monitoring:9090/api/v1/write</span><span class="w"> </span><span class="c1">## add prometheus service address</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">      </span><span class="nt">target_info</span><span class="p">:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="nt">extensions</span><span class="p">:</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="nt">health_check</span><span class="p">:</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">      </span><span class="nt">endpoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${env:MY_POD_IP}:13133</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="nt">receivers</span><span class="p">:</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="nt">otlp</span><span class="p">:</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">      </span><span class="nt">protocols</span><span class="p">:</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">        </span><span class="nt">grpc</span><span class="p">:</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">          </span><span class="nt">endpoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0:4317</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="nt">http</span><span class="p">:</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">          </span><span class="nt">endpoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0:4318</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">  </span><span class="nt">service</span><span class="p">:</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="nt">pipelines</span><span class="p">:</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">      </span><span class="nt">metrics</span><span class="p">:</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">        </span><span class="nt">exporters</span><span class="p">:</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">debug</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prometheusremotewrite</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">        </span><span class="nt">processors</span><span class="p">:</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">memory_limiter</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">        </span><span class="nt">receivers</span><span class="p">:</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">otlp</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">      </span><span class="nt">traces</span><span class="p">:</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">        </span><span class="nt">exporters</span><span class="p">:</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">otlphttp/tempo</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">        </span><span class="nt">processors</span><span class="p">:</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">memory_limiter</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">batch</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">        </span><span class="nt">receivers</span><span class="p">:</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">otlp</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="nt">image</span><span class="p">:</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">  </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker.io/otel/opentelemetry-collector-contrib</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">daemonset</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">  </span><span class="nt">otlp</span><span class="p">:</span>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">    </span><span class="nt">appProtocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">grpc</span>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="w">    </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4317</span>
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="w">    </span><span class="nt">hostPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4317</span>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="w">    </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="w">    </span><span class="nt">servicePort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4317</span>
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a><span class="w">  </span><span class="nt">otlp-http</span><span class="p">:</span>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a><span class="w">    </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4318</span>
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="w">    </span><span class="nt">hostPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4318</span>
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="w">    </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a><span class="w">    </span><span class="nt">servicePort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4318</span>
+<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a><span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>open-telemetry<span class="w"> </span>https://open-telemetry.github.io/opentelemetry-helm-charts
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>helm<span class="w"> </span>repo<span class="w"> </span>update
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>--install<span class="w"> </span>opentelemetry-collector<span class="w"> </span>open-telemetry/opentelemetry-collector<span class="w"> </span>-f<span class="w"> </span>opentelemetry-collector-values.yaml<span class="w"> </span>-n<span class="w"> </span>monitoring
+</code></pre></div>
+<h4 id="opentelemetry-instrumentation">OpenTelemetry Instrumentation</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="l l-Scalar l-Scalar-Plain">kubectl apply -f - &lt;&lt;EOF</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="l l-Scalar l-Scalar-Plain">apiVersion</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">opentelemetry.io/v1alpha1</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Instrumentation</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">java-instrumentation</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="nt">java</span><span class="p">:</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;otel/opentelemetry-javaagent:2.19.0&quot;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="nt">exporter</span><span class="p">:</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="nt">endpoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://opentelemetry-collector.monitoring:4318</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">  </span><span class="nt">propagators</span><span class="p">:</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tracecontext</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">baggage</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">  </span><span class="nt">sampler</span><span class="p">:</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">parentbased_traceidratio</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="nt">argument</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1&quot;</span>
+</code></pre></div>
+<p>** Excluding auto-instrumentation</p>
+<p>By default, the Java auto-instrumentation ships with many instrumentation libraries. This makes instrumentation easy, but could result in too much or unwanted data. If there are any libraries you do not want to use you can set the OTEL_INSTRUMENTATION_[NAME]<em>ENABLED=false where [NAME] is the name of the library. If you know exactly which libraries you want to use, you can disable the default libraries by setting OTEL_INSTRUMENTATION_COMMON_DEFAULT_ENABLED=false and then use OTEL_INSTRUMENTATION</em>[NAME]_ENABLED=true where [NAME] is the name of the library. For more details, see Suppressing specific instrumentation.</p>
+<p><a href="https://opentelemetry.io/docs/zero-code/java/agent/getting-started/">Environment-list-link</a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">opentelemetry.io/v1alpha1</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Instrumentation</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo-instrumentation</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">exporter</span><span class="p">:</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">endpoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://demo-collector:4318</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="nt">propagators</span><span class="p">:</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tracecontext</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">baggage</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span><span class="nt">sampler</span><span class="p">:</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">parentbased_traceidratio</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="nt">argument</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;1&#39;</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">  </span><span class="nt">java</span><span class="p">:</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OTEL_INSTRUMENTATION_KAFKA_ENABLED</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OTEL_INSTRUMENTATION_REDISCALA_ENABLED</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+<h4 id="application-annotation">Application Annotation</h4>
+<p>The final step is to opt in your services to automatic instrumentation. This is done by updating your service’s spec.template.metadata.annotations to include a language-specific annotation:</p>
 <ul>
-<li>Detailed steps to validate functionality.</li>
-<li><strong>Example:</strong></li>
-<li>Open the login screen.</li>
-<li>Enter the username and password.</li>
-<li>Click the "Login" button.</li>
-<li><strong>Expected Result:</strong> The user is redirected to the homepage.</li>
+<li>.NET: instrumentation.opentelemetry.io/inject-dotnet: "true"</li>
+<li>Go: instrumentation.opentelemetry.io/inject-go: "true"</li>
+<li>Java: instrumentation.opentelemetry.io/inject-java: "true"</li>
+<li>Node.js: instrumentation.opentelemetry.io/inject-nodejs: "true"</li>
+<li>Python: instrumentation.opentelemetry.io/inject-python: "true"</li>
 </ul>
-<h3 id="risk-analysis">Risk Analysis:</h3>
-<ul>
-<li>Prioritize scenarios critical to the business (e.g., payment processes).</li>
-<li>Assign lower priority to rarely used modules.</li>
-</ul>
-<hr />
-<h2 id="3-bug-reporting">3. Bug Reporting</h2>
-<p>Effective bug reporting accelerates debugging, enabling developers to resolve issues promptly.</p>
-<h3 id="a-well-documented-bug-report-includes">A Well-Documented Bug Report Includes:</h3>
-<ul>
-<li><strong>Bug Category:</strong> Impact on performance, user interface, or security.</li>
-<li><strong>Severity:</strong> Impact level (e.g., "User cannot log in" vs. "A button is misaligned").</li>
-<li><strong>Reproduction Steps:</strong> Step-by-step actions to reproduce the issue.</li>
-<li><strong>Supporting Materials:</strong> Screenshots, error logs, or video recordings.</li>
-</ul>
-<p>Clear and thorough reports reduce ambiguity and enhance developer efficiency.</p>
-<hr />
-<h2 id="4-test-tracking-and-reporting">4. Test Tracking and Reporting</h2>
-<p>Continuous monitoring and reporting are essential to keep stakeholders informed about the QA process.</p>
-<h3 id="test-tracking-tools">Test Tracking Tools:</h3>
-<ul>
-<li>Platforms like Jira or TestRail enable real-time updates on test statuses and bug progress.</li>
-</ul>
-<h3 id="reporting">Reporting:</h3>
-<ul>
-<li>Regular updates (daily, weekly, or sprint-based) on testing outcomes and areas of concern.</li>
-</ul>
-<h3 id="key-metrics">Key Metrics:</h3>
-<ul>
-<li>Bug resolution rate.</li>
-<li>Remaining workload.</li>
-<li>Ratio of passed vs. failed tests.</li>
-</ul>
-<p>These metrics provide insight into project health and testing efficiency.</p>
-<hr />
-<h2 id="5-preparing-test-environments">5. Preparing Test Environments</h2>
-<p>A realistic and reliable test environment is crucial for accurate testing results.</p>
-<h3 id="key-considerations">Key Considerations:</h3>
-<ul>
-<li><strong>Accurate Data:</strong> Use dummy data that mimics real-world usage.</li>
-<li><strong>Accessibility:</strong> Ensure seamless access for all team members to avoid delays.</li>
-<li><strong>Backup and Recovery:</strong> Contingency plans for data loss ensure testing continuity.</li>
-</ul>
-<hr />
-<h2 id="conclusion">Conclusion</h2>
-<p>Quality Assurance is more than just identifying bugs; it's a comprehensive process that ensures a product meets its functional, performance, and user experience goals. By following a structured QA process—test planning, scenario writing, bug reporting, tracking, and preparing environments—teams can deliver software that meets and exceeds customer expectations.</p>
-<p>Investing in QA from the beginning is not merely a cost but a strategic move to build trust, ensure reliability, and secure long-term success.</p>
+<p>The possible values for the annotation can be
+"true" - to inject Instrumentation resource with default name from the current namespace.
+"my-instrumentation" - to inject Instrumentation CR instance with name "my-instrumentation" in the current namespace.
+"my-other-namespace/my-instrumentation" - to inject Instrumentation CR instance with name "my-instrumentation" from another namespace "my-other-namespace".
+"false" - do not inject</p>
+<p>Note: For our example, add monitoring/java-instrumentation as the annotation.</p>
+<p><a href="https://opentelemetry.io/docs/platforms/kubernetes/operator/automatic/">doc-link</a></p>
 
 
 
@@ -4932,10 +4803,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>
