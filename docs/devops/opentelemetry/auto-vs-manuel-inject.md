@@ -216,7 +216,7 @@ The possible values for the annotation can be
 
 Note: For our example, add as the annotation
 ```bash
-nstrumentation.opentelemetry.io/inject-java: monitoring/java-instrumentation
+instrumentation.opentelemetry.io/inject-java: monitoring/java-instrumentation
 ```
 
 
