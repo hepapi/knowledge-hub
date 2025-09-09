@@ -117,7 +117,8 @@ nav:
         - "NFS(Network File System)": devops/k8s-storage/nfs-install.md
         - "Longhorn Block Storage": devops/k8s-storage/longhorn.md
         - "Rook-Ceph Storage" : devops/k8s-storage/rook-ceph.md
-
+    - OpenTelemtry:
+        - "Auto-vs-Manuel-Injection": devops/opentelemetry/auto-vs-manuel-inject.md
   - QA:
     - qa/index.md
     - Fundamentals of QA: qa/Fundamentals_of_QA.md
