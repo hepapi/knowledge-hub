@@ -4545,10 +4545,12 @@
 <p>OpenTelemetry provides a set of APIs, libraries, and agents designed to capture, process, and export telemetry data from software applications. Instrumentation refers to ensuring an application’s code generates traces, metrics, and logs that make it observable.</p>
 <h3 id="manual-instrumentation">Manual instrumentation</h3>
 <p>Involves adding specific code snippets to your application to capture and send telemetry data. It can capture custom metrics specific to your application, like items in a shopping cart or the time it takes to perform a specific database query. Manual instrumentation provides a high level of control and flexibility but takes time to implement.</p>
-<p>Advantages
-- Full Control:
-You have complete authority over what gets measured, when, and in how much detail. This allows you to focus exclusively on critical business transactions and functions, maximizing the signal-to-noise ratio.</p>
+<p>Advantages</p>
 <ul>
+<li>
+<p>Full Control:
+You have complete authority over what gets measured, when, and in how much detail. This allows you to focus exclusively on critical business transactions and functions, maximizing the signal-to-noise ratio.</p>
+</li>
 <li>
 <p>Rich Business Context:
 You can enrich traces with valuable, domain-specific attributes that are crucial for debugging and performance analysis. For example, you can add tags like customer_id, cart_value, or subscription_tier='premium' to a trace. This helps answer complex questions like, "Why do requests slow down only for premium users with a cart value over $500?"</p>
@@ -4558,19 +4560,25 @@ You can enrich traces with valuable, domain-specific attributes that are crucial
 The instrumentation code is a part of your application's source code. It is not dependent on the internal implementation details of third-party frameworks, making it more robust against framework updates that might otherwise break instrumentation.</p>
 </li>
 </ul>
-<p>Disadvantages
-- Time-Consuming &amp; High-Effort:
-Writing, adding, and maintaining instrumentation code across a large codebase requires significant developer time and effort. As the application evolves or is refactored, this code must also be updated.</p>
+<p>Disadvantages</p>
 <ul>
-<li>Requires Expertise:
-Developers must be knowledgeable in both the application's architecture and the specific API of the observability SDK being used.</li>
+<li>
+<p>Time-Consuming &amp; High-Effort:
+Writing, adding, and maintaining instrumentation code across a large codebase requires significant developer time and effort. As the application evolves or is refactored, this code must also be updated.</p>
+</li>
+<li>
+<p>Requires Expertise:
+Developers must be knowledgeable in both the application's architecture and the specific API of the observability SDK being used.</p>
+</li>
 </ul>
 <h3 id="automatic-instrumentation">Automatic instrumentation</h3>
 <p>Involves using pre-built libraries or agents that automatically capture and send telemetry data without requiring you to modify your application’s code. It is typically used to capture standard metrics like CPU usage, memory usage, request latency, and error rates. This is less flexible than manual instrumentation but much simpler and quicker to implement.</p>
-<p>Advantages
-- Fast &amp; Easy Setup:
-Getting started is often as simple as including an agent in the application's startup command. You can begin collecting a wide range of telemetry data within minutes.</p>
+<p>Advantages</p>
 <ul>
+<li>
+<p>Fast &amp; Easy Setup:
+Getting started is often as simple as including an agent in the application's startup command. You can begin collecting a wide range of telemetry data within minutes.</p>
+</li>
 <li>
 <p>No Code Changes Required:
 The application's source code remains untouched. This is a major benefit, especially for legacy systems, applications with low test coverage, or when you don't have direct access to the code.</p>
@@ -4580,8 +4588,8 @@ The application's source code remains untouched. This is a major benefit, especi
 It enforces a consistent baseline of observability across all services and teams in an organization, ensuring that everyone gets a standard set of telemetry.</p>
 </li>
 </ul>
-<p>Disadvantages
-The Version Compatibility Nightmare:</p>
+<p>Disadvantages</p>
+<p>The Version Compatibility Nightmare:</p>
 <ul>
 <li>
 <p>Framework Version: The agent must explicitly support the exact version of the framework (e.g., Spring Boot 3.1.x) your project uses. If not, it may fail to identify the framework's internal classes and methods.</p>
@@ -4733,7 +4741,9 @@ The Version Compatibility Nightmare:</p>
 "my-instrumentation" - to inject Instrumentation CR instance with name "my-instrumentation" in the current namespace.
 "my-other-namespace/my-instrumentation" - to inject Instrumentation CR instance with name "my-instrumentation" from another namespace "my-other-namespace".
 "false" - do not inject</p>
-<p>Note: For our example, add monitoring/java-instrumentation as the annotation.</p>
+<p>Note: For our example, add as the annotation
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>nstrumentation.opentelemetry.io/inject-java:<span class="w"> </span>monitoring/java-instrumentation
+</code></pre></div></p>
 <p><a href="https://opentelemetry.io/docs/platforms/kubernetes/operator/automatic/">doc-link</a></p>
 
 
