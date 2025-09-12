@@ -146,7 +146,7 @@ helm search repo loki
 ```
 ![loki](./loki-distributed-images/image6.png)
 
-- We will use grafana/loki-stack helm chart so lets get values.yaml
+- We will use grafana/loki helm chart so lets get values.yaml
 
 ```bash
 helm show values grafana/loki > loki-values.yaml
@@ -523,7 +523,7 @@ kubectl port-forward service/grafana 3000:80
 kubectl get secret grafana -o jsonpath="{.data.admin-password}" | base64 --decode
 ```
 
-- Thanks to grafana/loki anda grafana/grafana helm-chart you can see Loki has been configured In Data sources  as shown below
+- Thanks to grafana/loki and grafana/grafana helm-chart you have to configure Loki's Data sources as shown below.
 
 ![loki](./loki-distributed-images/image9.png)
 
