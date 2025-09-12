@@ -75,7 +75,8 @@ nav:
         - "ELK Stack": devops/logging/ELK-stack-with-FileBeat.md
         - "ELK Index Lifecycle Management": devops/logging/Index-Lifecycle-Management.md
         - "Elasticsearch-Exporter for Prometheus-Grafana": devops/logging/elasticsearch-exporter.md
-        - "Grafana Loki": devops/logging/loki.md
+        - "Grafana Loki With Single Binary": devops/logging/loki-single-binary.md
+        - "Grafana Loki: Distributed Log Management and Collection": devops/logging/loki-distributed.md
         - "EFK (EFK Stack (Elasticsearch, Fluentbit, Kibana)": devops/logging/efk.md
         - "Elastalert2": devops/logging/elastalert2.md
     - SRE:
