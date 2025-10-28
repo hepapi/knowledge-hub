@@ -192,6 +192,8 @@ or you can check on vault ui raft storage section on left handside
 
 ## Vault Installation - install as systemd service
 
+### Single-Node Deployment
+
 - Using package manager
 
 ```bash
@@ -204,7 +206,7 @@ sudo apt update && sudo apt install vault
 
 ```bash
 
-Not: # binary path is /usr/bin/vault
+Not: # binary path is /usr/bin/vault check that "which vault"
 
 ls /usr/bin/vault
 ---
@@ -265,7 +267,26 @@ EOF
 ```
 
 ```bash
-sudo chown vault:vault /etc/vault.d/vault.hcl && sudo chmod 640 /etc/vault.d/vault.hcl
+# Create required directories
+
+sudo mkdir -p /opt/vault/data
+sudo mkdir -p /var/log/vault
+
+
+sudo chown -R vault:vault /opt/vault
+sudo chown -R vault:vault /var/log/vault
+sudo chown vault:vault /etc/vault.d/vault.hcl
+sudo chmod 640 /etc/vault.d/vault.hcl
+sudo chmod 750  /var/log/vault
+
+#restart vault service
+
+sudo systemctl daemon-reload
+sudo systemctl stop vault
+sudo systemctl start vault
+sudo systemctl status vault
+sudo systemctl enable vault 
+
 
 export VAULT_ADDR=http://<vault-vm-ip>:8200 
 
@@ -277,6 +298,430 @@ vault status
 
 ## check vault cluster is healty
 curl http://<vault-vm-ip>:8200/v1/sys/health
+```
+
+### High Availability Cluster
+
+
+#### Run on NODE-1
+- Using package manager
+
+```bash
+wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install vault
+```
+
+```bash
+
+Not: # binary path is /usr/bin/vault check that "which vault"
+
+sudo tee /lib/systemd/system/vault.service <<EOF
+[Unit]
+Description="HashiCorp Vault - A tool for managing secrets"
+Documentation=https://www.vaultproject.io/docs/
+Requires=network-online.target
+After=network-online.target
+ConditionFileNotEmpty=/etc/vault.d/vault.hcl
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Service]
+User=vault
+Group=vault
+ProtectSystem=full
+ProtectHome=read-only
+PrivateTmp=yes
+PrivateDevices=yes
+SecureBits=keep-caps
+AmbientCapabilities=CAP_IPC_LOCK
+CapabilityBoundingSet=CAP_SYSLOG CAP_IPC_LOCK
+NoNewPrivileges=yes
+ExecStart=/usr/bin/vault server -config=/etc/vault.d/vault.hcl
+ExecReload=/bin/kill --signal HUP \$MAINPID
+KillMode=process
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+LimitNOFILE=65536
+LimitMEMLOCK=infinity
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+```
+
+
+```bash
+## change <node-x-ip>
+## auto-unseal is active on AWS KMS for detail check auto-unseal section. if dont need delete seal "awskms" lines
+
+sudo tee /etc/vault.d/vault.hcl <<EOF
+storage "raft" {
+  path    = "/opt/vault/data"
+  node_id = "vault-node-1"
+
+  retry_join {
+    leader_api_addr = "http://<node-1-ip>:8200"
+  }
+  retry_join {
+    leader_api_addr = "http://<node-2-ip>:8200"
+  }
+  retry_join {
+    leader_api_addr = "http://<node-3-ip>:8200"
+  }
+}
+
+listener "tcp" {
+address = "<node-1-ip>:8200" 
+cluster_address = "<node-1-ip>:8201"
+tls_disable = 1
+}
+
+api_addr = "http://<node-1-ip>:8200"
+cluster_addr = "http://<node-1-ip>:8201"
+ui = true
+log_level = "INFO"
+
+disable_mlock=true
+
+seal "awskms" {
+  region     = "eu-central-1"
+  access_key = "xxx"
+  secret_key = "xxx"
+  kms_key_id = "xxx"
+}
+
+audit "file" {
+  path = "/var/log/vault/audit.log"
+  log_requests = true
+  log_responses = true
+}
+EOF
+ 
+```
+
+```bash
+# Create required directories
+sudo mkdir -p /opt/vault/data
+sudo mkdir -p /var/log/vault
+
+# Set ownership and permissions
+sudo chown -R vault:vault /opt/vault
+sudo chown -R vault:vault /var/log/vault
+sudo chown vault:vault /etc/vault.d/vault.hcl
+sudo chmod 640 /etc/vault.d/vault.hcl
+sudo chmod 750  /var/log/vault
+
+# Enable and start vault service
+sudo systemctl daemon-reload
+sudo systemctl stop vault
+sudo systemctl start vault
+sudo systemctl status vault
+sudo systemctl enable vault 
+
+export VAULT_ADDR=http://<node-1-ip>:8200
+vault status
+```
+- initialize vault
+
+```bash
+vault operator init -key-shares=3 -key-threshold=2
+not: aws kms için 5-3 olmalı 
+
+vault status
+```
+- check raft peer list
+
+```bash
+vault login <root token>
+
+vault operator raft list-peers
+
+root@GLMGVSM01:~# vault operator raft list-peers
+Node            Address             State       Voter
+----            -------             -----       -----
+vault-node-1    <node-ip>:8201    leader      true
+
+```
+
+#### Run on NODE-2
+
+- Using package manager
+
+```bash
+wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install vault
+```
+
+```bash
+
+Not: # binary path is /usr/bin/vault check that "which vault"
+
+sudo tee /lib/systemd/system/vault.service <<EOF
+[Unit]
+Description="HashiCorp Vault - A tool for managing secrets"
+Documentation=https://www.vaultproject.io/docs/
+Requires=network-online.target
+After=network-online.target
+ConditionFileNotEmpty=/etc/vault.d/vault.hcl
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Service]
+User=vault
+Group=vault
+ProtectSystem=full
+ProtectHome=read-only
+PrivateTmp=yes
+PrivateDevices=yes
+SecureBits=keep-caps
+AmbientCapabilities=CAP_IPC_LOCK
+CapabilityBoundingSet=CAP_SYSLOG CAP_IPC_LOCK
+NoNewPrivileges=yes
+ExecStart=/usr/bin/vault server -config=/etc/vault.d/vault.hcl
+ExecReload=/bin/kill --signal HUP \$MAINPID
+KillMode=process
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+LimitNOFILE=65536
+LimitMEMLOCK=infinity
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+```
+
+
+```bash
+## change <node-x-ip>
+## auto-unseal is active on AWS KMS for detail check auto-unseal section. if dont need delete seal "awskms" lines
+
+sudo tee /etc/vault.d/vault.hcl <<EOF
+storage "raft" {
+  path    = "/opt/vault/data"
+  node_id = "vault-node-2"
+
+  retry_join {
+    leader_api_addr = "http://<node-1-ip>:8200"
+  }
+  retry_join {
+    leader_api_addr = "http://<node-2-ip>:8200"
+  }
+  retry_join {
+    leader_api_addr = "http://<node-3-ip>:8200"
+  }
+}
+
+listener "tcp" {
+address = "<node-2-ip>:8200" 
+cluster_address = "<node-2-ip>:8201"
+tls_disable = 1
+}
+
+api_addr = "http://<node-2-ip>:8200"
+cluster_addr = "http://<node-2-ip>:8201"
+ui = true
+log_level = "INFO"
+
+disable_mlock=true
+
+seal "awskms" {
+  region     = "eu-central-1"
+  access_key = "xxx"
+  secret_key = "xxx"
+  kms_key_id = "xxx"
+}
+
+audit "file" {
+  path = "/var/log/vault/audit.log"
+  log_requests = true
+  log_responses = true
+}
+EOF
+ 
+```
+- create data and log path 
+
+```bash
+# Create required directories
+sudo mkdir -p /opt/vault/data
+sudo mkdir -p /var/log/vault
+
+# Set ownership and permissions
+sudo chown -R vault:vault /opt/vault
+sudo chown -R vault:vault /var/log/vault
+sudo chown vault:vault /etc/vault.d/vault.hcl
+sudo chmod 640 /etc/vault.d/vault.hcl
+sudo chmod 750  /var/log/vault
+
+# Enable and start vault service
+sudo systemctl daemon-reload
+sudo systemctl stop vault
+sudo systemctl start vault
+sudo systemctl status vault
+sudo systemctl enable vault 
+
+export VAULT_ADDR=http://<node-2-ip>:8200
+vault status
+
+# After service starts, node will automatically join cluster via retry_join
+# Check cluster status and unseal if needed
+vault operator unseal <unsealkey1>
+vault operator unseal <unsealkey2>
+
+```
+#### Run on NODE-3
+
+- Using package manager
+
+```bash
+wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install vault
+```
+
+```bash
+
+Not: # binary path is /usr/bin/vault check that "which vault"
+
+sudo tee /lib/systemd/system/vault.service <<EOF
+[Unit]
+Description="HashiCorp Vault - A tool for managing secrets"
+Documentation=https://www.vaultproject.io/docs/
+Requires=network-online.target
+After=network-online.target
+ConditionFileNotEmpty=/etc/vault.d/vault.hcl
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Service]
+User=vault
+Group=vault
+ProtectSystem=full
+ProtectHome=read-only
+PrivateTmp=yes
+PrivateDevices=yes
+SecureBits=keep-caps
+AmbientCapabilities=CAP_IPC_LOCK
+CapabilityBoundingSet=CAP_SYSLOG CAP_IPC_LOCK
+NoNewPrivileges=yes
+ExecStart=/usr/bin/vault server -config=/etc/vault.d/vault.hcl
+ExecReload=/bin/kill --signal HUP \$MAINPID
+KillMode=process
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+LimitNOFILE=65536
+LimitMEMLOCK=infinity
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+```
+
+
+```bash
+## change <node-x-ip>
+## auto-unseal is active on AWS KMS for detail check auto-unseal section. if dont need delete seal "awskms" lines
+
+sudo tee /etc/vault.d/vault.hcl <<EOF
+storage "raft" {
+  path    = "/opt/vault/data"
+  node_id = "vault-node-3"
+
+  retry_join {
+    leader_api_addr = "http://<node-1-ip>:8200"
+  }
+  retry_join {
+    leader_api_addr = "http://<node-2-ip>:8200"
+  }
+  retry_join {
+    leader_api_addr = "http://<node-3-ip>:8200"
+  }
+}
+
+listener "tcp" {
+address = "<node-3-ip>:8200" 
+cluster_address = "<node-3-ip>:8201"
+tls_disable = 1
+}
+
+api_addr = "http://<node-3-ip>:8200"
+cluster_addr = "http://<node-3-ip>:8201"
+ui = true
+log_level = "INFO"
+
+disable_mlock=true
+
+seal "awskms" {
+  region     = "eu-central-1"
+  access_key = "xxx"
+  secret_key = "xxx"
+  kms_key_id = "xxx"
+}
+
+audit "file" {
+  path = "/var/log/vault/audit.log"
+  log_requests = true
+  log_responses = true
+}
+EOF
+ 
+```
+- create data and log path 
+
+```bash
+# Create required directories
+sudo mkdir -p /opt/vault/data
+sudo mkdir -p /var/log/vault
+
+# Set ownership and permissions
+sudo chown -R vault:vault /opt/vault
+sudo chown -R vault:vault /var/log/vault
+sudo chown vault:vault /etc/vault.d/vault.hcl
+sudo chmod 640 /etc/vault.d/vault.hcl
+sudo chmod 750  /var/log/vault
+
+# Enable and start vault service
+sudo systemctl daemon-reload
+sudo systemctl stop vault
+sudo systemctl start vault
+sudo systemctl status vault
+sudo systemctl enable vault 
+
+export VAULT_ADDR=http://<node-3-ip>:8200
+vault status
+
+# After service starts, node will automatically join cluster via retry_join
+# Check cluster status and unseal if needed
+vault operator unseal <unsealkey1>
+vault operator unseal <unsealkey2>
+```
+
+- verify complete cluster setup (final step)
+
+```bash
+# Login with root token and verify all nodes joined the cluster
+vault login <root token>
+
+vault operator raft list-peers
+
+# Expected output showing all 3 nodes:
+# vault-node-1    <node-1-ip>:8201    leader      true
+# vault-node-2    <node-2-ip>:8201    follower    true  
+# vault-node-3    <node-3-ip>:8201    follower    true
+
+# Verify cluster health
+vault status
 
 ```
 
@@ -479,13 +924,16 @@ vault login -method=ldap username=ldap-username password=password
 
 ## auth-kubernetes enable
 
-- Kubernetes side must done
+### Kubernetes side configuration
 
-prerequisites:
- install external secret operator on k8s
+Prerequisites:
+- External Secrets Operator (ESO) must be installed on Kubernetes cluster
+
+#### Step 1: Create Service Account and RBAC
 
 ```yaml
-#define service account for eso-vault integration 
+# Define service account for ESO-Vault integration with proper RBAC permissions
+# This service account allows ESO to authenticate with Vault and manage Kubernetes secrets
 
 vi vault-sa.yaml
 
@@ -494,122 +942,463 @@ kind: ServiceAccount
 metadata:
   name: external-secrets-sa
   namespace: eso
+
+---
+# ClusterRoleBinding links the service account to the cluster role
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: external-secrets-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:auth-delegator
+subjects:
+- kind: ServiceAccount
+  name: external-secrets-sa
+  namespace: eso
 ```
-- Create service account
+
+Apply the service account configuration:
 
 ```bash
 kubectl apply -f vault-sa.yaml
 ```
 
-```yaml
-#define ClusterSecretStore for eso-vault integration 
+#### Step 2: Create Service Account Token
 
-vi vault-clusterSecretStore.yaml
+```yaml
+# For Kubernetes 1.24+, manual token creation is required
+# This secret contains the JWT token for service account authentication
+
+vi vault-sa-token.yaml
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: external-secrets-sa-token
+  namespace: eso
+  annotations:
+    kubernetes.io/service-account.name: external-secrets-sa
+type: kubernetes.io/service-account-token
+```
+
+Apply the token secret:
+
+```bash
+kubectl apply -f vault-sa-token.yaml
+
+# Verify token creation
+kubectl get secret external-secrets-sa-token -n eso
+```
+
+### Vault server side configuration (only using by single cluster)
+
+**Note:** The following configuration is for **single cluster** setup only. If you need to connect multiple Kubernetes clusters to Vault, skip this section and go directly to [Multiple Clusters Configuration](#multiple-clusters-configuration).
+
+
+#### Step 3: Enable Kubernetes Auth Method
+
+```bash
+# Enable Kubernetes authentication method in Vault
+vault auth enable kubernetes
+```
+
+#### Step 4: Configure Kubernetes Auth
+
+```bash
+# Configure Vault with Kubernetes cluster information
+# Replace placeholders with actual values from your environment
+
+vault write auth/kubernetes/config \
+    token_reviewer_jwt="$(kubectl get secret external-secrets-sa-token -n eso -o jsonpath='{.data.token}' | base64 -d)" \
+    kubernetes_host="https://YOUR-K8S-API-SERVER:6443" \
+    kubernetes_ca_cert="$(cat /tmp/k8s-ca.crt)" \
+    disable_iss_validation=true
+
+# Verify configuration
+vault read auth/kubernetes/config
+```
+
+#### Step 5: Create Vault Policy
+
+```bash
+# Create policy file defining permissions for ESO
+vi eso-policy.hcl
+
+path "kv/data/*" {
+  capabilities = ["read"]
+}
+path "kv/metadata/*" {
+  capabilities = ["read"]
+}
+
+# Apply the policy to Vault
+vault policy write eso-policy eso-policy.hcl
+
+# Verify policy creation
+vault read sys/policy/eso-policy
+```
+
+#### Step 6: Create Kubernetes Role
+
+```bash
+# Create role binding service account to Vault policy
+# This role allows the specified service account to authenticate with Vault
+vault write auth/kubernetes/role/eso-role \
+    bound_service_account_names=external-secrets-sa \
+    bound_service_account_namespaces=eso \
+    policies=eso-policy \
+    ttl=24h
+
+# Verify role creation
+vault read auth/kubernetes/role/eso-role
+```
+
+#### Step 7: Test Authentication
+
+```bash
+# Test authentication with the service account token
+TOKEN=$(kubectl get secret external-secrets-sa-token -n eso -o jsonpath='{.data.token}' | base64 -d)
+
+vault write auth/kubernetes/login role=eso-role jwt="$TOKEN"
+```
+
+### Multiple Clusters Configuration
+
+When you need to connect multiple Kubernetes clusters to a single Vault instance, each cluster requires its own auth path, policy, and role configuration.
+
+#### Cluster 1 Configuration
+
+##### Step 1: Enable Kubernetes Auth for Cluster 1
+```bash
+# Enable Kubernetes authentication method for cluster 1
+vault auth enable -path=kubernetes/cluster1 kubernetes
+```
+
+##### Step 2: Create Policy for Cluster 1
+```bash
+# Create policy file for cluster 1
+vi cluster1-eso-policy.hcl
+```
+
+```hcl
+# Policy for cluster1 - allows access to cluster1 specific secrets
+path "cluster1/data/*" {
+  capabilities = ["read"]
+}
+path "cluster1/metadata/*" {
+  capabilities = ["read"]
+}
+```
+
+```bash
+# Apply the policy to Vault
+vault policy write cluster1-eso-policy cluster1-eso-policy.hcl
+```
+
+##### Step 3: Configure Kubernetes Auth for Cluster 1
+```bash
+# Get cluster 1 credentials (from cluster 1 context)
+kubectl config use-context cluster1-context
+kubectl get secret external-secrets-sa-token -n eso -o jsonpath='{.data.token}' | base64 -d > /tmp/cluster1-token.jwt
+kubectl get secret external-secrets-sa-token -n eso -o jsonpath='{.data.ca\.crt}' | base64 -d > /tmp/cluster1-ca.crt
+CLUSTER1_HOST=$(kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}')
+
+# Configure Vault with Cluster 1 information
+vault write auth/kubernetes/cluster1/config \
+    token_reviewer_jwt="$(cat /tmp/cluster1-token.jwt)" \
+    kubernetes_host="$CLUSTER1_HOST" \
+    kubernetes_ca_cert="$(cat /tmp/cluster1-ca.crt)" \
+    disable_iss_validation=true
+```
+
+##### Step 4: Create Role for Cluster 1
+```bash
+# Create role for cluster 1
+vault write auth/kubernetes/cluster1/role/cluster1-eso-role \
+    bound_service_account_names=external-secrets-sa \
+    bound_service_account_namespaces=eso \
+    policies=cluster1-eso-policy \
+    ttl=24h \
+    audience=vault
+```
+
+##### Step 5: Test Authentication for Cluster 1
+```bash
+# Test authentication for cluster 1
+vault write auth/kubernetes/cluster1/login \
+    role=cluster1-eso-role \
+    jwt="$(cat /tmp/cluster1-token.jwt)"
+```
+
+#### Cluster 2 Configuration
+
+##### Step 1: Enable Kubernetes Auth for Cluster 2
+```bash
+# Enable Kubernetes authentication method for cluster 2
+vault auth enable -path=kubernetes/cluster2 kubernetes
+```
+
+##### Step 2: Create Policy for Cluster 2
+```bash
+# Create policy file for cluster 2
+vi cluster2-eso-policy.hcl
+```
+
+```hcl
+# Policy for cluster2 - allows access to cluster2 specific secrets
+path "cluster2/data/*" {
+  capabilities = ["read"]
+}
+path "cluster2/metadata/*" {
+  capabilities = ["read"]
+}
+```
+
+```bash
+# Apply the policy to Vault
+vault policy write cluster2-eso-policy cluster2-eso-policy.hcl
+```
+
+##### Step 3: Configure Kubernetes Auth for Cluster 2
+```bash
+# Get cluster 2 credentials (from cluster 2 context)
+kubectl config use-context cluster2-context
+kubectl get secret external-secrets-sa-token -n eso -o jsonpath='{.data.token}' | base64 -d > /tmp/cluster2-token.jwt
+kubectl get secret external-secrets-sa-token -n eso -o jsonpath='{.data.ca\.crt}' | base64 -d > /tmp/cluster2-ca.crt
+CLUSTER2_HOST=$(kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}')
+
+# Configure Vault with Cluster 2 information
+vault write auth/kubernetes/cluster2/config \
+    token_reviewer_jwt="$(cat /tmp/cluster2-token.jwt)" \
+    kubernetes_host="$CLUSTER2_HOST" \
+    kubernetes_ca_cert="$(cat /tmp/cluster2-ca.crt)" \
+    disable_iss_validation=true
+```
+
+##### Step 4: Create Role for Cluster 2
+```bash
+# Create role for cluster 2
+vault write auth/kubernetes/cluster2/role/cluster2-eso-role \
+    bound_service_account_names=external-secrets-sa \
+    bound_service_account_namespaces=eso \
+    policies=cluster2-eso-policy \
+    ttl=24h \
+    audience=vault
+```
+
+##### Step 5: Test Authentication for Cluster 2
+```bash
+# Test authentication for cluster 2
+vault write auth/kubernetes/cluster2/login \
+    role=cluster2-eso-role \
+    jwt="$(cat /tmp/cluster2-token.jwt)"
+```
+
+#### Verification Commands for Multiple Clusters
+
+```bash
+# List all authentication methods
+vault auth list
+
+# Check cluster 1 config
+vault read auth/kubernetes/cluster1/config
+vault read auth/kubernetes/cluster1/role/cluster1-eso-role
+
+# Check cluster 2 config
+vault read auth/kubernetes/cluster2/config
+vault read auth/kubernetes/cluster2/role/cluster2-eso-role
+```
+
+#### ClusterSecretStore Configuration for Each Cluster
+
+##### Cluster 1 ClusterSecretStore
+```yaml
+apiVersion: external-secrets.io/v1beta1
+kind: ClusterSecretStore
+metadata:
+  name: vault-cluster1-secretstore
+spec:
+  provider:
+    vault:
+      server: "http://vault-ip:8200"  # CHANGE ME: Replace with actual Vault server IP or FQDN
+      path: "cluster1"
+      version: v2
+      auth:
+        kubernetes:
+          mountPath: "kubernetes/cluster1"
+          role: "cluster1-eso-role"
+          serviceAccountRef:
+            name: external-secrets-sa
+            namespace: eso
+          secretRef:
+            name: external-secrets-sa-token              # Token secret reference
+            namespace: eso
+            key: token
+```
+
+##### Cluster 2 ClusterSecretStore
+```yaml
+apiVersion: external-secrets.io/v1beta1
+kind: ClusterSecretStore
+metadata:
+  name: vault-cluster2-secretstore
+spec:
+  provider:
+    vault:
+      server: "http://vault-ip:8200"  # CHANGE ME: Replace with actual Vault server IP or FQDN
+      path: "cluster2"
+      version: v2
+      auth:
+        kubernetes:
+          mountPath: "kubernetes/cluster2"
+          role: "cluster2-eso-role"
+          serviceAccountRef:
+            name: external-secrets-sa
+            namespace: eso
+          secretRef:
+            name: external-secrets-sa-token              # Token secret reference
+            namespace: eso
+            key: token
+```
+
+#### Secret Engines for Each Cluster
+
+```bash
+# Enable KV secret engines for each cluster
+vault secrets enable -path=cluster1 kv-v2
+vault secrets enable -path=cluster2 kv-v2
+
+# Create sample secrets for testing
+vault kv put cluster1/database username="cluster1-db-user" password="cluster1-db-pass"
+vault kv put cluster2/database username="cluster2-db-user" password="cluster2-db-pass"
+```
+
+### Kubernetes side - Create ClusterSecretStore
+
+#### Step 8: Create ClusterSecretStore
+
+```yaml
+# Define ClusterSecretStore for ESO-Vault integration
+# ClusterSecretStore can be accessed from all namespaces (unlike SecretStore which is namespace-scoped)
+
+vi clustersecretstore-sa.yaml
 
 apiVersion: external-secrets.io/v1beta1
 kind: ClusterSecretStore
 metadata:
-  name: vault-backend
+  name: vault-nonprod-serviceaccount
 spec:
   provider:
     vault:
-      server: "http://vault.default.svc.cluster.local:8200"
-      path: "kv"
-      version: "v2"
+      server: http://your-vault-server.example.com # Vault server URL
+      path: "kv"                                         # Vault secret engine path
+      version: v2                                        # KV engine version
       auth:
         kubernetes:
-          mountPath: "kubernetes"
-          role: "eso-role"
+          mountPath: "kubernetes"                        # Vault auth method path
+          role: "eso-role"                              # Vault role name
           serviceAccountRef:
-            name: external-secrets-sa
+            name: external-secrets-sa                    # Kubernetes service account
             namespace: eso
+          secretRef:
+            name: external-secrets-sa-token              # Token secret reference
+            namespace: eso
+            key: token
 ```
 
-- Create ClusterSecretStore
+Apply the ClusterSecretStore:
 
 ```bash
-kubectl apply -f vault-clusterSecretStore.yaml
+kubectl apply -f clustersecretstore-sa.yaml
 
-# verify ClusterSecretStore
-
+# Verify ClusterSecretStore creation
 kubectl get ClusterSecretStore
 
-# check status is valid
+# Check status - should show "Valid"
+kubectl describe ClusterSecretStore vault-nonprod-serviceaccount
 ```
 
+### Testing the Integration
 
-- Vault VM side must done
- 
-```bash
-#enable auth method
-vault auth enable kubernetes
-
-
-vault write auth/kubernetes/config \
-    token_reviewer_jwt="$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" \
-    kubernetes_host="https://10.15.11.30:6443" \
-    kubernetes_ca_cert=@/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
-
-
-vi vault-policy.hcl
---
-path "kv/*" {
-  capabilities = ["create", "read", "update", "delete", "list"]
-}
---
-
-vault policy write eso-policy vault-policy.hcl
-
-
-# define role Not: use serviceaccount-name and namespace
-
-vault write auth/kubernetes/role/eso-role \
-    bound_service_account_names=external-secrets-sa \ 
-    bound_service_account_namespaces=eso \
-    policies=eso-policy \
-    ttl=24h
-```
-
-
-### create externalsecret for testing get secret
+#### Step 9: Create Test Secret in Vault
 
 ```bash
-#first define a credential on vault server
+# Create a test secret in Vault for validation
+vault kv put kv/test vault-username="test-username-123"
 
-vault kv put kv/data/test/db password=1234
+# Verify secret creation
+vault kv get kv/test
 ```
+
+#### Step 10: Create ExternalSecret for Testing
 
 ```yaml
-# on Kubernetes
+# ExternalSecret resource converts Vault secrets to Kubernetes secrets
 vi externalsecret.yaml
-
 
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
-  name: example-secret
+  name: vault-example
   namespace: eso
 spec:
-  refreshInterval: "1h"
+  refreshInterval: "30s"                              # Secret refresh interval
   secretStoreRef:
-    name: vault-backend
+    name: vault-nonprod-serviceaccount               # ClusterSecretStore reference
     kind: ClusterSecretStore
   target:
-    name: my-secret
-    creationPolicy: Owner
+    name: devops-test                                # Kubernetes secret name to create
+    creationPolicy: Owner                            # Secret ownership policy
   data:
-    - secretKey: password
-      remoteRef:
-        key: "kv/data/test/db"
-        property: "password"
+  - secretKey: k8s-username                              # Key name in Kubernetes secret
+    remoteRef:
+      key: test                                      # Vault secret path (kv/test)
+      property: vault-username                                # Vault secret field name
 ```
 
-- verify get secret from vault
+Apply the ExternalSecret:
 
 ```bash
-
-kubectl get secret my-secret -n <namespace> -o yaml
+kubectl apply -f externalsecret.yaml
 ```
+
+#### Step 11: Verify Integration
+
+```bash
+# Check ExternalSecret status
+kubectl get externalsecret vault-example -n eso
+
+# View ExternalSecret details
+kubectl describe externalsecret vault-example -n eso
+
+# Verify Kubernetes secret creation
+kubectl get secret devops-test -n eso -o yaml
+
+# Decode and view secret content
+kubectl get secret devops-test -n eso -o jsonpath='{.data.k8s-username}' | base64 -d
+# Expected output: test-username-123
+
+# Check ESO controller logs for troubleshooting
+kubectl logs -n eso -l app.kubernetes.io/name=external-secrets --tail=50
+```
+
+### Troubleshooting
+
+If you encounter issues:
+
+1. **Check ClusterSecretStore status**: Must show "Valid"
+2. **Verify Vault connectivity**: Ensure Vault server is accessible from Kubernetes
+3. **Check ESO logs**: Look for authentication or permission errors
+4. **Validate token**: Ensure service account token is not expired
+5. **Test Vault authentication manually**: Use `vault write auth/kubernetes/login` command
+
+Common issues:
+- Token expiration (recreate token secret)
+- Network connectivity between Kubernetes and Vault
+- Incorrect Vault policy permissions
+- Wrong service account or namespace bindings
 
 
 ## database secret engine
@@ -617,19 +1406,18 @@ kubectl get secret my-secret -n <namespace> -o yaml
 ### running postgres pod
 ```bash
 kubectl get secret --namespace default postgre-vault-test-postgresql -o jsonpath="{.data.postgres-password}" | base64 -d
-pass: xxxx
+MQEvdzuWw6
 
 kubectl exec -it postgre-vault-test-postgresql-0 -- bash
 
 
 psql -U vault -d postgres
-pass: xxxx
+pass: vault
 
 CREATE ROLE vault WITH LOGIN SUPERUSER PASSWORD 'vault';
 ```
 
 ### enable secret engine
-```bash
 vault secrets enable database
 
 vault write database/config/postgres plugin_name=postgresql-database-plugin allowed_roles="sql-role" connection_url="postgresql://{{username}}:{{password}}@postgre-vault-test-postgresql.default.svc:5432/postgres?sslmode=disable" username="vault" password="vault"
@@ -638,10 +1426,8 @@ vault write database/config/postgres plugin_name=postgresql-database-plugin allo
 vault write database/roles/sql-role db_name=postgres creation_statements="CREATE ROLE \"{{name}}\" WITH LOGIN PASSWORD '{{password}}' VALID UNTIL '{{expiration}}'; GRANT SELECT ON ALL TABLES IN SCHEMA public TO \"{{name}}\";" default_ttl="1h" max_ttl="24h"
 
 vault read database/creds/sql-role
-```
 
 ### define policy for database role
-```bash
 
 kubectl -n vault-example exec -it vault-example-0 sh
 
@@ -652,7 +1438,7 @@ path "database/creds/sql-role" {
 EOF
 
 vault policy write postgres-app-policy /home/vault/postgres-app-policy.hcl
-```
+
 
 ## regenerate new root-token
 
@@ -690,4 +1476,237 @@ Not: not revoke first root token. use both
 if you want to revoke other root token 
 
 vault token revoke <old-root-token>
+```
+
+## Vault Policy, Group, and User Configuration
+This document outlines the steps for creating policies, groups, and users in Vault, including how to assign policies to groups and users to groups, using both Vault CLI and Vault UI.
+
+Vault Policy Creation
+In Vault, policies are created to manage appropriate paths within secret engines. These policies define access permissions for specific paths. The following examples demonstrate how to create policies for different projects and environments using the kv secret engine.
+
+Example Policy Structure
+Policies can be created individually for each project and environment combination, or with a more general approach. Here, it's assumed you have different secret engines like parasut, zirve, mikro. If these are not separate secret engines but rather paths under the kv secret engine, they should be structured as path "secret/data/parasut/...".
+
+- mikro-all-policy.hcl (Example: A more general policy for Mikro)
+
+```bash
+path "auth/ldap/login/*" { 
+  capabilities = ["read", "update"]
+}
+path "zirve/metadata/*" {
+  capabilities = ["read", "list"]
+}
+path "zirve/data/<project-name>/*" {
+  capabilities = ["read", "update", "delete", "list"]
+}
+```
+
+### Methods to Create Policies
+Vault policies can be created using a few different methods:
+
+1. Via HCL Files and Vault CLI (Recommended for Version Control)
+This method involves defining policies in .hcl files and then uploading them to Vault using the CLI. This is generally recommended for version control and automation.
+
+After creating each .hcl file, you can upload these policies to Vault using the Vault CLI:
+
+```bash
+# Upload project policy
+vault policy write <project-policy-name> mikro-all-policy.hcl
+
+```
+
+2. Via Vault UI
+For users who prefer a graphical interface, policies can also be created and managed directly through the Vault UI.
+
+Access your Vault UI (http://your-vault-server.example.com/).
+
+Navigate to Policies in the left-hand menu.
+
+- Click on Create new policy.
+
+Provide a Policy Name and paste the HCL policy definition into the Policy HCL text area.
+```bash
+path "auth/ldap/login/*" { 
+  capabilities = ["read", "update"]
+}
+path "zirve/metadata/*" {
+  capabilities = ["read", "list"]
+}
+path "zirve/data/<project-name>/*" {
+  capabilities = ["read", "update", "delete", "list"]
+}
+```
+- Click Create policy.
+
+
+### Group Creation and Policy Assignment
+Vault groups are used to manage collections of entities (users or machines) and assign policies to them. This simplifies permission management by allowing policies to be assigned to groups rather than individual entities.
+
+- Methods for Group Creation and Policy Assignment
+
+1. Via Vault CLI
+First, ensure the identity secrets engine is enabled (it usually is by default). Then, create groups and assign policies to them.
+
+## Create project-team group and assign policy
+vault write auth/ldap/groups/<groupname> policies=<group-policy>
+
+
+2. Via Vault UI
+Groups can also be created and managed through the Vault UI.
+
+Access your Vault UI.
+
+Navigate to Access > LDAP in the left-hand menu.
+
+Go to the Groups tab.
+
+- Click Create Group.
+
+Enter the Group Name (e.g., shopside-policy).
+
+Select the Policies to attach to this group.
+
+- Click Save Group.
+
+
+### User Creation and Group Assignment
+Users (referred to as "entities" in Vault's Identity system) can be created and then associated with authentication methods. These entities can then be assigned to groups to inherit policies. Here, we'll use the userpass auth method for demonstration.
+
+
+- Methods for User Creation and Group Assignment
+
+1. Via Vault CLI
+First, create a user with LDAP auth method. Then, create an identity entity for this user and link it to the group.
+
+```bash
+# Create a user in the userpass auth method
+vault write auth/ldap/users/<LDAP-Username> groups=<groupname>
+```
+
+2. Via Vault UI
+You can create users and assign them to groups directly via the Vault UI.
+
+Access your Vault UI.
+
+Create User (via Auth Method):
+
+Navigate to Access > LDAP in the left-hand menu.
+
+Go to the Users tab.
+
+- Click Create User.
+
+Enter a Username (e.g., name.lastname)
+
+Enter the Group Name (e.g., shopside-policy).
+
+If need enter special Policies to attach to this user
+
+- Click Save User
+
+
+### Vault Secret Creation and Referencing in Deployments
+This document describes how to create secrets within the Vault UI and how to reference these secrets in your application's deployment configuration, specifically within a values.yaml file for Kubernetes.
+
+- Creating Secrets via Vault UI
+A user with appropriate policy permissions can create secrets within the relevant secret engine paths. These secrets can be entered as key-value pairs or as a JSON object, containing environment variables or other sensitive application data.
+
+Access your Vault UI.
+
+Navigate to the Secrets section in the left-hand menu.
+
+- Click on the specific secret engine you want to use (e.g., parasut/, zirve/).
+
+Browse or create the desired path (e.g., parasut/project1/dev).
+
+- Click Create secret.
+
+Enter the Key and Value pairs directly, or toggle to JSON format to paste a JSON object containing multiple key-value pairs.
+
+```bash
+Example (Key-Value):
+
+Key: DATABASE_URL
+
+Value: jdbc:postgresql://db.example.com:5432/mydb
+
+Example (JSON):
+
+{
+  "API_KEY": "your_api_key_here",
+  "SERVICE_ACCOUNT_EMAIL": "service@example.com"
+}
+```
+
+- Click Save.
+
+#### Referencing Secrets in Deployment Configuration (values.yaml)
+After creating the secret in Vault, you can reference it in your application's deployment repository, typically within the dev-test-staging directories' values.yaml files. This is done using the externalSecretVault configuration, which leverages an External Secrets Operator (ESO) in Kubernetes to fetch secrets from Vault.
+
+Locate the values.yaml file for your specific deployment environment (e.g., deployments/dev/values.yaml) and add the following section:
+
+```yaml
+externalSecretVault:
+  name: projectname-clustername-external-secret # Unique name for the ExternalSecret resource
+  secretStoreRef:
+    name: vault-nonprod-xxx # Reference to your ClusterSecretStore or SecretStore
+  dataFrom:
+    - key: secretengine/projeadı/deployment-environment # Path to your secret in Vault (e.g., kv/parasut/project1/dev)
+
+##----------UYARI---------##
+# Bu bölümdeki extraSecret ve extraConfigMap bölümleri artık kullanılmamaktadır.
+# Bunun yerine externalSecretVault kullanılmaktadır.
+# Ekleme yapmak için Devops ekibi ile iletişime geçiniz.
+##-----------UYARI--------##
+```
+
+
+### Creating a ClusterSecretStore for a New Secret Engine
+
+If you are creating a new secret engine in Vault and need to integrate it with Kubernetes via External Secrets Operator (ESO), you will need to create a corresponding `ClusterSecretStore` resource in your Kubernetes cluster. There are generally two methods to achieve this:
+
+### Method 1: Cloning an Existing ClusterSecretStore
+
+You can clone an existing `ClusterSecretStore` definition via the Rancher UI and modify its `name` and `path` fields to match your new secret engine. This is often the quickest way if you have a template and prefer a graphical interface.
+
+1.  Navigate to the relevant cluster in the Rancher interface.
+2.  In the left-hand sidebar, go to **More Resources** --> **external-secrets.io** and then enter the **ClusterSecretStore** section.
+3.  On the right side of the `ClusterSecretStore` you wish to clone, click on the `...` (three dots) icon and select **Clone**.
+4.  In the pop-up window, change the `name` and `path` fields to create the new one.
+
+### Method 2: Applying a New ClusterSecretStore CRD
+
+You can directly apply a new `ClusterSecretStore` Custom Resource Definition (CRD) to your Kubernetes cluster. This method gives you full control over the definition.
+
+Create a YAML file (e.g., `vault-new-secretstore.yaml`) with the following content and apply it:
+
+```yaml
+apiVersion: external-secrets.io/v1beta1
+kind: ClusterSecretStore
+metadata:
+  name: vault-nonprod-xxx
+spec:
+  provider:
+    vault:
+      server: "http://your-vault-server.example.com/"
+      path: "<parasut>"   # CHANGE ME. Path to the secrets in Vault
+      # Version is the Vault KV secret engine version.
+      # This can be either "v1" or "v2", defaults to "v2"
+      version: "v2"
+      auth:
+        tokenSecretRef:
+          name: "vault-nonprod-token" # Name of the Kubernetes secret containing the Vault token
+          key: "token"   # Key in the Kubernetes secret that contains the Vault token
+          namespace:  eso # Namespace where the secret is located
+
+
+# Apply the CRD to your cluster:
+kubectl apply -f vault-new-secretstore.yaml
+
+# After applying, verify the status of your new ClusterSecretStore:
+
+kubectl get ClusterSecretStore <your-new-store-name>
+
+# Ensure the status indicates it's Valid.
+
 ```
