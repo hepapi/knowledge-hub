@@ -79,6 +79,7 @@ nav:
         - "Grafana Loki: Distributed Log Management and Collection": devops/logging/loki-distributed.md
         - "EFK (EFK Stack (Elasticsearch, Fluentbit, Kibana)": devops/logging/efk.md
         - "Elastalert2": devops/logging/elastalert2.md
+        - "Elasticsearch Snapshot": devops/logging/elk-snapshot.md
     - SRE:
         - "K8SGPT": devops/sre/k8sgpt.md
     - Git:
