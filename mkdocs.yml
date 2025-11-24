@@ -20,6 +20,7 @@ nav:
         - "Tooling": devops/linux/tooling.md
         - "Tips": devops/linux/tips.md
     - "AWS":
+        - "EKS Hybrid Cluster Upgrade Handbook": devops/kubernetes/eks/hybrid-upgrade.md
         - "AWS CLIv2 Installation": devops/aws/cli.md
         - "AWS IAM Identity Center (successor to AWS Single Sign-On), What is SSO?" : devops/aws/sso.md
     - Azure:
