@@ -20,12 +20,12 @@ nav:
         - "Tooling": devops/linux/tooling.md
         - "Tips": devops/linux/tips.md
     - "AWS":
-        - "EKS Hybrid Cluster Upgrade Handbook": devops/kubernetes/eks/hybrid-upgrade.md
         - "AWS CLIv2 Installation": devops/aws/cli.md
         - "AWS IAM Identity Center (successor to AWS Single Sign-On), What is SSO?" : devops/aws/sso.md
     - Azure:
         - "Agent Installation": devops/azure/agent-installation.md
     - Kubernetes:
+        - "EKS Hybrid Cluster Upgrade Handbook": devops/kubernetes/eks/hybrid-upgrade.md
         - "keda(k8s event-driven Autoscaling)": devops/kubernetes/keda/keda.md
         - "K3S Installation": devops/k8s-engine/k3s-installation.md
         - "Cluster Backup with Velero": devops/kubernetes/Velero/README.md
