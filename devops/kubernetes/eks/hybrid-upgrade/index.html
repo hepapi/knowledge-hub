@@ -9,28 +9,28 @@
       
       
       
-        <link rel="prev" href="../Software_Testing_Tools/">
+        <link rel="prev" href="../../../linux/tips/">
       
       
-        <link rel="next" href="../test_processes_and_qa_practices/">
+        <link rel="next" href="../../../aws/cli/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>Automation Testing and Best Practices - Hepapi Knowledge Hub</title>
+        <title>EKS Hybrid Cluster Upgrade Handbook - Hepapi Knowledge Hub</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,9 +49,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#automation-testing-and-best-practices" class="md-skip">
+        <a href="#upgrading-an-eks-hybrid-cluster-using-nodeadm" class="md-skip">
           Skip to content
         </a>
       
@@ -90,9 +90,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../../.." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="../../images/hepapi-logo.png" alt="logo">
+  <img src="../../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Automation Testing and Best Practices
+              EKS Hybrid Cluster Upgrade Handbook
             
           </span>
         </div>
@@ -225,11 +225,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../.." class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../.." class="md-tabs__link">
           
   
   
@@ -245,13 +247,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../qa/" class="md-tabs__link">
           
   
   
@@ -278,7 +278,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
+        <a href="../../../../misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
           
   
   
@@ -299,7 +299,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../repo-credit/" class="md-tabs__link">
+      <a href="../../../../repo-credit/" class="md-tabs__link">
         
   
   
@@ -334,9 +334,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../../.." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="../../images/hepapi-logo.png" alt="logo">
+  <img src="../../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     Hepapi Knowledge Hub
@@ -360,24 +360,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   
@@ -395,7 +400,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -413,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -541,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/script/" class="md-nav__link">
+      <a href="../../../linux/shell/script/" class="md-nav__link">
         
   
   
@@ -569,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/cat/" class="md-nav__link">
+      <a href="../../../linux/shell/cat/" class="md-nav__link">
         
   
   
@@ -597,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/chtsh/" class="md-nav__link">
+      <a href="../../../linux/shell/chtsh/" class="md-nav__link">
         
   
   
@@ -625,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/jobs-bg-fg/" class="md-nav__link">
+      <a href="../../../linux/shell/jobs-bg-fg/" class="md-nav__link">
         
   
   
@@ -653,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/ampersand-nohup/" class="md-nav__link">
+      <a href="../../../linux/shell/ampersand-nohup/" class="md-nav__link">
         
   
   
@@ -681,7 +686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/nslookup/" class="md-nav__link">
+      <a href="../../../linux/shell/nslookup/" class="md-nav__link">
         
   
   
@@ -709,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/nmap/" class="md-nav__link">
+      <a href="../../../linux/shell/nmap/" class="md-nav__link">
         
   
   
@@ -737,7 +742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/netstat/" class="md-nav__link">
+      <a href="../../../linux/shell/netstat/" class="md-nav__link">
         
   
   
@@ -765,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/shell/scp/" class="md-nav__link">
+      <a href="../../../linux/shell/scp/" class="md-nav__link">
         
   
   
@@ -801,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/tooling/" class="md-nav__link">
+      <a href="../../../linux/tooling/" class="md-nav__link">
         
   
   
@@ -829,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/linux/tips/" class="md-nav__link">
+      <a href="../../../linux/tips/" class="md-nav__link">
         
   
   
@@ -862,6 +867,8 @@
                 
   
   
+    
+  
   
   
     
@@ -872,11 +879,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
         
           
           <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
@@ -897,7 +904,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -912,10 +919,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../devops/kubernetes/eks/hybrid-upgrade/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EKS Hybrid Cluster Upgrade Handbook
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -931,6 +965,131 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-place-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In-place Upgrade:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steps:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cordon-and-drain-the-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1- Cordon and drain the node
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-validate-the-nodeconfig-and-verify-ssm-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2- Validate the nodeConfig and verify SSM connectivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-upgrade-the-node-kubernetes-version-using-nodeadm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3- Upgrade the node Kubernetes version using nodeadm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-uncordon-the-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4- Uncordon the node
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-check-the-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5- Check the status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-repeat-for-remaining-nodes-one-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6- Repeat for remaining nodes (one at a time)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -943,7 +1102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/aws/cli/" class="md-nav__link">
+      <a href="../../../aws/cli/" class="md-nav__link">
         
   
   
@@ -971,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/aws/sso/" class="md-nav__link">
+      <a href="../../../aws/sso/" class="md-nav__link">
         
   
   
@@ -1057,7 +1216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/azure/agent-installation/" class="md-nav__link">
+      <a href="../../../azure/agent-installation/" class="md-nav__link">
         
   
   
@@ -1143,7 +1302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/kubernetes/keda/keda/" class="md-nav__link">
+      <a href="../../keda/keda/" class="md-nav__link">
         
   
   
@@ -1171,7 +1330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-engine/k3s-installation/" class="md-nav__link">
+      <a href="../../../k8s-engine/k3s-installation/" class="md-nav__link">
         
   
   
@@ -1199,7 +1358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/kubernetes/Velero/" class="md-nav__link">
+      <a href="../../Velero/" class="md-nav__link">
         
   
   
@@ -1227,7 +1386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/kubernetes/keda/keda-with-cron/" class="md-nav__link">
+      <a href="../../keda/keda-with-cron/" class="md-nav__link">
         
   
   
@@ -1313,7 +1472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-engine/rke2-installation-ansible/" class="md-nav__link">
+      <a href="../../../k8s-engine/rke2-installation-ansible/" class="md-nav__link">
         
   
   
@@ -1341,7 +1500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-engine/rke2-installation/" class="md-nav__link">
+      <a href="../../../k8s-engine/rke2-installation/" class="md-nav__link">
         
   
   
@@ -1419,7 +1578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-engine/rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
+      <a href="../../../k8s-engine/rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
         
   
   
@@ -1447,7 +1606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
+      <a href="../../../k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
         
   
   
@@ -1475,7 +1634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-engine/rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
+      <a href="../../../k8s-engine/rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
         
   
   
@@ -1569,7 +1728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/docker/portainer/" class="md-nav__link">
+      <a href="../../../docker/portainer/" class="md-nav__link">
         
   
   
@@ -1655,7 +1814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/rancher/rancher-installation/" class="md-nav__link">
+      <a href="../../../rancher/rancher-installation/" class="md-nav__link">
         
   
   
@@ -1741,7 +1900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/postgres/configuration/" class="md-nav__link">
+      <a href="../../../postgres/configuration/" class="md-nav__link">
         
   
   
@@ -1769,7 +1928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/postgres/psql/" class="md-nav__link">
+      <a href="../../../postgres/psql/" class="md-nav__link">
         
   
   
@@ -1797,7 +1956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/postgres/backup-restore/" class="md-nav__link">
+      <a href="../../../postgres/backup-restore/" class="md-nav__link">
         
   
   
@@ -1883,7 +2042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/nexus/nexus-installation/" class="md-nav__link">
+      <a href="../../../nexus/nexus-installation/" class="md-nav__link">
         
   
   
@@ -1911,7 +2070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/nexus/nexus-user-and-roles/" class="md-nav__link">
+      <a href="../../../nexus/nexus-user-and-roles/" class="md-nav__link">
         
   
   
@@ -1939,7 +2098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/nexus/docker-hosted-repo/" class="md-nav__link">
+      <a href="../../../nexus/docker-hosted-repo/" class="md-nav__link">
         
   
   
@@ -1967,7 +2126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/nexus/docker-proxy-repo/" class="md-nav__link">
+      <a href="../../../nexus/docker-proxy-repo/" class="md-nav__link">
         
   
   
@@ -1995,7 +2154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/nexus/pull-to-kubernetes/" class="md-nav__link">
+      <a href="../../../nexus/pull-to-kubernetes/" class="md-nav__link">
         
   
   
@@ -2023,7 +2182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/nexus/registry-configuration/" class="md-nav__link">
+      <a href="../../../nexus/registry-configuration/" class="md-nav__link">
         
   
   
@@ -2109,7 +2268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/devsecops/DevSecOps-SonarQube-OWASP-Conftest-Trvy/" class="md-nav__link">
+      <a href="../../../devsecops/DevSecOps-SonarQube-OWASP-Conftest-Trvy/" class="md-nav__link">
         
   
   
@@ -2137,7 +2296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/devsecops/external-secret-operator/" class="md-nav__link">
+      <a href="../../../devsecops/external-secret-operator/" class="md-nav__link">
         
   
   
@@ -2165,7 +2324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/devsecops/What%20is%20Falco/" class="md-nav__link">
+      <a href="../../../devsecops/What%20is%20Falco/" class="md-nav__link">
         
   
   
@@ -2193,7 +2352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/devsecops/vault/" class="md-nav__link">
+      <a href="../../../devsecops/vault/" class="md-nav__link">
         
   
   
@@ -2279,7 +2438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/jenkins/jenkins-installation/" class="md-nav__link">
+      <a href="../../../jenkins/jenkins-installation/" class="md-nav__link">
         
   
   
@@ -2307,7 +2466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/jenkins/shared-library/" class="md-nav__link">
+      <a href="../../../jenkins/shared-library/" class="md-nav__link">
         
   
   
@@ -2393,7 +2552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/Terragrunt/README.md" class="md-nav__link">
+      <a href="../../../Terragrunt/README.md" class="md-nav__link">
         
   
   
@@ -2479,7 +2638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/ansible/ansible-installations/" class="md-nav__link">
+      <a href="../../../ansible/ansible-installations/" class="md-nav__link">
         
   
   
@@ -2507,7 +2666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/ansible/what-is-ansible/" class="md-nav__link">
+      <a href="../../../ansible/what-is-ansible/" class="md-nav__link">
         
   
   
@@ -2535,7 +2694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/ansible/inventory-file/" class="md-nav__link">
+      <a href="../../../ansible/inventory-file/" class="md-nav__link">
         
   
   
@@ -2563,7 +2722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/ansible/config-file/" class="md-nav__link">
+      <a href="../../../ansible/config-file/" class="md-nav__link">
         
   
   
@@ -2591,7 +2750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/ansible/playbook/" class="md-nav__link">
+      <a href="../../../ansible/playbook/" class="md-nav__link">
         
   
   
@@ -2619,7 +2778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/ansible/ansible-roles/" class="md-nav__link">
+      <a href="../../../ansible/ansible-roles/" class="md-nav__link">
         
   
   
@@ -2705,7 +2864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/monitoring/Rke2-cert-expiration/Rke2-cert-monitoring/" class="md-nav__link">
+      <a href="../../../monitoring/Rke2-cert-expiration/Rke2-cert-monitoring/" class="md-nav__link">
         
   
   
@@ -2791,7 +2950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/logging/ELK-stack-with-FileBeat/" class="md-nav__link">
+      <a href="../../../logging/ELK-stack-with-FileBeat/" class="md-nav__link">
         
   
   
@@ -2819,7 +2978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/logging/Index-Lifecycle-Management/" class="md-nav__link">
+      <a href="../../../logging/Index-Lifecycle-Management/" class="md-nav__link">
         
   
   
@@ -2847,7 +3006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/logging/elasticsearch-exporter/" class="md-nav__link">
+      <a href="../../../logging/elasticsearch-exporter/" class="md-nav__link">
         
   
   
@@ -2875,7 +3034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/logging/loki-single-binary/" class="md-nav__link">
+      <a href="../../../logging/loki-single-binary/" class="md-nav__link">
         
   
   
@@ -2903,7 +3062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/logging/loki-distributed/" class="md-nav__link">
+      <a href="../../../logging/loki-distributed/" class="md-nav__link">
         
   
   
@@ -2931,7 +3090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/logging/efk/" class="md-nav__link">
+      <a href="../../../logging/efk/" class="md-nav__link">
         
   
   
@@ -2959,7 +3118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/logging/elastalert2/" class="md-nav__link">
+      <a href="../../../logging/elastalert2/" class="md-nav__link">
         
   
   
@@ -2987,7 +3146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/logging/elk-snapshot/" class="md-nav__link">
+      <a href="../../../logging/elk-snapshot/" class="md-nav__link">
         
   
   
@@ -3073,7 +3232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/sre/k8sgpt/" class="md-nav__link">
+      <a href="../../../sre/k8sgpt/" class="md-nav__link">
         
   
   
@@ -3159,7 +3318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/git/Description/" class="md-nav__link">
+      <a href="../../../git/Description/" class="md-nav__link">
         
   
   
@@ -3187,7 +3346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/git/installation/" class="md-nav__link">
+      <a href="../../../git/installation/" class="md-nav__link">
         
   
   
@@ -3215,7 +3374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/git/Commands/" class="md-nav__link">
+      <a href="../../../git/Commands/" class="md-nav__link">
         
   
   
@@ -3301,7 +3460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/gitlab/gitlab-self-hosted-installation/" class="md-nav__link">
+      <a href="../../../gitlab/gitlab-self-hosted-installation/" class="md-nav__link">
         
   
   
@@ -3329,7 +3488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/gitlab/gitlab-runner-installation/" class="md-nav__link">
+      <a href="../../../gitlab/gitlab-runner-installation/" class="md-nav__link">
         
   
   
@@ -3465,7 +3624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
+      <a href="../../../falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
         
   
   
@@ -3493,7 +3652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/agent-installation/" class="md-nav__link">
+      <a href="../../../falcon-logscale/agent-installation/" class="md-nav__link">
         
   
   
@@ -3579,7 +3738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/humiosetup/" class="md-nav__link">
+      <a href="../../../falcon-logscale/humiosetup/" class="md-nav__link">
         
   
   
@@ -3607,7 +3766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/javainstallation/" class="md-nav__link">
+      <a href="../../../falcon-logscale/javainstallation/" class="md-nav__link">
         
   
   
@@ -3635,7 +3794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/zookeeperinstallation/" class="md-nav__link">
+      <a href="../../../falcon-logscale/zookeeperinstallation/" class="md-nav__link">
         
   
   
@@ -3663,7 +3822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/kafkainstallation/" class="md-nav__link">
+      <a href="../../../falcon-logscale/kafkainstallation/" class="md-nav__link">
         
   
   
@@ -3691,7 +3850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/humioinstallation/" class="md-nav__link">
+      <a href="../../../falcon-logscale/humioinstallation/" class="md-nav__link">
         
   
   
@@ -3777,7 +3936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/kafka/" class="md-nav__link">
+      <a href="../../../falcon-logscale/kafka/" class="md-nav__link">
         
   
   
@@ -3805,7 +3964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/humio/" class="md-nav__link">
+      <a href="../../../falcon-logscale/humio/" class="md-nav__link">
         
   
   
@@ -3833,7 +3992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/falcon-logscale/readme/" class="md-nav__link">
+      <a href="../../../falcon-logscale/readme/" class="md-nav__link">
         
   
   
@@ -3927,7 +4086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/sumo/sumo-linux-collector/" class="md-nav__link">
+      <a href="../../../sumo/sumo-linux-collector/" class="md-nav__link">
         
   
   
@@ -3955,7 +4114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/sumo/sumo-windows-collector/" class="md-nav__link">
+      <a href="../../../sumo/sumo-windows-collector/" class="md-nav__link">
         
   
   
@@ -3983,7 +4142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/sumo/sumo-local-file-management/" class="md-nav__link">
+      <a href="../../../sumo/sumo-local-file-management/" class="md-nav__link">
         
   
   
@@ -4069,7 +4228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/vagrant/vagrant-quickstart/" class="md-nav__link">
+      <a href="../../../vagrant/vagrant-quickstart/" class="md-nav__link">
         
   
   
@@ -4155,7 +4314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/sealed-secrets/sealed-secrets/" class="md-nav__link">
+      <a href="../../../sealed-secrets/sealed-secrets/" class="md-nav__link">
         
   
   
@@ -4241,7 +4400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/service-mesh/istio/" class="md-nav__link">
+      <a href="../../../service-mesh/istio/" class="md-nav__link">
         
   
   
@@ -4327,7 +4486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/sonarqube/advanced-installation/" class="md-nav__link">
+      <a href="../../../sonarqube/advanced-installation/" class="md-nav__link">
         
   
   
@@ -4413,7 +4572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-storage/nfs-install/" class="md-nav__link">
+      <a href="../../../k8s-storage/nfs-install/" class="md-nav__link">
         
   
   
@@ -4441,7 +4600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-storage/longhorn/" class="md-nav__link">
+      <a href="../../../k8s-storage/longhorn/" class="md-nav__link">
         
   
   
@@ -4469,7 +4628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/k8s-storage/rook-ceph/" class="md-nav__link">
+      <a href="../../../k8s-storage/rook-ceph/" class="md-nav__link">
         
   
   
@@ -4555,7 +4714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/opentelemetry/auto-vs-manuel-inject/" class="md-nav__link">
+      <a href="../../../opentelemetry/auto-vs-manuel-inject/" class="md-nav__link">
         
   
   
@@ -4595,29 +4754,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -4635,7 +4789,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4653,7 +4807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../../../qa/" class="md-nav__link">
         
   
   
@@ -4681,7 +4835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Fundamentals_of_QA/" class="md-nav__link">
+      <a href="../../../../qa/Fundamentals_of_QA/" class="md-nav__link">
         
   
   
@@ -4709,7 +4863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../test_approaches_in_quality_assurance/" class="md-nav__link">
+      <a href="../../../../qa/test_approaches_in_quality_assurance/" class="md-nav__link">
         
   
   
@@ -4737,7 +4891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../types_of_tests/" class="md-nav__link">
+      <a href="../../../../qa/types_of_tests/" class="md-nav__link">
         
   
   
@@ -4765,7 +4919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../QA_Testing_Process/" class="md-nav__link">
+      <a href="../../../../qa/QA_Testing_Process/" class="md-nav__link">
         
   
   
@@ -4793,7 +4947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../QA_Bug_Reporting/" class="md-nav__link">
+      <a href="../../../../qa/QA_Bug_Reporting/" class="md-nav__link">
         
   
   
@@ -4821,7 +4975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Software_Testing_Tools/" class="md-nav__link">
+      <a href="../../../../qa/Software_Testing_Tools/" class="md-nav__link">
         
   
   
@@ -4846,37 +5000,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Automation Testing and Best Practices
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../qa/automation_testing_and_best_practices/" class="md-nav__link">
         
   
   
@@ -4892,126 +5019,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1automation-test-planning" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1.Automation Test Planning
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2identifying-test-scenarios" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.Identifying Test Scenarios
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3code-structure-and-modularity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.Code Structure and Modularity
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4automation-frameworks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.Automation Frameworks
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.Automation Frameworks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#page-object-model-pom" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Page Object Model (POM)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#behavior-driven-development-bdd-and-gherkin-language" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Behavior Driven Development (BDD) and Gherkin Language
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5best-practices-for-automation-testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5.Best Practices for Automation Testing
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5.Best Practices for Automation Testing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Conclusion
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5024,7 +5031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../test_processes_and_qa_practices/" class="md-nav__link">
+      <a href="../../../../qa/test_processes_and_qa_practices/" class="md-nav__link">
         
   
   
@@ -5052,7 +5059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SSH_Config/" class="md-nav__link">
+      <a href="../../../../qa/SSH_Config/" class="md-nav__link">
         
   
   
@@ -5187,7 +5194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
+      <a href="../../../../misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
         
   
   
@@ -5215,7 +5222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
+      <a href="../../../../misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
         
   
   
@@ -5243,7 +5250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/how-to-contribute/about-markdown/" class="md-nav__link">
+      <a href="../../../../misc/how-to-contribute/about-markdown/" class="md-nav__link">
         
   
   
@@ -5286,7 +5293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../repo-credit/" class="md-nav__link">
+      <a href="../../../../repo-credit/" class="md-nav__link">
         
   
   
@@ -5333,10 +5340,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1automation-test-planning" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.Automation Test Planning
+        Prerequisites:
       
     </span>
   </a>
@@ -5344,10 +5351,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2identifying-test-scenarios" class="md-nav__link">
+  <a href="#in-place-upgrade" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.Identifying Test Scenarios
+        In-place Upgrade:
       
     </span>
   </a>
@@ -5355,33 +5362,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3code-structure-and-modularity" class="md-nav__link">
+  <a href="#steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.Code Structure and Modularity
+        Steps:
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4automation-frameworks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.Automation Frameworks
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.Automation Frameworks">
+    <nav class="md-nav" aria-label="Steps:">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#page-object-model-pom" class="md-nav__link">
+  <a href="#1-cordon-and-drain-the-node" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Page Object Model (POM)
+        1- Cordon and drain the node
       
     </span>
   </a>
@@ -5389,38 +5385,54 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#behavior-driven-development-bdd-and-gherkin-language" class="md-nav__link">
+  <a href="#2-validate-the-nodeconfig-and-verify-ssm-connectivity" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Behavior Driven Development (BDD) and Gherkin Language
+        2- Validate the nodeConfig and verify SSM connectivity
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5best-practices-for-automation-testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5.Best Practices for Automation Testing
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5.Best Practices for Automation Testing">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
+  <a href="#3-upgrade-the-node-kubernetes-version-using-nodeadm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Conclusion
+        3- Upgrade the node Kubernetes version using nodeadm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-uncordon-the-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4- Uncordon the node
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-check-the-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5- Check the status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-repeat-for-remaining-nodes-one-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6- Repeat for remaining nodes (one at a time)
       
     </span>
   </a>
@@ -5449,7 +5461,7 @@
 
 
   
-    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/qa/automation_testing_and_best_practices.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/kubernetes/eks/hybrid-upgrade.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -5457,42 +5469,53 @@
   
 
 
-<h1 id="automation-testing-and-best-practices">Automation Testing and Best Practices</h1>
-<p>Automation testing is an integral part of modern software development processes. It is utilized to ensure software quality, deliver faster releases, and minimize errors that could arise in manual testing. Below is an overview of the key steps of automation testing and how these should be implemented.</p>
-<h2 id="1automation-test-planning">1.Automation Test Planning</h2>
-<p>Effective planning is critical to the success of automation testing. Automation test planning should be carried out as follows:
-- <strong>Defining Test Objectives:</strong> Evaluating which areas are suitable for automation.
-- <strong>Selecting Test Environment and Tools:</strong> Choosing tools such as Java, Ruby, Python, or UiPath that fit the project requirements.
-- <strong>Determining Test Scope:</strong> Identifying test scenarios to be automated and defining areas integrated with manual testing.</p>
-<h2 id="2identifying-test-scenarios">2.Identifying Test Scenarios</h2>
-<p>The following principles should be followed when detailing test scenarios:
-- <strong>Prioritizing Test Cases:</strong> Starting with functionalities of critical importance.
-- <strong>Reusability:</strong> Creating templates that can be reused in future projects.
-- <strong>Writing with Gherkin Language:</strong> Especially when using the BDD approach, scenarios should be written in a format understandable by business units.</p>
-<h2 id="3code-structure-and-modularity">3.Code Structure and Modularity</h2>
-<p>Structuring code in modular forms is a crucial factor in testing processes. Each test step should be designed as independent functions or classes. Key considerations include:
-- <strong>Ease of Maintenance:</strong> Ensuring the code can adapt to changes.
-- <strong>Reducing Redundancy:</strong> Writing each test function only once and reusing it across multiple tests if necessary.
-- <strong>OOP Principles:</strong> Adhering to object-oriented programming structures in Java and Python projects.</p>
-<h2 id="4automation-frameworks">4.Automation Frameworks</h2>
-<p>Different frameworks should be employed to create tailored solutions for specific projects. The frameworks and approaches include:</p>
-<h4 id="page-object-model-pom">Page Object Model (POM)</h4>
-<p>POM enhances code readability and ease of maintenance. This model should be implemented as follows:
-- Each web page is defined as a separate class.
-- Element definitions and methods related to the page are contained within that class.
-- Classes should be created in adherence to the POM structure using Selenium or Playwright frameworks.</p>
-<h4 id="behavior-driven-development-bdd-and-gherkin-language">Behavior Driven Development (BDD) and Gherkin Language</h4>
-<p>BDD facilitates better communication between business units and developers. BDD scenarios should be handled as follows:
-- Scenarios are written in the “Given-When-Then” format.
-- Tools like Cucumber with Ruby or JBehave with Java are used to support the Gherkin language.</p>
-<h2 id="5best-practices-for-automation-testing">5.Best Practices for Automation Testing</h2>
-<p>The following best practices should be observed in the testing process:
-- <strong>Parallel Test Execution:</strong> Running tests quickly using Playwright or Selenium Grid.
-- <strong>Using Dynamic Data:</strong> Simulating real scenarios more effectively by using dynamic datasets instead of static ones.
-- <strong>Logging and Reporting:</strong> Utilizing tools like Allure and Extent Reports to analyze test reports in detail.
-- <strong>CI/CD Integration:</strong> Integrating automation tests into pipelines using Jenkins and GitHub Actions.</p>
-<h3 id="conclusion">Conclusion</h3>
-<p>Modern automation testing approaches and solutions should be leveraged to maximize software quality and delivery speed. By effectively using languages such as Java, Ruby, Python, and UiPath, and frameworks like Selenium and Playwright, unique test scenarios tailored to different projects can be developed.</p>
+<h1 id="upgrading-an-eks-hybrid-cluster-using-nodeadm">Upgrading an EKS Hybrid Cluster Using nodeadm</h1>
+<p>Recommend Way - <code>Cutover Migration</code>:
+- Create new hybrid nodes on your target Kubernetes version
+- Gracefully migrate your existing applications to the hybrid nodes on the new Kubernetes version
+- Remove the hybrid nodes on the old Kubernetes version from your cluster</p>
+<p>If you do not have spare capacity to create new hybrid nodes:
+- In-place upgrade - <code>nodeadm upgrade</code></p>
+<h3 id="prerequisites">Prerequisites:</h3>
+<ul>
+<li>If you are following a cutover migration upgrade strategy, the new hybrid nodes you are installing on your target Kubernetes version must meet the <a href="https://docs.aws.amazon.com/eks/latest/userguide/hybrid-nodes-networking.html#hybrid-nodes-networking-on-prem">Prerequisite setup for hybrid nodes requirements</a></li>
+<li>The version of your CNI must support the Kubernetes version you are upgrading to. </li>
+</ul>
+<p>✔ Cilium versions <code>v1.17.x</code> and <code>v1.18.x</code> are supported for EKS Hybrid Nodes for every Kubernetes version supported in Amazon EKS.</p>
+<p><strong>Check the installed Cilium version (via Helm):</strong>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>helm<span class="w"> </span>list<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span>-o<span class="w"> </span>json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="err">&#39;</span>.<span class="o">[]</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="k">select</span><span class="o">(</span>.name<span class="o">==</span><span class="s2">&quot;cilium&quot;</span><span class="o">)</span>
+</code></pre></div></p>
+<h3 id="in-place-upgrade">In-place Upgrade:</h3>
+<p>The in-place upgrade process refers to <a href="https://github.com/aws/eks-hybrid">using nodeadm upgrade to upgrade the Kubernetes version for hybrid nodes</a> without using new physical or virtual hosts and a cutover migration strategy. The nodeadm upgrade process shuts down the existing older Kubernetes components running on the hybrid node, uninstalls the existing older Kubernetes components, installs the new target Kubernetes components, and starts the new target Kubernetes components. It is strongly recommend to upgrade one node at a time to minimize impact to applications running on the hybrid nodes. The duration of this process depends on your network bandwidth and latency.</p>
+<h3 id="steps">Steps:</h3>
+<h4 id="1-cordon-and-drain-the-node">1- Cordon and drain the node</h4>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">NODE_NAME</span><span class="o">=</span>&lt;NODE_NAME&gt;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>kubectl<span class="w"> </span>drain<span class="w"> </span><span class="nv">$NODE_NAME</span><span class="w"> </span>--ignore-daemonsets<span class="w"> </span>--delete-emptydir-data<span class="w"> </span>--force
+</code></pre></div>
+This safely evicts running workloads and prevents new pods from being scheduled on the node.</p>
+<h4 id="2-validate-the-nodeconfig-and-verify-ssm-connectivity">2- Validate the nodeConfig and verify SSM connectivity</h4>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nodeadm<span class="w"> </span>debug<span class="w"> </span>-c<span class="w"> </span>file://nodeConfig.yaml
+</code></pre></div>
+Make sure the node can successfully communicate via the SSM Agent and that the configuration is valid.</p>
+<h4 id="3-upgrade-the-node-kubernetes-version-using-nodeadm">3- Upgrade the node Kubernetes version using nodeadm</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>nodeadm<span class="w"> </span>upgrade<span class="w"> </span>&lt;K8S_VERSION&gt;<span class="w"> </span>-c<span class="w"> </span>file://nodeConfig.yaml
+</code></pre></div>
+<h4 id="4-uncordon-the-node">4- Uncordon the node</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>uncordon<span class="w"> </span><span class="nv">$NODE_NAME</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span>-o<span class="w"> </span>wide<span class="w"> </span>-w
+</code></pre></div>
+<h4 id="5-check-the-status">5- Check the status</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>node<span class="w"> </span><span class="nv">$NODE_NAME</span><span class="w"> </span>-o<span class="w"> </span>wide
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>node<span class="w"> </span><span class="nv">$NODE_NAME</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-A<span class="w"> </span>-o<span class="w"> </span>wide<span class="w"> </span>--field-selector<span class="w"> </span>spec.nodeName<span class="o">=</span><span class="nv">$NODE_NAME</span>
+</code></pre></div>
+<ul>
+<li>✔ Node is in Ready state</li>
+<li>✔ Correct Kubernetes version</li>
+<li>✔ No unusual taints or warnings</li>
+</ul>
+<h4 id="6-repeat-for-remaining-nodes-one-at-a-time">6- Repeat for remaining nodes (one at a time)</h4>
+<p>Always upgrade one node only at a time to avoid capacity issues or service disruption.</p>
 
 
 
@@ -5562,10 +5585,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>
