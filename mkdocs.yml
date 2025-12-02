@@ -118,6 +118,7 @@ nav:
         - "Sonarqube": devops/sonarqube/advanced-installation.md
     - K8S Storage:
         - "NFS(Network File System)": devops/k8s-storage/nfs-install.md
+        - "Using an NFS Server as a StorageClass Backend in Amazon EKS": devops/k8s-storage/nfs-storageclass-k8s.md
         - "Longhorn Block Storage": devops/k8s-storage/longhorn.md
         - "Rook-Ceph Storage" : devops/k8s-storage/rook-ceph.md
     - OpenTelemtry:
