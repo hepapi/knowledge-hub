@@ -5703,12 +5703,14 @@ This documentation assumes that:</p>
 </ul>
 <p>We will therefore focus on validations, configuration, Helm installation, and real-world test scenarios rather than provisioning the underlying NFS server from scratch.</p>
 <h3 id="prerequisites-key-considerations">Prerequisites &amp; Key Considerations</h3>
-<p>Before configuring the StorageClass, ensure:
-- You have a functional Amazon EKS cluster.
-- Worker nodes have network reachability to the NFS server (routing, firewalls, SGs, NACLs, VPN, or Direct Connect).
-- NFS server is exporting a shared directory (e.g., <code>/pvcdata</code>).
-- Correct NFS permissions, export rules, and versions are configured.
-- Worker nodes have nfs-utils installed.</p>
+<p>Before configuring the StorageClass, ensure:</p>
+<ul>
+<li>You have a functional Amazon EKS cluster.</li>
+<li>Worker nodes have network reachability to the NFS server (routing, firewalls, SGs, NACLs, VPN, or Direct Connect).</li>
+<li>NFS server is exporting a shared directory (e.g., <code>/pvcdata</code>).</li>
+<li>Correct NFS permissions, export rules, and versions are configured.</li>
+<li>Worker nodes have nfs-utils installed.</li>
+</ul>
 <h2 id="step-by-step-configuration">Step-by-Step Configuration</h2>
 <h3 id="ensure-that-nfs-server-is-running">Ensure that NFS Server is Running</h3>
 <p>Verify that the server is active and that port 2049 (NFS service port) is listening:</p>
@@ -5760,7 +5762,7 @@ You should see:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">775</span><span class="w"> </span>/pvcdata
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>nobody:nogroup<span class="w"> </span>/pvcdata
 </code></pre></div>
-<p>In certain environments—especially when multiple clients or services need unrestricted write access—you may temporarily require 777 permissions, but use this only when necessary as it grants full access to everyone.</p>
+<p>In certain environments, especially when multiple clients or services need unrestricted write access, you may temporarily require 777 permissions, but use this only when necessary as it grants full access to everyone.</p>
 <h3 id="install-nfs-utilities-on-worker-nodes">Install NFS Utilities on Worker Nodes</h3>
 <p>Worker nodes must have NFS client dependencies installed:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>rpm<span class="w"> </span>-qa<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>nfs-utils
@@ -5793,12 +5795,14 @@ You should see:</p>
 <a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="w">  </span><span class="nt">accessModes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadWriteMany</span>
 <a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="w">  </span><span class="nt">onDelete</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">retain</span>
 </code></pre></div>
-<p>Important fields explained:
-- <code>nfs.server</code> – The IP address of your NFS server.
-- <code>nfs.path</code> – Base directory where PVC subdirectories will be created.
-- <code>storageClass.name</code> – Name used when binding PVCs (storageClassName: nfs-client).
-- <code>reclaimPolicy: Retain</code> – Keeps data even if the PVC is deleted.
-- <code>accessModes: ReadWriteMany</code> – Enables multi-node read/write access, the main reason to use NFS.</p>
+<p>Important fields explained:</p>
+<ul>
+<li><code>nfs.server</code> – The IP address of your NFS server.</li>
+<li><code>nfs.path</code> – Base directory where PVC subdirectories will be created.</li>
+<li><code>storageClass.name</code> – Name used when binding PVCs (storageClassName: nfs-client).</li>
+<li><code>reclaimPolicy: Retain</code> – Keeps data even if the PVC is deleted.</li>
+<li><code>accessModes: ReadWriteMany</code> – Enables multi-node read/write access, the main reason to use NFS.</li>
+</ul>
 <p>Once your <code>nfs-values.yaml</code> file is ready, install the provisioner using Helm:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>-i<span class="w"> </span>nfs-provisioner<span class="w"> </span>nfs-subdir-external-provisioner/nfs-subdir-external-provisioner<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span>-n<span class="w"> </span>nfs-storage<span class="w"> </span><span class="se">\</span>
@@ -5815,11 +5819,13 @@ This will deploy the provisioner, create the StorageClass, and enable dynamic PV
   - A StorageClass named <code>nfs-client</code> (as default)</p>
 <h2 id="testing-nfs-in-the-cluster">Testing NFS in the Cluster</h2>
 <p>After installing the NFS Subdir External Provisioner, you can validate that dynamic provisioning and RWX access work correctly by deploying a simple test workload.</p>
-<p>This test will:
-- Create a PVC using the nfs-client StorageClass
-- Mount it on every node via a DaemonSet
-- Write periodic timestamps into node-specific subdirectories
-- Confirm that all nodes can read/write to the same NFS share</p>
+<p>This test will:</p>
+<ul>
+<li>Create a PVC using the nfs-client StorageClass</li>
+<li>Mount it on every node via a DaemonSet</li>
+<li>Write periodic timestamps into node-specific subdirectories</li>
+<li>Confirm that all nodes can read/write to the same NFS share</li>
+</ul>
 <h3 id="create-the-test-workload">Create the Test Workload</h3>
 <p>Apply the following manifest:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># test-nfs.yaml</span>
@@ -5905,11 +5911,13 @@ The structure created on NFS should look like:</p>
 <a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span>...
 </code></pre></div>
 Each folder contains a test.txt file with timestamps written by the corresponding node.</p>
-<p>This verifies that:
-- The PVC was dynamically provisioned
-- The DaemonSet successfully mounted NFS
-- All nodes can write simultaneously via RWX
-- The provisioner creates correct subdirectory structures</p>
+<p>This verifies that:</p>
+<ul>
+<li>The PVC was dynamically provisioned</li>
+<li>The DaemonSet successfully mounted NFS</li>
+<li>All nodes can write simultaneously via RWX</li>
+<li>The provisioner creates correct subdirectory structures</li>
+</ul>
 <h2 id="validate-on-the-nfs-server">Validate on the NFS Server</h2>
 <p>From the NFS host:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>ls<span class="w"> </span>/pvcdata
@@ -5933,10 +5941,12 @@ Each folder contains a test.txt file with timestamps written by the correspondin
 <a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>Mon<span class="w"> </span>Dec<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">12</span>:43:30<span class="w"> </span>UTC<span class="w"> </span><span class="m">2025</span>
 <a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>...
 </code></pre></div>
-<p>This confirms:
-- Subdirectories are created dynamically
-- Data is written by each node
-- NFS StorageClass is operational cluster-wide</p>
+<p>This confirms:</p>
+<ul>
+<li>Subdirectories are created dynamically</li>
+<li>Data is written by each node</li>
+<li>NFS StorageClass is operational cluster-wide</li>
+</ul>
 
 
 
