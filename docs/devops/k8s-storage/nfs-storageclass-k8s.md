@@ -11,6 +11,7 @@ We will therefore focus on validations, configuration, Helm installation, and re
 
 ### Prerequisites & Key Considerations
 Before configuring the StorageClass, ensure:
+
 - You have a functional Amazon EKS cluster.
 - Worker nodes have network reachability to the NFS server (routing, firewalls, SGs, NACLs, VPN, or Direct Connect).
 - NFS server is exporting a shared directory (e.g., `/pvcdata`).
@@ -110,7 +111,7 @@ sudo chmod 775 /pvcdata
 sudo chown -R nobody:nogroup /pvcdata
 ```
 
-In certain environments—especially when multiple clients or services need unrestricted write access—you may temporarily require 777 permissions, but use this only when necessary as it grants full access to everyone.
+In certain environments, especially when multiple clients or services need unrestricted write access, you may temporarily require 777 permissions, but use this only when necessary as it grants full access to everyone.
 
 ### Install NFS Utilities on Worker Nodes
 
@@ -160,6 +161,7 @@ storageClass:
 ```
 
 Important fields explained:
+
 - `nfs.server` – The IP address of your NFS server.
 - `nfs.path` – Base directory where PVC subdirectories will be created.
 - `storageClass.name` – Name used when binding PVCs (storageClassName: nfs-client).
@@ -192,6 +194,7 @@ You should now see:
 After installing the NFS Subdir External Provisioner, you can validate that dynamic provisioning and RWX access work correctly by deploying a simple test workload.
 
 This test will:
+
 - Create a PVC using the nfs-client StorageClass
 - Mount it on every node via a DaemonSet
 - Write periodic timestamps into node-specific subdirectories
@@ -301,6 +304,7 @@ and the content:
 Each folder contains a test.txt file with timestamps written by the corresponding node.
 
 This verifies that:
+
 - The PVC was dynamically provisioned
 - The DaemonSet successfully mounted NFS
 - All nodes can write simultaneously via RWX
@@ -338,6 +342,7 @@ Mon Dec 1 12:43:30 UTC 2025
 ```
 
 This confirms:
+
 - Subdirectories are created dynamically
 - Data is written by each node
 - NFS StorageClass is operational cluster-wide
