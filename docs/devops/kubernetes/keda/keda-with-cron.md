@@ -211,20 +211,12 @@ cron-app-5df76bc88b-fqffn   0/1     ContainerCreating   0          0s
 cron-app-5df76bc88b-qk8qw   0/1     ContainerCreating   0          0s
 cron-app-5df76bc88b-8llrz   0/1     ContainerCreating   0          0s
 cron-app-5df76bc88b-6ltbp   0/1     ContainerCreating   0          0s
-cron-app-5df76bc88b-29854   0/1     Pending             0          0s
 cron-app-5df76bc88b-dbkzx   0/1     ContainerCreating   0          0s
 cron-app-5df76bc88b-smfnl   0/1     ContainerCreating   0          0s
 cron-app-5df76bc88b-29854   0/1     ContainerCreating   0          0s
 cron-app-5df76bc88b-8llrz   1/1     Running             0          2s
 cron-app-5df76bc88b-fqffn   1/1     Running             0          3s
-cron-app-5df76bc88b-29854   0/1     Pending             0          0s
 cron-app-5df76bc88b-smfnl   0/1     Pending             0          0s
-cron-app-5df76bc88b-dbkzx   0/1     Pending             0          0s
-cron-app-5df76bc88b-6ltbp   0/1     ContainerCreating   0          0s
-cron-app-5df76bc88b-29854   0/1     Pending             0          0s
-cron-app-5df76bc88b-dbkzx   0/1     ContainerCreating   0          0s
-cron-app-5df76bc88b-smfnl   0/1     ContainerCreating   0          0s
-cron-app-5df76bc88b-29854   0/1     ContainerCreating   0          0s
 cron-app-5df76bc88b-smfnl   1/1     Running             0          2s
 cron-app-5df76bc88b-6ltbp   1/1     Running             0          3s
 cron-app-5df76bc88b-dbkzx   1/1     Running             0          4s
@@ -242,7 +234,7 @@ cron-app-5df76bc88b-8llrz   1/1     Running   0          84s
 cron-app-5df76bc88b-9mxl8   1/1     Running   0          54s
 cron-app-5df76bc88b-c9lrj   1/1     Running   0          54s
 cron-app-5df76bc88b-dbkzx   1/1     Running   0          69s
-...```
+...
 ```
 
 Expected output after the specified time range ends:
