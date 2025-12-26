@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -5331,11 +5331,11 @@
   
 
 
-<h1 id="keda-kubernetes-event-driven-autoscaling">KEDA (Kubernetes Event-driven Autoscaling) <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /></h1>
+<h1 id="keda-kubernetes-event-driven-autoscaling">KEDA (Kubernetes Event-driven Autoscaling) <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f525.svg" title=":fire:" /></h1>
 <p><strong>What is KEDA ?</strong></p>
 <p>KEDA is a lightweight, open-source Kubernetes event-driven autoscaler used by DevOps, SRE, and Ops teams to horizontally scale pods based on external events or triggers. KEDA helps to extend the capability of native Kubernetes autoscaling solutions, which rely on standard resource metrics such as CPU or memory. You can deploy KEDA into a Kubernetes cluster and manage the scaling of pods using custom resource definitions (CRDs).
 Built on top of Kubernetes HPA, KEDA scales pods based on information from event sources such as AWS SQS, Kafka, RabbitMQ, etc. These event sources are monitored using scalers, which activate or deactivate deployments based on the rules set for them. KEDA scalers can also feed custom metrics for a specific event source, helping DevOps teams observe metrics relevant to them</p>
-<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> KEDA scales down the number of pods to zero in case there are no events to process. This is harder to do using the standard HPA, and it helps ensure effective resource utilization and cost optimization, ultimately bringing down the cloud bills..</p>
+<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/26a0.svg" title=":warning:" /> KEDA scales down the number of pods to zero in case there are no events to process. This is harder to do using the standard HPA, and it helps ensure effective resource utilization and cost optimization, ultimately bringing down the cloud bills..</p>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
 <p>KEDA supports a lot of built-in scalers and external scalers. External scalers include Redis, MYSQL,Prometheus,Rabbit MQ etc. Using external events as triggers aids efficient autoscaling, especially for message-driven microservices like payment gateways or order systems. Since KEDA can be extended by developing integrations with any data source, it can easily fit into any DevOps toolchain. </p>
@@ -5373,7 +5373,7 @@ Built on top of Kubernetes HPA, KEDA scales pods based on information from event
 </code></pre></div>
 <p>Deploying KEDA on any Kubernetes cluster is easy, as it doesn’t need overwriting or duplication of existing functionalities. Once deployed and the components are ready, the event-based scaling starts with the external event source. The scaler will continuously monitor for events based on the source set in ScaledObject and pass the metrics to the metrics adapter in case of any trigger events. The metrics adapter then adapts the metrics and provides them to the controller component, which then scales up or down the deployment based on the scaling rules set in ScaledObject.</p>
 <p>Note that KEDA activates or deactivates a deployment by scaling the number of replicas to zero or one. It then triggers HPA to scale the number of workloads from one to n based on the cluster resources</p>
-<h3 id="keda-deployment">Keda Deployment  <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /></h3>
+<h3 id="keda-deployment">Keda Deployment  <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f525.svg" title=":fire:" /></h3>
 <p>KEDA can be deployed in a Kubernetes cluster through Helm charts, operator hub, or YAML declarations</p>
 <p><strong>Helm Chart</strong></p>
 <ul>
@@ -5472,10 +5472,10 @@ Create KedaController resource named keda in namespace keda</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

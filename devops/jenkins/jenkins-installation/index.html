@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -5487,7 +5487,7 @@
   
 
 
-<h1 id="jenkins-install">Jenkins Install <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /></h1>
+<h1 id="jenkins-install">Jenkins Install <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f525.svg" title=":fire:" /></h1>
 <h3 id="jenkins-installers-are-available-for-several-linux-distributions">Jenkins installers are available for several Linux distributions.</h3>
 <ul>
 <li>Debian/Ubuntu</li>
@@ -5495,7 +5495,7 @@
 <li>Red Hat/Alma/Rocky</li>
 </ul>
 <h3 id="prerequisites">Prerequisites ;</h3>
-<h4 id="minimum-hardware-requirements"><img alt="ℹ" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2139.svg" title=":information_source:" /> Minimum hardware requirements:</h4>
+<h4 id="minimum-hardware-requirements"><img alt="ℹ" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2139.svg" title=":information_source:" /> Minimum hardware requirements:</h4>
 <table>
 <thead>
 <tr>
@@ -5521,7 +5521,7 @@
 <div class="admonition info">
 <p class="admonition-title">1 GB of drive space (although 10 GB is a recommended minimum if running Jenkins as a Docker container)</p>
 </div>
-<h4 id="recommended-hardware-configuration-for-a-small-team"><img alt="ℹ" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2139.svg" title=":information_source:" /> Recommended hardware configuration for a small team:</h4>
+<h4 id="recommended-hardware-configuration-for-a-small-team"><img alt="ℹ" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2139.svg" title=":information_source:" /> Recommended hardware configuration for a small team:</h4>
 <table>
 <thead>
 <tr>
@@ -5605,24 +5605,24 @@ Update the Debian apt repositories, install OpenJDK 11, and check the installati
 </code></pre></div></p>
 </blockquote>
 <ul>
-<li><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> After installing Jenkins, we go to the instance ip address e.g : <code>&lt; ip-address &gt;:8080</code> </li>
+<li><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> After installing Jenkins, we go to the instance ip address e.g : <code>&lt; ip-address &gt;:8080</code> </li>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> On the page that opens, it asks us to enter a token. We take this token from the server with the <code>cat /var/lib/jenkins/secrets/initialAdminPassword</code> code and paste it into the input and log in.</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> On the page that opens, it asks us to enter a token. We take this token from the server with the <code>cat /var/lib/jenkins/secrets/initialAdminPassword</code> code and paste it into the input and log in.</p>
 </li>
 <li>
-<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> Jenkins gives you two options.</p>
+<p><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> Jenkins gives you two options.</p>
 <ul>
-<li><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <code>Install Suggested Plugins</code></li>
-<li><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/27a1.svg" title=":arrow_right:" /> <code>Select Plugins To Install</code></li>
+<li><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <code>Install Suggested Plugins</code></li>
+<li><img alt="➡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/27a1.svg" title=":arrow_right:" /> <code>Select Plugins To Install</code></li>
 </ul>
 </li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">If you don't see jenkins when you go to your server's ip address, allow port 8080</p>
 </div>
-<p><img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /> <em>You can login to Jenkins by choosing the one you want and creating Username and Password.</em></p>
+<p><img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f525.svg" title=":fire:" /> <em>You can login to Jenkins by choosing the one you want and creating Username and Password.</em></p>
 <p><a href="https://www.jenkins.io/doc/book/installing/linux/">For more installation details</a></p>
-<h3 id="happy-jenkins">Happy Jenkins  <img alt="🎊" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f38a.svg" title=":confetti_ball:" /></h3>
+<h3 id="happy-jenkins">Happy Jenkins  <img alt="🎊" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f38a.svg" title=":confetti_ball:" /></h3>
 
 
 
@@ -5692,10 +5692,10 @@ Update the Debian apt repositories, install OpenJDK 11, and check the installati
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
