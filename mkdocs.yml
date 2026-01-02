@@ -196,7 +196,23 @@ nav:
             - Test Structure: qa/perf_gatling_test_structure.md
             - Load Models: qa/perf_gatling_load_models.md
             - Assertions & Reporting: qa/perf_gatling_assertions_reporting.md
- 
+    - CI/CD & Pipeline Integration:
+        - Azure DevOps Pipelines: qa/cicd_azure_devops_pipelines.md
+        - YAML Pipeline Examples: qa/cicd_yaml_pipeline_examples.md
+        - Test Automation Integration: qa/cicd_test_automation_integration.md
+        - Artifacts & Reporting: qa/cicd_artifacts_reporting.md
+        - GitHub Actions: qa/cicd_github_actions.md
+        - Jenkins: qa/cicd_jenkins.md
+    - Test Management & Reporting:
+        - TestRail:
+            - Test Case Management: qa/tms_testrail_test_case_management.md
+            - Test Runs & Reporting: qa/tms_testrail_test_runs_reporting.md
+        - Reporting Tools:
+            - Allure Report: qa/reporting_allure.md
+            - Extent Reports: qa/reporting_extent.md
+            - Custom Reporting Approaches: qa/reporting_custom_reporting_approaches.md
+            - TMS + Automation Integrations: qa/reporting_tms_automation_integrations.md
+            - Jira Integrations: qa/reporting_jira_integrations.md
  
  
   - Misc:
