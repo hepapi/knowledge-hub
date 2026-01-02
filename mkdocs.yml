@@ -213,7 +213,16 @@ nav:
             - Custom Reporting Approaches: qa/reporting_custom_reporting_approaches.md
             - TMS + Automation Integrations: qa/reporting_tms_automation_integrations.md
             - Jira Integrations: qa/reporting_jira_integrations.md
- 
+    - Bug & Project Management:
+        - Jira Usage: qa/bug_jira_usage.md
+        - Bug Life Cycle: qa/bug_life_cycle.md
+        - Bug Reporting Best Practices: qa/bug_reporting_best_practices.md
+        - Sprint Planning & QA: qa/bug_sprint_planning_qa.md
+    - Root Cause Analysis (RCA):
+        - What is RCA?: qa/rca_what_is_rca.md
+        - Why & When RCA is Needed: qa/rca_why_and_when.md
+        - RCA Example & QA Perspective: qa/rca_example_and_qa_perspective.md
+          
  
   - Misc:
     - How to Contribute:
