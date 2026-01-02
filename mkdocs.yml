@@ -222,8 +222,14 @@ nav:
         - What is RCA?: qa/rca_what_is_rca.md
         - Why & When RCA is Needed: qa/rca_why_and_when.md
         - RCA Example & QA Perspective: qa/rca_example_and_qa_perspective.md
-          
- 
+    - Best Practices & Advanced Topics:
+        - Test Automation Pyramid: qa/best_test_automation_pyramid.md
+        - Test Code Review: qa/best_test_code_review.md
+        - Flaky Test Management: qa/best_flaky_test_management.md
+        - Test Maintenance Strategies: qa/best_test_maintenance_strategies.md
+        - Parallel Test Execution: qa/best_parallel_test_execution.md
+        - Cross-Browser Testing: qa/best_cross_browser_testing.md
+        - Continuous Testing: qa/best_continuous_testing.md
   - Misc:
     - How to Contribute:
       - Mkdocs & Material Theme Features: misc/how-to-contribute/mkdocs-features.md
