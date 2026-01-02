@@ -131,6 +131,11 @@ nav:
         - Test Types (Functional / Non-Functional / Regression): qa/fundamentals_test_types.md
         - SDLC & STLC (High-level): qa/fundamentals_sdlc_stlc.md
         - QA Role in Agile / Scrum: qa/fundamentals_agile_scrum_qa_role.md
+    - Test Approaches & Methodologies:
+        - Black / White / Grey Box Testing: qa/approaches_black_white_grey_box.md
+        - Shift-Left Testing: qa/approaches_shift_left.md
+        - Risk-Based Testing: qa/approaches_risk_based.md
+        - Exploratory Testing: qa/approaches_exploratory.md
 
   - Misc:
     - How to Contribute:
