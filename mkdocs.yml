@@ -124,14 +124,13 @@ nav:
     - OpenTelemtry:
         - "Auto-vs-Manuel-Injection": devops/opentelemetry/auto-vs-manuel-inject.md
   - QA:
-  - Welcome: qa/index.md
-  - QA Fundamentals:
-      - What is QA? (QA vs QC): qa/fundamentals_what_is_qa_qa_vs_qc.md
-      - Test Levels (Unit / Integration / System / Acceptance): qa/fundamentals_test_levels.md
-      - Test Types (Functional / Non-Functional / Regression): qa/fundamentals_test_types.md
-      - SDLC & STLC (High-level): qa/fundamentals_sdlc_stlc.md
-      - QA Role in Agile / Scrum: qa/fundamentals_agile_scrum_qa_role.md
-  
+    - Welcome: qa/index.md
+    - QA Fundamentals:
+        - What is QA? (QA vs QC): qa/fundamentals_what_is_qa_qa_vs_qc.md
+        - Test Levels (Unit / Integration / System / Acceptance): qa/fundamentals_test_levels.md
+        - Test Types (Functional / Non-Functional / Regression): qa/fundamentals_test_types.md
+        - SDLC & STLC (High-level): qa/fundamentals_sdlc_stlc.md
+        - QA Role in Agile / Scrum: qa/fundamentals_agile_scrum_qa_role.md
 
   - Misc:
     - How to Contribute:
