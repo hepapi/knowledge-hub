@@ -124,16 +124,113 @@ nav:
     - OpenTelemtry:
         - "Auto-vs-Manuel-Injection": devops/opentelemetry/auto-vs-manuel-inject.md
   - QA:
-    - qa/index.md
-    - Fundamentals of QA: qa/Fundamentals_of_QA.md
-    - Test Approaches in QA: qa/test_approaches_in_quality_assurance.md
-    - Type of Test: qa/types_of_tests.md
-    - Fundamentals of QA Test Processes : qa/QA_Testing_Process.md
-    - QA Bug Reporting: qa/QA_Bug_Reporting.md
-    - Software Testing Tools: qa/Software_Testing_Tools.md
-    - Automation Testing and Best Practices: qa/automation_testing_and_best_practices.md
-    - Test Processes and QA Practices: qa/test_processes_and_qa_practices.md
-    - SSH Config: qa/SSH_Config.md
+  - Welcome: qa/index.md
+  - QA Fundamentals:
+      - What is QA? (QA vs QC): qa/fundamentals_what_is_qa_qa_vs_qc.md
+      - Test Levels (Unit / Integration / System / Acceptance): qa/fundamentals_test_levels.md
+      - Test Types (Functional / Non-Functional / Regression): qa/fundamentals_test_types.md
+      - SDLC & STLC (High-level): qa/fundamentals_sdlc_stlc.md
+      - QA Role in Agile / Scrum: qa/fundamentals_agile_scrum_qa_role.md
+  - Test Approaches & Methodologies:
+      - Black / White / Grey Box Testing: qa/approaches_black_white_grey_box.md
+      - Shift-Left Testing: qa/approaches_shift_left.md
+      - Risk-Based Testing: qa/approaches_risk_based.md
+      - Exploratory Testing: qa/approaches_exploratory.md
+  - UI Test Automation (Web & Mobile):
+      - Playwright:
+          - What is Playwright?: qa/ui_playwright_what_is.md
+          - Installation (Brief): qa/ui_playwright_installation.md
+          - Project Structure & Best Practices: qa/ui_playwright_project_structure_best_practices.md
+          - Locator Strategies: qa/ui_playwright_locator_strategies.md
+          - Page Object Model (POM): qa/ui_playwright_pom.md
+          - Playwright Agents & Playwright MCP: qa/ui_playwright_agents_mcp.md
+          - Test Scenario Examples: qa/ui_playwright_test_scenarios_examples.md
+          - CI/CD Integration (Overview): qa/ui_playwright_cicd_integration.md
+      - Selenium:
+          - What is Selenium?: qa/ui_selenium_what_is.md
+          - WebDriver & Selenium Grid (Brief): qa/ui_selenium_webdriver_grid.md
+          - Framework Approach (JUnit / TestNG): qa/ui_selenium_framework_junit_testng.md
+          - When to Use Selenium vs Playwright: qa/ui_selenium_vs_playwright_when_to_use.md
+      - Appium (Mobile Testing):
+          - What is Appium?: qa/ui_appium_what_is.md
+          - Android & iOS Setup (Overview): qa/ui_appium_android_ios_setup.md
+          - Desired Capabilities: qa/ui_appium_desired_capabilities.md
+          - Mobile Locator Strategies: qa/ui_appium_mobile_locator_strategies.md
+          - Mobile Test Best Practices: qa/ui_appium_best_practices.md
+          - Device Farm: qa/ui_appium_device_farm.md
+  - Accessibility Testing:
+      - What is Accessibility Testing?: qa/accessibility_what_is.md
+      - WCAG 2.1 Standards: qa/accessibility_wcag_2_1_standards.md
+      - Accessibility Testing Tools (Overview): qa/accessibility_tools_overview.md
+  - API Testing:
+      - Karate Framework:
+          - What is Karate?: qa/api_karate_what_is.md
+          - Project Structure: qa/api_karate_project_structure.md
+          - Feature Files & Gherkin Syntax: qa/api_karate_feature_files_gherkin.md
+          - Assertions & Validations: qa/api_karate_assertions_validations.md
+          - Data-Driven Testing: qa/api_karate_data_driven_testing.md
+          - CI/CD Integration: qa/api_karate_cicd_integration.md
+      - Postman:
+          - Collection & Environment Management: qa/api_postman_collections_environments.md
+          - Test Scripts: qa/api_postman_test_scripts.md
+          - CLI Usage with Newman: qa/api_postman_newman_cli.md
+      - SoapUI:
+          - SOAP vs REST: qa/api_soapui_soap_vs_rest.md
+          - Basic Usage: qa/api_soapui_basic_usage.md
+  - Performance Testing:
+      - k6 (Grafana k6):
+          - What is k6?: qa/perf_k6_what_is.md
+          - Script Writing: qa/perf_k6_script_writing.md
+          - Scenarios & Executors: qa/perf_k6_scenarios_executors.md
+          - Thresholds & Checks: qa/perf_k6_thresholds_checks.md
+          - Metrics & Reporting: qa/perf_k6_metrics_reporting.md
+          - k6 Studio: qa/perf_k6_studio.md
+          - k6 Cloud / Grafana Integration: qa/perf_k6_cloud_grafana_integration.md
+      - JMeter (Apache JMeter):
+          - What is JMeter?: qa/perf_jmeter_what_is.md
+          - Test Plan Structure: qa/perf_jmeter_test_plan_structure.md
+          - Thread Groups & Samplers: qa/perf_jmeter_thread_groups_samplers.md
+          - Listeners & Reporting: qa/perf_jmeter_listeners_reporting.md
+      - Gatling:
+          - What is Gatling?: qa/perf_gatling_what_is.md
+          - Test Structure: qa/perf_gatling_test_structure.md
+          - Load Models: qa/perf_gatling_load_models.md
+          - Assertions & Reporting: qa/perf_gatling_assertions_reporting.md
+  - CI/CD & Pipeline Integration:
+      - Azure DevOps Pipelines: qa/cicd_azure_devops_pipelines.md
+      - YAML Pipeline Examples: qa/cicd_yaml_pipeline_examples.md
+      - Test Automation Integration: qa/cicd_test_automation_integration.md
+      - Artifacts & Reporting: qa/cicd_artifacts_reporting.md
+      - GitHub Actions: qa/cicd_github_actions.md
+      - Jenkins: qa/cicd_jenkins.md
+  - Test Management & Reporting:
+      - TestRail:
+          - Test Case Management: qa/tms_testrail_test_case_management.md
+          - Test Runs & Reporting: qa/tms_testrail_test_runs_reporting.md
+      - Reporting Tools:
+          - Allure: qa/reporting_allure.md
+          - Extent Reports: qa/reporting_extent_reports.md
+          - Custom Reporting Approaches: qa/reporting_custom_reporting_approaches.md
+          - TMS + Automation Integrations: qa/reporting_tms_automation_integrations.md
+          - Jira Integrations: qa/reporting_jira_integrations.md
+  - Bug & Project Management:
+      - Jira Usage: qa/bug_jira_usage.md
+      - Bug Life Cycle: qa/bug_life_cycle.md
+      - Bug Reporting Best Practices: qa/bug_reporting_best_practices.md
+      - Sprint Planning & QA: qa/bug_sprint_planning_qa.md
+  - Root Cause Analysis (RCA):
+      - What is RCA?: qa/rca_what_is.md
+      - Why RCA is Important: qa/rca_why_important.md
+      - Sample RCA Approach: qa/rca_sample_approach.md
+      - RCA from a QA Perspective: qa/rca_qa_perspective.md
+  - Best Practices & Advanced Topics:
+      - Test Automation Pyramid: qa/best_test_automation_pyramid.md
+      - Test Code Review: qa/best_test_code_review.md
+      - Flaky Test Management: qa/best_flaky_test_management.md
+      - Test Maintenance Strategies: qa/best_test_maintenance_strategies.md
+      - Parallel Test Execution: qa/best_parallel_test_execution.md
+      - Cross-Browser Testing: qa/best_cross_browser_testing.md
+      - Continuous Testing: qa/best_continuous_testing.md
 
   - Misc:
     - How to Contribute:
