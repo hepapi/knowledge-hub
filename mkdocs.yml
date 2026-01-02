@@ -177,8 +177,27 @@ nav:
         - SoapUI:
             - SOAP vs REST: qa/api_soapui_soap_vs_rest.md
             - Basic Usage: qa/api_soapui_basic_usage.md
+      - Performance Testing:
+        - k6 (Grafana k6):
+            - What is k6?: qa/perf_k6_what_is.md
+            - Script Writing: qa/perf_k6_script_writing.md
+            - Scenarios & Executors: qa/perf_k6_scenarios_executors.md
+            - Thresholds & Checks: qa/perf_k6_thresholds_checks.md
+            - Metrics & Reporting: qa/perf_k6_metrics_reporting.md
+            - k6 Studio: qa/perf_k6_studio.md
+            - k6 Cloud / Grafana Integration: qa/perf_k6_cloud_grafana_integration.md
+        - JMeter (Apache JMeter):
+            - What is JMeter?: qa/perf_jmeter_what_is.md
+            - Test Plan Structure: qa/perf_jmeter_test_plan_structure.md
+            - Thread Groups & Samplers: qa/perf_jmeter_thread_groups_samplers.md
+            - Listeners & Reporting: qa/perf_jmeter_listeners_reporting.md
+        - Gatling:
+            - What is Gatling?: qa/perf_gatling_what_is.md
+            - Test Structure: qa/perf_gatling_test_structure.md
+            - Load Models: qa/perf_gatling_load_models.md
+            - Assertions & Reporting: qa/perf_gatling_assertions_reporting.md
  
-      
+ 
  
   - Misc:
     - How to Contribute:
