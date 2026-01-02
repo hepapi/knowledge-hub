@@ -158,8 +158,28 @@ nav:
            - Mobile Locator Strategies: qa/ui_appium_mobile_locator_strategies.md
            - Mobile Test Best Practices: qa/ui_appium_best_practices.md
            - Device Farm: qa/ui_appium_device_farm.md
+    - Accessibility Testing:
+        - What is Accessibility Testing?: qa/accessibility_what_is.md
+        - WCAG 2.1 Standards: qa/accessibility_wcag_2_1_standards.md
+        - Accessibility Testing Tools (Overview): qa/accessibility_tools_overview.md
+    - API Testing:
+        - Karate Framework:
+            - What is Karate?: qa/api_karate_what_is.md
+            - Project Structure: qa/api_karate_project_structure.md
+            - Feature Files & Gherkin Syntax: qa/api_karate_feature_files_gherkin.md
+            - Assertions & Validations: qa/api_karate_assertions_validations.md
+            - Data-Driven Testing: qa/api_karate_data_driven_testing.md
+            - CI/CD Integration: qa/api_karate_cicd_integration.md
+        - Postman:
+            - Collection & Environment Management: qa/api_postman_collections_environments.md
+            - Test Scripts: qa/api_postman_test_scripts.md
+            - CLI Usage with Newman: qa/api_postman_newman_cli.md
+        - SoapUI:
+            - SOAP vs REST: qa/api_soapui_soap_vs_rest.md
+            - Basic Usage: qa/api_soapui_basic_usage.md
  
-
+      
+ 
   - Misc:
     - How to Contribute:
       - Mkdocs & Material Theme Features: misc/how-to-contribute/mkdocs-features.md
