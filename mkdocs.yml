@@ -136,6 +136,29 @@ nav:
         - Shift-Left Testing: qa/approaches_shift_left.md
         - Risk-Based Testing: qa/approaches_risk_based.md
         - Exploratory Testing: qa/approaches_exploratory.md
+    - UI Test Automation (Web & Mobile):
+        - Playwright:
+           - What is Playwright?: qa/ui_playwright_what_is.md
+           - Installation (Brief): qa/ui_playwright_installation.md
+           - Project Structure & Best Practices: qa/ui_playwright_project_structure_best_practices.md
+           - Locator Strategies: qa/ui_playwright_locator_strategies.md
+           - Page Object Model (POM): qa/ui_playwright_pom.md
+           - Playwright Agents & Playwright MCP: qa/ui_playwright_agents_mcp.md
+           - Test Scenario Examples: qa/ui_playwright_test_scenarios_examples.md
+           - CI/CD Integration (Overview): qa/ui_playwright_cicd_integration.md
+        - Selenium:
+           - What is Selenium?: qa/ui_selenium_what_is.md
+           - WebDriver & Selenium Grid (Brief): qa/ui_selenium_webdriver_grid.md
+           - Framework Approach (JUnit / TestNG): qa/ui_selenium_framework_junit_testng.md
+           - When to Use Selenium vs Playwright: qa/ui_selenium_vs_playwright_when_to_use.md
+        - Appium (Mobile Testing):
+           - What is Appium?: qa/ui_appium_what_is.md
+           - Android & iOS Setup (Overview): qa/ui_appium_android_ios_setup.md
+           - Desired Capabilities: qa/ui_appium_desired_capabilities.md
+           - Mobile Locator Strategies: qa/ui_appium_mobile_locator_strategies.md
+           - Mobile Test Best Practices: qa/ui_appium_best_practices.md
+           - Device Farm: qa/ui_appium_device_farm.md
+ 
 
   - Misc:
     - How to Contribute:
