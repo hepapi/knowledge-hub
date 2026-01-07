@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#validating-end-to-end-network-connectivity-in-eks-hybrid-architectures" class="md-skip">
+        <a href="#export-required-environment-variables" class="md-skip">
           Skip to content
         </a>
       
@@ -2768,18 +2768,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#validating-end-to-end-network-connectivity-in-eks-hybrid-architectures" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validating End-to-End Network Connectivity in EKS Hybrid Architectures
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Validating End-to-End Network Connectivity in EKS Hybrid Architectures">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#export-required-environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2789,8 +2777,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#create-a-security-group-for-network-testing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2828,8 +2816,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#launch-a-temporary-ec2-instance" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2867,8 +2855,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#deploy-an-nginx-debug-pod-on-a-specific-hybrid-node" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2895,8 +2883,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#run-network-tests-from-pod-ec2" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2906,8 +2894,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#run-network-tests-from-ec2-pod" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2938,11 +2926,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -8875,18 +8858,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#validating-end-to-end-network-connectivity-in-eks-hybrid-architectures" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validating End-to-End Network Connectivity in EKS Hybrid Architectures
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Validating End-to-End Network Connectivity in EKS Hybrid Architectures">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#export-required-environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -8896,8 +8867,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#create-a-security-group-for-network-testing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -8935,8 +8906,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#launch-a-temporary-ec2-instance" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -8974,8 +8945,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#deploy-an-nginx-debug-pod-on-a-specific-hybrid-node" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9002,8 +8973,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#run-network-tests-from-pod-ec2" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9013,8 +8984,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#run-network-tests-from-ec2-pod" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9052,11 +9023,6 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
     </ul>
   
@@ -9085,7 +9051,6 @@
 
   <h1>Validating End-to-End Network Connectivity in EKS Hybrid Architectures</h1>
 
-<h2 id="validating-end-to-end-network-connectivity-in-eks-hybrid-architectures">Validating End-to-End Network Connectivity in EKS Hybrid Architectures</h2>
 <p>In an EKS Hybrid architecture, the Kubernetes control plane is managed in AWS, while worker nodes may operate on-premises or across distinct network domains.</p>
 <p>Ensuring reliable, <code>bidirectional connectivity between on-premises pods and the AWS-hosted control plane network</code> is essential for cluster stability and troubleshooting.</p>
 <p>This documentation walks through a practical and reproducible method for validating ICMP reachability and routing paths (ping, traceroute) using a temporary EC2 instance as the AWS-side reference and an NGINX-based debug pod running on a designated hybrid node.</p>
