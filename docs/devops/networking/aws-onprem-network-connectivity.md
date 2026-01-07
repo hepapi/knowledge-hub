@@ -1,5 +1,3 @@
-## Validating End-to-End Network Connectivity in EKS Hybrid Architectures
-
 In an EKS Hybrid architecture, the Kubernetes control plane is managed in AWS, while worker nodes may operate on-premises or across distinct network domains.
 
 Ensuring reliable, `bidirectional connectivity between on-premises pods and the AWS-hosted control plane network` is essential for cluster stability and troubleshooting.
