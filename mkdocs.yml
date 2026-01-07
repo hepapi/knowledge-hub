@@ -70,6 +70,8 @@ nav:
         - "Configuration File": devops/ansible/config-file.md
         - "Playbooks": devops/ansible/playbook.md
         - "Roles": devops/ansible/ansible-roles.md
+    - Networking:
+        - "Validating End-to-End Network Connectivity in EKS Hybrid Architectures": devops/networking/aws-onprem-network-connectivity.md
     - Monitoring:
         - "RKE2 Cluster-cert-expiration": devops/monitoring/Rke2-cert-expiration/Rke2-cert-monitoring.md
     - Logging:
