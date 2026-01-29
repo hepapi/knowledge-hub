@@ -83,6 +83,7 @@ nav:
         - "EFK (EFK Stack (Elasticsearch, Fluentbit, Kibana)": devops/logging/efk.md
         - "Elastalert2": devops/logging/elastalert2.md
         - "Elasticsearch Snapshot": devops/logging/elk-snapshot.md
+        - "Elasticsearch + Kibana Upgrade": devops/logging/elk-upgrade.md
     - SRE:
         - "K8SGPT": devops/sre/k8sgpt.md
     - Git:
