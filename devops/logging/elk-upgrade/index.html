@@ -10,25 +10,23 @@
       
       
       
-        <link rel="next" href="devops/linux/shell/script/">
-      
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Welcome to Hepapi Knowledge Hub - Hepapi Knowledge Hub</title>
+        <title>Elasticsearch + Kibana Upgrade (Rolling, 3 Master Nodes) - Hepapi Knowledge Hub</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -47,9 +45,9 @@
       
     
     
-      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-hepapi-knowledge-hub" class="md-skip">
+        <a href="#elasticsearch-kibana-upgrade-rolling-3-master-nodes" class="md-skip">
           Skip to content
         </a>
       
@@ -88,9 +86,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../.." title="Hepapi Knowledge Hub" class="md-header__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="images/hepapi-logo.png" alt="logo">
+  <img src="../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -107,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome to Hepapi Knowledge Hub
+              Elasticsearch + Kibana Upgrade (Rolling, 3 Master Nodes)
             
           </span>
         </div>
@@ -223,13 +221,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="." class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
           
   
   
@@ -249,7 +245,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="qa/" class="md-tabs__link">
+        <a href="../../../qa/" class="md-tabs__link">
           
   
   
@@ -276,7 +272,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
+        <a href="../../../misc/how-to-contribute/mkdocs-features/" class="md-tabs__link">
           
   
   
@@ -297,7 +293,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="repo-credit/" class="md-tabs__link">
+      <a href="../../../repo-credit/" class="md-tabs__link">
         
   
   
@@ -332,9 +328,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
+    <a href="../../.." title="Hepapi Knowledge Hub" class="md-nav__button md-logo" aria-label="Hepapi Knowledge Hub" data-md-component="logo">
       
-  <img src="images/hepapi-logo.png" alt="logo">
+  <img src="../../../images/hepapi-logo.png" alt="logo">
 
     </a>
     Hepapi Knowledge Hub
@@ -358,29 +354,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
   
   
@@ -398,7 +389,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -413,37 +404,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Welcome to Hepapi Knowledge Hub
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -459,65 +423,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#hello-there" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Hello there! 👋
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Hello there! 👋">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#help-us-improve" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Help us improve
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#compendium" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Compendium
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -630,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/linux/shell/script/" class="md-nav__link">
+      <a href="../../linux/shell/script/" class="md-nav__link">
         
   
   
@@ -658,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/linux/shell/cat/" class="md-nav__link">
+      <a href="../../linux/shell/cat/" class="md-nav__link">
         
   
   
@@ -686,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/linux/shell/chtsh/" class="md-nav__link">
+      <a href="../../linux/shell/chtsh/" class="md-nav__link">
         
   
   
@@ -714,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/linux/shell/jobs-bg-fg/" class="md-nav__link">
+      <a href="../../linux/shell/jobs-bg-fg/" class="md-nav__link">
         
   
   
@@ -742,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/linux/shell/ampersand-nohup/" class="md-nav__link">
+      <a href="../../linux/shell/ampersand-nohup/" class="md-nav__link">
         
   
   
@@ -770,7 +675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/linux/shell/nslookup/" class="md-nav__link">
+      <a href="../../linux/shell/nslookup/" class="md-nav__link">
         
   
   
@@ -798,7 +703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/linux/shell/nmap/" class="md-nav__link">
+      <a href="../../linux/shell/nmap/" class="md-nav__link">
         
   
   
@@ -826,7 +731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/linux/shell/netstat/" class="md-nav__link">
+      <a href="../../linux/shell/netstat/" class="md-nav__link">
         
   
   
@@ -854,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/linux/shell/scp/" class="md-nav__link">
+      <a href="../../linux/shell/scp/" class="md-nav__link">
         
   
   
@@ -890,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/linux/tooling/" class="md-nav__link">
+      <a href="../../linux/tooling/" class="md-nav__link">
         
   
   
@@ -918,7 +823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/linux/tips/" class="md-nav__link">
+      <a href="../../linux/tips/" class="md-nav__link">
         
   
   
@@ -1004,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/aws/cli/" class="md-nav__link">
+      <a href="../../aws/cli/" class="md-nav__link">
         
   
   
@@ -1032,7 +937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/aws/sso/" class="md-nav__link">
+      <a href="../../aws/sso/" class="md-nav__link">
         
   
   
@@ -1118,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/azure/agent-installation/" class="md-nav__link">
+      <a href="../../azure/agent-installation/" class="md-nav__link">
         
   
   
@@ -1204,7 +1109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/kubernetes/eks/hybrid-upgrade/" class="md-nav__link">
+      <a href="../../kubernetes/eks/hybrid-upgrade/" class="md-nav__link">
         
   
   
@@ -1232,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/kubernetes/keda/keda/" class="md-nav__link">
+      <a href="../../kubernetes/keda/keda/" class="md-nav__link">
         
   
   
@@ -1260,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/k8s-engine/k3s-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/k3s-installation/" class="md-nav__link">
         
   
   
@@ -1288,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/kubernetes/Velero/" class="md-nav__link">
+      <a href="../../kubernetes/Velero/" class="md-nav__link">
         
   
   
@@ -1316,7 +1221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/kubernetes/keda/keda-with-cron/" class="md-nav__link">
+      <a href="../../kubernetes/keda/keda-with-cron/" class="md-nav__link">
         
   
   
@@ -1402,7 +1307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/k8s-engine/rke2-installation-ansible/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-installation-ansible/" class="md-nav__link">
         
   
   
@@ -1430,7 +1335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/k8s-engine/rke2-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-installation/" class="md-nav__link">
         
   
   
@@ -1508,7 +1413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/k8s-engine/rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-ha/rke2-highly-available-installation/" class="md-nav__link">
         
   
   
@@ -1536,7 +1441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/" class="md-nav__link">
         
   
   
@@ -1564,7 +1469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/k8s-engine/rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
+      <a href="../../k8s-engine/rke2-ha/rke2-ha-etcd-restore/" class="md-nav__link">
         
   
   
@@ -1658,7 +1563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/docker/portainer/" class="md-nav__link">
+      <a href="../../docker/portainer/" class="md-nav__link">
         
   
   
@@ -1744,7 +1649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/rancher/rancher-installation/" class="md-nav__link">
+      <a href="../../rancher/rancher-installation/" class="md-nav__link">
         
   
   
@@ -1830,7 +1735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/postgres/configuration/" class="md-nav__link">
+      <a href="../../postgres/configuration/" class="md-nav__link">
         
   
   
@@ -1858,7 +1763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/postgres/psql/" class="md-nav__link">
+      <a href="../../postgres/psql/" class="md-nav__link">
         
   
   
@@ -1886,7 +1791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/postgres/backup-restore/" class="md-nav__link">
+      <a href="../../postgres/backup-restore/" class="md-nav__link">
         
   
   
@@ -1972,7 +1877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/nexus/nexus-installation/" class="md-nav__link">
+      <a href="../../nexus/nexus-installation/" class="md-nav__link">
         
   
   
@@ -2000,7 +1905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/nexus/nexus-user-and-roles/" class="md-nav__link">
+      <a href="../../nexus/nexus-user-and-roles/" class="md-nav__link">
         
   
   
@@ -2028,7 +1933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/nexus/docker-hosted-repo/" class="md-nav__link">
+      <a href="../../nexus/docker-hosted-repo/" class="md-nav__link">
         
   
   
@@ -2056,7 +1961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/nexus/docker-proxy-repo/" class="md-nav__link">
+      <a href="../../nexus/docker-proxy-repo/" class="md-nav__link">
         
   
   
@@ -2084,7 +1989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/nexus/pull-to-kubernetes/" class="md-nav__link">
+      <a href="../../nexus/pull-to-kubernetes/" class="md-nav__link">
         
   
   
@@ -2112,7 +2017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/nexus/registry-configuration/" class="md-nav__link">
+      <a href="../../nexus/registry-configuration/" class="md-nav__link">
         
   
   
@@ -2198,7 +2103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/devsecops/DevSecOps-SonarQube-OWASP-Conftest-Trvy/" class="md-nav__link">
+      <a href="../../devsecops/DevSecOps-SonarQube-OWASP-Conftest-Trvy/" class="md-nav__link">
         
   
   
@@ -2226,7 +2131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/devsecops/external-secret-operator/" class="md-nav__link">
+      <a href="../../devsecops/external-secret-operator/" class="md-nav__link">
         
   
   
@@ -2254,7 +2159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/devsecops/What%20is%20Falco/" class="md-nav__link">
+      <a href="../../devsecops/What%20is%20Falco/" class="md-nav__link">
         
   
   
@@ -2282,7 +2187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/devsecops/vault/" class="md-nav__link">
+      <a href="../../devsecops/vault/" class="md-nav__link">
         
   
   
@@ -2368,7 +2273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/jenkins/jenkins-installation/" class="md-nav__link">
+      <a href="../../jenkins/jenkins-installation/" class="md-nav__link">
         
   
   
@@ -2396,7 +2301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/jenkins/shared-library/" class="md-nav__link">
+      <a href="../../jenkins/shared-library/" class="md-nav__link">
         
   
   
@@ -2482,7 +2387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/Terragrunt/README.md" class="md-nav__link">
+      <a href="../../Terragrunt/README.md" class="md-nav__link">
         
   
   
@@ -2568,7 +2473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/ansible/ansible-installations/" class="md-nav__link">
+      <a href="../../ansible/ansible-installations/" class="md-nav__link">
         
   
   
@@ -2596,7 +2501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/ansible/what-is-ansible/" class="md-nav__link">
+      <a href="../../ansible/what-is-ansible/" class="md-nav__link">
         
   
   
@@ -2624,7 +2529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/ansible/inventory-file/" class="md-nav__link">
+      <a href="../../ansible/inventory-file/" class="md-nav__link">
         
   
   
@@ -2652,7 +2557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/ansible/config-file/" class="md-nav__link">
+      <a href="../../ansible/config-file/" class="md-nav__link">
         
   
   
@@ -2680,7 +2585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/ansible/playbook/" class="md-nav__link">
+      <a href="../../ansible/playbook/" class="md-nav__link">
         
   
   
@@ -2708,7 +2613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/ansible/ansible-roles/" class="md-nav__link">
+      <a href="../../ansible/ansible-roles/" class="md-nav__link">
         
   
   
@@ -2794,7 +2699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/networking/aws-onprem-network-connectivity/" class="md-nav__link">
+      <a href="../../networking/aws-onprem-network-connectivity/" class="md-nav__link">
         
   
   
@@ -2880,7 +2785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/monitoring/Rke2-cert-expiration/Rke2-cert-monitoring/" class="md-nav__link">
+      <a href="../../monitoring/Rke2-cert-expiration/Rke2-cert-monitoring/" class="md-nav__link">
         
   
   
@@ -2966,7 +2871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/logging/ELK-stack-with-FileBeat/" class="md-nav__link">
+      <a href="../ELK-stack-with-FileBeat/" class="md-nav__link">
         
   
   
@@ -2994,7 +2899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/logging/Index-Lifecycle-Management/" class="md-nav__link">
+      <a href="../Index-Lifecycle-Management/" class="md-nav__link">
         
   
   
@@ -3022,7 +2927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/logging/elasticsearch-exporter/" class="md-nav__link">
+      <a href="../elasticsearch-exporter/" class="md-nav__link">
         
   
   
@@ -3050,7 +2955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/logging/loki-single-binary/" class="md-nav__link">
+      <a href="../loki-single-binary/" class="md-nav__link">
         
   
   
@@ -3078,7 +2983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/logging/loki-distributed/" class="md-nav__link">
+      <a href="../loki-distributed/" class="md-nav__link">
         
   
   
@@ -3106,7 +3011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/logging/efk/" class="md-nav__link">
+      <a href="../efk/" class="md-nav__link">
         
   
   
@@ -3134,7 +3039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/logging/elastalert2/" class="md-nav__link">
+      <a href="../elastalert2/" class="md-nav__link">
         
   
   
@@ -3162,7 +3067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/logging/elk-snapshot/" class="md-nav__link">
+      <a href="../elk-snapshot/" class="md-nav__link">
         
   
   
@@ -3248,7 +3153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/sre/k8sgpt/" class="md-nav__link">
+      <a href="../../sre/k8sgpt/" class="md-nav__link">
         
   
   
@@ -3334,7 +3239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/git/Description/" class="md-nav__link">
+      <a href="../../git/Description/" class="md-nav__link">
         
   
   
@@ -3362,7 +3267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/git/installation/" class="md-nav__link">
+      <a href="../../git/installation/" class="md-nav__link">
         
   
   
@@ -3390,7 +3295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/git/Commands/" class="md-nav__link">
+      <a href="../../git/Commands/" class="md-nav__link">
         
   
   
@@ -3476,7 +3381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/gitlab/gitlab-self-hosted-installation/" class="md-nav__link">
+      <a href="../../gitlab/gitlab-self-hosted-installation/" class="md-nav__link">
         
   
   
@@ -3504,7 +3409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/gitlab/gitlab-runner-installation/" class="md-nav__link">
+      <a href="../../gitlab/gitlab-runner-installation/" class="md-nav__link">
         
   
   
@@ -3640,7 +3545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
+      <a href="../../falcon-logscale/falcon-logscale-installation-docker/" class="md-nav__link">
         
   
   
@@ -3668,7 +3573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/falcon-logscale/agent-installation/" class="md-nav__link">
+      <a href="../../falcon-logscale/agent-installation/" class="md-nav__link">
         
   
   
@@ -3754,7 +3659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/falcon-logscale/humiosetup/" class="md-nav__link">
+      <a href="../../falcon-logscale/humiosetup/" class="md-nav__link">
         
   
   
@@ -3782,7 +3687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/falcon-logscale/javainstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/javainstallation/" class="md-nav__link">
         
   
   
@@ -3810,7 +3715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/falcon-logscale/zookeeperinstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/zookeeperinstallation/" class="md-nav__link">
         
   
   
@@ -3838,7 +3743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/falcon-logscale/kafkainstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/kafkainstallation/" class="md-nav__link">
         
   
   
@@ -3866,7 +3771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/falcon-logscale/humioinstallation/" class="md-nav__link">
+      <a href="../../falcon-logscale/humioinstallation/" class="md-nav__link">
         
   
   
@@ -3952,7 +3857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/falcon-logscale/kafka/" class="md-nav__link">
+      <a href="../../falcon-logscale/kafka/" class="md-nav__link">
         
   
   
@@ -3980,7 +3885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/falcon-logscale/humio/" class="md-nav__link">
+      <a href="../../falcon-logscale/humio/" class="md-nav__link">
         
   
   
@@ -4008,7 +3913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/falcon-logscale/readme/" class="md-nav__link">
+      <a href="../../falcon-logscale/readme/" class="md-nav__link">
         
   
   
@@ -4102,7 +4007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/sumo/sumo-linux-collector/" class="md-nav__link">
+      <a href="../../sumo/sumo-linux-collector/" class="md-nav__link">
         
   
   
@@ -4130,7 +4035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/sumo/sumo-windows-collector/" class="md-nav__link">
+      <a href="../../sumo/sumo-windows-collector/" class="md-nav__link">
         
   
   
@@ -4158,7 +4063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/sumo/sumo-local-file-management/" class="md-nav__link">
+      <a href="../../sumo/sumo-local-file-management/" class="md-nav__link">
         
   
   
@@ -4244,7 +4149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/vagrant/vagrant-quickstart/" class="md-nav__link">
+      <a href="../../vagrant/vagrant-quickstart/" class="md-nav__link">
         
   
   
@@ -4330,7 +4235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/sealed-secrets/sealed-secrets/" class="md-nav__link">
+      <a href="../../sealed-secrets/sealed-secrets/" class="md-nav__link">
         
   
   
@@ -4416,7 +4321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/service-mesh/istio/" class="md-nav__link">
+      <a href="../../service-mesh/istio/" class="md-nav__link">
         
   
   
@@ -4502,7 +4407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/sonarqube/advanced-installation/" class="md-nav__link">
+      <a href="../../sonarqube/advanced-installation/" class="md-nav__link">
         
   
   
@@ -4588,7 +4493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/k8s-storage/nfs-install/" class="md-nav__link">
+      <a href="../../k8s-storage/nfs-install/" class="md-nav__link">
         
   
   
@@ -4616,7 +4521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/k8s-storage/nfs-storageclass-k8s/" class="md-nav__link">
+      <a href="../../k8s-storage/nfs-storageclass-k8s/" class="md-nav__link">
         
   
   
@@ -4644,7 +4549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/k8s-storage/longhorn/" class="md-nav__link">
+      <a href="../../k8s-storage/longhorn/" class="md-nav__link">
         
   
   
@@ -4672,7 +4577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/k8s-storage/rook-ceph/" class="md-nav__link">
+      <a href="../../k8s-storage/rook-ceph/" class="md-nav__link">
         
   
   
@@ -4758,7 +4663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devops/opentelemetry/auto-vs-manuel-inject/" class="md-nav__link">
+      <a href="../../opentelemetry/auto-vs-manuel-inject/" class="md-nav__link">
         
   
   
@@ -4851,7 +4756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/" class="md-nav__link">
+      <a href="../../../qa/" class="md-nav__link">
         
   
   
@@ -4929,7 +4834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/fundamentals_what_is_qa_qa_vs_qc/" class="md-nav__link">
+      <a href="../../../qa/fundamentals_what_is_qa_qa_vs_qc/" class="md-nav__link">
         
   
   
@@ -4957,7 +4862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/fundamentals_test_levels/" class="md-nav__link">
+      <a href="../../../qa/fundamentals_test_levels/" class="md-nav__link">
         
   
   
@@ -4985,7 +4890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/fundamentals_test_types/" class="md-nav__link">
+      <a href="../../../qa/fundamentals_test_types/" class="md-nav__link">
         
   
   
@@ -5013,7 +4918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/fundamentals_sdlc_stlc/" class="md-nav__link">
+      <a href="../../../qa/fundamentals_sdlc_stlc/" class="md-nav__link">
         
   
   
@@ -5041,7 +4946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/fundamentals_agile_scrum_qa_role/" class="md-nav__link">
+      <a href="../../../qa/fundamentals_agile_scrum_qa_role/" class="md-nav__link">
         
   
   
@@ -5127,7 +5032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/approaches_black_white_grey_box/" class="md-nav__link">
+      <a href="../../../qa/approaches_black_white_grey_box/" class="md-nav__link">
         
   
   
@@ -5155,7 +5060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/approaches_shift_left/" class="md-nav__link">
+      <a href="../../../qa/approaches_shift_left/" class="md-nav__link">
         
   
   
@@ -5183,7 +5088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/approaches_risk_based/" class="md-nav__link">
+      <a href="../../../qa/approaches_risk_based/" class="md-nav__link">
         
   
   
@@ -5211,7 +5116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/approaches_exploratory/" class="md-nav__link">
+      <a href="../../../qa/approaches_exploratory/" class="md-nav__link">
         
   
   
@@ -5347,7 +5252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_playwright_what_is/" class="md-nav__link">
+      <a href="../../../qa/ui_playwright_what_is/" class="md-nav__link">
         
   
   
@@ -5375,7 +5280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_playwright_installation/" class="md-nav__link">
+      <a href="../../../qa/ui_playwright_installation/" class="md-nav__link">
         
   
   
@@ -5403,7 +5308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_playwright_project_structure_best_practices/" class="md-nav__link">
+      <a href="../../../qa/ui_playwright_project_structure_best_practices/" class="md-nav__link">
         
   
   
@@ -5431,7 +5336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_playwright_locator_strategies/" class="md-nav__link">
+      <a href="../../../qa/ui_playwright_locator_strategies/" class="md-nav__link">
         
   
   
@@ -5459,7 +5364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_playwright_pom/" class="md-nav__link">
+      <a href="../../../qa/ui_playwright_pom/" class="md-nav__link">
         
   
   
@@ -5487,7 +5392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_playwright_agents_mcp/" class="md-nav__link">
+      <a href="../../../qa/ui_playwright_agents_mcp/" class="md-nav__link">
         
   
   
@@ -5515,7 +5420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_playwright_test_scenarios_examples/" class="md-nav__link">
+      <a href="../../../qa/ui_playwright_test_scenarios_examples/" class="md-nav__link">
         
   
   
@@ -5543,7 +5448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_playwright_cicd_integration/" class="md-nav__link">
+      <a href="../../../qa/ui_playwright_cicd_integration/" class="md-nav__link">
         
   
   
@@ -5629,7 +5534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_selenium_what_is/" class="md-nav__link">
+      <a href="../../../qa/ui_selenium_what_is/" class="md-nav__link">
         
   
   
@@ -5657,7 +5562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_selenium_webdriver_grid/" class="md-nav__link">
+      <a href="../../../qa/ui_selenium_webdriver_grid/" class="md-nav__link">
         
   
   
@@ -5685,7 +5590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_selenium_framework_junit_testng/" class="md-nav__link">
+      <a href="../../../qa/ui_selenium_framework_junit_testng/" class="md-nav__link">
         
   
   
@@ -5713,7 +5618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_selenium_vs_playwright_when_to_use/" class="md-nav__link">
+      <a href="../../../qa/ui_selenium_vs_playwright_when_to_use/" class="md-nav__link">
         
   
   
@@ -5799,7 +5704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_appium_what_is/" class="md-nav__link">
+      <a href="../../../qa/ui_appium_what_is/" class="md-nav__link">
         
   
   
@@ -5827,7 +5732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_appium_android_ios_setup/" class="md-nav__link">
+      <a href="../../../qa/ui_appium_android_ios_setup/" class="md-nav__link">
         
   
   
@@ -5855,7 +5760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_appium_desired_capabilities/" class="md-nav__link">
+      <a href="../../../qa/ui_appium_desired_capabilities/" class="md-nav__link">
         
   
   
@@ -5883,7 +5788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_appium_mobile_locator_strategies/" class="md-nav__link">
+      <a href="../../../qa/ui_appium_mobile_locator_strategies/" class="md-nav__link">
         
   
   
@@ -5911,7 +5816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_appium_best_practices/" class="md-nav__link">
+      <a href="../../../qa/ui_appium_best_practices/" class="md-nav__link">
         
   
   
@@ -5939,7 +5844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/ui_appium_device_farm/" class="md-nav__link">
+      <a href="../../../qa/ui_appium_device_farm/" class="md-nav__link">
         
   
   
@@ -6033,7 +5938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/accessibility_what_is/" class="md-nav__link">
+      <a href="../../../qa/accessibility_what_is/" class="md-nav__link">
         
   
   
@@ -6061,7 +5966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/accessibility_wcag_2_1_standards/" class="md-nav__link">
+      <a href="../../../qa/accessibility_wcag_2_1_standards/" class="md-nav__link">
         
   
   
@@ -6089,7 +5994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/accessibility_tools_overview/" class="md-nav__link">
+      <a href="../../../qa/accessibility_tools_overview/" class="md-nav__link">
         
   
   
@@ -6225,7 +6130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/api_karate_what_is/" class="md-nav__link">
+      <a href="../../../qa/api_karate_what_is/" class="md-nav__link">
         
   
   
@@ -6253,7 +6158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/api_karate_project_structure/" class="md-nav__link">
+      <a href="../../../qa/api_karate_project_structure/" class="md-nav__link">
         
   
   
@@ -6281,7 +6186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/api_karate_feature_files_gherkin/" class="md-nav__link">
+      <a href="../../../qa/api_karate_feature_files_gherkin/" class="md-nav__link">
         
   
   
@@ -6309,7 +6214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/api_karate_assertions_validations/" class="md-nav__link">
+      <a href="../../../qa/api_karate_assertions_validations/" class="md-nav__link">
         
   
   
@@ -6337,7 +6242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/api_karate_data_driven_testing/" class="md-nav__link">
+      <a href="../../../qa/api_karate_data_driven_testing/" class="md-nav__link">
         
   
   
@@ -6365,7 +6270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/api_karate_cicd_integration/" class="md-nav__link">
+      <a href="../../../qa/api_karate_cicd_integration/" class="md-nav__link">
         
   
   
@@ -6451,7 +6356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/api_postman_collections_environments/" class="md-nav__link">
+      <a href="../../../qa/api_postman_collections_environments/" class="md-nav__link">
         
   
   
@@ -6479,7 +6384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/api_postman_test_scripts/" class="md-nav__link">
+      <a href="../../../qa/api_postman_test_scripts/" class="md-nav__link">
         
   
   
@@ -6507,7 +6412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/api_postman_newman_cli/" class="md-nav__link">
+      <a href="../../../qa/api_postman_newman_cli/" class="md-nav__link">
         
   
   
@@ -6593,7 +6498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/api_soapui_soap_vs_rest/" class="md-nav__link">
+      <a href="../../../qa/api_soapui_soap_vs_rest/" class="md-nav__link">
         
   
   
@@ -6621,7 +6526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/api_soapui_basic_usage/" class="md-nav__link">
+      <a href="../../../qa/api_soapui_basic_usage/" class="md-nav__link">
         
   
   
@@ -6765,7 +6670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/perf_k6_what_is/" class="md-nav__link">
+      <a href="../../../qa/perf_k6_what_is/" class="md-nav__link">
         
   
   
@@ -6793,7 +6698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/perf_k6_script_writing/" class="md-nav__link">
+      <a href="../../../qa/perf_k6_script_writing/" class="md-nav__link">
         
   
   
@@ -6821,7 +6726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/perf_k6_scenarios_executors/" class="md-nav__link">
+      <a href="../../../qa/perf_k6_scenarios_executors/" class="md-nav__link">
         
   
   
@@ -6849,7 +6754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/perf_k6_thresholds_checks/" class="md-nav__link">
+      <a href="../../../qa/perf_k6_thresholds_checks/" class="md-nav__link">
         
   
   
@@ -6877,7 +6782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/perf_k6_metrics_reporting/" class="md-nav__link">
+      <a href="../../../qa/perf_k6_metrics_reporting/" class="md-nav__link">
         
   
   
@@ -6905,7 +6810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/perf_k6_studio/" class="md-nav__link">
+      <a href="../../../qa/perf_k6_studio/" class="md-nav__link">
         
   
   
@@ -6933,7 +6838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/perf_k6_cloud_grafana_integration/" class="md-nav__link">
+      <a href="../../../qa/perf_k6_cloud_grafana_integration/" class="md-nav__link">
         
   
   
@@ -7019,7 +6924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/perf_jmeter_what_is/" class="md-nav__link">
+      <a href="../../../qa/perf_jmeter_what_is/" class="md-nav__link">
         
   
   
@@ -7047,7 +6952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/perf_jmeter_test_plan_structure/" class="md-nav__link">
+      <a href="../../../qa/perf_jmeter_test_plan_structure/" class="md-nav__link">
         
   
   
@@ -7075,7 +6980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/perf_jmeter_thread_groups_samplers/" class="md-nav__link">
+      <a href="../../../qa/perf_jmeter_thread_groups_samplers/" class="md-nav__link">
         
   
   
@@ -7103,7 +7008,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/perf_jmeter_listeners_reporting/" class="md-nav__link">
+      <a href="../../../qa/perf_jmeter_listeners_reporting/" class="md-nav__link">
         
   
   
@@ -7189,7 +7094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/perf_gatling_what_is/" class="md-nav__link">
+      <a href="../../../qa/perf_gatling_what_is/" class="md-nav__link">
         
   
   
@@ -7217,7 +7122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/perf_gatling_test_structure/" class="md-nav__link">
+      <a href="../../../qa/perf_gatling_test_structure/" class="md-nav__link">
         
   
   
@@ -7245,7 +7150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/perf_gatling_load_models/" class="md-nav__link">
+      <a href="../../../qa/perf_gatling_load_models/" class="md-nav__link">
         
   
   
@@ -7273,7 +7178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/perf_gatling_assertions_reporting/" class="md-nav__link">
+      <a href="../../../qa/perf_gatling_assertions_reporting/" class="md-nav__link">
         
   
   
@@ -7367,7 +7272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/cicd_azure_devops_pipelines/" class="md-nav__link">
+      <a href="../../../qa/cicd_azure_devops_pipelines/" class="md-nav__link">
         
   
   
@@ -7395,7 +7300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/cicd_yaml_pipeline_examples/" class="md-nav__link">
+      <a href="../../../qa/cicd_yaml_pipeline_examples/" class="md-nav__link">
         
   
   
@@ -7423,7 +7328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/cicd_test_automation_integration/" class="md-nav__link">
+      <a href="../../../qa/cicd_test_automation_integration/" class="md-nav__link">
         
   
   
@@ -7451,7 +7356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/cicd_artifacts_reporting/" class="md-nav__link">
+      <a href="../../../qa/cicd_artifacts_reporting/" class="md-nav__link">
         
   
   
@@ -7479,7 +7384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/cicd_github_actions/" class="md-nav__link">
+      <a href="../../../qa/cicd_github_actions/" class="md-nav__link">
         
   
   
@@ -7507,7 +7412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/cicd_jenkins/" class="md-nav__link">
+      <a href="../../../qa/cicd_jenkins/" class="md-nav__link">
         
   
   
@@ -7643,7 +7548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/tms_testrail_test_case_management/" class="md-nav__link">
+      <a href="../../../qa/tms_testrail_test_case_management/" class="md-nav__link">
         
   
   
@@ -7671,7 +7576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/tms_testrail_test_runs_reporting/" class="md-nav__link">
+      <a href="../../../qa/tms_testrail_test_runs_reporting/" class="md-nav__link">
         
   
   
@@ -7757,7 +7662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/reporting_allure/" class="md-nav__link">
+      <a href="../../../qa/reporting_allure/" class="md-nav__link">
         
   
   
@@ -7785,7 +7690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/reporting_extent/" class="md-nav__link">
+      <a href="../../../qa/reporting_extent/" class="md-nav__link">
         
   
   
@@ -7813,7 +7718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/reporting_custom_reporting_approaches/" class="md-nav__link">
+      <a href="../../../qa/reporting_custom_reporting_approaches/" class="md-nav__link">
         
   
   
@@ -7841,7 +7746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/reporting_tms_automation_integrations/" class="md-nav__link">
+      <a href="../../../qa/reporting_tms_automation_integrations/" class="md-nav__link">
         
   
   
@@ -7869,7 +7774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/reporting_jira_integrations/" class="md-nav__link">
+      <a href="../../../qa/reporting_jira_integrations/" class="md-nav__link">
         
   
   
@@ -7963,7 +7868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/bug_jira_usage/" class="md-nav__link">
+      <a href="../../../qa/bug_jira_usage/" class="md-nav__link">
         
   
   
@@ -7991,7 +7896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/bug_life_cycle/" class="md-nav__link">
+      <a href="../../../qa/bug_life_cycle/" class="md-nav__link">
         
   
   
@@ -8019,7 +7924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/bug_reporting_best_practices/" class="md-nav__link">
+      <a href="../../../qa/bug_reporting_best_practices/" class="md-nav__link">
         
   
   
@@ -8047,7 +7952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/bug_sprint_planning_qa/" class="md-nav__link">
+      <a href="../../../qa/bug_sprint_planning_qa/" class="md-nav__link">
         
   
   
@@ -8133,7 +8038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/rca_what_is_rca/" class="md-nav__link">
+      <a href="../../../qa/rca_what_is_rca/" class="md-nav__link">
         
   
   
@@ -8161,7 +8066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/rca_why_and_when/" class="md-nav__link">
+      <a href="../../../qa/rca_why_and_when/" class="md-nav__link">
         
   
   
@@ -8189,7 +8094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/rca_example_and_qa_perspective/" class="md-nav__link">
+      <a href="../../../qa/rca_example_and_qa_perspective/" class="md-nav__link">
         
   
   
@@ -8275,7 +8180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/best_test_automation_pyramid/" class="md-nav__link">
+      <a href="../../../qa/best_test_automation_pyramid/" class="md-nav__link">
         
   
   
@@ -8303,7 +8208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/best_test_code_review/" class="md-nav__link">
+      <a href="../../../qa/best_test_code_review/" class="md-nav__link">
         
   
   
@@ -8331,7 +8236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/best_flaky_test_management/" class="md-nav__link">
+      <a href="../../../qa/best_flaky_test_management/" class="md-nav__link">
         
   
   
@@ -8359,7 +8264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/best_test_maintenance_strategies/" class="md-nav__link">
+      <a href="../../../qa/best_test_maintenance_strategies/" class="md-nav__link">
         
   
   
@@ -8387,7 +8292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/best_parallel_test_execution/" class="md-nav__link">
+      <a href="../../../qa/best_parallel_test_execution/" class="md-nav__link">
         
   
   
@@ -8415,7 +8320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/best_cross_browser_testing/" class="md-nav__link">
+      <a href="../../../qa/best_cross_browser_testing/" class="md-nav__link">
         
   
   
@@ -8443,7 +8348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="qa/best_continuous_testing/" class="md-nav__link">
+      <a href="../../../qa/best_continuous_testing/" class="md-nav__link">
         
   
   
@@ -8586,7 +8491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/mkdocs-features/" class="md-nav__link">
         
   
   
@@ -8614,7 +8519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/about-mkdocs/" class="md-nav__link">
         
   
   
@@ -8642,7 +8547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="misc/how-to-contribute/about-markdown/" class="md-nav__link">
+      <a href="../../../misc/how-to-contribute/about-markdown/" class="md-nav__link">
         
   
   
@@ -8685,7 +8590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="repo-credit/" class="md-nav__link">
+      <a href="../../../repo-credit/" class="md-nav__link">
         
   
   
@@ -8732,38 +8637,65 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hello-there" class="md-nav__link">
+  <a href="#recommended-path-production" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hello there! 👋
+        Recommended Path (Production)
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Hello there! 👋">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#help-us-improve" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Help us improve
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#compendium" class="md-nav__link">
+  <a href="#pre-upgrade-checklist-must-do" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Compendium
+        Pre-Upgrade Checklist (Must Do)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-order-golden-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upgrade Order (Golden Rule)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-upgrade-loop-apply-to-each-node-one-by-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Upgrade Loop (Apply to Each Node One-by-One)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#master-node-order-3-masters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Master Node Order (3 Masters)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-elasticsearch-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Elasticsearch Checks
       
     </span>
   </a>
@@ -8787,7 +8719,7 @@
 
 
   
-    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/logging/elk-upgrade.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -8795,193 +8727,234 @@
   
 
 
-<h1 id="welcome-to-hepapi-knowledge-hub">Welcome to Hepapi Knowledge Hub</h1>
-<h2 id="hello-there">Hello there! 👋</h2>
-<p>This repository was created with the singular goal of fostering collaboration, knowledge exchange, and continuous learning among our team members at Hepapi.</p>
-<p>We recognize that knowledge is power, and in our constantly evolving field, it's crucial to keep up with the latest technologies, methodologies, and best practices. </p>
-<p>This repository is a live document, and <strong>we encourage everyone to contribute</strong>. If you have something valuable to share, don't hesitate to make a contribution. Remember, what may be obvious to you could be new to someone else.</p>
-<p><a class="md-button md-button--primary" href="https://linkedin.com/company/hepapi"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg></span> Follow us on Linkedin </a>
-<a class="md-button" href="https://hepapi.com/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg></span> hepapi.com </a></p>
-<h3 id="help-us-improve">Help us improve</h3>
-<p>We are always looking for ways to improve our documentation. If you have any suggestions, please feel free to open an issue or a pull request.</p>
-<p>Follow the docs on: <a href="misc/how-to-contribute/about-mkdocs/">How to contribute</a></p>
-<!-- IMPORTANT: LEAVE 2 EMPTY LINES AT THE END OF THIS DOCUMENT. CI Pipeline will append compendium to it. -->
-
-<h2 id="compendium">Compendium</h2>
-<p><strong>opentelemetry</strong></p>
+<h1 id="elasticsearch-kibana-upgrade-rolling-3-master-nodes">Elasticsearch + Kibana Upgrade (Rolling, 3 Master Nodes)</h1>
+<p>This section is a <strong>minimal, step-by-step</strong> guide so someone can run the commands and complete a safe upgrade.</p>
 <ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/opentelemetry/auto-vs-manuel-inject/">OpenTelemetry Instrumentation: Manual vs. Automatic</a></li>
+<li><a href="https://www.elastic.co/support/matrix">Elastic Support Matrix</a> (Elasticsearch + Kibana OS/JVM compatibility)</li>
 </ul>
-<p><strong>sealed-secrets</strong></p>
+<blockquote>
+<p><strong>Production reminder:</strong> run the same upgrade on a test/staging cluster first, and validate snapshot/restore.
+<strong>Where to run commands:</strong><br />
+- <strong>Kibana Dev Tools:</strong> commands starting with <code>GET/PUT/POST</code><br />
+- <strong>Node terminal:</strong> commands starting with <code>sudo</code>, <code>systemctl</code>, <code>wget</code>, <code>rpm</code>, <code>dpkg</code></p>
+</blockquote>
+<h2 id="recommended-path-production">Recommended Path (Production)</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>8.14.2
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  ↓
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>8.18.x   (run Upgrade Assistant, fix all issues)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  ↓
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>9.2.4    (rolling upgrade)
+</code></pre></div>
+<blockquote>
+<p>You must reach the <strong>latest 8.x</strong> first, then upgrade to <strong>9.x</strong>.
+In 8.18.x, open Kibana <strong>Upgrade Assistant</strong> and fix all warnings before moving to 9.x.
+<strong>Do not</strong> install 9.x packages until all <strong>Critical</strong> items are cleared.
+<a href="https://www.elastic.co/guide/en/kibana/current/upgrade-assistant.html">Upgrade Assistant docs</a>
+Version rule: 8.x → latest 8.x before 9.x; prefer a stable 9.x minor (not 9.0.0).
+Always verify the exact target versions on elastic.co before running <code>wget</code> (avoid 404s).</p>
+</blockquote>
+<hr />
+<h2 id="pre-upgrade-checklist-must-do">Pre-Upgrade Checklist (Must Do)</h2>
+<p>1) <strong>Cluster health must be green or yellow (red is not allowed):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>GET<span class="w"> </span>_cat/health?v
+</code></pre></div>
+<p>2) <strong>Snapshot is mandatory (rollback safety):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>GET<span class="w"> </span>_snapshot
+</code></pre></div>
+<p>If repository exists, take a snapshot:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>PUT<span class="w"> </span>_snapshot/&lt;repo_name&gt;/pre_upgrade_8x_to_8_latest?wait_for_completion<span class="o">=</span><span class="nb">true</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>GET<span class="w"> </span>_snapshot/&lt;repo_name&gt;/pre_upgrade_8x_to_8_latest
+</code></pre></div>
+<p>You should see:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;SUCCESS&quot;</span>
+</code></pre></div>
+<blockquote>
+<p>Rollback note: Elasticsearch does <strong>not</strong> support downgrade. If upgrade fails, the recovery path is <strong>restore from snapshot</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="upgrade-order-golden-rule">Upgrade Order (Golden Rule)</h2>
+<p><strong>Order is mandatory:</strong></p>
+<p>1) Data nodes (if tiers: frozen → cold → warm → hot)
+2) Other nodes (ingest, ml, coordinating)
+3) <strong>Master nodes last, one-by-one</strong></p>
+<blockquote>
+<p>Never upgrade masters before data nodes. Never stop two masters at once.</p>
+</blockquote>
+<hr />
+<h2 id="node-upgrade-loop-apply-to-each-node-one-by-one">Node Upgrade Loop (Apply to Each Node One-by-One)</h2>
+<blockquote>
+<p>Run this loop for every node in the order above.</p>
+</blockquote>
+<p>0) <strong>Before touching the next node, confirm health:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>GET<span class="w"> </span>_cat/health?v
+</code></pre></div>
+<p>1) <strong>Disable replica allocation (recommended for data nodes; optional for masters/others):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>PUT<span class="w"> </span>_cluster/settings
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="o">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="s2">&quot;persistent&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="s2">&quot;cluster.routing.allocation.enable&quot;</span>:<span class="w"> </span><span class="s2">&quot;primaries&quot;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="o">}</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="o">}</span>
+</code></pre></div>
+<p>2) <strong>Flush before stop (recommended for data nodes):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>POST<span class="w"> </span>/_flush
+</code></pre></div>
+<p>3) <strong>Back up config before upgrade (recommended):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>/etc/elasticsearch<span class="w"> </span>/etc/elasticsearch_backup_<span class="k">$(</span>date<span class="w"> </span>+%F<span class="k">)</span>
+</code></pre></div>
+<p>4) <strong>Stop Elasticsearch on the node:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>elasticsearch
+</code></pre></div>
+<p>5) <strong>Upgrade package (choose your OS)</strong></p>
+<p><strong>DEB (Debian/Ubuntu):</strong></p>
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/8.19/deb.html">Elasticsearch DEB docs</a></p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>&lt;ELASTICSEARCH_VERSION&gt; = 8.19.10
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>wget<span class="w"> </span>https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-&lt;ELASTICSEARCH_VERSION&gt;-amd64.deb
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>wget<span class="w"> </span>https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-&lt;ELASTICSEARCH_VERSION&gt;-amd64.deb.sha512
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>shasum<span class="w"> </span>-a<span class="w"> </span><span class="m">512</span><span class="w"> </span>-c<span class="w"> </span>elasticsearch-&lt;ELASTICSEARCH_VERSION&gt;-amd64.deb.sha512
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>elasticsearch-&lt;ELASTICSEARCH_VERSION&gt;-amd64.deb
+</code></pre></div>
+<p><strong>RPM (RHEL/Rocky/Alma):</strong></p>
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/8.19/rpm.html">Elasticsearch RPM docs</a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>wget<span class="w"> </span>https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-&lt;ELASTICSEARCH_VERSION&gt;-x86_64.rpm
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>wget<span class="w"> </span>https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-&lt;ELASTICSEARCH_VERSION&gt;-x86_64.rpm.sha512
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>shasum<span class="w"> </span>-a<span class="w"> </span><span class="m">512</span><span class="w"> </span>-c<span class="w"> </span>elasticsearch-&lt;ELASTICSEARCH_VERSION&gt;-x86_64.rpm.sha512
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>elasticsearch-&lt;ELASTICSEARCH_VERSION&gt;-x86_64.rpm
+</code></pre></div>
+<blockquote>
+<p>Use the exact target version you plan. Do not use <code>--install</code> for RPM.
+If prompted about <code>/etc/elasticsearch/elasticsearch.yml</code>, choose <strong>Keep the local version</strong>.</p>
+</blockquote>
+<p>6) <strong>Upgrade plugins (only if installed on this node):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>/usr/share/elasticsearch/bin/elasticsearch-plugin<span class="w"> </span>list
+</code></pre></div>
+<p>Check compatibility first:</p>
 <ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/sealed-secrets/sealed-secrets/">Understanding Sealed Secrets: Solving the Challenge of Securely Managing Kubernetes Secrets</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/plugins/current/index.html">Elasticsearch plugins compatibility</a></li>
 </ul>
-<p><strong>sumo</strong></p>
+<p>If you see plugins, remove + install again (same name):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>/usr/share/elasticsearch/bin/elasticsearch-plugin<span class="w"> </span>remove<span class="w"> </span>&lt;plugin_name&gt;
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>/usr/share/elasticsearch/bin/elasticsearch-plugin<span class="w"> </span>install<span class="w"> </span>&lt;plugin_name&gt;
+</code></pre></div>
+<p>7) <strong>Start Elasticsearch:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>daemon-reload
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>elasticsearch
+</code></pre></div>
+<p>8) <strong>Wait until the cluster is stable before the next node:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>GET<span class="w"> </span>_cat/health?v
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>GET<span class="w"> </span>_cat/shards?v<span class="o">=</span>true<span class="p">&amp;</span><span class="nv">h</span><span class="o">=</span>index,shard,prirep,state,node,unassigned.reason<span class="p">&amp;</span><span class="nv">s</span><span class="o">=</span>state
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>GET<span class="w"> </span>_cat/recovery
+</code></pre></div>
+<p>You can watch recovery progress:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>watch<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="s1">&#39;curl -s &quot;localhost:9200/_cat/recovery?v&amp;active_only=true&quot;&#39;</span>
+</code></pre></div>
+<p><strong>Continue only if:</strong>
+- health = green/yellow
+- primary shards are STARTED
+- initializing/relocating shards = 0</p>
+<p>9) <strong>Re-enable allocation (after the node is stable):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>PUT<span class="w"> </span>_cluster/settings
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="o">{</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="s2">&quot;persistent&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="s2">&quot;cluster.routing.allocation.enable&quot;</span>:<span class="w"> </span>null
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">  </span><span class="o">}</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="o">}</span>
+</code></pre></div>
+<hr />
+<h2 id="master-node-order-3-masters">Master Node Order (3 Masters)</h2>
+<p>Example:</p>
+<p>1) master-1<br />
+2) master-3<br />
+3) <strong>master-2 (current active master last)</strong></p>
+<blockquote>
+<p><strong>Quorum warning:</strong> in a 3-master cluster, only <strong>one</strong> master may be offline at a time.</p>
+</blockquote>
+<p>Check active master:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>GET<span class="w"> </span>_cat/master
+</code></pre></div>
+<hr />
+<h2 id="final-elasticsearch-checks">Final Elasticsearch Checks</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>GET<span class="w"> </span>_cat/nodes?h<span class="o">=</span>name,version,master
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>GET<span class="w"> </span>_cat/health?v
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>GET<span class="w"> </span>/
+</code></pre></div>
+<p>If you see any <code>archived.*</code> settings:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>GET<span class="w"> </span>_cluster/settings?include_defaults<span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<p><code>archived.*</code> means Elasticsearch detected <strong>old/unsupported settings</strong> after upgrade and ignored them.
+You should remove them before moving on.</p>
+<p>Example output (if you see this, you must clean it):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">{</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="nt">&quot;persistent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nt">&quot;archived.cluster.routing.allocation.awareness.attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rack_id&quot;</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="p">}</span>
+</code></pre></div>
+<p>Example cleanup:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>PUT<span class="w"> </span>_cluster/settings
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="o">{</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">  </span><span class="s2">&quot;persistent&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="s2">&quot;archived.cluster.routing.allocation.awareness.attributes&quot;</span>:<span class="w"> </span>null
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">  </span><span class="o">}</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="o">}</span>
+</code></pre></div>
+<hr />
+<h1 id="kibana-upgrade-must-match-elasticsearch-version">Kibana Upgrade (Must Match Elasticsearch Version)</h1>
+<h2 id="rules">Rules</h2>
 <ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/sumo/sumo-windows-collector/">Install a Sumo Logic Collector on Windows</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/sumo/sumo-linux-collector/">Install a Sumo Logic Collector on Linux</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/sumo/sumo-local-file-management/">Local Configuration File Management</a></li>
+<li><strong>Kibana upgrades after Elasticsearch</strong></li>
+<li><strong>Kibana version = Elasticsearch version</strong></li>
+<li><strong>No rolling upgrade for Kibana</strong> (stop all Kibana instances first)</li>
 </ul>
-<p><strong>falcon-logscale</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/falcon-logscale/javainstallation/">falcon-logscale/javainstallation.md</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/falcon-logscale/humio/">Apt package update ####</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/falcon-logscale/kafka/">Apt package update ####</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/falcon-logscale/kafkainstallation/">Installation</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/falcon-logscale/readme/">Kafka Installation (kafka.sh)</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/falcon-logscale/agent-installation/">Falcon LogScale Agent(Log Collector) Setup <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.197 10a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5zm-2.382 4a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5zm-1.581 4a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5z"/><path d="M4.125 0h15.75a4.1 4.1 0 0 1 2.92 1.205A4.1 4.1 0 0 1 24 4.125c0 1.384-.476 2.794-1.128 4.16-.652 1.365-1.515 2.757-2.352 4.104l-.008.013c-.849 1.368-1.669 2.691-2.28 3.97-.614 1.283-.982 2.45-.982 3.503a2.625 2.625 0 1 0 4.083-2.183.75.75 0 1 1 .834-1.247A4.126 4.126 0 0 1 19.875 24H4.5a4.125 4.125 0 0 1-4.125-4.125c0-2.234 1.258-4.656 2.59-6.902.348-.586.702-1.162 1.05-1.728.8-1.304 1.567-2.553 2.144-3.738H3.39c-.823 0-1.886-.193-2.567-1.035A3.65 3.65 0 0 1 0 4.125 4.125 4.125 0 0 1 4.125 0M15.75 19.875c0-1.38.476-2.786 1.128-4.15.649-1.358 1.509-2.743 2.343-4.086l.017-.028c.849-1.367 1.669-2.692 2.28-3.972.614-1.285.982-2.457.982-3.514A2.615 2.615 0 0 0 19.875 1.5a2.625 2.625 0 0 0-2.625 2.625c0 .865.421 1.509 1.167 2.009A.75.75 0 0 1 18 7.507H7.812c-.65 1.483-1.624 3.069-2.577 4.619-.334.544-.666 1.083-.98 1.612-1.355 2.287-2.38 4.371-2.38 6.137A2.625 2.625 0 0 0 4.5 22.5h12.193a4.1 4.1 0 0 1-.943-2.625M1.5 4.125c-.01.511.163 1.008.487 1.403.254.313.74.479 1.402.479h12.86a3.65 3.65 0 0 1-.499-1.882 4.1 4.1 0 0 1 .943-2.625H4.125A2.625 2.625 0 0 0 1.5 4.125"/></svg></span></a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/falcon-logscale/zookeeperinstallation/">Installation</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/falcon-logscale/humiosetup/">Humio Single Node Installation Guide <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f525.svg" title=":fire:" /></a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/falcon-logscale/falcon-logscale-installation-docker/">Falcon LogScale Setup With Docker <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.119a.185.185 0 0 0-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 0 0 .186-.186V3.574a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 0 0 .186-.186V6.29a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 0 0 .184-.186V6.29a.185.185 0 0 0-.185-.185H8.1a.185.185 0 0 0-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 0 0 .185-.186V6.29a.185.185 0 0 0-.185-.185H5.136a.186.186 0 0 0-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 0 0 .185-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.186.186 0 0 0-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51q-.508.001-1.01.087c-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.75.75 0 0 0-.75.748 11.4 11.4 0 0 0 .692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137a15.7 15.7 0 0 0 2.93-.266 12.3 12.3 0 0 0 3.823-1.389 10.5 10.5 0 0 0 2.61-2.136c1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></svg></span></a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/falcon-logscale/humioinstallation/">Installation</a></li>
-</ul>
-<p><strong>aws</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/aws/cli/">AWS CLI</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/aws/sso/">AWS IAM Identity Center (successor to AWS Single Sign-On), What is SSO?</a></li>
-</ul>
-<p><strong>nexus</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/nexus/docker-hosted-repo/">Docker Hosted Repository</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/nexus/pull-to-kubernetes/">Copy Nexus Credentials into Kubernetes</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/nexus/nexus-user-and-roles/">Principle of least privilege</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/nexus/registry-configuration/">RKE2 Registry Configuration</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/nexus/nexus-installation/">Nexus Installation - Docker Private Registry</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/nexus/docker-proxy-repo/">Docker Proxy Repository</a></li>
-</ul>
-<p><strong>gitlab</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/gitlab/gitlab-runner-installation/">GitLab Runner Installation Guide  </a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/gitlab/gitlab-self-hosted-installation/">GitLab Self-Hosted on Kubernetes - Installation Guide</a></li>
-</ul>
-<p><strong>rancher</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/rancher/rancher-installation/">Rancher Installation</a></li>
-</ul>
-<p><strong>monitoring</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/monitoring/Rke2-cert-expiration/Rke2-cert-monitoring/">🔐 Monitoring TLS Certificate Expiration in Kubernetes with Alerting</a></li>
-</ul>
-<p><strong>terragrunt</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/terragrunt/Readme/">What is Terragrunt?
-</a></li>
-</ul>
-<p><strong>service-mesh</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/service-mesh/istio/">What is Istio?</a></li>
-</ul>
-<p><strong>docker</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/docker/portainer/README/">Docker Management with Portainer</a></li>
-</ul>
-<p><strong>kubernetes</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/kubernetes/eks/hybrid-upgrade/">Upgrading an EKS Hybrid Cluster Using nodeadm</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/kubernetes/keda/keda/">KEDA (Kubernetes Event-driven Autoscaling) <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f525.svg" title=":fire:" /></a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/kubernetes/keda/keda-with-cron/">KEDA (Kubernetes Event-driven Autoscaling) WITH CRON</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/kubernetes/Velero/README/">Simplify Cluster Backups with Velero</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/kubernetes/Velero/Cheat-Sheet/">Velero Cheat Sheet</a></li>
-</ul>
-<p><strong>postgres</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/postgres/configuration/">Postgres Configuration</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/postgres/psql/">psql CLI</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/postgres/backup-restore/">Backup</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/postgres/poc-backup-restore/">PoC</a></li>
-</ul>
-<p><strong>k8s-storage</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/k8s-storage/longhorn/">k8s-storage/longhorn.md</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/k8s-storage/nfs-storageclass-k8s/">Prerequisites &amp; Key Considerations</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/k8s-storage/nfs-install/">NFS Setup Requirements</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/k8s-storage/rook-ceph/">Ceph Installation Guide</a></li>
-</ul>
-<p><strong>sre</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/sre/k8sgpt/">k8sgpt</a></li>
-</ul>
-<p><strong>ansible</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/ansible/ansible-roles/">Ansible Roles</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/ansible/ansible/">Install Ansible with pipx</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/ansible/what-is-ansible/">What is Ansible ?</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/ansible/config-file/">Ansible Configuration File</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/ansible/ansible-installations/">Install Ansible with pipx</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/ansible/inventory-file/">Inventory and Variables</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/ansible/playbook/">Ansible Playbooks</a></li>
-</ul>
-<p><strong>azure</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/azure/agent-installation/">Azure Self-Hosted Agent Installation</a></li>
-</ul>
-<p><strong>git</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/git/Commands/">git/Commands.md</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/git/installation/">Downloading Git</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/git/Description/">Version Control System (VCS)</a></li>
-</ul>
-<p><strong>linux</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/linux/tooling/">Linux Tooling</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/linux/tips/">Linux Tips</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/linux/shell/nmap/">NMap Command</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/linux/shell/script/"><code>script</code> command</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/linux/shell/ampersand-nohup/">nohup and &amp; </a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/linux/shell/nslookup/">NSLOOKUP</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/linux/shell/netstat/">Netstat &amp; SS Command</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/linux/shell/scp/">SCP Command</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/linux/shell/chtsh/">cht.sh Command Tool</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/linux/shell/cat/">cat</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/linux/shell/jobs-bg-fg/">jobs, bg, and fg</a></li>
-</ul>
-<p><strong>networking</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/networking/aws-onprem-network-connectivity/">Export Required Environment Variables</a></li>
-</ul>
-<p><strong>devsecops</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/devsecops/external-secret-operator/">External Secret Operator</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/devsecops/What is Falco/">Deep Dive into Security Monitoring in Kubernetes Environments: An Introduction to Falco
-</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/devsecops/DevSecOps-SonarQube-OWASP-Conftest-Trvy/">DevSecOps End to End Pipeline with SonarQube,OWASP Dependency-Check,Conftest and Trivy</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/devsecops/vault/">Vault Installation - Using Helm and running on Kubernetes Clsuter</a></li>
-</ul>
-<p><strong>sonarqube</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/sonarqube/advanced-installation/">How to Set Up SonarQube with PostgreSQL, Nginx and LDAP Using Docker Compose: A Comprehensive Guide</a></li>
-</ul>
-<p><strong>vagrant</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/vagrant/vagrant-quickstart/">Vagrant</a></li>
-</ul>
-<p><strong>logging</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/logging/ELK-stack-with-FileBeat/">ELK Stack with FileBeat</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/logging/elk-upgrade/">Elasticsearch + Kibana Upgrade (Rolling, 3 Master Nodes)</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/logging/Index-Lifecycle-Management/">Elasticsearch Index Lifecycle Management</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/logging/elk-snapshot/">Elasticsearch-Snapshot</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/logging/loki-single-binary/">Install Loki,Promtail,Grafana</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/logging/loki-distributed/">Grafana Loki: Distributed Log Management and Collection</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/logging/elasticsearch-exporter/">Elasticsearch-Exporter</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/logging/elastalert2/">elastalert2</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/logging/efk/">EFK Stack (Elasticsearch, Fluentbit, Kibana) via Minikube</a></li>
-</ul>
-<p><strong>k8s-engine</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/k8s-engine/k3s-installation/">K3S Setup <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f525.svg" title=":fire:" /></a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/k8s-engine/rke2-installation/">RKE2 Setup <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f525.svg" title=":fire:" /></a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/k8s-engine/rke2-installation-ansible/">RKE2 Cluster Installation With Ansible</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/k8s-engine/rke2-ha/rke2-highly-available-installation/">Deploy RKE2 Highly Available Cluster</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/k8s-engine/rke2-ha/rke2-ha-etcd-restore/">Restoring RKE2 Clusters</a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/k8s-engine/rke2-ha/rke2-system-upgrade-controller-installation/">System Upgrade Controller</a></li>
-</ul>
-<p><strong>jenkins</strong></p>
-<ul>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/jenkins/jenkins-installation/">Jenkins Install <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f525.svg" title=":fire:" /></a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/jenkins/shared-library/">Jenkins Shared Library <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f525.svg" title=":fire:" /></a></li>
-<li><a href="https://hepapi.github.io/knowledge-hub/devops/jenkins/README/">Jenkins</a></li>
-</ul>
+<h2 id="stop-all-kibana-instances">Stop all Kibana instances</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>kibana
+</code></pre></div>
+<h2 id="upgrade-package">Upgrade package</h2>
+<p><strong>RPM (RHEL/Rocky/Alma):</strong></p>
+<p><a href="https://www.elastic.co/guide/en/kibana/8.19/rpm.html">Kibana RPM docs</a></p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>&lt;KIBANA_VERSION&gt; = 8.19.10
+</code></pre></div>
+<p>Backup config first:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>sudo<span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>/etc/kibana<span class="w"> </span>/etc/kibana_backup_<span class="k">$(</span>date<span class="w"> </span>+%F<span class="k">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>wget<span class="w"> </span>https://artifacts.elastic.co/downloads/kibana/kibana-&lt;KIBANA_VERSION&gt;-x86_64.rpm
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>wget<span class="w"> </span>https://artifacts.elastic.co/downloads/kibana/kibana-&lt;KIBANA_VERSION&gt;-x86_64.rpm.sha512
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>shasum<span class="w"> </span>-a<span class="w"> </span><span class="m">512</span><span class="w"> </span>-c<span class="w"> </span>kibana-&lt;KIBANA_VERSION&gt;-x86_64.rpm.sha512
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>sudo<span class="w"> </span>rpm<span class="w"> </span>-Uvh<span class="w"> </span>kibana-&lt;KIBANA_VERSION&gt;-x86_64.rpm
+</code></pre></div>
+<p><strong>DEB (Debian/Ubuntu):</strong></p>
+<p><a href="https://www.elastic.co/guide/en/kibana/8.19/deb.html">Kibana DEB docs</a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>wget<span class="w"> </span>https://artifacts.elastic.co/downloads/kibana/kibana-&lt;KIBANA_VERSION&gt;-amd64.deb
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>wget<span class="w"> </span>https://artifacts.elastic.co/downloads/kibana/kibana-&lt;KIBANA_VERSION&gt;-amd64.deb.sha512
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>shasum<span class="w"> </span>-a<span class="w"> </span><span class="m">512</span><span class="w"> </span>-c<span class="w"> </span>kibana-&lt;KIBANA_VERSION&gt;-amd64.deb.sha512
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>kibana-&lt;KIBANA_VERSION&gt;-amd64.deb
+</code></pre></div>
+<blockquote>
+<p>If prompted about <code>/etc/kibana/kibana.yml</code>, choose <strong>Keep the local version</strong>.</p>
+</blockquote>
+<h2 id="upgrade-kibana-plugins-if-any">Upgrade Kibana plugins (if any)</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>/usr/share/kibana/bin/kibana-plugin<span class="w"> </span>list
+</code></pre></div>
+<p>If plugins exist:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>/usr/share/kibana/bin/kibana-plugin<span class="w"> </span>remove<span class="w"> </span>&lt;plugin_name&gt;
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>/usr/share/kibana/bin/kibana-plugin<span class="w"> </span>install<span class="w"> </span>&lt;plugin_name&gt;
+</code></pre></div>
+<h2 id="start-kibana-and-verify">Start Kibana and verify</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>kibana
+</code></pre></div>
+<p>Watch logs for migration status:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>kibana<span class="w"> </span>-f
+</code></pre></div>
+<p>Look for:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>Saved object migrations completed successfully
+</code></pre></div>
+<p>Check:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>GET<span class="w"> </span>_cat/indices/.kibana*
+</code></pre></div>
+<p>If login page opens and Kibana indices are healthy, upgrade is complete.</p>
 
 
 
@@ -9051,10 +9024,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
