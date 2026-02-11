@@ -5840,6 +5840,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile Locator Strategies
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -5856,6 +5874,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Order
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessibility-id-best-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessibility ID (Best Practice)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id-resource-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ID / Resource ID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xpath-last-resort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XPath (Last Resort)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8781,75 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Order
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessibility-id-best-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessibility ID (Best Practice)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id-resource-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ID / Resource ID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xpath-last-resort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XPath (Last Resort)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8874,40 @@
 
 
 <h1 id="mobile-locator-strategies">Mobile Locator Strategies</h1>
-<p>Content will be added.</p>
+<p>Locator strategy directly affects test stability and performance.</p>
+<ul>
+<li>Poor locator -&gt; Flaky tests</li>
+<li>Good locator -&gt; Stable tests</li>
+</ul>
+<h2 id="recommended-order">Recommended Order</h2>
+<h3 id="accessibility-id-best-practice">Accessibility ID (Best Practice)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="ss">:accessibility_id</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;login_button&quot;</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>Fast</li>
+<li>Stable</li>
+<li>Cross-platform</li>
+</ul>
+<h3 id="id-resource-id">ID / Resource ID</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="ss">:id</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;com.app:id/loginBtn&quot;</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>Very reliable for Android</li>
+</ul>
+<h3 id="xpath-last-resort">XPath (Last Resort)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>//android.widget.Button[@text=&#39;Login&#39;]
+</code></pre></div>
+<ul>
+<li>Slow</li>
+<li>Fragile</li>
+<li>Breaks easily after UI changes</li>
+</ul>
+<h2 id="best-practice">Best Practice</h2>
+<ul>
+<li>Ask developers to add accessibility IDs</li>
+<li>Avoid XPath whenever possible</li>
+</ul>
+<p>This dramatically reduces flaky tests.</p>
 
 
 
