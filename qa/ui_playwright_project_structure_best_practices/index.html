@@ -5360,6 +5360,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Structure & Best Practices
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -5376,6 +5394,108 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-folder-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Folder Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-use-page-object-model-pom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Use Page Object Model (POM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-keep-tests-small-and-independent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Keep tests small and independent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-avoid-hardcoded-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Avoid hardcoded data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-use-parallel-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Use parallel execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-enable-screenshots-and-videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Enable screenshots and videos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8803,97 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-folder-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Folder Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-use-page-object-model-pom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Use Page Object Model (POM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-keep-tests-small-and-independent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Keep tests small and independent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-avoid-hardcoded-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Avoid hardcoded data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-use-parallel-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Use parallel execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-enable-screenshots-and-videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Enable screenshots and videos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8918,30 @@
 
 
 <h1 id="project-structure-best-practices">Project Structure &amp; Best Practices</h1>
-<p>Content will be added.</p>
+<p>A clean and scalable project structure is essential for long-term maintainability.</p>
+<h2 id="recommended-folder-structure">Recommended Folder Structure</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>├── tests/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│   ├── login.spec.ts
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   ├── register.spec.ts
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── pages/
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   ├── login.page.ts
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   ├── dashboard.page.ts
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── utils/
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   ├── test-data.ts
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── fixtures/
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── playwright.config.ts
+</code></pre></div>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="1-use-page-object-model-pom">1. Use Page Object Model (POM)</h3>
+<p>Keeps UI logic separated from test logic.</p>
+<h3 id="2-keep-tests-small-and-independent">2. Keep tests small and independent</h3>
+<p>Each test should validate a single behavior.</p>
+<h3 id="3-avoid-hardcoded-data">3. Avoid hardcoded data</h3>
+<p>Use configuration files or environment variables.</p>
+<h3 id="4-use-parallel-execution">4. Use parallel execution</h3>
+<p>Playwright is optimized for parallel test runs.</p>
+<h3 id="5-enable-screenshots-and-videos">5. Enable screenshots and videos</h3>
+<p>Helps significantly with debugging failures.</p>
 
 
 
