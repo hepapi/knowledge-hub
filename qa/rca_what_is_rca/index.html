@@ -8705,7 +8705,78 @@
 
 
 <h1 id="what-is-root-cause-analysis-rca">What is Root Cause Analysis (RCA)?</h1>
-<p>Content will be added.</p>
+<h1 id="definition">Definition</h1>
+<p>RCA (Root Cause Analysis) is a systematic investigation process aimed at identifying the actual source of a problem rather than addressing its superficial symptoms. It is known as <strong>Root Cause Analysis</strong> in software engineering and quality assurance processes.</p>
+<p>Instead of providing an immediate answer to the question "Why did this error occur?", RCA seeks a permanent answer to the question "What is the true source of this error and how do we prevent its recurrence?"</p>
+<h1 id="distinguishing-symptoms-from-root-causes">Distinguishing Symptoms from Root Causes</h1>
+<p>The most common mistake when solving a problem is accepting the visible symptom as the root cause.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Symptom</strong></th>
+<th><strong>Possible Root Cause</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Users cannot log in</td>
+<td>Database connection pool exhausted</td>
+</tr>
+<tr>
+<td>Page loads slowly</td>
+<td>Unoptimized SQL query</td>
+</tr>
+<tr>
+<td>Same bug reopened</td>
+<td>Insufficient test coverage or incomplete code review</td>
+</tr>
+<tr>
+<td>Payment transaction fails randomly</td>
+<td>Third-party service timeout mismatch</td>
+</tr>
+<tr>
+<td>Service crashed after deployment</td>
+<td>Missing environment variable definition</td>
+</tr>
+</tbody>
+</table>
+<p>RCA aims to eliminate the source of the problem rather than temporarily alleviating symptoms.</p>
+<h1 id="core-principles-of-rca">Core Principles of RCA</h1>
+<h2 id="1-data-driven-approach">1. Data-Driven Approach</h2>
+<p>Progress is made with concrete data, not assumptions. Log records, metrics, test results, and error reports are the primary inputs of the analysis process.</p>
+<h2 id="2-systems-thinking">2. Systems Thinking</h2>
+<p>The problem is evaluated as part of the system, not as an isolated event. Dependencies and interactions between components are taken into consideration.</p>
+<h2 id="3-learning-not-blaming">3. Learning, Not Blaming</h2>
+<p>RCA is conducted to identify process and system vulnerabilities, not to find someone to blame. The focus is not "Who made the mistake?" but rather "Why did the system allow this error to occur?"</p>
+<h2 id="4-documentation-and-reusability">4. Documentation and Reusability</h2>
+<p>Identified root causes and applied solutions are documented. This creates organizational memory and provides a reference for similar issues.</p>
+<h1 id="common-rca-techniques">Common RCA Techniques</h1>
+<h2 id="5-whys">5 Whys</h2>
+<p>The "Why?" question is asked repeatedly to dig deeper into the problem. It is a simple and quickly applicable technique.</p>
+<h2 id="fishbone-diagram-ishikawa">Fishbone Diagram (Ishikawa)</h2>
+<p>Visualizes factors affecting the problem by categorizing them. Categories typically include: People, Method, System, Environment, Measurement. It is effective for multi-factor problems.</p>
+<h2 id="fault-tree-analysis">Fault Tree Analysis</h2>
+<p>Starting from a top-level error, it models possible causes in a tree structure using logical gates (AND/OR). It is preferred in safety-critical systems and risk analysis.</p>
+<h1 id="rcas-place-in-software-processes">RCA's Place in Software Processes</h1>
+<p>RCA is applied in software development and QA processes in the following situations:</p>
+<ul>
+<li>
+<p><strong>Production Incidents:</strong> Outages or critical errors occurring in the live environment</p>
+</li>
+<li>
+<p><strong>Recurring Defects:</strong> Bugs that are closed and reopened or appear in different forms</p>
+</li>
+<li>
+<p><strong>Security Vulnerabilities:</strong> Identified vulnerabilities or breaches</p>
+</li>
+<li>
+<p><strong>Performance Anomalies:</strong> Unexpected slowdowns or resource consumption issues</p>
+</li>
+<li>
+<p><strong>Post-Release Issues:</strong> Unexpected behaviors that emerge following deployment</p>
+</li>
+</ul>
+<p>From a QA perspective, RCA means analyzing why the bug was not caught during the testing process and updating the test strategy accordingly.</p>
 
 
 
