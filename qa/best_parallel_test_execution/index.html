@@ -8342,6 +8342,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parallel Test Execution
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -8358,6 +8376,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#benefits-of-running-tests-in-parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits of Running Tests in Parallel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-for-reliable-parallel-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements for Reliable Parallel Execution
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8681,6 +8740,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#benefits-of-running-tests-in-parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits of Running Tests in Parallel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-for-reliable-parallel-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements for Reliable Parallel Execution
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8705,7 +8794,26 @@
 
 
 <h1 id="parallel-test-execution">Parallel Test Execution</h1>
-<p>Content will be added.</p>
+<p>As test suites grow, long execution times become a major problem. Parallel execution is a key solution.</p>
+<h2 id="benefits-of-running-tests-in-parallel">Benefits of Running Tests in Parallel</h2>
+<ul>
+<li>Execution time is significantly reduced</li>
+<li>CI feedback becomes faster</li>
+<li>Releases can happen more frequently</li>
+</ul>
+<p>Tools like Playwright, Selenium Grid, and Cypress Cloud allow tests to run simultaneously across:</p>
+<ul>
+<li>Multiple browsers</li>
+<li>Different devices</li>
+<li>Various environments</li>
+</ul>
+<h2 id="requirements-for-reliable-parallel-execution">Requirements for Reliable Parallel Execution</h2>
+<ul>
+<li>Tests must be independent</li>
+<li>Shared states must be avoided</li>
+<li>Test data conflicts must be prevented</li>
+</ul>
+<p>Otherwise, parallel runs may introduce additional failures.</p>
 
 
 
