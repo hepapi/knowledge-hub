@@ -8230,6 +8230,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Automation Pyramid
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -8246,6 +8264,36 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#benefits-of-following-this-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits of Following This Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8681,6 +8729,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#benefits-of-following-this-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits of Following This Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8705,7 +8772,18 @@
 
 
 <h1 id="test-automation-pyramid">Test Automation Pyramid</h1>
-<p>Content will be added.</p>
+<p>One of the most widely accepted and effective strategies in test automation is the Test Pyramid approach. This model illustrates how many tests should be written at each level of the system.</p>
+<p>At the base of the pyramid are Unit Tests. These tests run fast, are cost-effective, and detect defects early in the development cycle. The majority of tests should exist at this layer.</p>
+<p>The middle layer consists of API/Service Tests. These validate communication between system components and are generally faster and more stable than UI tests.</p>
+<p>At the top are UI (End-to-End) Tests. They simulate real user scenarios but tend to be slower, more fragile, and harder to maintain. Therefore, their number should be limited.</p>
+<h2 id="benefits-of-following-this-structure">Benefits of Following This Structure</h2>
+<ul>
+<li>Test execution time decreases</li>
+<li>Maintenance costs are reduced</li>
+<li>Feedback becomes faster</li>
+<li>CI/CD processes become more efficient</li>
+</ul>
+<p>In short: many unit tests, fewer UI tests.</p>
 
 
 
