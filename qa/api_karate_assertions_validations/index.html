@@ -6266,6 +6266,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assertions & Validations
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -6282,6 +6300,64 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-matchers-youll-actually-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Matchers You’ll Actually Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-response-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Response Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Response Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-we-use-this-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why we use this approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8759,53 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-matchers-youll-actually-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Matchers You’ll Actually Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-response-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Response Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Response Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-we-use-this-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why we use this approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8830,22 @@
 
 
 <h1 id="assertions-validations">Assertions &amp; Validations</h1>
-<p>Content will be added.</p>
+<p>Checking an HTTP status code is easy, but it doesn't give you much confidence. A real test needs to look deep into the JSON response. The problem is that real-world APIs are full of dynamic data—IDs, timestamps, and tokens that change every time you hit the endpoint. If you try to match these exactly, your tests will break constantly.</p>
+<p>This is where <strong>Fuzzy Matching</strong> in Karate becomes a life-saver. Instead of asserting that an ID is 12345, you assert that it is <em>a number</em>.</p>
+<h4 id="key-matchers-youll-actually-use"><strong>Key Matchers You’ll Actually Use</strong></h4>
+<p>Karate has a built-in vocabulary for handling dynamic data without the mess:</p>
+<ul>
+<li><strong>#notnull</strong>: The field has to be there. Simple as that.</li>
+<li><strong>#number / #string / #boolean</strong>: Checks the data type. Great for IDs or status flags.</li>
+<li><strong>#regex</strong>: When you need a specific format (like an email or a UUID).</li>
+<li><strong>#ignore</strong>: For those fields you just don't care about in a particular test.</li>
+</ul>
+<p>You can combine these to validate a massive JSON object in a single line. It’s clean, and more importantly, it's stable.</p>
+<h3 id="example-response-validation"><strong>Example Response Validation</strong></h3>
+<p><img alt="Feature Example 2" src="https://hepapi.github.io/knowledge-hub/qa/karate1-media/media/image2.png" /></p>
+<p>In this example, we are validating the <em>shape</em> of the response. We don’t care if the userId is 1 or 100, as long as it’s a number. We don't care what the createdAt timestamp says, as long as it's a string.</p>
+<h4 id="why-we-use-this-approach"><strong>Why we use this approach</strong></h4>
+<p>Exact-value assertions are the number bir cause of "flaky tests." Nothing kills a team's trust in automation faster than a test that fails just because a timestamp changed by one second. Fuzzy matching allows you to focus on the <strong>contract</strong> of the API rather than the volatile data. It cuts down the noise and ensures that when a test fails, it’s because of a real bug, not a dynamic value.</p>
 
 
 
