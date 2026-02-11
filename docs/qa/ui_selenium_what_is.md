@@ -1,4 +1,4 @@
-# What is Selenium?
+# What Is Selenium?
 
 # The Foundation of Web Test Automation
 
