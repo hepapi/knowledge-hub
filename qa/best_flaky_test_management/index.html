@@ -8705,7 +8705,25 @@
 
 
 <h1 id="flaky-test-management">Flaky Test Management</h1>
-<p>Content will be added.</p>
+<h1 id="flaky-tests-and-stability">Flaky Tests and Stability</h1>
+<p>Flaky tests are tests that sometimes pass and sometimes fail without any code changes. They are one of the biggest challenges in automation because they reduce trust in the test suite.</p>
+<h2 id="common-causes-of-flaky-tests">Common Causes of Flaky Tests</h2>
+<ul>
+<li>Poor synchronization</li>
+<li>Unstable environments</li>
+<li>Dependencies between tests</li>
+<li>Dynamic elements</li>
+<li>Timing issues</li>
+</ul>
+<h2 id="how-to-minimize-flakiness">How to Minimize Flakiness</h2>
+<ul>
+<li>Use explicit waits</li>
+<li>Ensure test isolation</li>
+<li>Apply stable locator strategies</li>
+<li>Implement retry mechanisms</li>
+<li>Track and label flaky tests</li>
+</ul>
+<p>The goal is not to hide flaky tests, but to identify and fix the root cause permanently.</p>
 
 
 
