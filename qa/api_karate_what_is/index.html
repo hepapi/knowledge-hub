@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-is-karate" class="md-skip">
+        <a href="#1-what-is-karate" class="md-skip">
           Skip to content
         </a>
       
@@ -6179,8 +6179,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -6223,14 +6221,23 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-karate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What is Karate?
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#why-karate-actually-works" class="md-nav__link">
@@ -9040,14 +9047,23 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-karate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What is Karate?
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#why-karate-actually-works" class="md-nav__link">
@@ -9397,7 +9413,9 @@
   
 
 
-<h1 id="what-is-karate">What is Karate?</h1>
+  <h1>What is Karate?</h1>
+
+<h3 id="1-what-is-karate"><strong>1. What is Karate?</strong></h3>
 <p>Technically, Karate is a test automation framework based on Cucumber/Gherkin. But practically, it’s a shortcut.</p>
 <p>Most frameworks force you to act like a developer just to validate an HTTP response. Karate takes a different route. It treats the "test intent" as the code itself. By eliminating the need for step definitions (the "glue code" that connects English steps to Java code), it drastically reduces the lines of code you need to write—and maintain.</p>
 <p>Whether you are doing API testing, checking UI elements, or running performance benchmarks via Gatling, Karate lets you do it all in one place, using a simple, readable syntax. It’s designed for teams who want to move fast without getting bogged down in boilerplate code.</p>
@@ -9415,7 +9433,7 @@
 <h2 id="2-project-structure"><strong>2. Project Structure</strong></h2>
 <p>If you’ve ever set up a standard Maven or Gradle project, Karate will feel familiar. But it has a specific way of organizing things that’s actually quite refreshing. Instead of burying your logic in deep directory trees, Karate keeps things flat and accessible.</p>
 <p>Here is how a no-nonsense Karate project usually looks:</p>
-<p><img src="karate1-media/media/image4.png" style="width:6.5in;height:3.27778in" /></p>
+<p><img alt="Project Structure" src="{{ '/qa/karate1-media/media/image4.png' | relative_url }}" /></p>
 <h3 id="key-components-explained"><strong>Key Components Explained</strong></h3>
 <p>**pom.xml / build.gradle  **
 This is your standard entry point. You just pull in karate-core and a JUnit runner. It handles your dependencies and makes sure the project is ready for any CI/CD pipeline without extra magic</p>
@@ -9449,7 +9467,7 @@ The "brain" of the setup. This JavaScript file is loaded before anything else. I
 </ul>
 <p>The real magic? You don't need a separate Java file to explain what When method get means. The Karate engine already knows. This keeps your project tiny and makes your tests look like <strong>actual documentation</strong> rather than a programming puzzle.</p>
 <p>Example: getUser.feature</p>
-<p><img src="karate1-media/media/image1.png" style="width:6.5in;height:1.99479in" /></p>
+<p><img alt="Feature Example 1" src="{{ '/qa/karate1-media/media/image1.png' | relative_url }}" /></p>
 <p>In this snippet, anyone—even someone who doesn't code—can see exactly what's happening. We’re hitting a specific user endpoint and expecting a 200 OK.</p>
 <h4 id="why-we-find-this-useful"><strong>Why we find this useful</strong></h4>
 <p>By making Gherkin executable, you stop wasting time on "translation." In older frameworks, half your time is spent making sure the Gherkin sentence matches the Java method perfectly. In Karate, that friction is gone. Your tests stay readable as they grow, and since there’s no fragile "glue" between the text and the execution, your suite is much harder to break. It’s about getting fast feedback without the maintenance headache.</p>
@@ -9459,22 +9477,14 @@ The "brain" of the setup. This JavaScript file is loaded before anything else. I
 <h4 id="key-matchers-youll-actually-use"><strong>Key Matchers You’ll Actually Use</strong></h4>
 <p>Karate has a built-in vocabulary for handling dynamic data without the mess:</p>
 <ul>
-<li>
-<p><strong>#notnull</strong>: The field has to be there. Simple as that.</p>
-</li>
-<li>
-<p><strong>#number / #string / #boolean</strong>: Checks the data type. Great for IDs or status flags.</p>
-</li>
-<li>
-<p><strong>#regex</strong>: When you need a specific format (like an email or a UUID).</p>
-</li>
-<li>
-<p><strong>#ignore</strong>: For those fields you just don't care about in a particular test.</p>
-</li>
+<li><strong>#notnull</strong>: The field has to be there. Simple as that.</li>
+<li><strong>#number / #string / #boolean</strong>: Checks the data type. Great for IDs or status flags.</li>
+<li><strong>#regex</strong>: When you need a specific format (like an email or a UUID).</li>
+<li><strong>#ignore</strong>: For those fields you just don't care about in a particular test.</li>
 </ul>
 <p>You can combine these to validate a massive JSON object in a single line. It’s clean, and more importantly, it's stable.</p>
 <h3 id="example-response-validation"><strong>Example Response Validation</strong></h3>
-<p><img src="karate1-media/media/image2.png" style="width:6.5in;height:1.48438in" /></p>
+<p><img alt="Feature Example 2" src="{{ '/qa/karate1-media/media/image2.png' | relative_url }}" /></p>
 <p>In this example, we are validating the <em>shape</em> of the response. We don’t care if the userId is 1 or 100, as long as it’s a number. We don't care what the createdAt timestamp says, as long as it's a string.</p>
 <h4 id="why-we-use-this-approach"><strong>Why we use this approach</strong></h4>
 <p>Exact-value assertions are the number bir cause of "flaky tests." Nothing kills a team's trust in automation faster than a test that fails just because a timestamp changed by one second. Fuzzy matching allows you to focus on the <strong>contract</strong> of the API rather than the volatile data. It cuts down the noise and ensures that when a test fails, it’s because of a real bug, not a dynamic value.</p>
@@ -9483,19 +9493,13 @@ The "brain" of the setup. This JavaScript file is loaded before anything else. I
 <h4 id="how-to-feed-data-into-your-tests"><strong>How to Feed Data into Your Tests</strong></h4>
 <p>Karate is pretty flexible with how it handles datasets:</p>
 <ul>
-<li>
-<p><strong>Inline Tables:</strong> For a quick check with 3-4 variations, you can just drop a table right into your feature file. It’s great because you can see the data and the logic on the same screen.</p>
-</li>
-<li>
-<p><strong>Scenario Outlines:</strong> This is the bread and butter of data-driven testing. You write the scenario once, use placeholders like \&lt;username&gt;, and let the Examples table do the rest.</p>
-</li>
-<li>
-<p><strong>External Files (JSON/CSV):</strong> If you have 500 rows of data or if your data is managed by another team, you don't want it cluttering your feature file. You can just point Karate to an external .csv or .json file and it will loop through every row automatically.</p>
-</li>
+<li><strong>Inline Tables:</strong> For a quick check with 3-4 variations, you can just drop a table right into your feature file. It’s great because you can see the data and the logic on the same screen.</li>
+<li><strong>Scenario Outlines:</strong> This is the bread and butter of data-driven testing. You write the scenario once, use placeholders like \&lt;username&gt;, and let the Examples table do the rest.</li>
+<li><strong>External Files (JSON/CSV):</strong> If you have 500 rows of data or if your data is managed by another team, you don't want it cluttering your feature file. You can just point Karate to an external .csv or .json file and it will loop through every row automatically.</li>
 </ul>
 <h3 id="example-login-validation-with-multiple-inputs"><strong>Example: Login Validation with Multiple Inputs</strong></h3>
 <p>Instead of writing three different login scenarios, you write one:</p>
-<p><img src="karate1-media/media/image3.png" style="width:6.5in;height:1.84896in" /></p>
+<p><img alt="Feature Example 3" src="{{ '/qa/karate1-media/media/image3.png' | relative_url }}" /></p>
 <p>In this case, Karate runs the entire flow once for each row in your table. If the second row fails, the report tells you exactly which input caused the issue without stopping the rest of the suite.</p>
 <h4 id="why-we-use-this"><strong>Why we use this</strong></h4>
 <p>The biggest win here is <strong>scalability</strong>. When the login logic changes, you only have to fix it in one place, not in twenty different scenarios. It keeps your feature files lean and allows you to cover edge cases—like empty strings, long passwords, or special characters—just by adding a single line to a CSV file. It’s about getting maximum coverage with minimum effort.</p>
@@ -9506,20 +9510,14 @@ The "brain" of the setup. This JavaScript file is loaded before anything else. I
 <h4 id="debugging-in-the-cloud"><strong>Debugging in the Cloud</strong></h4>
 <p>When a test fails in a CI environment (like GitLab or Azure DevOps), the last thing you want to do is try to reproduce it locally for an hour. Karate generates highly detailed HTML reports that capture:</p>
 <ul>
-<li>
-<p>The exact Request URL and Headers.</p>
-</li>
-<li>
-<p>The full Response Body.</p>
-</li>
-<li>
-<p>The specific assertion that failed.</p>
-</li>
+<li>The exact Request URL and Headers.</li>
+<li>The full Response Body.</li>
+<li>The specific assertion that failed.</li>
 </ul>
 <p>You can basically debug the failure directly from your browser in the CI artifacts without ever touching your IDE.</p>
 <h4 id="one-suite-multiple-environments"><strong>One Suite, Multiple Environments</strong></h4>
 <p>You shouldn't have to change your code to run tests against Staging instead of Dev. By using the karate.env property, you can trigger different configurations from your Maven or Gradle command:</p>
-<p>mvn test -Dkarate.env=staging</p>
+<p><code>mvn test -Dkarate.env=staging</code></p>
 <p>Karate then picks up the right URLs and credentials from your karate-config.js file. It’s simple, explicit, and prevents "hard-coded" environment disasters.</p>
 <h3 id="conclusion"><strong>Conclusion</strong></h3>
 <p>At the end of the day, Karate shifts the focus from <strong>writing code</strong> to <strong>validating features</strong>. We spend too much time in this industry maintaining fragile automation frameworks that eventually get abandoned because they are too complex.</p>
