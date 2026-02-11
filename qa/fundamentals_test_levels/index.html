@@ -8778,9 +8778,11 @@
 <p><strong>Integration Testing:</strong> Aims to expose defects in data communication and interaction between individually tested units when they are combined. It verifies if modules work harmoniously as a whole. Three main strategies are used:</p>
 <ul>
 <li><strong>Big Bang Approach:</strong> All components are integrated simultaneously and tested as a single unit. Suitable for small systems, but defect isolation is difficult.</li>
-<li><strong>Incremental Approach:</strong> Modules are merged in a logical order. Two sub-methods are used:</li>
+<li><strong>Incremental Approach:</strong> Modules are merged in a logical order. Two sub-methods are used:<ul>
 <li><strong>Top-Down:</strong> High-level modules are tested first; "Stubs" (dummy programs) are used for low-level modules not yet ready.</li>
 <li><strong>Bottom-Up:</strong> Low-level modules are tested first; "Drivers" (calling programs) are used to simulate high-level modules.</li>
+</ul>
+</li>
 <li><strong>Sandwich (Hybrid) Approach:</strong> A combination of Top-Down and Bottom-Up; it focuses on critical modules using both Stubs and Drivers.</li>
 </ul>
 <p><strong>System Testing:</strong> The level that measures the compliance of the fully integrated system against the functional and non-functional requirements (SRS) defined at the start. The software undergoes a holistic evaluation before being presented to the end user.</p>
