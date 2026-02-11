@@ -5500,6 +5500,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD Integration (Overview)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -5516,6 +5534,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#common-ci-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common CI Tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-github-actions-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample GitHub Actions Step
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ci-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI Advantages
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8753,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#common-ci-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common CI Tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-github-actions-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample GitHub Actions Step
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ci-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI Advantages
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8818,26 @@
 
 
 <h1 id="cicd-integration-overview">CI/CD Integration (Overview)</h1>
-<p>Content will be added.</p>
+<p>Playwright integrates seamlessly with modern CI/CD pipelines.</p>
+<h2 id="common-ci-tools">Common CI Tools</h2>
+<ul>
+<li>GitHub Actions</li>
+<li>GitLab CI</li>
+<li>Jenkins</li>
+<li>Azure DevOps</li>
+</ul>
+<h2 id="sample-github-actions-step">Sample GitHub Actions Step</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Playwright Tests</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">npx playwright test</span>
+</code></pre></div>
+<h2 id="ci-advantages">CI Advantages</h2>
+<ul>
+<li>Headless execution</li>
+<li>Parallel test runs</li>
+<li>Automatic reporting</li>
+<li>Failure artifacts (video, screenshots)</li>
+<li>Fast feedback loop</li>
+</ul>
 
 
 
