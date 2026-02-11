@@ -10,8 +10,8 @@ Software testing is conducted in a hierarchical structure, typically within the 
 
 - **Big Bang Approach:** All components are integrated simultaneously and tested as a single unit. Suitable for small systems, but defect isolation is difficult.
 - **Incremental Approach:** Modules are merged in a logical order. Two sub-methods are used:
-  - **Top-Down:** High-level modules are tested first; "Stubs" (dummy programs) are used for low-level modules not yet ready.
-  - **Bottom-Up:** Low-level modules are tested first; "Drivers" (calling programs) are used to simulate high-level modules.
+    - **Top-Down:** High-level modules are tested first; "Stubs" (dummy programs) are used for low-level modules not yet ready.
+    - **Bottom-Up:** Low-level modules are tested first; "Drivers" (calling programs) are used to simulate high-level modules.
 - **Sandwich (Hybrid) Approach:** A combination of Top-Down and Bottom-Up; it focuses on critical modules using both Stubs and Drivers.
 
 **System Testing:** The level that measures the compliance of the fully integrated system against the functional and non-functional requirements (SRS) defined at the start. The software undergoes a holistic evaluation before being presented to the end user.
