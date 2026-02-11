@@ -19,7 +19,9 @@ Don't mix different services in one collection. Each one should represent a sing
 
 I often see folders named "GET" or "POST." Honestly? That’s useless for testing. Instead, organize your folders by **Business Flows**. Your folder names should look like "User Onboarding," "Payment Flow," or "Inventory Check." This mirrors how a real user interacts with your system, which makes debugging much more intuitive.
 
-Example:<img src="https://hepapi.github.io/knowledge-hub/qa/karate1-media/media/postman2-image3.png" style="width:6.5in;height:1.43789in" />
+Example:
+
+<img src="https://hepapi.github.io/knowledge-hub/qa/karate1-media/media/postman2-image3.png" style="width:6.5in;height:1.43789in" />
 
 #### **Leverage Script & Auth Inheritance**
 
