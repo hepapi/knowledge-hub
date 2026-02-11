@@ -34,7 +34,7 @@ If you’ve ever set up a standard Maven or Gradle project, Karate will feel fam
 
 Here is how a no-nonsense Karate project usually looks:
 
-![Project Structure]({{ '/qa/karate1-media/media/image4.png' | relative_url }})
+![Project Structure](https://hepapi.github.io/knowledge-hub/qa/karate1-media/media/image4.png)
 
 ### **Key Components Explained**
 
@@ -77,7 +77,7 @@ The real magic? You don't need a separate Java file to explain what When method 
 
 Example: getUser.feature
 
-![Feature Example 1]({{ '/qa/karate1-media/media/image1.png' | relative_url }})
+![Feature Example 1](https://hepapi.github.io/knowledge-hub/qa/karate1-media/media/image1.png)
 
 In this snippet, anyone—even someone who doesn't code—can see exactly what's happening. We’re hitting a specific user endpoint and expecting a 200 OK.
 
@@ -104,7 +104,7 @@ You can combine these to validate a massive JSON object in a single line. It’s
 
 ### **Example Response Validation**
 
-![Feature Example 2]({{ '/qa/karate1-media/media/image2.png' | relative_url }})
+![Feature Example 2](https://hepapi.github.io/knowledge-hub/qa/karate1-media/media/image2.png)
 
 In this example, we are validating the *shape* of the response. We don’t care if the userId is 1 or 100, as long as it’s a number. We don't care what the createdAt timestamp says, as long as it's a string.
 
@@ -128,7 +128,7 @@ Karate is pretty flexible with how it handles datasets:
 
 Instead of writing three different login scenarios, you write one:
 
-![Feature Example 3]({{ '/qa/karate1-media/media/image3.png' | relative_url }})
+![Feature Example 3](https://hepapi.github.io/knowledge-hub/qa/karate1-media/media/image3.png)
 
 In this case, Karate runs the entire flow once for each row in your table. If the second row fails, the report tells you exactly which input caused the issue without stopping the rest of the suite.
 
