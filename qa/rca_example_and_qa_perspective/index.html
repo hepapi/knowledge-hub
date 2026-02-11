@@ -8705,7 +8705,332 @@
 
 
 <h1 id="rca-example-qa-perspective">RCA Example &amp; QA Perspective</h1>
-<p>Content will be added.</p>
+<h1 id="scenario-timeout-error-in-payment-service">Scenario: Timeout Error in Payment Service</h1>
+<p><strong>Problem Description:</strong> 15% of users in the production environment are unable to complete payment transactions. Users receive "Transaction timed out" error. The issue is observed more frequently during peak hours.</p>
+<p><strong>Impact:</strong></p>
+<ul>
+<li>
+<p>Daily transaction loss</p>
+</li>
+<li>
+<p>Customer complaints</p>
+</li>
+<li>
+<p>Increased ticket volume to support team</p>
+</li>
+</ul>
+<h1 id="5-whys-technique-application">5 Whys Technique Application</h1>
+<table>
+<thead>
+<tr>
+<th><strong>Step</strong></th>
+<th><strong>Question</strong></th>
+<th><strong>Answer</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Why are users unable to make payments?</td>
+<td>Payment API returns timeout error</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Why does the API timeout?</td>
+<td>Database query responds late</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Why does the query respond late?</td>
+<td>Full table scan is performed on the Orders table</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Why is a full table scan performed?</td>
+<td>Index is not defined on the relevant column</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Why is the index not defined?</td>
+<td>Table growth was not anticipated, performance testing was not conducted</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Root Cause:</strong> user_id column lacks an index, and performance testing under load was not performed.</p>
+<h1 id="fishbone-analysis-ishikawa-diagram">Fishbone Analysis (Ishikawa Diagram)</h1>
+<p>The following table categorizes the factors contributing to the payment timeout error:</p>
+<table style="width:92%;">
+<colgroup>
+<col style="width: 46%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>Category</strong></th>
+<th><strong>Factors</strong></th>
+</tr>
+<tr>
+<th><strong>PEOPLE</strong></th>
+<th>• Performance check was skipped during code review<br />
+• DBA approval was not obtained</th>
+</tr>
+<tr>
+<th><strong>METHOD</strong></th>
+<th>• Load testing was not performed<br />
+• DB migration checklist was incomplete</th>
+</tr>
+<tr>
+<th><strong>SYSTEM</strong></th>
+<th>• Index is missing<br />
+• Connection pool is insufficient</th>
+</tr>
+<tr>
+<th><strong>ENVIRONMENT</strong></th>
+<th>• Peak hour traffic increase<br />
+• Concurrent user count increased 3x</th>
+</tr>
+<tr>
+<th><strong>MEASUREMENT</strong></th>
+<th>• DB response time was not monitored<br />
+• Alert threshold was not defined</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<p><strong>Main Problem:</strong> PAYMENT TIMEOUT ERROR</p>
+<h1 id="actions-taken">Actions Taken</h1>
+<h2 id="short-term-immediate-fix">Short-Term (Immediate Fix)</h2>
+<ul>
+<li>
+<p>Index added to orders.user_id column</p>
+</li>
+<li>
+<p>Connection pool size increased</p>
+</li>
+<li>
+<p>API timeout duration optimized</p>
+</li>
+</ul>
+<h2 id="medium-term-preventive-actions">Medium-Term (Preventive Actions)</h2>
+<ul>
+<li>
+<p>Index review step added to DB migration checklist</p>
+</li>
+<li>
+<p>Load testing process integrated into CI/CD pipeline</p>
+</li>
+<li>
+<p>Monitoring and alerts defined for database response time</p>
+</li>
+</ul>
+<h2 id="long-term-process-improvement">Long-Term (Process Improvement)</h2>
+<ul>
+<li>
+<p>Performance testing strategy documented</p>
+</li>
+<li>
+<p>Performance criteria added to code review checklist</p>
+</li>
+<li>
+<p>Capacity planning process established</p>
+</li>
+</ul>
+<h1 id="qas-role-in-the-rca-process">QA's Role in the RCA Process</h1>
+<p>QA engineers should take an active role in the RCA process and ask the following questions:</p>
+<h2 id="test-coverage-analysis">Test Coverage Analysis</h2>
+<ul>
+<li>
+<p>Was this scenario within test coverage?</p>
+</li>
+<li>
+<p>Was load testing performed? If so, under what conditions?</p>
+</li>
+<li>
+<p>Were edge cases evaluated?</p>
+</li>
+</ul>
+<h2 id="test-strategy-assessment">Test Strategy Assessment</h2>
+<ul>
+<li>
+<p>Why did the current testing approach fail to catch this bug?</p>
+</li>
+<li>
+<p>Which type of testing was missing? (Performance, Load, Stress)</p>
+</li>
+<li>
+<p>How accurately did the test environment reflect production?</p>
+</li>
+</ul>
+<h2 id="regression-strategy">Regression Strategy</h2>
+<ul>
+<li>
+<p>Which areas carry regression risk after this fix?</p>
+</li>
+<li>
+<p>What should be added to automation coverage?</p>
+</li>
+<li>
+<p>Should the smoke test suite be updated?</p>
+</li>
+</ul>
+<h2 id="defect-pattern-analysis">Defect Pattern Analysis</h2>
+<ul>
+<li>
+<p>Have similar bugs occurred before?</p>
+</li>
+<li>
+<p>Is there a common pattern?</p>
+</li>
+<li>
+<p>Which module or component is at risk?</p>
+</li>
+</ul>
+<h1 id="rca-report-template">RCA Report Template</h1>
+<p>An RCA report should include the following sections:</p>
+<h2 id="summary">Summary</h2>
+<ul>
+<li>
+<p>Incident ID: INC-2024-0892</p>
+</li>
+<li>
+<p>Date: 2024-01-15</p>
+</li>
+<li>
+<p>Severity: P1</p>
+</li>
+<li>
+<p>Affected System: Payment Service</p>
+</li>
+<li>
+<p>Impact Duration: 3 hours 20 minutes</p>
+</li>
+</ul>
+<h2 id="problem-description">Problem Description</h2>
+<p>[Description of the problem and how it was detected]</p>
+<h2 id="timeline">Timeline</h2>
+<ul>
+<li>
+<p>09:15 - First alert triggered</p>
+</li>
+<li>
+<p>09:22 - Incident opened</p>
+</li>
+<li>
+<p>09:45 - Root cause identified</p>
+</li>
+<li>
+<p>10:30 - Hotfix deployed</p>
+</li>
+<li>
+<p>12:35 - Service stabilized</p>
+</li>
+</ul>
+<h2 id="root-cause">Root Cause</h2>
+<p>[Root cause identified through 5 Whys or other technique used]</p>
+<h2 id="impact-analysis">Impact Analysis</h2>
+<ul>
+<li>
+<p>Number of affected users</p>
+</li>
+<li>
+<p>Number of failed transactions</p>
+</li>
+<li>
+<p>Financial impact (if any)</p>
+</li>
+</ul>
+<h2 id="actions-taken-table">Actions Taken Table</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Action</strong></th>
+<th><strong>Owner</strong></th>
+<th><strong>Due Date</strong></th>
+<th><strong>Status</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add index</td>
+<td>DB Team</td>
+<td>2024-01-16</td>
+<td>Completed</td>
+</tr>
+<tr>
+<td>Add load testing</td>
+<td>QA Team</td>
+<td>2024-01-22</td>
+<td>In Progress</td>
+</tr>
+<tr>
+<td>Set up monitoring</td>
+<td>DevOps Team</td>
+<td>2024-01-25</td>
+<td>Planned</td>
+</tr>
+<tr>
+<td>Update checklist</td>
+<td>QA Team</td>
+<td>2024-01-20</td>
+<td>Completed</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>[Conclusions drawn regarding process, system, and team]</p>
+<h2 id="approval">Approval</h2>
+<ul>
+<li>
+<p>Prepared by: [Name]</p>
+</li>
+<li>
+<p>Approved by: [Name]</p>
+</li>
+<li>
+<p>Date: [Date]</p>
+</li>
+</ul>
+<h1 id="lessons-learned_1">Lessons Learned</h1>
+<p>Questions to be evaluated as a team at the end of each RCA process:</p>
+<p><strong>From a Process Perspective:</strong></p>
+<ul>
+<li>
+<p>Which control points were missing?</p>
+</li>
+<li>
+<p>Which existing processes should be updated?</p>
+</li>
+<li>
+<p>Is there an automation opportunity?</p>
+</li>
+</ul>
+<p><strong>From a Technical Perspective:</strong></p>
+<ul>
+<li>
+<p>Is an architectural or design change required?</p>
+</li>
+<li>
+<p>Is monitoring and alerting sufficient?</p>
+</li>
+<li>
+<p>Is documentation up to date?</p>
+</li>
+</ul>
+<p><strong>From a Team Perspective:</strong></p>
+<ul>
+<li>
+<p>Was there a knowledge gap?</p>
+</li>
+<li>
+<p>Was a training need identified?</p>
+</li>
+<li>
+<p>Were communication processes adequate?</p>
+</li>
+</ul>
+<p>Lessons learned outputs should be shared with the entire team and stored as a reference to prevent similar errors.</p>
 
 
 
