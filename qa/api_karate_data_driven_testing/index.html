@@ -6294,6 +6294,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data-Driven Testing
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -6310,6 +6328,64 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-feed-data-into-your-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Feed Data into Your Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-login-validation-with-multiple-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Login Validation with Multiple Inputs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Login Validation with Multiple Inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-we-use-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why we use this
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8759,53 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-feed-data-into-your-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Feed Data into Your Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-login-validation-with-multiple-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Login Validation with Multiple Inputs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Login Validation with Multiple Inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-we-use-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why we use this
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8830,20 @@
 
 
 <h1 id="data-driven-testing">Data-Driven Testing</h1>
-<p>Content will be added.</p>
+<p>As your API grows, you’ll eventually need to test the same endpoint with 10, 50, or 100 different inputs. If you’re copy-pasting scenarios to do this, you’re creating a maintenance nightmare. Karate’s data-driven approach is designed to solve exactly this by separating <strong>what</strong> you test from the <strong>data</strong> you use.</p>
+<h4 id="how-to-feed-data-into-your-tests"><strong>How to Feed Data into Your Tests</strong></h4>
+<p>Karate is pretty flexible with how it handles datasets:</p>
+<ul>
+<li><strong>Inline Tables:</strong> For a quick check with 3-4 variations, you can just drop a table right into your feature file. It’s great because you can see the data and the logic on the same screen.</li>
+<li><strong>Scenario Outlines:</strong> This is the bread and butter of data-driven testing. You write the scenario once, use placeholders like \&lt;username&gt;, and let the Examples table do the rest.</li>
+<li><strong>External Files (JSON/CSV):</strong> If you have 500 rows of data or if your data is managed by another team, you don't want it cluttering your feature file. You can just point Karate to an external .csv or .json file and it will loop through every row automatically.</li>
+</ul>
+<h3 id="example-login-validation-with-multiple-inputs"><strong>Example: Login Validation with Multiple Inputs</strong></h3>
+<p>Instead of writing three different login scenarios, you write one:</p>
+<p><img alt="Feature Example 3" src="https://hepapi.github.io/knowledge-hub/qa/karate1-media/media/image3.png" /></p>
+<p>In this case, Karate runs the entire flow once for each row in your table. If the second row fails, the report tells you exactly which input caused the issue without stopping the rest of the suite.</p>
+<h4 id="why-we-use-this"><strong>Why we use this</strong></h4>
+<p>The biggest win here is <strong>scalability</strong>. When the login logic changes, you only have to fix it in one place, not in twenty different scenarios. It keeps your feature files lean and allows you to cover edge cases—like empty strings, long passwords, or special characters—just by adding a single line to a CSV file. It’s about getting maximum coverage with minimum effort.</p>
 
 
 
