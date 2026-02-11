@@ -6322,6 +6322,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD Integration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -6338,6 +6356,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parallel-execution-the-speed-king" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallel Execution: The Speed King
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-in-the-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging in the Cloud
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-suite-multiple-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One Suite, Multiple Environments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8764,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parallel-execution-the-speed-king" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallel Execution: The Speed King
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-in-the-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging in the Cloud
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-suite-multiple-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One Suite, Multiple Environments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8840,25 @@
 
 
 <h1 id="cicd-integration">CI/CD Integration</h1>
-<p>Content will be added.</p>
+<p>A testing tool is only as good as its integration with your CI/CD pipeline. The best thing about Karate is that it doesn’t require any special "Karate plugin" for Jenkins or GitHub Actions. Since it runs as a standard JUnit test, your pipeline treats it just like any other unit test.</p>
+<h4 id="parallel-execution-the-speed-king"><strong>Parallel Execution: The Speed King</strong></h4>
+<p>If you have 500 tests and they run sequentially, your pipeline will take forever. Karate has a built-in parallel runner that lets you run hundreds of scenarios concurrently. I’ve seen suites that took 30 minutes to finish drop down to 2 or 3 minutes just by increasing the thread count. This is a game-changer for getting fast feedback on every pull request.</p>
+<h4 id="debugging-in-the-cloud"><strong>Debugging in the Cloud</strong></h4>
+<p>When a test fails in a CI environment (like GitLab or Azure DevOps), the last thing you want to do is try to reproduce it locally for an hour. Karate generates highly detailed HTML reports that capture:</p>
+<ul>
+<li>The exact Request URL and Headers.</li>
+<li>The full Response Body.</li>
+<li>The specific assertion that failed.</li>
+</ul>
+<p>You can basically debug the failure directly from your browser in the CI artifacts without ever touching your IDE.</p>
+<h4 id="one-suite-multiple-environments"><strong>One Suite, Multiple Environments</strong></h4>
+<p>You shouldn't have to change your code to run tests against Staging instead of Dev. By using the karate.env property, you can trigger different configurations from your Maven or Gradle command:</p>
+<p><code>mvn test -Dkarate.env=staging</code></p>
+<p>Karate then picks up the right URLs and credentials from your karate-config.js file. It’s simple, explicit, and prevents "hard-coded" environment disasters.</p>
+<h3 id="conclusion"><strong>Conclusion</strong></h3>
+<p>At the end of the day, Karate shifts the focus from <strong>writing code</strong> to <strong>validating features</strong>. We spend too much time in this industry maintaining fragile automation frameworks that eventually get abandoned because they are too complex.</p>
+<p>Karate gives you the power of Java and the speed of a "low-code" DSL without forcing you to choose one over the other. Whether you are a developer looking for a quick way to test your endpoints or a QA engineer building a massive regression suite, it just works.</p>
+<p>It’s not just about "checking boxes" for a release; it’s about creating living documentation that actually tells you how your system behaves. If you want to stop fighting your testing tools and start testing your APIs, Karate is probably the best place to start.</p>
 
 
 
