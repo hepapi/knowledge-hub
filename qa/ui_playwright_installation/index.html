@@ -5332,6 +5332,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation (Brief)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -5348,6 +5366,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-running-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Running Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ui-mode-highly-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. UI Mode (Highly Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8753,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-running-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Running Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ui-mode-highly-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. UI Mode (Highly Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8818,31 @@
 
 
 <h1 id="installation-brief">Installation (Brief)</h1>
-<p>Content will be added.</p>
+<p>One of Playwright’s biggest advantages is its extremely simple installation process.</p>
+<h3 id="1-installation">1. Installation</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm<span class="w"> </span>init<span class="w"> </span>playwright@latest
+</code></pre></div>
+<p>This command:</p>
+<ul>
+<li>Installs Playwright</li>
+<li>Downloads Chromium, Firefox, and WebKit</li>
+<li>Creates example test files</li>
+<li>Generates <code>playwright.config.ts</code></li>
+<li>Sets up the project structure automatically</li>
+</ul>
+<h3 id="2-running-tests">2. Running Tests</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>npx<span class="w"> </span>playwright<span class="w"> </span><span class="nb">test</span>
+</code></pre></div>
+<h3 id="3-ui-mode-highly-recommended">3. UI Mode (Highly Recommended)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npx<span class="w"> </span>playwright<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--ui
+</code></pre></div>
+<p>With UI Mode, you can:</p>
+<ul>
+<li>Visually observe test execution</li>
+<li>Debug step by step</li>
+<li>Inspect locators in real time</li>
+<li>Analyze failures more easily</li>
+</ul>
 
 
 
