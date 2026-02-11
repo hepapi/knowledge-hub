@@ -8707,7 +8707,48 @@
 
 
 <h1 id="android-ios-setup-overview">Android &amp; iOS Setup (Overview)</h1>
-<p>Content will be added.</p>
+<h1 id="mobile-environment-setup">Mobile Environment Setup</h1>
+<p>Environment setup is usually the most time-consuming part of mobile automation. A clean and stable configuration is critical for reliable tests.</p>
+<h2 id="android-setup">Android Setup</h2>
+<h3 id="required-tools">Required Tools</h3>
+<ul>
+<li>Android Studio</li>
+<li>Android SDK</li>
+<li>Java JDK</li>
+<li><code>ANDROID_HOME</code> environment variable</li>
+<li>Emulator or real device with USB Debugging enabled</li>
+</ul>
+<h3 id="basic-steps">Basic Steps</h3>
+<ol>
+<li>Install Android Studio.</li>
+<li>Download:</li>
+<li>Platform Tools</li>
+<li>Build Tools</li>
+<li>Emulator images</li>
+<li>Set environment variables:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ANDROID_HOME</span><span class="o">=</span>/Users/username/Library/Android/sdk
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$ANDROID_HOME</span>/platform-tools
+</code></pre></div>
+<ol>
+<li>Install Appium driver:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>appium<span class="w"> </span>driver<span class="w"> </span>install<span class="w"> </span>uiautomator2
+</code></pre></div>
+<h2 id="ios-setup-macos-only">iOS Setup (macOS only)</h2>
+<h3 id="required-tools_1">Required Tools</h3>
+<ul>
+<li>macOS</li>
+<li>Xcode</li>
+<li>Xcode Command Line Tools</li>
+<li>iOS Simulator</li>
+<li>Provisioning profiles for real devices</li>
+</ul>
+<h3 id="basic-steps_1">Basic Steps</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>xcode-select<span class="w"> </span>--install
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>appium<span class="w"> </span>driver<span class="w"> </span>install<span class="w"> </span>xcuitest
+</code></pre></div>
+<p>Note: iOS setup is generally more complex due to signing and provisioning requirements.</p>
 
 
 
