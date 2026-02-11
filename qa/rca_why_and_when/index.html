@@ -8705,7 +8705,214 @@
 
 
 <h1 id="why-when-rca-is-needed">Why &amp; When RCA is Needed</h1>
-<p>Content will be added.</p>
+<p>The primary purpose of RCA is to prevent the recurrence of problems and produce permanent solutions. Fixing an error is an immediate intervention; understanding why that error occurred is a strategic investment.</p>
+<p><strong>Core motivations for RCA:</strong></p>
+<ul>
+<li>
+<p>Prevent the same error from recurring in different forms</p>
+</li>
+<li>
+<p>Apply permanent fixes instead of temporary solutions (workarounds)</p>
+</li>
+<li>
+<p>Minimize error cost at an early stage</p>
+</li>
+<li>
+<p>Identify process and system vulnerabilities</p>
+</li>
+<li>
+<p>Create awareness and a learning culture across the team</p>
+</li>
+</ul>
+<h1 id="what-happens-if-rca-is-not-performed">What Happens If RCA Is Not Performed?</h1>
+<p>When RCA is not applied, problems are superficially closed but the source is not eliminated. This leads to serious consequences in the medium and long term:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Situation</strong></th>
+<th><strong>Consequence</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Same bug reopened with different tickets</td>
+<td>Development and testing effort is wasted</td>
+</tr>
+<tr>
+<td>Production incidents recur</td>
+<td>Customer trust is shaken, SLA violations occur</td>
+</tr>
+<tr>
+<td>Team deals with the same issue repeatedly</td>
+<td>Motivation drops, productivity decreases</td>
+</tr>
+<tr>
+<td>Source of the problem remains unclear</td>
+<td>Technical debt accumulates, system complexity increases</td>
+</tr>
+<tr>
+<td>Errors are not documented</td>
+<td>Organizational memory is not formed, same mistakes are repeated by new team members</td>
+</tr>
+</tbody>
+</table>
+<h1 id="when-should-rca-be-performed">When Should RCA Be Performed?</h1>
+<p>It is not practical to perform RCA for every error. The RCA process should be initiated in the following situations:</p>
+<h2 id="critical-production-incidents">Critical Production Incidents</h2>
+<ul>
+<li>
+<p>Service outage or loss of user access</p>
+</li>
+<li>
+<p>Data loss or data inconsistency</p>
+</li>
+<li>
+<p>Errors in financial transactions</p>
+</li>
+<li>
+<p>SLA violation</p>
+</li>
+</ul>
+<h2 id="recurring-defects">Recurring Defects</h2>
+<ul>
+<li>
+<p>Errors that appear multiple times in the same module or component</p>
+</li>
+<li>
+<p>Bugs that are closed and reopened</p>
+</li>
+<li>
+<p>Similar issues manifesting with different symptoms</p>
+</li>
+</ul>
+<h2 id="security-breaches">Security Breaches</h2>
+<ul>
+<li>
+<p>Identified security vulnerabilities</p>
+</li>
+<li>
+<p>Authorization or authentication errors</p>
+</li>
+<li>
+<p>Data leakage or unauthorized access</p>
+</li>
+</ul>
+<h2 id="high-impact-customer-complaints">High-Impact Customer Complaints</h2>
+<ul>
+<li>
+<p>Same feedback from multiple customers</p>
+</li>
+<li>
+<p>Functional errors with high business impact</p>
+</li>
+</ul>
+<h2 id="critical-post-release-issues">Critical Post-Release Issues</h2>
+<ul>
+<li>
+<p>Unexpected behaviors emerging after deployment</p>
+</li>
+<li>
+<p>Situations requiring rollback</p>
+</li>
+</ul>
+<h1 id="when-is-rca-not-required">When Is RCA Not Required?</h1>
+<p>RCA is not mandatory in every situation. Initiating a detailed analysis process in the following scenarios may create unnecessary effort:</p>
+<ul>
+<li>
+<p><strong>One-time, low-impact errors:</strong> Minor bugs that affect an isolated user and do not recur</p>
+</li>
+<li>
+<p><strong>Cases with obvious causes:</strong> If the root cause is clearly visible (e.g., typo, missing null check), a simple fix is sufficient</p>
+</li>
+<li>
+<p><strong>Configuration errors:</strong> Environment-specific, easily correctable setting deficiencies</p>
+</li>
+<li>
+<p><strong>Temporary third-party issues:</strong> Momentary outages originating from external services and beyond control</p>
+</li>
+</ul>
+<p>In these cases, the standard bug fix process is sufficient. However, if such errors become frequent, it should be evaluated whether a pattern is forming.</p>
+<h1 id="benefits-of-rca">Benefits of RCA</h1>
+<p>A regularly and correctly applied RCA process provides the following benefits:</p>
+<h2 id="quality-improvement">Quality Improvement</h2>
+<ul>
+<li>
+<p>Prevention of recurring errors</p>
+</li>
+<li>
+<p>Targeted expansion of test coverage</p>
+</li>
+<li>
+<p>Increased code quality</p>
+</li>
+</ul>
+<h2 id="cost-optimization">Cost Optimization</h2>
+<ul>
+<li>
+<p>Reduced error correction cost (early detection, permanent solution)</p>
+</li>
+<li>
+<p>Prevention of repeated effort</p>
+</li>
+<li>
+<p>Decreased number of production incidents</p>
+</li>
+</ul>
+<h2 id="process-improvement">Process Improvement</h2>
+<ul>
+<li>
+<p>Identification and strengthening of weak points</p>
+</li>
+<li>
+<p>Maturation of code review, testing, and deployment processes</p>
+</li>
+<li>
+<p>Identification of automation opportunities</p>
+</li>
+</ul>
+<h2 id="team-development">Team Development</h2>
+<ul>
+<li>
+<p>Establishment of a learning culture</p>
+</li>
+<li>
+<p>Increased knowledge sharing</p>
+</li>
+<li>
+<p>Development of problem-solving competency</p>
+</li>
+</ul>
+<h1 id="rca-and-continuous-improvement">RCA and Continuous Improvement</h1>
+<p>RCA should be part of the continuous improvement cycle, not an isolated activity.</p>
+<p>Problem Detection → RCA → Root Cause → Action → Implementation → Verification → Monitoring</p>
+<p>The outputs feed into:</p>
+<ul>
+<li>
+<p>Process Updates</p>
+</li>
+<li>
+<p>Test Strategy Revision</p>
+</li>
+<li>
+<p>Automation Development</p>
+</li>
+</ul>
+<p><strong>RCA in Agile and DevOps processes:</strong></p>
+<ul>
+<li>
+<p>RCA outputs are evaluated in sprint retrospectives</p>
+</li>
+<li>
+<p>Incidents are analyzed in post-mortem meetings</p>
+</li>
+<li>
+<p>Preventive controls are added to CI/CD pipelines</p>
+</li>
+<li>
+<p>Monitoring and alerting strategies are updated</p>
+</li>
+</ul>
+<p>RCA outputs should be added to the backlog and improvement actions should be tracked.</p>
 
 
 
