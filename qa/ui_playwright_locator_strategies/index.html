@@ -5388,6 +5388,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locator Strategies
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -5404,6 +5422,108 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-locator-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Locator Priority
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Locator Priority">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getbyrole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getByRole()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbytestid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getByTestId()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbytext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getByText()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css-xpath-last-resort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSS / XPath (last resort)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-xpath-is-discouraged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why XPath Is Discouraged
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playwright-locators-are" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Playwright Locators Are
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8803,97 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-locator-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Locator Priority
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Locator Priority">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getbyrole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getByRole()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbytestid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getByTestId()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbytext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getByText()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css-xpath-last-resort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSS / XPath (last resort)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-xpath-is-discouraged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why XPath Is Discouraged
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playwright-locators-are" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Playwright Locators Are
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8918,31 @@
 
 
 <h1 id="locator-strategies">Locator Strategies</h1>
-<p>Content will be added.</p>
+<p>Playwright offers one of the most powerful locator engines in the testing ecosystem.</p>
+<h2 id="recommended-locator-priority">Recommended Locator Priority</h2>
+<h3 id="getbyrole"><code>getByRole()</code></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">page</span><span class="p">.</span><span class="nx">getByRole</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Login&#39;</span><span class="w"> </span><span class="p">});</span>
+</code></pre></div>
+<h3 id="getbytestid"><code>getByTestId()</code></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">page</span><span class="p">.</span><span class="nx">getByTestId</span><span class="p">(</span><span class="s1">&#39;login-btn&#39;</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="getbytext"><code>getByText()</code></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">page</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="s1">&#39;Sign In&#39;</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="css-xpath-last-resort">CSS / XPath (last resort)</h3>
+<h2 id="why-xpath-is-discouraged">Why XPath Is Discouraged</h2>
+<ul>
+<li>Easily breaks with UI changes</li>
+<li>Hard to maintain</li>
+<li>Low readability</li>
+<li>Causes flaky tests</li>
+</ul>
+<h2 id="playwright-locators-are">Playwright Locators Are</h2>
+<ul>
+<li>More stable</li>
+<li>Easier to read</li>
+<li>Auto-wait enabled</li>
+</ul>
 
 
 
