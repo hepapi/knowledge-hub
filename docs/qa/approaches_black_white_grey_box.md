@@ -1,36 +1,10 @@
 # Black / White / Grey Box Testing
 
 
-## Seeing the Full Picture: The Three Perspectives of Quality
+Seeing the Full Picture: The Three Perspectives of Quality
 
-Testing is not only about finding errors; it is also about understanding from which perspective an issue occurs. These three approaches help evaluate software quality from different angles.
+Testing isn't just about finding errors; it's also about our perspective on how the problem occurred.We use three different way to make sure your software is flawless from every angle.
 
-### Black Box Testing
-
-Think about using your favorite app. You do not think about the code in the background; you just expect the app to work correctly when you click a button.
-
-Black box testing follows this same approach. From a user perspective, it focuses on:
-
-- Exploring the interface
-- Interacting with clickable elements
-- Scrolling and navigation behavior
-- Entering and validating inputs
-
-The internal code is not considered during execution.
-
-### White Box Testing
-
-While user experience is critical, internal code quality also matters. White box testing examines the implementation to ensure:
-
-- Clean and maintainable design
-- Correct logic and structure
-- Strong security practices
-- Long-term reliability of the application
-
-It is similar to taking an X-ray of the software.
-
-### Grey Box Testing
-
-Grey box testing combines both perspectives. The tester behaves like a user but also has partial knowledge of system internals, such as architecture or documentation.
-
-This helps validate whether user actions correctly match backend rules, such as database behavior, and makes it easier to identify root causes when failures occur.
+- Black Box Testing: Let's think about our favorite app. When we use it, we never think about the code written in the background, right? We just want the app to work correctly when we press the button. That's exactly what Black Box testing is. From a user's perspective, it's about exploring the interface without dealing with the code of the object being tested, checking clickable elements, scrolling if necessary, and entering input where it's possible.
+- White Box Testing: While we prioritize user experience, what's happening behind the scenes is equally important. We examine the code to ensure it's soundly and cleanly designed, with robust security and a long lifespan for the application. It's like taking an X-ray of the software.
+- Grey Box Testing: In some cases, we may need to use both techniques we mentioned earlier. We act as a user, but we also have documentation showing how the system works in the background. This helps us determine if specific actions performed by the user match a particular database rule in the background, and if not, identify any errors that may occur.
