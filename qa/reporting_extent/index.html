@@ -7742,6 +7742,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extent Reports
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -7758,6 +7776,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-extent-reports-are-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Extent Reports Are Used
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strengths-of-extent-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strengths of Extent Reports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-and-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration and Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-extent-reports-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Extent Reports Matter
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8764,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-extent-reports-are-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Extent Reports Are Used
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strengths-of-extent-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strengths of Extent Reports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-and-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration and Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-extent-reports-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Extent Reports Matter
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8840,32 @@
 
 
 <h1 id="extent-reports">Extent Reports</h1>
-<p>Content will be added.</p>
+<p>Extent Reports is a reporting library used to generate detailed and visually structured test execution reports for automated tests. It is commonly preferred in UI automation projects where clear step-level visibility is important.</p>
+<p>Unlike simple console outputs or raw logs, Extent Reports present test results in a format that is easy to review and share.</p>
+<h2 id="how-extent-reports-are-used">How Extent Reports Are Used</h2>
+<p>Extent Reports are generated during or after automated test execution and produce an HTML-based report. Each test scenario is displayed with its execution status, test steps, and relevant details captured during runtime.</p>
+<p>Typical information included in an Extent Report:</p>
+<ul>
+<li>Test status (pass, fail, skip)</li>
+<li>Step-level execution details</li>
+<li>Error messages and assertion failures</li>
+<li>Screenshots or additional logs when failures occur</li>
+</ul>
+<p>This structure makes it easier to understand exactly where and why a test failed.</p>
+<h2 id="strengths-of-extent-reports">Strengths of Extent Reports</h2>
+<p>Extent Reports offer a high level of customization. Teams can adjust the layout, naming conventions, and level of detail based on their reporting needs. This makes it suitable for projects that require reports aligned with internal standards or stakeholder expectations.</p>
+<p>It is often used in:</p>
+<ul>
+<li>Selenium-based automation frameworks</li>
+<li>Playwright or similar UI test setups</li>
+<li>Projects where reports are shared outside the QA team</li>
+</ul>
+<h2 id="integration-and-maintenance">Integration and Maintenance</h2>
+<p>Extent Reports can be integrated directly into test frameworks and CI pipelines. Reports are typically generated automatically after each execution and stored as build artifacts.</p>
+<p>Because of its flexible structure, maintaining and extending reports is straightforward, especially when test frameworks evolve over time.</p>
+<h2 id="why-extent-reports-matter">Why Extent Reports Matter</h2>
+<p>Clear reporting plays a key role in making automation results actionable. Extent Reports help teams quickly assess test outcomes, identify failure points, and communicate results effectively.</p>
+<p>When used consistently, they improve transparency across teams and support faster feedback cycles during development and release processes.</p>
 
 
 
