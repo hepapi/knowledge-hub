@@ -6464,6 +6464,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Usage with Newman
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -6480,6 +6498,97 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-why-newman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Why Newman?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-execution-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Execution Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#33-reporting-visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Reporting &amp; Visibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8792,86 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-why-newman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Why Newman?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-execution-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Execution Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#33-reporting-visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Reporting &amp; Visibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8896,57 @@
 
 
 <h1 id="cli-usage-with-newman">CLI Usage with Newman</h1>
-<p>Content will be added.</p>
+<p>Postman is great for manual debugging, but you can’t sit there clicking "Run" during a deployment. To bridge that gap, we pull <strong>Newman</strong> into our workflow. It’s Postman’s official command-line runner that lets us execute collections in a "headless" environment. This is what makes our tests CI/CD-ready, turning them from local scripts into automated quality gates that run on every build.</p>
+<h3 id="31-why-newman"><strong>3.1 Why Newman?</strong></h3>
+<p>Newman isn't just an add-on; it’s what makes API testing a functional part of our delivery pipeline rather than an afterthought. Here is why it’s a staple in our workflow:</p>
+<ul>
+<li>
+<p><strong>Headless Execution:</strong> Since Newman runs without a GUI, it’s tailor-made for Docker containers and CI agents. It allows us to trigger full test suites on remote servers where a visual interface isn't even an option.</p>
+</li>
+<li>
+<p><strong>Fail-Fast Mechanism:</strong> This is our safety net. If a single test fails, Newman immediately flags the pipeline to stop the deployment. It’s a simple but effective way to make sure broken code never hits production.</p>
+</li>
+<li>
+<p><strong>CI/CD Compatibility:</strong> It turns API tests into "first-class citizens" of the pipeline. Whether we are using Jenkins, GitHub Actions, or GitLab CI, Newman provides the immediate feedback loop we need to validate every commit against real-world API behavior.</p>
+</li>
+</ul>
+<h3 id="32-execution-example"><strong>3.2 Execution Example</strong></h3>
+<p>Triggering your test suite with Newman is straightforward and happens directly from the terminal. Instead of complex configurations, a single command is usually all you need to run a collection against a specific environment and get a detailed report back.</p>
+<p><strong>The Command:</strong></p>
+<h2 id="_1"><img src="https://hepapi.github.io/knowledge-hub/qa/karate1-media/media/postman2-image7.png" style="width:6.5in;height:0.875in" /></h2>
+<p><strong>Breaking down the command:</strong></p>
+<ul>
+<li>
+<p><strong>Order_Flow_Collection.json</strong>: This is your actual test suite—the collection file containing all your requests and scripts.</p>
+</li>
+<li>
+<p><strong>Staging_Env.json</strong>: This points Newman to your environment variables (like URLs and tokens). This is what makes the same command work for Dev, Staging, or Prod just by swapping the file.</p>
+</li>
+<li>
+<p><strong>--reporters cli,htmlextra</strong>: This tells Newman how to talk back to you. The cli reporter gives you instant feedback in the terminal, while htmlextra creates a polished, interactive HTML dashboard that’s perfect for sharing with the team or attaching to CI build artifacts.</p>
+</li>
+</ul>
+<p>By using this setup, you move away from manual "button-clicking" and ensure that your API validation is consistent, repeatable, and ready for any automation pipeline.</p>
+<h3 id="33-reporting-visibility"><strong>3.3 Reporting &amp; Visibility</strong></h3>
+<p>Using reporters like newman-reporter-htmlextra transforms raw terminal logs into interactive HTML dashboards. Instead of digging through thousands of lines of console output, you get a bird's-eye view of your entire test suite's health.</p>
+<p>These reports are essential for post-deployment checks and debugging because they provide:</p>
+<ul>
+<li>
+<p><strong>Deep-Dive Failure Analysis:</strong> You can quickly pinpoint exactly which assertion failed and the specific reason why, without re-running the test.</p>
+</li>
+<li>
+<p><strong>Full Request/Response Inspection:</strong> Every detail—headers, payloads, and response bodies—is captured. This is a lifesaver when an API fails in the CI/CD pipeline and you need to see exactly what the server sent back.</p>
+</li>
+<li>
+<p><strong>Endpoint Execution Metrics:</strong> The report breaks down performance per endpoint, showing response times and success rates. This makes it easy to spot which services are slowing down or becoming flaky.</p>
+</li>
+</ul>
+<p>Having this level of visibility makes incident analysis much faster. Whether you're doing a final check after a production deployment or investigating a failure in integration testing, these dashboards give you the data you need to fix issues immediately.</p>
+<h3 id="why-this-matters"><strong>Why This Matters</strong></h3>
+<p>Integrating Newman into your pipeline isn't just about automation—it’s about building a <strong>safety net</strong> that scales. By running tests in a headless environment, you catch breaking changes before they ever touch your production servers. The fail-fast mechanism acts as a gatekeeper: if the code isn't right, the pipeline stops. Combined with deep-dive reporting, you spend less time guessing why a build failed and more time shipping reliable features.</p>
+<h3 id="conclusion"><strong>Conclusion</strong></h3>
+<p>Postman is a great starting point for exploring APIs, but it becomes a professional engineering tool only when you move beyond manual requests. By combining disciplined collection structures, multi-layered test scripts (Status, Payload, and Schema), and Newman-driven automation, you transform API testing from a manual, error-prone task into a <strong>scalable engineering practice</strong>.</p>
+<p>This framework gives us more than just "passed tests"—it gives us the <strong>confidence</strong> to deploy. It ensures our APIs are contract-compliant, performant, and truly production-ready, allowing us to move faster without the constant fear of silent regressions.</p>
 
 
 
