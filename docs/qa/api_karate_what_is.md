@@ -1,5 +1,4 @@
-# What is Karate?
-
+### **1. What is Karate?**
 
 Technically, Karate is a test automation framework based on Cucumber/Gherkin. But practically, it’s a shortcut.
 
@@ -35,7 +34,7 @@ If you’ve ever set up a standard Maven or Gradle project, Karate will feel fam
 
 Here is how a no-nonsense Karate project usually looks:
 
-<img src="karate1-media/media/image4.png" style="width:6.5in;height:3.27778in" />
+![Project Structure]({{ '/qa/karate1-media/media/image4.png' | relative_url }})
 
 ### **Key Components Explained**
 
@@ -72,13 +71,13 @@ In Karate, you use the standard Gherkin keywords, but they do the heavy lifting 
 
 - **Scenario:** This is a single, isolated test case.
 
-- **Given / When / Then:** These describe your flow (Preconditions -\> Action -\> Outcome).
+- **Given / When / Then:** These describe your flow (Preconditions -> Action -> Outcome).
 
 The real magic? You don't need a separate Java file to explain what When method get means. The Karate engine already knows. This keeps your project tiny and makes your tests look like **actual documentation** rather than a programming puzzle.
 
 Example: getUser.feature
 
-<img src="karate1-media/media/image1.png" style="width:6.5in;height:1.99479in" />
+![Feature Example 1]({{ '/qa/karate1-media/media/image1.png' | relative_url }})
 
 In this snippet, anyone—even someone who doesn't code—can see exactly what's happening. We’re hitting a specific user endpoint and expecting a 200 OK.
 
@@ -96,19 +95,16 @@ This is where **Fuzzy Matching** in Karate becomes a life-saver. Instead of asse
 
 Karate has a built-in vocabulary for handling dynamic data without the mess:
 
-- **\#notnull**: The field has to be there. Simple as that.
-
-- **\#number / \#string / \#boolean**: Checks the data type. Great for IDs or status flags.
-
-- **\#regex**: When you need a specific format (like an email or a UUID).
-
-- **\#ignore**: For those fields you just don't care about in a particular test.
+- **#notnull**: The field has to be there. Simple as that.
+- **#number / #string / #boolean**: Checks the data type. Great for IDs or status flags.
+- **#regex**: When you need a specific format (like an email or a UUID).
+- **#ignore**: For those fields you just don't care about in a particular test.
 
 You can combine these to validate a massive JSON object in a single line. It’s clean, and more importantly, it's stable.
 
 ### **Example Response Validation**
 
-<img src="karate1-media/media/image2.png" style="width:6.5in;height:1.48438in" />
+![Feature Example 2]({{ '/qa/karate1-media/media/image2.png' | relative_url }})
 
 In this example, we are validating the *shape* of the response. We don’t care if the userId is 1 or 100, as long as it’s a number. We don't care what the createdAt timestamp says, as long as it's a string.
 
@@ -125,16 +121,14 @@ As your API grows, you’ll eventually need to test the same endpoint with 10, 5
 Karate is pretty flexible with how it handles datasets:
 
 - **Inline Tables:** For a quick check with 3-4 variations, you can just drop a table right into your feature file. It’s great because you can see the data and the logic on the same screen.
-
 - **Scenario Outlines:** This is the bread and butter of data-driven testing. You write the scenario once, use placeholders like \<username\>, and let the Examples table do the rest.
-
 - **External Files (JSON/CSV):** If you have 500 rows of data or if your data is managed by another team, you don't want it cluttering your feature file. You can just point Karate to an external .csv or .json file and it will loop through every row automatically.
 
 ### **Example: Login Validation with Multiple Inputs**
 
 Instead of writing three different login scenarios, you write one:
 
-<img src="karate1-media/media/image3.png" style="width:6.5in;height:1.84896in" />
+![Feature Example 3]({{ '/qa/karate1-media/media/image3.png' | relative_url }})
 
 In this case, Karate runs the entire flow once for each row in your table. If the second row fails, the report tells you exactly which input caused the issue without stopping the rest of the suite.
 
@@ -155,9 +149,7 @@ If you have 500 tests and they run sequentially, your pipeline will take forever
 When a test fails in a CI environment (like GitLab or Azure DevOps), the last thing you want to do is try to reproduce it locally for an hour. Karate generates highly detailed HTML reports that capture:
 
 - The exact Request URL and Headers.
-
 - The full Response Body.
-
 - The specific assertion that failed.
 
 You can basically debug the failure directly from your browser in the CI artifacts without ever touching your IDE.
@@ -166,7 +158,7 @@ You can basically debug the failure directly from your browser in the CI artifac
 
 You shouldn't have to change your code to run tests against Staging instead of Dev. By using the karate.env property, you can trigger different configurations from your Maven or Gradle command:
 
-mvn test -Dkarate.env=staging
+`mvn test -Dkarate.env=staging`
 
 Karate then picks up the right URLs and credentials from your karate-config.js file. It’s simple, explicit, and prevents "hard-coded" environment disasters.
 
