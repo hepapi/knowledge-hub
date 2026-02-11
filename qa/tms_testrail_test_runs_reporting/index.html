@@ -7628,6 +7628,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Runs & Reporting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -7644,6 +7662,97 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-test-runs-are-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Test Runs Are Used
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Test Runs Are Used">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-test-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a Test Run
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executing-tests-and-recording-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executing Tests and Recording Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-in-testrail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporting in TestRail
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supporting-release-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supporting Release Decisions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-test-runs-reporting-are-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Test Runs &amp; Reporting Are Important
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8792,86 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-test-runs-are-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Test Runs Are Used
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Test Runs Are Used">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-test-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a Test Run
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executing-tests-and-recording-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executing Tests and Recording Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-in-testrail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporting in TestRail
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supporting-release-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supporting Release Decisions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-test-runs-reporting-are-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Test Runs &amp; Reporting Are Important
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8896,35 @@
 
 
 <h1 id="test-runs-reporting-testrail">Test Runs &amp; Reporting (TestRail)</h1>
-<p>Content will be added.</p>
+<p>In TestRail, test runs are used to execute a defined group of test cases within a specific scope. They help teams monitor testing progress, capture execution results, and understand the overall quality of a feature or release.</p>
+<p>Instead of looking at test cases one by one, test runs provide a broader snapshot of where testing stands at a particular moment and whether the product is moving in the right direction.</p>
+<h2 id="how-test-runs-are-used">How Test Runs Are Used</h2>
+<h3 id="creating-a-test-run">Creating a Test Run</h3>
+<p>Test runs are usually created with a clear goal in mind, such as smoke testing, regression cycles, or release verification. The selected test cases depend on factors like recent changes, risk areas, and the current phase of development.</p>
+<p>Each run reflects the testing status for that defined scope and timeframe.</p>
+<h3 id="executing-tests-and-recording-results">Executing Tests and Recording Results</h3>
+<p>As testing progresses, each test case in the run is updated with a result such as passed, failed, blocked, or retest. When a test fails, it is common to add supporting details like notes, screenshots, or links to related defect tickets.</p>
+<p>This additional context makes results easier to understand and helps teams act on issues more quickly.</p>
+<h2 id="reporting-in-testrail">Reporting in TestRail</h2>
+<p>TestRail reporting turns raw test results into useful insights. Instead of manually checking individual executions, teams can rely on reports to see the bigger picture.</p>
+<p>Common reports include information such as:</p>
+<ul>
+<li>Pass and fail ratios</li>
+<li>Test execution progress</li>
+<li>Lists of failed or blocked tests</li>
+<li>Quality trends across different runs or releases</li>
+</ul>
+<p>These reports give teams a fast and clear overview of product quality.</p>
+<h2 id="supporting-release-decisions">Supporting Release Decisions</h2>
+<p>Test run reports are often reviewed during release readiness discussions. They help teams answer important questions like:</p>
+<ul>
+<li>Has the planned testing been completed?</li>
+<li>Are there any critical issues still unresolved?</li>
+<li>How does the current release compare with previous ones?</li>
+</ul>
+<p>Having this data available in a structured format makes release decisions more objective and transparent.</p>
+<h2 id="why-test-runs-reporting-are-important">Why Test Runs &amp; Reporting Are Important</h2>
+<p>Using test runs and reports effectively brings visibility and structure to the testing process. Teams can track progress, spot risks early, and clearly communicate quality status to stakeholders. Over time, this approach leads to smoother releases and more consistent product quality.</p>
 
 
 
