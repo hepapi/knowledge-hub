@@ -6550,6 +6550,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOAP vs REST
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -6566,6 +6584,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-architecture-gap-soap-vs-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Architecture Gap: SOAP vs. REST
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-testers-perspective-contract-vs-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The Tester’s Perspective: Contract vs. Resource
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Tester’s Perspective: Contract vs. Resource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-soap-the-soapui-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing SOAP (The SoapUI Way)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-rest-the-postman-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing REST (The Postman Way)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-when-to-actually-use-soapui-the-reality-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. When to Actually Use SoapUI (The Reality Check)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8781,75 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-architecture-gap-soap-vs-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Architecture Gap: SOAP vs. REST
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-testers-perspective-contract-vs-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The Tester’s Perspective: Contract vs. Resource
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Tester’s Perspective: Contract vs. Resource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-soap-the-soapui-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing SOAP (The SoapUI Way)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-rest-the-postman-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing REST (The Postman Way)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-when-to-actually-use-soapui-the-reality-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. When to Actually Use SoapUI (The Reality Check)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8874,65 @@
 
 
 <h1 id="soap-vs-rest">SOAP vs REST</h1>
-<p>Content will be added.</p>
+<h3 id="1-the-architecture-gap-soap-vs-rest"><strong>1. The Architecture Gap: SOAP vs. REST</strong></h3>
+<p>If you’ve spent any time in enterprise environments, you know that SOAP and REST aren't just "different formats"—they are two completely different ways of thinking. SOAP is like a legal contract: it’s rigid, formal, and doesn't let you get away with mistakes. REST, on the other hand, is the flexible, "move fast" style that dominates modern web apps.</p>
+<p>Here is how they actually stack up when you’re in the trenches:</p>
+<ul>
+<li>
+<p><strong>The Message:</strong> SOAP is stuck in the 90s with <strong>Strict XML</strong>. If you miss a single tag, the whole thing blows up. REST lets you use <strong>JSON</strong>, which is lighter, faster, and much easier for a human to actually read.</p>
+</li>
+<li>
+<p><strong>The Contract (WSDL vs. OpenAPI):</strong> With SOAP, the <strong>WSDL</strong> is mandatory. It's a massive XML file that defines everything. It’s a pain to maintain, but it ensures no one breaks the "contract." REST is more of a "gentleman's agreement" (though we use OpenAPI to keep things sane).</p>
+</li>
+<li>
+<p><strong>Security &amp; Transactions:</strong> This is where SOAP still wins in big banks. It has <strong>WS-Security</strong> and <strong>ACID transactions</strong> baked right into the protocol. REST relies on the underlying transport (HTTPS) and external tools like OAuth.</p>
+</li>
+<li>
+<p><strong>Weight &amp; Speed:</strong> SOAP is heavy. The XML envelopes are bulky, which hits performance. REST is the lightweight champion—perfect for mobile and high-traffic APIs.</p>
+</li>
+</ul>
+<p><strong>The Reality Check:</strong> You don’t usually <em>choose</em> SOAP today; you <em>inherit</em> it. It’s the "legacy giant" you find in banking, insurance, and old-school telecommunications. REST is what you use when you want to build something fast, scalable, and developer-friendly.</p>
+<h3 id="2-the-testers-perspective-contract-vs-resource"><strong>2. The Tester’s Perspective: Contract vs. Resource</strong></h3>
+<p>Testing a SOAP service feels very different from testing a REST API. It’s the difference between following a strict legal protocol and having a casual conversation.</p>
+<h4 id="testing-soap-the-soapui-way"><strong>Testing SOAP (The SoapUI Way)</strong></h4>
+<p>In SoapUI, you are always working against the <strong>WSDL</strong>. It’s a "Contract-First" world.</p>
+<ul>
+<li>
+<p><strong>Schema is Law:</strong> You don't just "guess" the payload. The WSDL tells you exactly what to send. If your XML is missing even a single namespace, SoapUI will flag it before the request even leaves your machine.</p>
+</li>
+<li>
+<p><strong>Brittle but Accurate:</strong> Because the structure is so rigid, any "breaking change" in the backend hits you like a brick. If a developer changes a field type in the WSDL, your tests fail instantly. It’s annoying, but it means you catch integration issues long before they reach production.</p>
+</li>
+<li>
+<p><strong>Heavyweight Validation:</strong> You spend most of your time doing XSD (Schema) validation to ensure the XML response perfectly matches the contract.</p>
+</li>
+</ul>
+<h4 id="testing-rest-the-postman-way"><strong>Testing REST (The Postman Way)</strong></h4>
+<p>Postman is built for the <strong>Resource-Oriented</strong> world. It’s designed for speed and flexibility.</p>
+<ul>
+<li>
+<p><strong>Payload Freedom:</strong> You’re usually dealing with JSON. It’s lightweight and "schema-optional." You can add or remove fields without the whole system crashing, which is great for rapid development but requires more manual discipline to catch structural changes.</p>
+</li>
+<li>
+<p><strong>Automation-Friendly:</strong> Managing environments and scripts in Postman feels modern and intuitive. You aren't fighting with complex XML envelopes; you're just passing objects around.</p>
+</li>
+<li>
+<p><strong>Dynamic Testing:</strong> Since there's no mandatory WSDL to "lock" you in, you have more freedom to test edge cases, but you have to be more proactive with your assertions to ensure the API hasn't drifted from its intended design.</p>
+</li>
+</ul>
+<h3 id="3-when-to-actually-use-soapui-the-reality-check"><strong>3. When to Actually Use SoapUI (The Reality Check)</strong></h3>
+<p>Let’s be honest: you don't use SoapUI for a sleek new startup project. You pull it out when you're dealing with "The Enterprise." It’s the right tool for the job in very specific scenarios:</p>
+<ul>
+<li>
+<p><strong>You're Bound by a WSDL:</strong> If your service is defined by a WSDL, SoapUI is practically mandatory. It parses those massive, complex XML files effortlessly and generates the entire request structure for you. Trying to do this manually in a lighter tool is a recipe for a headache.</p>
+</li>
+<li>
+<p><strong>The "Contract" is Non-Negotiable:</strong> In industries like banking or insurance, even a tiny schema mismatch can cause a multi-million dollar failure. If you need <strong>hardcore schema enforcement</strong> where every tag, namespace, and data type is validated against the XSD on every single call, SoapUI is your best friend.</p>
+</li>
+<li>
+<p><strong>Legacy Enterprise Integrations:</strong> You’ll often find yourself using SoapUI when integrating with massive legacy systems (think SAP, Oracle, or old-school telecom backends). These systems were built on SOAP’s stringent standards, and SoapUI is the only tool that "speaks their language" natively without feeling like a workaround.</p>
+</li>
+</ul>
 
 
 
