@@ -9083,7 +9083,8 @@
 <p>Don't mix different services in one collection. Each one should represent a single microservice or a "bounded context." This keeps your tests aligned with the actual system architecture, making it way easier to update things when a service evolves.</p>
 <h4 id="folderization-workflows-over-http-methods"><strong>Folderization: Workflows over HTTP Methods</strong></h4>
 <p>I often see folders named "GET" or "POST." Honestly? That’s useless for testing. Instead, organize your folders by <strong>Business Flows</strong>. Your folder names should look like "User Onboarding," "Payment Flow," or "Inventory Check." This mirrors how a real user interacts with your system, which makes debugging much more intuitive.</p>
-<p>Example:<img src="https://hepapi.github.io/knowledge-hub/qa/karate1-media/media/postman2-image3.png" style="width:6.5in;height:1.43789in" /></p>
+<p>Example:</p>
+<p><img src="https://hepapi.github.io/knowledge-hub/qa/karate1-media/media/postman2-image3.png" style="width:6.5in;height:1.43789in" /></p>
 <h4 id="leverage-script-auth-inheritance"><strong>Leverage Script &amp; Auth Inheritance</strong></h4>
 <p>If you find yourself copy-pasting an Auth token or a header into every single request, you're wasting time. Define your authentication and common pre-request scripts at the <strong>Collection level</strong>. Every request inside will inherit them automatically. This prevents "configuration drift" and ensures that if you change your auth logic once, it updates everywhere.</p>
 <h3 id="12-smarter-environments"><strong>1.2 Smarter Environments</strong></h3>
