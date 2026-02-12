@@ -1,4 +1,3 @@
-### **1. What is Karate?**
 
 Technically, Karate is a test automation framework based on Cucumber/Gherkin. But practically, it’s a shortcut.
 
