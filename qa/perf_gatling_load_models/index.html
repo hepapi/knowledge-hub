@@ -7202,6 +7202,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Load Models
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -7218,6 +7236,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#common-load-model-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Load Model Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realistic-load-model-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Realistic Load Model Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8742,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#common-load-model-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Load Model Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realistic-load-model-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Realistic Load Model Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8796,53 @@
 
 
 <h1 id="load-models">Load Models</h1>
-<p>Content will be added.</p>
+<p>A load model defines how the system will operate under load during the test. If the correct load model is not chosen, the results obtained may not reflect real user behavior, significantly reducing the value of the test.</p>
+<h3 id="common-load-model-types">Common Load Model Types</h3>
+<ol>
+<li><strong>Ramp-Up Load</strong>
+The number of users is gradually increased over a certain period.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">rampUsers</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="n">during</span><span class="p">(</span><span class="mi">5</span><span class="p">.</span><span class="n">minutes</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>When is it used?</strong></p>
+<ul>
+<li>To observe how the system behaves under increasing load</li>
+<li>To identify the system's capacity limits</li>
+</ul>
+<p>This model is very useful for understanding how the server responds to an increase in load.</p>
+<ol>
+<li><strong>Constant Load</strong>
+A specific number of users continuously load the system throughout the duration of the test.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">constantUsersPerSec</span><span class="p">(</span><span class="mi">50</span><span class="p">).</span><span class="n">during</span><span class="p">(</span><span class="mi">10</span><span class="p">.</span><span class="n">minutes</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>When is it used?</strong></p>
+<ul>
+<li>In stability tests</li>
+<li>In long-duration performance measurements</li>
+<li>
+<p>In memory leak or resource consumption analysis</p>
+</li>
+<li>
+<p><strong>Spike Load</strong>
+Simulates sudden and short-term high traffic spikes.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">atOnceUsers</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>When is it used?</strong></p>
+<ul>
+<li>In scenarios such as campaigns, flash sales, or sudden traffic spikes</li>
+</ul>
+<h3 id="realistic-load-model-design">Realistic Load Model Design</h3>
+<p>In real systems, typically, a single model is not used. To obtain more realistic results, different load types are combined.
+The most common approach:</p>
+<ul>
+<li>Combination of ramp-up + constant load</li>
+<li>Separate user profiles for different scenarios</li>
+<li>Simulation of peak hours during the day</li>
+</ul>
+<p>Tests created in this way provide results much closer to real user behavior, and the system's true capacity is measured more accurately.</p>
 
 
 
