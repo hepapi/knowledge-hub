@@ -6834,6 +6834,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metrics & Reporting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -6850,6 +6868,97 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#which-metric-to-use-where" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which Metric to Use Where?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Which Metric to Use Where?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Counter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gauge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gauge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trend
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineering-tip-fast-bottleneck-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineering Tip: Fast Bottleneck Detection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exporting-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exporting Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8792,86 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#which-metric-to-use-where" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which Metric to Use Where?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Which Metric to Use Where?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Counter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gauge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gauge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trend
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineering-tip-fast-bottleneck-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineering Tip: Fast Bottleneck Detection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exporting-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exporting Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8896,55 @@
 
 
 <h1 id="metrics-reporting">Metrics &amp; Reporting</h1>
-<p>Content will be added.</p>
+<p>When you run k6, it creates a large stream of data in the terminal. k6 measures many metrics by default, but in complex systems we often need more than defaults.</p>
+<p>That is where <strong>Custom Metrics</strong> become important. With custom metrics, we can answer business-focused questions such as:</p>
+<ul>
+<li>"How many users successfully completed payment?"</li>
+</ul>
+<p>instead of only technical questions like:</p>
+<ul>
+<li>"Did the request succeed?"</li>
+</ul>
+<h2 id="which-metric-to-use-where">Which Metric to Use Where?</h2>
+<p>Metric types should be treated as practical test instruments, not just names.</p>
+<h3 id="counter">Counter</h3>
+<p>Simple cumulative logic; it keeps increasing.</p>
+<p>Typical uses:</p>
+<ul>
+<li>Total number of errors during the test</li>
+<li>Number of times "add to cart" was clicked</li>
+</ul>
+<h3 id="gauge">Gauge</h3>
+<p>Snapshot value at a specific moment.</p>
+<p>Typical uses:</p>
+<ul>
+<li>Current number of active users</li>
+<li>Instant CPU load</li>
+</ul>
+<p>Think of it like a speedometer showing the current state.</p>
+<h3 id="trend">Trend</h3>
+<p>Used for values that vary over time.</p>
+<p>Typical uses:</p>
+<ul>
+<li>Response times</li>
+<li>Database query durations</li>
+</ul>
+<p>This is also where percentile analysis (<code>p(95)</code>, <code>p(99)</code>) becomes most useful.</p>
+<h2 id="engineering-tip-fast-bottleneck-detection">Engineering Tip: Fast Bottleneck Detection</h2>
+<p>If the system feels slow, first check:</p>
+<ul>
+<li><code>http_req_waiting</code> (TTFB - Time to First Byte)</li>
+</ul>
+<p>Why this helps:</p>
+<ul>
+<li>If <code>http_req_waiting</code> is high, the issue is usually not network transport.</li>
+<li>The root cause is often application processing or database query performance.</li>
+</ul>
+<p>This shortcut helps you focus quickly on the true bottleneck.</p>
+<h2 id="exporting-results">Exporting Results</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>k6<span class="w"> </span>run<span class="w"> </span>--out<span class="w"> </span><span class="nv">json</span><span class="o">=</span>results.json<span class="w"> </span>script.js
+</code></pre></div>
+<p>This command exports test results as JSON, which you can process later using reporting or analytics tools.</p>
 
 
 
