@@ -1,4 +1,4 @@
-# Accessibility Testing Tools (Overview)
+# **Accessibility Testing Tools Overview**
 
 ## **Purpose of This Page**
 
@@ -64,28 +64,32 @@ Screen reader testing cannot be compromised when it comes to accessibility quali
 
 #### *Playwright + axe-core Example*
 
-**import** { test, expect } **from** '@playwright/test';  
-**import** AxeBuilder **from** '@axe-core/playwright';  
-  
-test('checkout page accessibility', **async** ({ page }) **=\>** {  
-**await** page.goto('/checkout');  
-  
-**const** results = **await** **new** AxeBuilder({ page })  
-.withTags(\['wcag2a', 'wcag2aa'\])  
-.analyze();  
-  
-expect(results.violations).toEqual(\[\]);  
+```ts
+import { test, expect } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+
+test('checkout page accessibility', async ({ page }) => {
+  await page.goto('/checkout');
+
+  const results = await new AxeBuilder({ page })
+    .withTags(['wcag2a', 'wcag2aa'])
+    .analyze();
+
+  expect(results.violations).toEqual([]);
 });
+```
 
 #### *Cypress + axe-core Example*
 
-describe('Accessibility Tests', () **=\>** {  
-it('homepage should have no violations', () **=\>** {  
-cy.visit('/');  
-cy.injectAxe();  
-cy.checkA11y();  
-});  
+```js
+describe('Accessibility Tests', () => {
+  it('homepage should have no violations', () => {
+    cy.visit('/');
+    cy.injectAxe();
+    cy.checkA11y();
+  });
 });
+```
 
 ### **Color & Contrast Tools**
 
@@ -115,14 +119,14 @@ Angular Linters decrease the number of accessibility bugs that reach the QA phas
 
 ## **Practical QA Workflow**
 
-1\. Automated Scan → axe DevTools / WAVE  
-↓  
+1. Automated Scan → axe DevTools / WAVE  
+           
 2. Keyboard Testing → Tab, Enter, Escape, Arrow keys  
-↓  
+          
 3. Screen Reader → NVDA / VoiceOver on key flows  
-↓  
+         
 4. Visual Checks → Contrast, zoom (400%), reflow  
-↓  
+          
 5. CI/CD Integration → axe-core in test pipeline
 
 This layered approach balances speed, coverage, and real user validation.
