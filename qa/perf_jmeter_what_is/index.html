@@ -6976,6 +6976,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is JMeter?
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -6992,6 +7010,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-java-based-thread-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Java-Based Thread Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-golden-rule-jmeter-is-not-a-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Golden Rule: "JMeter is NOT a Browser"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-unrestricted-protocol-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Unrestricted Protocol Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-jsr223-and-groovy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. JSR223 and Groovy
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8764,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-java-based-thread-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Java-Based Thread Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-golden-rule-jmeter-is-not-a-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Golden Rule: "JMeter is NOT a Browser"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-unrestricted-protocol-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Unrestricted Protocol Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-jsr223-and-groovy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. JSR223 and Groovy
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8840,45 @@
 
 
 <h1 id="what-is-jmeter">What is JMeter?</h1>
-<p>Content will be added.</p>
+<p>If we define JMeter as just "a tool that puts load on websites," we’re doing it a disservice. Developed entirely in Java, with its multi-threaded operation model and ability to communicate with almost every protocol, it transforms from a simple request sender into a true performance laboratory.</p>
+<p>In fact, JMeter simulates a massive client that sends requests to the target system. However, there’s a detail that should not be confused here: While its operation is somewhat similar to a web browser, things work quite differently under the hood.</p>
+<h3 id="1-java-based-thread-architecture">1. Java-Based Thread Architecture</h3>
+<p>JMeter runs each virtual user (Virtual User) as a separate Java thread at the operating system level. This is JMeter's greatest advantage but also the area that requires the most attention.</p>
+<ul>
+<li>
+<p><strong>Why is it good?</strong> It can perform synchronous operations like a real user. In other words, you can realistically simulate complex user flows where each step depends on the previous one.</p>
+</li>
+<li>
+<p><strong>Technical Cost:</strong> Each thread consumes considerable memory (stack memory) and CPU on the JVM. If you're planning massive tests with 50,000+ users, you must optimize JVM heap settings (those famous -Xmx, -Xms parameters) according to your hardware. Otherwise, you might find your system locking up with an "OutOfMemory" error halfway through the test.</p>
+</li>
+</ul>
+<h3 id="2-golden-rule-jmeter-is-not-a-browser">2. Golden Rule: "JMeter is NOT a Browser"</h3>
+<p>Sometimes, JMeter behaves like a browser; it stores cookies, manages headers, etc., but it is not a browser.</p>
+<ul>
+<li>
+<p><strong>No DOM and Rendering:</strong> JMeter reads the HTML content from the server as plain text. It doesn't "render" the page (i.e., it doesn’t display it visually).</p>
+</li>
+<li>
+<p><strong>Doesn't Run JavaScript:</strong> JMeter doesn’t run those fancy AJAX calls or JavaScript code triggered when a page loads, such as React/Angular code.</p>
+</li>
+</ul>
+<p><strong>Engineer’s Note:</strong> When testing modern web applications, don't waste time simulating clicks on buttons. Instead, capture the REST or GraphQL calls triggered in the background by those buttons and directly target those. Otherwise, you’ll only be measuring a static page and fooling yourself.</p>
+<h3 id="3-unrestricted-protocol-support">3. Unrestricted Protocol Support</h3>
+<p>The reason JMeter hasn't become outdated over the years is that it doesn’t just stop at HTTP. It can touch every layer of the enterprise architecture:</p>
+<ul>
+<li>
+<p><strong>Database:</strong> With JDBC, you can directly stress test SQL queries and search for answers to "Where is this database locking up?"</p>
+</li>
+<li>
+<p><strong>Messaging:</strong> You can test the capacity of message queue systems like Kafka, RabbitMQ, or ActiveMQ via JMS.</p>
+</li>
+<li>
+<p><strong>Low-Level:</strong> With the TCP Sampler, you can even go down to the socket level and measure data transfer speeds.</p>
+</li>
+</ul>
+<h3 id="4-jsr223-and-groovy">4. JSR223 and Groovy</h3>
+<p>Where standard JMeter components reach their limits, the JSR223 Sampler comes to the rescue. Here, you can write custom scripts using Groovy. This allows JMeter to move beyond being a static tool, transforming into a dynamic platform capable of performing complex data manipulations.</p>
+<p><strong>A small tip:</strong> For performance, always prefer Groovy. Older BeanShell solutions can unnecessarily stress the system under heavy loads, as proven through experience.</p>
 
 
 
