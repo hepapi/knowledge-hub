@@ -97,35 +97,12 @@ For more information on the tools, refer to the Accessibility Testing Tools Over
 
 ## **Integrating Accessibility into the QA Workflow**
 
-<table>
-  <tr>
-    <td align="center"><code>[ Shift-Left ]</code></td>
-    <td align="center"><code>-&gt;</code></td>
-    <td align="center"><code>[ Development ]</code></td>
-    <td align="center"><code>-&gt;</code></td>
-    <td align="center"><code>[ QA Phase ]</code></td>
-    <td align="center"><code>-&gt;</code></td>
-    <td align="center"><code>[ CI/CD ]</code></td>
-  </tr>
-  <tr>
-    <td align="center">&bull; A11y criteria</td>
-    <td></td>
-    <td align="center">&bull; Dev checks</td>
-    <td></td>
-    <td align="center">&bull; Automated scans</td>
-    <td></td>
-    <td align="center">&bull; Quality gates</td>
-  </tr>
-  <tr>
-    <td align="center">&bull; Design review</td>
-    <td></td>
-    <td align="center">&bull; Code review</td>
-    <td></td>
-    <td align="center">&bull; Manual testing</td>
-    <td></td>
-    <td align="center">&bull; Regression</td>
-  </tr>
-</table>
+```text
+[ Shift-Left ] -> [ Development ] -> [ QA Phase ] -> [ CI/CD ]
+
+A11y criteria     Dev checks       Automated scans    Quality gates
+Design review     Code review      Manual testing     Regression
+```
 
 ## **Accessibility Defect Template**
 
