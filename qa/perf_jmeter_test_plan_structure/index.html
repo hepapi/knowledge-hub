@@ -7004,6 +7004,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Plan Structure
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -7020,6 +7038,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-test-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Test Plan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-config-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Config Elements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-logical-controllers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Logical Controllers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-pre-post-processors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Pre &amp; Post Processors
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8764,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-test-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Test Plan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-config-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Config Elements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-logical-controllers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Logical Controllers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-pre-post-processors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Pre &amp; Post Processors
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8840,51 @@
 
 
 <h1 id="test-plan-structure">Test Plan Structure</h1>
-<p>Content will be added.</p>
+<p>Creating a test plan in JMeter is not just about placing components one after another. It’s actually somewhat similar to the concept of scope in object-oriented programming. JMeter operates on a hierarchical tree structure, and the "position" of an element in that tree determines the fate of the test.</p>
+<h3 id="1-test-plan">1. Test Plan</h3>
+<p>The Test Plan is the roof at the top of everything. It’s not just a file name; you define the overall character of the test here.</p>
+<ul>
+<li>
+<p><strong>Global Variables:</strong> We place values that will be needed everywhere, such as BASE_URL, PORT, in the User Defined Variables section. So, if one day you’re told, "We’re switching from the test environment to staging," instead of manually going through 50 requests, you can simply change one variable here and get it done.</p>
+</li>
+<li>
+<p><strong>Functional Mode Warning:</strong> Be cautious about the "Functional Test Mode" checkbox here! It’s great for debugging, but never enable it when performing load tests. If you do, JMeter will try to write the response of every request to the disk, and before the server even gets tired, your computer’s CPU will give up.</p>
+</li>
+</ul>
+<h3 id="2-config-elements">2. Config Elements</h3>
+<p>Configuration elements are the "dominant" characters in JMeter. The inheritance logic applies here.</p>
+<ul>
+<li>
+<p><strong>Top-Level Effect:</strong> If you place an HTTP Cookie Manager at the very top (under Test Plan), all the Thread Groups below it will share those cookies.</p>
+</li>
+<li>
+<p><strong>Override:</strong> If you place a different setting inside a specific request, that sampler will ignore the global settings above and apply its own settings.</p>
+</li>
+<li>
+<p><strong>Priority Order:</strong> Configuration elements, no matter where they are in the hierarchy, always run before samplers. First comes preparation, then comes the attack!</p>
+</li>
+</ul>
+<h3 id="3-logical-controllers">3. Logical Controllers</h3>
+<p>While Samplers just say "send a request," Logic Controllers act as traffic cops, telling the test when to "stop, go, or turn."</p>
+<ul>
+<li>
+<p><strong>Transaction Controller:</strong> This is my favorite. For example, if the "Make Payment" step consists of 5 different API calls, you can group them inside this controller and view them in reports as a single entry (with a single transaction time).</p>
+</li>
+<li>
+<p><strong>Throughput Controller:</strong> If you want to say, "10% of users should go to the payment page, and the rest should browse the homepage," this is exactly what you need. It’s the most practical way to simulate real user behavior.</p>
+</li>
+</ul>
+<h3 id="4-pre-post-processors">4. Pre &amp; Post Processors</h3>
+<p>These are the closest coworkers of samplers.</p>
+<ul>
+<li>
+<p><strong>Pre-Processors:</strong> Modify the data just before the request is sent.</p>
+</li>
+<li>
+<p><strong>Post-Processors:</strong> Extract the response data after the request. For example, if you log in, and you don’t capture the returned token with a JSON Extractor and assign it to a variable, your next request will likely return a "401 Unauthorized" error.</p>
+</li>
+</ul>
+<p><strong>Classic Error Note:</strong> If you place an HTTP Header Manager inside the "Login" request and add an auth token, it will only affect the login request. The "Profile" request that follows won’t see this header and your test will fail. <strong>Solution?</strong> Move the Header Manager to the "parent" level that is common to both requests.</p>
 
 
 
