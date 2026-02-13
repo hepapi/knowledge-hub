@@ -6806,6 +6806,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thresholds & Checks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -6822,6 +6840,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#checks-is-everything-running-smoothly-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checks: "Is Everything Running Smoothly?" Validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thresholds-the-real-quality-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thresholds: The Real Quality Gate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-field-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Field Note
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-threshold-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Threshold Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8764,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#checks-is-everything-running-smoothly-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checks: "Is Everything Running Smoothly?" Validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thresholds-the-real-quality-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thresholds: The Real Quality Gate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-field-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Field Note
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-threshold-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Threshold Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8840,48 @@
 
 
 <h1 id="thresholds-checks">Thresholds &amp; Checks</h1>
-<p>Content will be added.</p>
+<p>After running a performance test, simply saying "the system did not crash" does not provide enough value. What matters is whether the system stayed within the performance budget (SLA/SLO) defined in advance.</p>
+<p>In k6, this is handled at two levels with different purposes:</p>
+<h2 id="checks-is-everything-running-smoothly-validation">Checks: "Is Everything Running Smoothly?" Validation</h2>
+<p>A <code>check</code> is a basic assertion. In k6, even if a check fails, the test continues. It works like a silent witness and reports the failure ratio at the end.</p>
+<p>Example interpretation:</p>
+<ul>
+<li>"5% of requests did not return 200 OK."</li>
+</ul>
+<p>Where checks are useful:</p>
+<ul>
+<li>Response code validations (e.g. status is <code>200</code>)</li>
+<li>Response content validations (e.g. expected <code>id</code> field exists)</li>
+<li>Real-time data consistency checks without interrupting the load flow</li>
+</ul>
+<h2 id="thresholds-the-real-quality-gate">Thresholds: The Real Quality Gate</h2>
+<p>Thresholds are the true control mechanism in k6. They do not just report data; they can fail the test run and return a non-zero exit code, which can stop CI/CD pipelines.</p>
+<p>If response time, error rate, or other critical metrics exceed limits, k6 exits with failure. This is the technical equivalent of saying:</p>
+<ul>
+<li>"This build cannot go live with current performance."</li>
+</ul>
+<h2 id="critical-field-note">Critical Field Note</h2>
+<p>Do not rely only on averages. Averages can hide real user pain.</p>
+<p>Focus on percentiles like <code>p(95)</code> and <code>p(99)</code>:</p>
+<ul>
+<li>One user at 100ms and another at 5s can still produce a "reasonable" average.</li>
+<li>The slowest 1% usually reveals the real bottlenecks.</li>
+</ul>
+<h2 id="example-threshold-configuration">Example Threshold Configuration</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nx">thresholds</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nx">http_req_failed</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;rate&lt;0.01&#39;</span><span class="p">],</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="c1">// Failures must be less than 1%</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nx">http_req_duration</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;p(95)&lt;200&#39;</span><span class="p">],</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="c1">// 95% of requests must be under 200ms</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="s1">&#39;http_req_duration{status:200}&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;max&lt;500&#39;</span><span class="p">],</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="c1">// Max duration of successful requests must be under 500ms</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">};</span>
+</code></pre></div>
+<p>With this approach, you can define performance limits for specific metrics and enforce them as release criteria.</p>
 
 
 
