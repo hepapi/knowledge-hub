@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#listeners-reporting" class="md-skip">
+        <a href="#4-listeners-reporting" class="md-skip">
           Skip to content
         </a>
       
@@ -7057,8 +7057,24 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Listeners & Reporting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -7076,6 +7092,73 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#4-listeners-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Listeners &amp; Reporting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Listeners &amp; Reporting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-listeners" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Listeners
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-efficiency-and-cli-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Efficiency and CLI Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-html-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. HTML Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8680,8 +8763,64 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#4-listeners-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Listeners &amp; Reporting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Listeners &amp; Reporting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-listeners" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Listeners
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-efficiency-and-cli-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Efficiency and CLI Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-html-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. HTML Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -8706,8 +8845,58 @@
   
 
 
-<h1 id="listeners-reporting">Listeners &amp; Reporting</h1>
-<p>Content will be added.</p>
+  <h1>Listeners & Reporting</h1>
+
+<h2 id="4-listeners-reporting">4. Listeners &amp; Reporting</h2>
+<p>Running a performance test is half the job; the other half is deriving meaningful results from the massive pile of data that appears in front of us. In JMeter, this stage is where most "resource consumption" mistakes are made. An incorrectly configured reporting mechanism can knock out your test machine before the server even gets tired.</p>
+<h3 id="1-listeners">1. Listeners</h3>
+<p>Listeners are the units that capture each request generated during the test and present them to us in tables or graphs. However, the "less is more" rule applies here.</p>
+<ul>
+<li>
+<p><strong>View Results Tree:</strong>
+  This is indispensable during the debugging (error-checking) phase, as it shows the details of each request’s header and body. But be careful! Keeping this listener open under high load will try to store each response in memory, which can quickly consume JMeter's RAM.</p>
+</li>
+<li>
+<p><strong>Golden Rule:</strong>
+  After development is finished, close this listener or configure it to log only errors.</p>
+</li>
+<li>
+<p><strong>Aggregate Report:</strong>
+  This is the summary table of the test. It includes Average, Median, and the famous 90% Line. When preparing a performance report, this is usually the first place you look.</p>
+</li>
+<li>
+<p><strong>Backend Listener:</strong>
+  If you want to "watch this data live," it allows you to stream the data to a database like InfluxDB and create elegant dashboards in Grafana. It’s a favorite among modern teams.</p>
+</li>
+</ul>
+<h3 id="2-efficiency-and-cli-mode">2. Efficiency and CLI Mode</h3>
+<p>The greatest nightmare for a performance engineer is trying to run a load test through the graphical user interface (GUI). JMeter is a Java application, and the CPU it uses to draw the graphical interface actually steals power from the CPU that could be used to run the load.</p>
+<ul>
+<li><strong>Headless Mode (GUI-less):</strong>
+  Real tests are always run from the command line. We finish the job with a simple command like this:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>jmeter<span class="w"> </span>-n<span class="w"> </span>-t<span class="w"> </span>senaryo.jmx<span class="w"> </span>-l<span class="w"> </span>sonuclar.jtl
+</code></pre></div>
+<ul>
+<li><strong>JTL Files:</strong>
+  At the end of the test, we are left with a .jtl file containing all the raw data. This file is our black box, and we perform all the analysis based on it.</li>
+</ul>
+<h3 id="3-html-dashboard">3. HTML Dashboard</h3>
+<p>After the test, we can convert that raw JTL file into a visual feast, i.e., an HTML report, with a single command. There are three life-saving things in this report:</p>
+<ul>
+<li>
+<p><strong>APDEX (User Satisfaction):</strong>
+  It summarizes the system’s speed with a score between 0 and 1. It’s the clearest answer to the question, "How fast is our system?"</p>
+</li>
+<li>
+<p><strong>Over Time Graphs:</strong>
+  Did the response times stay the same throughout the test, or did the system eventually hit a point where it said "enough" and started to climb? These graphs clearly highlight the system’s breaking point.</p>
+</li>
+<li>
+<p><strong>Latency vs. Connect Time:</strong>
+  Is the problem in the network or in the code? If the connection time is low but the data retrieval time is high, you can pass the ball directly to the development team; the issue lies in a bottleneck on the server side.</p>
+</li>
+</ul>
 
 
 
