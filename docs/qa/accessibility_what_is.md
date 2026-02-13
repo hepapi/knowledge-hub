@@ -1,4 +1,4 @@
-# What is Accessibility Testing?
+# **What is Accessibility Testing?**
 
 ## **Overview**
 
@@ -97,11 +97,35 @@ For more information on the tools, refer to the Accessibility Testing Tools Over
 
 ## **Integrating Accessibility into the QA Workflow**
 
-┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐  
-│ Shift-Left │ -\> │ Development │ -\> │ QA Phase │ -\> │ CI/CD │  
-└─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘  
-• A11y criteria • Dev checks • Automated scans • Quality gates  
-• Design review • Code review • Manual testing • Regression
+<table>
+  <tr>
+    <td align="center"><code>[ Shift-Left ]</code></td>
+    <td align="center"><code>-&gt;</code></td>
+    <td align="center"><code>[ Development ]</code></td>
+    <td align="center"><code>-&gt;</code></td>
+    <td align="center"><code>[ QA Phase ]</code></td>
+    <td align="center"><code>-&gt;</code></td>
+    <td align="center"><code>[ CI/CD ]</code></td>
+  </tr>
+  <tr>
+    <td align="center">&bull; A11y criteria</td>
+    <td></td>
+    <td align="center">&bull; Dev checks</td>
+    <td></td>
+    <td align="center">&bull; Automated scans</td>
+    <td></td>
+    <td align="center">&bull; Quality gates</td>
+  </tr>
+  <tr>
+    <td align="center">&bull; Design review</td>
+    <td></td>
+    <td align="center">&bull; Code review</td>
+    <td></td>
+    <td align="center">&bull; Manual testing</td>
+    <td></td>
+    <td align="center">&bull; Regression</td>
+  </tr>
+</table>
 
 ## **Accessibility Defect Template**
 
@@ -133,4 +157,3 @@ Suggested Fix: ...
 Accessibility testing is a continuous process, and not a one-time activity. Accessibility tests are integrated using standards, automated testing tools, and manual testing using assistive technologies to make products accessible to everyone.
 
 “Remember” that if you can’t test your product on someone with a disability, you can’t use that product either.
-
