@@ -6862,6 +6862,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    k6 Studio
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -6878,6 +6896,97 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recording-and-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recording and Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineering-touches-within-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineering Touches Within Studio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engineering Touches Within Studio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-correlation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Correlation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-assertions-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Assertions (Checks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameterization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameterization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-should-studio-be-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Should Studio Be Used?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8792,86 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recording-and-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recording and Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineering-touches-within-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineering Touches Within Studio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engineering Touches Within Studio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-correlation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Correlation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-assertions-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Assertions (Checks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameterization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameterization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-should-studio-be-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Should Studio Be Used?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8896,55 @@
 
 
 <h1 id="k6-studio">k6 Studio</h1>
-<p>Content will be added.</p>
+<p>Let’s be honest: viewing k6 Studio as just a "tool for people who don’t like writing code" is a big mistake.</p>
+<p>In our team, we mostly use Studio as a rapid prototyping tool instead of manually writing 40-50 step user scenarios, which can be very time-consuming. It is a strategic shortcut that lets us spend time on the core test logic, not repetitive coding effort.</p>
+<h2 id="recording-and-workflow">Recording and Workflow</h2>
+<p>The most tedious part of performance testing is opening browser network traffic and manually sorting which requests matter.</p>
+<p>With Studio, we delegate this to a browser extension (Chrome/Firefox):</p>
+<ul>
+<li>Open the extension</li>
+<li>Navigate the site like a real user (add products, pay, update profile, etc.)</li>
+<li>Stop recording</li>
+<li>Transfer flows directly into k6 Studio</li>
+</ul>
+<p>The key benefit:</p>
+<p>After recording, you can optimize the raw output with engineering judgment as if you wrote it manually. This makes it much easier to adapt generated code to your real test goals.</p>
+<h2 id="engineering-touches-within-studio">Engineering Touches Within Studio</h2>
+<p>Studio is not only a recorder; it also acts as a practical editor. These features solve common field problems:</p>
+<h3 id="automatic-correlation">Automatic Correlation</h3>
+<p>Studio can detect dynamic values like tokens and session IDs, then map them to variables.</p>
+<p>This reduces manual regex work and prevents fragile scripts.</p>
+<h3 id="visual-assertions-checks">Visual Assertions (Checks)</h3>
+<p>Without deep code edits, you can add checks through the UI, such as:</p>
+<ul>
+<li>"Is the page title correct?"</li>
+<li>"Is the response status 200?"</li>
+</ul>
+<h3 id="parameterization">Parameterization</h3>
+<p>Binding user data (for example from CSV files) to scenarios is faster and less error-prone compared to manual parsing.</p>
+<h2 id="why-should-studio-be-used">Why Should Studio Be Used?</h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Why Use Studio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Speed (Velocity)</td>
+<td>A 50-step checkout flow can take hours to code manually, but can be recorded in minutes.</td>
+</tr>
+<tr>
+<td>Visual Validation</td>
+<td>Seeing request order and dependencies visually reduces logic mistakes.</td>
+</tr>
+<tr>
+<td>Team Collaboration</td>
+<td>Product Owners or Manual QA engineers can review scenarios and make simple updates without deep coding.</td>
+</tr>
+</tbody>
+</table>
 
 
 
