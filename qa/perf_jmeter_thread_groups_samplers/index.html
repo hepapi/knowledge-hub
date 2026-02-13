@@ -7032,6 +7032,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thread Groups & Samplers
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -7048,6 +7066,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-thread-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Thread Groups
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-samplers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Samplers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineering-tip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineering Tip:
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8683,6 +8753,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-thread-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Thread Groups
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-samplers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Samplers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineering-tip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineering Tip:
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8707,7 +8818,42 @@
 
 
 <h1 id="thread-groups-samplers">Thread Groups &amp; Samplers</h1>
-<p>Content will be added.</p>
+<p>When setting up a test in JMeter, there are two key questions you need to ask yourself: "Who will carry out the attack?" (Thread Group) and "With which weapon, and where will they strike?" (Sampler). If you don't get the balance between these two right, your test will either unnecessarily overload the system or not reflect the real world at all.</p>
+<h3 id="1-thread-groups">1. Thread Groups</h3>
+<p>Threads are the virtual users running at the operating system level. JMeter manages each of them independently as separate threads.</p>
+<ul>
+<li>
+<p><strong>Ramp-up Period (Warm-up Time):</strong><br />
+  This is the most common place where errors occur. Deploying 100 users to the system in the same second (Ramp-up: 0) is not a situation you encounter often in real life; at best, it would resemble a DDoS attack. For example, if you set 100 users and a 100-second ramp-up, a "fresh user" is added every second. Gradually warming up the server allows you to see bottlenecks (bottleneck) more clearly.</p>
+</li>
+<li>
+<p><strong>Loop Count vs. Duration (Loop or Time?):</strong><br />
+  In most professional tests, the loop count is set to "Infinite" and the test duration is limited by "Duration." Why? Because having users create load on the system for 15 minutes rather than completing 5 rounds and leaving will provide much healthier results for measuring the server's stability performance.</p>
+</li>
+<li>
+<p><strong>Ultimate Thread Group (Plugin):</strong><br />
+  If the standard group doesn’t suffice, this plugin is a lifesaver. You can easily create complex load scenarios that increase step by step, remain steady, and then spike (a sudden surge), just like drawing a graph.</p>
+</li>
+</ul>
+<h3 id="2-samplers">2. Samplers</h3>
+<p>Samplers are JMeter’s "triggers." They are the units that send the actual request to the target server and say, "Give me this data."</p>
+<ul>
+<li>
+<p><strong>HTTP Request:</strong><br />
+  Our bread and butter. We manage all methods from GET to DELETE here.</p>
+</li>
+<li>
+<p><strong>JDBC Request:</strong><br />
+  The answer to the question "The application is fast, but is the database slow?" is hidden here. We stress test the database with direct SQL queries.</p>
+</li>
+<li>
+<p><strong>JSR223 Sampler:</strong><br />
+  When the standard option hits its limit, JSR223 allows you to create your own "special weapon" with Groovy. If you need to test a complex algorithm, look no further.</p>
+</li>
+</ul>
+<h3 id="engineering-tip">Engineering Tip:</h3>
+<p>"HTTP 200 is Not Always Success!"<br />
+Many people think a test has passed just because they see the HTTP 200 (OK) status. However, the server could return a 200 response but display a "Faulty Operation" message or a blank page. Therefore, always add a Response Assertion inside samplers. Is there a specific keyword you're expecting in the page content? If not, it’s safest to mark that test as "failed."</p>
 
 
 
