@@ -85,6 +85,7 @@ nav:
         - "Elasticsearch Snapshot": devops/logging/elk-snapshot.md
         - "Elasticsearch + Kibana Upgrade": devops/logging/elk-upgrade.md
         - "Elasticsearch Certificate Renewal": devops/logging/elasticsearch-cert-renew.md
+        - "Elasticsearch Certificate Alerting": devops/logging/x509-cert-exporter-elasticsearch.md
 
     - SRE:
         - "K8SGPT": devops/sre/k8sgpt.md
