@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../postgres/backup-restore/">
+        <link rel="prev" href="../elasticsearch-cert-renew/">
       
       
-        <link rel="next" href="../nexus-user-and-roles/">
+        <link rel="next" href="../../sre/k8sgpt/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Nexus Installation - Hepapi Knowledge Hub</title>
+        <title>Elasticsearch Certificate Alerting - Hepapi Knowledge Hub</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nexus-installation-docker-private-registry" class="md-skip">
+        <a href="#x509-cert-exporter-elasticsearch-certificate-monitoring" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Nexus Installation
+              Elasticsearch Certificate Alerting
             
           </span>
         </div>
@@ -1835,8 +1835,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1847,11 +1845,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_10" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_10" >
         
           
           <label class="md-nav__link" for="__nav_1_10" id="__nav_1_10_label" tabindex="0">
@@ -1872,7 +1870,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_10_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_10">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1887,37 +1885,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Nexus Installation
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../nexus/nexus-installation/" class="md-nav__link">
         
   
   
@@ -1933,59 +1904,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Requirements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ec2-configurations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        EC2 Configurations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Installation
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1998,7 +1916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nexus-user-and-roles/" class="md-nav__link">
+      <a href="../../nexus/nexus-user-and-roles/" class="md-nav__link">
         
   
   
@@ -2026,7 +1944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docker-hosted-repo/" class="md-nav__link">
+      <a href="../../nexus/docker-hosted-repo/" class="md-nav__link">
         
   
   
@@ -2054,7 +1972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docker-proxy-repo/" class="md-nav__link">
+      <a href="../../nexus/docker-proxy-repo/" class="md-nav__link">
         
   
   
@@ -2082,7 +2000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pull-to-kubernetes/" class="md-nav__link">
+      <a href="../../nexus/pull-to-kubernetes/" class="md-nav__link">
         
   
   
@@ -2110,7 +2028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../registry-configuration/" class="md-nav__link">
+      <a href="../../nexus/registry-configuration/" class="md-nav__link">
         
   
   
@@ -2911,6 +2829,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2921,11 +2841,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_17" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_17" checked>
         
           
           <label class="md-nav__link" for="__nav_1_17" id="__nav_1_17_label" tabindex="0">
@@ -2946,7 +2866,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_17_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_17_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_17">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2964,7 +2884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/ELK-stack-with-FileBeat/" class="md-nav__link">
+      <a href="../ELK-stack-with-FileBeat/" class="md-nav__link">
         
   
   
@@ -2992,7 +2912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/Index-Lifecycle-Management/" class="md-nav__link">
+      <a href="../Index-Lifecycle-Management/" class="md-nav__link">
         
   
   
@@ -3020,7 +2940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/elasticsearch-exporter/" class="md-nav__link">
+      <a href="../elasticsearch-exporter/" class="md-nav__link">
         
   
   
@@ -3048,7 +2968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/loki-single-binary/" class="md-nav__link">
+      <a href="../loki-single-binary/" class="md-nav__link">
         
   
   
@@ -3076,7 +2996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/loki-distributed/" class="md-nav__link">
+      <a href="../loki-distributed/" class="md-nav__link">
         
   
   
@@ -3104,7 +3024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/efk/" class="md-nav__link">
+      <a href="../efk/" class="md-nav__link">
         
   
   
@@ -3132,7 +3052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/elastalert2/" class="md-nav__link">
+      <a href="../elastalert2/" class="md-nav__link">
         
   
   
@@ -3160,7 +3080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/elk-snapshot/" class="md-nav__link">
+      <a href="../elk-snapshot/" class="md-nav__link">
         
   
   
@@ -3188,7 +3108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/elk-upgrade/" class="md-nav__link">
+      <a href="../elk-upgrade/" class="md-nav__link">
         
   
   
@@ -3216,7 +3136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/elasticsearch-cert-renew/" class="md-nav__link">
+      <a href="../elasticsearch-cert-renew/" class="md-nav__link">
         
   
   
@@ -3241,10 +3161,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../logging/x509-cert-exporter-elasticsearch/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elasticsearch Certificate Alerting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3260,6 +3207,192 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-information-per-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Information Per Node
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-download-and-install-the-x509-certificate-exporter-binary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Download and Install the x509-certificate-exporter Binary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-the-exporter-pem-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Create the Exporter PEM Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-convert-p12-files-to-pem-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Convert .p12 Files to PEM Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-set-ownership-and-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Set Ownership and Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-create-the-systemd-service-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Create the Systemd Service File
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-enable-and-start-the-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Enable and Start the Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-verify-the-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Verify the Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prometheus Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prometheus Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additional_scrape_configs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        additional_scrape_configs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alert Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -8814,10 +8947,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Requirements
+        References
       
     </span>
   </a>
@@ -8825,10 +8958,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ec2-configurations" class="md-nav__link">
+  <a href="#important-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        EC2 Configurations
+        Important Notes
       
     </span>
   </a>
@@ -8836,13 +8969,146 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#required-information-per-node" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation
+        Required Information Per Node
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-download-and-install-the-x509-certificate-exporter-binary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Download and Install the x509-certificate-exporter Binary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-the-exporter-pem-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Create the Exporter PEM Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-convert-p12-files-to-pem-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Convert .p12 Files to PEM Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-set-ownership-and-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Set Ownership and Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-create-the-systemd-service-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Create the Systemd Service File
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-enable-and-start-the-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Enable and Start the Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-verify-the-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Verify the Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prometheus-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prometheus Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prometheus Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additional_scrape_configs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        additional_scrape_configs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alert Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -8863,7 +9129,7 @@
 
 
   
-    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/nexus/nexus-installation.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/hepapi/knowledge-hub/edit/main/docs/devops/logging/x509-cert-exporter-elasticsearch.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -8871,37 +9137,172 @@
   
 
 
-<h1 id="nexus-installation-docker-private-registry">Nexus Installation - Docker Private Registry</h1>
-<p>This guide shows how to install Nexus to an EC2 instance and run as a container.</p>
+<h1 id="x509-cert-exporter-elasticsearch-certificate-monitoring">x509-cert-exporter — Elasticsearch Certificate Monitoring</h1>
+<p>This document covers the installation of <strong>x509-certificate-exporter</strong>, Prometheus <code>additional_scrape_configs</code> configuration, and alert rules for monitoring all certificates under <code>/etc/elasticsearch/certs</code> in a self-managed Elasticsearch cluster.</p>
 <hr />
-<h3 id="requirements">Requirements</h3>
+<h2 id="references">References</h2>
 <ul>
-<li>EC2 Instance</li>
-<li>Docker</li>
-</ul>
-<h3 id="ec2-configurations">EC2 Configurations</h3>
-<ul>
-<li>Min. 4 GB memory</li>
-<li>Edit security group rules to allow port range from 8080 to 8082.</li>
-<li>Enable Auto-assign public IP</li>
+<li>x509-certificate-exporter GitHub: <a href="https://github.com/enix/x509-certificate-exporter">https://github.com/enix/x509-certificate-exporter</a></li>
 </ul>
 <hr />
-<h2 id="installation">Installation</h2>
-<p>Since docker volumes are persistent, a volume can be created specifically for this purpose. This is the recommended approach.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>nexus-data
-</code></pre></div>
-<p>The next step is to mount the volume with docker run command. We will use port 8081 to connect Nexus. Other port(s) are used for repository connections. Repository ports must be unique.</p>
-<p>In this guide, we open port 8082 as docker hosted repository connection and port 8083 as docker proxy connection.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">8081</span>:8081<span class="w"> </span>-p<span class="w"> </span><span class="m">8082</span>:8082<span class="w"> </span>-p<span class="w"> </span><span class="m">8083</span>:8083<span class="w"> </span>--restart<span class="w"> </span>always<span class="w"> </span>--name<span class="w"> </span>nexus<span class="w"> </span>-v<span class="w"> </span>nexus-data:/nexus-data<span class="w"> </span>sonatype/nexus3
-</code></pre></div>
-<p>Browse following URL:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>http://&lt;EC2_INSTANCE_PUBLIC_IP&gt;:8081
-</code></pre></div>
-<p>Default username is admin. To see the password, run the command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>cat<span class="w"> </span>/var/lib/docker/volumes/nexus-data/_data/admin.password
-</code></pre></div>
-<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/26a0.svg" title=":warning:" /> After login, it is mandatory to set a new password.</p>
+<h2 id="important-notes">Important Notes</h2>
+<ul>
+<li>This setup monitors <strong>all</strong> certificate files under <code>/etc/elasticsearch/certs</code>.</li>
+<li>x509-exporter cannot read <code>.p12</code> files directly; they must be converted to <code>.pem</code> first.</li>
+<li>Installation must be performed on each node individually.</li>
+<li>The service runs as the <code>elasticsearch</code> user.</li>
+<li>The exporter listens on port <code>:9793</code> by default.</li>
+</ul>
 <hr />
+<h2 id="required-information-per-node">Required Information Per Node</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VM private IP</td>
+<td><code>&lt;vm-private-ip&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>Paths used in this guide:</p>
+<ul>
+<li>Certificate directory: <code>/etc/elasticsearch/certs</code></li>
+<li>Exporter PEM directory: <code>/etc/elasticsearch/x509-exporter</code></li>
+</ul>
+<hr />
+<h2 id="installation-steps">Installation Steps</h2>
+<h3 id="1-download-and-install-the-x509-certificate-exporter-binary">1. Download and Install the x509-certificate-exporter Binary</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-fSLk<span class="w"> </span>-o<span class="w"> </span>x509-cert-exporter.tar.gz<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>https://github.com/enix/x509-certificate-exporter/releases/download/v3.21.0/x509-certificate-exporter-linux-amd64.tar.gz
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>tar<span class="w"> </span>-xzf<span class="w"> </span>x509-cert-exporter.tar.gz
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>sudo<span class="w"> </span>mv<span class="w"> </span>x509-certificate-exporter<span class="w"> </span>/usr/local/bin/
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/usr/local/bin/x509-certificate-exporter
+</code></pre></div>
+<p>Verify the installation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>x509-certificate-exporter<span class="w"> </span>--version
+</code></pre></div>
+<hr />
+<h3 id="2-create-the-exporter-pem-directory">2. Create the Exporter PEM Directory</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/elasticsearch/x509-exporter
+</code></pre></div>
+<hr />
+<h3 id="3-convert-p12-files-to-pem-format">3. Convert <code>.p12</code> Files to PEM Format</h3>
+<p>x509-exporter cannot read <code>.p12</code> files. All <code>.p12</code> files under <code>/etc/elasticsearch/certs</code> must be converted to <code>.pem</code>.</p>
+<p>First, retrieve the <code>http.p12</code> password:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">PASS</span><span class="o">=</span><span class="k">$(</span>/usr/share/elasticsearch/bin/elasticsearch-keystore<span class="w"> </span>show<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>xpack.security.http.ssl.keystore.secure_password<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="k">)</span>
+</code></pre></div>
+<p>Convert <code>http.p12</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>openssl<span class="w"> </span>pkcs12<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>-in<span class="w"> </span>/etc/elasticsearch/certs/http.p12<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>-out<span class="w"> </span>/etc/elasticsearch/x509-exporter/http.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>-nodes<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span>-passin<span class="w"> </span>pass:<span class="s2">&quot;</span><span class="nv">$PASS</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;http.p12 conversion failed&quot;</span>
+</code></pre></div>
+<p><code>http_ca.crt</code> is already in PEM format; copy it directly:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>cp<span class="w"> </span>/etc/elasticsearch/certs/http_ca.crt<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">   </span>/etc/elasticsearch/x509-exporter/http_ca.pem
+</code></pre></div>
+<p>Verify the output files:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ls<span class="w"> </span>-l<span class="w"> </span>/etc/elasticsearch/x509-exporter/
+</code></pre></div>
+<hr />
+<h3 id="4-set-ownership-and-permissions">4. Set Ownership and Permissions</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>chown<span class="w"> </span>-R<span class="w"> </span>elasticsearch:elasticsearch<span class="w"> </span>/etc/elasticsearch/x509-exporter
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>chmod<span class="w"> </span><span class="m">640</span><span class="w"> </span>/etc/elasticsearch/x509-exporter/*.pem
+</code></pre></div>
+<hr />
+<h3 id="5-create-the-systemd-service-file">5. Create the Systemd Service File</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>vi<span class="w"> </span>/etc/systemd/system/x509-exporter.service
+</code></pre></div>
+<p>Paste the following content:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">[Unit]</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="na">Description</span><span class="o">=</span><span class="s">X509 Certificate Exporter</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="na">Wants</span><span class="o">=</span><span class="s">network-online.target</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="na">After</span><span class="o">=</span><span class="s">network-online.target</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="k">[Service]</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="na">User</span><span class="o">=</span><span class="s">elasticsearch</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="na">Group</span><span class="o">=</span><span class="s">elasticsearch</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="na">Type</span><span class="o">=</span><span class="s">simple</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/local/bin/x509-certificate-exporter </span>\
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">  </span><span class="s">-d /etc/elasticsearch/x509-exporter</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="na">Restart</span><span class="o">=</span><span class="s">on-failure</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="na">RestartSec</span><span class="o">=</span><span class="s">5s</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="na">NoNewPrivileges</span><span class="o">=</span><span class="s">true</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="na">PrivateTmp</span><span class="o">=</span><span class="s">true</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="na">ProtectSystem</span><span class="o">=</span><span class="s">strict</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="na">ProtectHome</span><span class="o">=</span><span class="s">true</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="k">[Install]</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</code></pre></div>
+<hr />
+<h3 id="6-enable-and-start-the-service">6. Enable and Start the Service</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>daemon-reload
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>x509-exporter
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>x509-exporter
+</code></pre></div>
+<hr />
+<h3 id="7-verify-the-service">7. Verify the Service</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>x509-exporter
+</code></pre></div>
+<p>Follow live logs:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>x509-exporter<span class="w"> </span>-f
+</code></pre></div>
+<p>Test Prometheus metrics (default port <code>9793</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>curl<span class="w"> </span>-s<span class="w"> </span>http://localhost:9793/metrics<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>x509_cert_not_after
+</code></pre></div>
+<hr />
+<h2 id="prometheus-configuration">Prometheus Configuration</h2>
+<h3 id="additional_scrape_configs">additional_scrape_configs</h3>
+<p>Add the following job to your <code>prometheus.yml</code> or a dedicated <code>additional_scrape_configs</code> file. Each Elasticsearch node is listed as a separate target:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">additional_scrape_configs</span><span class="p">:</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;x509-elasticsearch&#39;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nt">static_configs</span><span class="p">:</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">targets</span><span class="p">:</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;node-1-private-ip&gt;:9793&#39;</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;node-2-private-ip&gt;:9793&#39;</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;node-3-private-ip&gt;:9793&#39;</span>
+</code></pre></div>
+<blockquote>
+<p>Replace <code>&lt;node-1-private-ip&gt;</code>, <code>&lt;node-2-private-ip&gt;</code>, and <code>&lt;node-3-private-ip&gt;</code> with the private IP of each node.</p>
+</blockquote>
+<p>Reload Prometheus to apply the configuration change:</p>
+<hr />
+<h3 id="alert-rules">Alert Rules</h3>
+<p>Add the following rules to a Prometheus rule file (e.g. <code>/etc/prometheus/rules/elasticsearch-certs.yml</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">groups</span><span class="p">:</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">elasticsearch_certificates</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">rules</span><span class="p">:</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ElasticCertificateExpiringWarning</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">        </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(x509_cert_not_after - time()) &lt; 30 * 24 * 3600</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">        </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3m</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">        </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">          </span><span class="nt">alertname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">elasticsearch</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">        </span><span class="nt">annotations</span><span class="p">:</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">          </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ElasticSearch</span><span class="nv"> </span><span class="s">Certificate</span><span class="nv"> </span><span class="s">will</span><span class="nv"> </span><span class="s">expire</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">less</span><span class="nv"> </span><span class="s">than</span><span class="nv"> </span><span class="s">30</span><span class="nv"> </span><span class="s">days&quot;</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Certificate</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">$labels.common_name</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">expires</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">less</span><span class="nv"> </span><span class="s">than</span><span class="nv"> </span><span class="s">30</span><span class="nv"> </span><span class="s">days.&quot;</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ElasticCertificateExpiringCritical</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">        </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(x509_cert_not_after - time()) &lt; 14 * 24 * 3600</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">        </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3m</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">        </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">          </span><span class="nt">alertname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">elasticsearch</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">        </span><span class="nt">annotations</span><span class="p">:</span>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">          </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ElasticSearch</span><span class="nv"> </span><span class="s">Certificate</span><span class="nv"> </span><span class="s">will</span><span class="nv"> </span><span class="s">expire</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">less</span><span class="nv"> </span><span class="s">than</span><span class="nv"> </span><span class="s">14</span><span class="nv"> </span><span class="s">days&quot;</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Certificate</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">$labels.common_name</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">expires</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">less</span><span class="nv"> </span><span class="s">than</span><span class="nv"> </span><span class="s">14</span><span class="nv"> </span><span class="s">days.&quot;</span>
+</code></pre></div>
 
 
 
