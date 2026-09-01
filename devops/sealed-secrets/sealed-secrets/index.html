@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2369,7 +2369,7 @@
   <span class="md-ellipsis">
     
   
-    Terraform
+    Terragrunt
   
 
     
@@ -2385,7 +2385,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Terraform
+    Terragrunt
   
 
           </label>
@@ -2398,7 +2398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Terragrunt/README.md" class="md-nav__link">
+      <a href="../../terragrunt/" class="md-nav__link">
         
   
   
@@ -9006,7 +9006,7 @@ Once unsealed, this produces a Secret equivalent to the following:
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysecret</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mynamespace</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">data</span><span class="p">:</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YmFy</span><span class="w">  </span><span class="c1"># &lt;- base64 encoded &quot;bar&quot;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YmFy</span><span class="w">  </span><span class="c1"># &lt;- base64 encoded "bar"</span>
 </code></pre></div>
 Having explored how a Secret is securely stored in a Git repository, let's proceed to the usage.</p>
 <hr />
@@ -9026,22 +9026,22 @@ Having explored how a Secret is securely stored in a Git repository, let's proce
 </code></pre></div>
 <h4 id="for-linux">For Linux</h4>
 <p>The <code>kubeseal</code> client can be installed on Linux, using the below commands:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">KUBESEAL_VERSION</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="c1"># Set this to, for example, KUBESEAL_VERSION=&#39;0.23.0&#39;</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>wget<span class="w"> </span><span class="s2">&quot;https://github.com/bitnami-labs/sealed-secrets/releases/download/v</span><span class="si">${</span><span class="nv">KUBESEAL_VERSION</span><span class="p">:?</span><span class="si">}</span><span class="s2">/kubeseal-</span><span class="si">${</span><span class="nv">KUBESEAL_VERSION</span><span class="p">:?</span><span class="si">}</span><span class="s2">-linux-amd64.tar.gz&quot;</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">KUBESEAL_VERSION</span><span class="o">=</span><span class="s1">''</span><span class="w"> </span><span class="c1"># Set this to, for example, KUBESEAL_VERSION='0.23.0'</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>wget<span class="w"> </span><span class="s2">"https://github.com/bitnami-labs/sealed-secrets/releases/download/v</span><span class="si">${</span><span class="nv">KUBESEAL_VERSION</span><span class="p">:?</span><span class="si">}</span><span class="s2">/kubeseal-</span><span class="si">${</span><span class="nv">KUBESEAL_VERSION</span><span class="p">:?</span><span class="si">}</span><span class="s2">-linux-amd64.tar.gz"</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>tar<span class="w"> </span>-xvzf<span class="w"> </span>kubeseal-<span class="si">${</span><span class="nv">KUBESEAL_VERSION</span><span class="p">:?</span><span class="si">}</span>-linux-amd64.tar.gz<span class="w"> </span>kubeseal
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>sudo<span class="w"> </span>install<span class="w"> </span>-m<span class="w"> </span><span class="m">755</span><span class="w"> </span>kubeseal<span class="w"> </span>/usr/local/bin/kubeseal
 </code></pre></div>
 If you have <code>curl</code> and <code>jq</code> installed on your machine, you can get the version dynamically this way. This can be useful for environments used in automation and such.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a># Fetch the latest sealed-secrets version using GitHub API
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>KUBESEAL_VERSION=$(curl -s https://api.github.com/repos/bitnami-labs/sealed-secrets/tags | jq -r &#39;.[0].name&#39; | cut -c 2-)
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>KUBESEAL_VERSION=$(curl -s https://api.github.com/repos/bitnami-labs/sealed-secrets/tags | jq -r '.[0].name' | cut -c 2-)
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a># Check if the version was fetched successfully
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>if [ -z &quot;$KUBESEAL_VERSION&quot; ]; then
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    echo &quot;Failed to fetch the latest KUBESEAL_VERSION&quot;
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>if [ -z "$KUBESEAL_VERSION" ]; then
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    echo "Failed to fetch the latest KUBESEAL_VERSION"
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    exit 1
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>fi
 <a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>wget &quot;https://github.com/bitnami-labs/sealed-secrets/releases/download/v${KUBESEAL_VERSION}/kubeseal-${KUBESEAL_VERSION}-linux-amd64.tar.gz&quot;
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>wget "https://github.com/bitnami-labs/sealed-secrets/releases/download/v${KUBESEAL_VERSION}/kubeseal-${KUBESEAL_VERSION}-linux-amd64.tar.gz"
 <a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>tar -xvzf kubeseal-${KUBESEAL_VERSION}-linux-amd64.tar.gz kubeseal
 <a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>sudo install -m 755 kubeseal /usr/local/bin/kubeseal
 </code></pre></div>
@@ -9055,7 +9055,7 @@ With the tools in place, both the cluster-side controller/operator and the clien
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  name: mysecret
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>  namespace: mynamespace
 <a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>data:
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>  foo: YmFy  # &lt;- base64 encoded &quot;bar&quot;
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>  foo: YmFy  # &lt;- base64 encoded "bar"
 </code></pre></div>
 We can encrypt the Kubernetes Secret file using the following command:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>kubeseal --controller-name sealed-secrets -o yaml -n kube-system &lt; mysecrets.yaml &gt; encrypted-mysecret.yaml
@@ -9142,7 +9142,7 @@ To summarize the process:</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

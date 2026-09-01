@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2364,7 +2364,7 @@
   <span class="md-ellipsis">
     
   
-    Terraform
+    Terragrunt
   
 
     
@@ -2380,7 +2380,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Terraform
+    Terragrunt
   
 
           </label>
@@ -2393,7 +2393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Terragrunt/README.md" class="md-nav__link">
+      <a href="../../terragrunt/" class="md-nav__link">
         
   
   
@@ -8757,14 +8757,14 @@
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>#!/bin/bash
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>KAFKA_HOST_1=&quot;172.31.18.173&quot;     # Change here with ip of kafka1 node
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>KAFKA_HOST_2=&quot;172.31.23.248&quot;     # Change here with ip of kafka2 node
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>KAFKA_HOST_3=&quot;172.31.25.184&quot;     # Change here with ip of kafka3 node
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>KAFKA_HOST_1="172.31.18.173"     # Change here with ip of kafka1 node
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>KAFKA_HOST_2="172.31.23.248"     # Change here with ip of kafka2 node
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>KAFKA_HOST_3="172.31.25.184"     # Change here with ip of kafka3 node
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>KAFKA_NODE_NUMBER=1             # Change here with id of kafka1 node
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>KAFKA_PACKAGE_PATH=&quot;&quot;           # If you&#39;ll use here change here with path of kafka package
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>KAFKA_DOWNLOAD_LINK=&quot;https://downloads.apache.org/kafka/3.7.0/kafka_2.13-3.7.0.tgz&quot;  # If you&#39;ll use here change here with path of kafka package
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>KAFKA_PACKAGE_PATH=""           # If you'll use here change here with path of kafka package
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>KAFKA_DOWNLOAD_LINK="https://downloads.apache.org/kafka/3.7.0/kafka_2.13-3.7.0.tgz"  # If you'll use here change here with path of kafka package
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>#### Apt package update ####
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>apt-get update -y &amp;&amp; apt-get upgrade -y
@@ -8777,9 +8777,9 @@
 <a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>sleep 10
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>#### Add IP Addresses to hosts file
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>echo &quot;$KAFKA_HOST_1 kafka1&quot; &gt;&gt; /etc/hosts
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>echo &quot;$KAFKA_HOST_2 kafka2&quot; &gt;&gt; /etc/hosts
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>echo &quot;$KAFKA_HOST_3 kafka3&quot; &gt;&gt; /etc/hosts
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>echo "$KAFKA_HOST_1 kafka1" &gt;&gt; /etc/hosts
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>echo "$KAFKA_HOST_2 kafka2" &gt;&gt; /etc/hosts
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>echo "$KAFKA_HOST_3 kafka3" &gt;&gt; /etc/hosts
 <a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
 <a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
 <a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>#### Kafka user access ####
@@ -8787,20 +8787,20 @@
 <a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>sleep 2
 <a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
 <a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>#### Kafka tar.gz package download or move ####
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>if [ -n &quot;$KAFKA_DOWNLOAD_LINK&quot; ]; then
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>if [ -n "$KAFKA_DOWNLOAD_LINK" ]; then
 <a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
 <a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>    cd /opt &amp;&amp; wget $KAFKA_DOWNLOAD_LINK
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>    tar zxf &quot;$(basename $KAFKA_DOWNLOAD_LINK)&quot;
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>    tar zxf "$(basename $KAFKA_DOWNLOAD_LINK)"
 <a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
 <a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>    # Get list of output files
 <a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>    EXTRACTED_FILES=$(ls)
 <a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
 <a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>    # Print the resulting files to the screen
-<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>    echo &quot;Get list of output files:&quot;
-<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>    echo &quot;$EXTRACTED_FILES&quot;
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>    echo "Get list of output files:"
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>    echo "$EXTRACTED_FILES"
 <a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
 <a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>    # Assign the name of the first file to a variable
-<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>    KAFKA_PACKAGE_FILE=$(echo &quot;$EXTRACTED_FILES&quot; | head -n 1)
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>    KAFKA_PACKAGE_FILE=$(echo "$EXTRACTED_FILES" | head -n 1)
 <a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>    ln -s /opt/$KAFKA_PACKAGE_FILE /opt/kafka
 <a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>
 <a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>else 
@@ -8812,11 +8812,11 @@
 <a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>    EXTRACTED_FILES=$(ls)
 <a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>
 <a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>    # Print the resulting files to the screen
-<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>    echo &quot;Get list of output files:&quot;
-<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>    echo &quot;$EXTRACTED_FILES&quot;
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>    echo "Get list of output files:"
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>    echo "$EXTRACTED_FILES"
 <a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>
 <a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>    # Assign the name of the first file to a variable
-<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>    KAFKA_PACKAGE_FILE=$(echo &quot;$EXTRACTED_FILES&quot; | head -n 1)
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>    KAFKA_PACKAGE_FILE=$(echo "$EXTRACTED_FILES" | head -n 1)
 <a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>    ln -s /opt/$KAFKA_PACKAGE_FILE /opt/kafka
 <a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>
 <a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>fi
@@ -8833,24 +8833,24 @@
 <a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a>
 <a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>
 <a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a>#### Link for kafka ####
-<a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>ln -s &quot;/opt/$KAFKA_PACKAGE_FILE&quot; /opt/kafka
+<a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>ln -s "/opt/$KAFKA_PACKAGE_FILE" /opt/kafka
 <a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>sleep 2
 <a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a>
 <a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a>
 <a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a>#### Server properties config ####
 <a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a>cd /opt/kafka/config
-<a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a>FILE=&quot;server.properties&quot;
+<a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a>FILE="server.properties"
 <a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a>
 <a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a># New variables
-<a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a>BROKER_ID=&quot;broker.id=$KAFKA_NODE_NUMBER&quot;
-<a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a>NEW_LOG_DIRS=&quot;log.dirs=/data/kafka/kafka&quot;
+<a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a>BROKER_ID="broker.id=$KAFKA_NODE_NUMBER"
+<a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a>NEW_LOG_DIRS="log.dirs=/data/kafka/kafka"
 <a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a>sleep 2
 <a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a>
 <a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a>
 <a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a># Update specific values 
-<a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a>sed -i &quot;s/^broker.id=.*/$BROKER_ID/&quot; &quot;$FILE&quot;
-<a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a>sed -i &quot;s|^log.dirs=.*|$NEW_LOG_DIRS|&quot; &quot;$FILE&quot;
-<a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a>echo &quot;delete.topic.enable = true&quot; &gt;&gt; &quot;$FILE&quot;
+<a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a>sed -i "s/^broker.id=.*/$BROKER_ID/" "$FILE"
+<a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a>sed -i "s|^log.dirs=.*|$NEW_LOG_DIRS|" "$FILE"
+<a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a>echo "delete.topic.enable = true" &gt;&gt; "$FILE"
 <a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a>sleep 2
 <a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a>
 <a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a>
@@ -8894,9 +8894,9 @@
 <a id="__codelineno-0-137" name="__codelineno-0-137" href="#__codelineno-0-137"></a>Type=simple
 <a id="__codelineno-0-138" name="__codelineno-0-138" href="#__codelineno-0-138"></a>User=kafka
 <a id="__codelineno-0-139" name="__codelineno-0-139" href="#__codelineno-0-139"></a>LimitNOFILE=800000
-<a id="__codelineno-0-140" name="__codelineno-0-140" href="#__codelineno-0-140"></a>Environment=&quot;LOG_DIR=/data/log/zookeeper&quot;
-<a id="__codelineno-0-141" name="__codelineno-0-141" href="#__codelineno-0-141"></a>Environment=&quot;GC_LOG_ENABLED=true&quot;
-<a id="__codelineno-0-142" name="__codelineno-0-142" href="#__codelineno-0-142"></a>Environment=&quot;KAFKA_HEAP_OPTS=-Xms512M -Xmx4G&quot;
+<a id="__codelineno-0-140" name="__codelineno-0-140" href="#__codelineno-0-140"></a>Environment="LOG_DIR=/data/log/zookeeper"
+<a id="__codelineno-0-141" name="__codelineno-0-141" href="#__codelineno-0-141"></a>Environment="GC_LOG_ENABLED=true"
+<a id="__codelineno-0-142" name="__codelineno-0-142" href="#__codelineno-0-142"></a>Environment="KAFKA_HEAP_OPTS=-Xms512M -Xmx4G"
 <a id="__codelineno-0-143" name="__codelineno-0-143" href="#__codelineno-0-143"></a>ExecStart=/opt/kafka/bin/zookeeper-server-start.sh /opt/kafka/config/zookeeper.properties
 <a id="__codelineno-0-144" name="__codelineno-0-144" href="#__codelineno-0-144"></a>Restart=on-failure
 <a id="__codelineno-0-145" name="__codelineno-0-145" href="#__codelineno-0-145"></a>TimeoutSec=900
@@ -8922,9 +8922,9 @@
 <a id="__codelineno-0-165" name="__codelineno-0-165" href="#__codelineno-0-165"></a>Type=simple
 <a id="__codelineno-0-166" name="__codelineno-0-166" href="#__codelineno-0-166"></a>User=kafka
 <a id="__codelineno-0-167" name="__codelineno-0-167" href="#__codelineno-0-167"></a>LimitNOFILE=800000
-<a id="__codelineno-0-168" name="__codelineno-0-168" href="#__codelineno-0-168"></a>Environment=&quot;LOG_DIR=/data/log/kafka&quot;
-<a id="__codelineno-0-169" name="__codelineno-0-169" href="#__codelineno-0-169"></a>Environment=&quot;GC_LOG_ENABLED=true&quot;
-<a id="__codelineno-0-170" name="__codelineno-0-170" href="#__codelineno-0-170"></a>Environment=&quot;KAFKA_HEAP_OPTS=-Xms512M -Xmx4G&quot;
+<a id="__codelineno-0-168" name="__codelineno-0-168" href="#__codelineno-0-168"></a>Environment="LOG_DIR=/data/log/kafka"
+<a id="__codelineno-0-169" name="__codelineno-0-169" href="#__codelineno-0-169"></a>Environment="GC_LOG_ENABLED=true"
+<a id="__codelineno-0-170" name="__codelineno-0-170" href="#__codelineno-0-170"></a>Environment="KAFKA_HEAP_OPTS=-Xms512M -Xmx4G"
 <a id="__codelineno-0-171" name="__codelineno-0-171" href="#__codelineno-0-171"></a>ExecStart=/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
 <a id="__codelineno-0-172" name="__codelineno-0-172" href="#__codelineno-0-172"></a>Restart=on-failure
 <a id="__codelineno-0-173" name="__codelineno-0-173" href="#__codelineno-0-173"></a>TimeoutSec=900
@@ -9007,7 +9007,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

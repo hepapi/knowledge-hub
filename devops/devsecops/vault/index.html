@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -3242,7 +3242,7 @@
   <span class="md-ellipsis">
     
   
-    Terraform
+    Terragrunt
   
 
     
@@ -3258,7 +3258,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Terraform
+    Terragrunt
   
 
           </label>
@@ -3271,7 +3271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Terragrunt/README.md" class="md-nav__link">
+      <a href="../../terragrunt/" class="md-nav__link">
         
   
   
@@ -10484,7 +10484,7 @@
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">global</span><span class="p">:</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="s">""</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">injector</span><span class="p">:</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
@@ -10502,7 +10502,7 @@
 <a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">  </span><span class="nt">ingress</span><span class="p">:</span>
 <a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="nt">annotations</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="nt">ingressClassName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="nt">ingressClassName</span><span class="p">:</span><span class="w"> </span><span class="s">""</span>
 <a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prefix</span>
 <a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="nt">activeService</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="nt">hosts</span><span class="p">:</span>
@@ -10514,7 +10514,7 @@
 <a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">    </span><span class="c1"># Size of the PVC created</span>
 <a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">    </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1Gi</span>
 <a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">    </span><span class="c1"># Location where the PVC will be mounted.</span>
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">    </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/vault/data&quot;</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">    </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="s">"/vault/data"</span>
 <a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">    </span><span class="c1"># Name of the storage class to use.  If null it will use the</span>
 <a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">    </span><span class="c1"># configured default Storage Class.</span>
 <a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">    </span><span class="nt">storageClass</span><span class="p">:</span><span class="w"> </span>
@@ -10533,40 +10533,40 @@
 <a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="w">    </span><span class="nt">config</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="w">      </span><span class="no">ui = true</span>
 <a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>
-<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a><span class="w">      </span><span class="no">listener &quot;tcp&quot; {</span>
+<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a><span class="w">      </span><span class="no">listener "tcp" {</span>
 <a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a><span class="w">        </span><span class="no">tls_disable = 1</span>
-<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a><span class="w">        </span><span class="no">address = &quot;[::]:8200&quot;</span>
-<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a><span class="w">        </span><span class="no">cluster_address = &quot;[::]:8201&quot;</span>
+<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a><span class="w">        </span><span class="no">address = "[::]:8200"</span>
+<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a><span class="w">        </span><span class="no">cluster_address = "[::]:8201"</span>
 <a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a><span class="w">      </span><span class="no">}</span>
-<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a><span class="w">      </span><span class="no">storage &quot;raft&quot; {</span>
-<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a><span class="w">          </span><span class="no">path = &quot;/vault/data&quot;</span>
+<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a><span class="w">      </span><span class="no">storage "raft" {</span>
+<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a><span class="w">          </span><span class="no">path = "/vault/data"</span>
 <a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>
 <a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a><span class="w">          </span><span class="no">retry_join {</span>
-<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a><span class="w">            </span><span class="no">leader_api_addr = &quot;http://vault-0.vault-internal:8200&quot;</span>
+<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a><span class="w">            </span><span class="no">leader_api_addr = "http://vault-0.vault-internal:8200"</span>
 <a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a><span class="w">          </span><span class="no">}</span>
 <a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a><span class="w">          </span><span class="no">retry_join {</span>
-<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a><span class="w">            </span><span class="no">leader_api_addr = &quot;http://vault-1.vault-internal:8200&quot;</span>
+<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a><span class="w">            </span><span class="no">leader_api_addr = "http://vault-1.vault-internal:8200"</span>
 <a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a><span class="w">          </span><span class="no">}</span>
 <a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a><span class="w">          </span><span class="no">retry_join {</span>
-<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a><span class="w">            </span><span class="no">leader_api_addr = &quot;http://vault-2.vault-internal:8200&quot;</span>
+<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a><span class="w">            </span><span class="no">leader_api_addr = "http://vault-2.vault-internal:8200"</span>
 <a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a><span class="w">          </span><span class="no">}</span>
 <a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a><span class="w">        </span><span class="no">}</span>
 <a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a>
-<a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a><span class="w">      </span><span class="no">service_registration &quot;kubernetes&quot; {}</span>
+<a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a><span class="w">      </span><span class="no">service_registration "kubernetes" {}</span>
 <a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a><span class="nt">ui</span><span class="p">:</span>
 <a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a><span class="w">  </span><span class="nt">publishNotReadyAddresses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <a id="__codelineno-3-75" name="__codelineno-3-75" href="#__codelineno-3-75"></a><span class="w">  </span><span class="c1"># The service should only contain selectors for active Vault pod</span>
 <a id="__codelineno-3-76" name="__codelineno-3-76" href="#__codelineno-3-76"></a><span class="w">  </span><span class="nt">activeVaultPodOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<a id="__codelineno-3-77" name="__codelineno-3-77" href="#__codelineno-3-77"></a><span class="w">  </span><span class="nt">serviceType</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ClusterIP&quot;</span>
+<a id="__codelineno-3-77" name="__codelineno-3-77" href="#__codelineno-3-77"></a><span class="w">  </span><span class="nt">serviceType</span><span class="p">:</span><span class="w"> </span><span class="s">"ClusterIP"</span>
 <a id="__codelineno-3-78" name="__codelineno-3-78" href="#__codelineno-3-78"></a><span class="w">  </span><span class="nt">serviceNodePort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
 <a id="__codelineno-3-79" name="__codelineno-3-79" href="#__codelineno-3-79"></a><span class="w">  </span><span class="nt">externalPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8200</span>
 <a id="__codelineno-3-80" name="__codelineno-3-80" href="#__codelineno-3-80"></a><span class="w">  </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8200</span>
 <a id="__codelineno-3-81" name="__codelineno-3-81" href="#__codelineno-3-81"></a><span class="nt">csi</span><span class="p">:</span>
 <a id="__codelineno-3-82" name="__codelineno-3-82" href="#__codelineno-3-82"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <a id="__codelineno-3-83" name="__codelineno-3-83" href="#__codelineno-3-83"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span>
-<a id="__codelineno-3-84" name="__codelineno-3-84" href="#__codelineno-3-84"></a><span class="w">    </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;hashicorp/vault-csi-provider&quot;</span>
-<a id="__codelineno-3-85" name="__codelineno-3-85" href="#__codelineno-3-85"></a><span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.5.0&quot;</span>
+<a id="__codelineno-3-84" name="__codelineno-3-84" href="#__codelineno-3-84"></a><span class="w">    </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="s">"hashicorp/vault-csi-provider"</span>
+<a id="__codelineno-3-85" name="__codelineno-3-85" href="#__codelineno-3-85"></a><span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">"1.5.0"</span>
 <a id="__codelineno-3-86" name="__codelineno-3-86" href="#__codelineno-3-86"></a><span class="w">    </span><span class="nt">pullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
 <a id="__codelineno-3-87" name="__codelineno-3-87" href="#__codelineno-3-87"></a><span class="nt">serverTelemetry</span><span class="p">:</span>
 <a id="__codelineno-3-88" name="__codelineno-3-88" href="#__codelineno-3-88"></a><span class="w">  </span><span class="nt">serviceMonitor</span><span class="p">:</span>
@@ -10596,7 +10596,7 @@
 <a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>vault<span class="w"> </span>operator<span class="w"> </span>unseal<span class="w"> </span>&lt;unsealkey1&gt;
 <a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>vault<span class="w"> </span>operator<span class="w"> </span>unseal<span class="w"> </span>&lt;unsealkey2&gt;
 <a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="c1">## verify status vault and see &quot;Sealed status is false&quot;</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="c1">## verify status vault and see "Sealed status is false"</span>
 <a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>vault<span class="w"> </span>status
 <a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>Key<span class="w">                     </span>Value
 <a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>---<span class="w">                     </span>-----
@@ -10631,7 +10631,7 @@
 </code></pre></div>
 <ul>
 <li>check leader node
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl<span class="w"> </span>-s<span class="w"> </span>--header<span class="w"> </span><span class="s2">&quot;X-Vault-Token: &lt;root_token&gt;&quot;</span><span class="w"> </span>http://127.0.0.1:8200/v1/sys/leader<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl<span class="w"> </span>-s<span class="w"> </span>--header<span class="w"> </span><span class="s2">"X-Vault-Token: &lt;root_token&gt;"</span><span class="w"> </span>http://127.0.0.1:8200/v1/sys/leader<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># view leader_cluster_address: xxx</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>or<span class="w"> </span>you<span class="w"> </span>can<span class="w"> </span>check<span class="w"> </span>on<span class="w"> </span>vault<span class="w"> </span>ui<span class="w"> </span>raft<span class="w"> </span>storage<span class="w"> </span>section<span class="w"> </span>on<span class="w"> </span>left<span class="w"> </span>handside
@@ -10643,18 +10643,18 @@
 <li>Using package manager</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>wget<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span>https://apt.releases.hashicorp.com/gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/usr/share/keyrings/hashicorp-archive-keyring.gpg
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> main&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/hashicorp.list
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> main"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/hashicorp.list
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>vault
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Not:<span class="w"> </span><span class="c1"># binary path is /usr/bin/vault check that &quot;which vault&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Not:<span class="w"> </span><span class="c1"># binary path is /usr/bin/vault check that "which vault"</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>ls<span class="w"> </span>/usr/bin/vault
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>---
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>sudo<span class="w"> </span>tee<span class="w"> </span>/lib/systemd/system/vault.service<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="s">[Unit]</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="s">Description=&quot;HashiCorp Vault&quot;</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="s">Documentation=&quot;https://developer.hashicorp.com/vault/docs&quot;</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="s">ConditionFileNotEmpty=&quot;/etc/vault.d/vault.hcl&quot;</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="s">Description="HashiCorp Vault"</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="s">Documentation="https://developer.hashicorp.com/vault/docs"</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="s">ConditionFileNotEmpty="/etc/vault.d/vault.hcl"</span>
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
 <a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="s">[Service]</span>
 <a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="s">User=vault</span>
@@ -10673,31 +10673,31 @@
 <a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="s">EOF</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">## change &lt;vault-vm-ip&gt;</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1">## auto-unseal is active on AWS KMS for detail check auto-unseal section. if dont need delete seal &quot;awskms&quot; lines</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1">## auto-unseal is active on AWS KMS for detail check auto-unseal section. if dont need delete seal "awskms" lines</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/vault.d/vault.hcl<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="s">storage &quot;raft&quot; {</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="s">  path    = &quot;/opt/vault/data&quot;</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="s">  node_id = &quot;vault-node&quot;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="s">storage "raft" {</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="s">  path    = "/opt/vault/data"</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="s">  node_id = "vault-node"</span>
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="s">}</span>
 <a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="s">listener &quot;tcp&quot; {</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="s"> address = &quot;0.0.0.0:8200&quot; </span>
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="s"> cluster_address = &quot;0.0.0.0:8201&quot;</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="s">listener "tcp" {</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="s"> address = "0.0.0.0:8200" </span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="s"> cluster_address = "0.0.0.0:8201"</span>
 <a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="s"> tls_disable = 1</span>
 <a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
-<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="s">api_addr = &quot;http://&lt;vault-vm-ip&gt;:8200&quot;</span>
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="s">cluster_addr = &quot;http://&lt;vault-vm-ip&gt;:8201&quot;</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="s">api_addr = "http://&lt;vault-vm-ip&gt;:8200"</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="s">cluster_addr = "http://&lt;vault-vm-ip&gt;:8201"</span>
 <a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="s">ui = true</span>
-<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="s">log_level = &quot;INFO&quot;</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="s">log_level = "INFO"</span>
 <a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>
 <a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="s">disable_mlock=true</span>
 <a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>
-<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="s">seal &quot;awskms&quot; {</span>
-<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="s">  region     = &quot;eu-central-1&quot;</span>
-<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="s">  access_key = &quot;xxx&quot;</span>
-<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="s">  secret_key = &quot;xxx&quot;</span>
-<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="s">  kms_key_id = &quot;xxx&quot;</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="s">seal "awskms" {</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="s">  region     = "eu-central-1"</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="s">  access_key = "xxx"</span>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="s">  secret_key = "xxx"</span>
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="s">  kms_key_id = "xxx"</span>
 <a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="s">}</span>
 <a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="s">EOF</span>
 </code></pre></div>
@@ -10739,14 +10739,14 @@
 <li>Using package manager</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>wget<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span>https://apt.releases.hashicorp.com/gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/usr/share/keyrings/hashicorp-archive-keyring.gpg
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> main&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/hashicorp.list
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> main"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/hashicorp.list
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>vault
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Not:<span class="w"> </span><span class="c1"># binary path is /usr/bin/vault check that &quot;which vault&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Not:<span class="w"> </span><span class="c1"># binary path is /usr/bin/vault check that "which vault"</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>sudo<span class="w"> </span>tee<span class="w"> </span>/lib/systemd/system/vault.service<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="s">[Unit]</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="s">Description=&quot;HashiCorp Vault - A tool for managing secrets&quot;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="s">Description="HashiCorp Vault - A tool for managing secrets"</span>
 <a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="s">Documentation=https://www.vaultproject.io/docs/</span>
 <a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="s">Requires=network-online.target</span>
 <a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="s">After=network-online.target</span>
@@ -10780,46 +10780,46 @@
 <a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a><span class="s">EOF</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">## change &lt;node-x-ip&gt;</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="c1">## auto-unseal is active on AWS KMS for detail check auto-unseal section. if dont need delete seal &quot;awskms&quot; lines</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="c1">## auto-unseal is active on AWS KMS for detail check auto-unseal section. if dont need delete seal "awskms" lines</span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
 <a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/vault.d/vault.hcl<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="s">storage &quot;raft&quot; {</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="s">  path    = &quot;/opt/vault/data&quot;</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="s">  node_id = &quot;vault-node-1&quot;</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="s">storage "raft" {</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="s">  path    = "/opt/vault/data"</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="s">  node_id = "vault-node-1"</span>
 <a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
 <a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="s">  retry_join {</span>
-<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="s">    leader_api_addr = &quot;http://&lt;node-1-ip&gt;:8200&quot;</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="s">    leader_api_addr = "http://&lt;node-1-ip&gt;:8200"</span>
 <a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="s">  }</span>
 <a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="s">  retry_join {</span>
-<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="s">    leader_api_addr = &quot;http://&lt;node-2-ip&gt;:8200&quot;</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="s">    leader_api_addr = "http://&lt;node-2-ip&gt;:8200"</span>
 <a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="s">  }</span>
 <a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="s">  retry_join {</span>
-<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="s">    leader_api_addr = &quot;http://&lt;node-3-ip&gt;:8200&quot;</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="s">    leader_api_addr = "http://&lt;node-3-ip&gt;:8200"</span>
 <a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="s">  }</span>
 <a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="s">}</span>
 <a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>
-<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="s">listener &quot;tcp&quot; {</span>
-<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="s">address = &quot;&lt;node-1-ip&gt;:8200&quot; </span>
-<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="s">cluster_address = &quot;&lt;node-1-ip&gt;:8201&quot;</span>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="s">listener "tcp" {</span>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="s">address = "&lt;node-1-ip&gt;:8200" </span>
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="s">cluster_address = "&lt;node-1-ip&gt;:8201"</span>
 <a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="s">tls_disable = 1</span>
 <a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="s">}</span>
 <a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>
-<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a><span class="s">api_addr = &quot;http://&lt;node-1-ip&gt;:8200&quot;</span>
-<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="s">cluster_addr = &quot;http://&lt;node-1-ip&gt;:8201&quot;</span>
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a><span class="s">api_addr = "http://&lt;node-1-ip&gt;:8200"</span>
+<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="s">cluster_addr = "http://&lt;node-1-ip&gt;:8201"</span>
 <a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a><span class="s">ui = true</span>
-<a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a><span class="s">log_level = &quot;INFO&quot;</span>
+<a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a><span class="s">log_level = "INFO"</span>
 <a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a>
 <a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a><span class="s">disable_mlock=true</span>
 <a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a>
-<a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a><span class="s">seal &quot;awskms&quot; {</span>
-<a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a><span class="s">  region     = &quot;eu-central-1&quot;</span>
-<a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a><span class="s">  access_key = &quot;xxx&quot;</span>
-<a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a><span class="s">  secret_key = &quot;xxx&quot;</span>
-<a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a><span class="s">  kms_key_id = &quot;xxx&quot;</span>
+<a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a><span class="s">seal "awskms" {</span>
+<a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a><span class="s">  region     = "eu-central-1"</span>
+<a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a><span class="s">  access_key = "xxx"</span>
+<a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a><span class="s">  secret_key = "xxx"</span>
+<a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a><span class="s">  kms_key_id = "xxx"</span>
 <a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a><span class="s">}</span>
 <a id="__codelineno-14-39" name="__codelineno-14-39" href="#__codelineno-14-39"></a>
-<a id="__codelineno-14-40" name="__codelineno-14-40" href="#__codelineno-14-40"></a><span class="s">audit &quot;file&quot; {</span>
-<a id="__codelineno-14-41" name="__codelineno-14-41" href="#__codelineno-14-41"></a><span class="s">  path = &quot;/var/log/vault/audit.log&quot;</span>
+<a id="__codelineno-14-40" name="__codelineno-14-40" href="#__codelineno-14-40"></a><span class="s">audit "file" {</span>
+<a id="__codelineno-14-41" name="__codelineno-14-41" href="#__codelineno-14-41"></a><span class="s">  path = "/var/log/vault/audit.log"</span>
 <a id="__codelineno-14-42" name="__codelineno-14-42" href="#__codelineno-14-42"></a><span class="s">  log_requests = true</span>
 <a id="__codelineno-14-43" name="__codelineno-14-43" href="#__codelineno-14-43"></a><span class="s">  log_responses = true</span>
 <a id="__codelineno-14-44" name="__codelineno-14-44" href="#__codelineno-14-44"></a><span class="s">}</span>
@@ -10867,14 +10867,14 @@
 <li>Using package manager</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>wget<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span>https://apt.releases.hashicorp.com/gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/usr/share/keyrings/hashicorp-archive-keyring.gpg
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> main&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/hashicorp.list
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> main"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/hashicorp.list
 <a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>vault
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Not:<span class="w"> </span><span class="c1"># binary path is /usr/bin/vault check that &quot;which vault&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Not:<span class="w"> </span><span class="c1"># binary path is /usr/bin/vault check that "which vault"</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>sudo<span class="w"> </span>tee<span class="w"> </span>/lib/systemd/system/vault.service<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="s">[Unit]</span>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="s">Description=&quot;HashiCorp Vault - A tool for managing secrets&quot;</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="s">Description="HashiCorp Vault - A tool for managing secrets"</span>
 <a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="s">Documentation=https://www.vaultproject.io/docs/</span>
 <a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="s">Requires=network-online.target</span>
 <a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="s">After=network-online.target</span>
@@ -10908,46 +10908,46 @@
 <a id="__codelineno-19-36" name="__codelineno-19-36" href="#__codelineno-19-36"></a><span class="s">EOF</span>
 </code></pre></div>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1">## change &lt;node-x-ip&gt;</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="c1">## auto-unseal is active on AWS KMS for detail check auto-unseal section. if dont need delete seal &quot;awskms&quot; lines</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="c1">## auto-unseal is active on AWS KMS for detail check auto-unseal section. if dont need delete seal "awskms" lines</span>
 <a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
 <a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/vault.d/vault.hcl<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="s">storage &quot;raft&quot; {</span>
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="s">  path    = &quot;/opt/vault/data&quot;</span>
-<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="s">  node_id = &quot;vault-node-2&quot;</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="s">storage "raft" {</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="s">  path    = "/opt/vault/data"</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="s">  node_id = "vault-node-2"</span>
 <a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>
 <a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="s">  retry_join {</span>
-<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="s">    leader_api_addr = &quot;http://&lt;node-1-ip&gt;:8200&quot;</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="s">    leader_api_addr = "http://&lt;node-1-ip&gt;:8200"</span>
 <a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="s">  }</span>
 <a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="s">  retry_join {</span>
-<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="s">    leader_api_addr = &quot;http://&lt;node-2-ip&gt;:8200&quot;</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="s">    leader_api_addr = "http://&lt;node-2-ip&gt;:8200"</span>
 <a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="s">  }</span>
 <a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="s">  retry_join {</span>
-<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="s">    leader_api_addr = &quot;http://&lt;node-3-ip&gt;:8200&quot;</span>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="s">    leader_api_addr = "http://&lt;node-3-ip&gt;:8200"</span>
 <a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="s">  }</span>
 <a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="s">}</span>
 <a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>
-<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="s">listener &quot;tcp&quot; {</span>
-<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a><span class="s">address = &quot;&lt;node-2-ip&gt;:8200&quot; </span>
-<a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="s">cluster_address = &quot;&lt;node-2-ip&gt;:8201&quot;</span>
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="s">listener "tcp" {</span>
+<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a><span class="s">address = "&lt;node-2-ip&gt;:8200" </span>
+<a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="s">cluster_address = "&lt;node-2-ip&gt;:8201"</span>
 <a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="s">tls_disable = 1</span>
 <a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="s">}</span>
 <a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a>
-<a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a><span class="s">api_addr = &quot;http://&lt;node-2-ip&gt;:8200&quot;</span>
-<a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a><span class="s">cluster_addr = &quot;http://&lt;node-2-ip&gt;:8201&quot;</span>
+<a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a><span class="s">api_addr = "http://&lt;node-2-ip&gt;:8200"</span>
+<a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a><span class="s">cluster_addr = "http://&lt;node-2-ip&gt;:8201"</span>
 <a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a><span class="s">ui = true</span>
-<a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a><span class="s">log_level = &quot;INFO&quot;</span>
+<a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a><span class="s">log_level = "INFO"</span>
 <a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a>
 <a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a><span class="s">disable_mlock=true</span>
 <a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a>
-<a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a><span class="s">seal &quot;awskms&quot; {</span>
-<a id="__codelineno-20-34" name="__codelineno-20-34" href="#__codelineno-20-34"></a><span class="s">  region     = &quot;eu-central-1&quot;</span>
-<a id="__codelineno-20-35" name="__codelineno-20-35" href="#__codelineno-20-35"></a><span class="s">  access_key = &quot;xxx&quot;</span>
-<a id="__codelineno-20-36" name="__codelineno-20-36" href="#__codelineno-20-36"></a><span class="s">  secret_key = &quot;xxx&quot;</span>
-<a id="__codelineno-20-37" name="__codelineno-20-37" href="#__codelineno-20-37"></a><span class="s">  kms_key_id = &quot;xxx&quot;</span>
+<a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a><span class="s">seal "awskms" {</span>
+<a id="__codelineno-20-34" name="__codelineno-20-34" href="#__codelineno-20-34"></a><span class="s">  region     = "eu-central-1"</span>
+<a id="__codelineno-20-35" name="__codelineno-20-35" href="#__codelineno-20-35"></a><span class="s">  access_key = "xxx"</span>
+<a id="__codelineno-20-36" name="__codelineno-20-36" href="#__codelineno-20-36"></a><span class="s">  secret_key = "xxx"</span>
+<a id="__codelineno-20-37" name="__codelineno-20-37" href="#__codelineno-20-37"></a><span class="s">  kms_key_id = "xxx"</span>
 <a id="__codelineno-20-38" name="__codelineno-20-38" href="#__codelineno-20-38"></a><span class="s">}</span>
 <a id="__codelineno-20-39" name="__codelineno-20-39" href="#__codelineno-20-39"></a>
-<a id="__codelineno-20-40" name="__codelineno-20-40" href="#__codelineno-20-40"></a><span class="s">audit &quot;file&quot; {</span>
-<a id="__codelineno-20-41" name="__codelineno-20-41" href="#__codelineno-20-41"></a><span class="s">  path = &quot;/var/log/vault/audit.log&quot;</span>
+<a id="__codelineno-20-40" name="__codelineno-20-40" href="#__codelineno-20-40"></a><span class="s">audit "file" {</span>
+<a id="__codelineno-20-41" name="__codelineno-20-41" href="#__codelineno-20-41"></a><span class="s">  path = "/var/log/vault/audit.log"</span>
 <a id="__codelineno-20-42" name="__codelineno-20-42" href="#__codelineno-20-42"></a><span class="s">  log_requests = true</span>
 <a id="__codelineno-20-43" name="__codelineno-20-43" href="#__codelineno-20-43"></a><span class="s">  log_responses = true</span>
 <a id="__codelineno-20-44" name="__codelineno-20-44" href="#__codelineno-20-44"></a><span class="s">}</span>
@@ -10985,14 +10985,14 @@
 <li>Using package manager</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>wget<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span>https://apt.releases.hashicorp.com/gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/usr/share/keyrings/hashicorp-archive-keyring.gpg
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> main&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/hashicorp.list
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> main"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/hashicorp.list
 <a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>vault
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Not:<span class="w"> </span><span class="c1"># binary path is /usr/bin/vault check that &quot;which vault&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Not:<span class="w"> </span><span class="c1"># binary path is /usr/bin/vault check that "which vault"</span>
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
 <a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>sudo<span class="w"> </span>tee<span class="w"> </span>/lib/systemd/system/vault.service<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="s">[Unit]</span>
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="s">Description=&quot;HashiCorp Vault - A tool for managing secrets&quot;</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="s">Description="HashiCorp Vault - A tool for managing secrets"</span>
 <a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="s">Documentation=https://www.vaultproject.io/docs/</span>
 <a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="s">Requires=network-online.target</span>
 <a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="s">After=network-online.target</span>
@@ -11026,46 +11026,46 @@
 <a id="__codelineno-23-36" name="__codelineno-23-36" href="#__codelineno-23-36"></a><span class="s">EOF</span>
 </code></pre></div>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1">## change &lt;node-x-ip&gt;</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="c1">## auto-unseal is active on AWS KMS for detail check auto-unseal section. if dont need delete seal &quot;awskms&quot; lines</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="c1">## auto-unseal is active on AWS KMS for detail check auto-unseal section. if dont need delete seal "awskms" lines</span>
 <a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
 <a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/vault.d/vault.hcl<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
-<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="s">storage &quot;raft&quot; {</span>
-<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="s">  path    = &quot;/opt/vault/data&quot;</span>
-<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="s">  node_id = &quot;vault-node-3&quot;</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="s">storage "raft" {</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="s">  path    = "/opt/vault/data"</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="s">  node_id = "vault-node-3"</span>
 <a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>
 <a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="s">  retry_join {</span>
-<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="s">    leader_api_addr = &quot;http://&lt;node-1-ip&gt;:8200&quot;</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="s">    leader_api_addr = "http://&lt;node-1-ip&gt;:8200"</span>
 <a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="s">  }</span>
 <a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="s">  retry_join {</span>
-<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="s">    leader_api_addr = &quot;http://&lt;node-2-ip&gt;:8200&quot;</span>
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="s">    leader_api_addr = "http://&lt;node-2-ip&gt;:8200"</span>
 <a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="s">  }</span>
 <a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a><span class="s">  retry_join {</span>
-<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="s">    leader_api_addr = &quot;http://&lt;node-3-ip&gt;:8200&quot;</span>
+<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="s">    leader_api_addr = "http://&lt;node-3-ip&gt;:8200"</span>
 <a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="s">  }</span>
 <a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a><span class="s">}</span>
 <a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a>
-<a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a><span class="s">listener &quot;tcp&quot; {</span>
-<a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a><span class="s">address = &quot;&lt;node-3-ip&gt;:8200&quot; </span>
-<a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a><span class="s">cluster_address = &quot;&lt;node-3-ip&gt;:8201&quot;</span>
+<a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a><span class="s">listener "tcp" {</span>
+<a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a><span class="s">address = "&lt;node-3-ip&gt;:8200" </span>
+<a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a><span class="s">cluster_address = "&lt;node-3-ip&gt;:8201"</span>
 <a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a><span class="s">tls_disable = 1</span>
 <a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a><span class="s">}</span>
 <a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a>
-<a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a><span class="s">api_addr = &quot;http://&lt;node-3-ip&gt;:8200&quot;</span>
-<a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a><span class="s">cluster_addr = &quot;http://&lt;node-3-ip&gt;:8201&quot;</span>
+<a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a><span class="s">api_addr = "http://&lt;node-3-ip&gt;:8200"</span>
+<a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a><span class="s">cluster_addr = "http://&lt;node-3-ip&gt;:8201"</span>
 <a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a><span class="s">ui = true</span>
-<a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a><span class="s">log_level = &quot;INFO&quot;</span>
+<a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a><span class="s">log_level = "INFO"</span>
 <a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a>
 <a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a><span class="s">disable_mlock=true</span>
 <a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a>
-<a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a><span class="s">seal &quot;awskms&quot; {</span>
-<a id="__codelineno-24-34" name="__codelineno-24-34" href="#__codelineno-24-34"></a><span class="s">  region     = &quot;eu-central-1&quot;</span>
-<a id="__codelineno-24-35" name="__codelineno-24-35" href="#__codelineno-24-35"></a><span class="s">  access_key = &quot;xxx&quot;</span>
-<a id="__codelineno-24-36" name="__codelineno-24-36" href="#__codelineno-24-36"></a><span class="s">  secret_key = &quot;xxx&quot;</span>
-<a id="__codelineno-24-37" name="__codelineno-24-37" href="#__codelineno-24-37"></a><span class="s">  kms_key_id = &quot;xxx&quot;</span>
+<a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a><span class="s">seal "awskms" {</span>
+<a id="__codelineno-24-34" name="__codelineno-24-34" href="#__codelineno-24-34"></a><span class="s">  region     = "eu-central-1"</span>
+<a id="__codelineno-24-35" name="__codelineno-24-35" href="#__codelineno-24-35"></a><span class="s">  access_key = "xxx"</span>
+<a id="__codelineno-24-36" name="__codelineno-24-36" href="#__codelineno-24-36"></a><span class="s">  secret_key = "xxx"</span>
+<a id="__codelineno-24-37" name="__codelineno-24-37" href="#__codelineno-24-37"></a><span class="s">  kms_key_id = "xxx"</span>
 <a id="__codelineno-24-38" name="__codelineno-24-38" href="#__codelineno-24-38"></a><span class="s">}</span>
 <a id="__codelineno-24-39" name="__codelineno-24-39" href="#__codelineno-24-39"></a>
-<a id="__codelineno-24-40" name="__codelineno-24-40" href="#__codelineno-24-40"></a><span class="s">audit &quot;file&quot; {</span>
-<a id="__codelineno-24-41" name="__codelineno-24-41" href="#__codelineno-24-41"></a><span class="s">  path = &quot;/var/log/vault/audit.log&quot;</span>
+<a id="__codelineno-24-40" name="__codelineno-24-40" href="#__codelineno-24-40"></a><span class="s">audit "file" {</span>
+<a id="__codelineno-24-41" name="__codelineno-24-41" href="#__codelineno-24-41"></a><span class="s">  path = "/var/log/vault/audit.log"</span>
 <a id="__codelineno-24-42" name="__codelineno-24-42" href="#__codelineno-24-42"></a><span class="s">  log_requests = true</span>
 <a id="__codelineno-24-43" name="__codelineno-24-43" href="#__codelineno-24-43"></a><span class="s">  log_responses = true</span>
 <a id="__codelineno-24-44" name="__codelineno-24-44" href="#__codelineno-24-44"></a><span class="s">}</span>
@@ -11128,31 +11128,31 @@
 <a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="w">    </span><span class="nt">config</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="w">      </span><span class="no">ui = true</span>
 <a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>
-<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="w">      </span><span class="no">listener &quot;tcp&quot; {</span>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="w">      </span><span class="no">listener "tcp" {</span>
 <a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="w">        </span><span class="no">tls_disable = 1</span>
-<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="w">        </span><span class="no">address = &quot;[::]:8200&quot;</span>
-<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a><span class="w">        </span><span class="no">cluster_address = &quot;[::]:8201&quot;</span>
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="w">        </span><span class="no">address = "[::]:8200"</span>
+<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a><span class="w">        </span><span class="no">cluster_address = "[::]:8201"</span>
 <a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a><span class="w">      </span><span class="no">}</span>
-<a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a><span class="w">      </span><span class="no">storage &quot;raft&quot; {</span>
-<a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a><span class="w">          </span><span class="no">path = &quot;/vault/data&quot;</span>
+<a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a><span class="w">      </span><span class="no">storage "raft" {</span>
+<a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a><span class="w">          </span><span class="no">path = "/vault/data"</span>
 <a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a>
 <a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a><span class="w">          </span><span class="no">retry_join {</span>
-<a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a><span class="w">            </span><span class="no">leader_api_addr = &quot;http://vault-0.vault-internal:8200&quot;</span>
+<a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a><span class="w">            </span><span class="no">leader_api_addr = "http://vault-0.vault-internal:8200"</span>
 <a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a><span class="w">          </span><span class="no">}</span>
 <a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a><span class="w">          </span><span class="no">retry_join {</span>
-<a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a><span class="w">            </span><span class="no">leader_api_addr = &quot;http://vault-1.vault-internal:8200&quot;</span>
+<a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a><span class="w">            </span><span class="no">leader_api_addr = "http://vault-1.vault-internal:8200"</span>
 <a id="__codelineno-28-22" name="__codelineno-28-22" href="#__codelineno-28-22"></a><span class="w">          </span><span class="no">}</span>
 <a id="__codelineno-28-23" name="__codelineno-28-23" href="#__codelineno-28-23"></a><span class="w">          </span><span class="no">retry_join {</span>
-<a id="__codelineno-28-24" name="__codelineno-28-24" href="#__codelineno-28-24"></a><span class="w">            </span><span class="no">leader_api_addr = &quot;http://vault-2.vault-internal:8200&quot;</span>
+<a id="__codelineno-28-24" name="__codelineno-28-24" href="#__codelineno-28-24"></a><span class="w">            </span><span class="no">leader_api_addr = "http://vault-2.vault-internal:8200"</span>
 <a id="__codelineno-28-25" name="__codelineno-28-25" href="#__codelineno-28-25"></a><span class="w">          </span><span class="no">}</span>
 <a id="__codelineno-28-26" name="__codelineno-28-26" href="#__codelineno-28-26"></a><span class="w">        </span><span class="no">}</span>
 <a id="__codelineno-28-27" name="__codelineno-28-27" href="#__codelineno-28-27"></a>
-<a id="__codelineno-28-28" name="__codelineno-28-28" href="#__codelineno-28-28"></a><span class="w">      </span><span class="no">service_registration &quot;kubernetes&quot; {}</span>
-<a id="__codelineno-28-29" name="__codelineno-28-29" href="#__codelineno-28-29"></a><span class="w">      </span><span class="no">seal &quot;awskms&quot; {</span>
-<a id="__codelineno-28-30" name="__codelineno-28-30" href="#__codelineno-28-30"></a><span class="w">        </span><span class="no">region     = &quot;eu-central-1&quot;</span>
-<a id="__codelineno-28-31" name="__codelineno-28-31" href="#__codelineno-28-31"></a><span class="w">        </span><span class="no">access_key = &quot;xxx&quot;</span>
-<a id="__codelineno-28-32" name="__codelineno-28-32" href="#__codelineno-28-32"></a><span class="w">        </span><span class="no">secret_key = &quot;xxx&quot;</span>
-<a id="__codelineno-28-33" name="__codelineno-28-33" href="#__codelineno-28-33"></a><span class="w">        </span><span class="no">kms_key_id = &quot;xxx&quot;</span>
+<a id="__codelineno-28-28" name="__codelineno-28-28" href="#__codelineno-28-28"></a><span class="w">      </span><span class="no">service_registration "kubernetes" {}</span>
+<a id="__codelineno-28-29" name="__codelineno-28-29" href="#__codelineno-28-29"></a><span class="w">      </span><span class="no">seal "awskms" {</span>
+<a id="__codelineno-28-30" name="__codelineno-28-30" href="#__codelineno-28-30"></a><span class="w">        </span><span class="no">region     = "eu-central-1"</span>
+<a id="__codelineno-28-31" name="__codelineno-28-31" href="#__codelineno-28-31"></a><span class="w">        </span><span class="no">access_key = "xxx"</span>
+<a id="__codelineno-28-32" name="__codelineno-28-32" href="#__codelineno-28-32"></a><span class="w">        </span><span class="no">secret_key = "xxx"</span>
+<a id="__codelineno-28-33" name="__codelineno-28-33" href="#__codelineno-28-33"></a><span class="w">        </span><span class="no">kms_key_id = "xxx"</span>
 <a id="__codelineno-28-34" name="__codelineno-28-34" href="#__codelineno-28-34"></a><span class="w">      </span><span class="no">}</span>
 </code></pre></div>
 - helm upgrade 
@@ -11195,20 +11195,20 @@
 <a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>
 <a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="c1"># modified adress, listener, api_addr, cluster_addr section</span>
 <a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
-<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>listener<span class="w"> </span><span class="s2">&quot;tcp&quot;</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="w"> </span><span class="nv">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.0.0.0:443&quot;</span><span class="w"> </span><span class="c1"># port 443</span>
-<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="w"> </span><span class="nv">cluster_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.0.0.0:8201&quot;</span>
-<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="w"> </span><span class="nv">tls_cert_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/etc/vault.d/certs/vault.crt&quot;</span><span class="w"> </span><span class="c1"># cert path </span>
-<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="w"> </span><span class="nv">tls_key_file</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/etc/vault.d/certs/vault.key&quot;</span><span class="w"> </span><span class="c1"># key path</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>listener<span class="w"> </span><span class="s2">"tcp"</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="w"> </span><span class="nv">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"0.0.0.0:443"</span><span class="w"> </span><span class="c1"># port 443</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="w"> </span><span class="nv">cluster_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"0.0.0.0:8201"</span>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="w"> </span><span class="nv">tls_cert_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"/etc/vault.d/certs/vault.crt"</span><span class="w"> </span><span class="c1"># cert path </span>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="w"> </span><span class="nv">tls_key_file</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">"/etc/vault.d/certs/vault.key"</span><span class="w"> </span><span class="c1"># key path</span>
 <a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="w"> </span><span class="nv">tls_disable</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="c1"># set 0 for tls enable</span>
 <a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="o">}</span>
-<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="nv">api_addr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://xxx.test.com:8200&quot;</span><span class="w"> </span><span class="c1"># use new dns</span>
-<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="nv">cluster_addr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://xxx.test.com:8201&quot;</span><span class="w"> </span><span class="c1"># use new dns</span>
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="nv">api_addr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://xxx.test.com:8200"</span><span class="w"> </span><span class="c1"># use new dns</span>
+<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="nv">cluster_addr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://xxx.test.com:8201"</span><span class="w"> </span><span class="c1"># use new dns</span>
 <a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>
 <a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a><span class="c1"># permission for bind service and run on 443, if not use port 8200 like https://xxx.test.com:8200</span>
-<a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a>sudo<span class="w"> </span>setcap<span class="w"> </span><span class="s1">&#39;cap_net_bind_service=+ep&#39;</span><span class="w"> </span>/usr/local/bin/vault
+<a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a>sudo<span class="w"> </span>setcap<span class="w"> </span><span class="s1">'cap_net_bind_service=+ep'</span><span class="w"> </span>/usr/local/bin/vault
 <a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a>
-<a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a>sudo<span class="w"> </span>openssl<span class="w"> </span>req<span class="w"> </span>-x509<span class="w"> </span>-nodes<span class="w"> </span>-days<span class="w"> </span><span class="m">365</span><span class="w"> </span>-newkey<span class="w"> </span>rsa:2048<span class="w"> </span>-keyout<span class="w"> </span>/etc/vault.d/certs/vault.key<span class="w"> </span>-out<span class="w"> </span>/etc/vault.d/certs/vault.crt<span class="w"> </span>-subj<span class="w"> </span><span class="s2">&quot;/CN=xxx.test.com&quot;</span>
+<a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a>sudo<span class="w"> </span>openssl<span class="w"> </span>req<span class="w"> </span>-x509<span class="w"> </span>-nodes<span class="w"> </span>-days<span class="w"> </span><span class="m">365</span><span class="w"> </span>-newkey<span class="w"> </span>rsa:2048<span class="w"> </span>-keyout<span class="w"> </span>/etc/vault.d/certs/vault.key<span class="w"> </span>-out<span class="w"> </span>/etc/vault.d/certs/vault.crt<span class="w"> </span>-subj<span class="w"> </span><span class="s2">"/CN=xxx.test.com"</span>
 <a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a>
 <a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a>sudo<span class="w"> </span>nano<span class="w">  </span>/lib/systemd/system/vault.service
 <a id="__codelineno-32-21" name="__codelineno-32-21" href="#__codelineno-32-21"></a>
@@ -11231,15 +11231,15 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>vault<span class="w"> </span>auth<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>ldap
 <a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>
 <a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>vault<span class="w"> </span>write<span class="w"> </span>auth/ldap/config<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="w">    </span><span class="nv">url</span><span class="o">=</span><span class="s2">&quot;ldap://ldap.server.address&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="w">    </span><span class="nv">bind_dn</span><span class="o">=</span><span class="s2">&quot;cn=admin,dc=example,dc=com&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="w">    </span><span class="nv">bind_password</span><span class="o">=</span><span class="s2">&quot;admin_password&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="w">    </span><span class="nv">user_dn</span><span class="o">=</span><span class="s2">&quot;ou=users,dc=example,dc=com&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="w">    </span><span class="nv">group_dn</span><span class="o">=</span><span class="s2">&quot;ou=groups,dc=example,dc=com&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="w">    </span><span class="nv">user_attr</span><span class="o">=</span><span class="s2">&quot;uid&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="w">    </span><span class="nv">group_attr</span><span class="o">=</span><span class="s2">&quot;cn&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a><span class="w">    </span><span class="nv">group_filter</span><span class="o">=</span><span class="s2">&quot;(objectClass=groupOfNames)&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a><span class="w">    </span><span class="nv">group_base_dn</span><span class="o">=</span><span class="s2">&quot;ou=groups,dc=example,dc=com&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="w">    </span><span class="nv">url</span><span class="o">=</span><span class="s2">"ldap://ldap.server.address"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="w">    </span><span class="nv">bind_dn</span><span class="o">=</span><span class="s2">"cn=admin,dc=example,dc=com"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="w">    </span><span class="nv">bind_password</span><span class="o">=</span><span class="s2">"admin_password"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="w">    </span><span class="nv">user_dn</span><span class="o">=</span><span class="s2">"ou=users,dc=example,dc=com"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="w">    </span><span class="nv">group_dn</span><span class="o">=</span><span class="s2">"ou=groups,dc=example,dc=com"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="w">    </span><span class="nv">user_attr</span><span class="o">=</span><span class="s2">"uid"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="w">    </span><span class="nv">group_attr</span><span class="o">=</span><span class="s2">"cn"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a><span class="w">    </span><span class="nv">group_filter</span><span class="o">=</span><span class="s2">"(objectClass=groupOfNames)"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a><span class="w">    </span><span class="nv">group_base_dn</span><span class="o">=</span><span class="s2">"ou=groups,dc=example,dc=com"</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a><span class="w">    </span><span class="nv">insecure_tls</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>url: The address of the LDAP server.
@@ -11256,28 +11256,28 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>nano<span class="w"> </span>ldap-users-policy.hcl
 <a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
 <a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>--
-<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>path<span class="w"> </span><span class="s2">&quot;auth/ldap/login/*&quot;</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>
-<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;read&quot;</span>,<span class="w"> </span><span class="s2">&quot;update&quot;</span><span class="o">]</span>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>path<span class="w"> </span><span class="s2">"auth/ldap/login/*"</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">"read"</span>,<span class="w"> </span><span class="s2">"update"</span><span class="o">]</span>
 <a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="o">}</span>
-<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>path<span class="w"> </span><span class="s2">&quot;kv/*&quot;</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;read&quot;</span><span class="o">]</span>
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>path<span class="w"> </span><span class="s2">"kv/*"</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">"read"</span><span class="o">]</span>
 <a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="o">}</span>
-<a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a>path<span class="w"> </span><span class="s2">&quot;kv/data/*&quot;</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;read&quot;</span><span class="o">]</span>
+<a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a>path<span class="w"> </span><span class="s2">"kv/data/*"</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">"read"</span><span class="o">]</span>
 <a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a><span class="o">}</span>
-<a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a>path<span class="w"> </span><span class="s2">&quot;kv/metadata/*&quot;</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;read&quot;</span><span class="o">]</span>
+<a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a>path<span class="w"> </span><span class="s2">"kv/metadata/*"</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">"read"</span><span class="o">]</span>
 <a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="o">}</span>
-<a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a>path<span class="w"> </span><span class="s2">&quot;sys/mounts/*&quot;</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;create&quot;</span>,<span class="w"> </span><span class="s2">&quot;read&quot;</span>,<span class="w"> </span><span class="s2">&quot;update&quot;</span>,<span class="w"> </span><span class="s2">&quot;delete&quot;</span>,<span class="w"> </span><span class="s2">&quot;list&quot;</span>,<span class="w"> </span><span class="s2">&quot;sudo&quot;</span><span class="o">]</span>
+<a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a>path<span class="w"> </span><span class="s2">"sys/mounts/*"</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">"create"</span>,<span class="w"> </span><span class="s2">"read"</span>,<span class="w"> </span><span class="s2">"update"</span>,<span class="w"> </span><span class="s2">"delete"</span>,<span class="w"> </span><span class="s2">"list"</span>,<span class="w"> </span><span class="s2">"sudo"</span><span class="o">]</span>
 <a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a><span class="o">}</span>
-<a id="__codelineno-35-19" name="__codelineno-35-19" href="#__codelineno-35-19"></a>path<span class="w"> </span><span class="s2">&quot;sys/mounts&quot;</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-35-20" name="__codelineno-35-20" href="#__codelineno-35-20"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;read&quot;</span><span class="o">]</span>
+<a id="__codelineno-35-19" name="__codelineno-35-19" href="#__codelineno-35-19"></a>path<span class="w"> </span><span class="s2">"sys/mounts"</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-35-20" name="__codelineno-35-20" href="#__codelineno-35-20"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">"read"</span><span class="o">]</span>
 <a id="__codelineno-35-21" name="__codelineno-35-21" href="#__codelineno-35-21"></a><span class="o">}</span>
 <a id="__codelineno-35-22" name="__codelineno-35-22" href="#__codelineno-35-22"></a>--
 <a id="__codelineno-35-23" name="__codelineno-35-23" href="#__codelineno-35-23"></a>vault<span class="w"> </span>policy<span class="w"> </span>write<span class="w"> </span>ldap-users-policy<span class="w"> </span>ldap-users-policy.hcl
 <a id="__codelineno-35-24" name="__codelineno-35-24" href="#__codelineno-35-24"></a>
-<a id="__codelineno-35-25" name="__codelineno-35-25" href="#__codelineno-35-25"></a>vault<span class="w"> </span>write<span class="w"> </span>auth/ldap/groups/&lt;ldap_groups&gt;<span class="w"> </span><span class="nv">policies</span><span class="o">=</span><span class="s2">&quot;default,ldap-users-policy&quot;</span>
+<a id="__codelineno-35-25" name="__codelineno-35-25" href="#__codelineno-35-25"></a>vault<span class="w"> </span>write<span class="w"> </span>auth/ldap/groups/&lt;ldap_groups&gt;<span class="w"> </span><span class="nv">policies</span><span class="o">=</span><span class="s2">"default,ldap-users-policy"</span>
 <a id="__codelineno-35-26" name="__codelineno-35-26" href="#__codelineno-35-26"></a>
 <a id="__codelineno-35-27" name="__codelineno-35-27" href="#__codelineno-35-27"></a><span class="c1">#test ldap user login </span>
 <a id="__codelineno-35-28" name="__codelineno-35-28" href="#__codelineno-35-28"></a>vault<span class="w"> </span>login<span class="w"> </span>-method<span class="o">=</span>ldap<span class="w"> </span><span class="nv">username</span><span class="o">=</span>ldap-username<span class="w"> </span><span class="nv">password</span><span class="o">=</span>password
@@ -11348,9 +11348,9 @@
 <a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="c1"># Replace placeholders with actual values from your environment</span>
 <a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>
 <a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>vault<span class="w"> </span>write<span class="w"> </span>auth/kubernetes/config<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="w">    </span><span class="nv">token_reviewer_jwt</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>external-secrets-sa-token<span class="w"> </span>-n<span class="w"> </span>eso<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.token}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a><span class="w">    </span><span class="nv">kubernetes_host</span><span class="o">=</span><span class="s2">&quot;https://YOUR-K8S-API-SERVER:6443&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="w">    </span><span class="nv">kubernetes_ca_cert</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span>/tmp/k8s-ca.crt<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="w">    </span><span class="nv">token_reviewer_jwt</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>external-secrets-sa-token<span class="w"> </span>-n<span class="w"> </span>eso<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.token}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="k">)</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a><span class="w">    </span><span class="nv">kubernetes_host</span><span class="o">=</span><span class="s2">"https://YOUR-K8S-API-SERVER:6443"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="w">    </span><span class="nv">kubernetes_ca_cert</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>cat<span class="w"> </span>/tmp/k8s-ca.crt<span class="k">)</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a><span class="w">    </span><span class="nv">disable_iss_validation</span><span class="o">=</span><span class="nb">true</span>
 <a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a>
 <a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a><span class="c1"># Verify configuration</span>
@@ -11360,11 +11360,11 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="c1"># Create policy file defining permissions for ESO</span>
 <a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>vi<span class="w"> </span>eso-policy.hcl
 <a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>
-<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>path<span class="w"> </span><span class="s2">&quot;kv/data/*&quot;</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;read&quot;</span><span class="o">]</span>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>path<span class="w"> </span><span class="s2">"kv/data/*"</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">"read"</span><span class="o">]</span>
 <a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="o">}</span>
-<a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a>path<span class="w"> </span><span class="s2">&quot;kv/metadata/*&quot;</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;read&quot;</span><span class="o">]</span>
+<a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a>path<span class="w"> </span><span class="s2">"kv/metadata/*"</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">"read"</span><span class="o">]</span>
 <a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a><span class="o">}</span>
 <a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a>
 <a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a><span class="c1"># Apply the policy to Vault</span>
@@ -11387,9 +11387,9 @@
 </code></pre></div>
 <h4 id="step-7-test-authentication">Step 7: Test Authentication</h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="c1"># Test authentication with the service account token</span>
-<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="nv">TOKEN</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>external-secrets-sa-token<span class="w"> </span>-n<span class="w"> </span>eso<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.token}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="k">)</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="nv">TOKEN</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>external-secrets-sa-token<span class="w"> </span>-n<span class="w"> </span>eso<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.token}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="k">)</span>
 <a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>
-<a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>vault<span class="w"> </span>write<span class="w"> </span>auth/kubernetes/login<span class="w"> </span><span class="nv">role</span><span class="o">=</span>eso-role<span class="w"> </span><span class="nv">jwt</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$TOKEN</span><span class="s2">&quot;</span>
+<a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>vault<span class="w"> </span>write<span class="w"> </span>auth/kubernetes/login<span class="w"> </span><span class="nv">role</span><span class="o">=</span>eso-role<span class="w"> </span><span class="nv">jwt</span><span class="o">=</span><span class="s2">"</span><span class="nv">$TOKEN</span><span class="s2">"</span>
 </code></pre></div>
 <h3 id="multiple-clusters-configuration">Multiple Clusters Configuration</h3>
 <p>When you need to connect multiple Kubernetes clusters to a single Vault instance, each cluster requires its own auth path, policy, and role configuration.</p>
@@ -11403,11 +11403,11 @@
 <a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>vi<span class="w"> </span>cluster1-eso-policy.hcl
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="c1"># Policy for cluster1 - allows access to cluster1 specific secrets</span>
-<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="err">path</span><span class="w"> </span><span class="s2">&quot;cluster1/data/*&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a><span class="w">  </span><span class="na">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;read&quot;</span><span class="p">]</span>
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="err">path</span><span class="w"> </span><span class="s2">"cluster1/data/*"</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a><span class="w">  </span><span class="na">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"read"</span><span class="p">]</span>
 <a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a><span class="p">}</span>
-<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a><span class="err">path</span><span class="w"> </span><span class="s2">&quot;cluster1/metadata/*&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a><span class="w">  </span><span class="na">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;read&quot;</span><span class="p">]</span>
+<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a><span class="err">path</span><span class="w"> </span><span class="s2">"cluster1/metadata/*"</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a><span class="w">  </span><span class="na">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"read"</span><span class="p">]</span>
 <a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a><span class="p">}</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="c1"># Apply the policy to Vault</span>
@@ -11416,15 +11416,15 @@
 <h5 id="step-3-configure-kubernetes-auth-for-cluster-1">Step 3: Configure Kubernetes Auth for Cluster 1</h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="c1"># Get cluster 1 credentials (from cluster 1 context)</span>
 <a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>kubectl<span class="w"> </span>config<span class="w"> </span>use-context<span class="w"> </span>cluster1-context
-<a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>external-secrets-sa-token<span class="w"> </span>-n<span class="w"> </span>eso<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.token}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>/tmp/cluster1-token.jwt
-<a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>external-secrets-sa-token<span class="w"> </span>-n<span class="w"> </span>eso<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.ca\.crt}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>/tmp/cluster1-ca.crt
-<a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a><span class="nv">CLUSTER1_HOST</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"> </span>--minify<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.clusters[0].cluster.server}&#39;</span><span class="k">)</span>
+<a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>external-secrets-sa-token<span class="w"> </span>-n<span class="w"> </span>eso<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.token}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>/tmp/cluster1-token.jwt
+<a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>external-secrets-sa-token<span class="w"> </span>-n<span class="w"> </span>eso<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.ca\.crt}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>/tmp/cluster1-ca.crt
+<a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a><span class="nv">CLUSTER1_HOST</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"> </span>--minify<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.clusters[0].cluster.server}'</span><span class="k">)</span>
 <a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a>
 <a id="__codelineno-49-7" name="__codelineno-49-7" href="#__codelineno-49-7"></a><span class="c1"># Configure Vault with Cluster 1 information</span>
 <a id="__codelineno-49-8" name="__codelineno-49-8" href="#__codelineno-49-8"></a>vault<span class="w"> </span>write<span class="w"> </span>auth/kubernetes/cluster1/config<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-49-9" name="__codelineno-49-9" href="#__codelineno-49-9"></a><span class="w">    </span><span class="nv">token_reviewer_jwt</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span>/tmp/cluster1-token.jwt<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-49-10" name="__codelineno-49-10" href="#__codelineno-49-10"></a><span class="w">    </span><span class="nv">kubernetes_host</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CLUSTER1_HOST</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-49-11" name="__codelineno-49-11" href="#__codelineno-49-11"></a><span class="w">    </span><span class="nv">kubernetes_ca_cert</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span>/tmp/cluster1-ca.crt<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-49-9" name="__codelineno-49-9" href="#__codelineno-49-9"></a><span class="w">    </span><span class="nv">token_reviewer_jwt</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>cat<span class="w"> </span>/tmp/cluster1-token.jwt<span class="k">)</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-49-10" name="__codelineno-49-10" href="#__codelineno-49-10"></a><span class="w">    </span><span class="nv">kubernetes_host</span><span class="o">=</span><span class="s2">"</span><span class="nv">$CLUSTER1_HOST</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-49-11" name="__codelineno-49-11" href="#__codelineno-49-11"></a><span class="w">    </span><span class="nv">kubernetes_ca_cert</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>cat<span class="w"> </span>/tmp/cluster1-ca.crt<span class="k">)</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-49-12" name="__codelineno-49-12" href="#__codelineno-49-12"></a><span class="w">    </span><span class="nv">disable_iss_validation</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
 <h5 id="step-4-create-role-for-cluster-1">Step 4: Create Role for Cluster 1</h5>
@@ -11440,7 +11440,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="c1"># Test authentication for cluster 1</span>
 <a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>vault<span class="w"> </span>write<span class="w"> </span>auth/kubernetes/cluster1/login<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="w">    </span><span class="nv">role</span><span class="o">=</span>cluster1-eso-role<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a><span class="w">    </span><span class="nv">jwt</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span>/tmp/cluster1-token.jwt<span class="k">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a><span class="w">    </span><span class="nv">jwt</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>cat<span class="w"> </span>/tmp/cluster1-token.jwt<span class="k">)</span><span class="s2">"</span>
 </code></pre></div>
 <h4 id="cluster-2-configuration">Cluster 2 Configuration</h4>
 <h5 id="step-1-enable-kubernetes-auth-for-cluster-2">Step 1: Enable Kubernetes Auth for Cluster 2</h5>
@@ -11452,11 +11452,11 @@
 <a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>vi<span class="w"> </span>cluster2-eso-policy.hcl
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="c1"># Policy for cluster2 - allows access to cluster2 specific secrets</span>
-<a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="err">path</span><span class="w"> </span><span class="s2">&quot;cluster2/data/*&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="w">  </span><span class="na">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;read&quot;</span><span class="p">]</span>
+<a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="err">path</span><span class="w"> </span><span class="s2">"cluster2/data/*"</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="w">  </span><span class="na">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"read"</span><span class="p">]</span>
 <a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a><span class="p">}</span>
-<a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a><span class="err">path</span><span class="w"> </span><span class="s2">&quot;cluster2/metadata/*&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-54-6" name="__codelineno-54-6" href="#__codelineno-54-6"></a><span class="w">  </span><span class="na">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;read&quot;</span><span class="p">]</span>
+<a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a><span class="err">path</span><span class="w"> </span><span class="s2">"cluster2/metadata/*"</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-54-6" name="__codelineno-54-6" href="#__codelineno-54-6"></a><span class="w">  </span><span class="na">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"read"</span><span class="p">]</span>
 <a id="__codelineno-54-7" name="__codelineno-54-7" href="#__codelineno-54-7"></a><span class="p">}</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="c1"># Apply the policy to Vault</span>
@@ -11465,15 +11465,15 @@
 <h5 id="step-3-configure-kubernetes-auth-for-cluster-2">Step 3: Configure Kubernetes Auth for Cluster 2</h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="c1"># Get cluster 2 credentials (from cluster 2 context)</span>
 <a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>kubectl<span class="w"> </span>config<span class="w"> </span>use-context<span class="w"> </span>cluster2-context
-<a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>external-secrets-sa-token<span class="w"> </span>-n<span class="w"> </span>eso<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.token}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>/tmp/cluster2-token.jwt
-<a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>external-secrets-sa-token<span class="w"> </span>-n<span class="w"> </span>eso<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.ca\.crt}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>/tmp/cluster2-ca.crt
-<a id="__codelineno-56-5" name="__codelineno-56-5" href="#__codelineno-56-5"></a><span class="nv">CLUSTER2_HOST</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"> </span>--minify<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.clusters[0].cluster.server}&#39;</span><span class="k">)</span>
+<a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>external-secrets-sa-token<span class="w"> </span>-n<span class="w"> </span>eso<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.token}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>/tmp/cluster2-token.jwt
+<a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>external-secrets-sa-token<span class="w"> </span>-n<span class="w"> </span>eso<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.ca\.crt}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>/tmp/cluster2-ca.crt
+<a id="__codelineno-56-5" name="__codelineno-56-5" href="#__codelineno-56-5"></a><span class="nv">CLUSTER2_HOST</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>config<span class="w"> </span>view<span class="w"> </span>--minify<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.clusters[0].cluster.server}'</span><span class="k">)</span>
 <a id="__codelineno-56-6" name="__codelineno-56-6" href="#__codelineno-56-6"></a>
 <a id="__codelineno-56-7" name="__codelineno-56-7" href="#__codelineno-56-7"></a><span class="c1"># Configure Vault with Cluster 2 information</span>
 <a id="__codelineno-56-8" name="__codelineno-56-8" href="#__codelineno-56-8"></a>vault<span class="w"> </span>write<span class="w"> </span>auth/kubernetes/cluster2/config<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-56-9" name="__codelineno-56-9" href="#__codelineno-56-9"></a><span class="w">    </span><span class="nv">token_reviewer_jwt</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span>/tmp/cluster2-token.jwt<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-56-10" name="__codelineno-56-10" href="#__codelineno-56-10"></a><span class="w">    </span><span class="nv">kubernetes_host</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CLUSTER2_HOST</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-56-11" name="__codelineno-56-11" href="#__codelineno-56-11"></a><span class="w">    </span><span class="nv">kubernetes_ca_cert</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span>/tmp/cluster2-ca.crt<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-56-9" name="__codelineno-56-9" href="#__codelineno-56-9"></a><span class="w">    </span><span class="nv">token_reviewer_jwt</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>cat<span class="w"> </span>/tmp/cluster2-token.jwt<span class="k">)</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-56-10" name="__codelineno-56-10" href="#__codelineno-56-10"></a><span class="w">    </span><span class="nv">kubernetes_host</span><span class="o">=</span><span class="s2">"</span><span class="nv">$CLUSTER2_HOST</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-56-11" name="__codelineno-56-11" href="#__codelineno-56-11"></a><span class="w">    </span><span class="nv">kubernetes_ca_cert</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>cat<span class="w"> </span>/tmp/cluster2-ca.crt<span class="k">)</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-56-12" name="__codelineno-56-12" href="#__codelineno-56-12"></a><span class="w">    </span><span class="nv">disable_iss_validation</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
 <h5 id="step-4-create-role-for-cluster-2">Step 4: Create Role for Cluster 2</h5>
@@ -11489,7 +11489,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="c1"># Test authentication for cluster 2</span>
 <a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>vault<span class="w"> </span>write<span class="w"> </span>auth/kubernetes/cluster2/login<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="w">    </span><span class="nv">role</span><span class="o">=</span>cluster2-eso-role<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a><span class="w">    </span><span class="nv">jwt</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span>/tmp/cluster2-token.jwt<span class="k">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a><span class="w">    </span><span class="nv">jwt</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>cat<span class="w"> </span>/tmp/cluster2-token.jwt<span class="k">)</span><span class="s2">"</span>
 </code></pre></div>
 <h4 id="verification-commands-for-multiple-clusters">Verification Commands for Multiple Clusters</h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="c1"># List all authentication methods</span>
@@ -11512,13 +11512,13 @@
 <a id="__codelineno-60-5" name="__codelineno-60-5" href="#__codelineno-60-5"></a><span class="nt">spec</span><span class="p">:</span>
 <a id="__codelineno-60-6" name="__codelineno-60-6" href="#__codelineno-60-6"></a><span class="w">  </span><span class="nt">provider</span><span class="p">:</span>
 <a id="__codelineno-60-7" name="__codelineno-60-7" href="#__codelineno-60-7"></a><span class="w">    </span><span class="nt">vault</span><span class="p">:</span>
-<a id="__codelineno-60-8" name="__codelineno-60-8" href="#__codelineno-60-8"></a><span class="w">      </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://vault-ip:8200&quot;</span><span class="w">  </span><span class="c1"># CHANGE ME: Replace with actual Vault server IP or FQDN</span>
-<a id="__codelineno-60-9" name="__codelineno-60-9" href="#__codelineno-60-9"></a><span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;cluster1&quot;</span>
+<a id="__codelineno-60-8" name="__codelineno-60-8" href="#__codelineno-60-8"></a><span class="w">      </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="s">"http://vault-ip:8200"</span><span class="w">  </span><span class="c1"># CHANGE ME: Replace with actual Vault server IP or FQDN</span>
+<a id="__codelineno-60-9" name="__codelineno-60-9" href="#__codelineno-60-9"></a><span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">"cluster1"</span>
 <a id="__codelineno-60-10" name="__codelineno-60-10" href="#__codelineno-60-10"></a><span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v2</span>
 <a id="__codelineno-60-11" name="__codelineno-60-11" href="#__codelineno-60-11"></a><span class="w">      </span><span class="nt">auth</span><span class="p">:</span>
 <a id="__codelineno-60-12" name="__codelineno-60-12" href="#__codelineno-60-12"></a><span class="w">        </span><span class="nt">kubernetes</span><span class="p">:</span>
-<a id="__codelineno-60-13" name="__codelineno-60-13" href="#__codelineno-60-13"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;kubernetes/cluster1&quot;</span>
-<a id="__codelineno-60-14" name="__codelineno-60-14" href="#__codelineno-60-14"></a><span class="w">          </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;cluster1-eso-role&quot;</span>
+<a id="__codelineno-60-13" name="__codelineno-60-13" href="#__codelineno-60-13"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="s">"kubernetes/cluster1"</span>
+<a id="__codelineno-60-14" name="__codelineno-60-14" href="#__codelineno-60-14"></a><span class="w">          </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="s">"cluster1-eso-role"</span>
 <a id="__codelineno-60-15" name="__codelineno-60-15" href="#__codelineno-60-15"></a><span class="w">          </span><span class="nt">serviceAccountRef</span><span class="p">:</span>
 <a id="__codelineno-60-16" name="__codelineno-60-16" href="#__codelineno-60-16"></a><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets-sa</span>
 <a id="__codelineno-60-17" name="__codelineno-60-17" href="#__codelineno-60-17"></a><span class="w">            </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eso</span>
@@ -11535,13 +11535,13 @@
 <a id="__codelineno-61-5" name="__codelineno-61-5" href="#__codelineno-61-5"></a><span class="nt">spec</span><span class="p">:</span>
 <a id="__codelineno-61-6" name="__codelineno-61-6" href="#__codelineno-61-6"></a><span class="w">  </span><span class="nt">provider</span><span class="p">:</span>
 <a id="__codelineno-61-7" name="__codelineno-61-7" href="#__codelineno-61-7"></a><span class="w">    </span><span class="nt">vault</span><span class="p">:</span>
-<a id="__codelineno-61-8" name="__codelineno-61-8" href="#__codelineno-61-8"></a><span class="w">      </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://vault-ip:8200&quot;</span><span class="w">  </span><span class="c1"># CHANGE ME: Replace with actual Vault server IP or FQDN</span>
-<a id="__codelineno-61-9" name="__codelineno-61-9" href="#__codelineno-61-9"></a><span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;cluster2&quot;</span>
+<a id="__codelineno-61-8" name="__codelineno-61-8" href="#__codelineno-61-8"></a><span class="w">      </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="s">"http://vault-ip:8200"</span><span class="w">  </span><span class="c1"># CHANGE ME: Replace with actual Vault server IP or FQDN</span>
+<a id="__codelineno-61-9" name="__codelineno-61-9" href="#__codelineno-61-9"></a><span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">"cluster2"</span>
 <a id="__codelineno-61-10" name="__codelineno-61-10" href="#__codelineno-61-10"></a><span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v2</span>
 <a id="__codelineno-61-11" name="__codelineno-61-11" href="#__codelineno-61-11"></a><span class="w">      </span><span class="nt">auth</span><span class="p">:</span>
 <a id="__codelineno-61-12" name="__codelineno-61-12" href="#__codelineno-61-12"></a><span class="w">        </span><span class="nt">kubernetes</span><span class="p">:</span>
-<a id="__codelineno-61-13" name="__codelineno-61-13" href="#__codelineno-61-13"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;kubernetes/cluster2&quot;</span>
-<a id="__codelineno-61-14" name="__codelineno-61-14" href="#__codelineno-61-14"></a><span class="w">          </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;cluster2-eso-role&quot;</span>
+<a id="__codelineno-61-13" name="__codelineno-61-13" href="#__codelineno-61-13"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="s">"kubernetes/cluster2"</span>
+<a id="__codelineno-61-14" name="__codelineno-61-14" href="#__codelineno-61-14"></a><span class="w">          </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="s">"cluster2-eso-role"</span>
 <a id="__codelineno-61-15" name="__codelineno-61-15" href="#__codelineno-61-15"></a><span class="w">          </span><span class="nt">serviceAccountRef</span><span class="p">:</span>
 <a id="__codelineno-61-16" name="__codelineno-61-16" href="#__codelineno-61-16"></a><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets-sa</span>
 <a id="__codelineno-61-17" name="__codelineno-61-17" href="#__codelineno-61-17"></a><span class="w">            </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eso</span>
@@ -11556,8 +11556,8 @@
 <a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a>vault<span class="w"> </span>secrets<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>-path<span class="o">=</span>cluster2<span class="w"> </span>kv-v2
 <a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a>
 <a id="__codelineno-62-5" name="__codelineno-62-5" href="#__codelineno-62-5"></a><span class="c1"># Create sample secrets for testing</span>
-<a id="__codelineno-62-6" name="__codelineno-62-6" href="#__codelineno-62-6"></a>vault<span class="w"> </span>kv<span class="w"> </span>put<span class="w"> </span>cluster1/database<span class="w"> </span><span class="nv">username</span><span class="o">=</span><span class="s2">&quot;cluster1-db-user&quot;</span><span class="w"> </span><span class="nv">password</span><span class="o">=</span><span class="s2">&quot;cluster1-db-pass&quot;</span>
-<a id="__codelineno-62-7" name="__codelineno-62-7" href="#__codelineno-62-7"></a>vault<span class="w"> </span>kv<span class="w"> </span>put<span class="w"> </span>cluster2/database<span class="w"> </span><span class="nv">username</span><span class="o">=</span><span class="s2">&quot;cluster2-db-user&quot;</span><span class="w"> </span><span class="nv">password</span><span class="o">=</span><span class="s2">&quot;cluster2-db-pass&quot;</span>
+<a id="__codelineno-62-6" name="__codelineno-62-6" href="#__codelineno-62-6"></a>vault<span class="w"> </span>kv<span class="w"> </span>put<span class="w"> </span>cluster1/database<span class="w"> </span><span class="nv">username</span><span class="o">=</span><span class="s2">"cluster1-db-user"</span><span class="w"> </span><span class="nv">password</span><span class="o">=</span><span class="s2">"cluster1-db-pass"</span>
+<a id="__codelineno-62-7" name="__codelineno-62-7" href="#__codelineno-62-7"></a>vault<span class="w"> </span>kv<span class="w"> </span>put<span class="w"> </span>cluster2/database<span class="w"> </span><span class="nv">username</span><span class="o">=</span><span class="s2">"cluster2-db-user"</span><span class="w"> </span><span class="nv">password</span><span class="o">=</span><span class="s2">"cluster2-db-pass"</span>
 </code></pre></div>
 <h3 id="kubernetes-side-create-clustersecretstore">Kubernetes side - Create ClusterSecretStore</h3>
 <h4 id="step-8-create-clustersecretstore">Step 8: Create ClusterSecretStore</h4>
@@ -11574,12 +11574,12 @@
 <a id="__codelineno-63-11" name="__codelineno-63-11" href="#__codelineno-63-11"></a><span class="w">  </span><span class="nt">provider</span><span class="p">:</span>
 <a id="__codelineno-63-12" name="__codelineno-63-12" href="#__codelineno-63-12"></a><span class="w">    </span><span class="nt">vault</span><span class="p">:</span>
 <a id="__codelineno-63-13" name="__codelineno-63-13" href="#__codelineno-63-13"></a><span class="w">      </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://your-vault-server.example.com</span><span class="w"> </span><span class="c1"># Vault server URL</span>
-<a id="__codelineno-63-14" name="__codelineno-63-14" href="#__codelineno-63-14"></a><span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;kv&quot;</span><span class="w">                                         </span><span class="c1"># Vault secret engine path</span>
+<a id="__codelineno-63-14" name="__codelineno-63-14" href="#__codelineno-63-14"></a><span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">"kv"</span><span class="w">                                         </span><span class="c1"># Vault secret engine path</span>
 <a id="__codelineno-63-15" name="__codelineno-63-15" href="#__codelineno-63-15"></a><span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v2</span><span class="w">                                        </span><span class="c1"># KV engine version</span>
 <a id="__codelineno-63-16" name="__codelineno-63-16" href="#__codelineno-63-16"></a><span class="w">      </span><span class="nt">auth</span><span class="p">:</span>
 <a id="__codelineno-63-17" name="__codelineno-63-17" href="#__codelineno-63-17"></a><span class="w">        </span><span class="nt">kubernetes</span><span class="p">:</span>
-<a id="__codelineno-63-18" name="__codelineno-63-18" href="#__codelineno-63-18"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;kubernetes&quot;</span><span class="w">                        </span><span class="c1"># Vault auth method path</span>
-<a id="__codelineno-63-19" name="__codelineno-63-19" href="#__codelineno-63-19"></a><span class="w">          </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;eso-role&quot;</span><span class="w">                              </span><span class="c1"># Vault role name</span>
+<a id="__codelineno-63-18" name="__codelineno-63-18" href="#__codelineno-63-18"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="s">"kubernetes"</span><span class="w">                        </span><span class="c1"># Vault auth method path</span>
+<a id="__codelineno-63-19" name="__codelineno-63-19" href="#__codelineno-63-19"></a><span class="w">          </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="s">"eso-role"</span><span class="w">                              </span><span class="c1"># Vault role name</span>
 <a id="__codelineno-63-20" name="__codelineno-63-20" href="#__codelineno-63-20"></a><span class="w">          </span><span class="nt">serviceAccountRef</span><span class="p">:</span>
 <a id="__codelineno-63-21" name="__codelineno-63-21" href="#__codelineno-63-21"></a><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets-sa</span><span class="w">                    </span><span class="c1"># Kubernetes service account</span>
 <a id="__codelineno-63-22" name="__codelineno-63-22" href="#__codelineno-63-22"></a><span class="w">            </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eso</span>
@@ -11594,13 +11594,13 @@
 <a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a><span class="c1"># Verify ClusterSecretStore creation</span>
 <a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a>kubectl<span class="w"> </span>get<span class="w"> </span>ClusterSecretStore
 <a id="__codelineno-64-5" name="__codelineno-64-5" href="#__codelineno-64-5"></a>
-<a id="__codelineno-64-6" name="__codelineno-64-6" href="#__codelineno-64-6"></a><span class="c1"># Check status - should show &quot;Valid&quot;</span>
+<a id="__codelineno-64-6" name="__codelineno-64-6" href="#__codelineno-64-6"></a><span class="c1"># Check status - should show "Valid"</span>
 <a id="__codelineno-64-7" name="__codelineno-64-7" href="#__codelineno-64-7"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>ClusterSecretStore<span class="w"> </span>vault-nonprod-serviceaccount
 </code></pre></div>
 <h3 id="testing-the-integration">Testing the Integration</h3>
 <h4 id="step-9-create-test-secret-in-vault">Step 9: Create Test Secret in Vault</h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="c1"># Create a test secret in Vault for validation</span>
-<a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a>vault<span class="w"> </span>kv<span class="w"> </span>put<span class="w"> </span>kv/test<span class="w"> </span>vault-username<span class="o">=</span><span class="s2">&quot;test-username-123&quot;</span>
+<a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a>vault<span class="w"> </span>kv<span class="w"> </span>put<span class="w"> </span>kv/test<span class="w"> </span>vault-username<span class="o">=</span><span class="s2">"test-username-123"</span>
 <a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a>
 <a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a><span class="c1"># Verify secret creation</span>
 <a id="__codelineno-65-5" name="__codelineno-65-5" href="#__codelineno-65-5"></a>vault<span class="w"> </span>kv<span class="w"> </span>get<span class="w"> </span>kv/test
@@ -11615,7 +11615,7 @@
 <a id="__codelineno-66-7" name="__codelineno-66-7" href="#__codelineno-66-7"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vault-example</span>
 <a id="__codelineno-66-8" name="__codelineno-66-8" href="#__codelineno-66-8"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eso</span>
 <a id="__codelineno-66-9" name="__codelineno-66-9" href="#__codelineno-66-9"></a><span class="nt">spec</span><span class="p">:</span>
-<a id="__codelineno-66-10" name="__codelineno-66-10" href="#__codelineno-66-10"></a><span class="w">  </span><span class="nt">refreshInterval</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;30s&quot;</span><span class="w">                              </span><span class="c1"># Secret refresh interval</span>
+<a id="__codelineno-66-10" name="__codelineno-66-10" href="#__codelineno-66-10"></a><span class="w">  </span><span class="nt">refreshInterval</span><span class="p">:</span><span class="w"> </span><span class="s">"30s"</span><span class="w">                              </span><span class="c1"># Secret refresh interval</span>
 <a id="__codelineno-66-11" name="__codelineno-66-11" href="#__codelineno-66-11"></a><span class="w">  </span><span class="nt">secretStoreRef</span><span class="p">:</span>
 <a id="__codelineno-66-12" name="__codelineno-66-12" href="#__codelineno-66-12"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vault-nonprod-serviceaccount</span><span class="w">               </span><span class="c1"># ClusterSecretStore reference</span>
 <a id="__codelineno-66-13" name="__codelineno-66-13" href="#__codelineno-66-13"></a><span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterSecretStore</span>
@@ -11642,7 +11642,7 @@
 <a id="__codelineno-68-8" name="__codelineno-68-8" href="#__codelineno-68-8"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>devops-test<span class="w"> </span>-n<span class="w"> </span>eso<span class="w"> </span>-o<span class="w"> </span>yaml
 <a id="__codelineno-68-9" name="__codelineno-68-9" href="#__codelineno-68-9"></a>
 <a id="__codelineno-68-10" name="__codelineno-68-10" href="#__codelineno-68-10"></a><span class="c1"># Decode and view secret content</span>
-<a id="__codelineno-68-11" name="__codelineno-68-11" href="#__codelineno-68-11"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>devops-test<span class="w"> </span>-n<span class="w"> </span>eso<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.k8s-username}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+<a id="__codelineno-68-11" name="__codelineno-68-11" href="#__codelineno-68-11"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>devops-test<span class="w"> </span>-n<span class="w"> </span>eso<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.k8s-username}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
 <a id="__codelineno-68-12" name="__codelineno-68-12" href="#__codelineno-68-12"></a><span class="c1"># Expected output: test-username-123</span>
 <a id="__codelineno-68-13" name="__codelineno-68-13" href="#__codelineno-68-13"></a>
 <a id="__codelineno-68-14" name="__codelineno-68-14" href="#__codelineno-68-14"></a><span class="c1"># Check ESO controller logs for troubleshooting</span>
@@ -11664,7 +11664,7 @@
 - Wrong service account or namespace bindings</p>
 <h2 id="database-secret-engine">database secret engine</h2>
 <h3 id="running-postgres-pod">running postgres pod</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>--namespace<span class="w"> </span>default<span class="w"> </span>postgre-vault-test-postgresql<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.data.postgres-password}&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>--namespace<span class="w"> </span>default<span class="w"> </span>postgre-vault-test-postgresql<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s2">"{.data.postgres-password}"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
 <a id="__codelineno-69-2" name="__codelineno-69-2" href="#__codelineno-69-2"></a>MQEvdzuWw6
 <a id="__codelineno-69-3" name="__codelineno-69-3" href="#__codelineno-69-3"></a>
 <a id="__codelineno-69-4" name="__codelineno-69-4" href="#__codelineno-69-4"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>postgre-vault-test-postgresql-0<span class="w"> </span>--<span class="w"> </span>bash
@@ -11673,7 +11673,7 @@
 <a id="__codelineno-69-7" name="__codelineno-69-7" href="#__codelineno-69-7"></a>psql<span class="w"> </span>-U<span class="w"> </span>vault<span class="w"> </span>-d<span class="w"> </span>postgres
 <a id="__codelineno-69-8" name="__codelineno-69-8" href="#__codelineno-69-8"></a>pass:<span class="w"> </span>vault
 <a id="__codelineno-69-9" name="__codelineno-69-9" href="#__codelineno-69-9"></a>
-<a id="__codelineno-69-10" name="__codelineno-69-10" href="#__codelineno-69-10"></a>CREATE<span class="w"> </span>ROLE<span class="w"> </span>vault<span class="w"> </span>WITH<span class="w"> </span>LOGIN<span class="w"> </span>SUPERUSER<span class="w"> </span>PASSWORD<span class="w"> </span><span class="s1">&#39;vault&#39;</span><span class="p">;</span>
+<a id="__codelineno-69-10" name="__codelineno-69-10" href="#__codelineno-69-10"></a>CREATE<span class="w"> </span>ROLE<span class="w"> </span>vault<span class="w"> </span>WITH<span class="w"> </span>LOGIN<span class="w"> </span>SUPERUSER<span class="w"> </span>PASSWORD<span class="w"> </span><span class="s1">'vault'</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="enable-secret-engine">enable secret engine</h3>
 <p>vault secrets enable database</p>
@@ -11714,7 +11714,7 @@ EOF</p>
 <a id="__codelineno-70-23" name="__codelineno-70-23" href="#__codelineno-70-23"></a>
 <a id="__codelineno-70-24" name="__codelineno-70-24" href="#__codelineno-70-24"></a>get<span class="w"> </span>new<span class="w"> </span>root-token
 <a id="__codelineno-70-25" name="__codelineno-70-25" href="#__codelineno-70-25"></a>
-<a id="__codelineno-70-26" name="__codelineno-70-26" href="#__codelineno-70-26"></a><span class="s2">&quot;hvs.xxx&quot;</span>
+<a id="__codelineno-70-26" name="__codelineno-70-26" href="#__codelineno-70-26"></a><span class="s2">"hvs.xxx"</span>
 <a id="__codelineno-70-27" name="__codelineno-70-27" href="#__codelineno-70-27"></a>
 <a id="__codelineno-70-28" name="__codelineno-70-28" href="#__codelineno-70-28"></a>
 <a id="__codelineno-70-29" name="__codelineno-70-29" href="#__codelineno-70-29"></a>Not:<span class="w"> </span>not<span class="w"> </span>revoke<span class="w"> </span>first<span class="w"> </span>root<span class="w"> </span>token.<span class="w"> </span>use<span class="w"> </span>both
@@ -11732,14 +11732,14 @@ Policies can be created individually for each project and environment combinatio
 <ul>
 <li>mikro-all-policy.hcl (Example: A more general policy for Mikro)</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>path<span class="w"> </span><span class="s2">&quot;auth/ldap/login/*&quot;</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>
-<a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;read&quot;</span>,<span class="w"> </span><span class="s2">&quot;update&quot;</span><span class="o">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>path<span class="w"> </span><span class="s2">"auth/ldap/login/*"</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>
+<a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">"read"</span>,<span class="w"> </span><span class="s2">"update"</span><span class="o">]</span>
 <a id="__codelineno-71-3" name="__codelineno-71-3" href="#__codelineno-71-3"></a><span class="o">}</span>
-<a id="__codelineno-71-4" name="__codelineno-71-4" href="#__codelineno-71-4"></a>path<span class="w"> </span><span class="s2">&quot;zirve/metadata/*&quot;</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-71-5" name="__codelineno-71-5" href="#__codelineno-71-5"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;read&quot;</span>,<span class="w"> </span><span class="s2">&quot;list&quot;</span><span class="o">]</span>
+<a id="__codelineno-71-4" name="__codelineno-71-4" href="#__codelineno-71-4"></a>path<span class="w"> </span><span class="s2">"zirve/metadata/*"</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-71-5" name="__codelineno-71-5" href="#__codelineno-71-5"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">"read"</span>,<span class="w"> </span><span class="s2">"list"</span><span class="o">]</span>
 <a id="__codelineno-71-6" name="__codelineno-71-6" href="#__codelineno-71-6"></a><span class="o">}</span>
-<a id="__codelineno-71-7" name="__codelineno-71-7" href="#__codelineno-71-7"></a>path<span class="w"> </span><span class="s2">&quot;zirve/data/&lt;project-name&gt;/*&quot;</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-71-8" name="__codelineno-71-8" href="#__codelineno-71-8"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;read&quot;</span>,<span class="w"> </span><span class="s2">&quot;update&quot;</span>,<span class="w"> </span><span class="s2">&quot;delete&quot;</span>,<span class="w"> </span><span class="s2">&quot;list&quot;</span><span class="o">]</span>
+<a id="__codelineno-71-7" name="__codelineno-71-7" href="#__codelineno-71-7"></a>path<span class="w"> </span><span class="s2">"zirve/data/&lt;project-name&gt;/*"</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-71-8" name="__codelineno-71-8" href="#__codelineno-71-8"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">"read"</span>,<span class="w"> </span><span class="s2">"update"</span>,<span class="w"> </span><span class="s2">"delete"</span>,<span class="w"> </span><span class="s2">"list"</span><span class="o">]</span>
 <a id="__codelineno-71-9" name="__codelineno-71-9" href="#__codelineno-71-9"></a><span class="o">}</span>
 </code></pre></div>
 <h3 id="methods-to-create-policies">Methods to Create Policies</h3>
@@ -11762,14 +11762,14 @@ For users who prefer a graphical interface, policies can also be created and man
 <li>Click on Create new policy.</li>
 </ul>
 <p>Provide a Policy Name and paste the HCL policy definition into the Policy HCL text area.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>path<span class="w"> </span><span class="s2">&quot;auth/ldap/login/*&quot;</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>
-<a id="__codelineno-73-2" name="__codelineno-73-2" href="#__codelineno-73-2"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;read&quot;</span>,<span class="w"> </span><span class="s2">&quot;update&quot;</span><span class="o">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>path<span class="w"> </span><span class="s2">"auth/ldap/login/*"</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>
+<a id="__codelineno-73-2" name="__codelineno-73-2" href="#__codelineno-73-2"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">"read"</span>,<span class="w"> </span><span class="s2">"update"</span><span class="o">]</span>
 <a id="__codelineno-73-3" name="__codelineno-73-3" href="#__codelineno-73-3"></a><span class="o">}</span>
-<a id="__codelineno-73-4" name="__codelineno-73-4" href="#__codelineno-73-4"></a>path<span class="w"> </span><span class="s2">&quot;zirve/metadata/*&quot;</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-73-5" name="__codelineno-73-5" href="#__codelineno-73-5"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;read&quot;</span>,<span class="w"> </span><span class="s2">&quot;list&quot;</span><span class="o">]</span>
+<a id="__codelineno-73-4" name="__codelineno-73-4" href="#__codelineno-73-4"></a>path<span class="w"> </span><span class="s2">"zirve/metadata/*"</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-73-5" name="__codelineno-73-5" href="#__codelineno-73-5"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">"read"</span>,<span class="w"> </span><span class="s2">"list"</span><span class="o">]</span>
 <a id="__codelineno-73-6" name="__codelineno-73-6" href="#__codelineno-73-6"></a><span class="o">}</span>
-<a id="__codelineno-73-7" name="__codelineno-73-7" href="#__codelineno-73-7"></a>path<span class="w"> </span><span class="s2">&quot;zirve/data/&lt;project-name&gt;/*&quot;</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-73-8" name="__codelineno-73-8" href="#__codelineno-73-8"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;read&quot;</span>,<span class="w"> </span><span class="s2">&quot;update&quot;</span>,<span class="w"> </span><span class="s2">&quot;delete&quot;</span>,<span class="w"> </span><span class="s2">&quot;list&quot;</span><span class="o">]</span>
+<a id="__codelineno-73-7" name="__codelineno-73-7" href="#__codelineno-73-7"></a>path<span class="w"> </span><span class="s2">"zirve/data/&lt;project-name&gt;/*"</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-73-8" name="__codelineno-73-8" href="#__codelineno-73-8"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">"read"</span>,<span class="w"> </span><span class="s2">"update"</span>,<span class="w"> </span><span class="s2">"delete"</span>,<span class="w"> </span><span class="s2">"list"</span><span class="o">]</span>
 <a id="__codelineno-73-9" name="__codelineno-73-9" href="#__codelineno-73-9"></a><span class="o">}</span>
 </code></pre></div>
 - Click Create policy.</p>
@@ -11857,8 +11857,8 @@ A user with appropriate policy permissions can create secrets within the relevan
 <a id="__codelineno-75-7" name="__codelineno-75-7" href="#__codelineno-75-7"></a>Example<span class="w"> </span><span class="o">(</span>JSON<span class="o">)</span>:
 <a id="__codelineno-75-8" name="__codelineno-75-8" href="#__codelineno-75-8"></a>
 <a id="__codelineno-75-9" name="__codelineno-75-9" href="#__codelineno-75-9"></a><span class="o">{</span>
-<a id="__codelineno-75-10" name="__codelineno-75-10" href="#__codelineno-75-10"></a><span class="w">  </span><span class="s2">&quot;API_KEY&quot;</span>:<span class="w"> </span><span class="s2">&quot;your_api_key_here&quot;</span>,
-<a id="__codelineno-75-11" name="__codelineno-75-11" href="#__codelineno-75-11"></a><span class="w">  </span><span class="s2">&quot;SERVICE_ACCOUNT_EMAIL&quot;</span>:<span class="w"> </span><span class="s2">&quot;service@example.com&quot;</span>
+<a id="__codelineno-75-10" name="__codelineno-75-10" href="#__codelineno-75-10"></a><span class="w">  </span><span class="s2">"API_KEY"</span>:<span class="w"> </span><span class="s2">"your_api_key_here"</span>,
+<a id="__codelineno-75-11" name="__codelineno-75-11" href="#__codelineno-75-11"></a><span class="w">  </span><span class="s2">"SERVICE_ACCOUNT_EMAIL"</span>:<span class="w"> </span><span class="s2">"service@example.com"</span>
 <a id="__codelineno-75-12" name="__codelineno-75-12" href="#__codelineno-75-12"></a><span class="o">}</span>
 </code></pre></div>
 <ul>
@@ -11900,15 +11900,15 @@ A user with appropriate policy permissions can create secrets within the relevan
 <a id="__codelineno-77-5" name="__codelineno-77-5" href="#__codelineno-77-5"></a><span class="nt">spec</span><span class="p">:</span>
 <a id="__codelineno-77-6" name="__codelineno-77-6" href="#__codelineno-77-6"></a><span class="w">  </span><span class="nt">provider</span><span class="p">:</span>
 <a id="__codelineno-77-7" name="__codelineno-77-7" href="#__codelineno-77-7"></a><span class="w">    </span><span class="nt">vault</span><span class="p">:</span>
-<a id="__codelineno-77-8" name="__codelineno-77-8" href="#__codelineno-77-8"></a><span class="w">      </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://your-vault-server.example.com/&quot;</span>
-<a id="__codelineno-77-9" name="__codelineno-77-9" href="#__codelineno-77-9"></a><span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;parasut&gt;&quot;</span><span class="w">   </span><span class="c1"># CHANGE ME. Path to the secrets in Vault</span>
+<a id="__codelineno-77-8" name="__codelineno-77-8" href="#__codelineno-77-8"></a><span class="w">      </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="s">"http://your-vault-server.example.com/"</span>
+<a id="__codelineno-77-9" name="__codelineno-77-9" href="#__codelineno-77-9"></a><span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;parasut&gt;"</span><span class="w">   </span><span class="c1"># CHANGE ME. Path to the secrets in Vault</span>
 <a id="__codelineno-77-10" name="__codelineno-77-10" href="#__codelineno-77-10"></a><span class="w">      </span><span class="c1"># Version is the Vault KV secret engine version.</span>
-<a id="__codelineno-77-11" name="__codelineno-77-11" href="#__codelineno-77-11"></a><span class="w">      </span><span class="c1"># This can be either &quot;v1&quot; or &quot;v2&quot;, defaults to &quot;v2&quot;</span>
-<a id="__codelineno-77-12" name="__codelineno-77-12" href="#__codelineno-77-12"></a><span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;v2&quot;</span>
+<a id="__codelineno-77-11" name="__codelineno-77-11" href="#__codelineno-77-11"></a><span class="w">      </span><span class="c1"># This can be either "v1" or "v2", defaults to "v2"</span>
+<a id="__codelineno-77-12" name="__codelineno-77-12" href="#__codelineno-77-12"></a><span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">"v2"</span>
 <a id="__codelineno-77-13" name="__codelineno-77-13" href="#__codelineno-77-13"></a><span class="w">      </span><span class="nt">auth</span><span class="p">:</span>
 <a id="__codelineno-77-14" name="__codelineno-77-14" href="#__codelineno-77-14"></a><span class="w">        </span><span class="nt">tokenSecretRef</span><span class="p">:</span>
-<a id="__codelineno-77-15" name="__codelineno-77-15" href="#__codelineno-77-15"></a><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;vault-nonprod-token&quot;</span><span class="w"> </span><span class="c1"># Name of the Kubernetes secret containing the Vault token</span>
-<a id="__codelineno-77-16" name="__codelineno-77-16" href="#__codelineno-77-16"></a><span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;token&quot;</span><span class="w">   </span><span class="c1"># Key in the Kubernetes secret that contains the Vault token</span>
+<a id="__codelineno-77-15" name="__codelineno-77-15" href="#__codelineno-77-15"></a><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"vault-nonprod-token"</span><span class="w"> </span><span class="c1"># Name of the Kubernetes secret containing the Vault token</span>
+<a id="__codelineno-77-16" name="__codelineno-77-16" href="#__codelineno-77-16"></a><span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s">"token"</span><span class="w">   </span><span class="c1"># Key in the Kubernetes secret that contains the Vault token</span>
 <a id="__codelineno-77-17" name="__codelineno-77-17" href="#__codelineno-77-17"></a><span class="w">          </span><span class="nt">namespace</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">eso</span><span class="w"> </span><span class="c1"># Namespace where the secret is located</span>
 <a id="__codelineno-77-18" name="__codelineno-77-18" href="#__codelineno-77-18"></a>
 <a id="__codelineno-77-19" name="__codelineno-77-19" href="#__codelineno-77-19"></a>
@@ -11919,7 +11919,7 @@ A user with appropriate policy permissions can create secrets within the relevan
 <a id="__codelineno-77-24" name="__codelineno-77-24" href="#__codelineno-77-24"></a>
 <a id="__codelineno-77-25" name="__codelineno-77-25" href="#__codelineno-77-25"></a><span class="l l-Scalar l-Scalar-Plain">kubectl get ClusterSecretStore &lt;your-new-store-name&gt;</span>
 <a id="__codelineno-77-26" name="__codelineno-77-26" href="#__codelineno-77-26"></a>
-<a id="__codelineno-77-27" name="__codelineno-77-27" href="#__codelineno-77-27"></a><span class="c1"># Ensure the status indicates it&#39;s Valid.</span>
+<a id="__codelineno-77-27" name="__codelineno-77-27" href="#__codelineno-77-27"></a><span class="c1"># Ensure the status indicates it's Valid.</span>
 </code></pre></div>
 
 
@@ -11993,7 +11993,7 @@ A user with appropriate policy permissions can create secrets within the relevan
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

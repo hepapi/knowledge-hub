@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2364,7 +2364,7 @@
   <span class="md-ellipsis">
     
   
-    Terraform
+    Terragrunt
   
 
     
@@ -2380,7 +2380,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Terraform
+    Terragrunt
   
 
           </label>
@@ -2393,7 +2393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Terragrunt/README.md" class="md-nav__link">
+      <a href="../../terragrunt/" class="md-nav__link">
         
   
   
@@ -8757,19 +8757,19 @@
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>#!/bin/bash
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>KAFKA_HOST_1=&quot;172.31.18.173&quot;    # Change here with ip of kafka1 node
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>KAFKA_HOST_2=&quot;172.31.23.248&quot;    # Change here with ip of kafka2 node
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>KAFKA_HOST_3=&quot;172.31.25.184&quot;    # Change here with ip of kafka3 node
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>KAFKA_HOST_1="172.31.18.173"    # Change here with ip of kafka1 node
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>KAFKA_HOST_2="172.31.23.248"    # Change here with ip of kafka2 node
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>KAFKA_HOST_3="172.31.25.184"    # Change here with ip of kafka3 node
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>EXTERNAL_IP=3.76.209.91         # Change here with ip of humio node
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>INTERNAL_IP=3.76.209.91         # Change here with ip of humio node
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>echo &quot;$KAFKA_HOST_1 kafka1&quot; &gt;&gt; /etc/hosts
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>echo &quot;$KAFKA_HOST_2 kafka2&quot; &gt;&gt; /etc/hosts
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>echo &quot;$KAFKA_HOST_3 kafka3&quot; &gt;&gt; /etc/hosts
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>echo "$KAFKA_HOST_1 kafka1" &gt;&gt; /etc/hosts
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>echo "$KAFKA_HOST_2 kafka2" &gt;&gt; /etc/hosts
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>echo "$KAFKA_HOST_3 kafka3" &gt;&gt; /etc/hosts
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>HUMIO_DOWNLOAD_LINK=&quot;https://repo.humio.com/repository/maven-releases/com/humio/server/1.131.1/server-1.131.1.tar.gz&quot; # If you&#39;ll use here change here with path of humio
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>HUMIO_PACKAGE_PATH=&quot;&quot;   # If you&#39;ll use here change here with path of humio package
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>HUMIO_DOWNLOAD_LINK="https://repo.humio.com/repository/maven-releases/com/humio/server/1.131.1/server-1.131.1.tar.gz" # If you'll use here change here with path of humio
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>HUMIO_PACKAGE_PATH=""   # If you'll use here change here with path of humio package
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>#### Apt package update ####
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>apt-get update -y &amp;&amp; apt-get upgrade -y
@@ -8796,20 +8796,20 @@
 <a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>cd /opt/humio/
 <a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>sleep 2
 <a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>
-<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>if [ -n &quot;$HUMIO_DOWNLOAD_LINK&quot; ]; then
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>if [ -n "$HUMIO_DOWNLOAD_LINK" ]; then
 <a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
 <a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>    cd /opt/humio &amp;&amp; wget $HUMIO_DOWNLOAD_LINK
-<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>    tar zxf &quot;$(basename $HUMIO_DOWNLOAD_LINK)&quot;
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>    tar zxf "$(basename $HUMIO_DOWNLOAD_LINK)"
 <a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>
 <a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>    # Get list of output files
 <a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>    EXTRACTED_FILES=$(ls)
 <a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>
 <a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>    # Print the resulting files to the screen
-<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>    echo &quot;Get list of output files:&quot;
-<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>    echo &quot;$EXTRACTED_FILES&quot;
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>    echo "Get list of output files:"
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>    echo "$EXTRACTED_FILES"
 <a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>
 <a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>    # Assign the name of the first file to a variable
-<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>    HUMIO_PACKAGE_FILE=$(echo &quot;$EXTRACTED_FILES&quot; | head -n 1)
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>    HUMIO_PACKAGE_FILE=$(echo "$EXTRACTED_FILES" | head -n 1)
 <a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>
 <a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>
 <a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>else 
@@ -8821,11 +8821,11 @@
 <a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>    EXTRACTED_FILES=$(ls)
 <a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>
 <a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>    # Print the resulting files to the screen
-<a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>    echo &quot;Get list of output files:&quot;
-<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>    echo &quot;$EXTRACTED_FILES&quot;
+<a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>    echo "Get list of output files:"
+<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>    echo "$EXTRACTED_FILES"
 <a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>
 <a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>    # Assign the name of the first file to a variable
-<a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>    HUMIO_PACKAGE_FILE=$(echo &quot;$EXTRACTED_FILES&quot; | head -n 1)
+<a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>    HUMIO_PACKAGE_FILE=$(echo "$EXTRACTED_FILES" | head -n 1)
 <a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>
 <a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>fi
 <a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a>sleep 2
@@ -8952,7 +8952,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

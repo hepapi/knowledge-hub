@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2369,7 +2369,7 @@
   <span class="md-ellipsis">
     
   
-    Terraform
+    Terragrunt
   
 
     
@@ -2385,7 +2385,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Terraform
+    Terragrunt
   
 
           </label>
@@ -2398,7 +2398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Terragrunt/README.md" class="md-nav__link">
+      <a href="../../terragrunt/" class="md-nav__link">
         
   
   
@@ -9268,8 +9268,8 @@ Elasticsearch also allows you to store, search and analyze big volume of data. M
 </code></pre></div>
 elasticsearch.values</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>---
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>clusterName:<span class="w"> </span><span class="s2">&quot;elasticsearch&quot;</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>nodeGroup:<span class="w"> </span><span class="s2">&quot;master&quot;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>clusterName:<span class="w"> </span><span class="s2">"elasticsearch"</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>nodeGroup:<span class="w"> </span><span class="s2">"master"</span>
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
 <a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>roles:
 <a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span>-<span class="w"> </span>master
@@ -9285,19 +9285,19 @@ elasticsearch.values</p>
 <a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
 <a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>replicas:<span class="w"> </span><span class="m">2</span>
 <a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>minimumMasterNodes:<span class="w"> </span><span class="m">2</span>
-<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>image:<span class="w"> </span><span class="s2">&quot;docker.elastic.co/elasticsearch/elasticsearch&quot;</span>
-<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>imageTag:<span class="w"> </span><span class="s2">&quot;8.5.1&quot;</span>
-<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>imagePullPolicy:<span class="w"> </span><span class="s2">&quot;IfNotPresent&quot;</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>image:<span class="w"> </span><span class="s2">"docker.elastic.co/elasticsearch/elasticsearch"</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>imageTag:<span class="w"> </span><span class="s2">"8.5.1"</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>imagePullPolicy:<span class="w"> </span><span class="s2">"IfNotPresent"</span>
 <a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>resources:
 <a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">  </span>requests:
-<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">&quot;1000m&quot;</span>
-<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">&quot;2Gi&quot;</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">"1000m"</span>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">"2Gi"</span>
 <a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="w">  </span>limits:
-<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">&quot;1000m&quot;</span>
-<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">&quot;2Gi&quot;</span>
-<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>networkHost:<span class="w"> </span><span class="s2">&quot;0.0.0.0&quot;</span>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">"1000m"</span>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">"2Gi"</span>
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>networkHost:<span class="w"> </span><span class="s2">"0.0.0.0"</span>
 <a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>volumeClaimTemplate:
-<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="w">  </span>accessModes:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;ReadWriteOnce&quot;</span><span class="o">]</span>
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="w">  </span>accessModes:<span class="w"> </span><span class="o">[</span><span class="s2">"ReadWriteOnce"</span><span class="o">]</span>
 <a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="w">  </span>resources:
 <a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="w">    </span>requests:
 <a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="w">      </span>storage:<span class="w"> </span>30Gi
@@ -9320,13 +9320,13 @@ elasticsearch.values</p>
 <a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a><span class="w">  </span>labelsHeadless:<span class="w"> </span><span class="o">{}</span>
 <a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a><span class="w">  </span>type:<span class="w"> </span>ClusterIP
 <a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a><span class="w">  </span>publishNotReadyAddresses:<span class="w"> </span><span class="nb">false</span>
-<a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a><span class="w">  </span>nodePort:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a><span class="w">  </span>nodePort:<span class="w"> </span><span class="s2">""</span>
 <a id="__codelineno-10-55" name="__codelineno-10-55" href="#__codelineno-10-55"></a><span class="w">  </span>annotations:<span class="w"> </span><span class="o">{}</span>
 <a id="__codelineno-10-56" name="__codelineno-10-56" href="#__codelineno-10-56"></a><span class="w">  </span>httpPortName:<span class="w"> </span>http
 <a id="__codelineno-10-57" name="__codelineno-10-57" href="#__codelineno-10-57"></a><span class="w">  </span>transportPortName:<span class="w"> </span>transport
-<a id="__codelineno-10-58" name="__codelineno-10-58" href="#__codelineno-10-58"></a><span class="w">  </span>loadBalancerIP:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-10-58" name="__codelineno-10-58" href="#__codelineno-10-58"></a><span class="w">  </span>loadBalancerIP:<span class="w"> </span><span class="s2">""</span>
 <a id="__codelineno-10-59" name="__codelineno-10-59" href="#__codelineno-10-59"></a><span class="w">  </span>loadBalancerSourceRanges:<span class="w"> </span><span class="o">[]</span>
-<a id="__codelineno-10-60" name="__codelineno-10-60" href="#__codelineno-10-60"></a><span class="w">  </span>externalTrafficPolicy:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-10-60" name="__codelineno-10-60" href="#__codelineno-10-60"></a><span class="w">  </span>externalTrafficPolicy:<span class="w"> </span><span class="s2">""</span>
 <a id="__codelineno-10-61" name="__codelineno-10-61" href="#__codelineno-10-61"></a>
 <a id="__codelineno-10-62" name="__codelineno-10-62" href="#__codelineno-10-62"></a>maxUnavailable:<span class="w"> </span><span class="m">1</span>
 <a id="__codelineno-10-63" name="__codelineno-10-63" href="#__codelineno-10-63"></a>sysctlVmMaxMapCount:<span class="w"> </span><span class="m">262144</span>
@@ -9353,28 +9353,28 @@ elasticsearch.values</p>
 </code></pre></div>
 - Change the values configuration with LoadBalancer.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>---
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>elasticsearchHosts:<span class="w"> </span><span class="s2">&quot;https://elasticsearch-master:9200&quot;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>elasticsearchHosts:<span class="w"> </span><span class="s2">"https://elasticsearch-master:9200"</span>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
 <a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>replicas:<span class="w"> </span><span class="m">1</span>
 <a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
 <a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>image:<span class="w"> </span><span class="s2">&quot;docker.elastic.co/kibana/kibana&quot;</span>
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>imageTag:<span class="w"> </span><span class="s2">&quot;8.5.1&quot;</span>
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>imagePullPolicy:<span class="w"> </span><span class="s2">&quot;IfNotPresent&quot;</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>image:<span class="w"> </span><span class="s2">"docker.elastic.co/kibana/kibana"</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>imageTag:<span class="w"> </span><span class="s2">"8.5.1"</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>imagePullPolicy:<span class="w"> </span><span class="s2">"IfNotPresent"</span>
 <a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
 <a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>resources:
 <a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">  </span>requests:
-<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">&quot;1000m&quot;</span>
-<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">&quot;2Gi&quot;</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">"1000m"</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">"2Gi"</span>
 <a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">  </span>limits:
-<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">&quot;1000m&quot;</span>
-<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">&quot;2Gi&quot;</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">"1000m"</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">"2Gi"</span>
 <a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>
 <a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>protocol:<span class="w"> </span>http
 <a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>
-<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>serverHost:<span class="w"> </span><span class="s2">&quot;0.0.0.0&quot;</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>serverHost:<span class="w"> </span><span class="s2">"0.0.0.0"</span>
 <a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>
-<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>healthCheckPath:<span class="w"> </span><span class="s2">&quot;/app/kibana&quot;</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>healthCheckPath:<span class="w"> </span><span class="s2">"/app/kibana"</span>
 <a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>
 <a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>automountToken:<span class="w"> </span><span class="nb">true</span>
 <a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>
@@ -9382,9 +9382,9 @@ elasticsearch.values</p>
 <a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>
 <a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>service:
 <a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a><span class="w">  </span>type:<span class="w"> </span>LoadBalancer
-<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a><span class="w">  </span>loadBalancerIP:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a><span class="w">  </span>loadBalancerIP:<span class="w"> </span><span class="s2">""</span>
 <a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a><span class="w">  </span>port:<span class="w"> </span><span class="m">5601</span>
-<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a><span class="w">  </span>nodePort:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a><span class="w">  </span>nodePort:<span class="w"> </span><span class="s2">""</span>
 <a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a><span class="w">  </span>labels:<span class="w"> </span><span class="o">{}</span>
 <a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a><span class="w">  </span>annotations:<span class="w"> </span><span class="o">{}</span>
 <a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a><span class="w">  </span>loadBalancerSourceRanges:<span class="w"> </span><span class="o">[]</span>
@@ -9410,7 +9410,7 @@ elasticsearch.values</p>
 <ul>
 <li>logstash.values ---&gt; !!! update elasticsearch password you can access alestichsearcg password this command: </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secrets<span class="w"> </span>-n<span class="w"> </span>elk<span class="w"> </span>elasticsearch-master-credentials<span class="w"> </span>-ojsonpath<span class="o">=</span><span class="s1">&#39;{.data.password}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>--decode
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secrets<span class="w"> </span>-n<span class="w"> </span>elk<span class="w"> </span>elasticsearch-master-credentials<span class="w"> </span>-ojsonpath<span class="o">=</span><span class="s1">'{.data.password}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>--decode
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>---
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>replicas:<span class="w"> </span><span class="m">1</span>
@@ -9430,30 +9430,30 @@ elasticsearch.values</p>
 <a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="w">    </span><span class="o">}</span>
 <a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="w">    </span>output<span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="w">      </span>elasticsearch<span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="w">        </span><span class="nv">hosts</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;https://elasticsearch-master:9200&quot;</span><span class="w"> </span><span class="o">]</span>
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="w">        </span><span class="nv">hosts</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"https://elasticsearch-master:9200"</span><span class="w"> </span><span class="o">]</span>
 <a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="w">        </span><span class="nv">ssl</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="nb">true</span>
 <a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a><span class="w">        </span><span class="nv">manage_template</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="nb">false</span>
 <a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="w">        </span><span class="nv">ssl_certificate_verification</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="nb">true</span>
-<a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="w">        </span><span class="nv">index</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;logstash-%{+YYYY.MM.dd}&quot;</span>
-<a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="w">        </span><span class="nv">document_type</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;%{[@metadata][type]}&quot;</span>
-<a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a><span class="w">        </span><span class="nv">cacert</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;/usr/share/logstash/certs/ca.crt&quot;</span>
-<a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a><span class="w">        </span><span class="nv">user</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ELASTICSEARCH_USERNAME</span><span class="si">}</span><span class="s2">&quot;</span>
-<a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a><span class="w">        </span><span class="nv">password</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ELASTICSEARCH_PASSWORD</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">  </span><span class="c1">#update password</span>
+<a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="w">        </span><span class="nv">index</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">"logstash-%{+YYYY.MM.dd}"</span>
+<a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="w">        </span><span class="nv">document_type</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">"%{[@metadata][type]}"</span>
+<a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a><span class="w">        </span><span class="nv">cacert</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">"/usr/share/logstash/certs/ca.crt"</span>
+<a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a><span class="w">        </span><span class="nv">user</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">ELASTICSEARCH_USERNAME</span><span class="si">}</span><span class="s2">"</span>
+<a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a><span class="w">        </span><span class="nv">password</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">ELASTICSEARCH_PASSWORD</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1">#update password</span>
 <a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a><span class="w">      </span><span class="o">}</span>
 <a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a><span class="w">    </span><span class="o">}</span>
 <a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a>
 <a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a>
-<a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a>image:<span class="w"> </span><span class="s2">&quot;docker.elastic.co/logstash/logstash&quot;</span>
-<a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a>imageTag:<span class="w"> </span><span class="s2">&quot;8.5.1&quot;</span>
-<a id="__codelineno-20-34" name="__codelineno-20-34" href="#__codelineno-20-34"></a>imagePullPolicy:<span class="w"> </span><span class="s2">&quot;IfNotPresent&quot;</span>
+<a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a>image:<span class="w"> </span><span class="s2">"docker.elastic.co/logstash/logstash"</span>
+<a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a>imageTag:<span class="w"> </span><span class="s2">"8.5.1"</span>
+<a id="__codelineno-20-34" name="__codelineno-20-34" href="#__codelineno-20-34"></a>imagePullPolicy:<span class="w"> </span><span class="s2">"IfNotPresent"</span>
 <a id="__codelineno-20-35" name="__codelineno-20-35" href="#__codelineno-20-35"></a>
 <a id="__codelineno-20-36" name="__codelineno-20-36" href="#__codelineno-20-36"></a>extraEnvs:
-<a id="__codelineno-20-37" name="__codelineno-20-37" href="#__codelineno-20-37"></a><span class="w">  </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">&quot;ELASTICSEARCH_USERNAME&quot;</span>
+<a id="__codelineno-20-37" name="__codelineno-20-37" href="#__codelineno-20-37"></a><span class="w">  </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">"ELASTICSEARCH_USERNAME"</span>
 <a id="__codelineno-20-38" name="__codelineno-20-38" href="#__codelineno-20-38"></a><span class="w">    </span>valueFrom:
 <a id="__codelineno-20-39" name="__codelineno-20-39" href="#__codelineno-20-39"></a><span class="w">      </span>secretKeyRef:
 <a id="__codelineno-20-40" name="__codelineno-20-40" href="#__codelineno-20-40"></a><span class="w">        </span>name:<span class="w"> </span>elasticsearch-master-credentials
 <a id="__codelineno-20-41" name="__codelineno-20-41" href="#__codelineno-20-41"></a><span class="w">        </span>key:<span class="w"> </span>username
-<a id="__codelineno-20-42" name="__codelineno-20-42" href="#__codelineno-20-42"></a><span class="w">  </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">&quot;ELASTICSEARCH_PASSWORD&quot;</span>
+<a id="__codelineno-20-42" name="__codelineno-20-42" href="#__codelineno-20-42"></a><span class="w">  </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">"ELASTICSEARCH_PASSWORD"</span>
 <a id="__codelineno-20-43" name="__codelineno-20-43" href="#__codelineno-20-43"></a><span class="w">    </span>valueFrom:
 <a id="__codelineno-20-44" name="__codelineno-20-44" href="#__codelineno-20-44"></a><span class="w">      </span>secretKeyRef:
 <a id="__codelineno-20-45" name="__codelineno-20-45" href="#__codelineno-20-45"></a><span class="w">        </span>name:<span class="w"> </span>elasticsearch-master-credentials
@@ -9466,18 +9466,18 @@ elasticsearch.values</p>
 <a id="__codelineno-20-52" name="__codelineno-20-52" href="#__codelineno-20-52"></a><span class="w">    </span>path:<span class="w"> </span>/usr/share/logstash/certs/
 <a id="__codelineno-20-53" name="__codelineno-20-53" href="#__codelineno-20-53"></a>
 <a id="__codelineno-20-54" name="__codelineno-20-54" href="#__codelineno-20-54"></a>
-<a id="__codelineno-20-55" name="__codelineno-20-55" href="#__codelineno-20-55"></a>logstashJavaOpts:<span class="w"> </span><span class="s2">&quot;-Xmx1g -Xms1g&quot;</span>
+<a id="__codelineno-20-55" name="__codelineno-20-55" href="#__codelineno-20-55"></a>logstashJavaOpts:<span class="w"> </span><span class="s2">"-Xmx1g -Xms1g"</span>
 <a id="__codelineno-20-56" name="__codelineno-20-56" href="#__codelineno-20-56"></a>
 <a id="__codelineno-20-57" name="__codelineno-20-57" href="#__codelineno-20-57"></a>resources:
 <a id="__codelineno-20-58" name="__codelineno-20-58" href="#__codelineno-20-58"></a><span class="w">  </span>requests:
-<a id="__codelineno-20-59" name="__codelineno-20-59" href="#__codelineno-20-59"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">&quot;100m&quot;</span>
-<a id="__codelineno-20-60" name="__codelineno-20-60" href="#__codelineno-20-60"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">&quot;1536Mi&quot;</span>
+<a id="__codelineno-20-59" name="__codelineno-20-59" href="#__codelineno-20-59"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">"100m"</span>
+<a id="__codelineno-20-60" name="__codelineno-20-60" href="#__codelineno-20-60"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">"1536Mi"</span>
 <a id="__codelineno-20-61" name="__codelineno-20-61" href="#__codelineno-20-61"></a><span class="w">  </span>limits:
-<a id="__codelineno-20-62" name="__codelineno-20-62" href="#__codelineno-20-62"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">&quot;1000m&quot;</span>
-<a id="__codelineno-20-63" name="__codelineno-20-63" href="#__codelineno-20-63"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">&quot;1536Mi&quot;</span>
+<a id="__codelineno-20-62" name="__codelineno-20-62" href="#__codelineno-20-62"></a><span class="w">    </span>cpu:<span class="w"> </span><span class="s2">"1000m"</span>
+<a id="__codelineno-20-63" name="__codelineno-20-63" href="#__codelineno-20-63"></a><span class="w">    </span>memory:<span class="w"> </span><span class="s2">"1536Mi"</span>
 <a id="__codelineno-20-64" name="__codelineno-20-64" href="#__codelineno-20-64"></a>
 <a id="__codelineno-20-65" name="__codelineno-20-65" href="#__codelineno-20-65"></a>volumeClaimTemplate:
-<a id="__codelineno-20-66" name="__codelineno-20-66" href="#__codelineno-20-66"></a><span class="w">  </span>accessModes:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;ReadWriteOnce&quot;</span><span class="o">]</span>
+<a id="__codelineno-20-66" name="__codelineno-20-66" href="#__codelineno-20-66"></a><span class="w">  </span>accessModes:<span class="w"> </span><span class="o">[</span><span class="s2">"ReadWriteOnce"</span><span class="o">]</span>
 <a id="__codelineno-20-67" name="__codelineno-20-67" href="#__codelineno-20-67"></a><span class="w">  </span>resources:
 <a id="__codelineno-20-68" name="__codelineno-20-68" href="#__codelineno-20-68"></a><span class="w">    </span>requests:
 <a id="__codelineno-20-69" name="__codelineno-20-69" href="#__codelineno-20-69"></a><span class="w">      </span>storage:<span class="w"> </span>1Gi
@@ -9510,7 +9510,7 @@ elasticsearch.values</p>
 <a id="__codelineno-20-96" name="__codelineno-20-96" href="#__codelineno-20-96"></a>service:
 <a id="__codelineno-20-97" name="__codelineno-20-97" href="#__codelineno-20-97"></a><span class="w">  </span>annotations:<span class="w"> </span><span class="o">{}</span>
 <a id="__codelineno-20-98" name="__codelineno-20-98" href="#__codelineno-20-98"></a><span class="w">  </span>type:<span class="w"> </span>ClusterIP
-<a id="__codelineno-20-99" name="__codelineno-20-99" href="#__codelineno-20-99"></a><span class="w">  </span>loadBalancerIP:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-20-99" name="__codelineno-20-99" href="#__codelineno-20-99"></a><span class="w">  </span>loadBalancerIP:<span class="w"> </span><span class="s2">""</span>
 <a id="__codelineno-20-100" name="__codelineno-20-100" href="#__codelineno-20-100"></a><span class="w">  </span>ports:
 <a id="__codelineno-20-101" name="__codelineno-20-101" href="#__codelineno-20-101"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span>beats
 <a id="__codelineno-20-102" name="__codelineno-20-102" href="#__codelineno-20-102"></a><span class="w">      </span>port:<span class="w"> </span><span class="m">5044</span>
@@ -9538,12 +9538,12 @@ elasticsearch.values</p>
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>daemonset:
 <a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">  </span>enabled:<span class="w"> </span><span class="nb">true</span>
 <a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">  </span>extraEnvs:
-<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">&quot;ELASTICSEARCH_USERNAME&quot;</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">"ELASTICSEARCH_USERNAME"</span>
 <a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">      </span>valueFrom:
 <a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">        </span>secretKeyRef:
 <a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">          </span>name:<span class="w"> </span>elasticsearch-master-credentials
 <a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">          </span>key:<span class="w"> </span>username
-<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">&quot;ELASTICSEARCH_PASSWORD&quot;</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">"ELASTICSEARCH_PASSWORD"</span>
 <a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="w">      </span>valueFrom:
 <a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="w">        </span>secretKeyRef:
 <a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="w">          </span>name:<span class="w"> </span>elasticsearch-master-credentials
@@ -9560,10 +9560,10 @@ elasticsearch.values</p>
 <a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a><span class="w">            </span>host:<span class="w"> </span><span class="si">${</span><span class="nv">NODE_NAME</span><span class="si">}</span>
 <a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a><span class="w">            </span>matchers:
 <a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a><span class="w">            </span>-<span class="w"> </span>logs_path:
-<a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a><span class="w">                </span>logs_path:<span class="w"> </span><span class="s2">&quot;/var/log/containers/&quot;</span>
+<a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a><span class="w">                </span>logs_path:<span class="w"> </span><span class="s2">"/var/log/containers/"</span>
 <a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a>
 <a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a><span class="w">      </span>output.logstash:
-<a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a><span class="w">        </span>hosts:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;logstash-logstash:5044&quot;</span><span class="o">]</span>
+<a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a><span class="w">        </span>hosts:<span class="w"> </span><span class="o">[</span><span class="s2">"logstash-logstash:5044"</span><span class="o">]</span>
 <a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a>
 <a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a><span class="w">  </span>maxUnavailable:<span class="w"> </span><span class="m">1</span>
 <a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a>
@@ -9577,12 +9577,12 @@ elasticsearch.values</p>
 <a id="__codelineno-24-41" name="__codelineno-24-41" href="#__codelineno-24-41"></a>
 <a id="__codelineno-24-42" name="__codelineno-24-42" href="#__codelineno-24-42"></a><span class="w">  </span>enabled:<span class="w"> </span><span class="nb">false</span>
 <a id="__codelineno-24-43" name="__codelineno-24-43" href="#__codelineno-24-43"></a><span class="w">  </span>extraEnvs:
-<a id="__codelineno-24-44" name="__codelineno-24-44" href="#__codelineno-24-44"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">&quot;ELASTICSEARCH_USERNAME&quot;</span>
+<a id="__codelineno-24-44" name="__codelineno-24-44" href="#__codelineno-24-44"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">"ELASTICSEARCH_USERNAME"</span>
 <a id="__codelineno-24-45" name="__codelineno-24-45" href="#__codelineno-24-45"></a><span class="w">      </span>valueFrom:
 <a id="__codelineno-24-46" name="__codelineno-24-46" href="#__codelineno-24-46"></a><span class="w">        </span>secretKeyRef:
 <a id="__codelineno-24-47" name="__codelineno-24-47" href="#__codelineno-24-47"></a><span class="w">          </span>name:<span class="w"> </span>elasticsearch-master-credentials
 <a id="__codelineno-24-48" name="__codelineno-24-48" href="#__codelineno-24-48"></a><span class="w">          </span>key:<span class="w"> </span>username
-<a id="__codelineno-24-49" name="__codelineno-24-49" href="#__codelineno-24-49"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">&quot;ELASTICSEARCH_PASSWORD&quot;</span>
+<a id="__codelineno-24-49" name="__codelineno-24-49" href="#__codelineno-24-49"></a><span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">"ELASTICSEARCH_PASSWORD"</span>
 <a id="__codelineno-24-50" name="__codelineno-24-50" href="#__codelineno-24-50"></a><span class="w">      </span>valueFrom:
 <a id="__codelineno-24-51" name="__codelineno-24-51" href="#__codelineno-24-51"></a><span class="w">        </span>secretKeyRef:
 <a id="__codelineno-24-52" name="__codelineno-24-52" href="#__codelineno-24-52"></a><span class="w">          </span>name:<span class="w"> </span>elasticsearch-master-credentials
@@ -9596,12 +9596,12 @@ elasticsearch.values</p>
 <a id="__codelineno-24-60" name="__codelineno-24-60" href="#__codelineno-24-60"></a><span class="w">            </span>-<span class="w"> </span>/usr/share/filebeat/logs/filebeat
 <a id="__codelineno-24-61" name="__codelineno-24-61" href="#__codelineno-24-61"></a>
 <a id="__codelineno-24-62" name="__codelineno-24-62" href="#__codelineno-24-62"></a><span class="w">      </span>output.elasticsearch:
-<a id="__codelineno-24-63" name="__codelineno-24-63" href="#__codelineno-24-63"></a><span class="w">        </span>host:<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NODE_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
-<a id="__codelineno-24-64" name="__codelineno-24-64" href="#__codelineno-24-64"></a><span class="w">        </span>hosts:<span class="w"> </span><span class="s1">&#39;[&quot;https://${ELASTICSEARCH_HOSTS:elasticsearch-master:9200}&quot;]&#39;</span>
-<a id="__codelineno-24-65" name="__codelineno-24-65" href="#__codelineno-24-65"></a><span class="w">        </span>username:<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ELASTICSEARCH_USERNAME</span><span class="si">}</span><span class="s2">&quot;</span>
-<a id="__codelineno-24-66" name="__codelineno-24-66" href="#__codelineno-24-66"></a><span class="w">        </span>password:<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ELASTICSEARCH_PASSWORD</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-24-63" name="__codelineno-24-63" href="#__codelineno-24-63"></a><span class="w">        </span>host:<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">NODE_NAME</span><span class="si">}</span><span class="s2">"</span>
+<a id="__codelineno-24-64" name="__codelineno-24-64" href="#__codelineno-24-64"></a><span class="w">        </span>hosts:<span class="w"> </span><span class="s1">'["https://${ELASTICSEARCH_HOSTS:elasticsearch-master:9200}"]'</span>
+<a id="__codelineno-24-65" name="__codelineno-24-65" href="#__codelineno-24-65"></a><span class="w">        </span>username:<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">ELASTICSEARCH_USERNAME</span><span class="si">}</span><span class="s2">"</span>
+<a id="__codelineno-24-66" name="__codelineno-24-66" href="#__codelineno-24-66"></a><span class="w">        </span>password:<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">ELASTICSEARCH_PASSWORD</span><span class="si">}</span><span class="s2">"</span>
 <a id="__codelineno-24-67" name="__codelineno-24-67" href="#__codelineno-24-67"></a><span class="w">        </span>protocol:<span class="w"> </span>https
-<a id="__codelineno-24-68" name="__codelineno-24-68" href="#__codelineno-24-68"></a><span class="w">        </span>ssl.certificate_authorities:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/usr/share/filebeat/certs/ca.crt&quot;</span><span class="o">]</span>
+<a id="__codelineno-24-68" name="__codelineno-24-68" href="#__codelineno-24-68"></a><span class="w">        </span>ssl.certificate_authorities:<span class="w"> </span><span class="o">[</span><span class="s2">"/usr/share/filebeat/certs/ca.crt"</span><span class="o">]</span>
 <a id="__codelineno-24-69" name="__codelineno-24-69" href="#__codelineno-24-69"></a>
 <a id="__codelineno-24-70" name="__codelineno-24-70" href="#__codelineno-24-70"></a>
 <a id="__codelineno-24-71" name="__codelineno-24-71" href="#__codelineno-24-71"></a><span class="w">  </span>secretMounts:
@@ -9614,19 +9614,19 @@ elasticsearch.values</p>
 <a id="__codelineno-24-78" name="__codelineno-24-78" href="#__codelineno-24-78"></a><span class="w">    </span>privileged:<span class="w"> </span><span class="nb">false</span>
 <a id="__codelineno-24-79" name="__codelineno-24-79" href="#__codelineno-24-79"></a><span class="w">  </span>resources:
 <a id="__codelineno-24-80" name="__codelineno-24-80" href="#__codelineno-24-80"></a><span class="w">    </span>requests:
-<a id="__codelineno-24-81" name="__codelineno-24-81" href="#__codelineno-24-81"></a><span class="w">      </span>cpu:<span class="w"> </span><span class="s2">&quot;100m&quot;</span>
-<a id="__codelineno-24-82" name="__codelineno-24-82" href="#__codelineno-24-82"></a><span class="w">      </span>memory:<span class="w"> </span><span class="s2">&quot;100Mi&quot;</span>
+<a id="__codelineno-24-81" name="__codelineno-24-81" href="#__codelineno-24-81"></a><span class="w">      </span>cpu:<span class="w"> </span><span class="s2">"100m"</span>
+<a id="__codelineno-24-82" name="__codelineno-24-82" href="#__codelineno-24-82"></a><span class="w">      </span>memory:<span class="w"> </span><span class="s2">"100Mi"</span>
 <a id="__codelineno-24-83" name="__codelineno-24-83" href="#__codelineno-24-83"></a><span class="w">    </span>limits:
-<a id="__codelineno-24-84" name="__codelineno-24-84" href="#__codelineno-24-84"></a><span class="w">      </span>cpu:<span class="w"> </span><span class="s2">&quot;1000m&quot;</span>
-<a id="__codelineno-24-85" name="__codelineno-24-85" href="#__codelineno-24-85"></a><span class="w">      </span>memory:<span class="w"> </span><span class="s2">&quot;200Mi&quot;</span>
+<a id="__codelineno-24-84" name="__codelineno-24-84" href="#__codelineno-24-84"></a><span class="w">      </span>cpu:<span class="w"> </span><span class="s2">"1000m"</span>
+<a id="__codelineno-24-85" name="__codelineno-24-85" href="#__codelineno-24-85"></a><span class="w">      </span>memory:<span class="w"> </span><span class="s2">"200Mi"</span>
 <a id="__codelineno-24-86" name="__codelineno-24-86" href="#__codelineno-24-86"></a>
 <a id="__codelineno-24-87" name="__codelineno-24-87" href="#__codelineno-24-87"></a>replicas:<span class="w"> </span><span class="m">1</span>
 <a id="__codelineno-24-88" name="__codelineno-24-88" href="#__codelineno-24-88"></a>
 <a id="__codelineno-24-89" name="__codelineno-24-89" href="#__codelineno-24-89"></a>hostPathRoot:<span class="w"> </span>/var/lib
 <a id="__codelineno-24-90" name="__codelineno-24-90" href="#__codelineno-24-90"></a>
-<a id="__codelineno-24-91" name="__codelineno-24-91" href="#__codelineno-24-91"></a>image:<span class="w"> </span><span class="s2">&quot;docker.elastic.co/beats/filebeat&quot;</span>
-<a id="__codelineno-24-92" name="__codelineno-24-92" href="#__codelineno-24-92"></a>imageTag:<span class="w"> </span><span class="s2">&quot;8.5.1&quot;</span>
-<a id="__codelineno-24-93" name="__codelineno-24-93" href="#__codelineno-24-93"></a>imagePullPolicy:<span class="w"> </span><span class="s2">&quot;IfNotPresent&quot;</span>
+<a id="__codelineno-24-91" name="__codelineno-24-91" href="#__codelineno-24-91"></a>image:<span class="w"> </span><span class="s2">"docker.elastic.co/beats/filebeat"</span>
+<a id="__codelineno-24-92" name="__codelineno-24-92" href="#__codelineno-24-92"></a>imageTag:<span class="w"> </span><span class="s2">"8.5.1"</span>
+<a id="__codelineno-24-93" name="__codelineno-24-93" href="#__codelineno-24-93"></a>imagePullPolicy:<span class="w"> </span><span class="s2">"IfNotPresent"</span>
 <a id="__codelineno-24-94" name="__codelineno-24-94" href="#__codelineno-24-94"></a>imagePullSecrets:<span class="w"> </span><span class="o">[]</span>
 <a id="__codelineno-24-95" name="__codelineno-24-95" href="#__codelineno-24-95"></a>
 <a id="__codelineno-24-96" name="__codelineno-24-96" href="#__codelineno-24-96"></a>livenessProbe:
@@ -9659,7 +9659,7 @@ elasticsearch.values</p>
 <a id="__codelineno-24-123" name="__codelineno-24-123" href="#__codelineno-24-123"></a>
 <a id="__codelineno-24-124" name="__codelineno-24-124" href="#__codelineno-24-124"></a>clusterRoleRules:
 <a id="__codelineno-24-125" name="__codelineno-24-125" href="#__codelineno-24-125"></a><span class="w">  </span>-<span class="w"> </span>apiGroups:
-<a id="__codelineno-24-126" name="__codelineno-24-126" href="#__codelineno-24-126"></a><span class="w">      </span>-<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-24-126" name="__codelineno-24-126" href="#__codelineno-24-126"></a><span class="w">      </span>-<span class="w"> </span><span class="s2">""</span>
 <a id="__codelineno-24-127" name="__codelineno-24-127" href="#__codelineno-24-127"></a><span class="w">    </span>resources:
 <a id="__codelineno-24-128" name="__codelineno-24-128" href="#__codelineno-24-128"></a><span class="w">      </span>-<span class="w"> </span>namespaces
 <a id="__codelineno-24-129" name="__codelineno-24-129" href="#__codelineno-24-129"></a><span class="w">      </span>-<span class="w"> </span>nodes
@@ -9669,7 +9669,7 @@ elasticsearch.values</p>
 <a id="__codelineno-24-133" name="__codelineno-24-133" href="#__codelineno-24-133"></a><span class="w">      </span>-<span class="w"> </span>list
 <a id="__codelineno-24-134" name="__codelineno-24-134" href="#__codelineno-24-134"></a><span class="w">      </span>-<span class="w"> </span>watch
 <a id="__codelineno-24-135" name="__codelineno-24-135" href="#__codelineno-24-135"></a><span class="w">  </span>-<span class="w"> </span>apiGroups:
-<a id="__codelineno-24-136" name="__codelineno-24-136" href="#__codelineno-24-136"></a><span class="w">      </span>-<span class="w"> </span><span class="s2">&quot;apps&quot;</span>
+<a id="__codelineno-24-136" name="__codelineno-24-136" href="#__codelineno-24-136"></a><span class="w">      </span>-<span class="w"> </span><span class="s2">"apps"</span>
 <a id="__codelineno-24-137" name="__codelineno-24-137" href="#__codelineno-24-137"></a><span class="w">    </span>resources:
 <a id="__codelineno-24-138" name="__codelineno-24-138" href="#__codelineno-24-138"></a><span class="w">      </span>-<span class="w"> </span>replicasets
 <a id="__codelineno-24-139" name="__codelineno-24-139" href="#__codelineno-24-139"></a><span class="w">    </span>verbs:
@@ -9695,7 +9695,7 @@ elasticsearch.values</p>
 <a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="w">  </span>accessModes:
 <a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="w">    </span>-<span class="w"> </span>ReadWriteOnce
 <a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="w">  </span>hostPath:
-<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="w">    </span>path:<span class="w"> </span><span class="s2">&quot;/home/ubuntu/pv-data&quot;</span>
+<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="w">    </span>path:<span class="w"> </span><span class="s2">"/home/ubuntu/pv-data"</span>
 <a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>---
 <a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a>apiVersion:<span class="w"> </span>v1
 <a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a>kind:<span class="w"> </span>PersistentVolumeClaim
@@ -9778,7 +9778,7 @@ elasticsearch.values</p>
 <a id="__codelineno-27-94" name="__codelineno-27-94" href="#__codelineno-27-94"></a><span class="w">          </span>ports:<span class="w"> </span>
 <a id="__codelineno-27-95" name="__codelineno-27-95" href="#__codelineno-27-95"></a><span class="w">            </span>-<span class="w"> </span>containerPort:<span class="w"> </span><span class="m">3000</span>
 <a id="__codelineno-27-96" name="__codelineno-27-96" href="#__codelineno-27-96"></a><span class="w">          </span>env:
-<a id="__codelineno-27-97" name="__codelineno-27-97" href="#__codelineno-27-97"></a><span class="w">            </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">&quot;DBHOST&quot;</span>
+<a id="__codelineno-27-97" name="__codelineno-27-97" href="#__codelineno-27-97"></a><span class="w">            </span>-<span class="w"> </span>name:<span class="w"> </span><span class="s2">"DBHOST"</span>
 <a id="__codelineno-27-98" name="__codelineno-27-98" href="#__codelineno-27-98"></a><span class="w">              </span>value:<span class="w"> </span>db-service
 <a id="__codelineno-27-99" name="__codelineno-27-99" href="#__codelineno-27-99"></a><span class="w">          </span>resources:
 <a id="__codelineno-27-100" name="__codelineno-27-100" href="#__codelineno-27-100"></a><span class="w">            </span>limits:
@@ -9906,7 +9906,7 @@ password: $(kubectl get secrets -n elk elasticsearch-master-credentials -ojsonpa
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

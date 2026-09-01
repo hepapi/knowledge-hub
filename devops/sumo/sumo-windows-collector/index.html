@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2369,7 +2369,7 @@
   <span class="md-ellipsis">
     
   
-    Terraform
+    Terragrunt
   
 
     
@@ -2385,7 +2385,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Terraform
+    Terragrunt
   
 
           </label>
@@ -2398,7 +2398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Terragrunt/README.md" class="md-nav__link">
+      <a href="../../terragrunt/" class="md-nav__link">
         
   
   
@@ -9061,16 +9061,16 @@
 <li>If you're using PowerShell on a 64-bit Windows host, you can use Invoke-WebRequest:</li>
 </ol>
 <h4 id="configure-usage-of-tls">Configure usage of TLS</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="no">[System.Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="no">[System.Net.SecurityProtocolType]</span><span class="s1">&#39;Tls,Tls11,Tls12&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="no">[System.Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="no">[System.Net.SecurityProtocolType]</span><span class="s1">'Tls,Tls11,Tls12'</span>
 </code></pre></div>
 <h4 id="download-the-installer">Download the installer</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Invoke-WebRequest</span> <span class="s1">&#39;https://collectors.sumologic.com/rest/download/win64&#39;</span> <span class="n">-outfile</span> <span class="s1">&#39;&lt;download_path&gt;\SumoCollector.exe&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Invoke-WebRequest</span> <span class="s1">'https://collectors.sumologic.com/rest/download/win64'</span> <span class="n">-outfile</span> <span class="s1">'&lt;download_path&gt;\SumoCollector.exe'</span>
 </code></pre></div>
 <p>Replace the <download_path> with the location where you want to download the Collector. For example, <code>C:\user\example\path\to\SumoCollector.exe</code></p>
 <h2 id="install-the-sumo-logic-collector-using-the-command-line-installer">Install the Sumo Logic Collector using the command line installer</h2>
 <p>From the command prompt, run the downloaded EXE file with the parameters that you want to configure. For example:</p>
 <h4 id="using-an-installation-token">Using an Installation Token</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">./</span><span class="n">SumoCollector</span><span class="p">.</span><span class="n">exe</span> <span class="n">-console</span> <span class="n">-q</span> <span class="s2">&quot;-Vsumo.token_and_url=&lt;installationToken&gt;&quot;</span> <span class="s2">&quot;-Vsources=&lt;filepath&gt;&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">./</span><span class="n">SumoCollector</span><span class="p">.</span><span class="n">exe</span> <span class="n">-console</span> <span class="n">-q</span> <span class="s2">"-Vsumo.token_and_url=&lt;installationToken&gt;"</span> <span class="s2">"-Vsources=&lt;filepath&gt;"</span>
 </code></pre></div>
 <p>Reminder: You can pass other <code>user.properties</code> parameters as well inside <code>""</code>.</p>
 <p>When you see the <code>Finishing installation...</code> message, you can close the command prompt window. The installation is complete.</p>
@@ -9180,7 +9180,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

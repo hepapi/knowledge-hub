@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2729,7 +2729,7 @@
   <span class="md-ellipsis">
     
   
-    Terraform
+    Terragrunt
   
 
     
@@ -2745,7 +2745,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Terraform
+    Terragrunt
   
 
           </label>
@@ -2758,7 +2758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Terragrunt/README.md" class="md-nav__link">
+      <a href="../../terragrunt/" class="md-nav__link">
         
   
   
@@ -9522,7 +9522,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unauthorized Shell in Container</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect when a bash shell is opened in a container</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">container.id != host and proc.name = bash</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Unauthorized</span><span class="nv"> </span><span class="s">shell</span><span class="nv"> </span><span class="s">detected</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">container</span><span class="nv"> </span><span class="s">(command=%proc.cmdline</span><span class="nv"> </span><span class="s">container_name=%container.name)&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="s">"Unauthorized</span><span class="nv"> </span><span class="s">shell</span><span class="nv"> </span><span class="s">detected</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">container</span><span class="nv"> </span><span class="s">(command=%proc.cmdline</span><span class="nv"> </span><span class="s">container_name=%container.name)"</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warning</span>
 </code></pre></div>
 <h4 id="explanation-of-the-rule">Explanation of the Rule</h4>
@@ -9550,7 +9550,7 @@
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect Shell inside a Container</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Alert if a shell such as bash is open inside the container</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">container.id != host and proc.name in (linux_shells)</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Shell</span><span class="nv"> </span><span class="s">Opened</span><span class="nv"> </span><span class="s">(user=%user.name</span><span class="nv"> </span><span class="s">container=%container.id)&quot;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="s">"Shell</span><span class="nv"> </span><span class="s">Opened</span><span class="nv"> </span><span class="s">(user=%user.name</span><span class="nv"> </span><span class="s">container=%container.id)"</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WARNING</span>
 </code></pre></div>
 <p>By doing so, different types of shell processes in the container environment can be monitored, addressing potential security risks more comprehensively.</p>
@@ -9575,7 +9575,7 @@
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unauthorized Shell in Container</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect unauthorized shell in a container</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">container.id != host and unauthorized_shells</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Unauthorized</span><span class="nv"> </span><span class="s">shell</span><span class="nv"> </span><span class="s">detected</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">container</span><span class="nv"> </span><span class="s">(command=%proc.cmdline</span><span class="nv"> </span><span class="s">container_name=%container.name)&quot;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="s">"Unauthorized</span><span class="nv"> </span><span class="s">shell</span><span class="nv"> </span><span class="s">detected</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">container</span><span class="nv"> </span><span class="s">(command=%proc.cmdline</span><span class="nv"> </span><span class="s">container_name=%container.name)"</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warning</span>
 </code></pre></div>
 <h4 id="advantages-of-using-macros">Advantages of Using Macros</h4>
@@ -9622,7 +9622,7 @@
 <p>To process logs through a program or send notifications, use the following configuration:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">program_output</span><span class="p">:</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">program</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mail -s &quot;Falco Alert&quot; admin@example.com</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">program</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mail -s "Falco Alert" admin@example.com</span>
 </code></pre></div>
 <ul>
 <li><strong>program</strong>: Falco sends detected events through this program. In this example, events are sent as an email.</li>
@@ -9747,7 +9747,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

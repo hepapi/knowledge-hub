@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2492,7 +2492,7 @@
   <span class="md-ellipsis">
     
   
-    Terraform
+    Terragrunt
   
 
     
@@ -2508,7 +2508,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Terraform
+    Terragrunt
   
 
           </label>
@@ -2521,7 +2521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Terragrunt/README.md" class="md-nav__link">
+      <a href="../../../terragrunt/" class="md-nav__link">
         
   
   
@@ -8991,15 +8991,15 @@
 <p><strong>1)</strong> <strong>[ATTENTION]</strong> Set the Installation Parameters. Select your version of RKE2 and the type of installation.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># set the RKE2 environment variables</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DEBUG</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="c1"># enable debug messages for rke2 scripts</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">INSTALL_RKE2_VERSION</span><span class="o">=</span><span class="s2">&quot;v1.21.7+rke2r2&quot;</span><span class="w"> </span><span class="c1"># `latest` or `stable` works as well</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">INSTALL_RKE2_TYPE</span><span class="o">=</span><span class="s2">&quot;server&quot;</span><span class="w">  </span><span class="c1"># server for master nodes</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">INSTALL_RKE2_VERSION</span><span class="o">=</span><span class="s2">"v1.21.7+rke2r2"</span><span class="w"> </span><span class="c1"># `latest` or `stable` works as well</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">INSTALL_RKE2_TYPE</span><span class="o">=</span><span class="s2">"server"</span><span class="w">  </span><span class="c1"># server for master nodes</span>
 </code></pre></div>
 <p><strong>2)</strong> Create RKE2 Configuration File: <code>/etc/rancher/rke2/config.yaml</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/rancher/rke2/<span class="w"> </span><span class="c1"># create the directory if not exists</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># create the rke2 configuration file</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt;&gt; /etc/rancher/rke2/config.yaml</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="s">kube-apiserver-arg: &quot;kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname&quot;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="s">kube-apiserver-arg: "kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname"</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="s"># ---------------- OPTIONAL CONFIGURATION BELOW ----------------</span>
@@ -9013,7 +9013,7 @@
 <a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="s"># ------ OPTION: ETCD Automatic Backups Cronjob ------</span>
 <a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="s"># This configuration will take snapshots every 5 mins.</span>
 <a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="s"># and keep the last 40 snapshots. For help: https://crontab.guru/</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="s">etcd-snapshot-schedule-cron: &#39;*/5 * * * *&#39;</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="s">etcd-snapshot-schedule-cron: '*/5 * * * *'</span>
 <a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="s">etcd-snapshot-retention: 40</span>
 <a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
 <a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
@@ -9021,12 +9021,12 @@
 <a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="s"># Note: Doing S3 Upload configuration only on the first master node is enough</span>
 <a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
 <a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="s">#etcd-s3: true</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="s">#etcd-s3-endpoint: &quot;s3.amazonaws.com&quot;</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="s">#etcd-s3-access-key: &quot;AKIAAAAAAAAAAAAAAAA&quot;</span>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="s">#etcd-s3-secret-key: &quot;BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB&quot;</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="s">#etcd-s3-region: &quot;eu-central-1&quot;</span>
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="s">#etcd-s3-bucket: &quot;---my-s3-bucket-where-i-store-etcd-backups&quot;</span>
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="s">#etcd-s3-folder: &quot;---myclustername-etcd-backups-folder/&quot;</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="s">#etcd-s3-endpoint: "s3.amazonaws.com"</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="s">#etcd-s3-access-key: "AKIAAAAAAAAAAAAAAAA"</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="s">#etcd-s3-secret-key: "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="s">#etcd-s3-region: "eu-central-1"</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="s">#etcd-s3-bucket: "---my-s3-bucket-where-i-store-etcd-backups"</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="s">#etcd-s3-folder: "---myclustername-etcd-backups-folder/"</span>
 <a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>
 <a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
 <a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="s"># ------ OPTION: Control Plane Resource Requests and Limits ------</span>
@@ -9049,7 +9049,7 @@
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># persist path and kubeconfig configuration</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PATH=$PATH:/var/lib/rancher/rke2/bin KUBECONFIG=/etc/rancher/rke2/rke2.yaml&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">'export PATH=$PATH:/var/lib/rancher/rke2/bin KUBECONFIG=/etc/rancher/rke2/rke2.yaml'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nb">source</span><span class="w"> </span>~/.bashrc
 </code></pre></div>
 <p><strong>4)</strong> Start the <code>rke2-server</code></p>
@@ -9100,14 +9100,14 @@
 <p><strong>[ATTENTION]</strong> Run this steps on the <strong>second and third master node</strong>.</p>
 <p><strong>Steps</strong></p>
 <p><strong>1)</strong> <strong>[ATTENTION]</strong> Set the Prerequisites.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_IP</span><span class="o">=</span><span class="s2">&quot;172.31.15.113&quot;</span><span class="w"> </span><span class="c1"># TODO: change this to your master-1 IP</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_NODE_TOKEN</span><span class="o">=</span><span class="s2">&quot;K10b2896e9397d199b72da45ddc91c2449b27caa4155d36cd8f5dfe679c7b0f0b25::server:ddb937957cd932c74e496059dd1e0f03&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_IP</span><span class="o">=</span><span class="s2">"172.31.15.113"</span><span class="w"> </span><span class="c1"># TODO: change this to your master-1 IP</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_NODE_TOKEN</span><span class="o">=</span><span class="s2">"K10b2896e9397d199b72da45ddc91c2449b27caa4155d36cd8f5dfe679c7b0f0b25::server:ddb937957cd932c74e496059dd1e0f03"</span>
 </code></pre></div>
 <strong>2)</strong> <strong>[ATTENTION]</strong> Set the Installation Parameters. Select your version of RKE2 and the type of installation.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># set the RKE2 environment variables</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DEBUG</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="c1"># enable debug messages for rke2 scripts</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">INSTALL_RKE2_VERSION</span><span class="o">=</span><span class="s2">&quot;v1.21.7+rke2r2&quot;</span><span class="w"> </span><span class="c1"># `latest` or `stable` works as well</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">INSTALL_RKE2_TYPE</span><span class="o">=</span><span class="s2">&quot;server&quot;</span><span class="w">  </span><span class="c1"># server for master nodes</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">INSTALL_RKE2_VERSION</span><span class="o">=</span><span class="s2">"v1.21.7+rke2r2"</span><span class="w"> </span><span class="c1"># `latest` or `stable` works as well</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">INSTALL_RKE2_TYPE</span><span class="o">=</span><span class="s2">"server"</span><span class="w">  </span><span class="c1"># server for master nodes</span>
 </code></pre></div>
 <strong>3)</strong> Create RKE2 Configuration File: <code>/etc/rancher/rke2/config.yaml</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/rancher/rke2/<span class="w"> </span><span class="c1"># create the directory if not exists</span>
@@ -9129,7 +9129,7 @@
 <a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="s"># ------ OPTION: ETCD Automatic Backups Cronjob ------</span>
 <a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="s"># This configuration will take snapshots every 5 mins.</span>
 <a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="s"># and keep the last 40 snapshots. For help: https://crontab.guru/</span>
-<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="s">etcd-snapshot-schedule-cron: &#39;*/5 * * * *&#39;</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="s">etcd-snapshot-schedule-cron: '*/5 * * * *'</span>
 <a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="s">etcd-snapshot-retention: 40</span>
 <a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>
 <a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>
@@ -9158,7 +9158,7 @@
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
 <a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
 <a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="c1"># persist path and kubeconfig configuration</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PATH=$PATH:/var/lib/rancher/rke2/bin KUBECONFIG=/etc/rancher/rke2/rke2.yaml&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">'export PATH=$PATH:/var/lib/rancher/rke2/bin KUBECONFIG=/etc/rancher/rke2/rke2.yaml'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="nb">source</span><span class="w"> </span>~/.bashrc
 </code></pre></div>
 <p><strong>5)</strong> Start the <code>rke2-server</code>
@@ -9246,7 +9246,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

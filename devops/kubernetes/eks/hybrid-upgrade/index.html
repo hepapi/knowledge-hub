@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2523,7 +2523,7 @@
   <span class="md-ellipsis">
     
   
-    Terraform
+    Terragrunt
   
 
     
@@ -2539,7 +2539,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Terraform
+    Terragrunt
   
 
           </label>
@@ -2552,7 +2552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Terragrunt/README.md" class="md-nav__link">
+      <a href="../../../terragrunt/" class="md-nav__link">
         
   
   
@@ -9029,7 +9029,7 @@
 </ul>
 <p>✔ Cilium versions <code>v1.17.x</code> and <code>v1.18.x</code> are supported for EKS Hybrid Nodes for every Kubernetes version supported in Amazon EKS.</p>
 <p><strong>Check the installed Cilium version (via Helm):</strong>
-  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>helm<span class="w"> </span>list<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span>-o<span class="w"> </span>json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="err">&#39;</span>.<span class="o">[]</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="k">select</span><span class="o">(</span>.name<span class="o">==</span><span class="s2">&quot;cilium&quot;</span><span class="o">)</span>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>helm<span class="w"> </span>list<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span>-o<span class="w"> </span>json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="err">'</span>.<span class="o">[]</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="k">select</span><span class="o">(</span>.name<span class="o">==</span><span class="s2">"cilium"</span><span class="o">)</span>
 </code></pre></div></p>
 <h3 id="in-place-upgrade">In-place Upgrade:</h3>
 <p>The in-place upgrade process refers to <a href="https://github.com/aws/eks-hybrid">using nodeadm upgrade to upgrade the Kubernetes version for hybrid nodes</a> without using new physical or virtual hosts and a cutover migration strategy. The nodeadm upgrade process shuts down the existing older Kubernetes components running on the hybrid node, uninstalls the existing older Kubernetes components, installs the new target Kubernetes components, and starts the new target Kubernetes components. It is strongly recommend to upgrade one node at a time to minimize impact to applications running on the hybrid nodes. The duration of this process depends on your network bandwidth and latency.</p>
@@ -9134,7 +9134,7 @@ Make sure the node can successfully communicate via the SSM Agent and that the c
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

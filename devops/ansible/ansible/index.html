@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2358,7 +2358,7 @@
   <span class="md-ellipsis">
     
   
-    Terraform
+    Terragrunt
   
 
     
@@ -2374,7 +2374,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Terraform
+    Terragrunt
   
 
           </label>
@@ -2387,7 +2387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Terragrunt/README.md" class="md-nav__link">
+      <a href="../../terragrunt/" class="md-nav__link">
         
   
   
@@ -8884,15 +8884,15 @@ NOTE: The inventory file is a YAML configuration file and must end with aws_ec2.
 <a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>keyed_groups:
 <a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">  </span>-<span class="w"> </span>key:<span class="w"> </span>placement.region
 <a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">    </span>prefix:<span class="w"> </span>aws_region
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">  </span>-<span class="w"> </span>key:<span class="w"> </span>tags<span class="o">[</span><span class="s1">&#39;environment&#39;</span><span class="o">]</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">  </span>-<span class="w"> </span>key:<span class="w"> </span>tags<span class="o">[</span><span class="s1">'environment'</span><span class="o">]</span>
 <a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">    </span>prefix:<span class="w"> </span>env
-<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">  </span>-<span class="w"> </span>key:<span class="w"> </span>tags<span class="o">[</span><span class="s1">&#39;role&#39;</span><span class="o">]</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">  </span>-<span class="w"> </span>key:<span class="w"> </span>tags<span class="o">[</span><span class="s1">'role'</span><span class="o">]</span>
 <a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="w">    </span>prefix:<span class="w"> </span>role
 <a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>groups:
-<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="w">   </span><span class="c1"># add hosts to the &quot;private_only&quot; group if the host doesn&#39;t have a public IP associated to it</span>
-<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="w">  </span>private_only:<span class="w"> </span><span class="s2">&quot;public_ip_address is not defined&quot;</span>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="w">   </span><span class="c1"># add hosts to the "private_only" group if the host doesn't have a public IP associated to it</span>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="w">  </span>private_only:<span class="w"> </span><span class="s2">"public_ip_address is not defined"</span>
 <a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>compose:
-<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="w">  </span><span class="c1"># use a private address where a public one isn&#39;t assigned</span>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="w">  </span><span class="c1"># use a private address where a public one isn't assigned</span>
 <a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a><span class="w">  </span>ansible_host:<span class="w"> </span>public_ip_address<span class="p">|</span>default<span class="o">(</span>private_ip_address<span class="o">)</span>
 </code></pre></div>
 <p>We declare the plugin we want to use and other options, including regions to consider fetching data from, setting hostnames from the tag Name, and creating inventory groups based on region, environment, and role. </p>
@@ -9083,7 +9083,7 @@ my_role/
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

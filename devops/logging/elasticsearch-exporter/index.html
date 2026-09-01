@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2369,7 +2369,7 @@
   <span class="md-ellipsis">
     
   
-    Terraform
+    Terragrunt
   
 
     
@@ -2385,7 +2385,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Terraform
+    Terragrunt
   
 
           </label>
@@ -2398,7 +2398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Terragrunt/README.md" class="md-nav__link">
+      <a href="../../terragrunt/" class="md-nav__link">
         
   
   
@@ -9129,9 +9129,9 @@
 <h3 id="configure-prometheusyml">Configure Prometheus.yml</h3>
 <p>To pull data from the elasticsearch-exporter into Prometheus and Grafana, you should update the prometheus.yml file with the following code, replacing the Elasticsearch node IP addresses as needed</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">    </span>additionalScrapeConfigs:
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span>-<span class="w"> </span>job_name:<span class="w"> </span><span class="s1">&#39;elasticsearch-exporter&#39;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span>-<span class="w"> </span>job_name:<span class="w"> </span><span class="s1">'elasticsearch-exporter'</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">      </span>static_configs:
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">        </span>-<span class="w"> </span>targets:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;&lt;elasticsearch-node-ip-1&gt;:9114&#39;</span>,<span class="w"> </span><span class="s1">&#39;&lt;elasticsearch-node-ip-2&gt;:9114&#39;</span>,<span class="w"> </span><span class="s1">&#39;&lt;elasticsearch-node-ip-3&gt;:9114&#39;</span><span class="o">]</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">        </span>-<span class="w"> </span>targets:<span class="w"> </span><span class="o">[</span><span class="s1">'&lt;elasticsearch-node-ip-1&gt;:9114'</span>,<span class="w"> </span><span class="s1">'&lt;elasticsearch-node-ip-2&gt;:9114'</span>,<span class="w"> </span><span class="s1">'&lt;elasticsearch-node-ip-3&gt;:9114'</span><span class="o">]</span>
 </code></pre></div>
 <h3 id="add-grafana-dashboard-for-elasticsearch">Add Grafana Dashboard for Elasticsearch</h3>
 <p>Go to Grafana WebUI Click Dashboard --&gt; New --&gt; New Dashboard --&gt; Import --&gt; Add 266 --&gt; load</p>
@@ -9161,7 +9161,7 @@
 <a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">          </span>description:<span class="w"> </span>There<span class="w"> </span>are<span class="w"> </span>only<span class="w"> </span><span class="o">{{</span><span class="nv">$value</span><span class="o">}}</span><span class="w"> </span>&lt;<span class="w"> </span><span class="m">3</span><span class="w"> </span>Elasticsearch<span class="w"> </span>nodes<span class="w"> </span>running
 <a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">          </span>summary:<span class="w"> </span>Elasticsearch<span class="w"> </span>running<span class="w"> </span>on<span class="w"> </span>less<span class="w"> </span>than<span class="w"> </span><span class="m">3</span><span class="w"> </span>nodes
 <a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">      </span>-<span class="w"> </span>alert:<span class="w"> </span>ElasticsearchHeapTooHigh
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">        </span>expr:<span class="w"> </span>elasticsearch_jvm_memory_used_bytes<span class="o">{</span><span class="nv">area</span><span class="o">=</span><span class="s2">&quot;heap&quot;</span><span class="o">}</span><span class="w"> </span>/<span class="w"> </span>elasticsearch_jvm_memory_max_bytes<span class="o">{</span><span class="nv">area</span><span class="o">=</span><span class="s2">&quot;heap&quot;</span><span class="o">}</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">        </span>expr:<span class="w"> </span>elasticsearch_jvm_memory_used_bytes<span class="o">{</span><span class="nv">area</span><span class="o">=</span><span class="s2">"heap"</span><span class="o">}</span><span class="w"> </span>/<span class="w"> </span>elasticsearch_jvm_memory_max_bytes<span class="o">{</span><span class="nv">area</span><span class="o">=</span><span class="s2">"heap"</span><span class="o">}</span>
 <a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">          </span>&gt;<span class="w"> </span><span class="m">0</span>.9
 <a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">        </span><span class="k">for</span>:<span class="w"> </span>15m
 <a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">        </span>labels:
@@ -9179,15 +9179,15 @@
 <a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>ALERT<span class="w"> </span>ElasticsearchTooFewNodesRunning
 <a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span>IF<span class="w"> </span>elasticsearch_cluster_health_number_of_nodes<span class="w"> </span>&lt;<span class="w"> </span><span class="m">3</span>
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span>FOR<span class="w"> </span>5m
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">  </span>LABELS<span class="w"> </span><span class="o">{</span><span class="nv">severity</span><span class="o">=</span><span class="s2">&quot;critical&quot;</span><span class="o">}</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">  </span>ANNOTATIONS<span class="w"> </span><span class="o">{</span><span class="nv">description</span><span class="o">=</span><span class="s2">&quot;There are only {{</span><span class="nv">$value</span><span class="s2">}} &lt; 3 Elasticsearch nodes running&quot;</span>,<span class="w"> </span><span class="nv">summary</span><span class="o">=</span><span class="s2">&quot;Elasticsearch running on less than 3 nodes&quot;</span><span class="o">}</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">  </span>LABELS<span class="w"> </span><span class="o">{</span><span class="nv">severity</span><span class="o">=</span><span class="s2">"critical"</span><span class="o">}</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">  </span>ANNOTATIONS<span class="w"> </span><span class="o">{</span><span class="nv">description</span><span class="o">=</span><span class="s2">"There are only {{</span><span class="nv">$value</span><span class="s2">}} &lt; 3 Elasticsearch nodes running"</span>,<span class="w"> </span><span class="nv">summary</span><span class="o">=</span><span class="s2">"Elasticsearch running on less than 3 nodes"</span><span class="o">}</span>
 <a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
 <a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="c1"># alert if heap usage is over 90%</span>
 <a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>ALERT<span class="w"> </span>ElasticsearchHeapTooHigh
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">  </span>IF<span class="w"> </span>elasticsearch_jvm_memory_used_bytes<span class="o">{</span><span class="nv">area</span><span class="o">=</span><span class="s2">&quot;heap&quot;</span><span class="o">}</span><span class="w"> </span>/<span class="w"> </span>elasticsearch_jvm_memory_max_bytes<span class="o">{</span><span class="nv">area</span><span class="o">=</span><span class="s2">&quot;heap&quot;</span><span class="o">}</span><span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span>.9
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">  </span>IF<span class="w"> </span>elasticsearch_jvm_memory_used_bytes<span class="o">{</span><span class="nv">area</span><span class="o">=</span><span class="s2">"heap"</span><span class="o">}</span><span class="w"> </span>/<span class="w"> </span>elasticsearch_jvm_memory_max_bytes<span class="o">{</span><span class="nv">area</span><span class="o">=</span><span class="s2">"heap"</span><span class="o">}</span><span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span>.9
 <a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">  </span>FOR<span class="w"> </span>15m
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">  </span>LABELS<span class="w"> </span><span class="o">{</span><span class="nv">severity</span><span class="o">=</span><span class="s2">&quot;critical&quot;</span><span class="o">}</span>
-<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">  </span>ANNOTATIONS<span class="w"> </span><span class="o">{</span><span class="nv">description</span><span class="o">=</span><span class="s2">&quot;The heap usage is over 90% for 15m&quot;</span>,<span class="w"> </span><span class="nv">summary</span><span class="o">=</span><span class="s2">&quot;Elasticsearch node {{</span><span class="nv">$labels</span><span class="s2">.node}} heap usage is high&quot;</span><span class="o">}</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">  </span>LABELS<span class="w"> </span><span class="o">{</span><span class="nv">severity</span><span class="o">=</span><span class="s2">"critical"</span><span class="o">}</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">  </span>ANNOTATIONS<span class="w"> </span><span class="o">{</span><span class="nv">description</span><span class="o">=</span><span class="s2">"The heap usage is over 90% for 15m"</span>,<span class="w"> </span><span class="nv">summary</span><span class="o">=</span><span class="s2">"Elasticsearch node {{</span><span class="nv">$labels</span><span class="s2">.node}} heap usage is high"</span><span class="o">}</span>
 </code></pre></div>
 <p>You can add slack,email or another connector for alert mechanism.</p>
 
@@ -9262,7 +9262,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2369,7 +2369,7 @@
   <span class="md-ellipsis">
     
   
-    Terraform
+    Terragrunt
   
 
     
@@ -2385,7 +2385,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Terraform
+    Terragrunt
   
 
           </label>
@@ -2398,7 +2398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Terragrunt/README.md" class="md-nav__link">
+      <a href="../../terragrunt/" class="md-nav__link">
         
   
   
@@ -8976,7 +8976,7 @@ Always verify the exact target versions on elastic.co before running <code>wget<
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>GET<span class="w"> </span>_snapshot/&lt;repo_name&gt;/pre_upgrade_8x_to_8_latest
 </code></pre></div>
 <p>You should see:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;SUCCESS&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">"state"</span><span class="p">:</span><span class="s2">"SUCCESS"</span>
 </code></pre></div>
 <blockquote>
 <p>Rollback note: Elasticsearch does <strong>not</strong> support downgrade. If upgrade fails, the recovery path is <strong>restore from snapshot</strong>.</p>
@@ -9001,8 +9001,8 @@ Always verify the exact target versions on elastic.co before running <code>wget<
 <p>1) <strong>Disable replica allocation (recommended for data nodes; optional for masters/others):</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>PUT<span class="w"> </span>_cluster/settings
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="o">{</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="s2">&quot;persistent&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="s2">&quot;cluster.routing.allocation.enable&quot;</span>:<span class="w"> </span><span class="s2">&quot;primaries&quot;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="s2">"persistent"</span>:<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="s2">"cluster.routing.allocation.enable"</span>:<span class="w"> </span><span class="s2">"primaries"</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="o">}</span>
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="o">}</span>
 </code></pre></div>
@@ -9058,7 +9058,7 @@ If prompted about <code>/etc/elasticsearch/elasticsearch.yml</code>, choose <str
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>GET<span class="w"> </span>_cat/recovery
 </code></pre></div>
 <p>You can watch recovery progress:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>watch<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="s1">&#39;curl -s &quot;localhost:9200/_cat/recovery?v&amp;active_only=true&quot;&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>watch<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="s1">'curl -s "localhost:9200/_cat/recovery?v&amp;active_only=true"'</span>
 </code></pre></div>
 <p><strong>Continue only if:</strong>
 - health = green/yellow
@@ -9067,8 +9067,8 @@ If prompted about <code>/etc/elasticsearch/elasticsearch.yml</code>, choose <str
 <p>9) <strong>Re-enable allocation (after the node is stable):</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>PUT<span class="w"> </span>_cluster/settings
 <a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="o">{</span>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="s2">&quot;persistent&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="s2">&quot;cluster.routing.allocation.enable&quot;</span>:<span class="w"> </span>null
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="s2">"persistent"</span>:<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="s2">"cluster.routing.allocation.enable"</span>:<span class="w"> </span>null
 <a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">  </span><span class="o">}</span>
 <a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="o">}</span>
 </code></pre></div>
@@ -9097,16 +9097,16 @@ If prompted about <code>/etc/elasticsearch/elasticsearch.yml</code>, choose <str
 You should remove them before moving on.</p>
 <p>Example output (if you see this, you must clean it):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">{</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="nt">&quot;persistent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nt">&quot;archived.cluster.routing.allocation.awareness.attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rack_id&quot;</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="nt">"persistent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nt">"archived.cluster.routing.allocation.awareness.attributes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rack_id"</span>
 <a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="p">}</span>
 </code></pre></div>
 <p>Example cleanup:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>PUT<span class="w"> </span>_cluster/settings
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="o">{</span>
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">  </span><span class="s2">&quot;persistent&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="s2">&quot;archived.cluster.routing.allocation.awareness.attributes&quot;</span>:<span class="w"> </span>null
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">  </span><span class="s2">"persistent"</span>:<span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="s2">"archived.cluster.routing.allocation.awareness.attributes"</span>:<span class="w"> </span>null
 <a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">  </span><span class="o">}</span>
 <a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="o">}</span>
 </code></pre></div>
@@ -9237,7 +9237,7 @@ You should remove them before moving on.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

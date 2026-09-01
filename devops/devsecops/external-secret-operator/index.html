@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2545,7 +2545,7 @@
   <span class="md-ellipsis">
     
   
-    Terraform
+    Terragrunt
   
 
     
@@ -2561,7 +2561,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Terraform
+    Terragrunt
   
 
           </label>
@@ -2574,7 +2574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Terragrunt/README.md" class="md-nav__link">
+      <a href="../../terragrunt/" class="md-nav__link">
         
   
   
@@ -9087,7 +9087,7 @@ By design, SecretStores are bound to a namespace and can not reference resources
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="c1"># Current supported providers: AWS, Hashicorp Vault, IBM</span>
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span>retrySettings:
 <a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span>maxRetries:<span class="w"> </span><span class="m">5</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span>retryInterval:<span class="w"> </span><span class="s2">&quot;10s&quot;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span>retryInterval:<span class="w"> </span><span class="s2">"10s"</span>
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span><span class="c1"># provider field contains the configuration to access the provider</span>
 <a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">  </span><span class="c1"># which contains the secret exactly one provider must be configured.</span>
@@ -9114,72 +9114,72 @@ By design, SecretStores are bound to a namespace and can not reference resources
 <a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
 <a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">    </span><span class="c1"># (2) Hashicorp Vault</span>
 <a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">    </span>vault:
-<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">      </span>server:<span class="w"> </span><span class="s2">&quot;https://vault.acme.org&quot;</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">      </span>server:<span class="w"> </span><span class="s2">"https://vault.acme.org"</span>
 <a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">      </span><span class="c1"># Path is the mount path of the Vault KV backend endpoint</span>
 <a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">      </span><span class="c1"># Used as a path prefix for the external secret key</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">      </span>path:<span class="w"> </span><span class="s2">&quot;secret&quot;</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">      </span>path:<span class="w"> </span><span class="s2">"secret"</span>
 <a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="w">      </span><span class="c1"># Version is the Vault KV secret engine version.</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="w">      </span><span class="c1"># This can be either &quot;v1&quot; or &quot;v2&quot;, defaults to &quot;v2&quot;</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">      </span>version:<span class="w"> </span><span class="s2">&quot;v2&quot;</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="w">      </span><span class="c1"># This can be either "v1" or "v2", defaults to "v2"</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">      </span>version:<span class="w"> </span><span class="s2">"v2"</span>
 <a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="w">      </span><span class="c1"># vault enterprise namespace: https://www.vaultproject.io/docs/enterprise/namespaces</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="w">      </span>namespace:<span class="w"> </span><span class="s2">&quot;a-team&quot;</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="w">      </span>namespace:<span class="w"> </span><span class="s2">"a-team"</span>
 <a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="w">      </span><span class="c1"># base64 encoded string of certificate</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="w">      </span>caBundle:<span class="w"> </span><span class="s2">&quot;...&quot;</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="w">      </span>caBundle:<span class="w"> </span><span class="s2">"..."</span>
 <a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="w">      </span><span class="c1"># Instead of caBundle you can also specify a caProvider</span>
 <a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="w">      </span><span class="c1"># this will retrieve the cert from a Secret or ConfigMap</span>
 <a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a><span class="w">      </span>caProvider:
 <a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a><span class="w">        </span><span class="c1"># Can be Secret or ConfigMap</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a><span class="w">        </span>type:<span class="w"> </span><span class="s2">&quot;Secret&quot;</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a><span class="w">        </span>name:<span class="w"> </span><span class="s2">&quot;my-cert-secret&quot;</span>
-<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a><span class="w">        </span>key:<span class="w"> </span><span class="s2">&quot;cert-key&quot;</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a><span class="w">        </span>type:<span class="w"> </span><span class="s2">"Secret"</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a><span class="w">        </span>name:<span class="w"> </span><span class="s2">"my-cert-secret"</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a><span class="w">        </span>key:<span class="w"> </span><span class="s2">"cert-key"</span>
 <a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a><span class="w">      </span><span class="c1"># client side related TLS communication, when the Vault server requires mutual authentication</span>
 <a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a><span class="w">      </span>tls:
 <a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a><span class="w">        </span>clientCert:
 <a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a><span class="w">          </span>namespace:<span class="w"> </span>...
-<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a><span class="w">          </span>name:<span class="w"> </span><span class="s2">&quot;my-cert-secret&quot;</span>
-<a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a><span class="w">          </span>key:<span class="w"> </span><span class="s2">&quot;tls.crt&quot;</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a><span class="w">          </span>name:<span class="w"> </span><span class="s2">"my-cert-secret"</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a><span class="w">          </span>key:<span class="w"> </span><span class="s2">"tls.crt"</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a><span class="w">        </span>secretRef:
 <a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a><span class="w">          </span>namespace:<span class="w"> </span>...
-<a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a><span class="w">          </span>name:<span class="w"> </span><span class="s2">&quot;my-cert-secret&quot;</span>
-<a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a><span class="w">          </span>key:<span class="w"> </span><span class="s2">&quot;tls.key&quot;</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a><span class="w">          </span>name:<span class="w"> </span><span class="s2">"my-cert-secret"</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a><span class="w">          </span>key:<span class="w"> </span><span class="s2">"tls.key"</span>
 <a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a>
 <a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a><span class="w">      </span>auth:
 <a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a><span class="w">        </span><span class="c1"># static token: https://www.vaultproject.io/docs/auth/token</span>
 <a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a><span class="w">        </span>tokenSecretRef:
-<a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a><span class="w">          </span>name:<span class="w"> </span><span class="s2">&quot;my-secret&quot;</span>
-<a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a><span class="w">          </span>key:<span class="w"> </span><span class="s2">&quot;vault-token&quot;</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a><span class="w">          </span>name:<span class="w"> </span><span class="s2">"my-secret"</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a><span class="w">          </span>key:<span class="w"> </span><span class="s2">"vault-token"</span>
 <a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a>
 <a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a><span class="w">        </span><span class="c1"># AppRole auth: https://www.vaultproject.io/docs/auth/approle</span>
 <a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a><span class="w">        </span>appRole:
-<a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a><span class="w">          </span>path:<span class="w"> </span><span class="s2">&quot;approle&quot;</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a><span class="w">          </span>roleId:<span class="w"> </span><span class="s2">&quot;db02de05-fa39-4855-059b-67221c5c2f63&quot;</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a><span class="w">          </span>path:<span class="w"> </span><span class="s2">"approle"</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a><span class="w">          </span>roleId:<span class="w"> </span><span class="s2">"db02de05-fa39-4855-059b-67221c5c2f63"</span>
 <a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a><span class="w">          </span>secretRef:
-<a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a><span class="w">            </span>name:<span class="w"> </span><span class="s2">&quot;my-secret&quot;</span>
-<a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a><span class="w">            </span>key:<span class="w"> </span><span class="s2">&quot;vault-token&quot;</span>
+<a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a><span class="w">            </span>name:<span class="w"> </span><span class="s2">"my-secret"</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a><span class="w">            </span>key:<span class="w"> </span><span class="s2">"vault-token"</span>
 <a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a>
 <a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a><span class="w">        </span><span class="c1"># Kubernetes auth: https://www.vaultproject.io/docs/auth/kubernetes</span>
 <a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a><span class="w">        </span>kubernetes:
-<a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a><span class="w">          </span>mountPath:<span class="w"> </span><span class="s2">&quot;kubernetes&quot;</span>
-<a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a><span class="w">          </span>role:<span class="w"> </span><span class="s2">&quot;demo&quot;</span>
+<a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a><span class="w">          </span>mountPath:<span class="w"> </span><span class="s2">"kubernetes"</span>
+<a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a><span class="w">          </span>role:<span class="w"> </span><span class="s2">"demo"</span>
 <a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a><span class="w">          </span><span class="c1"># Optional service account reference</span>
 <a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a><span class="w">          </span>serviceAccountRef:
-<a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a><span class="w">            </span>name:<span class="w"> </span><span class="s2">&quot;my-sa&quot;</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a><span class="w">            </span>name:<span class="w"> </span><span class="s2">"my-sa"</span>
 <a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a><span class="w">          </span><span class="c1"># Optional secret field containing a Kubernetes ServiceAccount JWT</span>
 <a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a><span class="w">          </span><span class="c1"># used for authenticating with Vault</span>
 <a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a><span class="w">          </span>secretRef:
-<a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a><span class="w">            </span>name:<span class="w"> </span><span class="s2">&quot;my-secret&quot;</span>
-<a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a><span class="w">            </span>key:<span class="w"> </span><span class="s2">&quot;vault&quot;</span>
+<a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a><span class="w">            </span>name:<span class="w"> </span><span class="s2">"my-secret"</span>
+<a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a><span class="w">            </span>key:<span class="w"> </span><span class="s2">"vault"</span>
 <a id="__codelineno-0-102" name="__codelineno-0-102" href="#__codelineno-0-102"></a>
 <a id="__codelineno-0-103" name="__codelineno-0-103" href="#__codelineno-0-103"></a><span class="w">        </span><span class="c1"># TLS certificates auth method: https://developer.hashicorp.com/vault/docs/auth/cert</span>
 <a id="__codelineno-0-104" name="__codelineno-0-104" href="#__codelineno-0-104"></a><span class="w">        </span>cert:
 <a id="__codelineno-0-105" name="__codelineno-0-105" href="#__codelineno-0-105"></a><span class="w">          </span>clientCert:
 <a id="__codelineno-0-106" name="__codelineno-0-106" href="#__codelineno-0-106"></a><span class="w">            </span>namespace:<span class="w"> </span>...
-<a id="__codelineno-0-107" name="__codelineno-0-107" href="#__codelineno-0-107"></a><span class="w">            </span>name:<span class="w"> </span><span class="s2">&quot;my-cert-secret&quot;</span>
-<a id="__codelineno-0-108" name="__codelineno-0-108" href="#__codelineno-0-108"></a><span class="w">            </span>key:<span class="w"> </span><span class="s2">&quot;tls.crt&quot;</span>
+<a id="__codelineno-0-107" name="__codelineno-0-107" href="#__codelineno-0-107"></a><span class="w">            </span>name:<span class="w"> </span><span class="s2">"my-cert-secret"</span>
+<a id="__codelineno-0-108" name="__codelineno-0-108" href="#__codelineno-0-108"></a><span class="w">            </span>key:<span class="w"> </span><span class="s2">"tls.crt"</span>
 <a id="__codelineno-0-109" name="__codelineno-0-109" href="#__codelineno-0-109"></a><span class="w">          </span>secretRef:
 <a id="__codelineno-0-110" name="__codelineno-0-110" href="#__codelineno-0-110"></a><span class="w">            </span>namespace:<span class="w"> </span>...
-<a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a><span class="w">            </span>name:<span class="w"> </span><span class="s2">&quot;my-cert-secret&quot;</span>
-<a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a><span class="w">            </span>key:<span class="w"> </span><span class="s2">&quot;tls.key&quot;</span>
+<a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a><span class="w">            </span>name:<span class="w"> </span><span class="s2">"my-cert-secret"</span>
+<a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a><span class="w">            </span>key:<span class="w"> </span><span class="s2">"tls.key"</span>
 <a id="__codelineno-0-113" name="__codelineno-0-113" href="#__codelineno-0-113"></a>
 <a id="__codelineno-0-114" name="__codelineno-0-114" href="#__codelineno-0-114"></a><span class="w">    </span><span class="c1"># (3): GCP Secret Manager</span>
 <a id="__codelineno-0-115" name="__codelineno-0-115" href="#__codelineno-0-115"></a><span class="w">    </span>gcpsm:
@@ -9201,10 +9201,10 @@ By design, SecretStores are bound to a namespace and can not reference resources
 <a id="__codelineno-0-131" name="__codelineno-0-131" href="#__codelineno-0-131"></a><span class="w">  </span><span class="c1"># If the `status` of this condition is `False`, ExternalSecret controllers</span>
 <a id="__codelineno-0-132" name="__codelineno-0-132" href="#__codelineno-0-132"></a><span class="w">  </span><span class="c1"># should prevent attempts to fetch secrets</span>
 <a id="__codelineno-0-133" name="__codelineno-0-133" href="#__codelineno-0-133"></a><span class="w">  </span>-<span class="w"> </span>type:<span class="w"> </span>Ready
-<a id="__codelineno-0-134" name="__codelineno-0-134" href="#__codelineno-0-134"></a><span class="w">    </span>status:<span class="w"> </span><span class="s2">&quot;False&quot;</span>
-<a id="__codelineno-0-135" name="__codelineno-0-135" href="#__codelineno-0-135"></a><span class="w">    </span>reason:<span class="w"> </span><span class="s2">&quot;ConfigError&quot;</span>
-<a id="__codelineno-0-136" name="__codelineno-0-136" href="#__codelineno-0-136"></a><span class="w">    </span>message:<span class="w"> </span><span class="s2">&quot;SecretStore validation failed&quot;</span>
-<a id="__codelineno-0-137" name="__codelineno-0-137" href="#__codelineno-0-137"></a><span class="w">    </span>lastTransitionTime:<span class="w"> </span><span class="s2">&quot;2019-08-12T12:33:02Z&quot;</span>
+<a id="__codelineno-0-134" name="__codelineno-0-134" href="#__codelineno-0-134"></a><span class="w">    </span>status:<span class="w"> </span><span class="s2">"False"</span>
+<a id="__codelineno-0-135" name="__codelineno-0-135" href="#__codelineno-0-135"></a><span class="w">    </span>reason:<span class="w"> </span><span class="s2">"ConfigError"</span>
+<a id="__codelineno-0-136" name="__codelineno-0-136" href="#__codelineno-0-136"></a><span class="w">    </span>message:<span class="w"> </span><span class="s2">"SecretStore validation failed"</span>
+<a id="__codelineno-0-137" name="__codelineno-0-137" href="#__codelineno-0-137"></a><span class="w">    </span>lastTransitionTime:<span class="w"> </span><span class="s2">"2019-08-12T12:33:02Z"</span>
 </code></pre></div>
 <h2 id="external-secret">External Secret</h2>
 <p>The ExternalSecret describes what data should be fetched, how the data should be transformed and saved as a Kind=Secret:</p>
@@ -9216,12 +9216,12 @@ By design, SecretStores are bound to a namespace and can not reference resources
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>apiVersion:<span class="w"> </span>external-secrets.io/v1beta1
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>kind:<span class="w"> </span>ExternalSecret
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>metadata:
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>name:<span class="w"> </span><span class="s2">&quot;hello-world&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>name:<span class="w"> </span><span class="s2">"hello-world"</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="c1"># labels and annotations are copied over to the</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="c1"># secret that will be created</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span>labels:
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span>acme.org/owned-by:<span class="w"> </span><span class="s2">&quot;q-team&quot;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span>acme.org/owned-by:<span class="w"> </span><span class="s2">"q-team"</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span>annotations:
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span>acme.org/sha:<span class="w"> </span><span class="m">1234</span>
 <a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
@@ -9233,9 +9233,9 @@ By design, SecretStores are bound to a namespace and can not reference resources
 <a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span>kind:<span class="w"> </span>SecretStore<span class="w">  </span><span class="c1"># or ClusterSecretStore</span>
 <a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
 <a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">  </span><span class="c1"># RefreshInterval is the amount of time before the values reading again from the SecretStore provider</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">  </span><span class="c1"># Valid time units are &quot;ns&quot;, &quot;us&quot; (or &quot;µs&quot;), &quot;ms&quot;, &quot;s&quot;, &quot;m&quot;, &quot;h&quot; (from time.ParseDuration)</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">  </span><span class="c1"># Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h" (from time.ParseDuration)</span>
 <a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">  </span><span class="c1"># May be set to zero to fetch and create it once</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">  </span>refreshInterval:<span class="w"> </span><span class="s2">&quot;1h&quot;</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">  </span>refreshInterval:<span class="w"> </span><span class="s2">"1h"</span>
 <a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
 <a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">  </span><span class="c1"># the target describes the secret that shall be created</span>
 <a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">  </span><span class="c1"># there can only be one target per ExternalSecret</span>
@@ -9275,7 +9275,7 @@ By design, SecretStores are bound to a namespace and can not reference resources
 <a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>
 <a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a><span class="w">      </span><span class="c1"># Uses an existing template from configmap</span>
 <a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a><span class="w">      </span><span class="c1"># Secret is fetched, merged and templated within the referenced configMap data</span>
-<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a><span class="w">      </span><span class="c1"># It does not update the configmap, it creates a secret with: data[&quot;alertmanager.yml&quot;] = ...result...</span>
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a><span class="w">      </span><span class="c1"># It does not update the configmap, it creates a secret with: data["alertmanager.yml"] = ...result...</span>
 <a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a><span class="w">      </span>templateFrom:
 <a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a><span class="w">      </span>-<span class="w"> </span>configMap:
 <a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a><span class="w">          </span>name:<span class="w"> </span>application-config-tmpl
@@ -9308,7 +9308,7 @@ By design, SecretStores are bound to a namespace and can not reference resources
 <a id="__codelineno-1-93" name="__codelineno-1-93" href="#__codelineno-1-93"></a><span class="w">      </span>generatorRef:
 <a id="__codelineno-1-94" name="__codelineno-1-94" href="#__codelineno-1-94"></a><span class="w">        </span>apiVersion:<span class="w"> </span>generators.external-secrets.io/v1alpha1
 <a id="__codelineno-1-95" name="__codelineno-1-95" href="#__codelineno-1-95"></a><span class="w">        </span>kind:<span class="w"> </span>ECRAuthorizationToken
-<a id="__codelineno-1-96" name="__codelineno-1-96" href="#__codelineno-1-96"></a><span class="w">        </span>name:<span class="w"> </span><span class="s2">&quot;my-ecr&quot;</span>
+<a id="__codelineno-1-96" name="__codelineno-1-96" href="#__codelineno-1-96"></a><span class="w">        </span>name:<span class="w"> </span><span class="s2">"my-ecr"</span>
 <a id="__codelineno-1-97" name="__codelineno-1-97" href="#__codelineno-1-97"></a><span class="w">  </span><span class="c1">#Or</span>
 <a id="__codelineno-1-98" name="__codelineno-1-98" href="#__codelineno-1-98"></a><span class="w">  </span>dataFrom:
 <a id="__codelineno-1-99" name="__codelineno-1-99" href="#__codelineno-1-99"></a><span class="w">  </span>-<span class="w"> </span>extract:
@@ -9319,25 +9319,25 @@ By design, SecretStores are bound to a namespace and can not reference resources
 <a id="__codelineno-1-104" name="__codelineno-1-104" href="#__codelineno-1-104"></a><span class="w">      </span>decodingStrategy:<span class="w"> </span>Auto
 <a id="__codelineno-1-105" name="__codelineno-1-105" href="#__codelineno-1-105"></a><span class="w">    </span>rewrite:
 <a id="__codelineno-1-106" name="__codelineno-1-106" href="#__codelineno-1-106"></a><span class="w">    </span>-<span class="w"> </span>regexp:
-<a id="__codelineno-1-107" name="__codelineno-1-107" href="#__codelineno-1-107"></a><span class="w">        </span>source:<span class="w"> </span><span class="s2">&quot;exp-(.*?)-ression&quot;</span>
-<a id="__codelineno-1-108" name="__codelineno-1-108" href="#__codelineno-1-108"></a><span class="w">        </span>target:<span class="w"> </span><span class="s2">&quot;rewriting-</span><span class="si">${</span><span class="nv">1</span><span class="si">}</span><span class="s2">-with-groups&quot;</span>
+<a id="__codelineno-1-107" name="__codelineno-1-107" href="#__codelineno-1-107"></a><span class="w">        </span>source:<span class="w"> </span><span class="s2">"exp-(.*?)-ression"</span>
+<a id="__codelineno-1-108" name="__codelineno-1-108" href="#__codelineno-1-108"></a><span class="w">        </span>target:<span class="w"> </span><span class="s2">"rewriting-</span><span class="si">${</span><span class="nv">1</span><span class="si">}</span><span class="s2">-with-groups"</span>
 <a id="__codelineno-1-109" name="__codelineno-1-109" href="#__codelineno-1-109"></a><span class="w">  </span>-<span class="w"> </span>find:
 <a id="__codelineno-1-110" name="__codelineno-1-110" href="#__codelineno-1-110"></a><span class="w">      </span>path:<span class="w"> </span>path-to-filter
 <a id="__codelineno-1-111" name="__codelineno-1-111" href="#__codelineno-1-111"></a><span class="w">      </span>name:
-<a id="__codelineno-1-112" name="__codelineno-1-112" href="#__codelineno-1-112"></a><span class="w">        </span>regexp:<span class="w"> </span><span class="s2">&quot;.*foobar.*&quot;</span>
+<a id="__codelineno-1-112" name="__codelineno-1-112" href="#__codelineno-1-112"></a><span class="w">        </span>regexp:<span class="w"> </span><span class="s2">".*foobar.*"</span>
 <a id="__codelineno-1-113" name="__codelineno-1-113" href="#__codelineno-1-113"></a><span class="w">      </span>tags:
 <a id="__codelineno-1-114" name="__codelineno-1-114" href="#__codelineno-1-114"></a><span class="w">        </span>foo:<span class="w"> </span>bar
 <a id="__codelineno-1-115" name="__codelineno-1-115" href="#__codelineno-1-115"></a><span class="w">      </span>conversionStrategy:<span class="w"> </span>Unicode
 <a id="__codelineno-1-116" name="__codelineno-1-116" href="#__codelineno-1-116"></a><span class="w">      </span>decodingStrategy:<span class="w"> </span>Base64
 <a id="__codelineno-1-117" name="__codelineno-1-117" href="#__codelineno-1-117"></a><span class="w">    </span>rewrite:
 <a id="__codelineno-1-118" name="__codelineno-1-118" href="#__codelineno-1-118"></a><span class="w">    </span>-<span class="w"> </span>regexp:
-<a id="__codelineno-1-119" name="__codelineno-1-119" href="#__codelineno-1-119"></a><span class="w">        </span>source:<span class="w"> </span><span class="s2">&quot;foo&quot;</span>
-<a id="__codelineno-1-120" name="__codelineno-1-120" href="#__codelineno-1-120"></a><span class="w">        </span>target:<span class="w"> </span><span class="s2">&quot;bar&quot;</span>
+<a id="__codelineno-1-119" name="__codelineno-1-119" href="#__codelineno-1-119"></a><span class="w">        </span>source:<span class="w"> </span><span class="s2">"foo"</span>
+<a id="__codelineno-1-120" name="__codelineno-1-120" href="#__codelineno-1-120"></a><span class="w">        </span>target:<span class="w"> </span><span class="s2">"bar"</span>
 <a id="__codelineno-1-121" name="__codelineno-1-121" href="#__codelineno-1-121"></a>
 <a id="__codelineno-1-122" name="__codelineno-1-122" href="#__codelineno-1-122"></a>status:
 <a id="__codelineno-1-123" name="__codelineno-1-123" href="#__codelineno-1-123"></a><span class="w">  </span><span class="c1"># refreshTime is the time and date the external secret was fetched and</span>
 <a id="__codelineno-1-124" name="__codelineno-1-124" href="#__codelineno-1-124"></a><span class="w">  </span><span class="c1"># the target secret updated</span>
-<a id="__codelineno-1-125" name="__codelineno-1-125" href="#__codelineno-1-125"></a><span class="w">  </span>refreshTime:<span class="w"> </span><span class="s2">&quot;2019-08-12T12:33:02Z&quot;</span>
+<a id="__codelineno-1-125" name="__codelineno-1-125" href="#__codelineno-1-125"></a><span class="w">  </span>refreshTime:<span class="w"> </span><span class="s2">"2019-08-12T12:33:02Z"</span>
 <a id="__codelineno-1-126" name="__codelineno-1-126" href="#__codelineno-1-126"></a><span class="w">  </span><span class="c1"># Standard condition schema</span>
 <a id="__codelineno-1-127" name="__codelineno-1-127" href="#__codelineno-1-127"></a><span class="w">  </span>conditions:
 <a id="__codelineno-1-128" name="__codelineno-1-128" href="#__codelineno-1-128"></a><span class="w">  </span><span class="c1"># ExternalSecret ready condition indicates the secret is ready for use.</span>
@@ -9346,10 +9346,10 @@ By design, SecretStores are bound to a namespace and can not reference resources
 <a id="__codelineno-1-131" name="__codelineno-1-131" href="#__codelineno-1-131"></a><span class="w">  </span><span class="c1"># - The target secret has been refreshed within the last refreshInterval</span>
 <a id="__codelineno-1-132" name="__codelineno-1-132" href="#__codelineno-1-132"></a><span class="w">  </span><span class="c1"># - The target secret content is up-to-date based on any target templates</span>
 <a id="__codelineno-1-133" name="__codelineno-1-133" href="#__codelineno-1-133"></a><span class="w">  </span>-<span class="w"> </span>type:<span class="w"> </span>Ready
-<a id="__codelineno-1-134" name="__codelineno-1-134" href="#__codelineno-1-134"></a><span class="w">    </span>status:<span class="w"> </span><span class="s2">&quot;True&quot;</span><span class="w"> </span><span class="c1"># False if last refresh was not successful</span>
-<a id="__codelineno-1-135" name="__codelineno-1-135" href="#__codelineno-1-135"></a><span class="w">    </span>reason:<span class="w"> </span><span class="s2">&quot;SecretSynced&quot;</span>
-<a id="__codelineno-1-136" name="__codelineno-1-136" href="#__codelineno-1-136"></a><span class="w">    </span>message:<span class="w"> </span><span class="s2">&quot;Secret was synced&quot;</span>
-<a id="__codelineno-1-137" name="__codelineno-1-137" href="#__codelineno-1-137"></a><span class="w">    </span>lastTransitionTime:<span class="w"> </span><span class="s2">&quot;2019-08-12T12:33:02Z&quot;</span>
+<a id="__codelineno-1-134" name="__codelineno-1-134" href="#__codelineno-1-134"></a><span class="w">    </span>status:<span class="w"> </span><span class="s2">"True"</span><span class="w"> </span><span class="c1"># False if last refresh was not successful</span>
+<a id="__codelineno-1-135" name="__codelineno-1-135" href="#__codelineno-1-135"></a><span class="w">    </span>reason:<span class="w"> </span><span class="s2">"SecretSynced"</span>
+<a id="__codelineno-1-136" name="__codelineno-1-136" href="#__codelineno-1-136"></a><span class="w">    </span>message:<span class="w"> </span><span class="s2">"Secret was synced"</span>
+<a id="__codelineno-1-137" name="__codelineno-1-137" href="#__codelineno-1-137"></a><span class="w">    </span>lastTransitionTime:<span class="w"> </span><span class="s2">"2019-08-12T12:33:02Z"</span>
 </code></pre></div>
 <h2 id="hands-on">Hands-On</h2>
 <p>Here’s the step-by-step guide to using an external secret manager in a local Minikube cluster with AWS Secret Manager</p>
@@ -9399,16 +9399,16 @@ By design, SecretStores are bound to a namespace and can not reference resources
 <li>Set User Permissions via below policy.</li>
 </ul>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="s2">&quot;Version&quot;</span>:<span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span>,
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="s2">&quot;Statement&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="s2">"Version"</span>:<span class="w"> </span><span class="s2">"2012-10-17"</span>,
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="s2">"Statement"</span>:<span class="w"> </span><span class="o">[</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="o">{</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">            </span><span class="s2">&quot;Effect&quot;</span>:<span class="w"> </span><span class="s2">&quot;Allow&quot;</span>,
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">            </span><span class="s2">&quot;Action&quot;</span>:<span class="w"> </span><span class="o">[</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">                </span><span class="s2">&quot;secretsmanager:GetSecretValue&quot;</span>,
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">                </span><span class="s2">&quot;secretsmanager:DescribeSecret&quot;</span>,
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">                </span><span class="s2">&quot;secretsmanager:ListSecrets&quot;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">            </span><span class="s2">"Effect"</span>:<span class="w"> </span><span class="s2">"Allow"</span>,
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">            </span><span class="s2">"Action"</span>:<span class="w"> </span><span class="o">[</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">                </span><span class="s2">"secretsmanager:GetSecretValue"</span>,
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">                </span><span class="s2">"secretsmanager:DescribeSecret"</span>,
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">                </span><span class="s2">"secretsmanager:ListSecrets"</span>
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">            </span><span class="o">]</span>,
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">            </span><span class="s2">&quot;Resource&quot;</span>:<span class="w"> </span><span class="s2">&quot;&lt;ENTER-SECRET-MANAGER-ARN&gt;&quot;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">            </span><span class="s2">"Resource"</span>:<span class="w"> </span><span class="s2">"&lt;ENTER-SECRET-MANAGER-ARN&gt;"</span>
 <a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">        </span><span class="o">}</span>
 <a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="o">]</span>
 <a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="o">}</span>
@@ -9517,7 +9517,7 @@ key: The name of the secret in AWS Secrets Manager (e.g., DB-CREDENTIAL).</p>
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">  </span>-<span class="w"> </span>image-eso:<span class="w"> </span>busybox:1.35.0
 <a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span>command:
 <a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">      </span>-<span class="w"> </span>sleep
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">      </span>-<span class="w"> </span><span class="s2">&quot;3600&quot;</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">      </span>-<span class="w"> </span><span class="s2">"3600"</span>
 <a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">    </span>image-esoPullPolicy:<span class="w"> </span>IfNotPresent
 <a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">    </span>name:<span class="w"> </span>busybox
 <a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span>env:
@@ -9617,7 +9617,7 @@ key: The name of the secret in AWS Secrets Manager (e.g., DB-CREDENTIAL).</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

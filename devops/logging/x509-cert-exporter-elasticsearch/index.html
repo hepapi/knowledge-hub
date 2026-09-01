@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2369,7 +2369,7 @@
   <span class="md-ellipsis">
     
   
-    Terraform
+    Terragrunt
   
 
     
@@ -2385,7 +2385,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Terraform
+    Terragrunt
   
 
           </label>
@@ -2398,7 +2398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Terragrunt/README.md" class="md-nav__link">
+      <a href="../../terragrunt/" class="md-nav__link">
         
   
   
@@ -9196,15 +9196,15 @@
 <p>x509-exporter cannot read <code>.p12</code> files. All <code>.p12</code> files under <code>/etc/elasticsearch/certs</code> must be converted to <code>.pem</code>.</p>
 <p>First, retrieve the <code>http.p12</code> password:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">PASS</span><span class="o">=</span><span class="k">$(</span>/usr/share/elasticsearch/bin/elasticsearch-keystore<span class="w"> </span>show<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>xpack.security.http.ssl.keystore.secure_password<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="k">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>xpack.security.http.ssl.keystore.secure_password<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s1">'\n'</span><span class="k">)</span>
 </code></pre></div>
 <p>Convert <code>http.p12</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>openssl<span class="w"> </span>pkcs12<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>-in<span class="w"> </span>/etc/elasticsearch/certs/http.p12<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>-out<span class="w"> </span>/etc/elasticsearch/x509-exporter/http.pem<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>-nodes<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span>-passin<span class="w"> </span>pass:<span class="s2">&quot;</span><span class="nv">$PASS</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;http.p12 conversion failed&quot;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span>-passin<span class="w"> </span>pass:<span class="s2">"</span><span class="nv">$PASS</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"http.p12 conversion failed"</span>
 </code></pre></div>
 <p><code>http_ca.crt</code> is already in PEM format; copy it directly:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>cp<span class="w"> </span>/etc/elasticsearch/certs/http_ca.crt<span class="w"> </span><span class="se">\</span>
@@ -9268,12 +9268,12 @@
 <h3 id="additional_scrape_configs">additional_scrape_configs</h3>
 <p>Add the following job to your <code>prometheus.yml</code> or a dedicated <code>additional_scrape_configs</code> file. Each Elasticsearch node is listed as a separate target:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">additional_scrape_configs</span><span class="p">:</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;x509-elasticsearch&#39;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="s">'x509-elasticsearch'</span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nt">static_configs</span><span class="p">:</span>
 <a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">targets</span><span class="p">:</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;node-1-private-ip&gt;:9793&#39;</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;node-2-private-ip&gt;:9793&#39;</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&lt;node-3-private-ip&gt;:9793&#39;</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'&lt;node-1-private-ip&gt;:9793'</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'&lt;node-2-private-ip&gt;:9793'</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'&lt;node-3-private-ip&gt;:9793'</span>
 </code></pre></div>
 <blockquote>
 <p>Replace <code>&lt;node-1-private-ip&gt;</code>, <code>&lt;node-2-private-ip&gt;</code>, and <code>&lt;node-3-private-ip&gt;</code> with the private IP of each node.</p>
@@ -9291,8 +9291,8 @@
 <a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">        </span><span class="nt">labels</span><span class="p">:</span>
 <a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">          </span><span class="nt">alertname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">elasticsearch</span>
 <a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">        </span><span class="nt">annotations</span><span class="p">:</span>
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">          </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ElasticSearch</span><span class="nv"> </span><span class="s">Certificate</span><span class="nv"> </span><span class="s">will</span><span class="nv"> </span><span class="s">expire</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">less</span><span class="nv"> </span><span class="s">than</span><span class="nv"> </span><span class="s">30</span><span class="nv"> </span><span class="s">days&quot;</span>
-<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Certificate</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">$labels.common_name</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">expires</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">less</span><span class="nv"> </span><span class="s">than</span><span class="nv"> </span><span class="s">30</span><span class="nv"> </span><span class="s">days.&quot;</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">          </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"ElasticSearch</span><span class="nv"> </span><span class="s">Certificate</span><span class="nv"> </span><span class="s">will</span><span class="nv"> </span><span class="s">expire</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">less</span><span class="nv"> </span><span class="s">than</span><span class="nv"> </span><span class="s">30</span><span class="nv"> </span><span class="s">days"</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Certificate</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">$labels.common_name</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">expires</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">less</span><span class="nv"> </span><span class="s">than</span><span class="nv"> </span><span class="s">30</span><span class="nv"> </span><span class="s">days."</span>
 <a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
 <a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ElasticCertificateExpiringCritical</span>
 <a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">        </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(x509_cert_not_after - time()) &lt; 14 * 24 * 3600</span>
@@ -9300,8 +9300,8 @@
 <a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">        </span><span class="nt">labels</span><span class="p">:</span>
 <a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">          </span><span class="nt">alertname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">elasticsearch</span>
 <a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">        </span><span class="nt">annotations</span><span class="p">:</span>
-<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">          </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ElasticSearch</span><span class="nv"> </span><span class="s">Certificate</span><span class="nv"> </span><span class="s">will</span><span class="nv"> </span><span class="s">expire</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">less</span><span class="nv"> </span><span class="s">than</span><span class="nv"> </span><span class="s">14</span><span class="nv"> </span><span class="s">days&quot;</span>
-<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Certificate</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">$labels.common_name</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">expires</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">less</span><span class="nv"> </span><span class="s">than</span><span class="nv"> </span><span class="s">14</span><span class="nv"> </span><span class="s">days.&quot;</span>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">          </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"ElasticSearch</span><span class="nv"> </span><span class="s">Certificate</span><span class="nv"> </span><span class="s">will</span><span class="nv"> </span><span class="s">expire</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">less</span><span class="nv"> </span><span class="s">than</span><span class="nv"> </span><span class="s">14</span><span class="nv"> </span><span class="s">days"</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Certificate</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">$labels.common_name</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">expires</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">less</span><span class="nv"> </span><span class="s">than</span><span class="nv"> </span><span class="s">14</span><span class="nv"> </span><span class="s">days."</span>
 </code></pre></div>
 
 
@@ -9375,7 +9375,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tabs.link", "content.action.edit", "navigation.instant.prefetch", "navigation.instant.progress"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
